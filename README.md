@@ -18,10 +18,12 @@ reference run from ground-truth accuracy.
 
 Install current stable Rust and set `OPENAI_API_KEY` in your environment. The
 key is read at runtime and is never written to the database or request journal.
+Run the offline tests for all targets and build both executables before starting
+any paid stream:
 
 ```sh
-cargo test --locked
-cargo build --release --locked
+cargo test --locked --all-targets
+cargo build --release --locked --bin ld-clustering --example frozen_catalog
 target/release/ld-clustering prepare --output data --seed 42
 bash scripts/benchmark.sh runs/main-v2-seed42
 ```
@@ -194,12 +196,9 @@ not a preset taxonomy or a target count. The catalog was learned from those
 same image inputs, so this control isolates local choices; it is not another
 independent streaming evaluation or a held-out generalization test.
 
-Commit the source and build the main and separate control executables before
-measured API calls. Build the control before starting the primary streams:
-
-```sh
-cargo build --release --example frozen_catalog --locked
-```
+Commit the source before measured API calls. The Run sequence above builds
+both the main and separate control executables before the primary streams start.
+Use that same build for the control.
 
 Record the source, executable, input and catalog hashes, and keep those
 executables unchanged through the primary run and its control. For
