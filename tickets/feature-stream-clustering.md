@@ -135,3 +135,34 @@ and all-target Clippy pass. It is a separate executable; original runtime source
 and binary remain unchanged. Archived image evidence was decompressed into a
 different directory and the frozen Rust `compare` output matched its summary
 exactly; checksums and SQLite integrity/foreign-key checks passed.
+
+## Replacement cohort checkpoint and queued diagnostic
+
+The fresh image pair completed with clean timing: baseline 663.815 seconds,
+LD 223.233 seconds. ARI is 0.17315386804613866, pair F1 0.25662251655629137;
+LD assigns 63 images to named clusters versus all 100 for baseline. Known
+recorded token costs are $0.271528 baseline and $0.0871249 LD. Two LD assignment
+HTTP 503 attempts (journal rows 88 and 242, counting header as row 1) omit usage;
+LD cost_complete is false, and the website labels it a subtotal without a total
+cost ratio. Both text streams are still running; do not archive active state.
+
+The prepared fixed-catalog diagnostic is queued in user systemd unit
+`ld-clustering-frozen-images-20261020.service`, current waiting worker PID1072847.
+Its operational script is `runs/frozen-images-seed42/after-main.py`. It waits for
+primary supervisor PID1039692 to exit, then requires all four expected cohorts,
+clean timing and empty queues before starting the two controls. No control API
+call has begun at this checkpoint. It uses the original first-cohort LLM final
+11-cluster catalog, SHA-256 7f0950b69ea360d694fd6d5dc58b30d74e89d69fbc172ad88757499161d16942,
+and separate executable SHA-256 4c8d89a76cd475d7e8e2ac21c4de2c146ac97cfc31883703a896d70cbb9489df.
+The unit has no runtime limit and owns its entire process group. Inspect its
+supervisor log/output statuses before inferring that it has launched or finished.
+
+An isolated offline review proved a reporting defect: an unclean resumed history
+can lose an in-flight request even when every recorded row has usage. The old
+verifier incorrectly called that subtotal complete. A conservative fix and
+unknown_usage_calls counter are prepared outside this source tree at
+`/tmp/ld-cost-unclean-history.results.patch`; its focused Red/Green evidence and
+README changes are at `/tmp/ld-cost-unclean-history.docs.patch`. Apply only after
+the frozen primary runtime finishes. No active runtime file or executable has
+been changed. This reporting-only correction does not require rerunning paid
+streams; retain their pinned runtime source commit and binary separately.
