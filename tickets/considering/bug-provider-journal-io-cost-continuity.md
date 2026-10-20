@@ -9,6 +9,7 @@ Owner: Unassigned
 Implementation branch: Not started
 PR: None
 Reviewed source: c1c77c0a69707bdb49de5cb35ba548971e2861bd
+Amended source reviewed: 9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c
 Evidence: Code review only; no observed benchmark impact established
 Release scope: Follow-up; do not change the current frozen experiment
 
@@ -52,6 +53,12 @@ and all original experiment evidence.
   that history; known recorded costs remain available as a subtotal.
 - Missing-usage counters count observed rows without usage, not an invented
   number of requests potentially lost during a storage failure.
+- A failed frozen-catalog control cannot label its recorded subtotal complete
+  after a dispatched request fails to reach the journal. Preserve its failed
+  status, completed assignment prefix, and known recorded usage.
+- A successful complete control with all reported usage retains its complete
+  flag; a missing-usage count of zero alone never proves continuity after an
+  unrecorded request.
 - Point/assignment conservation and safe refusal of malformed journals remain
   intact.
 - Tests assert writer outcomes, durable markers, and dispatch/record counts;
@@ -76,3 +83,36 @@ continuity guard; causal reversion loses the marker. The remaining follow-up is
 explicit provider-writer fault injection and clearer storage-error context,
 rather than the original unmarked normal-error path. No actual benchmark
 journal-storage failure has been observed.
+
+## Remaining failed-control summary path
+
+The amended primary engine's terminal-error guard does not cover the separate
+frozen-catalog example. In the reviewed amended source,
+`examples/frozen_catalog.rs:239` initializes `journal_summary`'s cost flag to true
+and line 274 only combines the usage flags of rows that exist. At line 384 an
+assignment error becomes the final output's error, but a successful journal
+summary at line 386 is retained unchanged in `measurement` at line 432.
+
+The provider can receive a charged response and then return a journal-write
+error through `src/provider.rs:167`. If that writer fails before appending any
+bytes, the earlier journal prefix can remain valid and contain only known-usage
+rows. The control then correctly writes `status=failed` and incomplete timing,
+but can still write `measurement.cost_complete=true` for that earlier subtotal.
+Its `unknown_usage_calls` may be zero because the missing request has no row.
+This is code-review evidence; this control writer failure has not been injected
+or observed in an experiment.
+
+Extend the proposed offline writer-injection check to this example: retain a
+known-usage prefix, complete the next fake request, fail its journal write before
+the next row, and require a failed output with incomplete cost continuity and
+the preserved known subtotal. Assert dispatch/record counts and flags, with no
+timing threshold or paid API request. The exact mechanism can conservatively
+invalidate cost continuity on terminal control errors, consistent with the
+primary engine; it must not fabricate a charge or missing-request count.
+
+There is no established impact on the mandatory single-fresh v2 primary archive
+or complete-control publication. The primary has its terminal-error guard;
+the control archiver/publication path requires `status=complete`, 100 assignments,
+and raw journal/progress replay, so a failed control is not publishable as a
+complete diagnostic. Keep this follow-up outside the frozen runtime and do not
+rewrite original artifacts.
