@@ -2,6 +2,7 @@
 
 Status: In Progress
 Branch: feat-stream-clustering
+Pull request: https://github.com/eob/ld-clustering/pull/1 (draft)
 Session: 01a15732-077c-7a33-ba98-e8b2509c6a74 (Codex)
 
 ## Goal
@@ -49,17 +50,27 @@ latency. Public benchmark labels are a secondary check, not the baseline truth.
 ## Current state
 
 Rust state, engine, provider, dataset preparation, metrics, comparison CLI and
-benchmark runner are implemented. Public repository initialized at
-https://github.com/eob/ld-clustering. Dataset preparation verified 1,000 text and
-100 image points with license/source pins. Six paid protocol smoke calls passed;
-the complete measured experiments have not started yet. The website is built in
-its separate Kaya worktree and still displays pending results honestly.
+benchmark runner are implemented. Public repository and draft PR are backed up.
+Dataset preparation verified 1,000 text and 100 image points with license/source
+pins. Six paid protocol smoke calls passed. Full experiments are running from
+source commit `59656c06db2e2ec8599b3bc31f90144a451e27b3` at
+`runs/main-seed42`; the directory retains binary hash, source commit, dataset
+manifest, launch UTC, four SQLite files and independent raw API/process journals.
+The website is built in its separate Kaya worktree and still displays pending
+results honestly.
 
-Independent review demonstrated a journal/database association defect in the
-initial comparison code using a wrong shared journal. Bind journals to runs and
-verify coverage of successful SQLite calls before freezing the experiment code.
-Mark timing incomplete on recovery from an unclean process exit; do not silently
-report a resumed segment as the original full elapsed duration.
+Recovery handles: unified exec session 38062 owns benchmark.sh PID 955592 and
+four children 955603/955604/955605/955606 (text LLM/text LD/images LLM/images LD).
+Always poll the confirmed live handle/process before deciding to resume. Do not
+restart solely because observation times out. Source/image mutation after the
+freeze requires a new experimental series rather than mixed-source measurements.
+
+Independent review demonstrated and fixed a journal/database association defect
+using a wrong shared journal. Run identity, successful-call coverage and raw usage
+prices are now verified before comparison and resumed spending. Unclean exit
+recovery marks timing incomplete. Review sampling now allocates actual quotas
+before selecting representatives, so a crowded catalog cannot hide newest Other
+evidence. Both defects have meaningful regressions.
 
 ## Validation evidence
 
@@ -84,3 +95,7 @@ Initial full gate: `cargo test` 24 passed, 1 explicitly paid-live test ignored;
 `cargo clippy --all-targets -- -D warnings` passed; release binary built. Source
 base is initial repository commit 6345fcd, before the experimental implementation
 commit. Provider/research tickets retain scoped red and live smoke evidence.
+
+Frozen-source gate on `59656c0`: `cargo test --locked` 35 offline tests passed,
+one explicitly paid live test ignored; `cargo fmt --check`,
+`cargo clippy --locked --all-targets -- -D warnings`, and release build passed.
