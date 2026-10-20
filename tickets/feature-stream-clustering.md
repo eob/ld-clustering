@@ -2,7 +2,7 @@
 
 Status: In Review
 Branch: feat-stream-clustering
-Pull request: https://github.com/eob/ld-clustering/pull/1 (draft; finalization pending)
+Pull request: https://github.com/eob/ld-clustering/pull/1
 Session: 01a15732-077c-7a33-ba98-e8b2509c6a74 (Codex)
 
 ## Goal
@@ -53,8 +53,11 @@ Implementation and measured work are complete. The amended four-arm primary
 cohort finished 1,000 text and 100 image points per arm, with empty reassignment
 queues and one successful fresh invocation each. The subsequent fixed-catalog
 image control finished 100 points per arm. All measured workers are terminal;
-no paid experiment or recovery remains pending. Runtime/launch source remains
-`9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c`, with the unchanged frozen executables.
+no paid experiment or recovery remains pending. Measured runtime and primary
+launch source remain `9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c`, with unchanged
+frozen executables. Control metadata records documentation checkout
+`95d0465a1fc91a416a5ae124ddf11787ece887c4`; its embedded runtime files match
+the frozen source byte for byte.
 All 58 offline tests, formatting and all-target Clippy passed before those calls.
 
 Complete verified evidence is retained in:
@@ -87,8 +90,8 @@ Their complete image replicates and incomplete text prefixes are excluded from
 v2 headline results. The historical checkpoints and PID/launch recipes below
 record those development phases; they are not current workers or pending actions.
 
-PR #1 exists in draft and awaits final description/review finalization. Remaining
-publication work is to commit/publish the reviewed evidence, finish the source PR,
+PR #1 is ready for review with its final description and committed evidence. Remaining
+publication work is to merge the source PR,
 fill and validate the website artifact against its immutable evidence commit,
 complete the scoped production goof PR, and verify the live page. The website is
 not yet published; the requested destination is
