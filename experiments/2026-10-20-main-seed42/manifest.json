@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "status": "interrupted",
+  "complete_experiments": [
+    "images"
+  ],
+  "pending_experiments": [],
+  "source_code_commit": "59656c06db2e2ec8599b3bc31f90144a451e27b3",
+  "binary_sha256": "ef1d211d0808a688554f46995cd3370ee98d53b78760dff2fd2026c382c203ee",
+  "dataset_manifest_sha256": "f136049b624f62c1cba01cc22475d1634228daa372ef679e393f78ee12fd623b",
+  "files": [
+    {
+      "path": "source-commit.txt",
+      "bytes": 41,
+      "sha256": "7467600f863dba0f9cf3eb5b365a6cc592653ab561798da780a18800943203cb"
+    },
+    {
+      "path": "binary-sha256.txt",
+      "bytes": 95,
+      "sha256": "248203d8e7d48a7a6df48afe3d9fde76ad09a095dc1a10ff268a848c3559e7c9"
+    },
+    {
+      "path": "launched-at.txt",
+      "bytes": 21,
+      "sha256": "41dcaa8b5ef27c573400979bc444edb4f4b496917f9b6ed72e4bdde86a3746cb"
+    },
+    {
+      "path": "dataset-manifest.json",
+      "bytes": 45667,
+      "sha256": "f136049b624f62c1cba01cc22475d1634228daa372ef679e393f78ee12fd623b"
+    },
+    {
+      "path": "images-results.json",
+      "bytes": 3127,
+      "sha256": "6d268a357b7ebe456f31a1669b8b8ad883139b197a699a1cb4458ad9c51d1304"
+    },
+    {
+      "path": "images-llm.sqlite.gz",
+      "bytes": 447204,
+      "sha256": "83c439f146747f4fb8411a4b111321f71f35f05b27ac7a96e5be354af6f85ee0",
+      "uncompressed_bytes": 1355776,
+      "uncompressed_sha256": "ce8af7544ac447f655ea68942bb92a7ed5aca95295a182f3f76ba0d10babd829"
+    },
+    {
+      "path": "images-llm.calls.jsonl.gz",
+      "bytes": 427294,
+      "sha256": "e0ab3c6b2aff3f5a4f44cf5fc55a674477248702514f414c89a9504c05d799cf",
+      "uncompressed_bytes": 1166573,
+      "uncompressed_sha256": "89222bbbb7c8935a4f9c3fbebae935039e5682fd8db3b074b91f9611a2321624"
+    },
+    {
+      "path": "images-llm.process.log.gz",
+      "bytes": 336,
+      "sha256": "ee9476806080bde68b435a7219dbeef1bc5ba727cde4252f9b5078270432b528",
+      "uncompressed_bytes": 3282,
+      "uncompressed_sha256": "7aeaa99ffe072ce2bfd03ea6620f917c15ebb7db3a591d0e9fd6470cc987dc4f"
+    },
+    {
+      "path": "images-ld.sqlite.gz",
+      "bytes": 238334,
+      "sha256": "7c56283b79ad6ff4440ee5ef8e8f02fb100d32f80b24dc5a833f6bbf76ee65ce",
+      "uncompressed_bytes": 1343488,
+      "uncompressed_sha256": "6ee9968f7fddcde4fca2185e6ad1f1a8d82e35dec6aaf61f12d9e5ceddb882c8"
+    },
+    {
+      "path": "images-ld.calls.jsonl.gz",
+      "bytes": 215600,
+      "sha256": "ed0ac06cf3dcf01efa4a7d43ff020710d16d386bdc44835ed879e9122b1899e2",
+      "uncompressed_bytes": 1069226,
+      "uncompressed_sha256": "c2bd3de6538a3a9ba5e944eda603d128a0e5d8e842cf5332a4c479ff5346eb0f"
+    },
+    {
+      "path": "images-ld.process.log.gz",
+      "bytes": 334,
+      "sha256": "d96729c110663494834f9bd7cdb94354ff6ff2104c183a02417c04bcac9caf54",
+      "uncompressed_bytes": 3250,
+      "uncompressed_sha256": "d4424af758f74a5e2f0c3f125b600a4b8e203f9cd3de1b6044298f69c87aab4c"
+    },
+    {
+      "path": "licenses/ATTRIBUTION.txt",
+      "bytes": 822,
+      "sha256": "113baaa6fa8c7fd68dfbf5830314db3194248eec151a25867371cd677c9d846e"
+    },
+    {
+      "path": "licenses/clinc-CC-BY-3.0.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76"
+    },
+    {
+      "path": "licenses/fashion-MIT.txt",
+      "bytes": 1109,
+      "sha256": "13ef4788476d292858fa60eb9a5f74aeca5c65770bc885ccaa05823a17ef7be1"
+    },
+    {
+      "path": "inputs.tar.gz",
+      "bytes": 83550,
+      "sha256": "32f80f807345fcbd627f8b5ae0674dbe0bf1bf5a6ac4ac878abae926377cc19f",
+      "uncompressed_bytes": 256000,
+      "uncompressed_sha256": "3f36fb0fdac4fddbf33f8f8bcfda25a9d6b3363cc2364095f7f26c9af2a3dafa"
+    },
+    {
+      "path": "pricing.json",
+      "bytes": 983,
+      "sha256": "311a714518f991263327d4ffe7c456f081bb58b0e16ea683d0b02fba2b222e06"
+    },
+    {
+      "path": "images-partitions.json",
+      "bytes": 26645,
+      "sha256": "84c3491ea2ea190937ae157020e0793aec3c18a293e95f73b37bfabd98e1ae97"
+    },
+    {
+      "path": "text-llm.sqlite.gz",
+      "bytes": 762662,
+      "sha256": "87036f2dd9efc107601650f261a1a9ae7a0f32a6923b07a19d8b49d03efd9135",
+      "uncompressed_bytes": 3514368,
+      "uncompressed_sha256": "e0eb4dc496ac6bd57021cc795a278c60aec8b1dbe2f475c9541b8c44df5c1795"
+    },
+    {
+      "path": "text-llm.calls.jsonl.gz",
+      "bytes": 701298,
+      "sha256": "0514d4fc06f2b81c285bc3a352739cc0da687236f1579868ba8efd73ba255568",
+      "uncompressed_bytes": 3163362,
+      "uncompressed_sha256": "745c354ad81eab0f5bd1acb8807c88ab48f5ae96fe62c14984b571e8a2c56f3d"
+    },
+    {
+      "path": "text-llm.process.log.gz",
+      "bytes": 523,
+      "sha256": "1ca6e9f7ac50da2852dbaa51b179d74f4254994b2397bb03f5bc53a8bb08223e",
+      "uncompressed_bytes": 7304,
+      "uncompressed_sha256": "36f18212d13f44dcf7d63fcb30fe3fa0b51d4323a942106d58defacb888e09de"
+    },
+    {
+      "path": "text-ld.sqlite.gz",
+      "bytes": 1028334,
+      "sha256": "c117e16ac15311ebabfb86ae22af94d97f0b0c0096f74dfa2973ca853c9d9851",
+      "uncompressed_bytes": 21860352,
+      "uncompressed_sha256": "a0c6ddac454b8509d90b5cdbe35afd44a64eb9b8b52da329a4fd56986d2a85dd"
+    },
+    {
+      "path": "text-ld.calls.jsonl.gz",
+      "bytes": 686078,
+      "sha256": "3f9fa4dd5e638d145393930780261ce066ddfd7acf42eebe75cbf26def64ed77",
+      "uncompressed_bytes": 16280589,
+      "uncompressed_sha256": "29341b066b82b96d5fbd5911ca1002655be77ed50f5547e755368c2b077ea4b9"
+    },
+    {
+      "path": "text-ld.process.log.gz",
+      "bytes": 2421,
+      "sha256": "bf9897b4a0acc73537e498f7de57c31919543ea0d56b6184f213726bb2d3bfb1",
+      "uncompressed_bytes": 34864,
+      "uncompressed_sha256": "55870e32c56ecb0159203c9f971c8c3fc5345dc4825bbef4db7a128ee3b8ac7c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3475,
+      "sha256": "8b25461ff69a42f3087c806c349a06a61001617f4e445ac2dc578340790dea6d"
+    },
+    {
+      "path": "attempt-outcome.json",
+      "bytes": 2191,
+      "sha256": "7da96ed62e8b9b3ffbe40e0e92d8e18fa2c8e09e1d218c2595ab8feb754c8087"
+    },
+    {
+      "path": "image-analysis.json",
+      "bytes": 1673,
+      "sha256": "ff24e8d2ecdbf6736c893c738cdaa2a51548f240543a2288e843b9cc3c70b306"
+    }
+  ],
+  "incomplete_experiments": [
+    "text"
+  ],
+  "replacement_cohort": "runs/main-seed42-detached"
+}

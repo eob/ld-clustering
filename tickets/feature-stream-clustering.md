@@ -52,18 +52,47 @@ latency. Public benchmark labels are a secondary check, not the baseline truth.
 Rust state, engine, provider, dataset preparation, metrics, comparison CLI and
 benchmark runner are implemented. Public repository and draft PR are backed up.
 Dataset preparation verified 1,000 text and 100 image points with license/source
-pins. Six paid protocol smoke calls passed. Full experiments are running from
-source commit `59656c06db2e2ec8599b3bc31f90144a451e27b3` at
-`runs/main-seed42`; the directory retains binary hash, source commit, dataset
-manifest, launch UTC, four SQLite files and independent raw API/process journals.
-The website is built in its separate Kaya worktree and still displays pending
-results honestly.
+pins. Six paid protocol smoke calls passed. The first cohort at
+`runs/main-seed42` used source commit 59656c06db2e2ec8599b3bc31f90144a451e27b3.
+Its supervisor received SIGTERM (terminal exec status 143) after roughly 20 minutes.
+The LLM text arm stopped at 216 points; the LD text arm completed 1,000 but one
+HTTP 503 response omitted usage. Its unknown charge cannot be replaced with zero.
+Both image arms completed with fully measured cost/time. All first-cohort raw
+states, calls, selected inputs, notices, summaries and uncertainty are archived
+under `experiments/2026-10-20-main-seed42/` with status `interrupted`.
 
-Recovery handles: unified exec session 38062 owns benchmark.sh PID 955592 and
-four children 955603/955604/955605/955606 (text LLM/text LD/images LLM/images LD).
-Always poll the confirmed live handle/process before deciding to resume. Do not
-restart solely because observation times out. Source/image mutation after the
-freeze requires a new experimental series rather than mixed-source measurements.
+A fresh complete cohort is now running at `runs/main-seed42-detached`, managed
+outside the interactive exec session by user systemd unit
+`ld-clustering-main-seed42-20261020.service`. It uses the exact same runtime
+source, input bytes and executable (SHA-256 ef1d211d0808a688554f46995cd3370ee98d53b78760dff2fd2026c382c203ee).
+The new run records HEAD bdee72c as its source commit; its runtime files match
+59656c06 byte-for-byte. `RuntimeMaxUSec=infinity` was verified on the active unit.
+The website remains unpublished with provisional first-image measurements;
+final headline values will come from the complete fresh cohort.
+
+Both image arms in the first cohort completed and passed `compare` with complete cost and
+timing, no API errors and no orphan successes. LLM: $0.293542 / 731.163 seconds /
+11 clusters / full coverage. LD: $0.0641622 / 165.873 seconds / 9 clusters /
+69% coverage. Final partition ARI is 0.3383630749849558 and pair F1 is
+0.41985353946297804. Thus cost/time savings accompany substantial disagreement;
+do not present this as quality-preserving replacement. Independent pair
+enumeration and taxonomy/rejection diagnostics are archived in `image-analysis.json`.
+
+The first completed result changes the remaining investigation: add an image
+control using the same frozen final LLM catalog for both assigners, reclassifying
+the same 100 inputs with K=8 and Other. This separates assignment differences
+from independent manager/catalog differences. It is a post-result diagnostic,
+not an independently pre-registered main benchmark, and its assignment-only
+cost/time must remain separate from the full systems. Implement as a separate
+Rust example/binary so main runtime source and executable remain frozen.
+
+Recovery: poll the systemd unit's ActiveState/SubState/MainPID and inspect its
+live `/proc` process identity before deciding it stopped. Initial Main PID 1039692
+owns children 1039703/1039704/1039705/1039706 (text LLM/text LD/images LLM/images LD).
+The unit's stdout/stderr append to `runs/main-seed42-detached/supervisor.log`.
+The old exec handle 38062 is terminal 143, not a live wait. Never restart solely
+because an observation times out. Source/image mutation after the freeze needs
+a new experimental series rather than mixed-source measurements.
 
 Independent review demonstrated and fixed a journal/database association defect
 using a wrong shared journal. Run identity, successful-call coverage and raw usage
@@ -99,3 +128,10 @@ commit. Provider/research tickets retain scoped red and live smoke evidence.
 Frozen-source gate on `59656c0`: `cargo test --locked` 35 offline tests passed,
 one explicitly paid live test ignored; `cargo fmt --check`,
 `cargo clippy --locked --all-targets -- -D warnings`, and release build passed.
+
+Post-hoc frozen-catalog example adds eight offline tests. `cargo test --locked
+--all-targets` now passes 43 offline tests with one paid smoke ignored; formatting
+and all-target Clippy pass. It is a separate executable; original runtime source
+and binary remain unchanged. Archived image evidence was decompressed into a
+different directory and the frozen Rust `compare` output matched its summary
+exactly; checksums and SQLite integrity/foreign-key checks passed.

@@ -1,0 +1,67 @@
+{
+  "status": "interrupted",
+  "supervisor_exit_status": 143,
+  "supervisor_signal": "SIGTERM",
+  "signal_source": "not established",
+  "replacement": "runs/main-seed42-detached; independently supervised user systemd service",
+  "runs": {
+    "images-llm": {
+      "expected_points": 100,
+      "persisted_points": 100,
+      "pending_reassignments": 0,
+      "complete_assignments": true,
+      "recorded_attempts": 128,
+      "known_recorded_cost_usd": 0.2935419999999999,
+      "unreported_usage_attempts": [],
+      "unrecorded_inflight_request_possible": false,
+      "cost_complete": true,
+      "timing_complete": true,
+      "wall_seconds": 731.163
+    },
+    "images-ld": {
+      "expected_points": 100,
+      "persisted_points": 100,
+      "pending_reassignments": 0,
+      "complete_assignments": true,
+      "recorded_attempts": 252,
+      "known_recorded_cost_usd": 0.06416219999999997,
+      "unreported_usage_attempts": [],
+      "unrecorded_inflight_request_possible": false,
+      "cost_complete": true,
+      "timing_complete": true,
+      "wall_seconds": 165.873
+    },
+    "text-llm": {
+      "expected_points": 1000,
+      "persisted_points": 216,
+      "pending_reassignments": 48,
+      "complete_assignments": false,
+      "recorded_attempts": 521,
+      "known_recorded_cost_usd": 0.6436985000000005,
+      "unreported_usage_attempts": [],
+      "unrecorded_inflight_request_possible": true,
+      "cost_complete": false,
+      "timing_complete": false,
+      "wall_seconds": null
+    },
+    "text-ld": {
+      "expected_points": 1000,
+      "persisted_points": 1000,
+      "pending_reassignments": 0,
+      "complete_assignments": true,
+      "recorded_attempts": 5024,
+      "known_recorded_cost_usd": 0.47870270000001003,
+      "unreported_usage_attempts": [
+        {
+          "row": 3086,
+          "http_status": 503,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}"
+        }
+      ],
+      "unrecorded_inflight_request_possible": false,
+      "cost_complete": false,
+      "timing_complete": true,
+      "wall_seconds": 1211.264
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "verified_at": "2026-10-20",
+  "currency": "USD",
+  "basis": "Token-priced estimates from actual recorded API usage, not invoices. Standard service tier observed for all Sol Responses calls. No Batch/Flex/Fast/Ultrafast discount or multiplier assumed.",
+  "models": {
+    "gpt-6.1-sol": {
+      "endpoint": "/v1/responses",
+      "reasoning_effort": "high",
+      "per_million_tokens": {
+        "uncached_input": 2.0,
+        "cached_input": 0.1,
+        "cache_write": 2.5,
+        "output_including_reasoning": 10.0
+      },
+      "source": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+    },
+    "gpt-6-luna": {
+      "endpoint": "/v1/decisions",
+      "per_million_input_tokens": 0.1,
+      "other_token_charges": 0,
+      "source": "https://developers.openai.com/api/docs/guides/decisions"
+    }
+  },
+  "long_context": "Above 272000 input tokens, input/cache rates multiply by2 and Sol output by1.5. None of these experimental calls reaches the boundary."
+}

@@ -1,7 +1,9 @@
 # LD Clustering
 
 Use Rust. Code is BSD-3-Clause; downloaded datasets retain their own licenses.
-Keep credentials and downloaded data out of Git. Never invent benchmark results.
+Keep credentials and bulk source downloads out of Git. Selected licensed
+benchmark inputs and model-call evidence may be archived under experiments/
+with upstream notices. Never invent benchmark results.
 Preserve model IDs, API usage, measured elapsed time, prices and dataset hashes.
 
 Work on a feat-* branch and deliver through a GitHub PR. Planning and durable

@@ -138,3 +138,183 @@ instruction to download the file; direct provider protocols still support them.
 Verification added five result audit tests and three CLI binding/hash tests.
 The full offline suite passed (31 library tests plus 3 CLI tests; one paid live
 provider test ignored), as did formatting and all-target Clippy.
+
+## Live evidence audit — 2026-10-20 03:16:20 UTC
+
+This read-only audit checked **every complete request-attempt row** in the four
+journal snapshots, not a sample: **3,529 rows**. Each database was held in a
+read-only transaction before reading its journal, so all committed calls in its
+SQLite snapshot had already been flushed to the observed log. No trailing partial
+JSONL rows were present. The text arms remained live; their counts below are
+partial observations, not completed benchmark results.
+
+Frozen source commit: `59656c06db2e2ec8599b3bc31f90144a451e27b3`.
+All source files, Cargo manifests/lockfile, and the runner matched that commit.
+The source tree's later HEAD contained documentation only. The pinned release
+binary and `/proc/955603/exe`, `/proc/955604/exe`, and `/proc/955605/exe` all had
+SHA-256 `ef1d211d0808a688554f46995cd3370ee98d53b78760dff2fd2026c382c203ee`.
+The copied run manifest and current dataset manifest both had SHA-256
+`f136049b624f62c1cba01cc22475d1634228daa372ef679e393f78ee12fd623b`.
+The runner's recorded launch was `2026-10-20T03:03:12Z`.
+
+Independently recomputed JSONL-plus-image fingerprints matched both arms:
+
+- Text: `30fb8469f7e89d39e4f1188ca889db48f8b702c28a99c10978b7d78e6cff15c0`.
+- Images: `171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e`.
+
+Every row used the expected request and response model: Sol high for planning
+and LLM assignment, and the native Luna Decisions choice shape for LD assignment.
+Every assignment offered at most eight unique numeric cluster alternatives and
+one final Other option. Candidate IDs existed and were active within the recorded
+creation/retirement intervals. No nonstandard processing tier was requested or
+returned. Raw input/cache-read/cache-write/output token categories reproduced each
+stored cost exactly within floating-point tolerance; no failures or missing usage
+were observed.
+
+The audit inspected all user evidence parts: text matched actual dataset text or
+an explicit current-cluster example marker; all images were inline and their
+decoded bytes matched the pinned dataset PNG hashes. Original opaque point IDs,
+local paths, and evaluation-label keys were absent from model requests. Generated
+cluster names and descriptions remained legitimate model context.
+
+All maintenance/reassignment events were replayed to reconstruct the exact final
+catalog in each snapshot. Point/assignment counts matched, every stored point
+matched the expected input prefix, reassignment events referenced live clusters,
+and historical and current active counts respected 16. Pending work was retained
+in SQLite. Every committed model call matched one successful journal row. There
+were no unmatched successful rows in this snapshot.
+
+| Snapshot | Points | Calls | Plans | Assignment calls | Pending | Active / historical max | Complete |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| Text LLM | 167 | 332 | 6 | 326 | 0 | 11 / 11 | No |
+| Text LD | 706 | 2817 | 31 | 2786 | 0 | 15 / 16 | No |
+| Images LLM | 100 | 128 | 5 | 123 | 0 | 11 / 11 | Yes |
+| Images LD | 100 | 252 | 5 | 247 | 0 | 9 / 9 | Yes |
+
+Snapshot run identities and full-row journal SHA-256 values:
+
+- Text LLM run `61b99517884ab8038d86e812c24f45be`:
+  `568b4706825aebc9e5a39c139243fd1a34bf0f3a145f78915435ad8d0f5a2b49`.
+- Text LD run `54c56650f8ddf60abac1800fbb632b61`:
+  `3d9b7e5d90f8e104c3a51a068a07d0d296848e7a7bb8913efcb56fa615474f2f`.
+- Images LLM run `21d7ec59bb723361c5e28560658231c7`:
+  `89222bbbb7c8935a4f9c3fbebae935039e5682fd8db3b074b91f9611a2321624`.
+- Images LD run `a3812afc72fb62cffbb612e9333cb909`:
+  `c2bd3de6538a3a9ba5e944eda603d128a0e5d8e842cf5332a4c479ff5346eb0f`.
+
+Both completed image states had `completed_count=100`, `run_in_progress=0`,
+`timing_complete=true`, zero pending reassignment, complete reported usage, and no
+orphan calls. Independently recomputed total provider costs were **$0.293542**
+for LLM and **$0.0641622** for LD. SQLite measured total workflow times were
+**731.163 seconds** and **165.873 seconds**, respectively: 4.575x lower cost and
+4.408x less elapsed time for this image run.
+
+Independent pair counting on the final image assignments, treating each Other
+point as a separate singleton, gave ARI **0.3383630749849558**, positive-pair
+precision **0.4607142857142857**, recall **0.38565022421524664**, and F1
+**0.41985353946297804**. There were 258 shared positive pairs, 669 baseline
+positive pairs, and 560 LD positive pairs. Other counts were 0 for LLM and 31
+for LD. Thus the measured image savings accompany substantial disagreement;
+these results do not support a claim of matching clustering quality. The text
+comparison remains unproven until both 1,000-point arms complete.
+
+## Frozen-catalog image diagnostic
+
+The primary image runs disagree substantially, and their managers produced
+separate catalogs. A **post-result diagnostic**, implemented only in
+`examples/frozen_catalog.rs`, isolates assignment behavior using the completed
+LLM arm's 11 active cluster definitions and original IDs in ascending order.
+The catalog export and provenance are `runs/frozen-images-seed42/catalog.json`
+and `catalog-source.json`. Both diagnostic arms will receive the same 100
+image inputs, task, immutable catalog, K=8, and first-matching-page/Other policy.
+There are no management calls. This is a local-choice control using descriptions
+learned from the primary run, not another independent streaming benchmark.
+Diagnostic costs and time must remain separate from primary totals. The paired
+processes are to start only after both primary text runs finish, avoiding extra
+API traffic during primary timing. No diagnostic API calls were made while
+implementing this example.
+
+The example requires fresh output, request-journal, and derived progress paths;
+it never resumes or mixes artifacts. Progress records retain every completed
+assignment. A normal error writes `status=failed` with the successful prefix;
+a killed process leaves the initial `status=running`, never a false completion.
+The final `status=complete` requires exactly the requested count and a successful
+stream. `cost_complete` separately captures unknown attempt charges. Existing
+provider retries and raw credential-free attempt journals are reused.
+
+Provenance includes the exact JSONL-plus-local-image fingerprint (the same
+versioned function shape as the primary CLI), raw JSONL hash, raw catalog hash,
+full catalog definitions, runtime source commit, executable hash, and embedded
+hashes for this example, provider, types, metrics, library module declarations,
+Cargo manifest, and Cargo lockfile. Before any API call, these embedded bytes
+must match both the committed HEAD versions and the working files. This requires
+committing and rebuilding the example before execution. Ground-truth labels
+remain output/evaluation data only; the unchanged provider excludes them from
+all model evidence.
+
+Initial behavioral Red:
+
+```text
+paging_preserves_ids_and_visits_every_page_until_match:
+assertion `left == right` failed
+  left: None
+ right: Some(50)
+other_requires_every_page_to_have_no_match:
+assertion `left == right` failed
+  left: 1
+ right: 3
+existing_artifact_is_refused_without_changing_contents:
+existing evidence was silently replaced
+partial_and_failed_runs_never_claim_complete:
+assertion `left == right` failed
+  left: "complete"
+ right: "failed"
+test result: FAILED. 0 passed; 4 failed
+```
+
+Temporarily restoring the one-page implementation reproduced the same missing
+ID-50 failure (exit 101), then restoring the finished implementation returned
+Green. Eight offline tests pin all-page traversal, early page stopping, Other,
+artifact preservation and cleanup, failed-stream prefix retention, incomplete
+status, and image-byte fingerprints. The focused example tests, example Clippy
+with warnings denied, release example build with `--locked`, and Rust formatting
+check passed. The original main executable retained SHA-256
+`ef1d211d0808a688554f46995cd3370ee98d53b78760dff2fd2026c382c203ee`.
+The simplification pass kept one paging function and reused the existing provider
+and partition metrics; no dependencies, core source, runner, or primary artifacts
+were changed.
+
+Build after committing the example:
+
+```sh
+cargo test --example frozen_catalog
+cargo clippy --example frozen_catalog -- -D warnings
+cargo build --release --example frozen_catalog --locked
+```
+
+After primary completion, launch these two commands as paired processes:
+
+```sh
+target/release/examples/frozen_catalog \
+  --input data/images.jsonl \
+  --catalog runs/frozen-images-seed42/catalog.json \
+  --mode llm --k 8 --expected 100 \
+  --log runs/frozen-images-seed42/llm.calls.jsonl \
+  --output runs/frozen-images-seed42/llm.json
+
+target/release/examples/frozen_catalog \
+  --input data/images.jsonl \
+  --catalog runs/frozen-images-seed42/catalog.json \
+  --mode ld --k 8 --expected 100 \
+  --log runs/frozen-images-seed42/ld.calls.jsonl \
+  --output runs/frozen-images-seed42/ld.json
+```
+
+Each final JSON contains `status`, `metadata` (IDs/hashes/configuration),
+`processed_count`, `expected_count`, `wall_seconds`, `timing_complete`,
+`other_count`, `coverage`, `measurement` (attempt counts, comparison counts,
+request seconds, token categories, cost, completeness, journal hash),
+`dataset_label_agreement`, ordered `assignments` (`id`, `cluster_id`, `label`),
+`error`, and `progress_sha256`. Progress files derive from output names:
+`llm.progress.jsonl` and `ld.progress.jsonl`. A first metadata record, one row
+per completed point, and a terminal outcome support post-hoc auditing.
