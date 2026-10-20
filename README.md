@@ -65,6 +65,48 @@ evaluation labels do not enter model prompts. `label` exists solely for
 post-run evaluation. Input IDs must be unique. The runner verifies the saved
 stream prefix, configuration, backend, evidence hash and journal when resuming.
 
+## Controlled category-guidance experiment
+
+The [registered protocol](experiments/2026-10-20-guided-agreement-seed1042/protocol.json)
+isolates description changes with fresh discovery and held-out data. One catalog
+per modality is generated from discovery only, then rewritten jointly while
+preserving IDs, names, order and category count. Both backends receive the same
+condition's catalog and use K=8 first-match paging. Discovery, evaluation and
+reserved streaming inputs are disjoint; repeats intentionally reuse a frozen
+evaluation subset. [Dataset provenance](datasets/README.md) explains the natural
+photographs, native-resolution checks and individual licenses.
+
+Prepare and build before making paid calls:
+
+```sh
+cargo run --locked --example prepare_agreement -- --output data/guidance --previous data/text.jsonl
+cargo test --locked --all-targets
+cargo build --release --locked --example guided_agreement --example analyze_agreement
+```
+
+The previous-input argument must point to all 1,000 original v2 text items; the
+ordinary `prepare --seed 42` command above regenerates them. The curated photo
+cohort is fixed to seed 1042. Use fresh output paths, commit exact runtime source,
+and preserve the executable before running these paid stages:
+
+```sh
+bash scripts/guided-agreement.sh catalog data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh controlled data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh repeat data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh review data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh diagnostics data/guidance runs/guided-agreement
+```
+
+Set `LD_GUIDANCE_BINARY` to a preserved executable to keep later builds separate
+from measured workers. Each stage refuses existing output files and records
+source, executable and dataset pins. Review preparation is offline; review itself
+makes Sol calls. Primary assignment, catalog generation, rewrite, repeats, blinded
+review and order/page diagnostics retain separate timing and cost scopes. Run
+`target/release/examples/analyze_agreement --help` for offline analysis. Direct agreement includes Other;
+read it alongside matching named IDs divided by all items, coverage and the full
+assigned/Other cross-tab. Conditional agreement and automated reviewer judgments
+are diagnostics, not semantic ground truth.
+
 ## Algorithm
 
 1. Store the received prefix in Other until the bootstrap size is reached.

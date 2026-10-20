@@ -28,6 +28,31 @@ pub struct OpenAi {
 }
 
 impl OpenAi {
+    /// Run a schema-constrained Sol-high stage through the same attempt journal.
+    /// The decoder runs before journaling, so rejected semantic output retains its charge.
+    pub async fn structured_json<T>(
+        &self,
+        phase: &str,
+        instructions: &str,
+        items: &[Item],
+        schema: Value,
+        decode: impl Fn(&Value) -> Result<T>,
+    ) -> Result<ModelReply<T>> {
+        ensure!(
+            matches!(
+                phase,
+                "catalog_discovery" | "catalog_rewrite" | "blinded_review"
+            ),
+            "unsupported structured stage"
+        );
+        let body = structured_request(phase, instructions, items, schema)?;
+        self.request(phase, body, false, |response| {
+            let value: Value = serde_json::from_str(&response_text(response)?)?;
+            decode(&value)
+        })
+        .await
+    }
+
     pub fn new(mode: &str, log_path: impl AsRef<Path>) -> Result<Self> {
         ensure!(matches!(mode, "llm" | "ld"), "mode must be llm or ld");
         let key = std::env::var("OPENAI_API_KEY").context("OPENAI_API_KEY is required")?;
@@ -160,6 +185,21 @@ impl OpenAi {
                 ))
             } else if let Some(error) = &usage_error {
                 Err(anyhow::anyhow!("invalid provider usage: {error}"))
+            } else if call.response["model"] != request["model"] {
+                Err(anyhow::anyhow!(
+                    "provider returned unexpected model: expected {}, received {}",
+                    request["model"],
+                    call.response["model"]
+                ))
+            } else if !decisions
+                && call.response["service_tier"]
+                    .as_str()
+                    .is_some_and(|tier| tier != "default")
+            {
+                Err(anyhow::anyhow!(
+                    "provider returned unexpected processing tier: {}",
+                    call.response["service_tier"]
+                ))
             } else {
                 decode(&call.response)
             };
@@ -256,7 +296,12 @@ fn evidence(item: &Item) -> Result<Vec<Value>> {
     Ok(parts)
 }
 
-fn assignment_request(mode: &str, task: &str, item: &Item, clusters: &[Cluster]) -> Result<Value> {
+pub fn assignment_request(
+    mode: &str,
+    task: &str,
+    item: &Item,
+    clusters: &[Cluster],
+) -> Result<Value> {
     ensure!(matches!(mode, "llm" | "ld"), "unknown assignment mode");
     ensure!(
         clusters.len() <= 254,
@@ -307,7 +352,34 @@ fn assignment_request(mode: &str, task: &str, item: &Item, clusters: &[Cluster])
 }
 
 fn sol_body(input: Value, schema_name: &str, schema: Value) -> Value {
-    json!({"model":SOL,"reasoning":{"effort":"high"},"store":false,"max_output_tokens":8192,"input":input,"text":{"format":{"type":"json_schema","name":schema_name,"strict":true,"schema":schema}}})
+    json!({"model":SOL,"reasoning":{"effort":"high"},"service_tier":"default","store":false,"max_output_tokens":8192,"input":input,"text":{"format":{"type":"json_schema","name":schema_name,"strict":true,"schema":schema}}})
+}
+
+pub fn structured_request(
+    phase: &str,
+    instructions: &str,
+    items: &[Item],
+    schema: Value,
+) -> Result<Value> {
+    let mut parts = Vec::new();
+    for (index, item) in items.iter().enumerate() {
+        parts.push(json!({"type":"input_text","text":format!("Evidence example {}",index+1)}));
+        parts.extend(evidence(item)?);
+    }
+    if parts.is_empty() {
+        parts
+            .push(json!({"type":"input_text","text":"Use the supplied catalog and instructions."}));
+    }
+    let body = sol_body(
+        json!([{"role":"developer","content":instructions},{"role":"user","content":parts}]),
+        phase,
+        schema,
+    );
+    ensure!(
+        serde_json::to_vec(&body)?.len() <= MAX_BODY_BYTES,
+        "request exceeds 32 MiB local body limit"
+    );
+    Ok(body)
 }
 
 fn response_text(body: &Value) -> Result<String> {
@@ -583,7 +655,7 @@ mod tests {
     }
 
     fn completed(text: &str) -> Value {
-        json!({"status":"completed","output":[{"type":"message","content":[{"type":"output_text","text":text}]}],"usage":{"input_tokens":100,"output_tokens":10}})
+        json!({"model":SOL,"service_tier":"default","status":"completed","output":[{"type":"message","content":[{"type":"output_text","text":text}]}],"usage":{"input_tokens":100,"output_tokens":10}})
     }
 
     #[test]
@@ -798,6 +870,72 @@ mod tests {
 
     fn decision(choice: &str) -> Value {
         json!({"model":DECISIONS,"answers":[{"type":"choice","name":"cluster","choice":choice}],"usage":{"input_tokens":100,"output_tokens":0}})
+    }
+
+    #[tokio::test]
+    async fn successful_reply_from_unrequested_model_is_rejected_and_charged() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("calls.jsonl");
+        let mut body = decision("7");
+        body["model"] = json!("unrequested-model");
+        let server = Server::start(vec![(200, body)]);
+        let provider = fixture_provider(&server, &path);
+        let item = Item {
+            id: "hidden-id".into(),
+            text: "Invoice".into(),
+            image: None,
+            label: None,
+        };
+        let result = provider
+            .assign("Classify by subject", &item, &clusters())
+            .await;
+        assert!(
+            result.is_err(),
+            "a successful HTTP reply from another model must fail the experiment"
+        );
+        let rows = journal_rows(&path);
+        assert_eq!(rows.len(), 1);
+        assert_eq!(rows[0]["usage_available"], true);
+        assert_eq!(rows[0]["usage"]["input_tokens"], 100);
+        assert!(rows[0]["error"].as_str().unwrap().contains("model"));
+    }
+
+    #[tokio::test]
+    async fn structured_semantic_rejection_keeps_usage_and_does_not_retune() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("calls.jsonl");
+        let server = Server::start(vec![(200, completed(r#"{"clusters":[]}"#))]);
+        let provider = fixture_provider(&server, &path);
+        let item = Item {
+            id: "HIDDEN_ID".into(),
+            text: "Invoice".into(),
+            image: None,
+            label: Some("HIDDEN_LABEL".into()),
+        };
+        let result = provider
+            .structured_json(
+                "catalog_discovery",
+                "Discover broad subjects",
+                &[item],
+                json!({"type":"object","properties":{},"additionalProperties":false}),
+                |_: &Value| -> Result<()> { bail!("catalog is empty") },
+            )
+            .await;
+        assert!(result.is_err());
+        let rows = journal_rows(&path);
+        assert_eq!(rows.len(), 1);
+        assert_eq!(rows[0]["usage_available"], true);
+        assert_eq!(rows[0]["usage"]["input_tokens"], 100);
+        assert!(
+            rows[0]["error"]
+                .as_str()
+                .unwrap()
+                .contains("catalog is empty")
+        );
+        let wire = rows[0]["request"].to_string();
+        assert!(!wire.contains("HIDDEN_"));
+        assert_eq!(rows[0]["request"]["reasoning"]["effort"], "high");
+        assert_eq!(rows[0]["request"]["text"]["format"]["strict"], true);
     }
 
     #[test]
