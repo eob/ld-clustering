@@ -23,7 +23,7 @@ key is read at runtime and is never written to the database or request journal.
 cargo test --locked
 cargo build --release --locked
 target/release/ld-clustering prepare --output data --seed 42
-bash scripts/benchmark.sh runs/main-seed42
+bash scripts/benchmark.sh runs/main-v2-seed42
 ```
 
 The last command makes paid API calls. It starts four independent sequential
@@ -31,6 +31,12 @@ streams: text/image × LLM/LD. Each stream has concurrency one; the four arms
 overlap. Logs, SQLite state and process output are separate. Measured time covers
 the clustering loop, including bootstrap, model calls, management, reassignment
 and persistence. Dataset preparation and CLI input validation are excluded.
+
+For another execution, choose unused state, journal and output paths. The seed
+repeats dataset selection and order; it does not make the model calls
+deterministic. Repeating the paid procedure can produce different descriptions,
+assignments, costs and times. Preserved SQLite snapshots and request journals can
+be inspected without making new model calls.
 
 To process your own newline-delimited JSON:
 
@@ -136,11 +142,11 @@ After all four streams finish:
 
 ```sh
 target/release/ld-clustering compare \
-  --baseline runs/main-seed42/text-llm.sqlite \
-  --baseline-log runs/main-seed42/text-llm.calls.jsonl \
-  --ld runs/main-seed42/text-ld.sqlite \
-  --ld-log runs/main-seed42/text-ld.calls.jsonl \
-  --expected 1000 --output runs/main-seed42/text-results.json
+  --baseline runs/main-v2-seed42/text-llm.sqlite \
+  --baseline-log runs/main-v2-seed42/text-llm.calls.jsonl \
+  --ld runs/main-v2-seed42/text-ld.sqlite \
+  --ld-log runs/main-v2-seed42/text-ld.calls.jsonl \
+  --expected 1000 --output runs/main-v2-seed42/text-results.json
 ```
 
 Repeat for `images`, with `--expected 100`. Comparison requires complete runs,
@@ -188,20 +194,34 @@ not a preset taxonomy or a target count. The catalog was learned from those
 same image inputs, so this control isolates local choices; it is not another
 independent streaming evaluation or a held-out generalization test.
 
-After all primary runs finish, commit the control source and build its separate
-example executable. Both control processes use the same 100 images, frozen
-catalog, task, K=8 and first-matching-page/Other policy. They make no management
-calls. Run the following command once with each mode, launching the two modes
-together with separate fresh paths:
+Commit the source and build the main and separate control executables before
+measured API calls. Build the control before starting the primary streams:
 
 ```sh
 cargo build --release --example frozen_catalog --locked
+```
+
+Record the source, executable, input and catalog hashes, and keep those
+executables unchanged through the primary run and its control. For
+the v2 cohort, both executables were frozen before the primary launch; the queued
+control uses that existing build. Start control calls only after all four primary
+streams have finished, their expected counts match and reassignment queues are
+empty.
+
+Both control processes use the same 100 images, frozen catalog, task, K=8 and
+first-matching-page/Other policy. They make no management calls. This is a
+separate post-hoc assignment diagnostic; its costs and times exclude catalog
+creation and maintenance. For a new paid execution, build before starting the
+measured calls, then run the command below once with each mode after the primary
+streams finish, launching the two modes together with separate fresh paths:
+
+```sh
 target/release/examples/frozen_catalog \
   --input data/images.jsonl \
-  --catalog runs/frozen-images-seed42/catalog.json \
+  --catalog runs/frozen-images-v2-seed42/catalog.json \
   --mode llm --k 8 --expected 100 \
-  --log runs/frozen-images-seed42/llm.calls.jsonl \
-  --output runs/frozen-images-seed42/llm.json
+  --log runs/frozen-images-v2-seed42/llm.calls.jsonl \
+  --output runs/frozen-images-v2-seed42/llm.json
 ```
 
 For the second process use `--mode ld`, `ld.calls.jsonl` and `ld.json`.
