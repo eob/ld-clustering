@@ -49,14 +49,15 @@ latency. Public benchmark labels are a secondary check, not the baseline truth.
 
 ## Current state
 
-The amended Rust runtime is ready to freeze for a new matched four-arm cohort.
+The amended Rust runtime is frozen and a fresh matched four-arm cohort is active
+at `runs/main-v2-seed42`, launched 2026-10-20T04:22:27Z.
 It distinguishes Cluster, Other and Refused; accepted assignment refusals remain
 unassigned with per-point events and priced request counters. Invalid completed
 manager plans may retry within the existing shared three-attempt budget. Run
 session boundaries and conservative terminal-error cost markers make resumption
 and possible unjournaled charges visible. All 58 offline tests pass (44 library,
 3 CLI, 11 control-example), with one explicitly paid smoke ignored; formatting
-and all-target Clippy pass. No new paid calls have started under this amendment.
+and all-target Clippy pass. Its paid streams are now running under the version and workers recorded below.
 
 Both earlier cohorts are terminal and preserved unchanged under
 `experiments/2026-10-20-main-seed42/` and
@@ -217,3 +218,48 @@ validates matching session boundaries and accumulated measured milliseconds.
 ignored. `cargo fmt --check` and `cargo clippy --locked --all-targets -- -D warnings`
 passed. Full logs remain in /tmp/ld-clustering-v2-{all-tests,clippy,fmt}.log; the
 brief failure excerpts above preserve the durable evidence.
+
+## Active amended cohort and recovery instructions
+
+Runtime and launch checkout: 9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c. Main
+executable SHA-256: 8a59bbf1e8dbd991960d6bc76046d0e15e245cfc5a50ab724dd201a62e9e9160.
+`/proc/1128953/exe` was independently hashed to the same bytes after launch.
+All four DBs recorded one run_start event with saved_count=0 and prior_wall_ms=0.
+Main user systemd unit: `ld-clustering-main-v2-seed42-20261020.service`, supervisor
+PID1128943; initial children text LLM1128953, text LD1128954, images LLM1128955,
+images LD1128956. RuntimeMaxUSec=infinity; all API calls stay sequential per arm.
+
+The post-hoc control waiter is `ld-clustering-frozen-images-v2-20261020.service`,
+PID1129505. Script `runs/frozen-images-v2-seed42/after-main.py` waits for the new
+primary supervisor to exit, verifies four exact completed cohorts, empty queues,
+clean flags and one successful fresh session per arm, then starts the two controls.
+No control call has launched yet. Catalog hash remains
+7f0950b69ea360d694fd6d5dc58b30d74e89d69fbc172ad88757499161d16942; control executable
+hash is 35e0db257343ed1083bf2ef7187f4e0736985f288ddcf70426dfdd4afbac27ff.
+Local frozen executable backups are /tmp/ld-clustering-v2-frozen and
+/tmp/ld-clustering-v2-frozen-control. Do not rebuild release binaries or change
+runtime files while these measured streams and controls are active.
+
+Main archive/verifier: `/tmp/ld-archive-final.py`, usage
+`/tmp/ld-archive-final.README.md`. Nine focused helper checks and a full synthetic
+four-arm archive plus relocated compare/verify-only pass against the exact frozen
+executable. The synthetic fixture was temporary and is not experimental evidence.
+After actual terminal state and all expected counts, run:
+
+```sh
+python3 /tmp/ld-archive-final.py \
+  --repo /mnt/disks/data/ld-clustering \
+  --run runs/main-v2-seed42 \
+  --output experiments/2026-10-20-main-v2-seed42 \
+  --runtime-source 9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c \
+  --launch-head 9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c \
+  --binary-sha256 8a59bbf1e8dbd991960d6bc76046d0e15e245cfc5a50ab724dd201a62e9e9160 \
+  --service ld-clustering-main-v2-seed42-20261020.service
+```
+
+Do not infer success from collected systemd units (a nonexistent unit may display
+Result=success by default). Use actual process absence, DB/session markers, logs
+and complete output artifacts. No automatic experiment restart solely because an
+observation times out. Unknown usage remains unknown even after successful retry.
+The control archive helper is being prepared independently; its source/binary
+pins must use this amended control, not the never-run first version.
