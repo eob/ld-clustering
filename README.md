@@ -62,7 +62,9 @@ stream prefix, configuration, backend, evidence hash and journal when resuming.
 3. For each new point, traverse active clusters in stable ID order, in pages of
    at most K clusters. Every call also offers Other. A selected cluster ends the
    search; Other advances to the next page. If every page returns Other, keep
-   the point in Other. No eligible cluster is silently truncated.
+   the point in Other. A model refusal stops paging immediately and leaves the
+   point unassigned in Other, with a separate refusal event. Refusals are not
+   retried or forced into a cluster. No eligible cluster is silently truncated.
 4. Ask Sol for maintenance when either the interval expires or enough **new**
    Other assignments accumulate. Persistent outliers alone do not repeatedly
    trigger management. Give it at most 40 representative examples, with up to
@@ -73,6 +75,15 @@ stream prefix, configuration, backend, evidence hash and journal when resuming.
 6. Give the final stream a maintenance opportunity, then drain its queue before
    marking the run complete.
 
+A completed manager response with an invalid plan may retry within the same
+maximum of three request attempts used for transient transport/server retries.
+Every failed reply and its known usage remains in the journal. Planner refusals
+and incomplete responses stop the run. There is no model or prompt fallback.
+Assignment refusals are accepted non-assignment outcomes for both backends;
+`assignment_refusal_calls` counts those requests separately from ordinary Other
+choices. Reassignment can revisit an unassigned point, so refusal-call counts
+are not counts of distinct points.
+
 Each assignment request contains at most K cluster choices **plus Other**; K
 and the maximum active-cluster count are separate settings. The API permits
 at most 254 cluster alternatives plus Other. Stable first-match paging is
@@ -81,7 +92,11 @@ Both arms use exactly the same paging procedure.
 
 The database contains `points`, `clusters`, `assignments`, `events`, `calls`,
 `reassignment` and `meta`. Retired cluster rows and management events preserve
-history. Assignment updates and queue removal are atomic. On restart, pending
+history. Each run invocation records paired `run_start`/`run_finish` events;
+new uninterrupted benchmark arms require one successful pair starting from empty
+state. Terminal invocation errors conservatively mark cost continuity incomplete,
+because a charged request could be missing after a journal-write failure.
+Assignment updates and queue removal are atomic. On restart, pending
 reassignments finish before new stream points. Invalid or conflicting plans
 roll back without dropping points. Other is represented by a null cluster ID,
 so it never depends on an ordinary cluster surviving maintenance.
@@ -108,6 +123,14 @@ is deliberately changed. Independent management calls can also vary, so final
 partition disagreement includes both local assignment differences and later
 catalog divergence. One stream order is a case study, not a statistical claim
 about all orders or all workloads.
+
+Two earlier attempts are retained under `experiments/2026-10-20-main-seed42/`
+and `experiments/2026-10-20-main-seed42-detached/`. Their image pairs completed,
+but their text comparisons did not. The second exposed an invalid maintenance
+plan and then an assignment refusal; the amended runtime handles those cases
+explicitly. The new matched cohort restarts all four arms from empty state with
+one frozen amended executable. Earlier prefixes are not continued under changed
+semantics or mixed into its headline results.
 
 After all four streams finish:
 
@@ -138,6 +161,11 @@ calls also appear in SQLite. Unknown usage means unknown cost, never free
 inference. Unclean interrupted timing is flagged instead of presented as a
 complete end-to-end measurement. Token-priced cost estimates are not invoices.
 
+Clean resumes accumulate each invocation's measured loop duration and exclude
+manual pauses. Present that total as cumulative processing seconds and record
+failure/restart timestamps separately. A complete timing flag does not imply
+one uninterrupted invocation.
+
 Price baseline, checked 2026-10-20, USD per million tokens:
 
 | Endpoint/model | Ordinary input | Cache read | Cache write | Output |
@@ -149,6 +177,53 @@ Sol output usage already includes reasoning tokens. Rates are pinned from the
 [Sol model documentation](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
 and [Decisions guide](https://developers.openai.com/api/docs/guides/decisions).
 The standard processing tier is used; no Batch or Flex pricing is assumed.
+
+## Frozen-catalog image diagnostic
+
+A separate post-hoc control measures assignment behavior after removing the
+independent managers' catalog differences. Its catalog is the **11 active
+clusters discovered by the completed first-cohort LLM image run**, with original
+IDs, names, descriptions and ordering preserved. Eleven is an observed result,
+not a preset taxonomy or a target count. The catalog was learned from those
+same image inputs, so this control isolates local choices; it is not another
+independent streaming evaluation or a held-out generalization test.
+
+After all primary runs finish, commit the control source and build its separate
+example executable. Both control processes use the same 100 images, frozen
+catalog, task, K=8 and first-matching-page/Other policy. They make no management
+calls. Run the following command once with each mode, launching the two modes
+together with separate fresh paths:
+
+```sh
+cargo build --release --example frozen_catalog --locked
+target/release/examples/frozen_catalog \
+  --input data/images.jsonl \
+  --catalog runs/frozen-images-seed42/catalog.json \
+  --mode llm --k 8 --expected 100 \
+  --log runs/frozen-images-seed42/llm.calls.jsonl \
+  --output runs/frozen-images-seed42/llm.json
+```
+
+For the second process use `--mode ld`, `ld.calls.jsonl` and `ld.json`.
+The catalog file is a JSON array of `{ "id": 1, "name": "...",
+"description": "..." }` objects selected from the chosen completed baseline's
+active clusters in ascending ID order. Preserve the gaps in its IDs. Record the
+catalog export's source alongside it; the example records its exact hash and
+full contents.
+
+Each arm writes its credential-free API journal, an ordered assignment list,
+`llm.progress.jsonl` or `ld.progress.jsonl`, and a final JSON containing source,
+executable, input/image and catalog hashes, counts, measured time, token usage,
+cost and completeness flags. Existing artifact paths are refused. Normal
+failures preserve the completed prefix as `status=failed`; interruption leaves
+`status=running`, and this small control has no resume mode.
+
+Keep these costs and times separate from the mutable-catalog primary results.
+Only compare complete 100-point arms with matching evidence/catalog hashes.
+Check `measurement.cost_complete` and `timing_complete` before making cost or
+time claims: a numerical cost can be only a known subtotal. In primary comparison
+output, `unknown_usage_calls` counts recorded requests without usage, while an
+unclean history can make cost incomplete even when that recorded count is zero.
 
 ## Related work
 

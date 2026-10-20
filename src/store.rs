@@ -84,6 +84,14 @@ impl Store {
         Ok(())
     }
 
+    pub fn record_event(&self, kind: &str, payload: &Value) -> Result<()> {
+        self.connection.execute(
+            "INSERT INTO events(kind,payload) VALUES(?,?)",
+            params![kind, payload.to_string()],
+        )?;
+        Ok(())
+    }
+
     pub fn insert(&mut self, item: &Item, cluster: Option<i64>) -> Result<()> {
         let tx = self.connection.transaction()?;
         tx.execute(

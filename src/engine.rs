@@ -40,11 +40,21 @@ impl<M: Model> Clusterer<M> {
             let mut reply = self.model.assign(&self.config.task, item, page).await?;
             reply.call.phase = phase.to_owned();
             self.store.record_call(&reply.call)?;
-            if let Some(id) = reply.value {
-                if !page.iter().any(|c| c.id == id) {
-                    bail!("model selected cluster {id} outside candidate page");
+            match reply.value {
+                Assignment::Cluster(id) => {
+                    if !page.iter().any(|c| c.id == id) {
+                        bail!("model selected cluster {id} outside candidate page");
+                    }
+                    return Ok(Some(id));
                 }
-                return Ok(Some(id));
+                Assignment::Other => (),
+                Assignment::Refused => {
+                    self.store.record_event(
+                        "assignment_refusal",
+                        &serde_json::json!({"point_id":item.id,"phase":phase}),
+                    )?;
+                    return Ok(None);
+                }
             }
         }
         Ok(None)
@@ -133,10 +143,29 @@ impl<M: Model> Clusterer<M> {
             .unwrap_or_default()
             .parse::<u64>()
             .unwrap_or(0);
+        let session: usize = self.store.connection.query_row(
+            "SELECT COUNT(*)+1 FROM events WHERE kind='run_start'",
+            [],
+            |row| row.get(0),
+        )?;
+        self.store.record_event("run_start", &serde_json::json!({
+            "session":session,"saved_count":saved.len(),"prior_wall_ms":prior_ms,
+            "started_at_unix_ms":std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH)?.as_millis() as u64
+        }))?;
         let result = self.run_inner(items, saved.len()).await;
-        self.store.set_meta(
-            "wall_ms",
-            &(prior_ms + started.elapsed().as_millis() as u64).to_string(),
+        let elapsed_ms = started.elapsed().as_millis() as u64;
+        if result.is_err() {
+            // A terminal error can include a dispatched request whose journal write failed.
+            self.store.set_meta("cost_history_complete", "false")?;
+        }
+        self.store
+            .set_meta("wall_ms", &(prior_ms + elapsed_ms).to_string())?;
+        self.store.record_event(
+            "run_finish",
+            &serde_json::json!({
+                "session":session,"elapsed_ms":elapsed_ms,"success":result.is_ok(),
+                "error":result.as_ref().err().map(ToString::to_string)
+            }),
         )?;
         self.store.set_meta("run_in_progress", "0")?;
         result
@@ -170,6 +199,8 @@ mod tests {
     use std::{path::Path, sync::Mutex};
     struct Mock {
         pages: Mutex<Vec<Vec<i64>>>,
+        refuse: bool,
+        fail: bool,
     }
     fn reply<T>(value: T) -> ModelReply<T> {
         ModelReply {
@@ -191,14 +222,23 @@ mod tests {
             _task: &str,
             _item: &Item,
             clusters: &[Cluster],
-        ) -> Result<ModelReply<Option<i64>>> {
+        ) -> Result<ModelReply<Assignment>> {
             self.pages
                 .lock()
                 .unwrap()
                 .push(clusters.iter().map(|c| c.id).collect());
-            Ok(reply(
-                clusters.iter().find(|c| c.name == "target").map(|c| c.id),
-            ))
+            if self.fail {
+                bail!("request completed but journal write failed");
+            }
+            Ok(reply(if self.refuse {
+                Assignment::Refused
+            } else {
+                clusters
+                    .iter()
+                    .find(|c| c.name == "target")
+                    .map(|c| Assignment::Cluster(c.id))
+                    .unwrap_or(Assignment::Other)
+            }))
         }
         async fn plan(
             &self,
@@ -224,6 +264,8 @@ mod tests {
             store: Store::open(Path::new(":memory:"), &serde_json::json!({}))?,
             model: Mock {
                 pages: Mutex::new(vec![]),
+                refuse: false,
+                fail: false,
             },
             config: Config {
                 task: "group".into(),
@@ -322,6 +364,85 @@ mod tests {
         assert_eq!(c.store.get_meta("timing_complete")?, Some("false".into()));
         assert_eq!(c.store.get_meta("run_in_progress")?, Some("0".into()));
         assert_eq!(c.store.get_meta("completed_count")?, Some("2".into()));
+        Ok(())
+    }
+    #[tokio::test]
+    async fn refusal_stops_paging_and_retains_unassigned_point_with_reason() -> Result<()> {
+        let mut c = clusterer()?;
+        c.config.k = 1;
+        c.model.refuse = true;
+        c.store.apply(
+            &Plan {
+                operations: vec![
+                    Operation::Create {
+                        name: "a".into(),
+                        description: "a".into(),
+                    },
+                    Operation::Create {
+                        name: "b".into(),
+                        description: "b".into(),
+                    },
+                ],
+            },
+            5,
+        )?;
+        let point = item("refused");
+        let target = c.assign(&point, "assign").await?;
+        c.store.insert(&point, target)?;
+        assert_eq!(target, None);
+        assert_eq!(c.model.pages.lock().unwrap().len(), 1);
+        assert_eq!(c.store.assignments()?, vec![(point, None)]);
+        let payload: String = c.store.connection.query_row(
+            "SELECT payload FROM events WHERE kind='assignment_refusal'",
+            [],
+            |r| r.get(0),
+        )?;
+        assert_eq!(
+            serde_json::from_str::<serde_json::Value>(&payload)?,
+            serde_json::json!({"point_id":"refused","phase":"assign"})
+        );
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn session_boundaries_identify_appended_processing_and_terminal_errors() -> Result<()> {
+        let mut c = clusterer()?;
+        c.run(&[item("a"), item("b")]).await?;
+        c.run(&[item("a"), item("b"), item("c")]).await?;
+        let starts: Vec<String> = c
+            .store
+            .connection
+            .prepare("SELECT payload FROM events WHERE kind='run_start' ORDER BY id")?
+            .query_map([], |r| r.get(0))?
+            .collect::<rusqlite::Result<_>>()?;
+        assert_eq!(starts.len(), 2);
+        let first: serde_json::Value = serde_json::from_str(&starts[0])?;
+        let second: serde_json::Value = serde_json::from_str(&starts[1])?;
+        assert_eq!(first["session"], 1);
+        assert_eq!(first["saved_count"], 0);
+        assert_eq!(first["prior_wall_ms"], 0);
+        assert_eq!(second["session"], 2);
+        assert_eq!(second["saved_count"], 2);
+        c.model.fail = true;
+        assert!(
+            c.run(&[item("a"), item("b"), item("c"), item("d")])
+                .await
+                .is_err()
+        );
+        assert_eq!(
+            c.store.get_meta("cost_history_complete")?,
+            Some("false".into())
+        );
+        assert_eq!(c.store.get_meta("run_in_progress")?, Some("0".into()));
+        let finish: String = c.store.connection.query_row(
+            "SELECT payload FROM events WHERE kind='run_finish' ORDER BY id DESC LIMIT 1",
+            [],
+            |r| r.get(0),
+        )?;
+        let finish: serde_json::Value = serde_json::from_str(&finish)?;
+        assert_eq!(finish["session"], 3);
+        assert_eq!(finish["success"], false);
+        assert_eq!(c.store.count()?, 3);
         Ok(())
     }
 }

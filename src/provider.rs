@@ -10,7 +10,9 @@ use async_trait::async_trait;
 use base64::Engine;
 use serde_json::{Value, json};
 
-use crate::types::{CallRecord, Cluster, Example, Item, Model, ModelReply, Operation, Plan, Usage};
+use crate::types::{
+    Assignment, CallRecord, Cluster, Example, Item, Model, ModelReply, Operation, Plan, Usage,
+};
 
 const SOL: &str = "gpt-6.1-sol";
 const DECISIONS: &str = "gpt-6-luna";
@@ -63,6 +65,7 @@ impl OpenAi {
         row["attempt"] = json!(attempt);
         row["http_status"] = json!(status);
         row["error"] = json!(error);
+        row["refusal"] = json!(response_refusal(&call.response));
         row["usage_available"] = json!(
             call.response["usage"]["input_tokens"].is_u64()
                 && call.response["usage"]["output_tokens"].is_u64()
@@ -155,7 +158,7 @@ impl OpenAi {
                     status.unwrap_or(0),
                     call.response
                 ))
-            } else if let Some(error) = usage_error {
+            } else if let Some(error) = &usage_error {
                 Err(anyhow::anyhow!("invalid provider usage: {error}"))
             } else {
                 decode(&call.response)
@@ -165,10 +168,17 @@ impl OpenAi {
             match result {
                 Ok(value) => return Ok(ModelReply { value, call }),
                 Err(error) => {
-                    let retry = status.is_some_and(|s| matches!(s, 429 | 502 | 503 | 529))
-                        || transport_error
-                            .as_ref()
-                            .is_some_and(|(_, before_dispatch)| *before_dispatch);
+                    let refusal = response_refusal(&call.response);
+                    let retry = !(phase == "plan" && refusal)
+                        && (status.is_some_and(|s| matches!(s, 429 | 502 | 503 | 529))
+                            || transport_error
+                                .as_ref()
+                                .is_some_and(|(_, before_dispatch)| *before_dispatch)
+                            || (phase == "plan"
+                                && status == Some(200)
+                                && transport_error.is_none()
+                                && usage_error.is_none()
+                                && call.response["status"] == "completed"));
                     if !retry || attempt == MAX_ATTEMPTS {
                         return Err(error).with_context(|| {
                             format!("{phase} attempt {attempt}; recorded in request log")
@@ -192,7 +202,7 @@ impl Model for OpenAi {
         task: &str,
         item: &Item,
         clusters: &[Cluster],
-    ) -> Result<ModelReply<Option<i64>>> {
+    ) -> Result<ModelReply<Assignment>> {
         let body = assignment_request(&self.mode, task, item, clusters)?;
         self.request("assign", body, self.mode == "ld", |response| {
             parse_assignment(&self.mode, response, clusters)
@@ -323,7 +333,24 @@ fn response_text(body: &Value) -> Result<String> {
     Ok(text)
 }
 
-fn parse_assignment(mode: &str, body: &Value, clusters: &[Cluster]) -> Result<Option<i64>> {
+pub(crate) fn response_refusal(body: &Value) -> bool {
+    body["answers"]
+        .as_array()
+        .is_some_and(|answers| answers.iter().any(|answer| answer["type"] == "refusal"))
+        || sol_refusal(body)
+}
+
+fn sol_refusal(body: &Value) -> bool {
+    body["output"].as_array().is_some_and(|output| {
+        output.iter().any(|message| {
+            message["content"]
+                .as_array()
+                .is_some_and(|content| content.iter().any(|part| part["type"] == "refusal"))
+        })
+    })
+}
+
+fn parse_assignment(mode: &str, body: &Value, clusters: &[Cluster]) -> Result<Assignment> {
     let choice = if mode == "ld" {
         let answers = body["answers"]
             .as_array()
@@ -331,6 +358,9 @@ fn parse_assignment(mode: &str, body: &Value, clusters: &[Cluster]) -> Result<Op
         ensure!(answers.len() == 1, "expected exactly one decision answer");
         let answer = &answers[0];
         ensure!(answer["name"] == "cluster", "unexpected question name");
+        if answer["type"] == "refusal" {
+            return Ok(Assignment::Refused);
+        }
         ensure!(
             answer["type"] == "choice",
             "model refused or returned wrong decision type"
@@ -340,6 +370,10 @@ fn parse_assignment(mode: &str, body: &Value, clusters: &[Cluster]) -> Result<Op
             .context("decision choice must be a string")?
             .to_owned()
     } else {
+        ensure!(body["status"] == "completed", "response did not complete");
+        if sol_refusal(body) {
+            return Ok(Assignment::Refused);
+        }
         let output: Value = serde_json::from_str(&response_text(body)?)?;
         output["cluster_id"]
             .as_str()
@@ -347,14 +381,14 @@ fn parse_assignment(mode: &str, body: &Value, clusters: &[Cluster]) -> Result<Op
             .to_owned()
     };
     if choice == "other" {
-        return Ok(None);
+        return Ok(Assignment::Other);
     }
     let id: i64 = choice.parse().context("invalid cluster ID")?;
     ensure!(
         clusters.iter().any(|c| c.id.to_string() == choice),
         "unknown cluster choice {choice}"
     );
-    Ok(Some(id))
+    Ok(Assignment::Cluster(id))
 }
 
 pub(crate) fn token_usage(body: &Value, decisions: bool) -> Result<Usage> {
@@ -528,7 +562,10 @@ mod tests {
     #[test]
     fn native_choice_is_decoded_and_unknown_choice_is_refused() {
         let body = json!({"answers":[{"type":"choice","name":"cluster","choice":"7"}]});
-        assert_eq!(parse_assignment("ld", &body, &clusters()).unwrap(), Some(7));
+        assert_eq!(
+            parse_assignment("ld", &body, &clusters()).unwrap(),
+            Assignment::Cluster(7)
+        );
         let bad = json!({"answers":[{"type":"choice","name":"cluster","choice":"999"}]});
         assert!(parse_assignment("ld", &bad, &clusters()).is_err());
     }
@@ -558,15 +595,16 @@ mod tests {
                 &clusters()
             )
             .unwrap(),
-            None
+            Assignment::Other
         );
-        assert!(
+        assert_eq!(
             parse_assignment(
                 "ld",
                 &json!({"answers":[{"type":"refusal","name":"cluster"}]}),
                 &clusters()
             )
-            .is_err()
+            .unwrap(),
+            Assignment::Refused
         );
         assert!(
             parse_assignment(
@@ -579,11 +617,11 @@ mod tests {
         assert!(parse_assignment("ld", &json!({"answers":[]}), &clusters()).is_err());
         assert_eq!(
             parse_assignment("llm", &completed(r#"{"cluster_id":"7"}"#), &clusters()).unwrap(),
-            Some(7)
+            Assignment::Cluster(7)
         );
         assert_eq!(
             parse_assignment("llm", &completed(r#"{"cluster_id":"other"}"#), &clusters()).unwrap(),
-            None
+            Assignment::Other
         );
         assert!(
             parse_assignment("llm", &completed(r#"{"cluster_id":"999"}"#), &clusters()).is_err()
@@ -592,7 +630,10 @@ mod tests {
         partial["status"] = json!("incomplete");
         assert!(parse_assignment("llm", &partial, &clusters()).is_err());
         let refused = json!({"status":"completed","output":[{"content":[{"type":"refusal","refusal":"Cannot classify"}]}]});
-        assert!(parse_assignment("llm", &refused, &clusters()).is_err());
+        assert_eq!(
+            parse_assignment("llm", &refused, &clusters()).unwrap(),
+            Assignment::Refused
+        );
     }
 
     #[test]
@@ -759,6 +800,162 @@ mod tests {
         json!({"model":DECISIONS,"answers":[{"type":"choice","name":"cluster","choice":choice}],"usage":{"input_tokens":100,"output_tokens":0}})
     }
 
+    #[test]
+    fn correctly_shaped_assignment_refusals_are_accepted_outcomes() {
+        let native = json!({"model":DECISIONS,"answers":[{"type":"refusal","name":"cluster","refusal":"I cannot provide that information."}],"usage":{"input_tokens":15,"output_tokens":0}});
+        let sol = json!({"model":SOL,"status":"completed","output":[{"type":"message","content":[{"type":"refusal","refusal":"I cannot provide that information."}]}],"usage":{"input_tokens":15,"output_tokens":0}});
+        for (mode, body) in [("ld", native), ("llm", sol)] {
+            assert_eq!(
+                parse_assignment(mode, &body, &clusters()).unwrap(),
+                Assignment::Refused,
+                "{mode} assignment refusal must remain distinct from Other"
+            );
+        }
+        for malformed in [
+            json!({"answers":[{"type":"refusal","name":"wrong"}]}),
+            json!({"answers":[{"type":"refusal","name":"cluster"},{"type":"choice","name":"cluster","choice":"7"}]}),
+        ] {
+            assert!(parse_assignment("ld", &malformed, &clusters()).is_err());
+        }
+        let wrong_protocol =
+            json!({"status":"completed","answers":[{"type":"refusal","name":"cluster"}]});
+        assert!(parse_assignment("llm", &wrong_protocol, &clusters()).is_err());
+    }
+
+    #[tokio::test]
+    async fn invalid_completed_plan_retries_same_request_before_success() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("calls.jsonl");
+        let invalid =
+            completed(r#"{"operations":[{"op":"retire","id":7},{"op":"retire","id":7}]}"#);
+        let valid = completed(r#"{"operations":[]}"#);
+        let server = Server::start(vec![(200, invalid), (200, valid)]);
+        let provider = fixture_provider(&server, &path);
+        let reply = provider.plan("Group messages", &clusters(), &[], 16).await;
+        assert!(
+            reply.is_ok(),
+            "completed invalid planner reply must consume one bounded retry: {:?}",
+            reply.err().map(|error| error.to_string())
+        );
+        let rows = std::fs::read_to_string(path)
+            .unwrap()
+            .lines()
+            .map(|line| serde_json::from_str::<Value>(line).unwrap())
+            .collect::<Vec<_>>();
+        assert_eq!(rows.len(), 2);
+        assert_eq!(rows[0]["attempt"], 1);
+        assert!(
+            rows[0]["error"]
+                .as_str()
+                .unwrap()
+                .contains("more than once")
+        );
+        assert_eq!(rows[0]["usage"]["input_tokens"], 100);
+        assert_eq!(rows[1]["attempt"], 2);
+        assert!(rows[1]["error"].is_null());
+        assert_eq!(rows[0]["request"], rows[1]["request"]);
+    }
+
+    #[tokio::test]
+    async fn plan_network_and_parse_failures_share_one_attempt_budget() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("calls.jsonl");
+        let server = Server::start(vec![
+            (429, json!({"error":"rate limit"})),
+            (200, completed("invalid plan JSON")),
+            (200, completed(r#"{"operations":[]}"#)),
+        ]);
+        let provider = fixture_provider(&server, &path);
+        assert!(provider.plan("Group", &clusters(), &[], 16).await.is_ok());
+        let rows = journal_rows(&path);
+        assert_eq!(rows.len(), MAX_ATTEMPTS);
+        assert_eq!(rows[2]["attempt"], MAX_ATTEMPTS);
+        assert!(rows[2]["error"].is_null());
+        assert!(rows.iter().all(|row| row["request"] == rows[0]["request"]));
+        assert_eq!(rows[0]["usage_available"], false);
+        assert_eq!(rows[1]["usage_available"], true);
+        assert!(rows[1]["usage"]["cost_usd"].as_f64().unwrap() > 0.0);
+    }
+
+    #[tokio::test]
+    async fn invalid_plan_retries_stop_at_three_and_keep_every_charge() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("calls.jsonl");
+        let invalid =
+            completed(r#"{"operations":[{"op":"retire","id":7},{"op":"retire","id":7}]}"#);
+        let server = Server::start(vec![(200, invalid); MAX_ATTEMPTS]);
+        let provider = fixture_provider(&server, &path);
+        assert!(provider.plan("Group", &clusters(), &[], 16).await.is_err());
+        let rows = journal_rows(&path);
+        assert_eq!(rows.len(), MAX_ATTEMPTS);
+        for (index, row) in rows.iter().enumerate() {
+            assert_eq!(row["attempt"], index + 1);
+            assert!(row["error"].as_str().unwrap().contains("more than once"));
+            assert_eq!(row["usage_available"], true);
+            assert_eq!(row["usage"]["input_tokens"], 100);
+            assert!(row["usage"]["cost_usd"].as_f64().unwrap() > 0.0);
+            assert_eq!(row["refusal"], false);
+            assert_eq!(row["request"], rows[0]["request"]);
+        }
+    }
+
+    #[tokio::test]
+    async fn planner_refusals_and_incomplete_replies_are_not_semantic_retries() {
+        let refusal = json!({"status":"completed","output":[{"content":[{"type":"refusal","refusal":"Cannot provide plan"}]}],"usage":{"input_tokens":15,"output_tokens":0}});
+        let incomplete = json!({"status":"incomplete","output":[],"usage":{"input_tokens":15,"output_tokens":0}});
+        for (status, body, refused) in [
+            (200, refusal.clone(), true),
+            (503, refusal, true),
+            (200, incomplete, false),
+        ] {
+            let dir = tempfile::tempdir().unwrap();
+            let path = dir.path().join("calls.jsonl");
+            let server = Server::start(vec![(status, body.clone())]);
+            let provider = fixture_provider(&server, &path);
+            assert!(provider.plan("Group", &clusters(), &[], 16).await.is_err());
+            let rows = journal_rows(&path);
+            assert_eq!(rows.len(), 1);
+            assert_eq!(rows[0]["response"], body);
+            assert_eq!(rows[0]["refusal"], refused);
+            assert_eq!(rows[0]["usage"]["input_tokens"], 15);
+            assert!(rows[0]["error"].is_string());
+        }
+    }
+
+    #[tokio::test]
+    async fn sol_assignment_refusal_is_journaled_as_a_charged_outcome() {
+        let dir = tempfile::tempdir().unwrap();
+        let path = dir.path().join("calls.jsonl");
+        let body = json!({"model":SOL,"status":"completed","output":[{"content":[{"type":"refusal","refusal":"Cannot classify"}]}],"usage":{"input_tokens":15,"output_tokens":0}});
+        let server = Server::start(vec![(200, body.clone())]);
+        let mut provider = fixture_provider(&server, &path);
+        provider.mode = "llm".into();
+        let item = Item {
+            id: "opaque".into(),
+            text: "can you fill in my credit card number on the screen".into(),
+            image: None,
+            label: None,
+        };
+        let reply = provider.assign("Group", &item, &clusters()).await.unwrap();
+        assert_eq!(reply.value, Assignment::Refused);
+        assert_eq!(reply.call.response, body);
+        let rows = journal_rows(&path);
+        assert_eq!(rows.len(), 1);
+        assert_eq!(rows[0]["refusal"], true);
+        assert_eq!(rows[0]["usage_available"], true);
+        assert_eq!(rows[0]["usage"]["input_tokens"], 15);
+        assert!(rows[0]["usage"]["cost_usd"].as_f64().unwrap() > 0.0);
+        assert!(rows[0]["error"].is_null());
+    }
+
+    fn journal_rows(path: &Path) -> Vec<Value> {
+        std::fs::read_to_string(path)
+            .unwrap()
+            .lines()
+            .map(|line| serde_json::from_str(line).unwrap())
+            .collect()
+    }
+
     #[tokio::test]
     async fn retry_and_semantic_failures_are_journaled_without_auth() {
         let dir = tempfile::tempdir().unwrap();
@@ -781,7 +978,7 @@ mod tests {
                 .await
                 .unwrap()
                 .value,
-            Some(7)
+            Assignment::Cluster(7)
         );
         assert!(
             provider
@@ -829,7 +1026,14 @@ mod tests {
             label: None,
         };
         assert!(provider.assign("Group", &item, &clusters()).await.is_err());
-        assert!(provider.assign("Group", &item, &clusters()).await.is_err());
+        assert_eq!(
+            provider
+                .assign("Group", &item, &clusters())
+                .await
+                .unwrap()
+                .value,
+            Assignment::Refused
+        );
         let rows = std::fs::read_to_string(path)
             .unwrap()
             .lines()
@@ -838,7 +1042,9 @@ mod tests {
         assert_eq!(rows.len(), 2);
         assert!(rows.iter().all(|row| row["attempt"] == 1));
         assert_eq!(rows[1]["usage"]["input_tokens"], 23);
-        assert!(rows[1]["error"].as_str().unwrap().contains("refused"));
+        assert!(rows[1]["error"].is_null());
+        assert_eq!(rows[1]["refusal"], true);
+        assert_eq!(rows[0]["refusal"], false);
     }
 
     #[tokio::test]
@@ -879,7 +1085,7 @@ mod tests {
                 ),
             ] {
                 let reply = provider.assign(task, item, &catalog).await.unwrap();
-                assert_eq!(reply.value, Some(7));
+                assert_eq!(reply.value, Assignment::Cluster(7));
                 println!(
                     "SMOKE assign {mode} {} model={} elapsed_ms={} cost_usd={:.8}",
                     if item.image.is_some() {

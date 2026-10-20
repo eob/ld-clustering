@@ -4,7 +4,7 @@ use clap::Parser;
 use ld_clustering::{
     metrics,
     provider::OpenAi,
-    types::{CallRecord, Cluster, Item, Model, Usage},
+    types::{Assignment as AssignmentOutcome, CallRecord, Cluster, Item, Model, Usage},
 };
 use serde::Serialize;
 use serde_json::{Value, json};
@@ -43,6 +43,7 @@ struct Args {
 struct Assignment {
     id: String,
     cluster_id: Option<i64>,
+    refused: bool,
     label: Option<String>,
 }
 
@@ -52,19 +53,23 @@ async fn assign_pages<M: Model>(
     item: &Item,
     catalog: &[Cluster],
     k: usize,
-) -> Result<Option<i64>> {
+) -> Result<AssignmentOutcome> {
     ensure!((1..=254).contains(&k), "k must be between 1 and 254");
     for page in catalog.chunks(k) {
         let reply = model.assign(task, item, page).await?;
-        if let Some(id) = reply.value {
-            ensure!(
-                page.iter().any(|c| c.id == id),
-                "model selected a cluster outside its candidate page"
-            );
-            return Ok(Some(id));
+        match reply.value {
+            AssignmentOutcome::Cluster(id) => {
+                ensure!(
+                    page.iter().any(|c| c.id == id),
+                    "model selected a cluster outside its candidate page"
+                );
+                return Ok(AssignmentOutcome::Cluster(id));
+            }
+            AssignmentOutcome::Other => (),
+            AssignmentOutcome::Refused => return Ok(AssignmentOutcome::Refused),
         }
     }
-    Ok(None)
+    Ok(AssignmentOutcome::Other)
 }
 
 fn reserve_artifacts(paths: &[&Path]) -> Result<Vec<File>> {
@@ -189,14 +194,20 @@ async fn process<M: Model>(
     progress: &mut impl Write,
 ) -> Result<()> {
     for (ordinal, item) in items.iter().enumerate() {
-        let cluster_id = assign_pages(model, TASK, item, catalog, k).await?;
+        let outcome = assign_pages(model, TASK, item, catalog, k).await?;
+        let (cluster_id, refused) = match outcome {
+            AssignmentOutcome::Cluster(id) => (Some(id), false),
+            AssignmentOutcome::Other => (None, false),
+            AssignmentOutcome::Refused => (None, true),
+        };
         append(
             progress,
-            &json!({"type":"assignment","ordinal":ordinal,"id":item.id,"cluster_id":cluster_id}),
+            &json!({"type":"assignment","ordinal":ordinal,"id":item.id,"cluster_id":cluster_id,"refused":refused}),
         )?;
         assignments.push(Assignment {
             id: item.id.clone(),
             cluster_id,
+            refused,
             label: item.label.clone(),
         });
         eprintln!("processed {} / {}", assignments.len(), items.len());
@@ -220,6 +231,8 @@ fn journal_summary(path: &Path, run_id: &str, mode: &str, k: usize) -> Result<Va
     };
     let mut calls = 0;
     let mut errors = 0;
+    let mut assignment_refusal_calls = 0;
+    let mut unknown_usage_calls = 0;
     let mut comparisons = 0;
     let mut elapsed_ms = 0_u64;
     let mut usage = Usage::default();
@@ -256,6 +269,8 @@ fn journal_summary(path: &Path, run_id: &str, mode: &str, k: usize) -> Result<Va
         calls += 1;
         elapsed_ms += call.elapsed_ms;
         errors += usize::from(!row["error"].is_null());
+        assignment_refusal_calls += usize::from(row["error"].is_null() && row["refusal"] == true);
+        unknown_usage_calls += usize::from(row["usage_available"] != true);
         cost_complete &= row["usage_available"] == true;
         usage.input_tokens += call.usage.input_tokens;
         usage.cached_tokens += call.usage.cached_tokens;
@@ -264,7 +279,7 @@ fn journal_summary(path: &Path, run_id: &str, mode: &str, k: usize) -> Result<Va
         usage.cost_usd += call.usage.cost_usd;
     }
     Ok(
-        json!({"calls":calls,"error_calls":errors,"cluster_comparisons":comparisons,"request_seconds":elapsed_ms as f64/1000.,"usage":usage,"cost_usd":usage.cost_usd,"cost_complete":cost_complete,"journal_sha256":sha256(text.as_bytes())}),
+        json!({"calls":calls,"error_calls":errors,"assignment_refusal_calls":assignment_refusal_calls,"unknown_usage_calls":unknown_usage_calls,"cluster_comparisons":comparisons,"request_seconds":elapsed_ms as f64/1000.,"usage":usage,"cost_usd":usage.cost_usd,"cost_complete":cost_complete,"journal_sha256":sha256(text.as_bytes())}),
     )
 }
 
@@ -412,6 +427,7 @@ async fn main() -> Result<()> {
         "wall_seconds": elapsed_ms as f64/1000.,
         "timing_complete": status=="complete",
         "other_count": other,
+        "refused_count": assignments.iter().filter(|assignment| assignment.refused).count(),
         "coverage": (assignments.len()-other) as f64/args.expected as f64,
         "measurement": measurement,
         "dataset_label_agreement": label_agreement,
@@ -437,7 +453,7 @@ mod tests {
     use ld_clustering::types::{CallRecord, Example, ModelReply, Plan, Usage};
     use std::sync::Mutex;
     struct Fake {
-        target: Option<i64>,
+        target: AssignmentOutcome,
         pages: Mutex<Vec<Vec<i64>>>,
         fail_after: usize,
     }
@@ -448,14 +464,20 @@ mod tests {
             _task: &str,
             _item: &Item,
             clusters: &[Cluster],
-        ) -> Result<ModelReply<Option<i64>>> {
+        ) -> Result<ModelReply<AssignmentOutcome>> {
             let mut pages = self.pages.lock().unwrap();
             ensure!(pages.len() < self.fail_after, "injected model failure");
             pages.push(clusters.iter().map(|c| c.id).collect());
             Ok(ModelReply {
-                value: self
-                    .target
-                    .filter(|id| clusters.iter().any(|c| c.id == *id)),
+                value: match self.target {
+                    AssignmentOutcome::Cluster(id) if clusters.iter().any(|c| c.id == id) => {
+                        AssignmentOutcome::Cluster(id)
+                    }
+                    AssignmentOutcome::Cluster(_) | AssignmentOutcome::Other => {
+                        AssignmentOutcome::Other
+                    }
+                    AssignmentOutcome::Refused => AssignmentOutcome::Refused,
+                },
                 call: CallRecord {
                     phase: "assign".into(),
                     model: "fake".into(),
@@ -496,13 +518,13 @@ mod tests {
     #[tokio::test]
     async fn paging_preserves_ids_and_visits_every_page_until_match() -> Result<()> {
         let model = Fake {
-            target: Some(50),
+            target: AssignmentOutcome::Cluster(50),
             pages: Mutex::new(vec![]),
             fail_after: usize::MAX,
         };
         assert_eq!(
             assign_pages(&model, "group", &item(), &catalog(), 2).await?,
-            Some(50)
+            AssignmentOutcome::Cluster(50)
         );
         assert_eq!(
             *model.pages.lock().unwrap(),
@@ -513,17 +535,129 @@ mod tests {
     #[tokio::test]
     async fn other_requires_every_page_to_have_no_match() -> Result<()> {
         let model = Fake {
-            target: None,
+            target: AssignmentOutcome::Other,
             pages: Mutex::new(vec![]),
             fail_after: usize::MAX,
         };
         assert_eq!(
             assign_pages(&model, "group", &item(), &catalog(), 2).await?,
-            None
+            AssignmentOutcome::Other
         );
         assert_eq!(model.pages.lock().unwrap().len(), 3);
         Ok(())
     }
+
+    #[tokio::test]
+    async fn refusal_stops_paging_without_forcing_a_later_choice() -> Result<()> {
+        let model = Fake {
+            target: AssignmentOutcome::Refused,
+            pages: Mutex::new(vec![]),
+            fail_after: 1,
+        };
+        assert_eq!(
+            assign_pages(&model, "group", &item(), &catalog(), 2).await?,
+            AssignmentOutcome::Refused
+        );
+        assert_eq!(*model.pages.lock().unwrap(), vec![vec![10, 20]]);
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn progress_and_output_distinguish_refusal_from_other() -> Result<()> {
+        for (target, refused) in [
+            (AssignmentOutcome::Refused, true),
+            (AssignmentOutcome::Other, false),
+        ] {
+            let model = Fake {
+                target,
+                pages: Mutex::new(vec![]),
+                fail_after: usize::MAX,
+            };
+            let mut assignments = Vec::new();
+            let mut progress = Vec::new();
+            process(
+                &model,
+                &[item()],
+                &catalog(),
+                2,
+                &mut assignments,
+                &mut progress,
+            )
+            .await?;
+            assert_eq!(assignments.len(), 1);
+            assert_eq!(assignments[0].cluster_id, None);
+            assert_eq!(assignments[0].refused, refused);
+            let row: Value = serde_json::from_slice(&progress)?;
+            assert!(row["cluster_id"].is_null());
+            assert_eq!(row["refused"], refused);
+            let output = serde_json::to_value(assignments)?;
+            assert_eq!(output[0]["refused"], refused);
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn journal_counts_refusals_and_missing_usage_without_dropping_known_cost() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        for mode in ["llm", "ld"] {
+            let model = if mode == "ld" {
+                "gpt-6-luna"
+            } else {
+                "gpt-6.1-sol"
+            };
+            let request = if mode == "ld" {
+                json!({"model":model,"questions":[{"choices":[{"value":"10"},{"value":"other"}]}]})
+            } else {
+                json!({"model":model,"reasoning":{"effort":"high"},"text":{"format":{"schema":{"properties":{"cluster_id":{"enum":["10","other"]}}}}}})
+            };
+            let mut rows = vec![json!({"type":"ld-clustering-frozen-journal","run_id":"fixture"})];
+            for (refused, usage_available, cost, error) in [
+                (false, true, 1.25, None),
+                (true, true, 0.5, None),
+                (false, false, 0., Some("503 inference unavailable")),
+                (true, true, 0.25, Some("malformed refusal response")),
+            ] {
+                let call = CallRecord {
+                    phase: "assign".into(),
+                    model: model.into(),
+                    request: request.clone(),
+                    response: json!({}),
+                    elapsed_ms: 10,
+                    usage: Usage {
+                        input_tokens: if usage_available { 10 } else { 0 },
+                        cost_usd: cost,
+                        ..Usage::default()
+                    },
+                };
+                let mut row = serde_json::to_value(call)?;
+                row["usage_available"] = json!(usage_available);
+                row["error"] = json!(error);
+                if refused {
+                    row["refusal"] = json!(true);
+                }
+                rows.push(row);
+            }
+            let text = rows
+                .iter()
+                .map(serde_json::to_string)
+                .collect::<serde_json::Result<Vec<_>>>()?
+                .join("\n")
+                + "\n";
+            let path = dir.path().join(format!("{mode}.jsonl"));
+            std::fs::write(&path, &text)?;
+            let summary = journal_summary(&path, "fixture", mode, 2)?;
+            assert_eq!(summary["calls"], 4);
+            assert_eq!(summary["error_calls"], 2);
+            assert_eq!(summary["assignment_refusal_calls"], 1);
+            assert_eq!(summary["unknown_usage_calls"], 1);
+            assert_eq!(summary["cost_complete"], false);
+            assert_eq!(summary["cost_usd"], 2.0);
+            assert_eq!(summary["usage"]["input_tokens"], 30);
+            assert_eq!(summary["journal_sha256"], sha256(text.as_bytes()));
+        }
+        Ok(())
+    }
+
     #[test]
     fn existing_artifact_is_refused_without_changing_contents() -> Result<()> {
         let dir = tempfile::tempdir()?;
@@ -558,7 +692,7 @@ mod tests {
     #[tokio::test]
     async fn model_failure_retains_only_the_successful_assignment_prefix() -> Result<()> {
         let model = Fake {
-            target: Some(10),
+            target: AssignmentOutcome::Cluster(10),
             pages: Mutex::new(vec![]),
             fail_after: 1,
         };
@@ -608,13 +742,13 @@ mod tests {
     #[tokio::test]
     async fn a_matching_page_stops_before_later_candidates() -> Result<()> {
         let model = Fake {
-            target: Some(30),
+            target: AssignmentOutcome::Cluster(30),
             pages: Mutex::new(vec![]),
             fail_after: usize::MAX,
         };
         assert_eq!(
             assign_pages(&model, "group", &item(), &catalog(), 2).await?,
-            Some(30)
+            AssignmentOutcome::Cluster(30)
         );
         assert_eq!(
             *model.pages.lock().unwrap(),

@@ -89,6 +89,13 @@ pub struct ModelReply<T> {
     pub call: CallRecord,
 }
 
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Assignment {
+    Cluster(i64),
+    Other,
+    Refused,
+}
+
 #[async_trait]
 pub trait Model: Send + Sync {
     async fn assign(
@@ -96,7 +103,7 @@ pub trait Model: Send + Sync {
         task: &str,
         item: &Item,
         clusters: &[Cluster],
-    ) -> Result<ModelReply<Option<i64>>>;
+    ) -> Result<ModelReply<Assignment>>;
     async fn plan(
         &self,
         task: &str,

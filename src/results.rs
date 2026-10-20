@@ -134,8 +134,10 @@ fn read_run(database: &Path, log: &Path, expected: usize, backend: &str) -> Resu
     );
     let mut calls = 0;
     let mut assignment_calls = 0;
+    let mut assignment_refusal_calls = 0;
     let mut maintenance_calls = 0;
     let mut errors = 0;
+    let mut unknown_usage_calls = 0;
     let mut input_tokens = 0;
     let mut output_tokens = 0;
     let mut cached_tokens = 0;
@@ -151,7 +153,17 @@ fn read_run(database: &Path, log: &Path, expected: usize, backend: &str) -> Resu
             raw.get("error").is_some() && raw["usage_available"].is_boolean(),
             "journal row is missing attempt outcome fields"
         );
+        let refused = crate::provider::response_refusal(&call.response);
+        if let Some(recorded) = raw.get("refusal") {
+            ensure!(
+                recorded.as_bool() == Some(refused),
+                "journal refusal flag disagrees with raw response"
+            );
+        }
         let failed = !raw["error"].is_null();
+        if !failed && call.phase == "assign" && refused {
+            assignment_refusal_calls += 1;
+        }
         ensure!(
             !failed || raw["error"].is_string(),
             "journal error must be a string or null"
@@ -205,6 +217,7 @@ fn read_run(database: &Path, log: &Path, expected: usize, backend: &str) -> Resu
         } else {
             ensure!(failed, "successful journal call has no reported usage");
             cost_complete = false;
+            unknown_usage_calls += 1;
             crate::types::Usage::default()
         };
         ensure!(
@@ -234,11 +247,49 @@ fn read_run(database: &Path, log: &Path, expected: usize, backend: &str) -> Resu
         "database has no committed provider calls"
     );
     let uncommitted_success_calls: usize = successes.values().sum();
-    let wall_seconds = meta("wall_ms")?.parse::<u64>()? as f64 / 1000.;
+    let wall_ms = meta("wall_ms")?.parse::<u64>()?;
+    let wall_seconds = wall_ms as f64 / 1000.;
+    let session_events = |kind: &str| -> Result<Vec<Value>> {
+        let mut stmt = db.prepare("SELECT payload FROM events WHERE kind=? ORDER BY id")?;
+        let payloads = stmt
+            .query_map([kind], |r| r.get::<_, String>(0))?
+            .collect::<rusqlite::Result<Vec<_>>>()?;
+        payloads
+            .into_iter()
+            .map(|p| Ok(serde_json::from_str(&p)?))
+            .collect()
+    };
+    let starts = session_events("run_start")?;
+    let finishes = session_events("run_finish")?;
+    let run_sessions = starts.len();
+    let cumulative = run_sessions > 1
+        || starts.first().is_some_and(|s| {
+            s["saved_count"].as_u64().unwrap_or(0) > 0
+                || s["prior_wall_ms"].as_u64().unwrap_or(0) > 0
+        });
+    let mut recorded_ms = starts
+        .first()
+        .and_then(|s| s["prior_wall_ms"].as_u64())
+        .unwrap_or(0);
+    let mut session_history_complete = starts.len() == finishes.len();
+    for (index, (start, finish)) in starts.iter().zip(&finishes).enumerate() {
+        session_history_complete &= start["session"].as_u64() == Some(index as u64 + 1)
+            && finish["session"] == start["session"]
+            && start["prior_wall_ms"].as_u64() == Some(recorded_ms)
+            && finish["elapsed_ms"].is_u64();
+        recorded_ms = recorded_ms.saturating_add(finish["elapsed_ms"].as_u64().unwrap_or(0));
+    }
+    if run_sessions > 0 {
+        session_history_complete &=
+            recorded_ms == wall_ms && finishes.last().is_some_and(|f| f["success"] == true);
+    }
     let timing_complete = meta("timing_complete").is_ok_and(|s| s == "true")
-        && meta("run_in_progress").is_ok_and(|s| s == "0");
+        && meta("run_in_progress").is_ok_and(|s| s == "0")
+        && session_history_complete;
+    // A terminal error can lose a charged attempt before its journal row.
+    cost_complete &= timing_complete && !meta("cost_history_complete").is_ok_and(|s| s == "false");
     Ok(Run {
-        measurement: json!({"sample_count":expected,"wall_seconds":wall_seconds,"timing_complete":timing_complete,"cost_usd":cost_usd,"cost_complete":cost_complete,"calls":calls,"committed_success_calls":committed_success_calls,"uncommitted_success_calls":uncommitted_success_calls,"assignment_calls":assignment_calls,"maintenance_calls":maintenance_calls,"input_tokens":input_tokens,"output_tokens":output_tokens,"cached_tokens":cached_tokens,"cache_write_tokens":cache_write_tokens,"request_seconds":request_ms as f64/1000.,"error_calls":errors,"cluster_count":clusters,"other_count":other,"coverage":1.-other as f64/expected as f64,"assignment_model":if backend == "ld" {"gpt-6-luna"}else{"gpt-6.1-sol"},"planner_model":"gpt-6.1-sol","sol_reasoning_effort":"high","pricing_date":"2026-10-20","journal_run_id":run_id,"journal_sha256":format!("{:x}",Sha256::digest(journal.as_bytes()))}),
+        measurement: json!({"sample_count":expected,"wall_seconds":wall_seconds,"timing_complete":timing_complete,"cost_usd":cost_usd,"cost_complete":cost_complete,"calls":calls,"committed_success_calls":committed_success_calls,"uncommitted_success_calls":uncommitted_success_calls,"assignment_calls":assignment_calls,"assignment_refusal_calls":assignment_refusal_calls,"run_sessions":run_sessions,"timing_scope":if cumulative {"cumulative_active_loops"}else{"uninterrupted_loop"},"maintenance_calls":maintenance_calls,"input_tokens":input_tokens,"output_tokens":output_tokens,"cached_tokens":cached_tokens,"cache_write_tokens":cache_write_tokens,"request_seconds":request_ms as f64/1000.,"error_calls":errors,"unknown_usage_calls":unknown_usage_calls,"cluster_count":clusters,"other_count":other,"coverage":1.-other as f64/expected as f64,"assignment_model":if backend == "ld" {"gpt-6-luna"}else{"gpt-6.1-sol"},"planner_model":"gpt-6.1-sol","sol_reasoning_effort":"high","pricing_date":"2026-10-20","journal_run_id":run_id,"journal_sha256":format!("{:x}",Sha256::digest(journal.as_bytes()))}),
         config: serde_json::from_str(&meta("config")?)?,
         input_sha256: meta("input_sha256")?,
         assignments,
@@ -313,7 +364,7 @@ mod tests {
 
     fn fixture(database: &Path, backend: &str, record: &CallRecord) -> Result<()> {
         let db = Connection::open(database)?;
-        db.execute_batch("CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT); CREATE TABLE points(id TEXT PRIMARY KEY,ordinal INTEGER,payload TEXT); CREATE TABLE assignments(point_id TEXT,cluster_id INTEGER); CREATE TABLE clusters(id INTEGER,name TEXT,description TEXT,active INTEGER); CREATE TABLE reassignment(point_id TEXT); CREATE TABLE calls(id INTEGER PRIMARY KEY,payload TEXT);")?;
+        db.execute_batch("CREATE TABLE meta(key TEXT PRIMARY KEY,value TEXT); CREATE TABLE points(id TEXT PRIMARY KEY,ordinal INTEGER,payload TEXT); CREATE TABLE assignments(point_id TEXT,cluster_id INTEGER); CREATE TABLE clusters(id INTEGER,name TEXT,description TEXT,active INTEGER); CREATE TABLE reassignment(point_id TEXT); CREATE TABLE calls(id INTEGER PRIMARY KEY,payload TEXT); CREATE TABLE events(id INTEGER PRIMARY KEY,kind TEXT,payload TEXT);")?;
         for (key, value) in [
             ("backend", backend),
             ("completed_count", "2"),
@@ -400,6 +451,7 @@ mod tests {
         assert_eq!(run.measurement["committed_success_calls"], 1);
         assert_eq!(run.measurement["uncommitted_success_calls"], 1);
         assert_eq!(run.measurement["cost_complete"], true);
+        assert_eq!(run.measurement["unknown_usage_calls"], 0);
         assert_eq!(run.measurement["timing_complete"], true);
         assert!((run.measurement["cost_usd"].as_f64().unwrap() - 0.0006).abs() < 1e-12);
         Ok(())
@@ -469,7 +521,123 @@ mod tests {
         assert_eq!(run.measurement["cost_complete"], false);
         assert_eq!(run.measurement["timing_complete"], false);
         assert_eq!(run.measurement["error_calls"], 1);
+        assert_eq!(run.measurement["unknown_usage_calls"], 1);
         assert!((run.measurement["cost_usd"].as_f64().unwrap() - 0.0003).abs() < 1e-12);
+        Ok(())
+    }
+
+    #[test]
+    fn interrupted_history_cannot_claim_complete_cost_from_known_rows() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let database = dir.path().join("run.sqlite");
+        let log = dir.path().join("requests.jsonl");
+        fixture(&database, "llm", &call())?;
+        write_log(&log, "llm", &[success(&call())])?;
+        let db = Connection::open(&database)?;
+        db.execute(
+            "UPDATE meta SET value='false' WHERE key='timing_complete'",
+            [],
+        )?;
+        let run = read_run(&database, &log, 2, "llm")?;
+        assert_eq!(run.measurement["calls"], 1);
+        assert_eq!(run.measurement["error_calls"], 0);
+        assert_eq!(run.measurement["unknown_usage_calls"], 0);
+        assert_eq!(run.measurement["timing_complete"], false);
+        assert_eq!(
+            run.measurement["cost_complete"], false,
+            "a completed resumed stream may have lost a charged in-flight request before its journal row"
+        );
+        assert!((run.measurement["cost_usd"].as_f64().unwrap() - 0.0003).abs() < 1e-12);
+        Ok(())
+    }
+    #[test]
+    fn accepted_refusal_is_priced_counted_and_its_marker_cannot_be_forged() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let database = dir.path().join("run.sqlite");
+        let log = dir.path().join("requests.jsonl");
+        let mut record = call();
+        record.phase = "assign".into();
+        record.response["output"] =
+            json!([{"type":"message","content":[{"type":"refusal","refusal":"Declined"}]}]);
+        fixture(&database, "llm", &record)?;
+        Connection::open(&database)?.execute(
+            "UPDATE assignments SET cluster_id=NULL WHERE point_id='0'",
+            [],
+        )?;
+        let mut row = success(&record);
+        row["refusal"] = json!(true);
+        write_log(&log, "llm", &[row.clone()])?;
+        let run = read_run(&database, &log, 2, "llm")?;
+        assert_eq!(run.measurement["assignment_refusal_calls"], 1);
+        assert_eq!(run.measurement["error_calls"], 0);
+        assert_eq!(run.measurement["cost_complete"], true);
+        assert!((run.measurement["cost_usd"].as_f64().unwrap() - 0.0003).abs() < 1e-12);
+        row["refusal"] = json!(false);
+        write_log(&log, "llm", &[row])?;
+        assert!(read_run(&database, &log, 2, "llm").is_err());
+        Ok(())
+    }
+
+    #[test]
+    fn terminal_error_marker_preserves_possible_unjournaled_cost_uncertainty() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let database = dir.path().join("run.sqlite");
+        let log = dir.path().join("requests.jsonl");
+        fixture(&database, "llm", &call())?;
+        write_log(&log, "llm", &[success(&call())])?;
+        Connection::open(&database)?.execute(
+            "INSERT INTO meta VALUES('cost_history_complete','false')",
+            [],
+        )?;
+        let run = read_run(&database, &log, 2, "llm")?;
+        assert_eq!(run.measurement["cost_complete"], false);
+        assert_eq!(run.measurement["timing_complete"], true);
+        assert_eq!(run.measurement["unknown_usage_calls"], 0);
+        Ok(())
+    }
+
+    #[test]
+    fn session_boundaries_separate_active_segments_and_detect_missing_finishes() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let database = dir.path().join("run.sqlite");
+        let log = dir.path().join("requests.jsonl");
+        fixture(&database, "llm", &call())?;
+        write_log(&log, "llm", &[success(&call())])?;
+        let db = Connection::open(&database)?;
+        for (kind, payload) in [
+            (
+                "run_start",
+                json!({"session":1,"saved_count":0,"prior_wall_ms":0}),
+            ),
+            (
+                "run_finish",
+                json!({"session":1,"elapsed_ms":1000,"success":true}),
+            ),
+            (
+                "run_start",
+                json!({"session":2,"saved_count":1,"prior_wall_ms":1000}),
+            ),
+            (
+                "run_finish",
+                json!({"session":2,"elapsed_ms":1000,"success":true}),
+            ),
+        ] {
+            db.execute(
+                "INSERT INTO events(kind,payload) VALUES(?,?)",
+                params![kind, payload.to_string()],
+            )?;
+        }
+        let run = read_run(&database, &log, 2, "llm")?;
+        assert_eq!(run.measurement["run_sessions"], 2);
+        assert_eq!(run.measurement["timing_scope"], "cumulative_active_loops");
+        assert_eq!(run.measurement["timing_complete"], true);
+        db.execute(
+            "DELETE FROM events WHERE id=(SELECT MAX(id) FROM events)",
+            [],
+        )?;
+        let run = read_run(&database, &log, 2, "llm")?;
+        assert_eq!(run.measurement["timing_complete"], false);
+        assert_eq!(run.measurement["cost_complete"], false);
         Ok(())
     }
 }

@@ -1,0 +1,84 @@
+{
+  "status": "interrupted",
+  "complete_image_metrics": {
+    "agreement": {
+      "n": 100,
+      "pair_confusion": {
+        "tp": 155,
+        "fp": 198,
+        "fn": 700,
+        "tn": 3897
+      },
+      "adjusted_rand_index": 0.17315386804613864,
+      "adjusted_rand_index_exact": "10343/59733",
+      "pairwise_precision": 0.43909348441926344,
+      "pairwise_recall": 0.18128654970760233,
+      "pairwise_f1": 0.25662251655629137
+    },
+    "shared_other_sensitivity": {
+      "n": 100,
+      "pair_confusion": {
+        "tp": 300,
+        "fp": 719,
+        "fn": 555,
+        "tn": 3376
+      },
+      "adjusted_rand_index": 0.16293349580092942,
+      "adjusted_rand_index_exact": "13639/83709",
+      "pairwise_precision": 0.2944062806673209,
+      "pairwise_recall": 0.3508771929824561,
+      "pairwise_f1": 0.32017075773745995
+    },
+    "dataset_label_agreement": {
+      "baseline": {
+        "n": 100,
+        "pair_confusion": {
+          "tp": 333,
+          "fp": 522,
+          "fn": 117,
+          "tn": 3978
+        },
+        "adjusted_rand_index": 0.4441281138790036,
+        "adjusted_rand_index_exact": "624/1405",
+        "pairwise_precision": 0.3894736842105263,
+        "pairwise_recall": 0.74,
+        "pairwise_f1": 0.5103448275862069
+      },
+      "ld": {
+        "n": 100,
+        "pair_confusion": {
+          "tp": 111,
+          "fp": 242,
+          "fn": 339,
+          "tn": 4258
+        },
+        "adjusted_rand_index": 0.2136089577950043,
+        "adjusted_rand_index_exact": "248/1161",
+        "pairwise_precision": 0.31444759206798867,
+        "pairwise_recall": 0.24666666666666667,
+        "pairwise_f1": 0.2764632627646326
+      }
+    },
+    "mutually_covered_posthoc": {
+      "n": 63,
+      "pair_confusion": {
+        "tp": 155,
+        "fp": 198,
+        "fn": 195,
+        "tn": 1405
+      },
+      "adjusted_rand_index": 0.3182725367919073,
+      "adjusted_rand_index_exact": "51190/160837",
+      "pairwise_precision": 0.43909348441926344,
+      "pairwise_recall": 0.44285714285714284,
+      "pairwise_f1": 0.44096728307254623
+    },
+    "initial_management_requests_identical": true,
+    "initial_management_request_sha256": {
+      "baseline": "5eeee1f39b62b37683a82297b42ffbaf6bfe7a5ccc251915a540be5ac9c37105",
+      "ld": "5eeee1f39b62b37683a82297b42ffbaf6bfe7a5ccc251915a540be5ac9c37105"
+    }
+  },
+  "text": "No cross-arm text metrics: reference/LD prefixes incomplete and unequal.",
+  "pinned_input_checks": "Every persisted point payload matches its frozen input prefix; full input fingerprints and all PNG pins verified."
+}

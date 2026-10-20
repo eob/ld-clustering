@@ -64,3 +64,15 @@ and all original experiment evidence.
 Do not redesign all persistence, claim any observed cohort impact, reconstruct
 unreported charges, alter the frozen control, or expand the current release.
 Decide implementation in a separate branch.
+
+## Current state
+
+The amended feature runtime now conservatively persists
+`cost_history_complete=false` on any terminal invocation error, before clearing
+its in-progress marker. Its verifier preserves that uncertainty after a later
+resume, and run-start/finish events provide invocation evidence. A regression
+simulating a completed request followed by a journal error proves that generic
+continuity guard; causal reversion loses the marker. The remaining follow-up is
+explicit provider-writer fault injection and clearer storage-error context,
+rather than the original unmarked normal-error path. No actual benchmark
+journal-storage failure has been observed.

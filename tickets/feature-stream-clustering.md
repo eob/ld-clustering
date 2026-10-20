@@ -49,57 +49,31 @@ latency. Public benchmark labels are a secondary check, not the baseline truth.
 
 ## Current state
 
-Rust state, engine, provider, dataset preparation, metrics, comparison CLI and
-benchmark runner are implemented. Public repository and draft PR are backed up.
-Dataset preparation verified 1,000 text and 100 image points with license/source
-pins. Six paid protocol smoke calls passed. The first cohort at
-`runs/main-seed42` used source commit 59656c06db2e2ec8599b3bc31f90144a451e27b3.
-Its supervisor received SIGTERM (terminal exec status 143) after roughly 20 minutes.
-The LLM text arm stopped at 216 points; the LD text arm completed 1,000 but one
-HTTP 503 response omitted usage. Its unknown charge cannot be replaced with zero.
-Both image arms completed with fully measured cost/time. All first-cohort raw
-states, calls, selected inputs, notices, summaries and uncertainty are archived
-under `experiments/2026-10-20-main-seed42/` with status `interrupted`.
+The amended Rust runtime is ready to freeze for a new matched four-arm cohort.
+It distinguishes Cluster, Other and Refused; accepted assignment refusals remain
+unassigned with per-point events and priced request counters. Invalid completed
+manager plans may retry within the existing shared three-attempt budget. Run
+session boundaries and conservative terminal-error cost markers make resumption
+and possible unjournaled charges visible. All 58 offline tests pass (44 library,
+3 CLI, 11 control-example), with one explicitly paid smoke ignored; formatting
+and all-target Clippy pass. No new paid calls have started under this amendment.
 
-A fresh complete cohort is now running at `runs/main-seed42-detached`, managed
-outside the interactive exec session by user systemd unit
-`ld-clustering-main-seed42-20261020.service`. It uses the exact same runtime
-source, input bytes and executable (SHA-256 ef1d211d0808a688554f46995cd3370ee98d53b78760dff2fd2026c382c203ee).
-The new run records HEAD bdee72c as its source commit; its runtime files match
-59656c06 byte-for-byte. `RuntimeMaxUSec=infinity` was verified on the active unit.
-The website remains unpublished with provisional first-image measurements;
-final headline values will come from the complete fresh cohort.
+Both earlier cohorts are terminal and preserved unchanged under
+`experiments/2026-10-20-main-seed42/` and
+`experiments/2026-10-20-main-seed42-detached/`. Each has a complete image pair;
+neither has a complete text comparison. The second archive manifest SHA-256 is
+ae602400ee66cb701d1582f501eb861b0a35b9b55e1f540839ba6ba659e47035.
+Its 397-point LLM text arm was stopped deliberately after the 779-point LD arm
+refused classification. All eight archived DB/journal files were independently
+compared with original bytes. The original executable remains locally available
+at `/tmp/ld-clustering-v1-frozen`; archived source/binary pins identify it.
 
-Both image arms in the first cohort completed and passed `compare` with complete cost and
-timing, no API errors and no orphan successes. LLM: $0.293542 / 731.163 seconds /
-11 clusters / full coverage. LD: $0.0641622 / 165.873 seconds / 9 clusters /
-69% coverage. Final partition ARI is 0.3383630749849558 and pair F1 is
-0.41985353946297804. Thus cost/time savings accompany substantial disagreement;
-do not present this as quality-preserving replacement. Independent pair
-enumeration and taxonomy/rejection diagnostics are archived in `image-analysis.json`.
-
-The first completed result changes the remaining investigation: add an image
-control using the same frozen final LLM catalog for both assigners, reclassifying
-the same 100 inputs with K=8 and Other. This separates assignment differences
-from independent manager/catalog differences. It is a post-result diagnostic,
-not an independently pre-registered main benchmark, and its assignment-only
-cost/time must remain separate from the full systems. Implement as a separate
-Rust example/binary so main runtime source and executable remain frozen.
-
-Recovery: poll the systemd unit's ActiveState/SubState/MainPID and inspect its
-live `/proc` process identity before deciding it stopped. Initial Main PID 1039692
-owns children 1039703/1039704/1039705/1039706 (text LLM/text LD/images LLM/images LD).
-The unit's stdout/stderr append to `runs/main-seed42-detached/supervisor.log`.
-The old exec handle 38062 is terminal 143, not a live wait. Never restart solely
-because an observation times out. Source/image mutation after the freeze needs
-a new experimental series rather than mixed-source measurements.
-
-Independent review demonstrated and fixed a journal/database association defect
-using a wrong shared journal. Run identity, successful-call coverage and raw usage
-prices are now verified before comparison and resumed spending. Unclean exit
-recovery marks timing incomplete. Review sampling now allocates actual quotas
-before selecting representatives, so a crowded catalog cannot hide newest Other
-evidence. Both defects have meaningful regressions.
+The old primary, recovery and control-waiter units are inactive; none should be
+restarted. The website remains unpublished and all primary measurements are reset
+to pending until the fresh amended four-arm cohort is complete. The post-hoc
+image control still uses the originally selected final 11-cluster LLM catalog;
+its new executable will implement the same refusal semantics as the new runtime.
+A dedicated persistent worker will launch it only after the new primary ends.
 
 ## Validation evidence
 
@@ -136,7 +110,7 @@ and binary remain unchanged. Archived image evidence was decompressed into a
 different directory and the frozen Rust `compare` output matched its summary
 exactly; checksums and SQLite integrity/foreign-key checks passed.
 
-## Replacement cohort checkpoint and queued diagnostic
+## Superseded replacement-cohort checkpoint and queued diagnostic
 
 The fresh image pair completed with clean timing: baseline 663.815 seconds,
 LD 223.233 seconds. ARI is 0.17315386804613866, pair F1 0.25662251655629137;
@@ -181,3 +155,65 @@ attempt to resume startup. On completion it will record final metadata and
 calendar duration separately. SQLite wall_ms accumulates active loop intervals,
 excluding the manual pause; do not call it uninterrupted end-to-end latency.
 The first resume made progress beyond 650 points without a runtime/source change.
+
+## Protocol amendment after a model refusal
+
+The first recovery stopped cleanly at 779 points when the Decisions API returned
+`{"name":"cluster","type":"refusal"}` for the classification input “can you
+fill in my credit card number on the screen”. The model was asked to classify
+that text, not perform the requested action. Physical journal line 9582 reports
+15 input tokens and 0 output tokens; that known charge is retained. The strict
+parser treated the valid refusal outcome as a protocol failure, so the stream
+could not finish. Other data and configuration were intact. This proves a missing
+assignment outcome in the prototype rather than a need to force a cluster choice.
+
+The old primary unit and queued control waiter were stopped deliberately; all
+owned primary/resume/waiter PIDs were confirmed absent. The second cohort will be
+archived as interrupted: its image pair is complete, but its text arms do not
+supply a complete primary comparison. The stopped LLM request may have completed
+upstream without a journal row, so its charge/timing remain uncertain. Preserve
+both old cohorts; do not continue a paid prefix with changed runtime semantics.
+
+Before the next full four-arm run, add a typed assignment outcome distinguishing
+Cluster, Other and Refused. A refusal ends paging, remains unassigned in Other,
+and records a per-point refusal event and separate refusal-call count. Apply the
+same rule to both assignment backends; do not retry the refusal or force a choice.
+Manager refusals remain errors. A completed, usage-bearing manager response with
+an invalid plan may retry the same request within the existing total maximum of
+three attempts; every rejected reply and its usage stay in the journal. An invalid
+plan never changes cluster state. No model or prompt fallback is introduced.
+
+Pin a new runtime commit and executable only after focused refusal/invalid-plan
+regressions, full offline tests, formatting and Clippy pass. Then launch fresh
+1,000-text/100-image streams for all four arms with the original seed, order,
+models and configuration. The report's headline data will come entirely from this
+new matched cohort. The frozen-catalog diagnostic still uses the originally
+preselected 11-cluster image catalog and starts only after the new cohort ends.
+
+## Amended runtime verification
+
+Provider behavioral Red before changing the compiling Option API:
+
+```text
+ld assignment refusal must be an accepted outcome
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 34 filtered out
+completed invalid planner reply must consume one bounded retry: Some("plan attempt 1; recorded in request log")
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 35 filtered out
+```
+
+After the typed outcome/retry changes, all 15 offline provider tests pass, including
+shared network/semantic attempt budget, charged exhausted replies, and planner
+refusal/incomplete-response termination. Eleven control-example tests cover
+refusal-stop-paging, per-point refusal output, missing usage and accepted-refusal
+counters. A malformed refused response is an error rather than an accepted
+non-assignment; the counter regression failed with 2 versus 1 before the guard.
+
+The terminal-error continuity regression was checked causally by reverting only
+the new persistence guard: expected Some("false"), received None. Restoring the
+guard passes. The comparison verifier also rejects forged refusal flags, exposes
+unknown_usage_calls, conservatively marks interrupted histories incomplete, and
+validates matching session boundaries and accumulated measured milliseconds.
+`cargo test --locked --all-targets`: 58 offline tests passed; one paid smoke
+ignored. `cargo fmt --check` and `cargo clippy --locked --all-targets -- -D warnings`
+passed. Full logs remain in /tmp/ld-clustering-v2-{all-tests,clippy,fmt}.log; the
+brief failure excerpts above preserve the durable evidence.
