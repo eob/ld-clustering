@@ -1,6 +1,6 @@
 # Build and measure a persistent LLM/decision-model stream clusterer
 
-Status: In Review
+Status: Closed
 Branch: feat-stream-clustering
 Pull request: https://github.com/eob/ld-clustering/pull/1
 Session: 01a15732-077c-7a33-ba98-e8b2509c6a74 (Codex)
@@ -90,12 +90,19 @@ Their complete image replicates and incomplete text prefixes are excluded from
 v2 headline results. The historical checkpoints and PID/launch recipes below
 record those development phases; they are not current workers or pending actions.
 
-PR #1 is ready for review with its final description and committed evidence. Remaining
-publication work is to merge the source PR,
-fill and validate the website artifact against its immutable evidence commit,
-complete the scoped production goof PR, and verify the live page. The website is
-not yet published; the requested destination is
-https://edwardbenson.com/goofing/ld-clustering.
+Source [PR #1](https://github.com/eob/ld-clustering/pull/1) merged on 2026-10-20T06:37:51Z with merge commit
+[`dc0f7859e49dbf5462bb022d4aef638d32519804`](https://github.com/eob/ld-clustering/commit/dc0f7859e49dbf5462bb022d4aef638d32519804). The merged title was:
+feat: add persistent streaming clustering with native Decisions
+
+The AI-authored [report](https://edwardbenson.com/goofing/ld-clustering) is published and was confirmed live on
+2026-10-20. Website [PR #2220](https://github.com/eob/kaya-web/pull/2220) merged as
+[`19e02bafeac071abd442918d0ab8f67afb576cb6`](https://github.com/eob/kaya-web/commit/19e02bafeac071abd442918d0ab8f67afb576cb6).
+Automatic Vercel deployment `dpl_BQv7NDM4B5FMVcXa4vRSFzCnp4Tm` reached Ready and
+served the `edwardbenson.com` alias. The public route returned HTTP 200 with the
+source-merge, runtime and manifest pins. All 18 live Playwright cases passed at
+320/768/1440px, measured charts and provenance were manually inspected, 13 public
+assets matched their original bytes, and the social image was 1200×630 pixels.
+The requested implementation, evidence and goof publication are complete.
 
 ## Historical checkpoints
 
@@ -349,3 +356,71 @@ The mapper's schema assumptions and binding checks received independent review;
 it must not be executed until both archives exist and are committed. Publication
 still requires the complete LLM text stream, queued control, final browser/build
 checks, source PR merge, production goof PR merge and live verification.
+
+## Merge Summary
+
+- Merge date (UTC): 2026-10-20T06:37:51Z
+- Pull request: https://github.com/eob/ld-clustering/pull/1
+- Merge commit: [`dc0f7859e49dbf5462bb022d4aef638d32519804`](https://github.com/eob/ld-clustering/commit/dc0f7859e49dbf5462bb022d4aef638d32519804)
+
+### Final PR title (verbatim)
+
+feat: add persistent streaming clustering with native Decisions
+
+### Final PR description (verbatim)
+
+## Summary
+
+Adds a standalone Rust/SQLite stream clusterer that uses GPT-6.1 Sol with high reasoning to manage evolving clusters, with either Sol or native GPT-6 Luna Decisions for text/image assignments.
+
+## Why
+
+Repeated LLM assignment calls can be expensive. This implementation makes that backend choice measurable while retaining LLM-managed cluster definitions, bounded candidate requests, persistent assignments, and evidence that can be independently audited.
+
+## What changed
+
+- Add prepare/run/compare commands, a single SQLite state file, transactional create/rename/merge/split/retire operations, and durable queues for older-point reassignment and verified resume.
+- Page through every eligible cluster with at most K alternatives plus Other. Typed refusals stop paging, remain unassigned, and are counted separately. Both backends use the same policy; invalid completed manager plans share the bounded three-attempt retry budget.
+- Integrate Responses/Sol high and native Decisions/Luna for text and inline images. Keep IDs, paths and evaluation labels outside prompts. Preserve every observed attempt, raw usage, model/pricing pins, input hashes and session boundaries, including uncertainty after missing usage or terminal errors.
+- Add licensed deterministic datasets, label-invariant comparison metrics, independently verified raw archives, and a separate post-hoc diagnostic with one shared 11-cluster image catalog. Preserve both earlier interrupted cohorts separately.
+
+## Validation
+
+Frozen measured runtime: `9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c`.
+
+- `cargo test --locked --all-targets`: **58 offline tests passed** — 44 library, 3 CLI, and 11 control-example tests; one paid smoke test explicitly ignored.
+- `cargo fmt --check` and `cargo clippy --locked --all-targets -- -D warnings`: passed.
+- `cargo build --release --locked --bin ld-clustering --example frozen_catalog`: passed for both frozen executables.
+- Six live text/image provider smoke checks passed across both assignment backends and the shared planner.
+- Complete source-diff, comment-hygiene and accounting review passed.
+- Fourteen offline control-verifier checks passed, including temporary archive creation and relocated replay; independent review reran the checks and found no consequential blocker.
+
+All four primary runs completed their full inputs in one fresh session each: **1,000 text points and 100 images per backend**. Both separate frozen-catalog controls completed **100 images**. Archived verification binds inputs, source/binary hashes, SQLite state or control progress, every raw attempt, independently repriced usage, and recomputed partition metrics.
+
+| Experiment (points per arm) | Token-priced USD, LLM / LD | Loop seconds, LLM / LD | Named coverage, LLM / LD | ARI / pair F1 |
+| --- | --- | --- | --- | --- |
+| Primary text (1,000) | $3.7861672 / $0.5510947 known subtotal | 7,065.888 / 1,328.795 | 97% / 83.6% | 0.682958 / 0.717356 |
+| Primary images (100) | $0.2851850 / $0.0939411 | 669.490 / 277.269 | 100% / 66% | 0.328782 / 0.411382 |
+| Separate frozen-catalog images (100) | $0.209070 / $0.0054936 | 491.777 / 18.703 | 98% / 67% | 0.385518 / 0.456801 |
+
+The primary text LD ledger retains **two retried HTTP 503 attempts without usage**; `unknown_usage_calls=2` and `cost_complete=false`, so no total text cost ratio is reported. The LLM/LD loop-time ratio was 5.32×. Primary image LLM/LD token-priced cost and loop-time ratios were 3.04× and 2.41×. The separate control had complete usage for all 251 attempts, 47/100 direct stable-ID agreement, and LLM/LD assignment-cost and loop-time ratios of 38.06× and 26.29×; these control figures exclude catalog generation and management. All six completed runs recorded zero accepted assignment refusals.
+
+- [Primary evidence](https://github.com/eob/ld-clustering/tree/feat-stream-clustering/experiments/2026-10-20-main-v2-seed42): manifest SHA-256 `95c7c86d5174256e1f1882873534e94f808f7c1b8b2dfce02b0c15919ccbaaff`.
+- [Separate control evidence](https://github.com/eob/ld-clustering/tree/feat-stream-clustering/experiments/2026-10-20-frozen-images-v2-seed42): manifest SHA-256 `514bdadfe78b3469d744e3348484000357c4e444cfa3bf04f0db0dbe9ac1cf1a`. Installed verify-only replay passed; independent checks repriced all 251 control attempts and checked both archives' payload hashes.
+
+## Ticket
+
+[Build and measure a persistent LLM/decision-model stream clusterer](https://github.com/eob/ld-clustering/blob/feat-stream-clustering/tickets/feature-stream-clustering.md)
+
+## Risks / follow-ups
+
+This is one shuffled order per arm. Independent manager calls can vary, so primary disagreement includes catalog variation as well as assignment differences. The LLM is a reference, not ground truth; the shared-catalog diagnostic is post hoc and uses the same images that produced its catalog. Read agreement alongside lower LD coverage. Primary scores treat each Other point as a singleton. Token-priced usage is not an invoice.
+
+Separate tickets retain [Retry-After handling](https://github.com/eob/ld-clustering/blob/feat-stream-clustering/tickets/considering/bug-provider-retry-after-cap.md), [journal-I/O/failed-control accounting](https://github.com/eob/ld-clustering/blob/feat-stream-clustering/tickets/considering/bug-provider-journal-io-cost-continuity.md), and [legacy timing proof](https://github.com/eob/ld-clustering/blob/feat-stream-clustering/tickets/considering/bug-legacy-comparison-timing-without-session-events.md). None establishes impact on this verified fresh cohort or complete control.
+
+## Agent Metadata
+
+- **Harness:** Codex
+- **Machine:** `eob-dev2`
+- **Session ID:** `01a15732-077c-7a33-ba98-e8b2509c6a74`
+- **Ticket:** [feature-stream-clustering.md](https://github.com/eob/ld-clustering/blob/feat-stream-clustering/tickets/feature-stream-clustering.md)

@@ -1,8 +1,8 @@
 # Provider evidence
 
-Status: In Review
+Status: Closed
 Parent ticket: feature-stream-clustering.md
-Parent pull request: https://github.com/eob/ld-clustering/pull/1 (draft; finalization pending)
+Parent pull request: https://github.com/eob/ld-clustering/pull/1 (merged 2026-10-20T06:37:51Z)
 
 ## Final phase completion
 
@@ -330,3 +330,15 @@ request seconds, token categories, cost, completeness, journal hash),
 `error`, and `progress_sha256`. Progress files derive from output names:
 `llm.progress.jsonl` and `ld.progress.jsonl`. A first metadata record, one row
 per completed point, and a terminal outcome support post-hoc auditing.
+
+## Parent merge closure
+
+Closed as phase evidence under parent [PR #1](https://github.com/eob/ld-clustering/pull/1); this record has no independent
+implementation PR. The parent merged on 2026-10-20T06:37:51Z, with merge commit
+[`dc0f7859e49dbf5462bb022d4aef638d32519804`](https://github.com/eob/ld-clustering/commit/dc0f7859e49dbf5462bb022d4aef638d32519804). Its exact final title was:
+feat: add persistent streaming clustering with native Decisions
+
+The parent ticket's [Merge Summary](feature-stream-clustering.md#merge-summary)
+retains the verbatim merged PR title and description. Source, measurement and
+archive provenance remain unchanged. The [report](https://edwardbenson.com/goofing/ld-clustering) was confirmed live on 2026-10-20 following
+[website PR #2220](https://github.com/eob/kaya-web/pull/2220).
