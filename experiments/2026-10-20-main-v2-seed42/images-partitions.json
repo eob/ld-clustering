@@ -1,0 +1,3868 @@
+{
+  "llm": {
+    "clusters": [
+      {
+        "id": 1,
+        "name": "Sneakers",
+        "description": "Low-cut athletic or casual shoes with sneaker-style soles, excluding boots and open sandals.",
+        "active": true,
+        "count": 16,
+        "dataset_label_counts": {
+          "9": 2,
+          "7": 10,
+          "5": 4
+        }
+      },
+      {
+        "id": 2,
+        "name": "Boots",
+        "description": "Footwear extending above the ankle, including lace-up, pull-on, and heeled boots.",
+        "active": true,
+        "count": 8,
+        "dataset_label_counts": {
+          "9": 8
+        }
+      },
+      {
+        "id": 3,
+        "name": "Sandals",
+        "description": "Open footwear with straps or toe posts, including flip-flops.",
+        "active": true,
+        "count": 6,
+        "dataset_label_counts": {
+          "5": 6
+        }
+      },
+      {
+        "id": 4,
+        "name": "Dresses",
+        "description": "One-piece garments combining a fitted or loose upper body with a skirt, including sleeveless dresses.",
+        "active": true,
+        "count": 9,
+        "dataset_label_counts": {
+          "3": 7,
+          "0": 2
+        }
+      },
+      {
+        "id": 5,
+        "name": "T-shirts and polo shirts",
+        "description": "Short-sleeved upper-body garments, including plain or printed T-shirts and collared polo shirts.",
+        "active": true,
+        "count": 6,
+        "dataset_label_counts": {
+          "0": 6
+        }
+      },
+      {
+        "id": 6,
+        "name": "Shirts and blouses",
+        "description": "Shirts and blouses with woven-looking construction, often featuring collars, buttons, or long sleeves.",
+        "active": true,
+        "count": 22,
+        "dataset_label_counts": {
+          "3": 1,
+          "6": 8,
+          "4": 10,
+          "2": 2,
+          "0": 1
+        }
+      },
+      {
+        "id": 7,
+        "name": "Sweaters and sweatshirts",
+        "description": "Pullover upper-body garments with sweater or sweatshirt construction, typically with long sleeves.",
+        "active": true,
+        "count": 8,
+        "dataset_label_counts": {
+          "2": 6,
+          "1": 1,
+          "8": 1
+        }
+      },
+      {
+        "id": 8,
+        "name": "Jackets and coats",
+        "description": "Structured outer garments worn over other clothing, including front-opening jackets and coats.",
+        "active": true,
+        "count": 5,
+        "dataset_label_counts": {
+          "3": 2,
+          "2": 2,
+          "6": 1
+        }
+      },
+      {
+        "id": 9,
+        "name": "Bags",
+        "description": "Handheld carrying accessories with a bag body and handles, including handbags and tote bags.",
+        "active": true,
+        "count": 9,
+        "dataset_label_counts": {
+          "8": 9
+        }
+      },
+      {
+        "id": 10,
+        "name": "Pants and trousers",
+        "description": "Lower-body garments with a waistband and two separate long legs, including trousers, jeans, and leggings.",
+        "active": true,
+        "count": 9,
+        "dataset_label_counts": {
+          "1": 9
+        }
+      },
+      {
+        "id": 11,
+        "name": "Tank tops and camisoles",
+        "description": "Sleeveless upper-body garments such as tank tops and camisoles, with broad shoulder sections or thin straps; excludes dresses and bras.",
+        "active": true,
+        "count": 1,
+        "dataset_label_counts": {
+          "6": 1
+        }
+      },
+      {
+        "id": 12,
+        "name": "Bras",
+        "description": "Bust-support undergarments with paired cups and a narrow torso band, typically with shoulder straps; excludes tank tops and camisoles.",
+        "active": true,
+        "count": 1,
+        "dataset_label_counts": {
+          "0": 1
+        }
+      },
+      {
+        "id": 13,
+        "name": "Jumpsuits and overalls",
+        "description": "One-piece garments combining an upper-body section or bib with two separate trouser legs, including jumpsuits and overalls; excludes dresses and standalone pants.",
+        "active": true,
+        "count": 0,
+        "dataset_label_counts": {}
+      }
+    ],
+    "assignments": [
+      {
+        "ordinal": 0,
+        "id": "c1ab040cf59b6df8a8bb",
+        "text": "Clothing product image.",
+        "image_file": "images/c1ab040cf59b6df8a8bb.png",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 1,
+        "id": "cc706eff2a17babd8923",
+        "text": "Clothing product image.",
+        "image_file": "images/cc706eff2a17babd8923.png",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 2,
+        "id": "09ef125b34bfcda161d1",
+        "text": "Clothing product image.",
+        "image_file": "images/09ef125b34bfcda161d1.png",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 3,
+        "id": "3328b928ce8a6f40c297",
+        "text": "Clothing product image.",
+        "image_file": "images/3328b928ce8a6f40c297.png",
+        "dataset_label": "2",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 4,
+        "id": "16dd767a97b91ec69398",
+        "text": "Clothing product image.",
+        "image_file": "images/16dd767a97b91ec69398.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 5,
+        "id": "298d3e65c1f272368b44",
+        "text": "Clothing product image.",
+        "image_file": "images/298d3e65c1f272368b44.png",
+        "dataset_label": "3",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 6,
+        "id": "d5e9d0e842219c35031a",
+        "text": "Clothing product image.",
+        "image_file": "images/d5e9d0e842219c35031a.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 7,
+        "id": "99fbb912483c81c6f879",
+        "text": "Clothing product image.",
+        "image_file": "images/99fbb912483c81c6f879.png",
+        "dataset_label": "0",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 8,
+        "id": "ee0523560dfd6239873a",
+        "text": "Clothing product image.",
+        "image_file": "images/ee0523560dfd6239873a.png",
+        "dataset_label": "2",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 9,
+        "id": "1878385b5838ffb5cf87",
+        "text": "Clothing product image.",
+        "image_file": "images/1878385b5838ffb5cf87.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 10,
+        "id": "4383a29831caeebda0ef",
+        "text": "Clothing product image.",
+        "image_file": "images/4383a29831caeebda0ef.png",
+        "dataset_label": "0",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 11,
+        "id": "003151f500622c2caaa9",
+        "text": "Clothing product image.",
+        "image_file": "images/003151f500622c2caaa9.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 12,
+        "id": "53cbf1f26d4924601dab",
+        "text": "Clothing product image.",
+        "image_file": "images/53cbf1f26d4924601dab.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 13,
+        "id": "c074e6d22ec6f5c58178",
+        "text": "Clothing product image.",
+        "image_file": "images/c074e6d22ec6f5c58178.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 14,
+        "id": "9dd2776d283ba2f31414",
+        "text": "Clothing product image.",
+        "image_file": "images/9dd2776d283ba2f31414.png",
+        "dataset_label": "0",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 15,
+        "id": "46edeee6939cd4fa6355",
+        "text": "Clothing product image.",
+        "image_file": "images/46edeee6939cd4fa6355.png",
+        "dataset_label": "5",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 16,
+        "id": "3ad10989cca013f7cf89",
+        "text": "Clothing product image.",
+        "image_file": "images/3ad10989cca013f7cf89.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 17,
+        "id": "f66738af1c39a9e14102",
+        "text": "Clothing product image.",
+        "image_file": "images/f66738af1c39a9e14102.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 18,
+        "id": "5ad25d42034633807945",
+        "text": "Clothing product image.",
+        "image_file": "images/5ad25d42034633807945.png",
+        "dataset_label": "2",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 19,
+        "id": "cf7dbb712cf75bcd1ef9",
+        "text": "Clothing product image.",
+        "image_file": "images/cf7dbb712cf75bcd1ef9.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 20,
+        "id": "66e3b2647e34dad77f64",
+        "text": "Clothing product image.",
+        "image_file": "images/66e3b2647e34dad77f64.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 21,
+        "id": "7b156dcca35cc60d12d6",
+        "text": "Clothing product image.",
+        "image_file": "images/7b156dcca35cc60d12d6.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 22,
+        "id": "96833a2edbbd1c3ba706",
+        "text": "Clothing product image.",
+        "image_file": "images/96833a2edbbd1c3ba706.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 23,
+        "id": "c55e852be8298561b7da",
+        "text": "Clothing product image.",
+        "image_file": "images/c55e852be8298561b7da.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 24,
+        "id": "33047e491265ccfbde38",
+        "text": "Clothing product image.",
+        "image_file": "images/33047e491265ccfbde38.png",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 25,
+        "id": "3b277b1af38aeb187d53",
+        "text": "Clothing product image.",
+        "image_file": "images/3b277b1af38aeb187d53.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 26,
+        "id": "f7354c0cf5f2bcd7bf3a",
+        "text": "Clothing product image.",
+        "image_file": "images/f7354c0cf5f2bcd7bf3a.png",
+        "dataset_label": "2",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 27,
+        "id": "2da69082517e1d05fc64",
+        "text": "Clothing product image.",
+        "image_file": "images/2da69082517e1d05fc64.png",
+        "dataset_label": "5",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 28,
+        "id": "58a9ee6cbb3670b70069",
+        "text": "Clothing product image.",
+        "image_file": "images/58a9ee6cbb3670b70069.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 29,
+        "id": "287b5eb697c2c097e662",
+        "text": "Clothing product image.",
+        "image_file": "images/287b5eb697c2c097e662.png",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 30,
+        "id": "286cb5c748a9229fd0f6",
+        "text": "Clothing product image.",
+        "image_file": "images/286cb5c748a9229fd0f6.png",
+        "dataset_label": "2",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 31,
+        "id": "d08926e3b28f985cc629",
+        "text": "Clothing product image.",
+        "image_file": "images/d08926e3b28f985cc629.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 32,
+        "id": "39ba280297d32e32769f",
+        "text": "Clothing product image.",
+        "image_file": "images/39ba280297d32e32769f.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 33,
+        "id": "849bb6b83a30761a887f",
+        "text": "Clothing product image.",
+        "image_file": "images/849bb6b83a30761a887f.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 34,
+        "id": "ae10425a6829f7b23bf4",
+        "text": "Clothing product image.",
+        "image_file": "images/ae10425a6829f7b23bf4.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 35,
+        "id": "13f4001d4868309e0757",
+        "text": "Clothing product image.",
+        "image_file": "images/13f4001d4868309e0757.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 36,
+        "id": "e6b1ed90b70fdc61c077",
+        "text": "Clothing product image.",
+        "image_file": "images/e6b1ed90b70fdc61c077.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 37,
+        "id": "bc6f2a7da1c666e54b85",
+        "text": "Clothing product image.",
+        "image_file": "images/bc6f2a7da1c666e54b85.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 38,
+        "id": "9dae485994fb41f23f18",
+        "text": "Clothing product image.",
+        "image_file": "images/9dae485994fb41f23f18.png",
+        "dataset_label": "0",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 39,
+        "id": "b30467bbc54824e2aab6",
+        "text": "Clothing product image.",
+        "image_file": "images/b30467bbc54824e2aab6.png",
+        "dataset_label": "6",
+        "cluster_id": 11
+      },
+      {
+        "ordinal": 40,
+        "id": "d7fdd4f71a0039d65df3",
+        "text": "Clothing product image.",
+        "image_file": "images/d7fdd4f71a0039d65df3.png",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 41,
+        "id": "8b9c34c470e5e9f0a60a",
+        "text": "Clothing product image.",
+        "image_file": "images/8b9c34c470e5e9f0a60a.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 42,
+        "id": "82be309e500e004b3ef8",
+        "text": "Clothing product image.",
+        "image_file": "images/82be309e500e004b3ef8.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 43,
+        "id": "f4c3cd308d20c10c4bcc",
+        "text": "Clothing product image.",
+        "image_file": "images/f4c3cd308d20c10c4bcc.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 44,
+        "id": "93e1be08ebd0dd49a154",
+        "text": "Clothing product image.",
+        "image_file": "images/93e1be08ebd0dd49a154.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 45,
+        "id": "4055eb0373a44b9e10ee",
+        "text": "Clothing product image.",
+        "image_file": "images/4055eb0373a44b9e10ee.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 46,
+        "id": "90e0c06ced11a9cad869",
+        "text": "Clothing product image.",
+        "image_file": "images/90e0c06ced11a9cad869.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 47,
+        "id": "feb2dcdba8c903a7242a",
+        "text": "Clothing product image.",
+        "image_file": "images/feb2dcdba8c903a7242a.png",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 48,
+        "id": "da023ee26500c64ac62a",
+        "text": "Clothing product image.",
+        "image_file": "images/da023ee26500c64ac62a.png",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 49,
+        "id": "4b8f2f7f7523d0287d1d",
+        "text": "Clothing product image.",
+        "image_file": "images/4b8f2f7f7523d0287d1d.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 50,
+        "id": "ca8b9b284b69e04b2ae8",
+        "text": "Clothing product image.",
+        "image_file": "images/ca8b9b284b69e04b2ae8.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 51,
+        "id": "a70960918b34edc17071",
+        "text": "Clothing product image.",
+        "image_file": "images/a70960918b34edc17071.png",
+        "dataset_label": "0",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 52,
+        "id": "a1dcf5b55d93f1745e5e",
+        "text": "Clothing product image.",
+        "image_file": "images/a1dcf5b55d93f1745e5e.png",
+        "dataset_label": "0",
+        "cluster_id": 12
+      },
+      {
+        "ordinal": 53,
+        "id": "b2562c053ef8088385ad",
+        "text": "Clothing product image.",
+        "image_file": "images/b2562c053ef8088385ad.png",
+        "dataset_label": "1",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 54,
+        "id": "14ed7573b2ef1f687ee7",
+        "text": "Clothing product image.",
+        "image_file": "images/14ed7573b2ef1f687ee7.png",
+        "dataset_label": "0",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 55,
+        "id": "27653b1eb0c1a4e1ab86",
+        "text": "Clothing product image.",
+        "image_file": "images/27653b1eb0c1a4e1ab86.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 56,
+        "id": "ecc46964d58d58d8d8a2",
+        "text": "Clothing product image.",
+        "image_file": "images/ecc46964d58d58d8d8a2.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 57,
+        "id": "a61b4cfb8b39b6200093",
+        "text": "Clothing product image.",
+        "image_file": "images/a61b4cfb8b39b6200093.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 58,
+        "id": "145970040aced3cbf146",
+        "text": "Clothing product image.",
+        "image_file": "images/145970040aced3cbf146.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 59,
+        "id": "48d204145b5c8d93326d",
+        "text": "Clothing product image.",
+        "image_file": "images/48d204145b5c8d93326d.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 60,
+        "id": "85bbb55f5affac4d5f22",
+        "text": "Clothing product image.",
+        "image_file": "images/85bbb55f5affac4d5f22.png",
+        "dataset_label": "2",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 61,
+        "id": "cb78e4f7e5a136245831",
+        "text": "Clothing product image.",
+        "image_file": "images/cb78e4f7e5a136245831.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 62,
+        "id": "130ea0bfa187f5ba063e",
+        "text": "Clothing product image.",
+        "image_file": "images/130ea0bfa187f5ba063e.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 63,
+        "id": "454eddd132d806148483",
+        "text": "Clothing product image.",
+        "image_file": "images/454eddd132d806148483.png",
+        "dataset_label": "5",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 64,
+        "id": "c7e01eaa58b57365596d",
+        "text": "Clothing product image.",
+        "image_file": "images/c7e01eaa58b57365596d.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 65,
+        "id": "0f7bc3589bcaf6a46799",
+        "text": "Clothing product image.",
+        "image_file": "images/0f7bc3589bcaf6a46799.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 66,
+        "id": "f0a228e1f082551b9d5e",
+        "text": "Clothing product image.",
+        "image_file": "images/f0a228e1f082551b9d5e.png",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 67,
+        "id": "e5cc15baa773d103a9bd",
+        "text": "Clothing product image.",
+        "image_file": "images/e5cc15baa773d103a9bd.png",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "ordinal": 68,
+        "id": "808de8e03888dbb4ea62",
+        "text": "Clothing product image.",
+        "image_file": "images/808de8e03888dbb4ea62.png",
+        "dataset_label": "5",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 69,
+        "id": "03b7ef6a9dac3cb5d8d9",
+        "text": "Clothing product image.",
+        "image_file": "images/03b7ef6a9dac3cb5d8d9.png",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 70,
+        "id": "e6c0319b7729abade228",
+        "text": "Clothing product image.",
+        "image_file": "images/e6c0319b7729abade228.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 71,
+        "id": "b78a8644369d54aa6e26",
+        "text": "Clothing product image.",
+        "image_file": "images/b78a8644369d54aa6e26.png",
+        "dataset_label": "5",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 72,
+        "id": "96a31cc03de0eec4f23b",
+        "text": "Clothing product image.",
+        "image_file": "images/96a31cc03de0eec4f23b.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 73,
+        "id": "227883eb1cc0979a27e8",
+        "text": "Clothing product image.",
+        "image_file": "images/227883eb1cc0979a27e8.png",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 74,
+        "id": "d0b8df9b39ca6427f951",
+        "text": "Clothing product image.",
+        "image_file": "images/d0b8df9b39ca6427f951.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 75,
+        "id": "a3748b502e39bf447c6e",
+        "text": "Clothing product image.",
+        "image_file": "images/a3748b502e39bf447c6e.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 76,
+        "id": "f7757ed298e369ac0cce",
+        "text": "Clothing product image.",
+        "image_file": "images/f7757ed298e369ac0cce.png",
+        "dataset_label": "8",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 77,
+        "id": "d904ad59ebab46ca0af6",
+        "text": "Clothing product image.",
+        "image_file": "images/d904ad59ebab46ca0af6.png",
+        "dataset_label": "3",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 78,
+        "id": "a88a0e46aca0a3e27aad",
+        "text": "Clothing product image.",
+        "image_file": "images/a88a0e46aca0a3e27aad.png",
+        "dataset_label": "5",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 79,
+        "id": "13f61b8a29ea26d9cdaf",
+        "text": "Clothing product image.",
+        "image_file": "images/13f61b8a29ea26d9cdaf.png",
+        "dataset_label": "3",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 80,
+        "id": "3fff6be0119d1206ecee",
+        "text": "Clothing product image.",
+        "image_file": "images/3fff6be0119d1206ecee.png",
+        "dataset_label": "2",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 81,
+        "id": "f0705d4a55252590e049",
+        "text": "Clothing product image.",
+        "image_file": "images/f0705d4a55252590e049.png",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 82,
+        "id": "c32d8e1676e41d93f62f",
+        "text": "Clothing product image.",
+        "image_file": "images/c32d8e1676e41d93f62f.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 83,
+        "id": "929486e5d8974e0de135",
+        "text": "Clothing product image.",
+        "image_file": "images/929486e5d8974e0de135.png",
+        "dataset_label": "2",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 84,
+        "id": "605330d1f194e02e752e",
+        "text": "Clothing product image.",
+        "image_file": "images/605330d1f194e02e752e.png",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 85,
+        "id": "9a7b1793f394f5a600b3",
+        "text": "Clothing product image.",
+        "image_file": "images/9a7b1793f394f5a600b3.png",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 86,
+        "id": "2ced2f9420cbb012215c",
+        "text": "Clothing product image.",
+        "image_file": "images/2ced2f9420cbb012215c.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 87,
+        "id": "03db4306e2f1dfd12aef",
+        "text": "Clothing product image.",
+        "image_file": "images/03db4306e2f1dfd12aef.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 88,
+        "id": "299acbbdc319356e183b",
+        "text": "Clothing product image.",
+        "image_file": "images/299acbbdc319356e183b.png",
+        "dataset_label": "0",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 89,
+        "id": "625ab2e8ae381f4ddbd8",
+        "text": "Clothing product image.",
+        "image_file": "images/625ab2e8ae381f4ddbd8.png",
+        "dataset_label": "9",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 90,
+        "id": "17c8a26c965abb2bafe4",
+        "text": "Clothing product image.",
+        "image_file": "images/17c8a26c965abb2bafe4.png",
+        "dataset_label": "6",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 91,
+        "id": "30261869ef9b5cb4c600",
+        "text": "Clothing product image.",
+        "image_file": "images/30261869ef9b5cb4c600.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 92,
+        "id": "04f3ed7adf1582009877",
+        "text": "Clothing product image.",
+        "image_file": "images/04f3ed7adf1582009877.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 93,
+        "id": "7208ae4c45c7b1487dfe",
+        "text": "Clothing product image.",
+        "image_file": "images/7208ae4c45c7b1487dfe.png",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "ordinal": 94,
+        "id": "a967ca4d41862e773ab3",
+        "text": "Clothing product image.",
+        "image_file": "images/a967ca4d41862e773ab3.png",
+        "dataset_label": "2",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 95,
+        "id": "45040d5d070e9f5373d9",
+        "text": "Clothing product image.",
+        "image_file": "images/45040d5d070e9f5373d9.png",
+        "dataset_label": "1",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 96,
+        "id": "eff64d40d5692c6adb8e",
+        "text": "Clothing product image.",
+        "image_file": "images/eff64d40d5692c6adb8e.png",
+        "dataset_label": "2",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 97,
+        "id": "5d557513db6b43980ea3",
+        "text": "Clothing product image.",
+        "image_file": "images/5d557513db6b43980ea3.png",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 98,
+        "id": "9e7f5cf8915aa431e142",
+        "text": "Clothing product image.",
+        "image_file": "images/9e7f5cf8915aa431e142.png",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 99,
+        "id": "cac2a60e1a0867d3cad9",
+        "text": "Clothing product image.",
+        "image_file": "images/cac2a60e1a0867d3cad9.png",
+        "dataset_label": "0",
+        "cluster_id": 4
+      }
+    ],
+    "maintenance": [
+      {
+        "id": 2,
+        "created_at": "2026-10-20T04:23:32.893Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Sneakers",
+              "description": "Low-cut athletic or casual shoes with sneaker-style soles, excluding boots and open sandals."
+            },
+            {
+              "op": "create",
+              "name": "Boots",
+              "description": "Footwear extending above the ankle, including lace-up, pull-on, and heeled boots."
+            },
+            {
+              "op": "create",
+              "name": "Sandals",
+              "description": "Open footwear with straps or toe posts, including flip-flops."
+            },
+            {
+              "op": "create",
+              "name": "Dresses",
+              "description": "One-piece garments combining a fitted or loose upper body with a skirt, including sleeveless dresses."
+            },
+            {
+              "op": "create",
+              "name": "T-shirts and polo shirts",
+              "description": "Short-sleeved upper-body garments, including plain or printed T-shirts and collared polo shirts."
+            },
+            {
+              "op": "create",
+              "name": "Shirts and blouses",
+              "description": "Shirts and blouses with woven-looking construction, often featuring collars, buttons, or long sleeves."
+            },
+            {
+              "op": "create",
+              "name": "Sweaters and sweatshirts",
+              "description": "Pullover upper-body garments with sweater or sweatshirt construction, typically with long sleeves."
+            },
+            {
+              "op": "create",
+              "name": "Jackets and coats",
+              "description": "Structured outer garments worn over other clothing, including front-opening jackets and coats."
+            },
+            {
+              "op": "create",
+              "name": "Bags",
+              "description": "Handheld carrying accessories with a bag body and handles, including handbags and tote bags."
+            }
+          ]
+        }
+      },
+      {
+        "id": 23,
+        "created_at": "2026-10-20T04:27:00.241Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Pants and trousers",
+              "description": "Lower-body garments with a waistband and two separate long legs, including trousers, jeans, and leggings."
+            }
+          ]
+        }
+      },
+      {
+        "id": 27,
+        "created_at": "2026-10-20T04:30:00.154Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Tank tops and camisoles",
+              "description": "Sleeveless upper-body garments such as tank tops and camisoles, with broad shoulder sections or thin straps; excludes dresses and bras."
+            }
+          ]
+        }
+      },
+      {
+        "id": 31,
+        "created_at": "2026-10-20T04:32:40.266Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Bras",
+              "description": "Bust-support undergarments with paired cups and a narrow torso band, typically with shoulder straps; excludes tank tops and camisoles."
+            }
+          ]
+        }
+      },
+      {
+        "id": 33,
+        "created_at": "2026-10-20T04:33:37.434Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Jumpsuits and overalls",
+              "description": "One-piece garments combining an upper-body section or bib with two separate trouser legs, including jumpsuits and overalls; excludes dresses and standalone pants."
+            }
+          ]
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "kind": "run_start",
+        "created_at": "2026-10-20T04:22:27.957Z",
+        "payload": {
+          "prior_wall_ms": 0,
+          "saved_count": 0,
+          "session": 1,
+          "started_at_unix_ms": 1792470147957
+        }
+      },
+      {
+        "id": 2,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:23:32.893Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Sneakers",
+              "description": "Low-cut athletic or casual shoes with sneaker-style soles, excluding boots and open sandals."
+            },
+            {
+              "op": "create",
+              "name": "Boots",
+              "description": "Footwear extending above the ankle, including lace-up, pull-on, and heeled boots."
+            },
+            {
+              "op": "create",
+              "name": "Sandals",
+              "description": "Open footwear with straps or toe posts, including flip-flops."
+            },
+            {
+              "op": "create",
+              "name": "Dresses",
+              "description": "One-piece garments combining a fitted or loose upper body with a skirt, including sleeveless dresses."
+            },
+            {
+              "op": "create",
+              "name": "T-shirts and polo shirts",
+              "description": "Short-sleeved upper-body garments, including plain or printed T-shirts and collared polo shirts."
+            },
+            {
+              "op": "create",
+              "name": "Shirts and blouses",
+              "description": "Shirts and blouses with woven-looking construction, often featuring collars, buttons, or long sleeves."
+            },
+            {
+              "op": "create",
+              "name": "Sweaters and sweatshirts",
+              "description": "Pullover upper-body garments with sweater or sweatshirt construction, typically with long sleeves."
+            },
+            {
+              "op": "create",
+              "name": "Jackets and coats",
+              "description": "Structured outer garments worn over other clothing, including front-opening jackets and coats."
+            },
+            {
+              "op": "create",
+              "name": "Bags",
+              "description": "Handheld carrying accessories with a bag body and handles, including handbags and tote bags."
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:35.140Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "c1ab040cf59b6df8a8bb"
+        }
+      },
+      {
+        "id": 4,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:37.506Z",
+        "payload": {
+          "cluster_id": 4,
+          "point_id": "cc706eff2a17babd8923"
+        }
+      },
+      {
+        "id": 5,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:40.909Z",
+        "payload": {
+          "cluster_id": 4,
+          "point_id": "09ef125b34bfcda161d1"
+        }
+      },
+      {
+        "id": 6,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:43.802Z",
+        "payload": {
+          "cluster_id": 7,
+          "point_id": "3328b928ce8a6f40c297"
+        }
+      },
+      {
+        "id": 7,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:45.964Z",
+        "payload": {
+          "cluster_id": 2,
+          "point_id": "16dd767a97b91ec69398"
+        }
+      },
+      {
+        "id": 8,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:50.760Z",
+        "payload": {
+          "cluster_id": 6,
+          "point_id": "298d3e65c1f272368b44"
+        }
+      },
+      {
+        "id": 9,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:55.170Z",
+        "payload": {
+          "cluster_id": 9,
+          "point_id": "d5e9d0e842219c35031a"
+        }
+      },
+      {
+        "id": 10,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:57.052Z",
+        "payload": {
+          "cluster_id": 5,
+          "point_id": "99fbb912483c81c6f879"
+        }
+      },
+      {
+        "id": 11,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:00.469Z",
+        "payload": {
+          "cluster_id": 7,
+          "point_id": "ee0523560dfd6239873a"
+        }
+      },
+      {
+        "id": 12,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:02.492Z",
+        "payload": {
+          "cluster_id": 6,
+          "point_id": "1878385b5838ffb5cf87"
+        }
+      },
+      {
+        "id": 13,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:04.720Z",
+        "payload": {
+          "cluster_id": 5,
+          "point_id": "4383a29831caeebda0ef"
+        }
+      },
+      {
+        "id": 14,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:06.913Z",
+        "payload": {
+          "cluster_id": 6,
+          "point_id": "003151f500622c2caaa9"
+        }
+      },
+      {
+        "id": 15,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:11.122Z",
+        "payload": {
+          "cluster_id": 2,
+          "point_id": "53cbf1f26d4924601dab"
+        }
+      },
+      {
+        "id": 16,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:13.716Z",
+        "payload": {
+          "cluster_id": 6,
+          "point_id": "c074e6d22ec6f5c58178"
+        }
+      },
+      {
+        "id": 17,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:15.890Z",
+        "payload": {
+          "cluster_id": 5,
+          "point_id": "9dd2776d283ba2f31414"
+        }
+      },
+      {
+        "id": 18,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:21.006Z",
+        "payload": {
+          "cluster_id": 3,
+          "point_id": "46edeee6939cd4fa6355"
+        }
+      },
+      {
+        "id": 19,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:31.092Z",
+        "payload": {
+          "cluster_id": 9,
+          "point_id": "3ad10989cca013f7cf89"
+        }
+      },
+      {
+        "id": 20,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:36.359Z",
+        "payload": {
+          "cluster_id": 6,
+          "point_id": "f66738af1c39a9e14102"
+        }
+      },
+      {
+        "id": 21,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:39.198Z",
+        "payload": {
+          "cluster_id": 7,
+          "point_id": "5ad25d42034633807945"
+        }
+      },
+      {
+        "id": 22,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:43.919Z",
+        "payload": {
+          "cluster_id": 2,
+          "point_id": "cf7dbb712cf75bcd1ef9"
+        }
+      },
+      {
+        "id": 23,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:27:00.241Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Pants and trousers",
+              "description": "Lower-body garments with a waistband and two separate long legs, including trousers, jeans, and leggings."
+            }
+          ]
+        }
+      },
+      {
+        "id": 24,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:05.274Z",
+        "payload": {
+          "cluster_id": 10,
+          "point_id": "58a9ee6cbb3670b70069"
+        }
+      },
+      {
+        "id": 25,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:10.777Z",
+        "payload": {
+          "cluster_id": 10,
+          "point_id": "849bb6b83a30761a887f"
+        }
+      },
+      {
+        "id": 26,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:19.769Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "b30467bbc54824e2aab6"
+        }
+      },
+      {
+        "id": 27,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:30:00.154Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Tank tops and camisoles",
+              "description": "Sleeveless upper-body garments such as tank tops and camisoles, with broad shoulder sections or thin straps; excludes dresses and bras."
+            }
+          ]
+        }
+      },
+      {
+        "id": 28,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:30:11.024Z",
+        "payload": {
+          "cluster_id": 11,
+          "point_id": "b30467bbc54824e2aab6"
+        }
+      },
+      {
+        "id": 29,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:30:18.797Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a1dcf5b55d93f1745e5e"
+        }
+      },
+      {
+        "id": 30,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:30:31.169Z",
+        "payload": {
+          "cluster_id": 9,
+          "point_id": "e5cc15baa773d103a9bd"
+        }
+      },
+      {
+        "id": 31,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:32:40.266Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Bras",
+              "description": "Bust-support undergarments with paired cups and a narrow torso band, typically with shoulder straps; excludes tank tops and camisoles."
+            }
+          ]
+        }
+      },
+      {
+        "id": 32,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:32:45.036Z",
+        "payload": {
+          "cluster_id": 12,
+          "point_id": "a1dcf5b55d93f1745e5e"
+        }
+      },
+      {
+        "id": 33,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:33:37.434Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Jumpsuits and overalls",
+              "description": "One-piece garments combining an upper-body section or bib with two separate trouser legs, including jumpsuits and overalls; excludes dresses and standalone pants."
+            }
+          ]
+        }
+      },
+      {
+        "id": 34,
+        "kind": "run_finish",
+        "created_at": "2026-10-20T04:33:37.441Z",
+        "payload": {
+          "elapsed_ms": 669490,
+          "error": null,
+          "session": 1,
+          "success": true
+        }
+      }
+    ]
+  },
+  "ld": {
+    "clusters": [
+      {
+        "id": 1,
+        "name": "Shirts and T-shirts",
+        "description": "Shirts, blouses, T-shirts and polos, including short- and long-sleeved versions with shirt-like construction.",
+        "active": true,
+        "count": 35,
+        "dataset_label_counts": {
+          "2": 7,
+          "3": 5,
+          "0": 8,
+          "6": 8,
+          "4": 7
+        }
+      },
+      {
+        "id": 2,
+        "name": "Sweaters and Sweatshirts",
+        "description": "Sweaters, sweatshirts and cardigans with pullover or open-front construction, distinct from woven shirts.",
+        "active": true,
+        "count": 4,
+        "dataset_label_counts": {
+          "4": 2,
+          "6": 1,
+          "2": 1
+        }
+      },
+      {
+        "id": 3,
+        "name": "Dresses",
+        "description": "One-piece garments combining a bodice with a skirt, including sleeveless and strappy dresses.",
+        "active": true,
+        "count": 3,
+        "dataset_label_counts": {
+          "3": 3
+        }
+      },
+      {
+        "id": 4,
+        "name": "Sneakers",
+        "description": "Closed-toe casual or athletic shoes with sneaker-style construction and rubber soles.",
+        "active": true,
+        "count": 11,
+        "dataset_label_counts": {
+          "9": 1,
+          "7": 7,
+          "5": 3
+        }
+      },
+      {
+        "id": 5,
+        "name": "Boots",
+        "description": "Footwear with shafts covering the ankle or extending higher, including heeled ankle boots and lace-up boots.",
+        "active": true,
+        "count": 4,
+        "dataset_label_counts": {
+          "9": 4
+        }
+      },
+      {
+        "id": 6,
+        "name": "Sandals",
+        "description": "Open footwear held by straps, including flat thong sandals and flip-flops.",
+        "active": true,
+        "count": 0,
+        "dataset_label_counts": {}
+      },
+      {
+        "id": 7,
+        "name": "Handbags and Clutches",
+        "description": "Hand-carried bags with or without handles or carrying straps, including structured handbags, totes and strapless clutch bags.",
+        "active": true,
+        "count": 3,
+        "dataset_label_counts": {
+          "8": 3
+        }
+      },
+      {
+        "id": 8,
+        "name": "Pants and Shorts",
+        "description": "Lower-body garments with a waistband and two separate legs or leg openings, including full-length trousers and shorts.",
+        "active": true,
+        "count": 4,
+        "dataset_label_counts": {
+          "1": 4
+        }
+      },
+      {
+        "id": 9,
+        "name": "Skirts",
+        "description": "Standalone lower-body garments with a waistband and a single skirt body rather than separate legs, including short and long skirts. Excludes dresses, pants and shorts.",
+        "active": true,
+        "count": 0,
+        "dataset_label_counts": {}
+      },
+      {
+        "id": 10,
+        "name": "Flats and Dress Shoes",
+        "description": "Low-cut, closed-toe footwear with non-sneaker construction, including ballet flats, loafers, lace-up dress shoes and heeled pumps. Excludes sneakers, boots and open strappy sandals.",
+        "active": true,
+        "count": 2,
+        "dataset_label_counts": {
+          "5": 2
+        }
+      },
+      {
+        "id": 11,
+        "name": "Bras and Bralettes",
+        "description": "Bust-supporting undergarments with paired cups and a connecting chest band, typically with shoulder straps. Includes bras and bralettes, distinct from full shirts and dresses.",
+        "active": true,
+        "count": 0,
+        "dataset_label_counts": {}
+      }
+    ],
+    "assignments": [
+      {
+        "ordinal": 0,
+        "id": "c1ab040cf59b6df8a8bb",
+        "text": "Clothing product image.",
+        "image_file": "images/c1ab040cf59b6df8a8bb.png",
+        "dataset_label": "9",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 1,
+        "id": "cc706eff2a17babd8923",
+        "text": "Clothing product image.",
+        "image_file": "images/cc706eff2a17babd8923.png",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 2,
+        "id": "09ef125b34bfcda161d1",
+        "text": "Clothing product image.",
+        "image_file": "images/09ef125b34bfcda161d1.png",
+        "dataset_label": "3",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 3,
+        "id": "3328b928ce8a6f40c297",
+        "text": "Clothing product image.",
+        "image_file": "images/3328b928ce8a6f40c297.png",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 4,
+        "id": "16dd767a97b91ec69398",
+        "text": "Clothing product image.",
+        "image_file": "images/16dd767a97b91ec69398.png",
+        "dataset_label": "9",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 5,
+        "id": "298d3e65c1f272368b44",
+        "text": "Clothing product image.",
+        "image_file": "images/298d3e65c1f272368b44.png",
+        "dataset_label": "3",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 6,
+        "id": "d5e9d0e842219c35031a",
+        "text": "Clothing product image.",
+        "image_file": "images/d5e9d0e842219c35031a.png",
+        "dataset_label": "8",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 7,
+        "id": "99fbb912483c81c6f879",
+        "text": "Clothing product image.",
+        "image_file": "images/99fbb912483c81c6f879.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 8,
+        "id": "ee0523560dfd6239873a",
+        "text": "Clothing product image.",
+        "image_file": "images/ee0523560dfd6239873a.png",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 9,
+        "id": "1878385b5838ffb5cf87",
+        "text": "Clothing product image.",
+        "image_file": "images/1878385b5838ffb5cf87.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 10,
+        "id": "4383a29831caeebda0ef",
+        "text": "Clothing product image.",
+        "image_file": "images/4383a29831caeebda0ef.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 11,
+        "id": "003151f500622c2caaa9",
+        "text": "Clothing product image.",
+        "image_file": "images/003151f500622c2caaa9.png",
+        "dataset_label": "4",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 12,
+        "id": "53cbf1f26d4924601dab",
+        "text": "Clothing product image.",
+        "image_file": "images/53cbf1f26d4924601dab.png",
+        "dataset_label": "9",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 13,
+        "id": "c074e6d22ec6f5c58178",
+        "text": "Clothing product image.",
+        "image_file": "images/c074e6d22ec6f5c58178.png",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 14,
+        "id": "9dd2776d283ba2f31414",
+        "text": "Clothing product image.",
+        "image_file": "images/9dd2776d283ba2f31414.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 15,
+        "id": "46edeee6939cd4fa6355",
+        "text": "Clothing product image.",
+        "image_file": "images/46edeee6939cd4fa6355.png",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 16,
+        "id": "3ad10989cca013f7cf89",
+        "text": "Clothing product image.",
+        "image_file": "images/3ad10989cca013f7cf89.png",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 17,
+        "id": "f66738af1c39a9e14102",
+        "text": "Clothing product image.",
+        "image_file": "images/f66738af1c39a9e14102.png",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 18,
+        "id": "5ad25d42034633807945",
+        "text": "Clothing product image.",
+        "image_file": "images/5ad25d42034633807945.png",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 19,
+        "id": "cf7dbb712cf75bcd1ef9",
+        "text": "Clothing product image.",
+        "image_file": "images/cf7dbb712cf75bcd1ef9.png",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 20,
+        "id": "66e3b2647e34dad77f64",
+        "text": "Clothing product image.",
+        "image_file": "images/66e3b2647e34dad77f64.png",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 21,
+        "id": "7b156dcca35cc60d12d6",
+        "text": "Clothing product image.",
+        "image_file": "images/7b156dcca35cc60d12d6.png",
+        "dataset_label": "7",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 22,
+        "id": "96833a2edbbd1c3ba706",
+        "text": "Clothing product image.",
+        "image_file": "images/96833a2edbbd1c3ba706.png",
+        "dataset_label": "7",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 23,
+        "id": "c55e852be8298561b7da",
+        "text": "Clothing product image.",
+        "image_file": "images/c55e852be8298561b7da.png",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 24,
+        "id": "33047e491265ccfbde38",
+        "text": "Clothing product image.",
+        "image_file": "images/33047e491265ccfbde38.png",
+        "dataset_label": "3",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 25,
+        "id": "3b277b1af38aeb187d53",
+        "text": "Clothing product image.",
+        "image_file": "images/3b277b1af38aeb187d53.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 26,
+        "id": "f7354c0cf5f2bcd7bf3a",
+        "text": "Clothing product image.",
+        "image_file": "images/f7354c0cf5f2bcd7bf3a.png",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 27,
+        "id": "2da69082517e1d05fc64",
+        "text": "Clothing product image.",
+        "image_file": "images/2da69082517e1d05fc64.png",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 28,
+        "id": "58a9ee6cbb3670b70069",
+        "text": "Clothing product image.",
+        "image_file": "images/58a9ee6cbb3670b70069.png",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 29,
+        "id": "287b5eb697c2c097e662",
+        "text": "Clothing product image.",
+        "image_file": "images/287b5eb697c2c097e662.png",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 30,
+        "id": "286cb5c748a9229fd0f6",
+        "text": "Clothing product image.",
+        "image_file": "images/286cb5c748a9229fd0f6.png",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 31,
+        "id": "d08926e3b28f985cc629",
+        "text": "Clothing product image.",
+        "image_file": "images/d08926e3b28f985cc629.png",
+        "dataset_label": "4",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 32,
+        "id": "39ba280297d32e32769f",
+        "text": "Clothing product image.",
+        "image_file": "images/39ba280297d32e32769f.png",
+        "dataset_label": "4",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 33,
+        "id": "849bb6b83a30761a887f",
+        "text": "Clothing product image.",
+        "image_file": "images/849bb6b83a30761a887f.png",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 34,
+        "id": "ae10425a6829f7b23bf4",
+        "text": "Clothing product image.",
+        "image_file": "images/ae10425a6829f7b23bf4.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 35,
+        "id": "13f4001d4868309e0757",
+        "text": "Clothing product image.",
+        "image_file": "images/13f4001d4868309e0757.png",
+        "dataset_label": "7",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 36,
+        "id": "e6b1ed90b70fdc61c077",
+        "text": "Clothing product image.",
+        "image_file": "images/e6b1ed90b70fdc61c077.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 37,
+        "id": "bc6f2a7da1c666e54b85",
+        "text": "Clothing product image.",
+        "image_file": "images/bc6f2a7da1c666e54b85.png",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 38,
+        "id": "9dae485994fb41f23f18",
+        "text": "Clothing product image.",
+        "image_file": "images/9dae485994fb41f23f18.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 39,
+        "id": "b30467bbc54824e2aab6",
+        "text": "Clothing product image.",
+        "image_file": "images/b30467bbc54824e2aab6.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 40,
+        "id": "d7fdd4f71a0039d65df3",
+        "text": "Clothing product image.",
+        "image_file": "images/d7fdd4f71a0039d65df3.png",
+        "dataset_label": "5",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 41,
+        "id": "8b9c34c470e5e9f0a60a",
+        "text": "Clothing product image.",
+        "image_file": "images/8b9c34c470e5e9f0a60a.png",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 42,
+        "id": "82be309e500e004b3ef8",
+        "text": "Clothing product image.",
+        "image_file": "images/82be309e500e004b3ef8.png",
+        "dataset_label": "6",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 43,
+        "id": "f4c3cd308d20c10c4bcc",
+        "text": "Clothing product image.",
+        "image_file": "images/f4c3cd308d20c10c4bcc.png",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 44,
+        "id": "93e1be08ebd0dd49a154",
+        "text": "Clothing product image.",
+        "image_file": "images/93e1be08ebd0dd49a154.png",
+        "dataset_label": "8",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 45,
+        "id": "4055eb0373a44b9e10ee",
+        "text": "Clothing product image.",
+        "image_file": "images/4055eb0373a44b9e10ee.png",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 46,
+        "id": "90e0c06ced11a9cad869",
+        "text": "Clothing product image.",
+        "image_file": "images/90e0c06ced11a9cad869.png",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 47,
+        "id": "feb2dcdba8c903a7242a",
+        "text": "Clothing product image.",
+        "image_file": "images/feb2dcdba8c903a7242a.png",
+        "dataset_label": "3",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 48,
+        "id": "da023ee26500c64ac62a",
+        "text": "Clothing product image.",
+        "image_file": "images/da023ee26500c64ac62a.png",
+        "dataset_label": "5",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 49,
+        "id": "4b8f2f7f7523d0287d1d",
+        "text": "Clothing product image.",
+        "image_file": "images/4b8f2f7f7523d0287d1d.png",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 50,
+        "id": "ca8b9b284b69e04b2ae8",
+        "text": "Clothing product image.",
+        "image_file": "images/ca8b9b284b69e04b2ae8.png",
+        "dataset_label": "7",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 51,
+        "id": "a70960918b34edc17071",
+        "text": "Clothing product image.",
+        "image_file": "images/a70960918b34edc17071.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 52,
+        "id": "a1dcf5b55d93f1745e5e",
+        "text": "Clothing product image.",
+        "image_file": "images/a1dcf5b55d93f1745e5e.png",
+        "dataset_label": "0",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 53,
+        "id": "b2562c053ef8088385ad",
+        "text": "Clothing product image.",
+        "image_file": "images/b2562c053ef8088385ad.png",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 54,
+        "id": "14ed7573b2ef1f687ee7",
+        "text": "Clothing product image.",
+        "image_file": "images/14ed7573b2ef1f687ee7.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 55,
+        "id": "27653b1eb0c1a4e1ab86",
+        "text": "Clothing product image.",
+        "image_file": "images/27653b1eb0c1a4e1ab86.png",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 56,
+        "id": "ecc46964d58d58d8d8a2",
+        "text": "Clothing product image.",
+        "image_file": "images/ecc46964d58d58d8d8a2.png",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 57,
+        "id": "a61b4cfb8b39b6200093",
+        "text": "Clothing product image.",
+        "image_file": "images/a61b4cfb8b39b6200093.png",
+        "dataset_label": "7",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 58,
+        "id": "145970040aced3cbf146",
+        "text": "Clothing product image.",
+        "image_file": "images/145970040aced3cbf146.png",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 59,
+        "id": "48d204145b5c8d93326d",
+        "text": "Clothing product image.",
+        "image_file": "images/48d204145b5c8d93326d.png",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 60,
+        "id": "85bbb55f5affac4d5f22",
+        "text": "Clothing product image.",
+        "image_file": "images/85bbb55f5affac4d5f22.png",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 61,
+        "id": "cb78e4f7e5a136245831",
+        "text": "Clothing product image.",
+        "image_file": "images/cb78e4f7e5a136245831.png",
+        "dataset_label": "7",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 62,
+        "id": "130ea0bfa187f5ba063e",
+        "text": "Clothing product image.",
+        "image_file": "images/130ea0bfa187f5ba063e.png",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 63,
+        "id": "454eddd132d806148483",
+        "text": "Clothing product image.",
+        "image_file": "images/454eddd132d806148483.png",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 64,
+        "id": "c7e01eaa58b57365596d",
+        "text": "Clothing product image.",
+        "image_file": "images/c7e01eaa58b57365596d.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 65,
+        "id": "0f7bc3589bcaf6a46799",
+        "text": "Clothing product image.",
+        "image_file": "images/0f7bc3589bcaf6a46799.png",
+        "dataset_label": "8",
+        "cluster_id": 7
+      },
+      {
+        "ordinal": 66,
+        "id": "f0a228e1f082551b9d5e",
+        "text": "Clothing product image.",
+        "image_file": "images/f0a228e1f082551b9d5e.png",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 67,
+        "id": "e5cc15baa773d103a9bd",
+        "text": "Clothing product image.",
+        "image_file": "images/e5cc15baa773d103a9bd.png",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 68,
+        "id": "808de8e03888dbb4ea62",
+        "text": "Clothing product image.",
+        "image_file": "images/808de8e03888dbb4ea62.png",
+        "dataset_label": "5",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 69,
+        "id": "03b7ef6a9dac3cb5d8d9",
+        "text": "Clothing product image.",
+        "image_file": "images/03b7ef6a9dac3cb5d8d9.png",
+        "dataset_label": "3",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 70,
+        "id": "e6c0319b7729abade228",
+        "text": "Clothing product image.",
+        "image_file": "images/e6c0319b7729abade228.png",
+        "dataset_label": "9",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 71,
+        "id": "b78a8644369d54aa6e26",
+        "text": "Clothing product image.",
+        "image_file": "images/b78a8644369d54aa6e26.png",
+        "dataset_label": "5",
+        "cluster_id": 10
+      },
+      {
+        "ordinal": 72,
+        "id": "96a31cc03de0eec4f23b",
+        "text": "Clothing product image.",
+        "image_file": "images/96a31cc03de0eec4f23b.png",
+        "dataset_label": "7",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 73,
+        "id": "227883eb1cc0979a27e8",
+        "text": "Clothing product image.",
+        "image_file": "images/227883eb1cc0979a27e8.png",
+        "dataset_label": "3",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 74,
+        "id": "d0b8df9b39ca6427f951",
+        "text": "Clothing product image.",
+        "image_file": "images/d0b8df9b39ca6427f951.png",
+        "dataset_label": "7",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 75,
+        "id": "a3748b502e39bf447c6e",
+        "text": "Clothing product image.",
+        "image_file": "images/a3748b502e39bf447c6e.png",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 76,
+        "id": "f7757ed298e369ac0cce",
+        "text": "Clothing product image.",
+        "image_file": "images/f7757ed298e369ac0cce.png",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 77,
+        "id": "d904ad59ebab46ca0af6",
+        "text": "Clothing product image.",
+        "image_file": "images/d904ad59ebab46ca0af6.png",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 78,
+        "id": "a88a0e46aca0a3e27aad",
+        "text": "Clothing product image.",
+        "image_file": "images/a88a0e46aca0a3e27aad.png",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 79,
+        "id": "13f61b8a29ea26d9cdaf",
+        "text": "Clothing product image.",
+        "image_file": "images/13f61b8a29ea26d9cdaf.png",
+        "dataset_label": "3",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 80,
+        "id": "3fff6be0119d1206ecee",
+        "text": "Clothing product image.",
+        "image_file": "images/3fff6be0119d1206ecee.png",
+        "dataset_label": "2",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 81,
+        "id": "f0705d4a55252590e049",
+        "text": "Clothing product image.",
+        "image_file": "images/f0705d4a55252590e049.png",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "ordinal": 82,
+        "id": "c32d8e1676e41d93f62f",
+        "text": "Clothing product image.",
+        "image_file": "images/c32d8e1676e41d93f62f.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 83,
+        "id": "929486e5d8974e0de135",
+        "text": "Clothing product image.",
+        "image_file": "images/929486e5d8974e0de135.png",
+        "dataset_label": "2",
+        "cluster_id": 2
+      },
+      {
+        "ordinal": 84,
+        "id": "605330d1f194e02e752e",
+        "text": "Clothing product image.",
+        "image_file": "images/605330d1f194e02e752e.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 85,
+        "id": "9a7b1793f394f5a600b3",
+        "text": "Clothing product image.",
+        "image_file": "images/9a7b1793f394f5a600b3.png",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 86,
+        "id": "2ced2f9420cbb012215c",
+        "text": "Clothing product image.",
+        "image_file": "images/2ced2f9420cbb012215c.png",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 87,
+        "id": "03db4306e2f1dfd12aef",
+        "text": "Clothing product image.",
+        "image_file": "images/03db4306e2f1dfd12aef.png",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 88,
+        "id": "299acbbdc319356e183b",
+        "text": "Clothing product image.",
+        "image_file": "images/299acbbdc319356e183b.png",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 89,
+        "id": "625ab2e8ae381f4ddbd8",
+        "text": "Clothing product image.",
+        "image_file": "images/625ab2e8ae381f4ddbd8.png",
+        "dataset_label": "9",
+        "cluster_id": 5
+      },
+      {
+        "ordinal": 90,
+        "id": "17c8a26c965abb2bafe4",
+        "text": "Clothing product image.",
+        "image_file": "images/17c8a26c965abb2bafe4.png",
+        "dataset_label": "6",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 91,
+        "id": "30261869ef9b5cb4c600",
+        "text": "Clothing product image.",
+        "image_file": "images/30261869ef9b5cb4c600.png",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "ordinal": 92,
+        "id": "04f3ed7adf1582009877",
+        "text": "Clothing product image.",
+        "image_file": "images/04f3ed7adf1582009877.png",
+        "dataset_label": "7",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 93,
+        "id": "7208ae4c45c7b1487dfe",
+        "text": "Clothing product image.",
+        "image_file": "images/7208ae4c45c7b1487dfe.png",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 94,
+        "id": "a967ca4d41862e773ab3",
+        "text": "Clothing product image.",
+        "image_file": "images/a967ca4d41862e773ab3.png",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "ordinal": 95,
+        "id": "45040d5d070e9f5373d9",
+        "text": "Clothing product image.",
+        "image_file": "images/45040d5d070e9f5373d9.png",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 96,
+        "id": "eff64d40d5692c6adb8e",
+        "text": "Clothing product image.",
+        "image_file": "images/eff64d40d5692c6adb8e.png",
+        "dataset_label": "2",
+        "cluster_id": null
+      },
+      {
+        "ordinal": 97,
+        "id": "5d557513db6b43980ea3",
+        "text": "Clothing product image.",
+        "image_file": "images/5d557513db6b43980ea3.png",
+        "dataset_label": "5",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 98,
+        "id": "9e7f5cf8915aa431e142",
+        "text": "Clothing product image.",
+        "image_file": "images/9e7f5cf8915aa431e142.png",
+        "dataset_label": "7",
+        "cluster_id": 4
+      },
+      {
+        "ordinal": 99,
+        "id": "cac2a60e1a0867d3cad9",
+        "text": "Clothing product image.",
+        "image_file": "images/cac2a60e1a0867d3cad9.png",
+        "dataset_label": "0",
+        "cluster_id": null
+      }
+    ],
+    "maintenance": [
+      {
+        "id": 2,
+        "created_at": "2026-10-20T04:23:04.979Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Shirts and T-shirts",
+              "description": "Shirts, blouses, T-shirts and polos, including short- and long-sleeved versions with shirt-like construction."
+            },
+            {
+              "op": "create",
+              "name": "Sweaters and Sweatshirts",
+              "description": "Sweaters, sweatshirts and cardigans with pullover or open-front construction, distinct from woven shirts."
+            },
+            {
+              "op": "create",
+              "name": "Dresses",
+              "description": "One-piece garments combining a bodice with a skirt, including sleeveless and strappy dresses."
+            },
+            {
+              "op": "create",
+              "name": "Sneakers",
+              "description": "Closed-toe casual or athletic shoes with sneaker-style construction and rubber soles."
+            },
+            {
+              "op": "create",
+              "name": "Boots",
+              "description": "Footwear with shafts covering the ankle or extending higher, including heeled ankle boots and lace-up boots."
+            },
+            {
+              "op": "create",
+              "name": "Sandals",
+              "description": "Open footwear held by straps, including flat thong sandals and flip-flops."
+            },
+            {
+              "op": "create",
+              "name": "Handbags",
+              "description": "Hand-carried bags with handles or carrying straps, including structured handbags and totes."
+            }
+          ]
+        }
+      },
+      {
+        "id": 23,
+        "created_at": "2026-10-20T04:24:00.937Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Pants and Shorts",
+              "description": "Lower-body garments with a waistband and two separate legs or leg openings, including full-length trousers and shorts."
+            }
+          ]
+        }
+      },
+      {
+        "id": 37,
+        "created_at": "2026-10-20T04:24:47.667Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Skirts",
+              "description": "Standalone lower-body garments with a waistband and a single skirt body rather than separate legs, including short and long skirts. Excludes dresses, pants and shorts."
+            }
+          ]
+        }
+      },
+      {
+        "id": 54,
+        "created_at": "2026-10-20T04:25:24.820Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Flats and Dress Shoes",
+              "description": "Low-cut, closed-toe footwear with non-sneaker construction, including ballet flats, loafers, lace-up dress shoes and heeled pumps. Excludes sneakers, boots and open strappy sandals."
+            }
+          ]
+        }
+      },
+      {
+        "id": 79,
+        "created_at": "2026-10-20T04:26:15.438Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "rename",
+              "id": 7,
+              "name": "Handbags and Clutches",
+              "description": "Hand-carried bags with or without handles or carrying straps, including structured handbags, totes and strapless clutch bags."
+            }
+          ]
+        }
+      },
+      {
+        "id": 114,
+        "created_at": "2026-10-20T04:26:55.176Z",
+        "plan": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Bras and Bralettes",
+              "description": "Bust-supporting undergarments with paired cups and a connecting chest band, typically with shoulder straps. Includes bras and bralettes, distinct from full shirts and dresses."
+            }
+          ]
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "kind": "run_start",
+        "created_at": "2026-10-20T04:22:27.956Z",
+        "payload": {
+          "prior_wall_ms": 0,
+          "saved_count": 0,
+          "session": 1,
+          "started_at_unix_ms": 1792470147956
+        }
+      },
+      {
+        "id": 2,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:23:04.979Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Shirts and T-shirts",
+              "description": "Shirts, blouses, T-shirts and polos, including short- and long-sleeved versions with shirt-like construction."
+            },
+            {
+              "op": "create",
+              "name": "Sweaters and Sweatshirts",
+              "description": "Sweaters, sweatshirts and cardigans with pullover or open-front construction, distinct from woven shirts."
+            },
+            {
+              "op": "create",
+              "name": "Dresses",
+              "description": "One-piece garments combining a bodice with a skirt, including sleeveless and strappy dresses."
+            },
+            {
+              "op": "create",
+              "name": "Sneakers",
+              "description": "Closed-toe casual or athletic shoes with sneaker-style construction and rubber soles."
+            },
+            {
+              "op": "create",
+              "name": "Boots",
+              "description": "Footwear with shafts covering the ankle or extending higher, including heeled ankle boots and lace-up boots."
+            },
+            {
+              "op": "create",
+              "name": "Sandals",
+              "description": "Open footwear held by straps, including flat thong sandals and flip-flops."
+            },
+            {
+              "op": "create",
+              "name": "Handbags",
+              "description": "Hand-carried bags with handles or carrying straps, including structured handbags and totes."
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:05.881Z",
+        "payload": {
+          "cluster_id": 4,
+          "point_id": "c1ab040cf59b6df8a8bb"
+        }
+      },
+      {
+        "id": 4,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:06.454Z",
+        "payload": {
+          "cluster_id": 3,
+          "point_id": "cc706eff2a17babd8923"
+        }
+      },
+      {
+        "id": 5,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:11.574Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "09ef125b34bfcda161d1"
+        }
+      },
+      {
+        "id": 6,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:12.320Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "3328b928ce8a6f40c297"
+        }
+      },
+      {
+        "id": 7,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:15.788Z",
+        "payload": {
+          "cluster_id": 5,
+          "point_id": "16dd767a97b91ec69398"
+        }
+      },
+      {
+        "id": 8,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:16.236Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "298d3e65c1f272368b44"
+        }
+      },
+      {
+        "id": 9,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:17.165Z",
+        "payload": {
+          "cluster_id": 7,
+          "point_id": "d5e9d0e842219c35031a"
+        }
+      },
+      {
+        "id": 10,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:18.152Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "99fbb912483c81c6f879"
+        }
+      },
+      {
+        "id": 11,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:18.679Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "ee0523560dfd6239873a"
+        }
+      },
+      {
+        "id": 12,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:19.246Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "1878385b5838ffb5cf87"
+        }
+      },
+      {
+        "id": 13,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:20.372Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "4383a29831caeebda0ef"
+        }
+      },
+      {
+        "id": 14,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:21.452Z",
+        "payload": {
+          "cluster_id": 2,
+          "point_id": "003151f500622c2caaa9"
+        }
+      },
+      {
+        "id": 15,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:22.625Z",
+        "payload": {
+          "cluster_id": 5,
+          "point_id": "53cbf1f26d4924601dab"
+        }
+      },
+      {
+        "id": 16,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:23.489Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "c074e6d22ec6f5c58178"
+        }
+      },
+      {
+        "id": 17,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:24.159Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "9dd2776d283ba2f31414"
+        }
+      },
+      {
+        "id": 18,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:25.210Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "46edeee6939cd4fa6355"
+        }
+      },
+      {
+        "id": 19,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:26.032Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3ad10989cca013f7cf89"
+        }
+      },
+      {
+        "id": 20,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:26.457Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "f66738af1c39a9e14102"
+        }
+      },
+      {
+        "id": 21,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:26.965Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "5ad25d42034633807945"
+        }
+      },
+      {
+        "id": 22,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:23:27.374Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cf7dbb712cf75bcd1ef9"
+        }
+      },
+      {
+        "id": 23,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:24:00.937Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Pants and Shorts",
+              "description": "Lower-body garments with a waistband and two separate legs or leg openings, including full-length trousers and shorts."
+            }
+          ]
+        }
+      },
+      {
+        "id": 24,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:01.453Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "09ef125b34bfcda161d1"
+        }
+      },
+      {
+        "id": 25,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:02.176Z",
+        "payload": {
+          "cluster_id": 1,
+          "point_id": "c074e6d22ec6f5c58178"
+        }
+      },
+      {
+        "id": 26,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:02.662Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "46edeee6939cd4fa6355"
+        }
+      },
+      {
+        "id": 27,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:03.276Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3ad10989cca013f7cf89"
+        }
+      },
+      {
+        "id": 28,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:04.207Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cf7dbb712cf75bcd1ef9"
+        }
+      },
+      {
+        "id": 29,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:04.850Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "66e3b2647e34dad77f64"
+        }
+      },
+      {
+        "id": 30,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:04.937Z",
+        "payload": {
+          "cluster_id": 4,
+          "point_id": "7b156dcca35cc60d12d6"
+        }
+      },
+      {
+        "id": 31,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:05.485Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "96833a2edbbd1c3ba706"
+        }
+      },
+      {
+        "id": 32,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:05.641Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "c55e852be8298561b7da"
+        }
+      },
+      {
+        "id": 33,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:06.386Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "2da69082517e1d05fc64"
+        }
+      },
+      {
+        "id": 34,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:07.590Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "58a9ee6cbb3670b70069"
+        }
+      },
+      {
+        "id": 35,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:08.297Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "287b5eb697c2c097e662"
+        }
+      },
+      {
+        "id": 36,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:08.970Z",
+        "payload": {
+          "cluster_id": 2,
+          "point_id": "d08926e3b28f985cc629"
+        }
+      },
+      {
+        "id": 37,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:24:47.667Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Skirts",
+              "description": "Standalone lower-body garments with a waistband and a single skirt body rather than separate legs, including short and long skirts. Excludes dresses, pants and shorts."
+            }
+          ]
+        }
+      },
+      {
+        "id": 38,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:47.884Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "09ef125b34bfcda161d1"
+        }
+      },
+      {
+        "id": 39,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:49.452Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "46edeee6939cd4fa6355"
+        }
+      },
+      {
+        "id": 40,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:50.196Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3ad10989cca013f7cf89"
+        }
+      },
+      {
+        "id": 41,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:50.444Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cf7dbb712cf75bcd1ef9"
+        }
+      },
+      {
+        "id": 42,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:51.198Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "66e3b2647e34dad77f64"
+        }
+      },
+      {
+        "id": 43,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:51.860Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "96833a2edbbd1c3ba706"
+        }
+      },
+      {
+        "id": 44,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:52.149Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "c55e852be8298561b7da"
+        }
+      },
+      {
+        "id": 45,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:54.204Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "2da69082517e1d05fc64"
+        }
+      },
+      {
+        "id": 46,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:54.459Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "58a9ee6cbb3670b70069"
+        }
+      },
+      {
+        "id": 47,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:54.737Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "287b5eb697c2c097e662"
+        }
+      },
+      {
+        "id": 48,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:55.061Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "39ba280297d32e32769f"
+        }
+      },
+      {
+        "id": 49,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:55.283Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "849bb6b83a30761a887f"
+        }
+      },
+      {
+        "id": 50,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:55.520Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f4c3cd308d20c10c4bcc"
+        }
+      },
+      {
+        "id": 51,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:55.742Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "4b8f2f7f7523d0287d1d"
+        }
+      },
+      {
+        "id": 52,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:55.997Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a1dcf5b55d93f1745e5e"
+        }
+      },
+      {
+        "id": 53,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:24:56.250Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "27653b1eb0c1a4e1ab86"
+        }
+      },
+      {
+        "id": 54,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:25:24.820Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Flats and Dress Shoes",
+              "description": "Low-cut, closed-toe footwear with non-sneaker construction, including ballet flats, loafers, lace-up dress shoes and heeled pumps. Excludes sneakers, boots and open strappy sandals."
+            }
+          ]
+        }
+      },
+      {
+        "id": 55,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:25.214Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "09ef125b34bfcda161d1"
+        }
+      },
+      {
+        "id": 56,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:25.436Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "46edeee6939cd4fa6355"
+        }
+      },
+      {
+        "id": 57,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:27.834Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3ad10989cca013f7cf89"
+        }
+      },
+      {
+        "id": 58,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:28.141Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cf7dbb712cf75bcd1ef9"
+        }
+      },
+      {
+        "id": 59,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:28.368Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "66e3b2647e34dad77f64"
+        }
+      },
+      {
+        "id": 60,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:28.700Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "96833a2edbbd1c3ba706"
+        }
+      },
+      {
+        "id": 61,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:28.980Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "c55e852be8298561b7da"
+        }
+      },
+      {
+        "id": 62,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:29.222Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "2da69082517e1d05fc64"
+        }
+      },
+      {
+        "id": 63,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:29.425Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "58a9ee6cbb3670b70069"
+        }
+      },
+      {
+        "id": 64,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:29.651Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "287b5eb697c2c097e662"
+        }
+      },
+      {
+        "id": 65,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:30.124Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "39ba280297d32e32769f"
+        }
+      },
+      {
+        "id": 66,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:31.174Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "849bb6b83a30761a887f"
+        }
+      },
+      {
+        "id": 67,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:31.465Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f4c3cd308d20c10c4bcc"
+        }
+      },
+      {
+        "id": 68,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:31.689Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "4b8f2f7f7523d0287d1d"
+        }
+      },
+      {
+        "id": 69,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:31.959Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a1dcf5b55d93f1745e5e"
+        }
+      },
+      {
+        "id": 70,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:32.334Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "27653b1eb0c1a4e1ab86"
+        }
+      },
+      {
+        "id": 71,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:32.559Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "145970040aced3cbf146"
+        }
+      },
+      {
+        "id": 72,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:32.744Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "48d204145b5c8d93326d"
+        }
+      },
+      {
+        "id": 73,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:33.036Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cb78e4f7e5a136245831"
+        }
+      },
+      {
+        "id": 74,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:33.222Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "130ea0bfa187f5ba063e"
+        }
+      },
+      {
+        "id": 75,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:33.464Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "454eddd132d806148483"
+        }
+      },
+      {
+        "id": 76,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:35.537Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f0a228e1f082551b9d5e"
+        }
+      },
+      {
+        "id": 77,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:35.828Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "e5cc15baa773d103a9bd"
+        }
+      },
+      {
+        "id": 78,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:25:36.105Z",
+        "payload": {
+          "cluster_id": 10,
+          "point_id": "808de8e03888dbb4ea62"
+        }
+      },
+      {
+        "id": 79,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:26:15.438Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "rename",
+              "id": 7,
+              "name": "Handbags and Clutches",
+              "description": "Hand-carried bags with or without handles or carrying straps, including structured handbags, totes and strapless clutch bags."
+            }
+          ]
+        }
+      },
+      {
+        "id": 80,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:15.719Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "09ef125b34bfcda161d1"
+        }
+      },
+      {
+        "id": 81,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:15.820Z",
+        "payload": {
+          "cluster_id": 7,
+          "point_id": "d5e9d0e842219c35031a"
+        }
+      },
+      {
+        "id": 82,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:16.205Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "46edeee6939cd4fa6355"
+        }
+      },
+      {
+        "id": 83,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:16.464Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3ad10989cca013f7cf89"
+        }
+      },
+      {
+        "id": 84,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:16.688Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cf7dbb712cf75bcd1ef9"
+        }
+      },
+      {
+        "id": 85,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:16.916Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "66e3b2647e34dad77f64"
+        }
+      },
+      {
+        "id": 86,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:17.095Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "96833a2edbbd1c3ba706"
+        }
+      },
+      {
+        "id": 87,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:17.391Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "c55e852be8298561b7da"
+        }
+      },
+      {
+        "id": 88,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:17.644Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "2da69082517e1d05fc64"
+        }
+      },
+      {
+        "id": 89,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:18.165Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "58a9ee6cbb3670b70069"
+        }
+      },
+      {
+        "id": 90,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:18.472Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "287b5eb697c2c097e662"
+        }
+      },
+      {
+        "id": 91,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:18.736Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "39ba280297d32e32769f"
+        }
+      },
+      {
+        "id": 92,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:18.979Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "849bb6b83a30761a887f"
+        }
+      },
+      {
+        "id": 93,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:19.278Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f4c3cd308d20c10c4bcc"
+        }
+      },
+      {
+        "id": 94,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:19.375Z",
+        "payload": {
+          "cluster_id": 7,
+          "point_id": "93e1be08ebd0dd49a154"
+        }
+      },
+      {
+        "id": 95,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:19.664Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "4b8f2f7f7523d0287d1d"
+        }
+      },
+      {
+        "id": 96,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:19.932Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a1dcf5b55d93f1745e5e"
+        }
+      },
+      {
+        "id": 97,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:20.165Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "27653b1eb0c1a4e1ab86"
+        }
+      },
+      {
+        "id": 98,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:20.391Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "145970040aced3cbf146"
+        }
+      },
+      {
+        "id": 99,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:20.699Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "48d204145b5c8d93326d"
+        }
+      },
+      {
+        "id": 100,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:20.961Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cb78e4f7e5a136245831"
+        }
+      },
+      {
+        "id": 101,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:21.223Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "130ea0bfa187f5ba063e"
+        }
+      },
+      {
+        "id": 102,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:21.484Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "454eddd132d806148483"
+        }
+      },
+      {
+        "id": 103,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:21.659Z",
+        "payload": {
+          "cluster_id": 7,
+          "point_id": "0f7bc3589bcaf6a46799"
+        }
+      },
+      {
+        "id": 104,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:21.892Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f0a228e1f082551b9d5e"
+        }
+      },
+      {
+        "id": 105,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:22.158Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "e5cc15baa773d103a9bd"
+        }
+      },
+      {
+        "id": 106,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:22.384Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "03b7ef6a9dac3cb5d8d9"
+        }
+      },
+      {
+        "id": 107,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:22.721Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a3748b502e39bf447c6e"
+        }
+      },
+      {
+        "id": 108,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:22.947Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f7757ed298e369ac0cce"
+        }
+      },
+      {
+        "id": 109,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:23.194Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a88a0e46aca0a3e27aad"
+        }
+      },
+      {
+        "id": 110,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:23.492Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3fff6be0119d1206ecee"
+        }
+      },
+      {
+        "id": 111,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:23.723Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "2ced2f9420cbb012215c"
+        }
+      },
+      {
+        "id": 112,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:24.028Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "17c8a26c965abb2bafe4"
+        }
+      },
+      {
+        "id": 113,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:24.258Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "04f3ed7adf1582009877"
+        }
+      },
+      {
+        "id": 114,
+        "kind": "maintenance",
+        "created_at": "2026-10-20T04:26:55.176Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Bras and Bralettes",
+              "description": "Bust-supporting undergarments with paired cups and a connecting chest band, typically with shoulder straps. Includes bras and bralettes, distinct from full shirts and dresses."
+            }
+          ]
+        }
+      },
+      {
+        "id": 115,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:55.420Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "09ef125b34bfcda161d1"
+        }
+      },
+      {
+        "id": 116,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:55.702Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "46edeee6939cd4fa6355"
+        }
+      },
+      {
+        "id": 117,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:55.871Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3ad10989cca013f7cf89"
+        }
+      },
+      {
+        "id": 118,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:56.154Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cf7dbb712cf75bcd1ef9"
+        }
+      },
+      {
+        "id": 119,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:56.398Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "66e3b2647e34dad77f64"
+        }
+      },
+      {
+        "id": 120,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:56.690Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "96833a2edbbd1c3ba706"
+        }
+      },
+      {
+        "id": 121,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:56.932Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "c55e852be8298561b7da"
+        }
+      },
+      {
+        "id": 122,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:57.317Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "2da69082517e1d05fc64"
+        }
+      },
+      {
+        "id": 123,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:57.645Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "58a9ee6cbb3670b70069"
+        }
+      },
+      {
+        "id": 124,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:57.890Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "287b5eb697c2c097e662"
+        }
+      },
+      {
+        "id": 125,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:58.244Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "39ba280297d32e32769f"
+        }
+      },
+      {
+        "id": 126,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:58.725Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "849bb6b83a30761a887f"
+        }
+      },
+      {
+        "id": 127,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:58.908Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f4c3cd308d20c10c4bcc"
+        }
+      },
+      {
+        "id": 128,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:59.188Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "4b8f2f7f7523d0287d1d"
+        }
+      },
+      {
+        "id": 129,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:26:59.620Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a1dcf5b55d93f1745e5e"
+        }
+      },
+      {
+        "id": 130,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:00.037Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "27653b1eb0c1a4e1ab86"
+        }
+      },
+      {
+        "id": 131,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:00.295Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "145970040aced3cbf146"
+        }
+      },
+      {
+        "id": 132,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:00.496Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "48d204145b5c8d93326d"
+        }
+      },
+      {
+        "id": 133,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:01.119Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cb78e4f7e5a136245831"
+        }
+      },
+      {
+        "id": 134,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:01.342Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "130ea0bfa187f5ba063e"
+        }
+      },
+      {
+        "id": 135,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:01.559Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "454eddd132d806148483"
+        }
+      },
+      {
+        "id": 136,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:01.815Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f0a228e1f082551b9d5e"
+        }
+      },
+      {
+        "id": 137,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:02.046Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "e5cc15baa773d103a9bd"
+        }
+      },
+      {
+        "id": 138,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:02.342Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "03b7ef6a9dac3cb5d8d9"
+        }
+      },
+      {
+        "id": 139,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:02.617Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a3748b502e39bf447c6e"
+        }
+      },
+      {
+        "id": 140,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:02.880Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "f7757ed298e369ac0cce"
+        }
+      },
+      {
+        "id": 141,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:03.128Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "a88a0e46aca0a3e27aad"
+        }
+      },
+      {
+        "id": 142,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:03.582Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "3fff6be0119d1206ecee"
+        }
+      },
+      {
+        "id": 143,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:03.881Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "2ced2f9420cbb012215c"
+        }
+      },
+      {
+        "id": 144,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:04.084Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "17c8a26c965abb2bafe4"
+        }
+      },
+      {
+        "id": 145,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:04.300Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "04f3ed7adf1582009877"
+        }
+      },
+      {
+        "id": 146,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:04.565Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "45040d5d070e9f5373d9"
+        }
+      },
+      {
+        "id": 147,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:04.805Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "eff64d40d5692c6adb8e"
+        }
+      },
+      {
+        "id": 148,
+        "kind": "reassign",
+        "created_at": "2026-10-20T04:27:05.216Z",
+        "payload": {
+          "cluster_id": null,
+          "point_id": "cac2a60e1a0867d3cad9"
+        }
+      },
+      {
+        "id": 149,
+        "kind": "run_finish",
+        "created_at": "2026-10-20T04:27:05.221Z",
+        "payload": {
+          "elapsed_ms": 277269,
+          "error": null,
+          "session": 1,
+          "success": true
+        }
+      }
+    ]
+  }
+}

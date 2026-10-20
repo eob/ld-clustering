@@ -1,0 +1,25 @@
+{
+  "basis": "Accepted typed assignment refusal maps to Other and stops paging; planner refusal remains an error. Refusal count is per accepted model request, not distinct points or final Other points.",
+  "runs": {
+    "text-llm": {
+      "assignment_refusal_calls": 0,
+      "raw_refusal_attempts": [],
+      "persisted_assignment_refusal_events": []
+    },
+    "text-ld": {
+      "assignment_refusal_calls": 0,
+      "raw_refusal_attempts": [],
+      "persisted_assignment_refusal_events": []
+    },
+    "images-llm": {
+      "assignment_refusal_calls": 0,
+      "raw_refusal_attempts": [],
+      "persisted_assignment_refusal_events": []
+    },
+    "images-ld": {
+      "assignment_refusal_calls": 0,
+      "raw_refusal_attempts": [],
+      "persisted_assignment_refusal_events": []
+    }
+  }
+}

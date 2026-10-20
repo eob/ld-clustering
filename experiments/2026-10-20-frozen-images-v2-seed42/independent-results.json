@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "experiment": "post-hoc-frozen-catalog-images",
+  "status": "complete",
+  "expected_per_arm": 100,
+  "k": 8,
+  "input_sha256": "171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e",
+  "input_jsonl_sha256": "84f96e058dbd3b3ffdff91310b7b17a81b05b27dc1e7c2ade3ce09f7a6c98784",
+  "order_sha256": "37c854ecc3b6b19379b099baf19fde564efa2c7a60441a9da0f2291a4c7f1bf0",
+  "metrics": {
+    "agreement": {
+      "n": 100,
+      "pair_confusion": {
+        "tp": 267,
+        "fp": 240,
+        "fn": 395,
+        "tn": 4048
+      },
+      "adjusted_rand_index": 0.38551774858160315,
+      "adjusted_rand_index_exact": "328672/852547",
+      "pairwise_precision": 0.5266272189349113,
+      "pairwise_recall": 0.4033232628398791,
+      "pairwise_f1": 0.4568006843455945
+    },
+    "shared_other_sensitivity": {
+      "n": 100,
+      "pair_confusion": {
+        "tp": 326,
+        "fp": 709,
+        "fn": 337,
+        "tn": 3578
+      },
+      "adjusted_rand_index": 0.26376678056334063,
+      "adjusted_rand_index_exact": "20611/78141",
+      "pairwise_precision": 0.314975845410628,
+      "pairwise_recall": 0.4917043740573152,
+      "pairwise_f1": 0.3839811542991755
+    },
+    "direct_id_agreement": {
+      "n": 100,
+      "agree_count": 47,
+      "fraction": 0.47,
+      "both_other_count": 1,
+      "other_policy": "Both Other assignments count as equal for direct ID agreement; primary ARI treats each Other point as a singleton."
+    },
+    "dataset_label_agreement": {
+      "baseline": {
+        "n": 100,
+        "pair_confusion": {
+          "tp": 249,
+          "fp": 413,
+          "fn": 201,
+          "tn": 4087
+        },
+        "adjusted_rand_index": 0.3808214154748808,
+        "adjusted_rand_index_exact": "2077/5454",
+        "pairwise_precision": 0.37613293051359514,
+        "pairwise_recall": 0.5533333333333333,
+        "pairwise_f1": 0.447841726618705
+      },
+      "ld": {
+        "n": 100,
+        "pair_confusion": {
+          "tp": 128,
+          "fp": 379,
+          "fn": 322,
+          "tn": 4121
+        },
+        "adjusted_rand_index": 0.18942499737201723,
+        "adjusted_rand_index_exact": "1802/9513",
+        "pairwise_precision": 0.252465483234714,
+        "pairwise_recall": 0.28444444444444444,
+        "pairwise_f1": 0.26750261233019856
+      }
+    }
+  },
+  "runs": {
+    "llm": {
+      "calls": 114,
+      "successful_calls": 114,
+      "error_calls": 0,
+      "unknown_usage_calls": 0,
+      "assignment_refusal_calls": 0,
+      "raw_assignment_refusal_attempts": 0,
+      "cost_complete": true,
+      "known_recorded_cost_usd": "0.209070",
+      "usage": {
+        "input_tokens": 44960,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 11915
+      },
+      "request_seconds": 491.58,
+      "cluster_comparisons": 842,
+      "failed_source_jsonl_lines": [],
+      "unknown_usage_source_jsonl_lines": [],
+      "mode": "llm",
+      "metadata": {
+        "assignment_model": "gpt-6.1-sol",
+        "catalog": [
+          {
+            "description": "Shirt-like upper-body garments, including T-shirts, polo shirts, blouses, and button-front shirts. Excludes sweaters, sweatshirts, and jackets.",
+            "id": 1,
+            "name": "Shirts and T-shirts"
+          },
+          {
+            "description": "Long-sleeved knit pullovers, sweaters, sweatshirts, and hoodies, excluding button-front shirts and structured outerwear.",
+            "id": 2,
+            "name": "Sweaters and sweatshirts"
+          },
+          {
+            "description": "One-piece garments with a connected bodice and skirt extending below the waist.",
+            "id": 3,
+            "name": "Dresses"
+          },
+          {
+            "description": "Front-opening outerwear with jacket construction, including structured collars, closures, and exterior pockets.",
+            "id": 4,
+            "name": "Jackets"
+          },
+          {
+            "description": "Enclosed casual or athletic shoes with sneaker construction and flexible rubber soles, excluding boots.",
+            "id": 5,
+            "name": "Sneakers"
+          },
+          {
+            "description": "Footwear with boot construction and shafts reaching the ankle or higher, including lace-up and pull-on boots.",
+            "id": 6,
+            "name": "Boots"
+          },
+          {
+            "description": "Open footwear with exposed toes and strap-based uppers, including flip-flops.",
+            "id": 7,
+            "name": "Sandals"
+          },
+          {
+            "description": "Handheld bags with a storage body and carrying handles or straps.",
+            "id": 8,
+            "name": "Handbags"
+          },
+          {
+            "description": "Lower-body garments with a waistband and two separate legs, including full-length trousers and shorts. Excludes skirts and dresses; unclear items remain in Other.",
+            "id": 9,
+            "name": "Pants and shorts"
+          },
+          {
+            "description": "Bra-shaped upper-body garments with two cups connected by a chest band and shoulder straps. Excludes shirts, dresses, and other full-torso garments.",
+            "id": 10,
+            "name": "Bras"
+          },
+          {
+            "description": "Lower-body garments with a waistband and a single skirt section rather than two separate legs. Includes short and long skirts; excludes pants, shorts, and dresses. Unclear items remain in Other.",
+            "id": 11,
+            "name": "Skirts"
+          }
+        ],
+        "catalog_sha256": "7f0950b69ea360d694fd6d5dc58b30d74e89d69fbc172ad88757499161d16942",
+        "expected_count": 100,
+        "experiment": "frozen-catalog-images",
+        "input_jsonl_sha256": "84f96e058dbd3b3ffdff91310b7b17a81b05b27dc1e7c2ade3ce09f7a6c98784",
+        "input_sha256": "171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e",
+        "k": 8,
+        "management_calls": 0,
+        "mode": "llm",
+        "pricing_date": "2026-10-20",
+        "run_id": "d0e22a2f571984a1f17be10e9da954d3",
+        "schema_version": 1,
+        "sol_reasoning_effort": "high",
+        "source": {
+          "commit": "95d0465a1fc91a416a5ae124ddf11787ece887c4",
+          "embedded_file_sha256": {
+            "Cargo.lock": "9e213ec7c93b9e21295e9bc42282e7e3c5e0ecbf00894f635ee7cfe719533e31",
+            "Cargo.toml": "73e0d018642b49459ac240024dd5c992499b94d3e3b08233fcebe96235f7f171",
+            "examples/frozen_catalog.rs": "3f4dbe781aaba51e227c83c9b784048aaa69a42b0416fd5df8e2ffeef9b54cc3",
+            "src/lib.rs": "5621da9c21464c081476557ca5d306f4abf81d072a4e98e517a806bacd9b57a0",
+            "src/metrics.rs": "c13f0e6f12ec5ef6bd3887abae78e067bc410c44841a6787faa43f704c17977f",
+            "src/provider.rs": "90a68d375dc6476a912cffd681f855a4f0c704c9adfb42c6fc43a7e00414754c",
+            "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+          },
+          "executable_sha256": "35e0db257343ed1083bf2ef7187f4e0736985f288ddcf70426dfdd4afbac27ff"
+        },
+        "started_at_unix_ms": 1792477225692,
+        "task": "Group clothing images by the visible kind of garment, footwear, or accessory, rather than color, style, orientation, or background. Create coherent reusable groups from observed evidence. Keep unclear or unrelated images in Other when no group fits."
+      },
+      "wall_seconds": 491.777,
+      "timing_complete": true,
+      "other_count": 2,
+      "coverage": 0.98
+    },
+    "ld": {
+      "calls": 137,
+      "successful_calls": 137,
+      "error_calls": 0,
+      "unknown_usage_calls": 0,
+      "assignment_refusal_calls": 0,
+      "raw_assignment_refusal_attempts": 0,
+      "cost_complete": true,
+      "known_recorded_cost_usd": "0.0054936",
+      "usage": {
+        "input_tokens": 54936,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0
+      },
+      "request_seconds": 18.554,
+      "cluster_comparisons": 911,
+      "failed_source_jsonl_lines": [],
+      "unknown_usage_source_jsonl_lines": [],
+      "mode": "ld",
+      "metadata": {
+        "assignment_model": "gpt-6-luna",
+        "catalog": [
+          {
+            "description": "Shirt-like upper-body garments, including T-shirts, polo shirts, blouses, and button-front shirts. Excludes sweaters, sweatshirts, and jackets.",
+            "id": 1,
+            "name": "Shirts and T-shirts"
+          },
+          {
+            "description": "Long-sleeved knit pullovers, sweaters, sweatshirts, and hoodies, excluding button-front shirts and structured outerwear.",
+            "id": 2,
+            "name": "Sweaters and sweatshirts"
+          },
+          {
+            "description": "One-piece garments with a connected bodice and skirt extending below the waist.",
+            "id": 3,
+            "name": "Dresses"
+          },
+          {
+            "description": "Front-opening outerwear with jacket construction, including structured collars, closures, and exterior pockets.",
+            "id": 4,
+            "name": "Jackets"
+          },
+          {
+            "description": "Enclosed casual or athletic shoes with sneaker construction and flexible rubber soles, excluding boots.",
+            "id": 5,
+            "name": "Sneakers"
+          },
+          {
+            "description": "Footwear with boot construction and shafts reaching the ankle or higher, including lace-up and pull-on boots.",
+            "id": 6,
+            "name": "Boots"
+          },
+          {
+            "description": "Open footwear with exposed toes and strap-based uppers, including flip-flops.",
+            "id": 7,
+            "name": "Sandals"
+          },
+          {
+            "description": "Handheld bags with a storage body and carrying handles or straps.",
+            "id": 8,
+            "name": "Handbags"
+          },
+          {
+            "description": "Lower-body garments with a waistband and two separate legs, including full-length trousers and shorts. Excludes skirts and dresses; unclear items remain in Other.",
+            "id": 9,
+            "name": "Pants and shorts"
+          },
+          {
+            "description": "Bra-shaped upper-body garments with two cups connected by a chest band and shoulder straps. Excludes shirts, dresses, and other full-torso garments.",
+            "id": 10,
+            "name": "Bras"
+          },
+          {
+            "description": "Lower-body garments with a waistband and a single skirt section rather than two separate legs. Includes short and long skirts; excludes pants, shorts, and dresses. Unclear items remain in Other.",
+            "id": 11,
+            "name": "Skirts"
+          }
+        ],
+        "catalog_sha256": "7f0950b69ea360d694fd6d5dc58b30d74e89d69fbc172ad88757499161d16942",
+        "expected_count": 100,
+        "experiment": "frozen-catalog-images",
+        "input_jsonl_sha256": "84f96e058dbd3b3ffdff91310b7b17a81b05b27dc1e7c2ade3ce09f7a6c98784",
+        "input_sha256": "171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e",
+        "k": 8,
+        "management_calls": 0,
+        "mode": "ld",
+        "pricing_date": "2026-10-20",
+        "run_id": "555055c26903dc261df49eaef29343bf",
+        "schema_version": 1,
+        "sol_reasoning_effort": "high",
+        "source": {
+          "commit": "95d0465a1fc91a416a5ae124ddf11787ece887c4",
+          "embedded_file_sha256": {
+            "Cargo.lock": "9e213ec7c93b9e21295e9bc42282e7e3c5e0ecbf00894f635ee7cfe719533e31",
+            "Cargo.toml": "73e0d018642b49459ac240024dd5c992499b94d3e3b08233fcebe96235f7f171",
+            "examples/frozen_catalog.rs": "3f4dbe781aaba51e227c83c9b784048aaa69a42b0416fd5df8e2ffeef9b54cc3",
+            "src/lib.rs": "5621da9c21464c081476557ca5d306f4abf81d072a4e98e517a806bacd9b57a0",
+            "src/metrics.rs": "c13f0e6f12ec5ef6bd3887abae78e067bc410c44841a6787faa43f704c17977f",
+            "src/provider.rs": "90a68d375dc6476a912cffd681f855a4f0c704c9adfb42c6fc43a7e00414754c",
+            "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+          },
+          "executable_sha256": "35e0db257343ed1083bf2ef7187f4e0736985f288ddcf70426dfdd4afbac27ff"
+        },
+        "started_at_unix_ms": 1792477225693,
+        "task": "Group clothing images by the visible kind of garment, footwear, or accessory, rather than color, style, orientation, or background. Create coherent reusable groups from observed evidence. Keep unclear or unrelated images in Other when no group fits."
+      },
+      "wall_seconds": 18.703,
+      "timing_complete": true,
+      "other_count": 33,
+      "coverage": 0.67
+    }
+  },
+  "method": "Independent exact request/page replay against pinned PNGs and original 11-definition catalog; enumerate every unordered pair; exact rational ARI; Decimal standard-tier raw token prices. Direct agreement counts both Other as equal; primary ARI makes each Other point a singleton. Costs/timing apply only to this post hoc assignment-only diagnostic."
+}

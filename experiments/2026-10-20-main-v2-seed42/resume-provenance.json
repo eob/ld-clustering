@@ -1,0 +1,11 @@
+{
+  "externally_resumed_roles": [],
+  "external_histories": [],
+  "run_sessions": {
+    "text-llm": 1,
+    "text-ld": 1,
+    "images-llm": 1,
+    "images-ld": 1
+  },
+  "no_resume_basis": "Exactly one ordered successful start/finish event per arm, saved_count0/prior_wall_ms0; no declared or observed resume sidecars/units"
+}

@@ -1,0 +1,167 @@
+{
+  "method": "Enumerate every unordered point pair; exact rational ARI; independent Decimal token pricing. Other is a unique singleton per rejected point in primary metrics. Covered-only scores are post hoc diagnostics.",
+  "experiments": {
+    "text": {
+      "agreement": {
+        "n": 1000,
+        "pair_confusion": {
+          "tp": 39140,
+          "fp": 10938,
+          "fn": 19905,
+          "tn": 429517
+        },
+        "adjusted_rand_index": 0.6829583195242417,
+        "adjusted_rand_index_exact": "1659357449/2429661374",
+        "pairwise_precision": 0.7815807340548744,
+        "pairwise_recall": 0.6628842408332628,
+        "pairwise_f1": 0.7173556445478955
+      },
+      "shared_other_sensitivity": {
+        "n": 1000,
+        "pair_confusion": {
+          "tp": 40429,
+          "fp": 23015,
+          "fn": 19051,
+          "tn": 417005
+        },
+        "adjusted_rand_index": 0.609829100465617,
+        "adjusted_rand_index_exact": "14404067/23619842",
+        "pairwise_precision": 0.637239140029002,
+        "pairwise_recall": 0.6797074646940148,
+        "pairwise_f1": 0.6577885522762031
+      },
+      "dataset_label_agreement": {
+        "baseline": {
+          "n": 1000,
+          "pair_confusion": {
+            "tp": 24524,
+            "fp": 34521,
+            "fn": 20476,
+            "tn": 419979
+          },
+          "adjusted_rand_index": 0.41120649453925723,
+          "adjusted_rand_index_exact": "4263428/10368095",
+          "pairwise_precision": 0.4153442289778982,
+          "pairwise_recall": 0.5449777777777778,
+          "pairwise_f1": 0.4714114085251574
+        },
+        "ld": {
+          "n": 1000,
+          "pair_confusion": {
+            "tp": 20004,
+            "fp": 30074,
+            "fn": 24996,
+            "tn": 424426
+          },
+          "adjusted_rand_index": 0.36005995750881115,
+          "adjusted_rand_index_exact": "1719664/4776049",
+          "pairwise_precision": 0.39945684731818365,
+          "pairwise_recall": 0.44453333333333334,
+          "pairwise_f1": 0.4207913502597867
+        }
+      },
+      "mutually_covered_posthoc": {
+        "n": 833,
+        "pair_confusion": {
+          "tp": 39140,
+          "fp": 10622,
+          "fn": 9628,
+          "tn": 287138
+        },
+        "adjusted_rand_index": 0.7604221322976435,
+        "adjusted_rand_index_exact": "348009772/457653397",
+        "pairwise_precision": 0.7865439491981834,
+        "pairwise_recall": 0.8025754593175853,
+        "pairwise_f1": 0.7944788389323049
+      },
+      "initial_management_requests_identical": true,
+      "initial_management_request_sha256": {
+        "baseline": "d97b95a6c69e9711d8b6f26610c18ae1f614cd1cc4e48446642077cd36b746a4",
+        "ld": "d97b95a6c69e9711d8b6f26610c18ae1f614cd1cc4e48446642077cd36b746a4"
+      },
+      "pinned_input_sha256": "30fb8469f7e89d39e4f1188ca889db48f8b702c28a99c10978b7d78e6cff15c0",
+      "pinned_order_sha256": "a9c9e70ab35d25f27f9d76be9315fd222a5ead33261b0988d07db61d765086f0"
+    },
+    "images": {
+      "agreement": {
+        "n": 100,
+        "pair_confusion": {
+          "tp": 253,
+          "fp": 422,
+          "fn": 302,
+          "tn": 3973
+        },
+        "adjusted_rand_index": 0.32878213232195536,
+        "adjusted_rand_index_exact": "3901/11865",
+        "pairwise_precision": 0.3748148148148148,
+        "pairwise_recall": 0.45585585585585586,
+        "pairwise_f1": 0.4113821138211382
+      },
+      "shared_other_sensitivity": {
+        "n": 100,
+        "pair_confusion": {
+          "tp": 311,
+          "fp": 925,
+          "fn": 244,
+          "tn": 3470
+        },
+        "adjusted_rand_index": 0.2277897214782431,
+        "adjusted_rand_index_exact": "18966/83261",
+        "pairwise_precision": 0.25161812297734626,
+        "pairwise_recall": 0.5603603603603604,
+        "pairwise_f1": 0.3472920156337242
+      },
+      "dataset_label_agreement": {
+        "baseline": {
+          "n": 100,
+          "pair_confusion": {
+            "tp": 295,
+            "fp": 260,
+            "fn": 155,
+            "tn": 4240
+          },
+          "adjusted_rand_index": 0.5409753645047762,
+          "adjusted_rand_index_exact": "1076/1989",
+          "pairwise_precision": 0.5315315315315315,
+          "pairwise_recall": 0.6555555555555556,
+          "pairwise_f1": 0.5870646766169154
+        },
+        "ld": {
+          "n": 100,
+          "pair_confusion": {
+            "tp": 152,
+            "fp": 523,
+            "fn": 298,
+            "tn": 3977
+          },
+          "adjusted_rand_index": 0.18086167800453515,
+          "adjusted_rand_index_exact": "1994/11025",
+          "pairwise_precision": 0.22518518518518518,
+          "pairwise_recall": 0.3377777777777778,
+          "pairwise_f1": 0.2702222222222222
+        }
+      },
+      "mutually_covered_posthoc": {
+        "n": 66,
+        "pair_confusion": {
+          "tp": 253,
+          "fp": 422,
+          "fn": 71,
+          "tn": 1399
+        },
+        "adjusted_rand_index": 0.37993966419518543,
+        "adjusted_rand_index_exact": "43198/113697",
+        "pairwise_precision": 0.3748148148148148,
+        "pairwise_recall": 0.7808641975308642,
+        "pairwise_f1": 0.5065065065065065
+      },
+      "initial_management_requests_identical": true,
+      "initial_management_request_sha256": {
+        "baseline": "5eeee1f39b62b37683a82297b42ffbaf6bfe7a5ccc251915a540be5ac9c37105",
+        "ld": "5eeee1f39b62b37683a82297b42ffbaf6bfe7a5ccc251915a540be5ac9c37105"
+      },
+      "pinned_input_sha256": "171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e",
+      "pinned_order_sha256": "37c854ecc3b6b19379b099baf19fde564efa2c7a60441a9da0f2291a4c7f1bf0"
+    }
+  }
+}

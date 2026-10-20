@@ -1,0 +1,4 @@
+{"status": "waiting_for_primary", "primary_pid": 1128943, "control_binary_sha256": "35e0db257343ed1083bf2ef7187f4e0736985f288ddcf70426dfdd4afbac27ff", "catalog_sha256": "7f0950b69ea360d694fd6d5dc58b30d74e89d69fbc172ad88757499161d16942"}
+{"mode": "llm", "pid": 1427429, "status": "started"}
+{"mode": "ld", "pid": 1427430, "status": "started"}
+{"status": "terminal", "exit_codes": [0, 0]}
