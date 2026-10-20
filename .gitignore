@@ -1,0 +1,7 @@
+/target/
+/data/
+/runs/
+.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
