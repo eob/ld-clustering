@@ -261,5 +261,33 @@ Do not infer success from collected systemd units (a nonexistent unit may displa
 Result=success by default). Use actual process absence, DB/session markers, logs
 and complete output artifacts. No automatic experiment restart solely because an
 observation times out. Unknown usage remains unknown even after successful retry.
-The control archive helper is being prepared independently; its source/binary
-pins must use this amended control, not the never-run first version.
+The control archive/verifier is ready at `/tmp/ld-control-archive.py`, with usage
+and evidence in `/tmp/ld-control-archive.README.md`. Helper SHA-256:
+daa1ce85514a660292e86bdcf753d53ea120a12f2568596ab061184b68db611c.
+All 14 offline tests passed, including a disposable 100-by-2 archive fixture with
+relocated verification, exact raw-byte preservation, refusal-aware page replay,
+Decimal pricing and unknown-cost counters. All 370 assignment requests in the
+immutable first image archive also match the reconstructed request encoder.
+Independent review reran all 14 tests and found no consequential blocker. These
+checks used no API calls, builds or live archival; fixtures are not experiment data.
+The helper pins amended runtime 9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c,
+control binary 35e0db257343ed1083bf2ef7187f4e0736985f288ddcf70426dfdd4afbac27ff,
+and catalog 7f0950b69ea360d694fd6d5dc58b30d74e89d69fbc172ad88757499161d16942.
+Each arm's recorded source commit may be a later documentation commit; creation
+checks its embedded files against both that Git commit and the frozen runtime.
+Only after both controls are terminal with 100 verified assignments, run:
+
+```sh
+python3 /tmp/ld-control-archive.py \
+  --repo /mnt/disks/data/ld-clustering \
+  --run runs/frozen-images-v2-seed42 \
+  --output experiments/2026-10-20-frozen-images-v2-seed42 \
+  --service ld-clustering-frozen-images-v2-20261020.service
+```
+
+Add `--collect` only if systemd has already collected the unit; its terminal
+Result remains unknown, and absence of matching workers plus complete output,
+progress and raw-journal replay are still required. This is a separate post-hoc,
+assignment-only diagnostic using the originally preselected baseline-derived
+11-cluster catalog. Keep its costs and processing times separate from the main
+independent evolving-system comparison; it cannot replace the primary results.
