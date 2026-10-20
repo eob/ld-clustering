@@ -1,10 +1,10 @@
 # Measure whether contextual category guidance improves LLM–Decisions agreement
 
-**Status:** In Progress
+**Status:** In Review
 **Type:** Investigation
 **Filed:** 2026-10-20
 **Branch:** feat-guided-agreement-experiment
-**Pull request:** not opened
+**Pull request:** https://github.com/eob/ld-clustering/pull/3 (draft; experiment in progress)
 
 ## Goal / failure mode
 
@@ -92,6 +92,17 @@ Source branch starts from main `1fd37ebb28e956a380ba8587815d4aa738719510`.
 Dataset, controlled-harness and metrics/review lanes are delegated. No new paid
 model calls have been made. Dataset feasibility, review sample allocation and
 the final protocol pins remain to be frozen before execution.
+
+Protocol choices frozen before outcomes: dataset seed 1042; review seed 2042.
+All 100 held-out images are reviewed for each description condition. For each
+text condition, review quotas are 30 different-named disagreements, 30 Sol-named /
+LD-Other, 10 Sol-Other / LD-named, 20 equal-named agreements and 10 both-Other.
+Select all available cases in an undersized stratum; do not reallocate spare
+quota. Report sampled denominators. Backend identities, condition names and
+aggregate results are hidden from the reviewer; candidate A/B order is shuffled
+and preserved separately for later unblinding. Automated reviewer judgments are
+not human ground truth. The anchored-original-reference paired comparison is a
+preplanned secondary diagnostic; the primary uses matched descriptions.
 
 ## Decisions and durable findings
 
