@@ -28,8 +28,9 @@ bash scripts/benchmark.sh runs/main-seed42
 
 The last command makes paid API calls. It starts four independent sequential
 streams: text/image × LLM/LD. Each stream has concurrency one; the four arms
-overlap. Logs, SQLite state and process output are separate. Dataset download
-and preparation are common setup and excluded from measured clustering time.
+overlap. Logs, SQLite state and process output are separate. Measured time covers
+the clustering loop, including bootstrap, model calls, management, reassignment
+and persistence. Dataset preparation and CLI input validation are excluded.
 
 To process your own newline-delimited JSON:
 
