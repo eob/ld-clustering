@@ -10,9 +10,12 @@ arms. Ordinary assignments use the same Sol model in `llm` mode and the native
 **GPT-6 Luna Decisions API** in `ld` mode. There are no embeddings, trained local
 classifiers or labels standing in for either model.
 
-Code is BSD-3-Clause. Benchmark inputs retain their upstream licenses. This is
-experimental software; the report will distinguish measured agreement with a
-reference run from ground-truth accuracy.
+Code is BSD-3-Clause. Benchmark inputs retain their upstream licenses. Measured
+agreement with an LLM reference is separate from ground-truth accuracy.
+
+[Illustrated technical report](https://edwardbenson.com/goofing/ld-clustering)
+· [Primary results](#primary-results)
+· [Recorded evidence](experiments/2026-10-20-main-v2-seed42/)
 
 ## Run
 
@@ -125,9 +128,9 @@ grayscale pixels. These inputs do not establish performance on general photos
 or arbitrary document collections. Original CLINC out-of-scope labels also do
 not imply that every such request is semantically unclusterable.
 
-The main experiment runs independent mutable catalogs with identical stream
+The main experiment ran independent mutable catalogs with identical stream
 order, settings, task wording and management model. Only the assignment backend
-is deliberately changed. Independent management calls can also vary, so final
+was deliberately changed. Independent management calls could also vary, so final
 partition disagreement includes both local assignment differences and later
 catalog divergence. One stream order is a case study, not a statistical claim
 about all orders or all workloads.
@@ -136,11 +139,13 @@ Two earlier attempts are retained under `experiments/2026-10-20-main-seed42/`
 and `experiments/2026-10-20-main-seed42-detached/`. Their image pairs completed,
 but their text comparisons did not. The second exposed an invalid maintenance
 plan and then an assignment refusal; the amended runtime handles those cases
-explicitly. The new matched cohort restarts all four arms from empty state with
-one frozen amended executable. Earlier prefixes are not continued under changed
-semantics or mixed into its headline results.
+explicitly. The matched v2 cohort restarted all four arms from empty state with
+one frozen amended executable. All four primary streams completed: 1,000 text
+and 100 image points per arm, empty reassignment queues and one successful fresh
+session each. Earlier prefixes were not continued under changed semantics or
+mixed into these primary results.
 
-After all four streams finish:
+To compare saved streams after a new execution finishes:
 
 ```sh
 target/release/ld-clustering compare \
@@ -186,7 +191,86 @@ Sol output usage already includes reasoning tokens. Rates are pinned from the
 and [Decisions guide](https://developers.openai.com/api/docs/guides/decisions).
 The standard processing tier is used; no Batch or Flex pricing is assumed.
 
+## Primary results
+
+The completed v2 experiment used the frozen Rust runtime
+[`9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c`](https://github.com/eob/ld-clustering/tree/9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c).
+The measured main executable SHA-256 was
+`8a59bbf1e8dbd991960d6bc76046d0e15e245cfc5a50ab724dd201a62e9e9160`.
+Each arm processed its full requested sample in one uninterrupted clustering
+loop. The four arms overlapped in real time, with one request at a time per arm.
+
+| Input | Arm | Token-priced API cost (USD) | Loop seconds | Named points | Active/nonempty clusters | API attempts |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Text | LLM | $3.7861672 | 7065.888 | 970/1,000 (97.0%) | 16/16 | 2,893 |
+| Text | LD | $0.5510947 known subtotal | 1328.795 | 836/1,000 (83.6%) | 15/15 | 6,274 |
+| Images | LLM | $0.2851850 | 669.490 | 100/100 (100.0%) | 13/12 | 139 |
+| Images | LD | $0.0939411 | 277.269 | 66/100 (66.0%) | 11/8 | 352 |
+
+The text LD known subtotal excludes the unknown charges for two retried HTTP 503
+attempts that did not report token usage. Their costs are unknown, not zero;
+there is no complete text cost-reduction ratio. The image costs have complete
+recorded usage. Costs include bootstrap, cluster management, assignment,
+reassignment and recorded retries, rather than assignment alone.
+
+Known cost splits show the shared LLM overhead. Planning includes bootstrap and
+later reviews; assignment includes maintenance reassignment. Fractions below use
+known recorded usage, so unknown text-LD charges can change its full-cost share.
+
+| Input / arm | Planning USD | Assignment and reassignment USD | Planning share of known cost |
+| --- | ---: | ---: | ---: |
+| Text / LLM | $0.1642532 | $3.6219140 | 4.3% |
+| Text / LD | $0.2800086 | $0.2710861 | 50.8% |
+| Images / LLM | $0.0586930 | $0.2264920 | 20.6% |
+| Images / LD | $0.0808265 | $0.0131146 | 86.0% |
+
+Agreement is measured against the LLM arm's final partition:
+
+| Input | ARI | Pair precision | Pair recall | Pair F1 | Shared-Other ARI |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Text | 0.682958 | 0.781581 | 0.662884 | 0.717356 | 0.609829 |
+| Images | 0.328782 | 0.374815 | 0.455856 | 0.411382 | 0.227790 |
+
+Primary ARI and pair scores treat each Other point as a separate singleton.
+The last column instead groups Other together as a sensitivity check. LD left
+164 text points and 34 images in Other, versus 30 text points and no images for
+the LLM baseline. All four primary arms recorded zero accepted assignment
+refusals. Refusal calls and ordinary Other outcomes are measured separately.
+
+The baseline/LD processing-time ratios were 5.32× for text and
+2.41× for images. For images, the complete token-priced cost ratio was
+3.04×. These are measurements of this cohort, under shared API and machine
+conditions. They accompany lower LD coverage and different final partitions;
+they do not establish equal-quality clustering or a general model speedup.
+
+Each manager also made independent stochastic decisions. Planning request counts
+were 21 versus 36 for text and 5 versus 6 for images (LLM versus LD). The totals
+therefore include different catalogs and amounts of review/reassignment work;
+they do not isolate assignment under one common taxonomy. The LLM baseline is a
+reference, not a human-validated answer key. Secondary dataset-label scores are
+retained in the comparison artifacts. These primary runs applied creation,
+renaming and retirement operations; no merge or split was applied. Both operations
+are implemented and tested offline, and the report's maintenance animation is an
+illustration rather than a replay of these runs.
+
+The primary manifest SHA-256 is
+`95c7c86d5174256e1f1882873534e94f808f7c1b8b2dfce02b0c15919ccbaaff`.
+The [primary archive](experiments/2026-10-20-main-v2-seed42/) contains the raw
+SQLite states and request journals, selected inputs and licenses, model prices,
+[manifest](experiments/2026-10-20-main-v2-seed42/manifest.json),
+[text comparison](experiments/2026-10-20-main-v2-seed42/text-results.json),
+[image comparison](experiments/2026-10-20-main-v2-seed42/images-results.json),
+[cost split](experiments/2026-10-20-main-v2-seed42/cost-split.json) and
+[independent verification](experiments/2026-10-20-main-v2-seed42/independent-verification.json).
+These records can be inspected without new model calls. Repeating the paid
+procedure preserves inputs and settings, but stochastic model calls need not
+reproduce these exact catalogs, assignments, costs or times.
+
 ## Frozen-catalog image diagnostic
+
+Both control arms completed all 100 images after the primary streams finished.
+Their verified assignment-only measurements remain separate from the primary
+tables above.
 
 A separate post-hoc control measures assignment behavior after removing the
 independent managers' catalog differences. Its catalog is the **11 active
@@ -196,16 +280,41 @@ not a preset taxonomy or a target count. The catalog was learned from those
 same image inputs, so this control isolates local choices; it is not another
 independent streaming evaluation or a held-out generalization test.
 
+| Control arm | Token-priced API cost (USD) | Loop seconds | Named points | API attempts |
+| --- | ---: | ---: | ---: | ---: |
+| LLM | $0.2090700 | 491.777 | 98/100 (98.0%) | 114 |
+| LD | $0.0054936 | 18.703 | 67/100 (67.0%) | 137 |
+
+Direct cluster-ID agreement was 47/100 (47%), including one point that both
+arms placed in Other. Singleton-Other ARI was 0.385518, pairwise precision
+0.526627, recall 0.403323 and F1 0.456801. Grouping Other together instead
+gave ARI 0.263767. Both arms reported complete usage, with no failed requests or
+accepted assignment refusals. Baseline/LD cost and processing-time ratios were
+38.06× and 26.29× respectively, for assignment only.
+
+The large assignment-only efficiency ratios accompany substantial disagreement
+and lower LD coverage. Holding this catalog fixed did not make the backends
+interchangeable. This post-hoc, baseline-derived catalog was learned from these
+same images in an earlier run; the control is not a held-out evaluation and
+does not quantify how much of the primary disagreement came from management.
+Its costs exclude the earlier work that produced the catalog.
+
+The [control archive](experiments/2026-10-20-frozen-images-v2-seed42/) preserves
+[independent request replay and results](experiments/2026-10-20-frozen-images-v2-seed42/independent-results.json),
+[the frozen catalog](experiments/2026-10-20-frozen-images-v2-seed42/catalog.json)
+and all raw requests, progress, outputs, inputs and notices. Its manifest SHA-256 is
+`514bdadfe78b3469d744e3348484000357c4e444cfa3bf04f0db0dbe9ac1cf1a`.
+
 Commit the source before measured API calls. The Run sequence above builds
 both the main and separate control executables before the primary streams start.
 Use that same build for the control.
 
 Record the source, executable, input and catalog hashes, and keep those
-executables unchanged through the primary run and its control. For
-the v2 cohort, both executables were frozen before the primary launch; the queued
-control uses that existing build. Start control calls only after all four primary
-streams have finished, their expected counts match and reassignment queues are
-empty.
+executables unchanged through the primary run and its control. For the v2
+cohort, both executables were frozen before the primary launch, and the control
+started with that existing build after all four primary streams were verified
+complete with matching counts and empty reassignment queues. For another
+execution, use the same ordering.
 
 Both control processes use the same 100 images, frozen catalog, task, K=8 and
 first-matching-page/Other policy. They make no management calls. This is a
@@ -217,18 +326,20 @@ streams finish, launching the two modes together with separate fresh paths:
 ```sh
 target/release/examples/frozen_catalog \
   --input data/images.jsonl \
-  --catalog runs/frozen-images-v2-seed42/catalog.json \
+  --catalog experiments/2026-10-20-frozen-images-v2-seed42/catalog.json \
   --mode llm --k 8 --expected 100 \
-  --log runs/frozen-images-v2-seed42/llm.calls.jsonl \
-  --output runs/frozen-images-v2-seed42/llm.json
+  --log runs/frozen-images-replay-seed42/llm.calls.jsonl \
+  --output runs/frozen-images-replay-seed42/llm.json
 ```
 
 For the second process use `--mode ld`, `ld.calls.jsonl` and `ld.json`.
-The catalog file is a JSON array of `{ "id": 1, "name": "...",
-"description": "..." }` objects selected from the chosen completed baseline's
-active clusters in ascending ID order. Preserve the gaps in its IDs. Record the
-catalog export's source alongside it; the example records its exact hash and
-full contents.
+The tracked catalog file is a JSON array of `{ "id": 1, "name": "...",
+"description": "..." }` objects exported from the original first-cohort LLM
+baseline's active clusters in ascending ID order. A fresh clone can inspect or
+reuse these preselected definitions; no new catalog-generation calls are needed.
+Preserve its IDs and ordering, including any gaps. Use new log, output and
+progress paths for another paid run; the example records the catalog's exact
+hash and full contents.
 
 Each arm writes its credential-free API journal, an ordered assignment list,
 `llm.progress.jsonl` or `ld.progress.jsonl`, and a final JSON containing source,

@@ -1,8 +1,8 @@
 # Build and measure a persistent LLM/decision-model stream clusterer
 
-Status: In Progress
+Status: In Review
 Branch: feat-stream-clustering
-Pull request: https://github.com/eob/ld-clustering/pull/1 (draft)
+Pull request: https://github.com/eob/ld-clustering/pull/1 (draft; finalization pending)
 Session: 01a15732-077c-7a33-ba98-e8b2509c6a74 (Codex)
 
 ## Goal
@@ -49,36 +49,58 @@ latency. Public benchmark labels are a secondary check, not the baseline truth.
 
 ## Current state
 
-The amended Rust runtime is frozen and a fresh matched four-arm cohort is active
-at `runs/main-v2-seed42`, launched 2026-10-20T04:22:27Z.
-It distinguishes Cluster, Other and Refused; accepted assignment refusals remain
-unassigned with per-point events and priced request counters. Invalid completed
-manager plans may retry within the existing shared three-attempt budget. Run
-session boundaries and conservative terminal-error cost markers make resumption
-and possible unjournaled charges visible. All 58 offline tests pass (44 library,
-3 CLI, 11 control-example), with one explicitly paid smoke ignored; formatting
-and all-target Clippy pass. Both image streams and the 1,000-point LD text stream
-have finished with empty queues and one successful fresh session each. The LLM
-text stream remains active under the workers recorded below. The completed LD
-text journal retains two retried HTTP 503 attempts without usage (physical rows
-2661 and 5281), so its eventual reported cost must remain a known subtotal.
+Implementation and measured work are complete. The amended four-arm primary
+cohort finished 1,000 text and 100 image points per arm, with empty reassignment
+queues and one successful fresh invocation each. The subsequent fixed-catalog
+image control finished 100 points per arm. All measured workers are terminal;
+no paid experiment or recovery remains pending. Runtime/launch source remains
+`9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c`, with the unchanged frozen executables.
+All 58 offline tests, formatting and all-target Clippy passed before those calls.
 
-Both earlier cohorts are terminal and preserved unchanged under
-`experiments/2026-10-20-main-seed42/` and
-`experiments/2026-10-20-main-seed42-detached/`. Each has a complete image pair;
-neither has a complete text comparison. The second archive manifest SHA-256 is
-ae602400ee66cb701d1582f501eb861b0a35b9b55e1f540839ba6ba659e47035.
-Its 397-point LLM text arm was stopped deliberately after the 779-point LD arm
-refused classification. All eight archived DB/journal files were independently
-compared with original bytes. The original executable remains locally available
-at `/tmp/ld-clustering-v1-frozen`; archived source/binary pins identify it.
+Complete verified evidence is retained in:
 
-The old primary, recovery and control-waiter units are inactive; none should be
-restarted. The website remains unpublished and all primary measurements are reset
-to pending until the fresh amended four-arm cohort is complete. The post-hoc
-image control still uses the originally selected final 11-cluster LLM catalog;
-its new executable will implement the same refusal semantics as the new runtime.
-A dedicated persistent worker will launch it only after the new primary ends.
+- [Primary archive](../experiments/2026-10-20-main-v2-seed42/), manifest SHA-256
+  `95c7c86d5174256e1f1882873534e94f808f7c1b8b2dfce02b0c15919ccbaaff`.
+- [Separate post-hoc control archive](../experiments/2026-10-20-frozen-images-v2-seed42/),
+  manifest SHA-256
+  `514bdadfe78b3469d744e3348484000357c4e444cfa3bf04f0db0dbe9ac1cf1a`.
+
+Independent main verification with `/tmp/ld-clustering-v2-frozen` reproduced the
+archived Rust comparisons after relocation and checked pinned input bytes, every
+pair score, Decimal costs, SQLite integrity, complete sessions and refusal events.
+The control verifier independently replayed exact requests/pages, choices,
+progress and output from pinned image/catalog bytes. Both archives preserve raw
+records, licenses, prices and immutable source/executable pins. The offline final
+analysis is complete at `/tmp/ld-main-v2-final-analysis.{md,json}`.
+
+The [README](../README.md#primary-results) records the actual primary and separate
+control tables. Text LD has two retried HTTP 503 attempts without reported usage
+at physical journal rows 2661 and 5281, so its known cost remains a subtotal and
+no complete text cost ratio is claimed. Lower LD coverage and final-partition
+disagreement accompany the observed efficiencies. The LLM is a reference rather
+than ground truth; one order and independently stochastic managers do not establish
+universal quality or latency. The fixed-catalog result is post-hoc and assignment
+only, not a replacement for the primary system comparison.
+
+Both earlier interrupted cohorts remain unchanged in their original archives.
+Their complete image replicates and incomplete text prefixes are excluded from
+v2 headline results. The historical checkpoints and PID/launch recipes below
+record those development phases; they are not current workers or pending actions.
+
+PR #1 exists in draft and awaits final description/review finalization. Remaining
+publication work is to commit/publish the reviewed evidence, finish the source PR,
+fill and validate the website artifact against its immutable evidence commit,
+complete the scoped production goof PR, and verify the live page. The website is
+not yet published; the requested destination is
+https://edwardbenson.com/goofing/ld-clustering.
+
+## Historical checkpoints
+
+The sections below retain observations and launch/recovery instructions from
+earlier development phases as recorded. Their active PIDs, queued work, pending
+analysis and future plans are historical, superseded by Current state above.
+The installed archives are immutable; do not rerun their creation commands or
+restart the recorded workers. Final reproduction instructions are in the README.
 
 ## Validation evidence
 
@@ -223,7 +245,7 @@ ignored. `cargo fmt --check` and `cargo clippy --locked --all-targets -- -D warn
 passed. Full logs remain in /tmp/ld-clustering-v2-{all-tests,clippy,fmt}.log; the
 brief failure excerpts above preserve the durable evidence.
 
-## Active amended cohort and recovery instructions
+## Historical amended-cohort launch and archival recipes
 
 Runtime and launch checkout: 9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c. Main
 executable SHA-256: 8a59bbf1e8dbd991960d6bc76046d0e15e245cfc5a50ab724dd201a62e9e9160.
@@ -296,7 +318,7 @@ assignment-only diagnostic using the originally preselected baseline-derived
 11-cluster catalog. Keep its costs and processing times separate from the main
 independent evolving-system comparison; it cannot replace the primary results.
 
-## Final interpretation and publication gate
+## Historical final-analysis and publication preparation
 
 The offline narrative helper `/tmp/ld-final-analysis.py` first verifies the exact
 completed archive, then reports known planning versus assignment/reassignment

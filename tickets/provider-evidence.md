@@ -1,6 +1,18 @@
 # Provider evidence
 
-Status: Implemented and verified
+Status: In Review
+Parent ticket: feature-stream-clustering.md
+Parent pull request: https://github.com/eob/ld-clustering/pull/1 (draft; finalization pending)
+
+## Final phase completion
+
+The primary and separate fixed-catalog experiments are complete and their
+archives verified. This is phase evidence under parent PR #1, not an independent
+work item. See the [parent current state](feature-stream-clustering.md#current-state),
+[primary archive](../experiments/2026-10-20-main-v2-seed42/) and
+[control archive](../experiments/2026-10-20-frozen-images-v2-seed42/).
+The development checkpoints below preserve historical evidence; old pending
+notes and launch recipes are superseded by those final records and the README.
 
 ## Behavioral red evidence
 
