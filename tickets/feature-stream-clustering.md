@@ -166,3 +166,18 @@ README changes are at `/tmp/ld-cost-unclean-history.docs.patch`. Apply only afte
 the frozen primary runtime finishes. No active runtime file or executable has
 been changed. This reporting-only correction does not require rerunning paid
 streams; retain their pinned runtime source commit and binary separately.
+
+The fresh text LD process later exited cleanly at 607 points because Sol returned
+`retire 25` twice in one plan. Validation rejected the duplicate before state
+mutation; 607 assignments and no pending queue survived. The failed HTTP 200 plan
+is preserved at physical journal line 5547, with known token cost $0.0056778.
+A separate Decisions 503 at line 4674 omitted usage. One explicit recovery uses
+the exact frozen runtime, configuration, database and journal under user unit
+`ld-clustering-text-ld-resume1-20261020.service`, supervisor PID1080591.
+Its `resume-text-ld.py`, `text-ld-resume-history.json`, `resume-supervisor.log` and
+`text-ld.resume1.process.log` preserve the recovery. The history records the prior
+1,114.812 measured loop seconds and a 196.849-second gap from the last recorded
+attempt to resume startup. On completion it will record final metadata and
+calendar duration separately. SQLite wall_ms accumulates active loop intervals,
+excluding the manual pause; do not call it uninterrupted end-to-end latency.
+The first resume made progress beyond 650 points without a runtime/source change.
