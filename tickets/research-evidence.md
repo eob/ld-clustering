@@ -7,8 +7,11 @@ Evidence checked: 2026-10-20
 
 ## Question and scope
 
-Choose reproducible public inputs and a comparison method that isolates the
-assignment backend without pretending agreement with an LLM is ground truth.
+Choose reproducible public inputs and a comparison method for the complete
+streaming systems without treating agreement with an LLM as ground truth.
+Independent evolving catalogs include manager variation as well as assignment
+differences; a separate post-hoc fixed-catalog diagnostic isolates assignment
+choices under one shared set of descriptions.
 Scope: 1,000 short English texts and 100 clothing images, independent streaming
 arms, bounded cluster choices, shared LLM management policy. No trained classifier
 substitutes for the decision-model API.
