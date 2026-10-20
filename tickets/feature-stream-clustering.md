@@ -57,7 +57,11 @@ manager plans may retry within the existing shared three-attempt budget. Run
 session boundaries and conservative terminal-error cost markers make resumption
 and possible unjournaled charges visible. All 58 offline tests pass (44 library,
 3 CLI, 11 control-example), with one explicitly paid smoke ignored; formatting
-and all-target Clippy pass. Its paid streams are now running under the version and workers recorded below.
+and all-target Clippy pass. Both image streams and the 1,000-point LD text stream
+have finished with empty queues and one successful fresh session each. The LLM
+text stream remains active under the workers recorded below. The completed LD
+text journal retains two retried HTTP 503 attempts without usage (physical rows
+2661 and 5281), so its eventual reported cost must remain a known subtotal.
 
 Both earlier cohorts are terminal and preserved unchanged under
 `experiments/2026-10-20-main-seed42/` and
@@ -291,3 +295,32 @@ progress and raw-journal replay are still required. This is a separate post-hoc,
 assignment-only diagnostic using the originally preselected baseline-derived
 11-cluster catalog. Keep its costs and processing times separate from the main
 independent evolving-system comparison; it cannot replace the primary results.
+
+## Final interpretation and publication gate
+
+The offline narrative helper `/tmp/ld-final-analysis.py` first verifies the exact
+completed archive, then reports known planning versus assignment/reassignment
+costs, coverage, active/nonempty clusters, accepted refusal requests versus
+distinct event points, maintenance operations and guarded efficiency ratios.
+Four focused checks, a complete synthetic archive/replay and independent review
+pass. Importing the verifier executes hash-verified source bytes without writing
+bytecode caches into the immutable archive. Its SHA-256 is
+a71897cf02df2451f1fde4f5001edcfc78a2be23af2b2cae2acdc018b6862dd5.
+Run only after main archival:
+
+```sh
+python3 /tmp/ld-final-analysis.py \
+  --archive /mnt/disks/data/ld-clustering/experiments/2026-10-20-main-v2-seed42 \
+  --binary /tmp/ld-clustering-v2-frozen
+```
+
+Retain the helper and its README as additional `--operational` files during
+archival. No actual final-cohort analysis has been generated yet. The website
+import helper `/tmp/ld-fill-publication.py` reads result payloads directly from
+the chosen immutable evidence commit and binds each to its committed manifest.
+It preserves unknown-cost flags and separate fixed-catalog metrics, and places
+the measured runtime/executable pins separately from the later evidence commit.
+The mapper's schema assumptions and binding checks received independent review;
+it must not be executed until both archives exist and are committed. Publication
+still requires the complete LLM text stream, queued control, final browser/build
+checks, source PR merge, production goof PR merge and live verification.
