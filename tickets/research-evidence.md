@@ -1,9 +1,9 @@
 # Dataset, metric and prior-art evidence
 
-Status: In Review
+Status: Closed
 Branch: feat-stream-clustering
 Parent ticket: feature-stream-clustering.md
-Parent pull request: https://github.com/eob/ld-clustering/pull/1 (draft; finalization pending)
+Parent pull request: https://github.com/eob/ld-clustering/pull/1 (merged 2026-10-20T06:37:51Z)
 Evidence checked: 2026-10-20
 
 ## Final phase completion
@@ -364,3 +364,15 @@ response/array guards and nullable ledger usage access now pass a failed-null
 attempt followed by same-body successful attempt2, retaining unknown physical
 JSONL line2 rather than assigning zero cost. New executable full synthetic
 creation/replay validation is pending the frozen amended runtime pins.
+
+## Parent merge closure
+
+Closed as phase evidence under parent [PR #1](https://github.com/eob/ld-clustering/pull/1); this record has no independent
+implementation PR. The parent merged on 2026-10-20T06:37:51Z, with merge commit
+[`dc0f7859e49dbf5462bb022d4aef638d32519804`](https://github.com/eob/ld-clustering/commit/dc0f7859e49dbf5462bb022d4aef638d32519804). Its exact final title was:
+feat: add persistent streaming clustering with native Decisions
+
+The parent ticket's [Merge Summary](feature-stream-clustering.md#merge-summary)
+retains the verbatim merged PR title and description. Source, measurement and
+archive provenance remain unchanged. The [report](https://edwardbenson.com/goofing/ld-clustering) was confirmed live on 2026-10-20 following
+[website PR #2220](https://github.com/eob/kaya-web/pull/2220).
