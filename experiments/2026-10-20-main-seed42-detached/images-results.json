@@ -1,0 +1,97 @@
+{
+  "agreement": {
+    "adjusted_rand_index": 0.17315386804613866,
+    "n": 100,
+    "pairwise_f1": 0.25662251655629137,
+    "pairwise_precision": 0.43909348441926344,
+    "pairwise_recall": 0.18128654970760233
+  },
+  "baseline": {
+    "assignment_calls": 118,
+    "assignment_model": "gpt-6.1-sol",
+    "cache_write_tokens": 3328,
+    "cached_tokens": 0,
+    "calls": 123,
+    "cluster_count": 11,
+    "committed_success_calls": 123,
+    "cost_complete": true,
+    "cost_usd": 0.27152799999999994,
+    "coverage": 1.0,
+    "error_calls": 0,
+    "input_tokens": 48492,
+    "journal_run_id": "ba83cdb88e5b20e2991859702085513c",
+    "journal_sha256": "0d913437b81e907a1379d7280e2bd495a90c6333c49e5dd48da1770b578793a8",
+    "maintenance_calls": 5,
+    "other_count": 0,
+    "output_tokens": 17288,
+    "planner_model": "gpt-6.1-sol",
+    "pricing_date": "2026-10-20",
+    "request_seconds": 662.736,
+    "sample_count": 100,
+    "sol_reasoning_effort": "high",
+    "timing_complete": true,
+    "uncommitted_success_calls": 0,
+    "wall_seconds": 663.815
+  },
+  "config": {
+    "bootstrap_size": 20,
+    "k": 8,
+    "maintenance_interval": 25,
+    "max_clusters": 16,
+    "novelty_trigger": 8,
+    "task": "Group clothing images by the visible kind of garment, footwear, or accessory, rather than color, style, orientation, or background. Create coherent reusable groups from observed evidence. Keep unclear or unrelated images in Other when no group fits."
+  },
+  "dataset_label_agreement": {
+    "baseline": {
+      "adjusted_rand_index": 0.4441281138790035,
+      "n": 100,
+      "pairwise_f1": 0.5103448275862069,
+      "pairwise_precision": 0.3894736842105263,
+      "pairwise_recall": 0.74
+    },
+    "ld": {
+      "adjusted_rand_index": 0.21360895779500433,
+      "n": 100,
+      "pairwise_f1": 0.2764632627646326,
+      "pairwise_precision": 0.31444759206798867,
+      "pairwise_recall": 0.24666666666666667
+    }
+  },
+  "expected_count": 100,
+  "input_sha256": "171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e",
+  "ld": {
+    "assignment_calls": 274,
+    "assignment_model": "gpt-6-luna",
+    "cache_write_tokens": 6854,
+    "cached_tokens": 0,
+    "calls": 280,
+    "cluster_count": 10,
+    "committed_success_calls": 278,
+    "cost_complete": false,
+    "cost_usd": 0.08712490000000044,
+    "coverage": 0.63,
+    "error_calls": 2,
+    "input_tokens": 108060,
+    "journal_run_id": "e29895d11d2c72659e7000dfb07dd342",
+    "journal_sha256": "ef128b61fa0c802eba58022461dc355db6eb2541ad509dbabae13c4778c3bda1",
+    "maintenance_calls": 6,
+    "other_count": 37,
+    "output_tokens": 5826,
+    "planner_model": "gpt-6.1-sol",
+    "pricing_date": "2026-10-20",
+    "request_seconds": 219.552,
+    "sample_count": 100,
+    "sol_reasoning_effort": "high",
+    "timing_complete": true,
+    "uncommitted_success_calls": 0,
+    "wall_seconds": 223.233
+  },
+  "shared_other_sensitivity": {
+    "adjusted_rand_index": 0.16293349580092942,
+    "n": 100,
+    "pairwise_f1": 0.32017075773745995,
+    "pairwise_precision": 0.2944062806673209,
+    "pairwise_recall": 0.3508771929824561
+  },
+  "status": "complete"
+}

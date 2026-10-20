@@ -1,0 +1,48 @@
+{
+  "basis": "First cohort only; descriptive post-hoc analysis, not replacement headline metrics or causal effect estimates. Dataset labels remain secondary evidence.",
+  "identical_bootstrap_request_sha256": "5eeee1f39b62b37683a82297b42ffbaf6bfe7a5ccc251915a540be5ac9c37105",
+  "bootstrap_observation": "Identical Sol requests with the same first20 images produce different catalogs before either assignment backend runs; reference splits footwear types while LD creates Footwear.",
+  "main": {
+    "n": 100,
+    "tp": 258,
+    "fp": 302,
+    "fn": 411,
+    "tn": 3979,
+    "adjusted_rand_index": 0.33836307498495577,
+    "pairwise_f1": 0.41985353946297804
+  },
+  "pair_disagreements": {
+    "footwear_extra_grouped_pairs": 110,
+    "missing_reference_pairs_touching_ld_other": 249
+  },
+  "supplementary_diagnostics": {
+    "mutually_covered": {
+      "n": 69,
+      "tp": 258,
+      "fp": 302,
+      "fn": 162,
+      "tn": 1624,
+      "adjusted_rand_index": 0.4047378436905309,
+      "pairwise_f1": 0.5265306122448979
+    },
+    "merge_reference_footwear": {
+      "n": 100,
+      "tp": 368,
+      "fp": 192,
+      "fn": 574,
+      "tn": 3816,
+      "adjusted_rand_index": 0.40567661359340174,
+      "pairwise_f1": 0.49001331557922767
+    },
+    "both": {
+      "n": 69,
+      "tp": 368,
+      "fp": 192,
+      "fn": 162,
+      "tn": 1624,
+      "adjusted_rand_index": 0.5770475773348136,
+      "pairwise_f1": 0.6752293577981652
+    }
+  },
+  "maintenance_limitation": "Creating a cluster retries Other but does not automatically revisit unaffected named assignments. Three bag-labeled inputs already in Trousers therefore remain there after a Bags cluster is created."
+}

@@ -1,0 +1,257 @@
+{
+  "basis": "Known token-priced usage, not invoices. Failed/refused attempts with reported usage are charged in this ledger. Missing usage and unrecorded in-flight requests are unknown, never zero.",
+  "runs": {
+    "text-llm": {
+      "components": {
+        "planner": {
+          "attempts": 11,
+          "known_recorded_cost_usd": "0.0879495",
+          "unknown_usage_attempts": 0,
+          "request_ms": 138990
+        },
+        "assignment_including_reassignment": {
+          "attempts": 866,
+          "known_recorded_cost_usd": "1.045620",
+          "unknown_usage_attempts": 0,
+          "request_ms": 2028598
+        }
+      },
+      "failed_attempts": [],
+      "unknown_usage_source_jsonl_lines": [],
+      "successful_attempts": 877,
+      "committed_successful_calls": 877,
+      "uncommitted_successful_attempts": 0
+    },
+    "text-ld": {
+      "components": {
+        "planner": {
+          "attempts": 40,
+          "known_recorded_cost_usd": "0.3103374",
+          "unknown_usage_attempts": 0,
+          "request_ms": 515844
+        },
+        "assignment_including_reassignment": {
+          "attempts": 9541,
+          "known_recorded_cost_usd": "0.4100437",
+          "unknown_usage_attempts": 2,
+          "request_ms": 1144382
+        }
+      },
+      "failed_attempts": [
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792467974823,
+          "elapsed_ms": 10095,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 4674,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "bf5be8be04d0c074699f15d53a4363cefeea6d86c8207b434d6d78e8cd90634b",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        },
+        {
+          "phase": "plan",
+          "model": "gpt-6.1-sol",
+          "attempt": 1,
+          "error": "plan references cluster 25 more than once",
+          "http_status": 200,
+          "usage_available": true,
+          "recorded_at_unix_ms": 1792468118778,
+          "elapsed_ms": 13705,
+          "usage": {
+            "cache_write_tokens": 715,
+            "cached_tokens": 1043,
+            "cost_usd": 0.0056778,
+            "input_tokens": 1761,
+            "output_tokens": 378
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 5547,
+          "provider_usage": {
+            "input_tokens": 1761,
+            "input_tokens_details": {
+              "cache_write_tokens": 715,
+              "cached_tokens": 1043
+            },
+            "output_tokens": 378,
+            "output_tokens_details": {
+              "reasoning_tokens": 345
+            },
+            "total_tokens": 2139
+          },
+          "known_recomputed_cost_usd": "0.0056778",
+          "request_canonical_sha256": "d45d2a6aa89ef33470eb96cfed42ee0ad0db4d12cf8f8abcb2e40c7903c56ca2",
+          "response_canonical_sha256": "d40e20fd57f7ee86c118ef2a8773e014b717bfb7ac236b83e0dcddc51b7cc3f0"
+        },
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792468730792,
+          "elapsed_ms": 10102,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 8295,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "e9f0c97dded1946a26af38754bdfe1b270451b729270e3314e6797ccaddf5155",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        },
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "model refused or returned wrong decision type",
+          "http_status": 200,
+          "usage_available": true,
+          "recorded_at_unix_ms": 1792468918947,
+          "elapsed_ms": 97,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 1.5e-06,
+            "input_tokens": 15,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 9582,
+          "provider_usage": {
+            "input_tokens": 15,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 15
+          },
+          "known_recomputed_cost_usd": "0.0000015",
+          "request_canonical_sha256": "e0e49a37f458d75f149f2f09c009cf93fec3eee6a45ddfd658f7c3e20824ed32",
+          "response_canonical_sha256": "20ee0e60e01ed3756859c11d1ace6a19ab31c42b8df3566cca523742fc6975f9"
+        }
+      ],
+      "unknown_usage_source_jsonl_lines": [
+        4674,
+        8295
+      ],
+      "successful_attempts": 9577,
+      "committed_successful_calls": 9577,
+      "uncommitted_successful_attempts": 0
+    },
+    "images-llm": {
+      "components": {
+        "planner": {
+          "attempts": 5,
+          "known_recorded_cost_usd": "0.0519680",
+          "unknown_usage_attempts": 0,
+          "request_ms": 119467
+        },
+        "assignment_including_reassignment": {
+          "attempts": 118,
+          "known_recorded_cost_usd": "0.219560",
+          "unknown_usage_attempts": 0,
+          "request_ms": 543269
+        }
+      },
+      "failed_attempts": [],
+      "unknown_usage_source_jsonl_lines": [],
+      "successful_attempts": 123,
+      "committed_successful_calls": 123,
+      "uncommitted_successful_attempts": 0
+    },
+    "images-ld": {
+      "components": {
+        "planner": {
+          "attempts": 6,
+          "known_recorded_cost_usd": "0.0770890",
+          "unknown_usage_attempts": 0,
+          "request_ms": 165019
+        },
+        "assignment_including_reassignment": {
+          "attempts": 274,
+          "known_recorded_cost_usd": "0.0100359",
+          "unknown_usage_attempts": 2,
+          "request_ms": 54533
+        }
+      },
+      "failed_attempts": [
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792467080913,
+          "elapsed_ms": 10099,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "images-ld",
+          "source_jsonl_line": 88,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "98946c173760921a6f2d499fa63bddb2bd6a9e7a364f044cc77f883cf7521868",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        },
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792467204625,
+          "elapsed_ms": 10098,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "images-ld",
+          "source_jsonl_line": 242,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "f74e0b596f708d557deb5257e6c5759442c1564e0d263d4180210a058f8f37ae",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        }
+      ],
+      "unknown_usage_source_jsonl_lines": [
+        88,
+        242
+      ],
+      "successful_attempts": 278,
+      "committed_successful_calls": 278,
+      "uncommitted_successful_attempts": 0
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "basis": "Known token-priced costs from reported usage, not invoices. Assignment includes maintenance reassignment. Missing usage is unknown, not zero. Decimal strings preserve independent sums. All attempts retain exact source JSONL row indices.",
+  "runs": {
+    "text-llm": {
+      "components": {
+        "planner": {
+          "attempts": 21,
+          "known_recorded_cost_usd": "0.1642532",
+          "unknown_usage_attempts": 0,
+          "request_ms": 254245
+        },
+        "assignment_including_reassignment": {
+          "attempts": 2872,
+          "known_recorded_cost_usd": "3.621914",
+          "unknown_usage_attempts": 0,
+          "request_ms": 6786551
+        }
+      },
+      "failed_attempts": [],
+      "unknown_usage_source_jsonl_lines": [],
+      "successful_attempts": 2893,
+      "committed_successful_calls": 2893,
+      "uncommitted_successful_attempts": 0,
+      "raw_assignment_refusal_attempts": 0,
+      "assignment_refusal_calls": 0,
+      "refusal_attempts": []
+    },
+    "text-ld": {
+      "components": {
+        "planner": {
+          "attempts": 36,
+          "known_recorded_cost_usd": "0.2800086",
+          "unknown_usage_attempts": 0,
+          "request_ms": 470550
+        },
+        "assignment_including_reassignment": {
+          "attempts": 6238,
+          "known_recorded_cost_usd": "0.2710861",
+          "unknown_usage_attempts": 2,
+          "request_ms": 823498
+        }
+      },
+      "failed_attempts": [
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "refusal": false,
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792470841504,
+          "elapsed_ms": 10100,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 2661,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "c424206e49ec67e1017577635f0a1d3a325abab590c6993515c29b2d43c689e2",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        },
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "refusal": false,
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792471342280,
+          "elapsed_ms": 10264,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 5281,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "b01962f0eb9bb97211784a9801d2bd7b8c490117e7566e63a8e20fb3e33b5eaa",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        }
+      ],
+      "unknown_usage_source_jsonl_lines": [
+        2661,
+        5281
+      ],
+      "successful_attempts": 6272,
+      "committed_successful_calls": 6272,
+      "uncommitted_successful_attempts": 0,
+      "raw_assignment_refusal_attempts": 0,
+      "assignment_refusal_calls": 0,
+      "refusal_attempts": []
+    },
+    "images-llm": {
+      "components": {
+        "planner": {
+          "attempts": 5,
+          "known_recorded_cost_usd": "0.0586930",
+          "unknown_usage_attempts": 0,
+          "request_ms": 125710
+        },
+        "assignment_including_reassignment": {
+          "attempts": 134,
+          "known_recorded_cost_usd": "0.226492",
+          "unknown_usage_attempts": 0,
+          "request_ms": 542664
+        }
+      },
+      "failed_attempts": [],
+      "unknown_usage_source_jsonl_lines": [],
+      "successful_attempts": 139,
+      "committed_successful_calls": 139,
+      "uncommitted_successful_attempts": 0,
+      "raw_assignment_refusal_attempts": 0,
+      "assignment_refusal_calls": 0,
+      "refusal_attempts": []
+    },
+    "images-ld": {
+      "components": {
+        "planner": {
+          "attempts": 6,
+          "known_recorded_cost_usd": "0.0808265",
+          "unknown_usage_attempts": 0,
+          "request_ms": 177957
+        },
+        "assignment_including_reassignment": {
+          "attempts": 346,
+          "known_recorded_cost_usd": "0.0131146",
+          "unknown_usage_attempts": 0,
+          "request_ms": 97273
+        }
+      },
+      "failed_attempts": [],
+      "unknown_usage_source_jsonl_lines": [],
+      "successful_attempts": 352,
+      "committed_successful_calls": 352,
+      "uncommitted_successful_attempts": 0,
+      "raw_assignment_refusal_attempts": 0,
+      "assignment_refusal_calls": 0,
+      "refusal_attempts": []
+    }
+  }
+}

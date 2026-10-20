@@ -1,0 +1,1134 @@
+{
+  "llm": {
+    "clusters": [
+      {
+        "id": 1,
+        "name": "Shirts and T-shirts",
+        "description": "Shirt-like upper-body garments, including T-shirts, polo shirts, blouses, and button-front shirts. Excludes sweaters, sweatshirts, and jackets.",
+        "count": 26
+      },
+      {
+        "id": 2,
+        "name": "Sweaters and sweatshirts",
+        "description": "Long-sleeved knit pullovers, sweaters, sweatshirts, and hoodies, excluding button-front shirts and structured outerwear.",
+        "count": 8
+      },
+      {
+        "id": 3,
+        "name": "Dresses",
+        "description": "One-piece garments with a connected bodice and skirt extending below the waist.",
+        "count": 13
+      },
+      {
+        "id": 4,
+        "name": "Jackets",
+        "description": "Front-opening outerwear with jacket construction, including structured collars, closures, and exterior pockets.",
+        "count": 5
+      },
+      {
+        "id": 5,
+        "name": "Sneakers",
+        "description": "Enclosed casual or athletic shoes with sneaker construction and flexible rubber soles, excluding boots.",
+        "count": 16
+      },
+      {
+        "id": 6,
+        "name": "Boots",
+        "description": "Footwear with boot construction and shafts reaching the ankle or higher, including lace-up and pull-on boots.",
+        "count": 7
+      },
+      {
+        "id": 7,
+        "name": "Sandals",
+        "description": "Open footwear with exposed toes and strap-based uppers, including flip-flops.",
+        "count": 7
+      },
+      {
+        "id": 8,
+        "name": "Handbags",
+        "description": "Handheld bags with a storage body and carrying handles or straps.",
+        "count": 7
+      },
+      {
+        "id": 9,
+        "name": "Pants and shorts",
+        "description": "Lower-body garments with a waistband and two separate legs, including full-length trousers and shorts. Excludes skirts and dresses; unclear items remain in Other.",
+        "count": 10
+      },
+      {
+        "id": 10,
+        "name": "Bras",
+        "description": "Bra-shaped upper-body garments with two cups connected by a chest band and shoulder straps. Excludes shirts, dresses, and other full-torso garments.",
+        "count": 1
+      },
+      {
+        "id": 11,
+        "name": "Skirts",
+        "description": "Lower-body garments with a waistband and a single skirt section rather than two separate legs. Includes short and long skirts; excludes pants, shorts, and dresses. Unclear items remain in Other.",
+        "count": 0
+      }
+    ],
+    "assignments": [
+      {
+        "id": "c1ab040cf59b6df8a8bb",
+        "dataset_label": "9",
+        "cluster_id": 5
+      },
+      {
+        "id": "cc706eff2a17babd8923",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "09ef125b34bfcda161d1",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "3328b928ce8a6f40c297",
+        "dataset_label": "2",
+        "cluster_id": 2
+      },
+      {
+        "id": "16dd767a97b91ec69398",
+        "dataset_label": "9",
+        "cluster_id": 6
+      },
+      {
+        "id": "298d3e65c1f272368b44",
+        "dataset_label": "3",
+        "cluster_id": 1
+      },
+      {
+        "id": "d5e9d0e842219c35031a",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "99fbb912483c81c6f879",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "id": "ee0523560dfd6239873a",
+        "dataset_label": "2",
+        "cluster_id": 2
+      },
+      {
+        "id": "1878385b5838ffb5cf87",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "id": "4383a29831caeebda0ef",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "id": "003151f500622c2caaa9",
+        "dataset_label": "4",
+        "cluster_id": 2
+      },
+      {
+        "id": "53cbf1f26d4924601dab",
+        "dataset_label": "9",
+        "cluster_id": 6
+      },
+      {
+        "id": "c074e6d22ec6f5c58178",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "9dd2776d283ba2f31414",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "id": "46edeee6939cd4fa6355",
+        "dataset_label": "5",
+        "cluster_id": 7
+      },
+      {
+        "id": "3ad10989cca013f7cf89",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "id": "f66738af1c39a9e14102",
+        "dataset_label": "4",
+        "cluster_id": 4
+      },
+      {
+        "id": "5ad25d42034633807945",
+        "dataset_label": "2",
+        "cluster_id": 2
+      },
+      {
+        "id": "cf7dbb712cf75bcd1ef9",
+        "dataset_label": "9",
+        "cluster_id": 6
+      },
+      {
+        "id": "66e3b2647e34dad77f64",
+        "dataset_label": "9",
+        "cluster_id": 6
+      },
+      {
+        "id": "7b156dcca35cc60d12d6",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "96833a2edbbd1c3ba706",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "c55e852be8298561b7da",
+        "dataset_label": "8",
+        "cluster_id": 9
+      },
+      {
+        "id": "33047e491265ccfbde38",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "3b277b1af38aeb187d53",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "id": "f7354c0cf5f2bcd7bf3a",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "id": "2da69082517e1d05fc64",
+        "dataset_label": "5",
+        "cluster_id": 7
+      },
+      {
+        "id": "58a9ee6cbb3670b70069",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "287b5eb697c2c097e662",
+        "dataset_label": "5",
+        "cluster_id": 5
+      },
+      {
+        "id": "286cb5c748a9229fd0f6",
+        "dataset_label": "2",
+        "cluster_id": 1
+      },
+      {
+        "id": "d08926e3b28f985cc629",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "39ba280297d32e32769f",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "849bb6b83a30761a887f",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "ae10425a6829f7b23bf4",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "id": "13f4001d4868309e0757",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "e6b1ed90b70fdc61c077",
+        "dataset_label": "6",
+        "cluster_id": 4
+      },
+      {
+        "id": "bc6f2a7da1c666e54b85",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "9dae485994fb41f23f18",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "id": "b30467bbc54824e2aab6",
+        "dataset_label": "6",
+        "cluster_id": 3
+      },
+      {
+        "id": "d7fdd4f71a0039d65df3",
+        "dataset_label": "5",
+        "cluster_id": 7
+      },
+      {
+        "id": "8b9c34c470e5e9f0a60a",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "82be309e500e004b3ef8",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "id": "f4c3cd308d20c10c4bcc",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "93e1be08ebd0dd49a154",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "4055eb0373a44b9e10ee",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "90e0c06ced11a9cad869",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "feb2dcdba8c903a7242a",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "da023ee26500c64ac62a",
+        "dataset_label": "5",
+        "cluster_id": 5
+      },
+      {
+        "id": "4b8f2f7f7523d0287d1d",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "ca8b9b284b69e04b2ae8",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "a70960918b34edc17071",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "id": "a1dcf5b55d93f1745e5e",
+        "dataset_label": "0",
+        "cluster_id": 10
+      },
+      {
+        "id": "b2562c053ef8088385ad",
+        "dataset_label": "1",
+        "cluster_id": 2
+      },
+      {
+        "id": "14ed7573b2ef1f687ee7",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "id": "27653b1eb0c1a4e1ab86",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "ecc46964d58d58d8d8a2",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "a61b4cfb8b39b6200093",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "145970040aced3cbf146",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "48d204145b5c8d93326d",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "85bbb55f5affac4d5f22",
+        "dataset_label": "2",
+        "cluster_id": 2
+      },
+      {
+        "id": "cb78e4f7e5a136245831",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "130ea0bfa187f5ba063e",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "454eddd132d806148483",
+        "dataset_label": "5",
+        "cluster_id": 7
+      },
+      {
+        "id": "c7e01eaa58b57365596d",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "id": "0f7bc3589bcaf6a46799",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "f0a228e1f082551b9d5e",
+        "dataset_label": "9",
+        "cluster_id": 5
+      },
+      {
+        "id": "e5cc15baa773d103a9bd",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "808de8e03888dbb4ea62",
+        "dataset_label": "5",
+        "cluster_id": 7
+      },
+      {
+        "id": "03b7ef6a9dac3cb5d8d9",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "e6c0319b7729abade228",
+        "dataset_label": "9",
+        "cluster_id": 6
+      },
+      {
+        "id": "b78a8644369d54aa6e26",
+        "dataset_label": "5",
+        "cluster_id": 7
+      },
+      {
+        "id": "96a31cc03de0eec4f23b",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "227883eb1cc0979a27e8",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "d0b8df9b39ca6427f951",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "a3748b502e39bf447c6e",
+        "dataset_label": "9",
+        "cluster_id": 6
+      },
+      {
+        "id": "f7757ed298e369ac0cce",
+        "dataset_label": "8",
+        "cluster_id": 1
+      },
+      {
+        "id": "d904ad59ebab46ca0af6",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "a88a0e46aca0a3e27aad",
+        "dataset_label": "5",
+        "cluster_id": 7
+      },
+      {
+        "id": "13f61b8a29ea26d9cdaf",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "3fff6be0119d1206ecee",
+        "dataset_label": "2",
+        "cluster_id": 2
+      },
+      {
+        "id": "f0705d4a55252590e049",
+        "dataset_label": "3",
+        "cluster_id": 3
+      },
+      {
+        "id": "c32d8e1676e41d93f62f",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "id": "929486e5d8974e0de135",
+        "dataset_label": "2",
+        "cluster_id": 4
+      },
+      {
+        "id": "605330d1f194e02e752e",
+        "dataset_label": "0",
+        "cluster_id": 3
+      },
+      {
+        "id": "9a7b1793f394f5a600b3",
+        "dataset_label": "6",
+        "cluster_id": 1
+      },
+      {
+        "id": "2ced2f9420cbb012215c",
+        "dataset_label": "9",
+        "cluster_id": 5
+      },
+      {
+        "id": "03db4306e2f1dfd12aef",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "299acbbdc319356e183b",
+        "dataset_label": "0",
+        "cluster_id": 1
+      },
+      {
+        "id": "625ab2e8ae381f4ddbd8",
+        "dataset_label": "9",
+        "cluster_id": 6
+      },
+      {
+        "id": "17c8a26c965abb2bafe4",
+        "dataset_label": "6",
+        "cluster_id": 4
+      },
+      {
+        "id": "30261869ef9b5cb4c600",
+        "dataset_label": "1",
+        "cluster_id": 9
+      },
+      {
+        "id": "04f3ed7adf1582009877",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "7208ae4c45c7b1487dfe",
+        "dataset_label": "4",
+        "cluster_id": 1
+      },
+      {
+        "id": "a967ca4d41862e773ab3",
+        "dataset_label": "2",
+        "cluster_id": 4
+      },
+      {
+        "id": "45040d5d070e9f5373d9",
+        "dataset_label": "1",
+        "cluster_id": 3
+      },
+      {
+        "id": "eff64d40d5692c6adb8e",
+        "dataset_label": "2",
+        "cluster_id": 2
+      },
+      {
+        "id": "5d557513db6b43980ea3",
+        "dataset_label": "5",
+        "cluster_id": 5
+      },
+      {
+        "id": "9e7f5cf8915aa431e142",
+        "dataset_label": "7",
+        "cluster_id": 5
+      },
+      {
+        "id": "cac2a60e1a0867d3cad9",
+        "dataset_label": "0",
+        "cluster_id": 3
+      }
+    ]
+  },
+  "ld": {
+    "clusters": [
+      {
+        "id": 1,
+        "name": "Footwear",
+        "description": "Items worn on the feet, including the visible sneakers, lace-up boots, ankle boots, and sandals.",
+        "count": 21
+      },
+      {
+        "id": 2,
+        "name": "Dresses",
+        "description": "One-piece garments combining a bodice and skirt, including the visible long sleeveless dresses.",
+        "count": 5
+      },
+      {
+        "id": 3,
+        "name": "Skirts",
+        "description": "Separate lower-body garments with a waistband and an undivided skirt body rather than trouser legs.",
+        "count": 0
+      },
+      {
+        "id": 4,
+        "name": "T-shirts and polo shirts",
+        "description": "T-shirt and polo-shirt tops, including plain or graphic tees and short-sleeved collared polos.",
+        "count": 12
+      },
+      {
+        "id": 5,
+        "name": "Shirts and blouses",
+        "description": "Shirt- and blouse-type tops with visible collars, button fronts, or similar shirt construction; excludes polo shirts and sweatshirts.",
+        "count": 1
+      },
+      {
+        "id": 6,
+        "name": "Sweaters and sweatshirts",
+        "description": "Sweaters, sweatshirts, and hoodies, including plain or graphic pullovers and high-neck knit tops; excludes button-front shirts and T-shirts.",
+        "count": 23
+      },
+      {
+        "id": 8,
+        "name": "Trousers and leggings",
+        "description": "Lower-body garments with a waistband and two long legs, including trousers, jeans, and leggings; excludes skirts and dresses.",
+        "count": 7
+      },
+      {
+        "id": 9,
+        "name": "Underwear",
+        "description": "Undergarments, including bras with paired cups and shoulder straps; excludes ordinary outerwear tops and shorts.",
+        "count": 0
+      },
+      {
+        "id": 10,
+        "name": "Bags and handbags",
+        "description": "Carried accessories including handbags, tote bags, shoulder bags, clutches, and zippered pouches, identified by their bag body, handles, straps, or closures.",
+        "count": 0
+      }
+    ],
+    "assignments": [
+      {
+        "id": "c1ab040cf59b6df8a8bb",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "id": "cc706eff2a17babd8923",
+        "dataset_label": "3",
+        "cluster_id": 2
+      },
+      {
+        "id": "09ef125b34bfcda161d1",
+        "dataset_label": "3",
+        "cluster_id": null
+      },
+      {
+        "id": "3328b928ce8a6f40c297",
+        "dataset_label": "2",
+        "cluster_id": 6
+      },
+      {
+        "id": "16dd767a97b91ec69398",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "id": "298d3e65c1f272368b44",
+        "dataset_label": "3",
+        "cluster_id": 6
+      },
+      {
+        "id": "d5e9d0e842219c35031a",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "99fbb912483c81c6f879",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "ee0523560dfd6239873a",
+        "dataset_label": "2",
+        "cluster_id": 6
+      },
+      {
+        "id": "1878385b5838ffb5cf87",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "id": "4383a29831caeebda0ef",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "003151f500622c2caaa9",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "53cbf1f26d4924601dab",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "id": "c074e6d22ec6f5c58178",
+        "dataset_label": "4",
+        "cluster_id": null
+      },
+      {
+        "id": "9dd2776d283ba2f31414",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "46edeee6939cd4fa6355",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "id": "3ad10989cca013f7cf89",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "id": "f66738af1c39a9e14102",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "5ad25d42034633807945",
+        "dataset_label": "2",
+        "cluster_id": null
+      },
+      {
+        "id": "cf7dbb712cf75bcd1ef9",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "id": "66e3b2647e34dad77f64",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "id": "7b156dcca35cc60d12d6",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "96833a2edbbd1c3ba706",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "c55e852be8298561b7da",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "id": "33047e491265ccfbde38",
+        "dataset_label": "3",
+        "cluster_id": 4
+      },
+      {
+        "id": "3b277b1af38aeb187d53",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "id": "f7354c0cf5f2bcd7bf3a",
+        "dataset_label": "2",
+        "cluster_id": null
+      },
+      {
+        "id": "2da69082517e1d05fc64",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "id": "58a9ee6cbb3670b70069",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "id": "287b5eb697c2c097e662",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "id": "286cb5c748a9229fd0f6",
+        "dataset_label": "2",
+        "cluster_id": 6
+      },
+      {
+        "id": "d08926e3b28f985cc629",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "39ba280297d32e32769f",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "849bb6b83a30761a887f",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "id": "ae10425a6829f7b23bf4",
+        "dataset_label": "6",
+        "cluster_id": 4
+      },
+      {
+        "id": "13f4001d4868309e0757",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "e6b1ed90b70fdc61c077",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "id": "bc6f2a7da1c666e54b85",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "9dae485994fb41f23f18",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "b30467bbc54824e2aab6",
+        "dataset_label": "6",
+        "cluster_id": 4
+      },
+      {
+        "id": "d7fdd4f71a0039d65df3",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "id": "8b9c34c470e5e9f0a60a",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "82be309e500e004b3ef8",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "id": "f4c3cd308d20c10c4bcc",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "id": "93e1be08ebd0dd49a154",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "4055eb0373a44b9e10ee",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "90e0c06ced11a9cad869",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "feb2dcdba8c903a7242a",
+        "dataset_label": "3",
+        "cluster_id": 6
+      },
+      {
+        "id": "da023ee26500c64ac62a",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "id": "4b8f2f7f7523d0287d1d",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "id": "ca8b9b284b69e04b2ae8",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "a70960918b34edc17071",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "a1dcf5b55d93f1745e5e",
+        "dataset_label": "0",
+        "cluster_id": null
+      },
+      {
+        "id": "b2562c053ef8088385ad",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "id": "14ed7573b2ef1f687ee7",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "27653b1eb0c1a4e1ab86",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "id": "ecc46964d58d58d8d8a2",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "id": "a61b4cfb8b39b6200093",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "145970040aced3cbf146",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "id": "48d204145b5c8d93326d",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "id": "85bbb55f5affac4d5f22",
+        "dataset_label": "2",
+        "cluster_id": 6
+      },
+      {
+        "id": "cb78e4f7e5a136245831",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "130ea0bfa187f5ba063e",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "id": "454eddd132d806148483",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "id": "c7e01eaa58b57365596d",
+        "dataset_label": "6",
+        "cluster_id": 4
+      },
+      {
+        "id": "0f7bc3589bcaf6a46799",
+        "dataset_label": "8",
+        "cluster_id": 8
+      },
+      {
+        "id": "f0a228e1f082551b9d5e",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "id": "e5cc15baa773d103a9bd",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "id": "808de8e03888dbb4ea62",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "id": "03b7ef6a9dac3cb5d8d9",
+        "dataset_label": "3",
+        "cluster_id": 2
+      },
+      {
+        "id": "e6c0319b7729abade228",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "id": "b78a8644369d54aa6e26",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "id": "96a31cc03de0eec4f23b",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "227883eb1cc0979a27e8",
+        "dataset_label": "3",
+        "cluster_id": 2
+      },
+      {
+        "id": "d0b8df9b39ca6427f951",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "a3748b502e39bf447c6e",
+        "dataset_label": "9",
+        "cluster_id": null
+      },
+      {
+        "id": "f7757ed298e369ac0cce",
+        "dataset_label": "8",
+        "cluster_id": null
+      },
+      {
+        "id": "d904ad59ebab46ca0af6",
+        "dataset_label": "3",
+        "cluster_id": 2
+      },
+      {
+        "id": "a88a0e46aca0a3e27aad",
+        "dataset_label": "5",
+        "cluster_id": null
+      },
+      {
+        "id": "13f61b8a29ea26d9cdaf",
+        "dataset_label": "3",
+        "cluster_id": 5
+      },
+      {
+        "id": "3fff6be0119d1206ecee",
+        "dataset_label": "2",
+        "cluster_id": null
+      },
+      {
+        "id": "f0705d4a55252590e049",
+        "dataset_label": "3",
+        "cluster_id": 2
+      },
+      {
+        "id": "c32d8e1676e41d93f62f",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "id": "929486e5d8974e0de135",
+        "dataset_label": "2",
+        "cluster_id": 6
+      },
+      {
+        "id": "605330d1f194e02e752e",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "9a7b1793f394f5a600b3",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "id": "2ced2f9420cbb012215c",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "id": "03db4306e2f1dfd12aef",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "id": "299acbbdc319356e183b",
+        "dataset_label": "0",
+        "cluster_id": 4
+      },
+      {
+        "id": "625ab2e8ae381f4ddbd8",
+        "dataset_label": "9",
+        "cluster_id": 1
+      },
+      {
+        "id": "17c8a26c965abb2bafe4",
+        "dataset_label": "6",
+        "cluster_id": 6
+      },
+      {
+        "id": "30261869ef9b5cb4c600",
+        "dataset_label": "1",
+        "cluster_id": 8
+      },
+      {
+        "id": "04f3ed7adf1582009877",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "7208ae4c45c7b1487dfe",
+        "dataset_label": "4",
+        "cluster_id": 6
+      },
+      {
+        "id": "a967ca4d41862e773ab3",
+        "dataset_label": "2",
+        "cluster_id": null
+      },
+      {
+        "id": "45040d5d070e9f5373d9",
+        "dataset_label": "1",
+        "cluster_id": null
+      },
+      {
+        "id": "eff64d40d5692c6adb8e",
+        "dataset_label": "2",
+        "cluster_id": null
+      },
+      {
+        "id": "5d557513db6b43980ea3",
+        "dataset_label": "5",
+        "cluster_id": 1
+      },
+      {
+        "id": "9e7f5cf8915aa431e142",
+        "dataset_label": "7",
+        "cluster_id": 1
+      },
+      {
+        "id": "cac2a60e1a0867d3cad9",
+        "dataset_label": "0",
+        "cluster_id": null
+      }
+    ]
+  }
+}

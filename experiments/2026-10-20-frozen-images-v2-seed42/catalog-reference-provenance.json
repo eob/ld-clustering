@@ -1,0 +1,8 @@
+{
+  "source_archive": "experiments/2026-10-20-main-seed42",
+  "source_database": "images-llm.sqlite.gz",
+  "source_database_compressed_sha256": "83c439f146747f4fb8411a4b111321f71f35f05b27ac7a96e5be354af6f85ee0",
+  "source_code_commit": "59656c06db2e2ec8599b3bc31f90144a451e27b3",
+  "active_cluster_count": 11,
+  "selected_after_primary_image_results": true
+}

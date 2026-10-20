@@ -1,0 +1,5 @@
+{
+  "source_database": "runs/main-seed42/images-llm.sqlite",
+  "source_code_commit": "59656c06db2e2ec8599b3bc31f90144a451e27b3",
+  "purpose": "Post-result diagnostic using the same completed LLM catalog for both assignment backends; separate from main full-system results."
+}

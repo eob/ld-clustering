@@ -1,0 +1,309 @@
+{
+  "status": "interrupted",
+  "reason": "Protocol amendment after typed native refusal terminated text LD at779; root then explicitly stopped the old primary supervisor and queued control. The waiting control made no calls.",
+  "supervisor_exit_status": null,
+  "supervisor_result": "unknown: collected unit is not evidence of success",
+  "runs": {
+    "text-llm": {
+      "expected_points": 1000,
+      "persisted_points": 397,
+      "persisted_assignments": 397,
+      "pending_reassignments": 19,
+      "complete_assignments": false,
+      "raw_meta": {
+        "config": "{\"bootstrap_size\":24,\"k\":8,\"maintenance_interval\":100,\"max_clusters\":16,\"novelty_trigger\":8,\"task\":\"Group customer requests by broad practical subject or service domain, rather than fine-grained intent or wording. Create coherent reusable groups from the observed evidence. Keep unrelated requests in Other when no group fits. Do not force every request into an existing group.\"}",
+        "started_at_unix_ms": "1792467003945",
+        "backend": "llm",
+        "input_sha256": "30fb8469f7e89d39e4f1188ca889db48f8b702c28a99c10978b7d78e6cff15c0",
+        "journal_run_id": "f955b801a4d9fe29018359a43cfe03fa",
+        "journal_path": "/mnt/disks/data/ld-clustering/runs/main-seed42-detached/text-llm.calls.jsonl",
+        "journal_initialized": "1",
+        "timing_complete": "true",
+        "run_in_progress": "1",
+        "novelty": "0",
+        "last_maintenance": "397"
+      },
+      "sqlite_integrity_check": "ok",
+      "foreign_key_failures": [],
+      "unrecorded_inflight_request_possible": true,
+      "recorded_loop_timing_complete": false,
+      "timing_complete": false,
+      "active_loop_seconds": null,
+      "timing_scope": "Measured active clustering-loop segments only. Incomplete text is not a 1000-point result; text-LD includes a graceful external resume and excludes downtime.",
+      "recorded_attempts": 877,
+      "known_recorded_cost_usd": "1.1335695",
+      "unknown_usage_source_jsonl_lines": [],
+      "cost_complete": false,
+      "failed_attempts": []
+    },
+    "text-ld": {
+      "expected_points": 1000,
+      "persisted_points": 779,
+      "persisted_assignments": 779,
+      "pending_reassignments": 0,
+      "complete_assignments": false,
+      "raw_meta": {
+        "config": "{\"bootstrap_size\":24,\"k\":8,\"maintenance_interval\":100,\"max_clusters\":16,\"novelty_trigger\":8,\"task\":\"Group customer requests by broad practical subject or service domain, rather than fine-grained intent or wording. Create coherent reusable groups from the observed evidence. Keep unrelated requests in Other when no group fits. Do not force every request into an existing group.\"}",
+        "started_at_unix_ms": "1792467003944",
+        "backend": "ld",
+        "input_sha256": "30fb8469f7e89d39e4f1188ca889db48f8b702c28a99c10978b7d78e6cff15c0",
+        "journal_run_id": "b1f5b8e7d3f894aeb8c7af61d743812f",
+        "journal_path": "/mnt/disks/data/ld-clustering/runs/main-seed42-detached/text-ld.calls.jsonl",
+        "journal_initialized": "1",
+        "timing_complete": "true",
+        "run_in_progress": "0",
+        "novelty": "0",
+        "last_maintenance": "779",
+        "wall_ms": "1717802"
+      },
+      "sqlite_integrity_check": "ok",
+      "foreign_key_failures": [],
+      "unrecorded_inflight_request_possible": false,
+      "recorded_loop_timing_complete": true,
+      "timing_complete": false,
+      "active_loop_seconds": 1717.802,
+      "timing_scope": "Measured active clustering-loop segments only. Incomplete text is not a 1000-point result; text-LD includes a graceful external resume and excludes downtime.",
+      "recorded_attempts": 9581,
+      "known_recorded_cost_usd": "0.7203811",
+      "unknown_usage_source_jsonl_lines": [
+        4674,
+        8295
+      ],
+      "cost_complete": false,
+      "failed_attempts": [
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792467974823,
+          "elapsed_ms": 10095,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 4674,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "bf5be8be04d0c074699f15d53a4363cefeea6d86c8207b434d6d78e8cd90634b",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        },
+        {
+          "phase": "plan",
+          "model": "gpt-6.1-sol",
+          "attempt": 1,
+          "error": "plan references cluster 25 more than once",
+          "http_status": 200,
+          "usage_available": true,
+          "recorded_at_unix_ms": 1792468118778,
+          "elapsed_ms": 13705,
+          "usage": {
+            "cache_write_tokens": 715,
+            "cached_tokens": 1043,
+            "cost_usd": 0.0056778,
+            "input_tokens": 1761,
+            "output_tokens": 378
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 5547,
+          "provider_usage": {
+            "input_tokens": 1761,
+            "input_tokens_details": {
+              "cache_write_tokens": 715,
+              "cached_tokens": 1043
+            },
+            "output_tokens": 378,
+            "output_tokens_details": {
+              "reasoning_tokens": 345
+            },
+            "total_tokens": 2139
+          },
+          "known_recomputed_cost_usd": "0.0056778",
+          "request_canonical_sha256": "d45d2a6aa89ef33470eb96cfed42ee0ad0db4d12cf8f8abcb2e40c7903c56ca2",
+          "response_canonical_sha256": "d40e20fd57f7ee86c118ef2a8773e014b717bfb7ac236b83e0dcddc51b7cc3f0"
+        },
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792468730792,
+          "elapsed_ms": 10102,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 8295,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "e9f0c97dded1946a26af38754bdfe1b270451b729270e3314e6797ccaddf5155",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        },
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "model refused or returned wrong decision type",
+          "http_status": 200,
+          "usage_available": true,
+          "recorded_at_unix_ms": 1792468918947,
+          "elapsed_ms": 97,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 1.5e-06,
+            "input_tokens": 15,
+            "output_tokens": 0
+          },
+          "role": "text-ld",
+          "source_jsonl_line": 9582,
+          "provider_usage": {
+            "input_tokens": 15,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 15
+          },
+          "known_recomputed_cost_usd": "0.0000015",
+          "request_canonical_sha256": "e0e49a37f458d75f149f2f09c009cf93fec3eee6a45ddfd658f7c3e20824ed32",
+          "response_canonical_sha256": "20ee0e60e01ed3756859c11d1ace6a19ab31c42b8df3566cca523742fc6975f9"
+        }
+      ]
+    },
+    "images-llm": {
+      "expected_points": 100,
+      "persisted_points": 100,
+      "persisted_assignments": 100,
+      "pending_reassignments": 0,
+      "complete_assignments": true,
+      "raw_meta": {
+        "config": "{\"bootstrap_size\":20,\"k\":8,\"maintenance_interval\":25,\"max_clusters\":16,\"novelty_trigger\":8,\"task\":\"Group clothing images by the visible kind of garment, footwear, or accessory, rather than color, style, orientation, or background. Create coherent reusable groups from observed evidence. Keep unclear or unrelated images in Other when no group fits.\"}",
+        "started_at_unix_ms": "1792467003947",
+        "backend": "llm",
+        "input_sha256": "171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e",
+        "journal_run_id": "ba83cdb88e5b20e2991859702085513c",
+        "journal_path": "/mnt/disks/data/ld-clustering/runs/main-seed42-detached/images-llm.calls.jsonl",
+        "journal_initialized": "1",
+        "timing_complete": "true",
+        "run_in_progress": "0",
+        "novelty": "0",
+        "last_maintenance": "100",
+        "completed_count": "100",
+        "wall_ms": "663815"
+      },
+      "sqlite_integrity_check": "ok",
+      "foreign_key_failures": [],
+      "unrecorded_inflight_request_possible": false,
+      "recorded_loop_timing_complete": true,
+      "timing_complete": true,
+      "active_loop_seconds": 663.815,
+      "timing_scope": "Measured active clustering-loop segments only. Incomplete text is not a 1000-point result; text-LD includes a graceful external resume and excludes downtime.",
+      "recorded_attempts": 123,
+      "known_recorded_cost_usd": "0.2715280",
+      "unknown_usage_source_jsonl_lines": [],
+      "cost_complete": true,
+      "failed_attempts": []
+    },
+    "images-ld": {
+      "expected_points": 100,
+      "persisted_points": 100,
+      "persisted_assignments": 100,
+      "pending_reassignments": 0,
+      "complete_assignments": true,
+      "raw_meta": {
+        "config": "{\"bootstrap_size\":20,\"k\":8,\"maintenance_interval\":25,\"max_clusters\":16,\"novelty_trigger\":8,\"task\":\"Group clothing images by the visible kind of garment, footwear, or accessory, rather than color, style, orientation, or background. Create coherent reusable groups from observed evidence. Keep unclear or unrelated images in Other when no group fits.\"}",
+        "started_at_unix_ms": "1792467003945",
+        "backend": "ld",
+        "input_sha256": "171e3079431bf25c7762eb18b255e18c2f300bc9203a47c85c754e598ac89a2e",
+        "journal_run_id": "e29895d11d2c72659e7000dfb07dd342",
+        "journal_path": "/mnt/disks/data/ld-clustering/runs/main-seed42-detached/images-ld.calls.jsonl",
+        "journal_initialized": "1",
+        "timing_complete": "true",
+        "run_in_progress": "0",
+        "novelty": "0",
+        "last_maintenance": "100",
+        "completed_count": "100",
+        "wall_ms": "223233"
+      },
+      "sqlite_integrity_check": "ok",
+      "foreign_key_failures": [],
+      "unrecorded_inflight_request_possible": false,
+      "recorded_loop_timing_complete": true,
+      "timing_complete": true,
+      "active_loop_seconds": 223.233,
+      "timing_scope": "Measured active clustering-loop segments only. Incomplete text is not a 1000-point result; text-LD includes a graceful external resume and excludes downtime.",
+      "recorded_attempts": 280,
+      "known_recorded_cost_usd": "0.0871249",
+      "unknown_usage_source_jsonl_lines": [
+        88,
+        242
+      ],
+      "cost_complete": false,
+      "failed_attempts": [
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792467080913,
+          "elapsed_ms": 10099,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "images-ld",
+          "source_jsonl_line": 88,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "98946c173760921a6f2d499fa63bddb2bd6a9e7a364f044cc77f883cf7521868",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        },
+        {
+          "phase": "assign",
+          "model": "gpt-6-luna",
+          "attempt": 1,
+          "error": "OpenAI HTTP status 503: {\"error\":{\"code\":null,\"message\":\"Decision inference is unavailable.\",\"param\":null,\"type\":\"server_error\"}}",
+          "http_status": 503,
+          "usage_available": false,
+          "recorded_at_unix_ms": 1792467204625,
+          "elapsed_ms": 10098,
+          "usage": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cost_usd": 0.0,
+            "input_tokens": 0,
+            "output_tokens": 0
+          },
+          "role": "images-ld",
+          "source_jsonl_line": 242,
+          "provider_usage": null,
+          "known_recomputed_cost_usd": null,
+          "request_canonical_sha256": "f74e0b596f708d557deb5257e6c5759442c1564e0d263d4180210a058f8f37ae",
+          "response_canonical_sha256": "fdd8035218e5f8eaac5c868a3fd98137f3c48cf3c3c572d1e36e0a8b700f2e2a"
+        }
+      ]
+    }
+  }
+}

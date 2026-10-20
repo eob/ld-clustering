@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Shirts and T-shirts",
+    "description": "Shirt-like upper-body garments, including T-shirts, polo shirts, blouses, and button-front shirts. Excludes sweaters, sweatshirts, and jackets."
+  },
+  {
+    "id": 2,
+    "name": "Sweaters and sweatshirts",
+    "description": "Long-sleeved knit pullovers, sweaters, sweatshirts, and hoodies, excluding button-front shirts and structured outerwear."
+  },
+  {
+    "id": 3,
+    "name": "Dresses",
+    "description": "One-piece garments with a connected bodice and skirt extending below the waist."
+  },
+  {
+    "id": 4,
+    "name": "Jackets",
+    "description": "Front-opening outerwear with jacket construction, including structured collars, closures, and exterior pockets."
+  },
+  {
+    "id": 5,
+    "name": "Sneakers",
+    "description": "Enclosed casual or athletic shoes with sneaker construction and flexible rubber soles, excluding boots."
+  },
+  {
+    "id": 6,
+    "name": "Boots",
+    "description": "Footwear with boot construction and shafts reaching the ankle or higher, including lace-up and pull-on boots."
+  },
+  {
+    "id": 7,
+    "name": "Sandals",
+    "description": "Open footwear with exposed toes and strap-based uppers, including flip-flops."
+  },
+  {
+    "id": 8,
+    "name": "Handbags",
+    "description": "Handheld bags with a storage body and carrying handles or straps."
+  },
+  {
+    "id": 9,
+    "name": "Pants and shorts",
+    "description": "Lower-body garments with a waistband and two separate legs, including full-length trousers and shorts. Excludes skirts and dresses; unclear items remain in Other."
+  },
+  {
+    "id": 10,
+    "name": "Bras",
+    "description": "Bra-shaped upper-body garments with two cups connected by a chest band and shoulder straps. Excludes shirts, dresses, and other full-torso garments."
+  },
+  {
+    "id": 11,
+    "name": "Skirts",
+    "description": "Lower-body garments with a waistband and a single skirt section rather than two separate legs. Includes short and long skirts; excludes pants, shorts, and dresses. Unclear items remain in Other."
+  }
+]

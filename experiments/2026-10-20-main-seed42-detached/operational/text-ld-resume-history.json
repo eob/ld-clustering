@@ -1,0 +1,43 @@
+{
+  "status": "terminal",
+  "reason": "Clean rejection of conflicting LLM maintenance plan; exact source/binary/config resumed once",
+  "original_process_pid": 1039704,
+  "last_original_attempt_row": 5547,
+  "last_original_attempt_recorded_at_unix_ms": 1792468118778,
+  "original_meta": {
+    "config": "{\"bootstrap_size\":24,\"k\":8,\"maintenance_interval\":100,\"max_clusters\":16,\"novelty_trigger\":8,\"task\":\"Group customer requests by broad practical subject or service domain, rather than fine-grained intent or wording. Create coherent reusable groups from the observed evidence. Keep unrelated requests in Other when no group fits. Do not force every request into an existing group.\"}",
+    "started_at_unix_ms": "1792467003944",
+    "backend": "ld",
+    "input_sha256": "30fb8469f7e89d39e4f1188ca889db48f8b702c28a99c10978b7d78e6cff15c0",
+    "journal_run_id": "b1f5b8e7d3f894aeb8c7af61d743812f",
+    "journal_path": "/mnt/disks/data/ld-clustering/runs/main-seed42-detached/text-ld.calls.jsonl",
+    "journal_initialized": "1",
+    "timing_complete": "true",
+    "run_in_progress": "0",
+    "novelty": "8",
+    "last_maintenance": "592",
+    "wall_ms": "1114812"
+  },
+  "original_journal_sha256": "05951819b05b614d2b5033cb1c71094739136a87a236a84b1a9fd96d17a1f672",
+  "resumed_at_unix_ms": 1792468315627,
+  "timing_scope": "SQLite wall_ms sums measured clustering loops; manual pause and CLI validation are excluded. Calendar duration below includes pause and validation.",
+  "exit_code": 1,
+  "finished_at_unix_ms": 1792468918955,
+  "resume_process_seconds": 603.327977255,
+  "final_meta": {
+    "config": "{\"bootstrap_size\":24,\"k\":8,\"maintenance_interval\":100,\"max_clusters\":16,\"novelty_trigger\":8,\"task\":\"Group customer requests by broad practical subject or service domain, rather than fine-grained intent or wording. Create coherent reusable groups from the observed evidence. Keep unrelated requests in Other when no group fits. Do not force every request into an existing group.\"}",
+    "started_at_unix_ms": "1792467003944",
+    "backend": "ld",
+    "input_sha256": "30fb8469f7e89d39e4f1188ca889db48f8b702c28a99c10978b7d78e6cff15c0",
+    "journal_run_id": "b1f5b8e7d3f894aeb8c7af61d743812f",
+    "journal_path": "/mnt/disks/data/ld-clustering/runs/main-seed42-detached/text-ld.calls.jsonl",
+    "journal_initialized": "1",
+    "timing_complete": "true",
+    "run_in_progress": "0",
+    "novelty": "0",
+    "last_maintenance": "779",
+    "wall_ms": "1717802"
+  },
+  "calendar_seconds_from_initial_cli_metadata": 1915.011,
+  "manual_pause_since_last_attempt_seconds": 196.849
+}

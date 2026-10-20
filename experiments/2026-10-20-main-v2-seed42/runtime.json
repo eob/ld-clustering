@@ -1,0 +1,107 @@
+{
+  "archive_verification_host": "Linux-6.1.0-52-cloud-amd64-x86_64-with-glibc2.36",
+  "architecture": "x86_64",
+  "archiver_python": "3.11.2",
+  "archiver_sha256": "158aba2673f5f5892c6f1a4d92366cd1bb5a6b98c9f433d272c52bb9cdb1108a",
+  "service": {
+    "unit": "ld-clustering-main-v2-seed42-20261020.service",
+    "observation": "collected_or_unobservable",
+    "Result": null,
+    "terminal_result_known": false,
+    "show_exit_code": 0,
+    "show_stderr": "",
+    "raw_properties": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStartTimestamp": "",
+      "ExecMainExitTimestamp": "",
+      "ExecMainStatus": "0",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "SubState": "dead"
+    }
+  },
+  "resume_services": {},
+  "runtime_source_commit": "9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c",
+  "launch_checkout_commit": "9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c",
+  "archive_parent_head": "95d0465a1fc91a416a5ae124ddf11787ece887c4",
+  "concurrency": "Four initial arms launched concurrently; each arm sequential, per frozen scripts/benchmark.sh. External resumes are listed separately and may overlap a different subset of arms. Shared external API conditions vary during execution.",
+  "run_history": {
+    "text-llm": {
+      "run_sessions": 1,
+      "timing_scope": "uninterrupted_loop",
+      "active_loop_ms": 7065888,
+      "clean_single_invocation": true,
+      "assignment_refusal_events": []
+    },
+    "text-ld": {
+      "run_sessions": 1,
+      "timing_scope": "uninterrupted_loop",
+      "active_loop_ms": 1328795,
+      "clean_single_invocation": true,
+      "assignment_refusal_events": []
+    },
+    "images-llm": {
+      "run_sessions": 1,
+      "timing_scope": "uninterrupted_loop",
+      "active_loop_ms": 669490,
+      "clean_single_invocation": true,
+      "assignment_refusal_events": []
+    },
+    "images-ld": {
+      "run_sessions": 1,
+      "timing_scope": "uninterrupted_loop",
+      "active_loop_ms": 277269,
+      "clean_single_invocation": true,
+      "assignment_refusal_events": []
+    }
+  },
+  "raw_source_sha256": {
+    "text-llm.sqlite": "81310fc9cc1ff39ad56332901fb996af9ad6bf0cb4fa898e021e5e9be7dfeeaa",
+    "text-llm.calls.jsonl": "0a6b982aa0d49652d98e6d514850ea162bc746d557c33f8a691d0a04dc61fe63",
+    "text-llm.process.log": "507091990eb65b0b061035b830226ec8bf3804c72912c46ae83cb646006d449a",
+    "text-ld.sqlite": "d3fba6483b1de8fd59bb8e5c1cca036513c18dc8d93552a4cbfb87ab85ce1b2e",
+    "text-ld.calls.jsonl": "5fe230bfae2412a5745b99c1f82f3613819c576ac5eefa90e80289b30b1e57dc",
+    "text-ld.process.log": "01496a6cd4c14bf7ca2a49e2d5f73bbbd499fa66d67f0284f956dd25a290c4e1",
+    "images-llm.sqlite": "5de17d378d6c571e1b6d741e33ff5d7895680edc861957002f6a0193c3efe05a",
+    "images-llm.calls.jsonl": "a538486efa51c95b5e10e7f08d86d7b7265dc07261af774ab0dc6686ebb0a324",
+    "images-llm.process.log": "07a623970c1b9beeb7df6e1f49dba86843fe5d8c0a2fb918180fbb4b58a348af",
+    "images-ld.sqlite": "bb340e7b5b3c0d4002fdba5338e831f0b08858b27638d153f9cc927e4bee384c",
+    "images-ld.calls.jsonl": "1c802c2dcf6dbed79d9f674a8e74bab3a40c485964f2d888381210a98c5970c2",
+    "images-ld.process.log": "76e88425829567c57f04e4d15a17717af5bbd0eeaf24d52321e316e79009c753"
+  },
+  "configs": {
+    "text-llm": {
+      "bootstrap_size": 24,
+      "k": 8,
+      "maintenance_interval": 100,
+      "max_clusters": 16,
+      "novelty_trigger": 8,
+      "task": "Group customer requests by broad practical subject or service domain, rather than fine-grained intent or wording. Create coherent reusable groups from the observed evidence. Keep unrelated requests in Other when no group fits. Do not force every request into an existing group."
+    },
+    "text-ld": {
+      "bootstrap_size": 24,
+      "k": 8,
+      "maintenance_interval": 100,
+      "max_clusters": 16,
+      "novelty_trigger": 8,
+      "task": "Group customer requests by broad practical subject or service domain, rather than fine-grained intent or wording. Create coherent reusable groups from the observed evidence. Keep unrelated requests in Other when no group fits. Do not force every request into an existing group."
+    },
+    "images-llm": {
+      "bootstrap_size": 20,
+      "k": 8,
+      "maintenance_interval": 25,
+      "max_clusters": 16,
+      "novelty_trigger": 8,
+      "task": "Group clothing images by the visible kind of garment, footwear, or accessory, rather than color, style, orientation, or background. Create coherent reusable groups from observed evidence. Keep unclear or unrelated images in Other when no group fits."
+    },
+    "images-ld": {
+      "bootstrap_size": 20,
+      "k": 8,
+      "maintenance_interval": 25,
+      "max_clusters": 16,
+      "novelty_trigger": 8,
+      "task": "Group clothing images by the visible kind of garment, footwear, or accessory, rather than color, style, orientation, or background. Create coherent reusable groups from observed evidence. Keep unclear or unrelated images in Other when no group fits."
+    }
+  }
+}

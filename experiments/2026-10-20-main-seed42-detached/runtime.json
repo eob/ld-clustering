@@ -1,0 +1,63 @@
+{
+  "runtime_source_commit": "59656c06db2e2ec8599b3bc31f90144a451e27b3",
+  "launch_checkout_commit": "bdee72c39faf99460b641b852859c8624ec42432",
+  "archive_checkout_commit": "3946f80ce0a7266d10ff5939b60f2ed67d32736b",
+  "binary_sha256": "ef1d211d0808a688554f46995cd3370ee98d53b78760dff2fd2026c382c203ee",
+  "local_frozen_executable_copy": "/tmp/ld-clustering-v1-frozen",
+  "original_service": {
+    "unit": "ld-clustering-main-seed42-20261020.service",
+    "observation": "collected_or_unobservable",
+    "Result": null,
+    "terminal_result_known": false,
+    "show_exit_code": 0,
+    "show_stderr": "",
+    "raw_properties": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStartTimestamp": "",
+      "ExecMainExitTimestamp": "",
+      "ExecMainStatus": "0",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "SubState": "dead"
+    }
+  },
+  "resume_service": {
+    "unit": "ld-clustering-text-ld-resume1-20261020.service",
+    "observation": "collected_or_unobservable",
+    "Result": null,
+    "terminal_result_known": false,
+    "show_exit_code": 0,
+    "show_stderr": "",
+    "raw_properties": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStartTimestamp": "",
+      "ExecMainExitTimestamp": "",
+      "ExecMainStatus": "0",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "SubState": "dead"
+    }
+  },
+  "source_hashes": {
+    "text-llm.sqlite": "a30b97f382d963e5d4eaa3c7a8f936eb25d5e067469fa375e1b104690f160e12",
+    "text-llm.calls.jsonl": "cadbaeb607e559b673c2c7cc8fdc64c1d0079bdfb4c9a91fde4ed299457b2179",
+    "text-llm.process.log": "34466fc49d636ed62b2581c5736466951ebada7bf0d5d645b6a1b95df968efb3",
+    "text-ld.sqlite": "091ecca19468d8936621f78e1bd945a7ad5a1999425e2a7255327475b9d137f5",
+    "text-ld.calls.jsonl": "e7d820e46b55d4c3755bcd75ddcf8a7907503e889b08ebee831de8588d02badb",
+    "text-ld.process.log": "4b97784ba818ef7bd5e60d370822515fb6e5949fec9ff45976583c715ab9e8a2",
+    "images-llm.sqlite": "d08c8b8873b6c05955f4c45af822325a76cc1fbd762e9197ec21e207a1fcf6c8",
+    "images-llm.calls.jsonl": "0d913437b81e907a1379d7280e2bd495a90c6333c49e5dd48da1770b578793a8",
+    "images-llm.process.log": "6533a307bc14eb39499085c6aa8c2ab1410f544a0253e474f12b3c980581e062",
+    "images-ld.sqlite": "a9357728d7e575043dd7675cd95c765d876f00fa075fb57a3fe35d48b103c2f7",
+    "images-ld.calls.jsonl": "ef128b61fa0c802eba58022461dc355db6eb2541ad509dbabae13c4778c3bda1",
+    "images-ld.process.log": "57ab4c04e9fe3c2dbf321904e0fcbf8da2914107d1f2b99fc0ec45ab6585ae71",
+    "images-results.json": "f5280609a4032fc8c100bc9904d62eb249e262d59b3d43ffdeeed6320d63eeeb",
+    "resume-supervisor.log": "4c819c3d555403ed290b62d7f47d456b3b6a30b14003e73de93e083e88a95b2a",
+    "resume-text-ld.py": "fb8f5ee2b976242bf235fba5aa703e8be6e21054a0f1f6f41729ddd3d817b2d6",
+    "supervisor.log": "0c808475bd291985f7fcd895cce50b06fbc3f7f0d54c9744ee7d9cd08b5b360b",
+    "text-ld-resume-history.json": "02aedbdd8f87df8824576f440e3e90465e1e8114ec93b530b1532de6ab3a54b8",
+    "text-ld.resume1.process.log": "1019728f13c3f2c9ed5463e7e10c65f8f3ca3a83ff8f685b36bf8c3e4c4b5bb7"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "runtime_source_commit": "9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c",
+  "control_binary_sha256": "35e0db257343ed1083bf2ef7187f4e0736985f288ddcf70426dfdd4afbac27ff",
+  "recorded_commits": {
+    "95d0465a1fc91a416a5ae124ddf11787ece887c4": {
+      "examples/frozen_catalog.rs": "3f4dbe781aaba51e227c83c9b784048aaa69a42b0416fd5df8e2ffeef9b54cc3",
+      "src/provider.rs": "90a68d375dc6476a912cffd681f855a4f0c704c9adfb42c6fc43a7e00414754c",
+      "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5",
+      "src/metrics.rs": "c13f0e6f12ec5ef6bd3887abae78e067bc410c44841a6787faa43f704c17977f",
+      "src/lib.rs": "5621da9c21464c081476557ca5d306f4abf81d072a4e98e517a806bacd9b57a0",
+      "Cargo.toml": "73e0d018642b49459ac240024dd5c992499b94d3e3b08233fcebe96235f7f171",
+      "Cargo.lock": "9e213ec7c93b9e21295e9bc42282e7e3c5e0ecbf00894f635ee7cfe719533e31"
+    }
+  },
+  "method": "At archive creation, read every embedded file from each recorded Git commit and require SHA-256 equality with the frozen runtime bytes. Later documentation-only commits are allowed. Relocated verification checks this preserved record and every archived source file against the same fixed pins."
+}
