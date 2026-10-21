@@ -4,7 +4,7 @@
 **Type:** Investigation
 **Filed:** 2026-10-21
 **Branch:** feat-guidance-auto-research
-**Pull request:** https://github.com/eob/ld-clustering/pull/4 (draft; experiments in progress)
+**Pull request:** https://github.com/eob/ld-clustering/pull/4 (draft; experiments complete, evidence/report delivery in progress)
 
 ## Goal / failure mode
 
@@ -106,10 +106,20 @@ are sampling noise, reference instability or increased rejection.
 ## Current state
 
 Accepted by the user on 2026-10-21. The separate Rust runner and frozen protocol
-are prepared; no follow-up paid calls have started. This clean
-worktree was created from origin/main and fast-forwarded to the accepted f78dcf9
-dependency. The earlier experiment's worktree remains frozen. Its PR #3 must
-land before this dependent PR is finalized against refreshed main.
+completed all 52 registered paid invocations from source
+`a3b38d7f9e535f300ac783b3aa4abeb77b17a54f` and frozen
+binary `2eed0a941e5f8e292940c0fd2f72d2432409c0456d3acb2a9314bdc2920f9f20`.
+The final independent audit verifies 22 comparisons and complete experiment API
+cost $6.5893167. Fresh confirmation did not reproduce the development photo
+gain, and text also failed to improve. Preselected repeats and all 61 selected
+blinded confirmation cases are complete; no confirmation-driven rewrite,
+replacement judgment, or favorable rerun was performed.
+
+Source validation is complete. Separate evidence archival, final report import,
+browser validation and PR delivery remain. This worktree was created from
+origin/main and fast-forwarded to the accepted f78dcf9 dependency. The earlier
+contextual Sol text stream is still active in its untouched frozen worktree;
+its PR #3 must land before this dependent PR is finalized against refreshed main.
 
 ## Decisions and durable findings
 
@@ -135,7 +145,8 @@ The actual selected text manifest SHA-256 is
 `2712312223ad68fa98dd01add1343c784e3ca71348aab69b44ab1535d76c2e9f`:
 200 development and 1,000 untouched confirmation items from the same pinned
 test/oos_test sources, plus a preselected 100-item confirmation repeat.
-No classifier outcomes have been requested for these partitions.
+At that preparation freeze, no classifier outcomes had been requested for these
+partitions.
 
 ### Frozen follow-up design and dataset
 
@@ -169,3 +180,179 @@ Zero-API inspection of 2,739 earlier primary native responses found every
 returned value in its recorded probability argmax set, exact option-value order,
 and no invalid or duplicate IDs. Fifteen were tied. This excludes that observed
 local mapping failure; it does not establish an API mechanism or semantic truth.
+
+### Interim controlled development evidence
+
+All 480 calibration decisions matched the constructed key: 20 distinct cases
+repeated across three styles, four orders and two backends. Both models were
+stable across all four orders for every case. Complete experiment API cost:
+$0.33382. This did not reproduce the earlier position association. Four named
+options with nonconsecutive IDs differ from the natural eight/ten-category
+setting; this is not evidence of natural-data accuracy or a universal absence
+of cardinality/encoding/semantic effects.
+
+The two compact rewrites completed once, without regeneration, for $0.1685345.
+Actual description totals are text 215→221 words and photographs 142→140;
+the intervention is positive membership guidance under a word budget, not a
+pure length reduction. All original IDs, names, order and counts are preserved.
+
+On the fresh development cohort, Original→compact gives:
+
+| Cohort | Direct matches | Named matches / all items | Sol named | Native named | Both Other |
+| --- | --- | --- | --- | --- | --- |
+| Text, n=200 | 172→166 | 169→166 | 197→200 | 189→187 | 3→0 |
+| Photos, n=40 | 35→37 | 32→33 | 36→36 | 35→35 | 3→4 |
+
+The photo direct gain is two items, including one shared-Other match; coverage
+does not change. Text regresses. These are development scores, not confirmation
+or semantic accuracy. Through calibration, generation and development the
+independent known and complete API subtotal is $1.4295474. Its dependency union
+contains 34 invocations and 16 full within-condition comparisons.
+
+The bounded blinded development review selected 14 text cases and seven photos
+without reallocating short stratum quotas, including agreements and Other.
+Every selected case has an accepted judgment, no failures. Judgments and actual
+boundary instructions were sealed before key parsing/unblinding; all notes and
+all selected input items are retained. Review is coding-harness qualitative
+compute outside the experiment API ledger, with exact backend model identity
+unavailable and possible shared-family biases. It is not a population accuracy
+sample. The boundary rewrites use the original discovery plus exactly those
+14/7 development items, never confirmation data.
+
+An actual zero-API launch check caught the legacy schema2 manifest's missing
+`jsonl_sha256` field before paid dispatch. The corrected launcher verifies its
+recorded payload/order/image hashes, enforces optional raw hashes when present,
+and pins actual staged JSONL bytes. Twelve focused launcher tests include that
+real legacy shape, altered content rejection, process-tree containment and
+terminal accounting. Reverting the legacy fix reproduces the original KeyError.
+
+
+### Boundary development and frozen selection
+
+The one-shot boundary rewrites completed from discovery plus all 14 text /
+seven photo blinded development cases. Description totals are 257 text and
+165 photo words; all individual guides meet the recorded word budgets.
+
+| Development cohort | Original direct / named | Compact direct / named | Boundary direct / named | Boundary Sol / native named | Boundary both Other |
+| --- | --- | --- | --- | --- | --- |
+| Text, n=200 | 172 / 169 | 166 / 166 | 168 / 168 | 200 / 191 | 0 |
+| Photos, n=40 | 35 / 32 | 37 / 33 | 37 / 34 | 36 / 36 | 3 |
+
+Boundary photos pass the exact development rule and outrank compact by named
+matches. Neither text challenger passes: boundary is the highest complete
+challenger but remains `NOT_ADOPTED`; Original remains the text policy. The
+selection was frozen at 2026-10-21T04:06:43.997181+00:00 before any confirmation
+classification. Both frozen challengers subsequently received the single
+recorded fresh confirmation comparison, preserving the negative text result. Through
+all development stages the independent audit verifies 40 invocations,
+18 comparisons, and complete API cost $2.1590464. No confirmation outcome
+can trigger another rewrite or favorable rerun in this study.
+
+
+### Fresh confirmation did not reproduce the development gain
+
+The full independent confirmation audit verifies 48 completed invocations and
+22 comparisons. On the untouched cohorts, Original→Boundary gives:
+
+| Cohort | Direct matches | Named matches / all items | Sol named | Native named | Both Other |
+| --- | --- | --- | --- | --- | --- |
+| Text, n=1,000 | 824→808 | 809→796 | 970→982 | 940→925 | 15→12 |
+| Photos, n=100 | 98→95 | 87→85 | 89→88 | 88→88 | 11→10 |
+
+Text ARI is 0.706956→0.688243 and pair F1 0.741564→0.725860; photo ARI is
+0.963675→0.934134 and pair F1 0.968304→0.942323. Named agreement also declines,
+so shared rejection alone does not explain the result. The three-item photo
+direct difference is a small single-cohort observation, not a universal or
+human-accuracy claim. The development selection stays frozen and visible:
+image Boundary was ADOPTED for confirmation, while text Boundary remained
+NOT_ADOPTED. Neither fresh comparison establishes an improvement.
+
+At the primary-confirmation checkpoint the complete experiment API subtotal was
+$6.2481214, before the four preselected repeat invocations. Coding-harness
+qualitative review is outside that ledger. Review packets contain 46 text
+cases and 15 photographs, with short strata left short; Original is shown
+alongside the challenger using its own catalog. Fresh blinded reviewers received
+no backend key or aggregate scores; all selected cases were subsequently sealed
+and accepted. No further rewrite or favorable rerun is part of this frozen study.
+
+An independent primary replay adds an important interpretation: photo native
+assignments are identical across Original and Boundary (0/100 changes). Sol
+changes three assignments, and all three lose agreement, with no gains. The
+photo drop therefore comes from reference movement rather than a change in
+native photo outputs. The completed blinded own-catalog review and repeats
+provide context without establishing semantic truth. Text has 57 Sol and 133 native changes, with
+65 direct-agreement gains/81 losses and 59 named gains/72 losses.
+
+### Final repeats and complete experiment accounting
+
+The final independent audit is `verified`: 52/52 registered invocations complete,
+22 full comparisons, no failed conditions, and 7,608 recorded API attempts.
+It records zero retries, API error calls and assignment refusals. Known and
+complete API cost are both $6.5893167; coding and coding-harness review compute
+are outside this experiment ledger. No unknown-usage cost was imputed.
+
+The preselected Sol repeat subsets give Original→Boundary consistency of
+96/100→98/100 text requests and 25/25→24/25 photographs. These are repeat
+agreement with the same Sol classifier, not semantic accuracy or full-cohort
+classification agreement. They do not reverse the fresh negative primary
+result or change the frozen development decisions: text `NOT_ADOPTED` with
+Original retained, photographs `ADOPTED` on development before confirmation.
+
+Reproduction anchors under `runs/auto-research-seed2043/`:
+
+- `validation/final-independent-audit.json`, SHA-256
+  `2f720fac520610a592cab7662e5e3526cd749b99e4a3688be72e41fef5f07c1f`.
+- `analysis/confirmation-diagnostics.json`, SHA-256
+  `1a5de02b75499b25959df7b7f5c874fe8827dc6b5b321f362088f126a9eabbf7`.
+- `qualitative/confirmation/summary.json`, SHA-256
+  `f089dfad89903e34a90f25e254cbefdfbe25d0d6025d9478a782400e0eb9b029`.
+- `readiness/confirmation-review-summary-independent-check.json`, SHA-256
+  `9c0d14e0bf59800c86bacb31b4fe978bf043f521d39e2b78f8a5f74bf21f58b6`.
+
+### Blinded confirmation review and remaining semantic uncertainty
+
+All 46 text and 15 photo cases have accepted sealed judgments: no failed or
+unattempted selected cases and no replacement review. Independent checks bind
+the deterministic challenger-based sampling, both own catalogs, anonymous
+assignments, instructions, registration, seals and unblinding chronology to
+the raw primary results. Original uses the same challenger-selected cases;
+cross-design fit counts are therefore asymmetric, not representative accuracy
+estimates. Exact reviewer model identity is unavailable, shared-family bias
+is possible, and no independent human truth is supplied.
+
+For challenger text pairs, the reviewer preferred Sol in 17 cases, Decisions
+in eight, and considered both reasonable in 21. Concrete findings span both
+methods: Decisions rejects “hola!” despite the challenger's explicit social
+conversation scope, while Sol misroutes “how might i say hello if i were
+scottish” as assistant interaction rather than linguistic instruction.
+“what do i do now that my battery is dead” reasonably permits a vehicle-care
+interpretation or Other because the battery's owner is unstated. Retirement
+rollovers also overlap financial transfers and employment benefits. Agreement
+and clear errors coexist with scope, granularity and missing-context questions.
+
+All 60 photo assignment judgments across both designs were supported or
+plausible. The selected set includes every changed Sol photo assignment:
+the reviewer preferred unchanged Decisions People for the sand sculptor and
+Other for the industrial compressor, while considering the engine-trailer
+difference reasonable. None of these selected photo choices was marked
+unsupported. Together with unchanged native outputs on all 100 photos, this
+prevents interpreting the three-point agreement drop as demonstrated loss of
+native semantic accuracy.
+
+One sealed challenger text judgment for “should i run every day” (case
+`908df5ebe9ab02f861f6d40d`) appears to swap the two evidence rationales.
+Its two plausible fits, both-reasonable verdict and all counts remain untouched;
+the inconsistency is flagged and the case excluded from curated illustrations.
+No hidden repair or replacement judgment was used. Neither these selected
+reviews nor the repeats overturn the negative full-cohort confirmation result.
+
+### Validation and delivery limits
+
+Offline source checks passed: 136 Rust tests, one explicitly ignored paid test,
+`cargo fmt --check`, and `cargo clippy --all-targets -- -D warnings`. The final
+Python suite passed 162 tests plus seven separate blinded-review reproduction
+helper tests. Receipts are `readiness/source-offline-validation.json` and
+`readiness/final-offline-python-validation.json`; runtime source identity stayed
+frozen throughout paid classification. Raw API replay verifies accounting and
+assignment binding, not human accuracy or a provider/pagination mechanism.
+Evidence archival and the final report/publication checks remain delivery work.
