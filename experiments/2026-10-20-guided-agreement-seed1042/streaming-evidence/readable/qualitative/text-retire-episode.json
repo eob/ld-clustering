@@ -1,0 +1,2755 @@
+{
+  "schema_version": 1,
+  "status": "historical_episode_snapshot",
+  "captured_at_utc": "2026-10-21T01:18:12.690570+00:00",
+  "scope": "Only the committed early text-contextual-llm retirement/recreation episode, bounded through event145 and raw planner call56. Captured while the worker continued; not a complete-run audit, live-prefix quality estimate or intervention.",
+  "source": {
+    "runtime_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+    "executable_sha256": "d16f7d289af670f7539f28ccec6474602e3735f54cfbafb24fff884cb627e603",
+    "source_file_sha256": {
+      "src/engine.rs": "f9b02f4812ddc84260d9b7b55ae6540cabf1b9cb231ce749c637dca0e226df23",
+      "src/store.rs": "1dac287ece2cddf4f7668fcda15f47d6f0f544364c69c9e3487c283adf72a49b",
+      "src/provider.rs": "b423fef2075f66eeccf7f1a3e5e3d86750413f625f14d645b4b5ceb316d8e1fb",
+      "src/types.rs": "202b0875a4f725b4cd1467d5ce448143b1b49befb39d2936cc1399f4075255ae"
+    },
+    "input_sha256": "f28ebd149a6da02c77f4855f93532dceb691b06d4b0912c5f570c794a8b94783",
+    "protocol_sha256": "65edc12008dd26404a52406a31f1c135e628642e4e8ac69e213882f8d60c0070",
+    "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+    "manager_descriptor": {
+      "policy": "contextual",
+      "context_sha256": "cff717fad8b0b5b7d1ee34d8be46e93bd62c94baf8b799faf2452304f7e6141a",
+      "prompt_revision": "contextual-v1"
+    }
+  },
+  "config": {
+    "bootstrap_size": 24,
+    "k": 8,
+    "maintenance_interval": 100,
+    "max_clusters": 16,
+    "novelty_trigger": 8,
+    "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request."
+  },
+  "evidence": {
+    "database": "../text-contextual-llm/state.sqlite",
+    "journal": "../text-contextual-llm/calls.jsonl",
+    "database_access": "SQLite mode=ro, bounded SELECTs in one read transaction; no mutable whole-database SHA claimed. Exact selected event payload and planner call/journal-line hashes bind the historical evidence.",
+    "selected_event_rows_sha256": "63e9a972acfc7a759dfe4a0e2ccbbd83c6397f7decfe1ce1cc114326cb1d1a29",
+    "maximum_included_event_id": 145,
+    "planner_calls": [
+      {
+        "sqlite_call_id": 1,
+        "maintenance_event_id": 2,
+        "sqlite_payload_sha256": "4d8210c2244bd3db254e351757fc4dab47369819aa094efadf17586abbf99e25",
+        "model": "gpt-6.1-sol",
+        "request_sha256": "2fb2629cf1e8752ac35798b3677fd16a1370075d8a3c23de15b558f33513768f",
+        "response_sha256": "a95b5d5b6bb375afb8d52860e65a08f851bda0fafc66c4813b15b8ff764ee22f",
+        "request_existing_catalog": [],
+        "request_example_count": 24,
+        "structured_plan": {
+          "operations": [
+            {
+              "description": "Requests about travel planning, travel advisories, flights, and geographic information about places, including their locations and time zones.",
+              "name": "Travel and geography",
+              "op": "create"
+            },
+            {
+              "description": "Requests about vehicle maintenance and repair, including service appointments, oil changes, suitable fluids, and jump-starting a car.",
+              "name": "Vehicle care",
+              "op": "create"
+            },
+            {
+              "description": "Requests about banking, credit scores, currency exchange, retirement savings, and financial account management. Includes billing discrepancies and suspected unauthorized charges.",
+              "name": "Banking and personal finance",
+              "op": "create"
+            },
+            {
+              "description": "Requests about the assistant's identity, capabilities, responses, and remembered user information or reminders. Includes conversational acknowledgments, farewells, and feedback about the interaction.",
+              "name": "Assistant interaction and memory",
+              "op": "create"
+            },
+            {
+              "description": "Requests to connect or manage personal electronic devices and their connectivity.",
+              "name": "Devices and connectivity",
+              "op": "create"
+            },
+            {
+              "description": "Requests to purchase retail goods or place and manage shopping orders, excluding disputes about financial charges.",
+              "name": "Shopping and orders",
+              "op": "create"
+            },
+            {
+              "description": "Requests about recipes, cooking methods, and preparing meals or dishes.",
+              "name": "Food and cooking",
+              "op": "create"
+            },
+            {
+              "description": "Requests about employment and workplace entitlements, including paid time off, leave balances, and leave arrangements.",
+              "name": "Work and leave",
+              "op": "create"
+            }
+          ]
+        },
+        "public_reasoning_summary_entry_count": 0,
+        "raw_journal": {
+          "physical_row": 2,
+          "line_sha256": "5637da0b7e59cfc9d6ceda45a1dec1505fcaeb82c8948a9c0183dd2260b43f22",
+          "recorded_at_unix_ms": 1792543582765,
+          "attempt": 1,
+          "http_status": 200,
+          "error": null
+        }
+      },
+      {
+        "sqlite_call_id": 55,
+        "maintenance_event_id": 28,
+        "sqlite_payload_sha256": "6dcb2917fda537418dcafe5438d2e7a83e04ab4b8af10cbb43b78db4b5c02978",
+        "model": "gpt-6.1-sol",
+        "request_sha256": "e21012c7d593707bd2cc32ec5d21b6da6c78c409f1172caa07f550dee35ddbdc",
+        "response_sha256": "54dec7ec5ef5ca4ee2d7dd88569ce3ce5956dd319ab1af0405a8ab6043cc0fda",
+        "request_existing_catalog": [
+          {
+            "id": 1,
+            "name": "Travel and geography",
+            "description": "Requests about travel planning, travel advisories, flights, and geographic information about places, including their locations and time zones."
+          },
+          {
+            "id": 2,
+            "name": "Vehicle care",
+            "description": "Requests about vehicle maintenance and repair, including service appointments, oil changes, suitable fluids, and jump-starting a car."
+          },
+          {
+            "id": 3,
+            "name": "Banking and personal finance",
+            "description": "Requests about banking, credit scores, currency exchange, retirement savings, and financial account management. Includes billing discrepancies and suspected unauthorized charges."
+          },
+          {
+            "id": 4,
+            "name": "Assistant interaction and memory",
+            "description": "Requests about the assistant's identity, capabilities, responses, and remembered user information or reminders. Includes conversational acknowledgments, farewells, and feedback about the interaction."
+          },
+          {
+            "id": 5,
+            "name": "Devices and connectivity",
+            "description": "Requests to connect or manage personal electronic devices and their connectivity."
+          },
+          {
+            "id": 6,
+            "name": "Shopping and orders",
+            "description": "Requests to purchase retail goods or place and manage shopping orders, excluding disputes about financial charges."
+          },
+          {
+            "id": 7,
+            "name": "Food and cooking",
+            "description": "Requests about recipes, cooking methods, and preparing meals or dishes."
+          },
+          {
+            "id": 8,
+            "name": "Work and leave",
+            "description": "Requests about employment and workplace entitlements, including paid time off, leave balances, and leave arrangements."
+          }
+        ],
+        "request_example_count": 23,
+        "structured_plan": {
+          "operations": [
+            {
+              "id": 2,
+              "op": "retire"
+            },
+            {
+              "id": 6,
+              "op": "retire"
+            },
+            {
+              "id": 7,
+              "op": "retire"
+            },
+            {
+              "id": 8,
+              "op": "retire"
+            },
+            {
+              "id": 3,
+              "op": "retire"
+            },
+            {
+              "id": 4,
+              "op": "retire"
+            },
+            {
+              "id": 5,
+              "op": "retire"
+            },
+            {
+              "id": 1,
+              "op": "retire"
+            }
+          ]
+        },
+        "public_reasoning_summary_entry_count": 0,
+        "raw_journal": {
+          "physical_row": 56,
+          "line_sha256": "edb65fc7d8fb71f2be4dd98d2f5263788b5bafb64b386894c8e8373e9ac334a5",
+          "recorded_at_unix_ms": 1792543746935,
+          "attempt": 1,
+          "http_status": 200,
+          "error": null
+        }
+      },
+      {
+        "sqlite_call_id": 56,
+        "maintenance_event_id": 83,
+        "sqlite_payload_sha256": "096c4e6206a704126fb0edb7743351fbb17c1e5260542b593b5ec67b53c4401b",
+        "model": "gpt-6.1-sol",
+        "request_sha256": "bef2878886bce346109f32b1d5153b1a64089c15ad93c7722afb245dd27af3f2",
+        "response_sha256": "40ba388e9281e7e2d5fc33d06564bd4b69f151f2104468cd9476b4a09a6f4c84",
+        "request_existing_catalog": [],
+        "request_example_count": 24,
+        "structured_plan": {
+          "operations": [
+            {
+              "description": "Travel planning, advisories, destination requirements, baggage rules, and transportation reservations such as rental cars.",
+              "name": "Travel",
+              "op": "create"
+            },
+            {
+              "description": "Banking and personal financial matters, including exchange rates, credit scores, retirement accounts, and direct deposits.",
+              "name": "Personal finance",
+              "op": "create"
+            },
+            {
+              "description": "Workplace administration and employment entitlements, including paid-time-off balances and leave.",
+              "name": "Work & employment",
+              "op": "create"
+            },
+            {
+              "description": "Personal device setup and operation, including connecting devices and pairing phones.",
+              "name": "Devices & connectivity",
+              "op": "create"
+            },
+            {
+              "description": "Direct interaction with the assistant, including questions about its capabilities and conversational acknowledgments or confirmations.",
+              "name": "Assistant interaction",
+              "op": "create"
+            },
+            {
+              "description": "Recipes and practical guidance for preparing food and meals.",
+              "name": "Food & cooking",
+              "op": "create"
+            },
+            {
+              "description": "Purchasing goods, comparing or recommending products, and finding local service providers.",
+              "name": "Shopping & services",
+              "op": "create"
+            },
+            {
+              "description": "Managing calendars, appointments, reminders, and their associated lists.",
+              "name": "Scheduling & reminders",
+              "op": "create"
+            },
+            {
+              "description": "Vehicle operation, condition, fuel levels, and fuel efficiency. Transportation bookings belong to travel rather than vehicle operation.",
+              "name": "Vehicles",
+              "op": "create"
+            },
+            {
+              "description": "General factual reference and identification questions, including geography, time zones, history, and identifying songs.",
+              "name": "General knowledge",
+              "op": "create"
+            }
+          ]
+        },
+        "public_reasoning_summary_entry_count": 0,
+        "raw_journal": {
+          "physical_row": 57,
+          "line_sha256": "a9270e4980d5e3d35b5892bf8aea82c1b498e9770a640ba03a6d0e4e89faf01f",
+          "recorded_at_unix_ms": 1792543797915,
+          "attempt": 1,
+          "http_status": 200,
+          "error": null
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "kind": "run_start",
+        "created_at": "2026-10-21T00:45:43.342Z",
+        "payload": {
+          "prior_wall_ms": 0,
+          "saved_count": 0,
+          "session": 1,
+          "started_at_unix_ms": 1792543543342
+        },
+        "payload_sha256": "4a02576da8d80fcf89f07f7f7cb0eca3a08aba2b71bb400e4779e9a4d02ff8ea"
+      },
+      {
+        "id": 2,
+        "kind": "maintenance",
+        "created_at": "2026-10-21T00:46:22.771Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Travel and geography",
+              "description": "Requests about travel planning, travel advisories, flights, and geographic information about places, including their locations and time zones."
+            },
+            {
+              "op": "create",
+              "name": "Vehicle care",
+              "description": "Requests about vehicle maintenance and repair, including service appointments, oil changes, suitable fluids, and jump-starting a car."
+            },
+            {
+              "op": "create",
+              "name": "Banking and personal finance",
+              "description": "Requests about banking, credit scores, currency exchange, retirement savings, and financial account management. Includes billing discrepancies and suspected unauthorized charges."
+            },
+            {
+              "op": "create",
+              "name": "Assistant interaction and memory",
+              "description": "Requests about the assistant's identity, capabilities, responses, and remembered user information or reminders. Includes conversational acknowledgments, farewells, and feedback about the interaction."
+            },
+            {
+              "op": "create",
+              "name": "Devices and connectivity",
+              "description": "Requests to connect or manage personal electronic devices and their connectivity."
+            },
+            {
+              "op": "create",
+              "name": "Shopping and orders",
+              "description": "Requests to purchase retail goods or place and manage shopping orders, excluding disputes about financial charges."
+            },
+            {
+              "op": "create",
+              "name": "Food and cooking",
+              "description": "Requests about recipes, cooking methods, and preparing meals or dishes."
+            },
+            {
+              "op": "create",
+              "name": "Work and leave",
+              "description": "Requests about employment and workplace entitlements, including paid time off, leave balances, and leave arrangements."
+            }
+          ]
+        },
+        "payload_sha256": "c43ddbc6e32fb43ba7b093cc5a27637c9ac5451d4998822c7f52716e3e937102"
+      },
+      {
+        "id": 3,
+        "kind": "catalog_update",
+        "created_at": "2026-10-21T00:46:22.771Z",
+        "payload": {
+          "after_sha256": "32419fab97e23e87ef2d795ace186720f0f46b35697832d6c2243e3571583d78",
+          "before_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "catalog_change_count": 8,
+          "catalog_changed": true,
+          "global_reconsideration": true,
+          "newly_queued": 24,
+          "pending_count": 24,
+          "policy": "contextual"
+        },
+        "payload_sha256": "3fa1e7a4fecfd7169f75ac0eac34cbd9fb019c45e2c007ab48c871fe8f56cad8"
+      },
+      {
+        "id": 4,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:24.149Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 1,
+          "interim_cluster_id": null,
+          "point_id": "82423384138218cfbf3d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "46e0ae2c1dd996cdcb81e3e8350d31149190bf691398c86c30a55bb5776490d3"
+      },
+      {
+        "id": 5,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:25.496Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 1,
+          "interim_cluster_id": null,
+          "point_id": "0752cbfc1bc3ecb5a385",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "8680f5f4344f8d9f4ae3aee3d0515422f70a6d211d53e407528a467b1ba34fc3"
+      },
+      {
+        "id": 6,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:27.619Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 1,
+          "interim_cluster_id": null,
+          "point_id": "4f8b4c6a97ac5a342caa",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "d28da3635e1e03babf151469f345941821d8b5052ccc2be478308a0bd296e75b"
+      },
+      {
+        "id": 7,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:29.394Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 2,
+          "interim_cluster_id": null,
+          "point_id": "2c55b1fcacdd33da8660",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "29c04ccebe22ff7044a614c41314e19b1d78597fb70389c632892bcad7256d0e"
+      },
+      {
+        "id": 8,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:30.812Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "ee178698f6aec5ff2fd2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "8fd8e1f07545410c4900edd227b525b7bc06b8691717707ec131c52468fb3fed"
+      },
+      {
+        "id": 9,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:32.793Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 3,
+          "interim_cluster_id": null,
+          "point_id": "1d0517ce6e37aae33ebb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "61ad5642bd45ebf1054c898205bcaefef157502a4c2f7c55dc0f3c16c6faa968"
+      },
+      {
+        "id": 10,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:34.123Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 2,
+          "interim_cluster_id": null,
+          "point_id": "625b768719ae0d7ca0a3",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "75b939648aac12e7ccd5e246763d14e7f70aa2e103abb85e53633b9a8815b45e"
+      },
+      {
+        "id": 11,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:35.588Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 8,
+          "interim_cluster_id": null,
+          "point_id": "443b3c2b3c7441b3a9cd",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "38047297c7199483b8098c0796ee447b5720a7406c93d68e919f048838fdb224"
+      },
+      {
+        "id": 12,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:37.427Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 2,
+          "interim_cluster_id": null,
+          "point_id": "1df1f5da2e5909249838",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "4f8693875584600249fa64c7d6964297f6e48f480daabbe29f6740ce870d803c"
+      },
+      {
+        "id": 13,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:39.779Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 3,
+          "interim_cluster_id": null,
+          "point_id": "9335b5eb0c05ea26eb1d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "992c9779fa36f3a8d9a43bffff43faf9cd6b2a07d4544b308c6862d88ae280d8"
+      },
+      {
+        "id": 14,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:41.037Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 5,
+          "interim_cluster_id": null,
+          "point_id": "a86e29b7a5519ee0d385",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "e9953c5dc583e8c5098c9957b6742bfc51a0024c7696d89d66cef05b5647068b"
+      },
+      {
+        "id": 15,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:42.696Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "223f90953910d3aac476",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "01eabd62e7f81357d4f2abec8e9d4de1dbd94f2c2ae248dd525da7d4f090825f"
+      },
+      {
+        "id": 16,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:44.480Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 6,
+          "interim_cluster_id": null,
+          "point_id": "c1febb10b95f0d57a3cf",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "f2083741c2bc441412e83e0aee8b9f770def0062963e1f89b6c6d4b52860592a"
+      },
+      {
+        "id": 17,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:46.271Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "8f23a5162e8d4e5a2bc2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "f561424d72baede1959daad432b6830fd33745ce45cd83c0c11a22768f96a545"
+      },
+      {
+        "id": 18,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:48.377Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "5cdf49127d5c0650ed7d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "677779fefa890dbb8a55dad15ab0267cd815e9ed68f0d4f0e29ee3d062e76a17"
+      },
+      {
+        "id": 19,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:49.836Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "0967fefcdc84f106a5cb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "7dfe39cfe6a19314f82fbfb78f8e9ad4200cf1b480a962dd884889b970630803"
+      },
+      {
+        "id": 20,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:51.236Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "fead96bf881862c6beab",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "16b419a8d43d660519ec188fd8f67a57a49603600f4ae0d4afc7f1022d627074"
+      },
+      {
+        "id": 21,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:53.220Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "3cf1d1823641e073a95f",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "1c1a170b71e6e57a3fab2d13393311b45a6a1ba7860ddf68df2f822fd49b4858"
+      },
+      {
+        "id": 22,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:55.099Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 7,
+          "interim_cluster_id": null,
+          "point_id": "467609352b98ea2cdaed",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "c1b98a24d69b47443611b0c31f83c2d341d8d7c431bc934a34edc538427c461f"
+      },
+      {
+        "id": 23,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:56.833Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 4,
+          "interim_cluster_id": null,
+          "point_id": "944db2d3e7524da7ddb2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "8c14ea0e79102b0c9abe46d0c5f8c7e51e067b8cfafadcf574286b1174672d20"
+      },
+      {
+        "id": 24,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:46:58.068Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 3,
+          "interim_cluster_id": null,
+          "point_id": "08ee4879eeca646952b5",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b95db92807a3b6da65d68436bdbefcbd4560c83a4b9c7f7ba5f7869ea01545a5"
+      },
+      {
+        "id": 25,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:47:00.149Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 3,
+          "interim_cluster_id": null,
+          "point_id": "21f12b2b64d29bb80d5c",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "1f118fb5ddb012948836c37bed2b76a3f7179058ead48b3a6aa5574a3b57cfdb"
+      },
+      {
+        "id": 26,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:47:01.660Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 3,
+          "interim_cluster_id": null,
+          "point_id": "f8317fb28528fc0e6750",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "0702332b6816f6ad4c7aef50b9cfed7e4da3d1391db08a79aa5ce41351d803fc"
+      },
+      {
+        "id": 27,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:47:03.072Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 3,
+          "interim_cluster_id": null,
+          "point_id": "f9e03dd3fef59c524cbb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "352144791c4daeb520027075248446d7c0b3b2d35fb27689317fad925292eda2"
+      },
+      {
+        "id": 28,
+        "kind": "maintenance",
+        "created_at": "2026-10-21T00:49:06.943Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "retire",
+              "id": 2
+            },
+            {
+              "op": "retire",
+              "id": 6
+            },
+            {
+              "op": "retire",
+              "id": 7
+            },
+            {
+              "op": "retire",
+              "id": 8
+            },
+            {
+              "op": "retire",
+              "id": 3
+            },
+            {
+              "op": "retire",
+              "id": 4
+            },
+            {
+              "op": "retire",
+              "id": 5
+            },
+            {
+              "op": "retire",
+              "id": 1
+            }
+          ]
+        },
+        "payload_sha256": "6577db261c4a29aaf53968cb3c56de19aecaf98a1183aafaf4e53fc3431ac549"
+      },
+      {
+        "id": 29,
+        "kind": "catalog_update",
+        "created_at": "2026-10-21T00:49:06.943Z",
+        "payload": {
+          "after_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "before_sha256": "32419fab97e23e87ef2d795ace186720f0f46b35697832d6c2243e3571583d78",
+          "catalog_change_count": 8,
+          "catalog_changed": true,
+          "global_reconsideration": true,
+          "newly_queued": 53,
+          "pending_count": 53,
+          "policy": "contextual"
+        },
+        "payload_sha256": "c44e864e813e7b0d3834716e7b419afba9cc5b42321d0c87e166e52d16342bc9"
+      },
+      {
+        "id": 30,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.946Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "82423384138218cfbf3d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 1
+        },
+        "payload_sha256": "3245be35877690aab2af066dfea4af458b5c0cbd4aea48ad23b8d0b2fc04348f"
+      },
+      {
+        "id": 31,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.949Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "0752cbfc1bc3ecb5a385",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 1
+        },
+        "payload_sha256": "1f952a1ba9dbfd8a845fbba223706c142e9262742e7cf58627b83cb3aa473b59"
+      },
+      {
+        "id": 32,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.951Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "4f8b4c6a97ac5a342caa",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 1
+        },
+        "payload_sha256": "dbe5f4bca182abed94b7e46973e9021bc1757bd63ca3bcb4c3e8bd7cee96f612"
+      },
+      {
+        "id": 33,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.953Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "2c55b1fcacdd33da8660",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 2
+        },
+        "payload_sha256": "2d6b56d9c965958eca7cb9b71c59e4f37c23bb15534720eca74391ec25489fb8"
+      },
+      {
+        "id": 34,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.956Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "ee178698f6aec5ff2fd2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "96c0b4774c1c8a46a378ffe889dde6965edbb55d96925ce61ae87d77310c1d0f"
+      },
+      {
+        "id": 35,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.958Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "1d0517ce6e37aae33ebb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "cdfdadbcde0bf49f44716a91128a709f76dc6e94d6790b35fe70a909d2e0031b"
+      },
+      {
+        "id": 36,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.960Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "625b768719ae0d7ca0a3",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 2
+        },
+        "payload_sha256": "e5d5b3eb2efac7c016c5b23658d5769518f0c4c8bbaf70e5d9b6debb13b8d8e8"
+      },
+      {
+        "id": 37,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.962Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "443b3c2b3c7441b3a9cd",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 8
+        },
+        "payload_sha256": "6a035e30bb96757851176d54190da05da6b6802c5b5b8262c810f46abff88081"
+      },
+      {
+        "id": 38,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.964Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "1df1f5da2e5909249838",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 2
+        },
+        "payload_sha256": "2fae89c4c87c256f0219aa4c6ef8aedd40ff3bb65eec1e710dd44f484326a670"
+      },
+      {
+        "id": 39,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.966Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "9335b5eb0c05ea26eb1d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "f8b5dc46f81fe856c81e887201cdeee1dc72eb2a3fcb0708e4c168d7f50bbc8a"
+      },
+      {
+        "id": 40,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.968Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "a86e29b7a5519ee0d385",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 5
+        },
+        "payload_sha256": "172d5ee9bbebf820a9d7414a0aa6e4aa4306f139c8a8ad4ec04f63c988fcb10a"
+      },
+      {
+        "id": 41,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.970Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "223f90953910d3aac476",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "503f84328aa542843093e24ebd335387b3abda1efc32dfc945784f42b66900d4"
+      },
+      {
+        "id": 42,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.972Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "c1febb10b95f0d57a3cf",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 6
+        },
+        "payload_sha256": "d821fbd4d8e4a400fb1f8b34dfc594a7389a323c2dc8c34770b20e7bffe1a166"
+      },
+      {
+        "id": 43,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.975Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "8f23a5162e8d4e5a2bc2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "6b08c38e2f3c5c147dc90282b95320f19160321fc191363a7cef8cd607694982"
+      },
+      {
+        "id": 44,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.976Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "5cdf49127d5c0650ed7d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "67219ebbc77e498e160d6547e2dfc4c121d537694cad0fc7c00d43b6626c9375"
+      },
+      {
+        "id": 45,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.979Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "0967fefcdc84f106a5cb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "d62a63aa68bb9133822db96e1aa05e4fe3389a94f37d91b05af4a07a932043b7"
+      },
+      {
+        "id": 46,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.981Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "fead96bf881862c6beab",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "09790c57f80932c8f7efaa4de137a69b2de179783b236ed1af2a38623a8e951c"
+      },
+      {
+        "id": 47,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.983Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "3cf1d1823641e073a95f",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "f163f513ad45777e825dc52c76600bb79a0e8bf0dd915e14948c972165eb4266"
+      },
+      {
+        "id": 48,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.987Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "467609352b98ea2cdaed",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 7
+        },
+        "payload_sha256": "77c1c91c35ccd3e08653e87934b926fee364796ee6f49bdc0085cd95abc34d13"
+      },
+      {
+        "id": 49,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.991Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "944db2d3e7524da7ddb2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "580ac3ce97bb684a026066c55e97710b3565aa99b0581cfea6d87bd264f5ce2d"
+      },
+      {
+        "id": 50,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.995Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "08ee4879eeca646952b5",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "5fbbcf03437ab3c7c1fc8c8231f725a4ede1da0648092b1e0dbe21feda51606c"
+      },
+      {
+        "id": 51,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.997Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "21f12b2b64d29bb80d5c",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "dd6137f30c6b07e460c0bcdd4ae5e00335fb16b794a38850571db2517d45e8a5"
+      },
+      {
+        "id": 52,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:06.999Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "f8317fb28528fc0e6750",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "b7c174900e5f2483147374975afdf65bf75ef41f57c5cf0a5306f5c7eafdd30f"
+      },
+      {
+        "id": 53,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.002Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "f9e03dd3fef59c524cbb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "d00fc84945a10a947c4202bc5dc60d5ee3cb67559d34700898b4a07405648478"
+      },
+      {
+        "id": 54,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.004Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "ef872f753f75281d3041",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "4ecc50f72c951c71f016d7e35c69b8359107ec46bba5aa8df9ec16820fbf2c1b"
+      },
+      {
+        "id": 55,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.007Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "44e6fba53455864fc36f",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "5870bbcde6fbcfd7a67bb4f5ca77a22c2f3c589d18ab2d1f2d231039f5cf8f7f"
+      },
+      {
+        "id": 56,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.009Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "f7a9dffa5de8c9c23364",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 1
+        },
+        "payload_sha256": "a19a4bb82249b234ee9b2d4cdd0a63cea53f3e6d58751c63591423b92b9c3772"
+      },
+      {
+        "id": 57,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.012Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "6db1c3cb9f0bbb618348",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "aed755fd6eacf5d56688400f8f7f2b7e7b2ba4ed38f72901e864508424c8e910"
+      },
+      {
+        "id": 58,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.014Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "5514740fe9ffa0e13c15",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 5
+        },
+        "payload_sha256": "a1648f79c0c8d08c524e909eaf9297ebd67798a55601f805c40d1e9b0e5b111b"
+      },
+      {
+        "id": 59,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.016Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "37f40ff83131d9a22e3d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 7
+        },
+        "payload_sha256": "62e43a1895071a98ed83d62eda99b8befae366a6df22130926eb33c2a8d6432b"
+      },
+      {
+        "id": 60,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.018Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "dbc427a4ee2ce80254d6",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "50e378c3ed8d1c176f60ad6087eb66e369cf86a29b146da5adbf4c9bf6a11be2"
+      },
+      {
+        "id": 61,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.021Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "bd7e53a37b72b07b3d06",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 1
+        },
+        "payload_sha256": "49c7d6a5a6323abcbb3dcd4f98068afcbc6d818ece76b908940c0c7f7ee9fccf"
+      },
+      {
+        "id": 62,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.023Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "a0051deb8800edb810e7",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "f3b585dc4fb747cd2ff4d86b7a77bef3f4376046b6f0b2b9a8b58fb6ba159a47"
+      },
+      {
+        "id": 63,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.025Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "1074047598a90829c98f",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "cb850aba46b7880e0de17b795b93dcf40fc822cdf9a21341dd9b1616556a6232"
+      },
+      {
+        "id": 64,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.027Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "6b58c2e36e1d4eadd227",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "87188b7e457a0a9d7942e1b293a9b03e91edd2bf0a0d18cf53231b371c5d99e9"
+      },
+      {
+        "id": 65,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.029Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "4a6527c79dd924b6f9c6",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "e4ef96a08ffec62ed3fb89fc1b05ab33053d20da555e8f709a380ede385827b2"
+      },
+      {
+        "id": 66,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.031Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "344e2ba64e23dfd77986",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "c25200d850653bd49786293257ca1a1849f6e02fd32bc4a3b63e74efa707ca7b"
+      },
+      {
+        "id": 67,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.033Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "90d48e779ff5e93332cb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "e1afc10563fb8b6aba57d1a1ae2b139386bf15fa1ae30c6e7fbb5020e1ff3ee3"
+      },
+      {
+        "id": 68,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.035Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "a292fee93c9c77a6bcce",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "3cbfe4377ed1f8b6e53329e6e31155baa7bae981b0b816f8a1cac8320bdccb31"
+      },
+      {
+        "id": 69,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.037Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "37a63cdfd94ce44dea01",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 1
+        },
+        "payload_sha256": "b7f3b9acf73bdf4e1ecd8f1b951a5385ae85478be3ce1904968c5f95f49582d7"
+      },
+      {
+        "id": 70,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.039Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "378e762fd1f218b01fbe",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "c0b24a2093d023b1e247b44c7b88c454dbd1d2bb1de48da91cc4b50d1d6bb366"
+      },
+      {
+        "id": 71,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.041Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "494ff083b8f08bacd331",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 6
+        },
+        "payload_sha256": "d5a4081bb064e22d6ce4924d2dbbd5f56b07f4e10c0e4fb17727b431073f88b4"
+      },
+      {
+        "id": 72,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.043Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "6aee2eeeea510ce2f121",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "925f475410c258bdbfd040475068ddbc53810c73c7ef18a4243b0912961b54a3"
+      },
+      {
+        "id": 73,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.045Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "b9bbc4365b7100fad4cf",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "971e5bed51cf5d89f50f51166a9cd4bab6644dbd20128c917299c979940d8859"
+      },
+      {
+        "id": 74,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.047Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "105bb9aaf7f9374f5aac",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "747c97004f230880e1c287fa74918d687e621b5379cd2fb7ef8ec172c024dba4"
+      },
+      {
+        "id": 75,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.050Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "78375c1c80dfbb4e18d0",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 2
+        },
+        "payload_sha256": "10cbe6dd7162c91c9a3f1d6e0f1e5ff445cc1e582571c9239e4380c02187ada1"
+      },
+      {
+        "id": 76,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.052Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "6578ae2366946a3d7dac",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 2
+        },
+        "payload_sha256": "5cbc808024f881f051cd61f5daab8db19ffc0d5a54250ff1fc3b6c27638ab5cc"
+      },
+      {
+        "id": 77,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.055Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "54de88436c238f96dc37",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "499fa6d1dc3a794878fd6e3163ee6e5aa45c80fd6746203fd47d9151ac7d09a5"
+      },
+      {
+        "id": 78,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.056Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "074e27e5b6e3933bbe51",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "97bf8ae7617581ac03863907a0e727226e797b53dd57f6693b48b116d5cfdbea"
+      },
+      {
+        "id": 79,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.059Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "748d0046697fd7da59dc",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 6
+        },
+        "payload_sha256": "4481c9d4c11b2f43c5b8d60738fef150233f3b28f0fd97b112a664ce3ca1e308"
+      },
+      {
+        "id": 80,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.061Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "6691148249786fe1d366",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 4
+        },
+        "payload_sha256": "056608664b6b573167adc8b914c23eb6a786988ae1f84cf7717fafa0909887f5"
+      },
+      {
+        "id": 81,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.063Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "996752a135632357cad6",
+          "previous_assignment_known": true,
+          "previous_cluster_id": 3
+        },
+        "payload_sha256": "5f674e9277015516d0bac2f3cf390bed27b6fa8d92e5cfd989792454f70c6b73"
+      },
+      {
+        "id": 82,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:07.065Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "46c6d2e3ff14ce190ee9",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "72da99359874080857d0597c404e55a31ee341eb17e406ccec46eb99f0a9ac9f"
+      },
+      {
+        "id": 83,
+        "kind": "maintenance",
+        "created_at": "2026-10-21T00:49:57.921Z",
+        "payload": {
+          "operations": [
+            {
+              "op": "create",
+              "name": "Travel",
+              "description": "Travel planning, advisories, destination requirements, baggage rules, and transportation reservations such as rental cars."
+            },
+            {
+              "op": "create",
+              "name": "Personal finance",
+              "description": "Banking and personal financial matters, including exchange rates, credit scores, retirement accounts, and direct deposits."
+            },
+            {
+              "op": "create",
+              "name": "Work & employment",
+              "description": "Workplace administration and employment entitlements, including paid-time-off balances and leave."
+            },
+            {
+              "op": "create",
+              "name": "Devices & connectivity",
+              "description": "Personal device setup and operation, including connecting devices and pairing phones."
+            },
+            {
+              "op": "create",
+              "name": "Assistant interaction",
+              "description": "Direct interaction with the assistant, including questions about its capabilities and conversational acknowledgments or confirmations."
+            },
+            {
+              "op": "create",
+              "name": "Food & cooking",
+              "description": "Recipes and practical guidance for preparing food and meals."
+            },
+            {
+              "op": "create",
+              "name": "Shopping & services",
+              "description": "Purchasing goods, comparing or recommending products, and finding local service providers."
+            },
+            {
+              "op": "create",
+              "name": "Scheduling & reminders",
+              "description": "Managing calendars, appointments, reminders, and their associated lists."
+            },
+            {
+              "op": "create",
+              "name": "Vehicles",
+              "description": "Vehicle operation, condition, fuel levels, and fuel efficiency. Transportation bookings belong to travel rather than vehicle operation."
+            },
+            {
+              "op": "create",
+              "name": "General knowledge",
+              "description": "General factual reference and identification questions, including geography, time zones, history, and identifying songs."
+            }
+          ]
+        },
+        "payload_sha256": "9b08acfb5dd148af6577da4c4e4ba28b071d69b18de62523a1c46a0e1b809373"
+      },
+      {
+        "id": 84,
+        "kind": "catalog_update",
+        "created_at": "2026-10-21T00:49:57.921Z",
+        "payload": {
+          "after_sha256": "8b1870151180397872c3a2545ae3eaf61afdf51b4393187c39e67841f3c48684",
+          "before_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "catalog_change_count": 10,
+          "catalog_changed": true,
+          "global_reconsideration": true,
+          "newly_queued": 61,
+          "pending_count": 61,
+          "policy": "contextual"
+        },
+        "payload_sha256": "9c2f3fbf232cc24444fc5cc8a321ef9d9f9670c3fc38cd7aa3ba3f554d07ec61"
+      },
+      {
+        "id": 85,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:49:59.349Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 9,
+          "interim_cluster_id": null,
+          "point_id": "82423384138218cfbf3d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "90d649f01d71ab4dbb52635278a62f3bd0f50f44cd2e4b713a77b6a15f82858f"
+      },
+      {
+        "id": 86,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:00.716Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 9,
+          "interim_cluster_id": null,
+          "point_id": "0752cbfc1bc3ecb5a385",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "6b3a802c126db3af8e68ac302464a21e59c8b6605343ab159652097726624b99"
+      },
+      {
+        "id": 87,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:08.285Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 18,
+          "interim_cluster_id": null,
+          "point_id": "4f8b4c6a97ac5a342caa",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "bac0e10cd60737153934610cdd27790e05e0386910d02f7b8dd11b2261519318"
+      },
+      {
+        "id": 88,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:10.304Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 16,
+          "interim_cluster_id": null,
+          "point_id": "2c55b1fcacdd33da8660",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "a362f45a645497e560e1efae8b08f61692538fa20a6f89fac087ce2ab267daf1"
+      },
+      {
+        "id": 89,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:11.852Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "ee178698f6aec5ff2fd2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "54afdcf01563215035b2b00e371b877b234b1034454a6daa1f2a6a911971b23a"
+      },
+      {
+        "id": 90,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:13.243Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "1d0517ce6e37aae33ebb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "72ee14cea5586da8a89ef261eb494c4be0e0fbf4ecbbae50687a4fea6b856261"
+      },
+      {
+        "id": 91,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:17.464Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 17,
+          "interim_cluster_id": null,
+          "point_id": "625b768719ae0d7ca0a3",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "db59180e3bc7916d6988d73dbc19b1dd83458c3e3bed617e3c33467e7d31b71c"
+      },
+      {
+        "id": 92,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:18.884Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 11,
+          "interim_cluster_id": null,
+          "point_id": "443b3c2b3c7441b3a9cd",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "3b1bc995d19f003f69f38e9ddb37766fe53a3d35aca87b992d8249e0430d8024"
+      },
+      {
+        "id": 93,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:23.144Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 17,
+          "interim_cluster_id": null,
+          "point_id": "1df1f5da2e5909249838",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "576ec566bf96b76659a901a8472a233fdf6582b248822fd93f1894f658ec1148"
+      },
+      {
+        "id": 94,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:24.788Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "9335b5eb0c05ea26eb1d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "fef6c8e1ff3abf2475d82a14046098bb326a8569184df500ae9e54e029ebcdd8"
+      },
+      {
+        "id": 95,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:26.741Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 12,
+          "interim_cluster_id": null,
+          "point_id": "a86e29b7a5519ee0d385",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "032b4f6dac5287fe0df57e9e2acf755bd170a1ccd78af67be236523ace99b0d5"
+      },
+      {
+        "id": 96,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:28.348Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "223f90953910d3aac476",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "14c0bc2ad2c2e6e0eb0c2cd662cd837e8386d114d1bd5667fc9b800042064d1e"
+      },
+      {
+        "id": 97,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:30.126Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 15,
+          "interim_cluster_id": null,
+          "point_id": "c1febb10b95f0d57a3cf",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b98f1f2537b65e429e27d76fdc1b9702af6595c6f2790e85a8a8efd8301ef1b8"
+      },
+      {
+        "id": 98,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:31.342Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "8f23a5162e8d4e5a2bc2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "1cdc27e76c8800167657f2452b7eeb4fc90d0ed303b62a8578dad8d253981fa4"
+      },
+      {
+        "id": 99,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:33.185Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "5cdf49127d5c0650ed7d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "34f0531912a774fe5954b7af6b8cd10e05a688c8f1e80a916f1241e88ffc2d62"
+      },
+      {
+        "id": 100,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:34.479Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "0967fefcdc84f106a5cb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "f7fff4c964a022c67605066758d116bae6a7f2bf8924837d26d3b6c462c6ba04"
+      },
+      {
+        "id": 101,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:35.875Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "fead96bf881862c6beab",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "6ea4f0ae7d16269d8b827cf43a5bdfd02e119a6921946bef1bf2c41530473be6"
+      },
+      {
+        "id": 102,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:37.793Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 16,
+          "interim_cluster_id": null,
+          "point_id": "3cf1d1823641e073a95f",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "86e15db03fe723bfd0a86065c1b9835a3322c721df218731cef15b9c801ec21d"
+      },
+      {
+        "id": 103,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:39.513Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 14,
+          "interim_cluster_id": null,
+          "point_id": "467609352b98ea2cdaed",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b0d7655e0d652e1c3c719e47529610428015d099b44fd0edc8c493d09a3a596b"
+      },
+      {
+        "id": 104,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:41.310Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "944db2d3e7524da7ddb2",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "d1a0392d6cbb0e7cf84c3b9e4fd6869c3dae0a871623463784867c2b698c9160"
+      },
+      {
+        "id": 105,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:42.968Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "08ee4879eeca646952b5",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "6e7a7cbece5c5847b580aed141de45802de8cd7e3e43d9574e8cf50cd646ea58"
+      },
+      {
+        "id": 106,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:48.344Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "21f12b2b64d29bb80d5c",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "2a1baa901eda55328e0c21739d6c6805608f04992406675dbc3f73dd8bd22dc4"
+      },
+      {
+        "id": 107,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:51.285Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "f8317fb28528fc0e6750",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "c89e032e9d57d40a0166e15085156b5a2790a645044251ff9a91422a13e515e8"
+      },
+      {
+        "id": 108,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:52.745Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "f9e03dd3fef59c524cbb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "26fb9fd2dce10b0c3b154e5b165154ea4e3158c87ce5e79fa1e1515b451f7e63"
+      },
+      {
+        "id": 109,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:54.896Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "ef872f753f75281d3041",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b7c118deee828db8354be15b5b5fb55fff1c1744acfe443248defc332bf3fad4"
+      },
+      {
+        "id": 110,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:56.328Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "44e6fba53455864fc36f",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "9842fe7d831e1b376ab15ae995c5f349e0d75b30929f1f998008140e1f23d6cc"
+      },
+      {
+        "id": 111,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:50:57.698Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 9,
+          "interim_cluster_id": null,
+          "point_id": "f7a9dffa5de8c9c23364",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "7a292fe9e7377adb09a859b7d4278e2390ffc89b2f38985434e618bc6b2d7823"
+      },
+      {
+        "id": 112,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:02.140Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 18,
+          "interim_cluster_id": null,
+          "point_id": "6db1c3cb9f0bbb618348",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "6ccb3ebe854cb4e157cd20949a3ff88d5e1a98e0ef4a048ab1d5402fcded3cb8"
+      },
+      {
+        "id": 113,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:03.933Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 12,
+          "interim_cluster_id": null,
+          "point_id": "5514740fe9ffa0e13c15",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "6d301627b012167808d35cec15db55d458ab3e8d77afee7ab1183d01fc4ef75e"
+      },
+      {
+        "id": 114,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:09.166Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 14,
+          "interim_cluster_id": null,
+          "point_id": "37f40ff83131d9a22e3d",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "cc7436ccd9dfac983f432ca881f54cc5bbbe25df84becd5a652bc0ffbdfd144f"
+      },
+      {
+        "id": 115,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:12.890Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 12,
+          "interim_cluster_id": null,
+          "point_id": "dbc427a4ee2ce80254d6",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "d8e1592980fc4c5e8a72823b13ca276ffc417b0db3e9c96146752f93c1d87c39"
+      },
+      {
+        "id": 116,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:14.241Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 9,
+          "interim_cluster_id": null,
+          "point_id": "bd7e53a37b72b07b3d06",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b58fac825176e87b1025e521c1c3c917f67c4511443e6a68f3205abd896abd5a"
+      },
+      {
+        "id": 117,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:17.621Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 18,
+          "interim_cluster_id": null,
+          "point_id": "a0051deb8800edb810e7",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "05c7b8039f929d0e0101b4951bc6b2159a02be44180b331bfcd431e8276fd79e"
+      },
+      {
+        "id": 118,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:19.132Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "1074047598a90829c98f",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "13340c27167f0aa96163d8350681abaa3ace8c9cdb76e96b18a4da0821b5b08f"
+      },
+      {
+        "id": 119,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:22.104Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "6b58c2e36e1d4eadd227",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "87188b7e457a0a9d7942e1b293a9b03e91edd2bf0a0d18cf53231b371c5d99e9"
+      },
+      {
+        "id": 120,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:23.936Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "4a6527c79dd924b6f9c6",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "d0a782b59264a3439e5befd0d09f4786de93aa85d36486723f53891aea901629"
+      },
+      {
+        "id": 121,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:27.364Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 18,
+          "interim_cluster_id": null,
+          "point_id": "344e2ba64e23dfd77986",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "5eb26168c7fe40d61f6778376bd168f6563c7af444b869bc5bb0182d052f3d27"
+      },
+      {
+        "id": 122,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:28.961Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 16,
+          "interim_cluster_id": null,
+          "point_id": "90d48e779ff5e93332cb",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "5460eedaf3fa53bc74ba00760a49e99f7926e1af547bbd6cd65d8e5f2c9a6c89"
+      },
+      {
+        "id": 123,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:37.872Z",
+        "payload": {
+          "changed": false,
+          "cluster_id": null,
+          "interim_cluster_id": null,
+          "point_id": "a292fee93c9c77a6bcce",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "3cbfe4377ed1f8b6e53329e6e31155baa7bae981b0b816f8a1cac8320bdccb31"
+      },
+      {
+        "id": 124,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:42.230Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 18,
+          "interim_cluster_id": null,
+          "point_id": "37a63cdfd94ce44dea01",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "358bff86f64addfcd6d9421e6e8ab8054c3d446141d5936282dac8ca5b700bfd"
+      },
+      {
+        "id": 125,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:43.449Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "378e762fd1f218b01fbe",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "9ea1b93f35de019a7c729675c16e6b0e1fb949320ae91f9720425263232d5cea"
+      },
+      {
+        "id": 126,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:45.401Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 15,
+          "interim_cluster_id": null,
+          "point_id": "494ff083b8f08bacd331",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b983ced64e1a3c2c4ad5a52dc764195a7d8ef728ba91ed7c0697d2575743c9c7"
+      },
+      {
+        "id": 127,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:47.206Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "6aee2eeeea510ce2f121",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "4053e83568f6b99a7ca7e0c5f3d67f541b4b52238c19be1f009983aec2a332f8"
+      },
+      {
+        "id": 128,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:48.753Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 13,
+          "interim_cluster_id": null,
+          "point_id": "b9bbc4365b7100fad4cf",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b456dea88429ca8578887b54a27d4a89401fb65efa5c204b72622e4a24a860c0"
+      },
+      {
+        "id": 129,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:50.953Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 16,
+          "interim_cluster_id": null,
+          "point_id": "105bb9aaf7f9374f5aac",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "0f8068102e15be6e15c3f564fe8722c87f84136b219dcefff0a4fe325191fee6"
+      },
+      {
+        "id": 130,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:51:59.079Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 17,
+          "interim_cluster_id": null,
+          "point_id": "78375c1c80dfbb4e18d0",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "2d8d8e085dc7eee3b553e6f5c0acc66fa1d1a35afd06a34bb314bcc2bee31316"
+      },
+      {
+        "id": 131,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:03.473Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 17,
+          "interim_cluster_id": null,
+          "point_id": "6578ae2366946a3d7dac",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "1c2225ac36196dacef7af27bd91bbed053068a50c2b3975f9894cf067574d43b"
+      },
+      {
+        "id": 132,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:04.961Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 16,
+          "interim_cluster_id": null,
+          "point_id": "54de88436c238f96dc37",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "a481449c5f8484438454f21535b31ed657dcd4a0530fc9aef1821ceaef280b78"
+      },
+      {
+        "id": 133,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:07.089Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "074e27e5b6e3933bbe51",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "f87f85d59a4605e35c3747cca5152d40c151d9026d0e5e1fab423f2bb93b7ae4"
+      },
+      {
+        "id": 134,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:09.212Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 15,
+          "interim_cluster_id": null,
+          "point_id": "748d0046697fd7da59dc",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "e3f2d98a0eff1cb582f273425c56f2d697799e52423afddc4d1bd4ea764a8649"
+      },
+      {
+        "id": 135,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:10.852Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 16,
+          "interim_cluster_id": null,
+          "point_id": "6691148249786fe1d366",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "5f00065de4692077b9c85fb5bad51666a98a733ccb0fa1a615bf21b2e12edc89"
+      },
+      {
+        "id": 136,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:13.240Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "996752a135632357cad6",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "37aff7260a875e13e541e7b7867d8f5973c79abcd1f0e2015c7c77a40da3bc11"
+      },
+      {
+        "id": 137,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:16.376Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 15,
+          "interim_cluster_id": null,
+          "point_id": "46c6d2e3ff14ce190ee9",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "4407797424f5b2b315efd5b83cfe58762e0d932840e1af0d2153531e73e737dc"
+      },
+      {
+        "id": 138,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:18.051Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "b9093c20ec4b35410738",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "364a7cfb7eb2b37003f884ccd9f9c1300d303f06b1d90ed724ffea2d03565b6c"
+      },
+      {
+        "id": 139,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:19.738Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 15,
+          "interim_cluster_id": null,
+          "point_id": "bf08bbbcca9d7bf65b52",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "1627bb564fd030ad606f760a638bc75df5b02eadf5acf4206e0e993a401ba208"
+      },
+      {
+        "id": 140,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:21.614Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "e2e93fda75f8334e022a",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "e5b8d46209836e20e55b1aa5c71a0cddf0cbd7b137043560a9289ef6e3e8391e"
+      },
+      {
+        "id": 141,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:23.618Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 14,
+          "interim_cluster_id": null,
+          "point_id": "7ebe7c80f989ce61a248",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "b99e21751ee3a841afd42b5de0864b2ab32eb11b50473dc2bc7d33219ebd214a"
+      },
+      {
+        "id": 142,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:25.224Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 16,
+          "interim_cluster_id": null,
+          "point_id": "01091fba0379bf9166b4",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "dfc36c68dd0d521d16a788880d0b5c568ca7a284ab99fc04697d39b38d04e988"
+      },
+      {
+        "id": 143,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:26.592Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "66d801bd198567010103",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "e7bb794617432c6772b73436194e16b82da90ad9d97725be647dc108f6fb8dee"
+      },
+      {
+        "id": 144,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:28.601Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 10,
+          "interim_cluster_id": null,
+          "point_id": "026452afc5eac6ac1054",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "365a30566a800b57e9ef5648d64a94b47f3dca0c23e3a5c6430163bd276227d2"
+      },
+      {
+        "id": 145,
+        "kind": "reassign",
+        "created_at": "2026-10-21T00:52:33.270Z",
+        "payload": {
+          "changed": true,
+          "cluster_id": 17,
+          "interim_cluster_id": null,
+          "point_id": "1f3b4e045d16f5b47191",
+          "previous_assignment_known": true,
+          "previous_cluster_id": null
+        },
+        "payload_sha256": "1ed9b4b1493e48f2aa984fd82c75940cab690552ad179dad0db8c070974c7596"
+      }
+    ]
+  },
+  "episode": {
+    "bootstrap": {
+      "persisted_points": 24,
+      "maintenance_event_id": 2,
+      "catalog_update_event_id": 3,
+      "active_catalog_after": [
+        {
+          "id": 1,
+          "name": "Travel and geography",
+          "description": "Requests about travel planning, travel advisories, flights, and geographic information about places, including their locations and time zones."
+        },
+        {
+          "id": 2,
+          "name": "Vehicle care",
+          "description": "Requests about vehicle maintenance and repair, including service appointments, oil changes, suitable fluids, and jump-starting a car."
+        },
+        {
+          "id": 3,
+          "name": "Banking and personal finance",
+          "description": "Requests about banking, credit scores, currency exchange, retirement savings, and financial account management. Includes billing discrepancies and suspected unauthorized charges."
+        },
+        {
+          "id": 4,
+          "name": "Assistant interaction and memory",
+          "description": "Requests about the assistant's identity, capabilities, responses, and remembered user information or reminders. Includes conversational acknowledgments, farewells, and feedback about the interaction."
+        },
+        {
+          "id": 5,
+          "name": "Devices and connectivity",
+          "description": "Requests to connect or manage personal electronic devices and their connectivity."
+        },
+        {
+          "id": 6,
+          "name": "Shopping and orders",
+          "description": "Requests to purchase retail goods or place and manage shopping orders, excluding disputes about financial charges."
+        },
+        {
+          "id": 7,
+          "name": "Food and cooking",
+          "description": "Requests about recipes, cooking methods, and preparing meals or dishes."
+        },
+        {
+          "id": 8,
+          "name": "Work and leave",
+          "description": "Requests about employment and workplace entitlements, including paid time off, leave balances, and leave arrangements."
+        }
+      ]
+    },
+    "retirement": {
+      "persisted_points": 53,
+      "maintenance_event_id": 28,
+      "catalog_update_event_id": 29,
+      "retired_ids_in_plan_order": [
+        2,
+        6,
+        7,
+        8,
+        3,
+        4,
+        5,
+        1
+      ],
+      "active_catalog_before_count": 8,
+      "active_catalog_after_count": 0,
+      "after_catalog_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "queued_points": 53,
+      "zero_request_reassignment_event_ids": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82
+      ],
+      "zero_request_reassignments": 53,
+      "known_id_moves": 45,
+      "known_unchanged_other": 8,
+      "all_targets_and_interims_null": true,
+      "prior_membership_counts": [
+        {
+          "cluster_id": 1,
+          "category": "Travel and geography",
+          "count": 6
+        },
+        {
+          "cluster_id": 2,
+          "category": "Vehicle care",
+          "count": 5
+        },
+        {
+          "cluster_id": 3,
+          "category": "Banking and personal finance",
+          "count": 14
+        },
+        {
+          "cluster_id": 4,
+          "category": "Assistant interaction and memory",
+          "count": 12
+        },
+        {
+          "cluster_id": 5,
+          "category": "Devices and connectivity",
+          "count": 2
+        },
+        {
+          "cluster_id": 6,
+          "category": "Shopping and orders",
+          "count": 3
+        },
+        {
+          "cluster_id": 7,
+          "category": "Food and cooking",
+          "count": 2
+        },
+        {
+          "cluster_id": 8,
+          "category": "Work and leave",
+          "count": 1
+        },
+        {
+          "cluster_id": null,
+          "category": "Other",
+          "count": 8
+        }
+      ],
+      "accepted_sqlite_call_ids": {
+        "retirement_plan": 55,
+        "next_recreation_plan": 56
+      },
+      "intervening_committed_provider_calls": 0
+    },
+    "empty_catalog_input_interval": {
+      "next_input_ordinals_zero_based": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "next_received_counts_one_based": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "new_points": 8,
+      "source_mechanism": "With no catalog, assignment iterates zero candidate pages and returns Other without an API request; each inserted Other increments novelty.",
+      "observed_boundary_evidence": "Consecutive accepted planner call IDs55 and56 and53 null-target reassignment events, followed by recreation catalog_update.pending_count61."
+    },
+    "recreation": {
+      "persisted_points": 61,
+      "maintenance_event_id": 83,
+      "catalog_update_event_id": 84,
+      "create_operations": 10,
+      "active_catalog_after": [
+        {
+          "id": 9,
+          "name": "Travel",
+          "description": "Travel planning, advisories, destination requirements, baggage rules, and transportation reservations such as rental cars."
+        },
+        {
+          "id": 10,
+          "name": "Personal finance",
+          "description": "Banking and personal financial matters, including exchange rates, credit scores, retirement accounts, and direct deposits."
+        },
+        {
+          "id": 11,
+          "name": "Work & employment",
+          "description": "Workplace administration and employment entitlements, including paid-time-off balances and leave."
+        },
+        {
+          "id": 12,
+          "name": "Devices & connectivity",
+          "description": "Personal device setup and operation, including connecting devices and pairing phones."
+        },
+        {
+          "id": 13,
+          "name": "Assistant interaction",
+          "description": "Direct interaction with the assistant, including questions about its capabilities and conversational acknowledgments or confirmations."
+        },
+        {
+          "id": 14,
+          "name": "Food & cooking",
+          "description": "Recipes and practical guidance for preparing food and meals."
+        },
+        {
+          "id": 15,
+          "name": "Shopping & services",
+          "description": "Purchasing goods, comparing or recommending products, and finding local service providers."
+        },
+        {
+          "id": 16,
+          "name": "Scheduling & reminders",
+          "description": "Managing calendars, appointments, reminders, and their associated lists."
+        },
+        {
+          "id": 17,
+          "name": "Vehicles",
+          "description": "Vehicle operation, condition, fuel levels, and fuel efficiency. Transportation bookings belong to travel rather than vehicle operation."
+        },
+        {
+          "id": 18,
+          "name": "General knowledge",
+          "description": "General factual reference and identification questions, including geography, time zones, history, and identifying songs."
+        }
+      ],
+      "active_catalog_after_sha256": "8b1870151180397872c3a2545ae3eaf61afdf51b4393187c39e67841f3c48684",
+      "queued_points": 61,
+      "committed_reassignment_event_ids": [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145
+      ],
+      "known_origins_all_other": true
+    }
+  },
+  "interpretation": {
+    "retirement_reason": "No public explanation is supplied in these plan outputs: they contain operations, and the selected responses contain zero public reasoning-summary entries. The manager intent or semantic merit of retiring all categories is not established.",
+    "zero_request_commits": "A persisted reevaluation is a Store::reassign commit; it need not be a provider request. Empty-catalog assignment returns Other immediately, so these53 events include45 mechanical named-ID-to-Other moves and8 known Other-to-Other results. They do not establish semantic correction.",
+    "cap": "16 limits simultaneous active categories, not a minimum, lifetime category IDs, or a requirement to retain categories. Retiring8 to0 and creating10 to10 both fit the cap; new IDs9..18 follow AUTOINCREMENT.",
+    "cadence": "After any applied review, Store resets novelty and last_maintenance. At received53 novelty restarts at0; all8 following new points necessarily enter Other while no catalog exists. At received61 novelty8 triggers review because count>=bootstrap24; the100-point interval has not elapsed. Bootstrap24 is an initial threshold, not a fresh24-point waiting period after retirement.",
+    "next_work": "Creating10 active categories queues all61 persisted points under Contextual global reconsideration, and Engine drains that queue before another new input. K8 means up to two ordered candidate pages for these10 categories; first named choice or explicit refusal stops paging, ordinary Other advances. Events85..145 record this61-point committed drain.",
+    "limits": "This explains committed algorithm/manager artifacts only. It does not estimate final stream agreement, accuracy, cost, model intent, or isolated intervention effects."
+  }
+}

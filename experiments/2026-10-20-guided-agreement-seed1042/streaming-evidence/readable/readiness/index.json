@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "scope": "Static prelaunch validation receipts copied after launch; the paid launcher separately bound protocol/context/preflight before calls. No runtime or worker evidence changed.",
+  "files": {
+    "stream-runtime-freeze.json": "5d1d8e143f637f317ce25d706a6beb5e1894dd041c3f36ee3ba721fcdc165df8",
+    "stream-release-build.txt": "640f78b4a27aea355b4b219e3a22e0a5455af2f3724e0be112fa811ee8c8a8eb",
+    "stream-request-preflight-release.json": "ecbb7447d9222f953d8605419093c24d57fd956af71724cb5d9fb1d0a5ea99ec",
+    "stream-launcher-plan-frozen.json": "54e069c2b5923883b45444493c24c9320dae30ea0fe1006a8db1d6cd8e75dd58",
+    "stream-service-launch.json": "50b3b71ecca69bd4b810537cc4c19a1d5971951e2a30cfca04bda3339ac012fb",
+    "stream-launcher-lifecycle-f78dcf9.json": "6c237a31ceab666a4e56706e67fef050369a057391366c3a88114fd60f6e67dc",
+    "stream-launcher-lifecycle-f78dcf9.txt": "227db716c70306d9381f0e15c920107f3d305e1c20e48f44165d4cc8f1c6e717",
+    "stream-launcher-lifecycle-fixture.py": "620bee395f1cc59301af9393cd2bbc73d2a7a2e51b57619e31cd68c8348f29a9",
+    "stream-full-cargo-test.txt": "89dda9879ee1a291a4b797650dccdbd0b1cef4e95454cac7b163d033b4822f69",
+    "stream-full-clippy.txt": "50e74344005050f68ed1b609b91a414eebf61c1085a529f4a9bff5feaae2eeef",
+    "stream-helper-full-tests.txt": "cf9a0d3345e573cd02a17b620f8420cc9fd68e2e570a6a87644aa8bddc6b11fb"
+  },
+  "pricing_sha256": "4fba316493c3cd180243ed27198919ad0a4ea847ae0c70dd935bbee2f64a95f5"
+}

@@ -167,6 +167,32 @@ pins. Run it under a supervisor with whole-control-group termination, as in the
 recorded experiment. Large photographs retain the existing input-directory CWD
 semantics, recorded explicitly in every command plan.
 
+All eight reserved streams completed and drained their reassignment queues.
+The independently verified full-cohort results are:
+
+| Reserved cohort | Original / contextual ARI | Original / contextual pair F1 | Sol coverage | Decisions coverage |
+| --- | --- | --- | --- | --- |
+| 1,000 text requests | 0.538096 / 0.609758 | 0.581982 / 0.655911 | 99.4% / 99.8% | 70.8% / 90.8% |
+| 100 natural photographs | 0.818656 / 0.971144 | 0.843049 / 0.975410 | 95% / 95% | 98% / 97% |
+
+The text gain accompanies substantially greater Decisions coverage. A post hoc
+diagnostic restricted to the **same 674 items named by all four text arms**
+instead falls from ARI 0.787131 to 0.721809 and pair F1 0.819144 to 0.760726.
+This conditional subset does not replace the full-cohort result; together they
+show a coverage/grouping tradeoff. Photographs improve on both the full cohort
+and the common-named 93-item subset. These are independent evolving catalogs,
+so the scores measure partition agreement, not shared category IDs or semantic
+accuracy. The combined manager intervention does not isolate description quality.
+
+Contextual Sol text makes 8,131 calls and 5,964 reevaluations, costing $10.6207179,
+versus 1,606 calls, 300 reevaluations and $2.296944 for Original Sol text.
+The complete eight-arm streaming API ledger is $16.4293528; coding-harness
+qualitative review lies outside that ledger. Concurrent loop times are not
+isolated performance measurements. [Completed streaming results and evidence
+pins](experiments/2026-10-20-guided-agreement-seed1042/STREAMING-RESULTS.md)
+retain full versus conditional results, costs and limitations separately from
+the earlier controlled experiment and its incomplete original-photo review.
+
 ## Algorithm
 
 1. Store the received prefix in Other until the bootstrap size is reached.

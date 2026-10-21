@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "packet_file": "blinded-input.json",
+  "packet_sha256": "f4f4f5bd719a90e9fd8abd89753eba38468bbd5a8f79a280fb1987297aeb6820",
+  "review_file": "review.json",
+  "reviewer": "Codex coding-harness multimodal reviewer (same-family automated review)",
+  "reviewer_model_id": null,
+  "reviewer_model_id_note": "Exact served model identifier is not asserted.",
+  "blinded_at_review": true,
+  "unblinding_read": false,
+  "source_databases_read": false,
+  "comparisons_read": false,
+  "external_lookup": false,
+  "image_inspection_tool": "view_image",
+  "image_detail": "original",
+  "reviewed_image_count": 11,
+  "reviewed_images": [
+    {
+      "case_id": "stream-photo-183364f59793fb3c",
+      "item_id": "a046f244997563f9d1e1",
+      "image_sha256": "85b0d3b890e69d325ba122db70180ef507c27ed618ab8133eea29a092f914445"
+    },
+    {
+      "case_id": "stream-photo-4fd66af951af21d2",
+      "item_id": "127aa359731969742c20",
+      "image_sha256": "a64733ce398078ee9fb324e22f5130f9b47c5c8aeb52a5b2f55811895bf4343c"
+    },
+    {
+      "case_id": "stream-photo-2bef21bc353c99a3",
+      "item_id": "bb29c67d8b4cc926faaa",
+      "image_sha256": "8d226d4580a6915f52daf90ba3c5521d9234c8c9a0d0cd31566e07b2d7077d82"
+    },
+    {
+      "case_id": "stream-photo-e84555ef16912d66",
+      "item_id": "4439b2e4deffbca976b9",
+      "image_sha256": "4f0bd4a1a46bc36b044d9c46f6d1b35e79c29511802f900184cd2d0ceda5d522"
+    },
+    {
+      "case_id": "stream-photo-90134ed7fca1318a",
+      "item_id": "4d03e2f0db6c4896ca4f",
+      "image_sha256": "8dcf35648a0037c4d258c88f981a1fc284d377ed335b6b2dcb4847b65fab089a"
+    },
+    {
+      "case_id": "stream-photo-640f7f98efe5103f",
+      "item_id": "47a285d87f6f48b7bc94",
+      "image_sha256": "91d644a869cfda226ab585902dcc43d04af2e98701cb812f6908f9912c664813"
+    },
+    {
+      "case_id": "stream-photo-27d7632470436dc5",
+      "item_id": "85534b38f39724a599c4",
+      "image_sha256": "0a59bfbd7fb95bbbf2d7c0679fd340939cdc3dbc20be3ade8f1262079b8c8930"
+    },
+    {
+      "case_id": "stream-photo-3b8b2852ebf7f7bf",
+      "item_id": "14147df8e0ba72ed0ae7",
+      "image_sha256": "6911b518b07d30113e684eb113c178e0028cce1e4165cbc8466d4a175b185887"
+    },
+    {
+      "case_id": "stream-photo-fe5e7984f157a6e6",
+      "item_id": "90efe299476dc2646c90",
+      "image_sha256": "e8803d1c0119e83a5081b7fa600ee405ff600a3820bf7ff2eebcd25fa616a77e"
+    },
+    {
+      "case_id": "stream-photo-3a97b0e3ab72087d",
+      "item_id": "625643bbf93c7fa76209",
+      "image_sha256": "4ce8add7df2d3f2970f082b8a72f2c3b067baae88dbee688c512f663174cf96b"
+    },
+    {
+      "case_id": "stream-photo-9d31c865d34b919b",
+      "item_id": "ba52b3242bca28a040d3",
+      "image_sha256": "362193d0d4137200f0871b6955e17612fb6021734c4ef476e0ecec1332b75e47"
+    }
+  ],
+  "post_hoc_qualitative": true,
+  "human_validation": false,
+  "population_accuracy_claim": false,
+  "experiment_model_api_calls": 0,
+  "coding_harness_compute_in_experiment_ledger": false,
+  "accounting_note": "Coding-harness reviewer compute and image inspection are outside the recorded experiment API ledger; no experiment provider/model API calls were made."
+}
