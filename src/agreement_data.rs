@@ -391,7 +391,7 @@ fn select_text(
     Ok(selected)
 }
 
-fn validate_photo(
+pub fn validate_photo(
     bytes: &[u8],
     width: u32,
     height: u32,

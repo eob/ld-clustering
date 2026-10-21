@@ -1,0 +1,9 @@
+{
+  "phase": "development",
+  "modality": "text",
+  "registered_at_utc": "2026-10-21T03:47:19.943069+00:00",
+  "packet_sha256": "aa4e4c5b0b863bc2e4dc4723f97a13eb095d0eb450eb4abb1b4a06e1d9092c03",
+  "instructions_sha256": "c59a94f5709a4583361a68f678e1d0f0abd6dfc17162a1b84b8af0de85a50bbb",
+  "expected_cases": 14,
+  "reviewer_compute": "coding harness outside experiment API ledger; model identity not exposed"
+}

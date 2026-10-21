@@ -1,0 +1,1059 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/eob/ld-clustering",
+    "run_path": "experiments/2026-10-21-auto-research-seed2043/evidence",
+    "commit": null,
+    "manifest_sha256": null
+  },
+  "selection_note": "These 11 illustrations were curated after unblinding from the frozen challenger-stratified confirmation review: 46 text and 15 photo cases, including agreements and all five revised-guide photo disagreements. The sample is not representative of population accuracy or balanced between designs. Reviewers saw anonymous A/B assignments and each pair’s own full catalog; notes were sealed before identities were revealed. Their exact model identity is unknown, their compute is outside the experiment API ledger, and their judgments are fallible. One text case has apparently transposed rationales; its sealed bytes and counts remain preserved, but it is excluded from these illustrations. No replacement review or further tuning followed confirmation.",
+  "reviewer": "unknown (not exposed by harness) (coding harness; outside API ledger)",
+  "provenance_files": {
+    "validation/final-independent-audit.json": "2f720fac520610a592cab7662e5e3526cd749b99e4a3688be72e41fef5f07c1f",
+    "preregistration/protocol.json": "0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65",
+    "selection/selection.json": "4896a1a591db8f81824925ae961396165b500dc45c802d9a9502945e7a19bacc",
+    "report/report-selection.json": "8b0677b750baa04ba678300a9308fc1002e1fc75cdbca069b75c12397f684e0a",
+    "preregistration/dataset-manifest.json": "add80aa99c9b8015ad69ff76d9ba98c01f7ce2724ff32a9c84081e8b08d7c2d1",
+    "qualitative/confirmation/text/packet.json": "4753ff186edb170af22402ca134fea6c4c0ace92eb6ec1cab34c570429ba4b55",
+    "qualitative/confirmation/text/judgments.json": "7a22200e90358f2eafd5512bbb46920d30b2da577b712d1b165a1add27427805",
+    "qualitative/confirmation/text/review-seal.json": "70371e8ff2ec4a09494ccd2f967dfd0988bda794d3741e7df6cd72957c565e8f",
+    "qualitative/confirmation/text/unblinding.json": "7592d022edb317a4c8276194ec29dfb4a7dfc1acd9725aa1cc621c64d46c28e4",
+    "qualitative/confirmation/text/review-registration.json": "aa10190aaa6a11b7cd43743be1c49524292f871bf896bfbcb5b0512ef8bd0b55",
+    "prompts/blinded-review.md": "177ca493708ceb2ca585eaf3c83bf383b1abf68a1dc8d43aabda8d5a3554cfce",
+    "qualitative/confirmation/text/reviewer-instructions.md": "6cf216d8cef2f7d3aae3cf5e90d5a849fc41291c0f889ed93b8281e30ff071f5",
+    "qualitative/confirmation/text/key.json": "0d95137335c8637bc9eb249b615b763c79707aabba5c5ed017b4374cc6883fa6",
+    "inputs/confirmation/text.jsonl": "14478e6acf67fd857b1d853bea85f534304c06130c3c255c8d45c62b6702c99d",
+    "catalogs/challenger-text.json": "f51308f9643d809a0a7dbf7211e5fdfb757914a54473b6fa1a6a99b0c596234e",
+    "confirmation/confirmation-text-challenger-llm.json": "bc0cfdf06b120ca63ae450d4c602f524a355a54c117a187f62fb58f407d12732",
+    "confirmation/confirmation-text-challenger-ld.json": "876d33407fc2dd88bf2881c195382e7f8815c54fa48f936b1d19a0c2255c0adf",
+    "catalogs/baseline-text.json": "ef82c91b6ef07d5141e1368811b35d45d7a67b829c11cc75356bd7e1854b4aaa",
+    "confirmation/confirmation-text-baseline-llm.json": "0ea1a4178aac41c1a1568fbca7044dedd70852fecbb3750ee3abf1b40f32d14c",
+    "confirmation/confirmation-text-baseline-ld.json": "860991df14afca46afdac4ce051c7133e2e7421386ffc4e20522b9938bf2f84a",
+    "qualitative/confirmation/images/packet.json": "9b8cc7ebd83df3ec9ef933c60b9dbe1ef473e7c02aa2a480d8613dbbc103b430",
+    "qualitative/confirmation/images/judgments.json": "9e324a9b946a46434fa9ee0f956541737357539ecd45ee67524fda8ee59a0421",
+    "qualitative/confirmation/images/review-seal.json": "7ec9284dd0c72aae96a6f7d6b89c1349b28e432e01131117cc8ae4ea6da857fc",
+    "qualitative/confirmation/images/unblinding.json": "ef5ad1af8668b35bba11b8cc807253fb4e92a904517e72fe1d52158e064ff017",
+    "qualitative/confirmation/images/review-registration.json": "fdfb39c486fb502a6b7490c23441262d650f024d3c85a87690e85da694c73aab",
+    "qualitative/confirmation/images/reviewer-instructions.md": "69255090fd663dbb85d3583725138e07c1159a6d96272b070231542313ea9ce5",
+    "qualitative/confirmation/images/key.json": "154b132a9620e122112d3f7403d87e9ee6bb074f27fb0cddcc279b82f88d69c6",
+    "inputs/confirmation/images.jsonl": "f0b689fb53b486073bf27dcbd90f1e6bd77a258badc944ba57ad188ee1faf68a",
+    "catalogs/challenger-images.json": "d4fa27cb0fbf507c1efa1d3df18bcc07a18a10c94b190632381c8eb03551c4fe",
+    "confirmation/confirmation-images-challenger-llm.json": "90cf719ddce494bd39551c907e305bfb9ebd202be9fd43d899f55db811d9d1af",
+    "confirmation/confirmation-images-challenger-ld.json": "eaebb9802b6e7c9001c7c197c92d8c0a0cc8458ee8f95b06a4786d1b30f062e9",
+    "catalogs/baseline-images.json": "7314a799700d0c0dd64fd54169cede8ae80bf16ed1c5f55f85a88b91a2db4c18",
+    "confirmation/confirmation-images-baseline-llm.json": "ab567dbca71ee789e618a5b1da36697a4da209349778b83fc2f3033be1ef01ec",
+    "confirmation/confirmation-images-baseline-ld.json": "105339315178385f19556f581b3d5cb1f053a1a34aad9f64e764e620e75958e4",
+    "qualitative/confirmation/images/images/894287e92331e1f3b15859f8.jpg": "7f4542042a48bbfaa106e02d0b2618bb884faf86b0f1e560a6347f50e2131a50",
+    "inputs/images/00dd744c0c5da889ec17.jpg": "7f4542042a48bbfaa106e02d0b2618bb884faf86b0f1e560a6347f50e2131a50",
+    "qualitative/confirmation/images/images/863049ddeee9448500b3efad.jpg": "118202b0f1e02e0c1add862e6a57a857d6b4c5cdb9bbe9d00b6729e0e285cbea",
+    "inputs/images/458d11d50dfbd85f00e5.jpg": "118202b0f1e02e0c1add862e6a57a857d6b4c5cdb9bbe9d00b6729e0e285cbea",
+    "qualitative/confirmation/images/images/ed9c3cf3a00b3ea253f45553.jpg": "89a97dfa54c49ee5baf660257fa6f375ecd6fa5e89067cd0d779667c49116b35",
+    "inputs/images/e483aeb3fb6fd1f737f3.jpg": "89a97dfa54c49ee5baf660257fa6f375ecd6fa5e89067cd0d779667c49116b35",
+    "qualitative/confirmation/images/images/18f32f8d30b4e950bf58ca5c.jpg": "e16efe222d58062cbaed5bac0a3b09aaa7fca6542397b088439b39b1efd5880c",
+    "inputs/images/4dc6cc9f013e8329c915.jpg": "e16efe222d58062cbaed5bac0a3b09aaa7fca6542397b088439b39b1efd5880c",
+    "qualitative/confirmation/images/images/ae8b3db823634d061d478c99.jpg": "7ac0b69045b7681c70e3cd9a0ec672dbd0c9c9c48167368634ee437b9659f359",
+    "inputs/images/8fbeef48fce9ba8f899d.jpg": "7ac0b69045b7681c70e3cd9a0ec672dbd0c9c9c48167368634ee437b9659f359"
+  },
+  "examples": [
+    {
+      "case_id": "c56b307514b3ca9fdf8f675f",
+      "text": "hola!",
+      "image": null,
+      "summary": "The revised guide explicitly includes social conversation, yet Decisions rejects this greeting as Other. The blinded reviewer supports Sol and calls the rejection unsupported. The original guide is less explicit, and its choices were judged plausible.",
+      "themes": [
+        "clear_error",
+        "unjustified_other",
+        "overlapping_or_incomplete_descriptions",
+        "missing_category"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": 8,
+          "category": "Assistant & Device Interaction",
+          "description": "Assistant identity, abilities, feelings, background, and social conversation; changing names, forms of address, language, voice, or response behavior; connecting, disconnecting, locating, resetting, and controlling devices or appliances, and checking their status.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Hola is a direct social greeting to the assistant.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "unsupported",
+          "evidence": "Social conversation is expressly included in the assistant-interaction category.",
+          "severity": "major"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "A bare greeting is not explicitly covered by this catalog's assistant-conversation description.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 8,
+          "category": "Assistant & Device Interaction",
+          "description": "Conversation with the assistant about its identity, abilities, feelings, or background, and changes to its name, language, voice, or response behavior. Also includes connecting, locating, resetting, and controlling devices or appliances.",
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "A direct greeting naturally fits broad assistant interaction, although social conversation is not expressly listed.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "A greeting used directly in conversation differs from a request to translate a word."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "The catalog describes conversation about assistant attributes but does not explicitly include general greetings."
+        }
+      ]
+    },
+    {
+      "case_id": "23371604d0ed6b0d8da6c2a7",
+      "text": "please tell me the types of pets you have",
+      "image": null,
+      "summary": "Decisions changes from the shared Assistant choice to Other. The reviewer calls this a clear rejection error: asking about the assistant’s pets concerns its background. Both guides retain background scope, so this is not evidence that the rewrite forgot it.",
+      "themes": [
+        "clear_error",
+        "unjustified_other"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "unsupported",
+          "evidence": "The catalog explicitly covers questions about the assistant's background.",
+          "severity": "major"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 8,
+          "category": "Assistant & Device Interaction",
+          "description": "Assistant identity, abilities, feelings, background, and social conversation; changing names, forms of address, language, voice, or response behavior; connecting, disconnecting, locating, resetting, and controlling devices or appliances, and checking their status.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Asking what pets the assistant has is a personal-background question.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 8,
+          "category": "Assistant & Device Interaction",
+          "description": "Conversation with the assistant about its identity, abilities, feelings, or background, and changes to its name, language, voice, or response behavior. Also includes connecting, locating, resetting, and controlling devices or appliances.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "The request concerns the assistant's own personal background.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 8,
+          "category": "Assistant & Device Interaction",
+          "description": "Conversation with the assistant about its identity, abilities, feelings, or background, and changes to its name, language, voice, or response behavior. Also includes connecting, locating, resetting, and controlling devices or appliances.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "The request concerns the assistant's own personal background.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Personal background questions about the assistant differ from general pet information."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "The second-person wording asks about the assistant rather than pet species generally."
+        }
+      ]
+    },
+    {
+      "case_id": "516701f53afb002868a1b631",
+      "text": "how might i say hello if i were scottish",
+      "image": null,
+      "summary": "A reference-model error: the reviewer supports Decisions’ Knowledge choice and calls revised-guide Sol’s Assistant choice unsupported. Learning how to say a greeting differs from greeting the assistant. The original pair agrees on Knowledge.",
+      "themes": [
+        "clear_error"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 9,
+          "category": "Knowledge & Learning",
+          "description": "General factual questions and identification, explanations, definitions, mathematics, unit conversions, translations, and educational help, including science, history, law, homework assistance, and finding instruction or tutoring.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "The question seeks linguistic or cultural instruction on saying hello in a Scottish manner.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 8,
+          "category": "Assistant & Device Interaction",
+          "description": "Assistant identity, abilities, feelings, background, and social conversation; changing names, forms of address, language, voice, or response behavior; connecting, disconnecting, locating, resetting, and controlling devices or appliances, and checking their status.",
+          "refused": false,
+          "fit": "unsupported",
+          "evidence": "The user is asking how to say a greeting, not greeting the assistant or changing its behavior.",
+          "severity": "minor"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 9,
+          "category": "Knowledge & Learning",
+          "description": "General factual questions, explanations, definitions, mathematics, unit conversions, translations, and educational help. Includes science, history, law, and finding instruction or tutoring.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Asking how to say hello in another speech variety fits language learning.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 9,
+          "category": "Knowledge & Learning",
+          "description": "General factual questions, explanations, definitions, mathematics, unit conversions, translations, and educational help. Includes science, history, law, and finding instruction or tutoring.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Asking how to say hello in another speech variety fits language learning.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error"
+          ],
+          "boundary_note": "Learning a greeting in another speech variety differs from directly greeting the assistant."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Instruction about a greeting is different from using a greeting conversationally."
+        }
+      ]
+    },
+    {
+      "case_id": "d6a0ab98d2bddbd292604706",
+      "text": "what do i do now that my battery is dead",
+      "image": null,
+      "summary": "Both guides leave a reasonable ambiguity: the battery could belong to a car or another device. The reviewer considers Sol’s vehicle-care interpretation and Decisions’ Other plausible, rather than treating either as an obvious error.",
+      "themes": [
+        "reasonable_alternative",
+        "overlapping_or_incomplete_descriptions"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "The dead battery could belong to a car or an unspecified device, so the subject is unresolved.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 6,
+          "category": "Cars & Vehicle Care",
+          "description": "Personal vehicle selection, maintenance, repairs, and care, including safety ratings, service history and dates, maintenance schedules, oil changes, tires, fuel, mileage, and car washing.",
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "A dead battery is a common vehicle-maintenance problem, although no vehicle is named.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": 6,
+          "category": "Cars & Vehicle Care",
+          "description": "Choosing, maintaining, repairing, and caring for a personal vehicle. Includes safety ratings, service history, oil changes, tires, fuel, mileage, and car washing.",
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "The wording is consistent with a car battery needing attention, but does not identify a car.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "The missing battery owner leaves uncertainty between vehicle care and device issues.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Battery trouble crosses vehicle care and device troubleshooting when the object is unstated."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A battery-related request needs an object to distinguish vehicle care from device support."
+        }
+      ]
+    },
+    {
+      "case_id": "d09a8824e38732e82631a1a9",
+      "text": "what are the steps to rollover my 401k",
+      "image": null,
+      "summary": "A 401k rollover crosses financial transfers and employee benefits. The reviewer supports both revised-guide choices despite their disagreement. The original pair agrees on employee benefits; agreement alone cannot resolve the overlapping scope.",
+      "themes": [
+        "reasonable_alternative",
+        "overlapping_or_incomplete_descriptions"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 2,
+          "category": "Work & Employee Benefits",
+          "description": "Employee paychecks, payment timing, payroll direct deposit, annual earnings, tax forms, employee benefits, and vacation or time-off balances, usage, requests, and request status.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A 401k rollover is an administrative matter involving an employment retirement benefit.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 1,
+          "category": "Money & Banking",
+          "description": "Bank accounts and access; credit/debit cards, bills, payments, transfers, interest, rewards, credit scores, transaction histories, problems and fees, budgeting, financial values including stocks and property, currency exchange, and insurance policies.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A rollover concerns moving retirement funds between financial accounts.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": 2,
+          "category": "Work & Employee Benefits",
+          "description": "Paychecks, direct deposit, annual earnings, tax forms, employee benefits, and vacation or time-off balances and requests.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Instructions for rolling over an employment retirement plan fit employee benefits.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": 2,
+          "category": "Work & Employee Benefits",
+          "description": "Paychecks, direct deposit, annual earnings, tax forms, employee benefits, and vacation or time-off balances and requests.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Instructions for rolling over an employment retirement plan fit employee benefits.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A retirement-plan rollover overlaps employee-benefit administration and financial-account transfers."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Retirement benefits can also be treated as financial accounts when funds are transferred."
+        }
+      ]
+    },
+    {
+      "case_id": "6126c9536b33cc73e073bfee",
+      "text": "did the application for my visa card finish",
+      "image": null,
+      "summary": "An improved agreement example: both revised-guide classifiers select Money & Banking and receive supported judgments. The original Decisions rejection was judged unsupported. “Visa card” supplies the banking cue, rather than an immigration-visa request.",
+      "themes": [
+        "clear_error",
+        "unjustified_other"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 1,
+          "category": "Money & Banking",
+          "description": "Bank accounts and access; credit/debit cards, bills, payments, transfers, interest, rewards, credit scores, transaction histories, problems and fees, budgeting, financial values including stocks and property, currency exchange, and insurance policies.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Checking completion of a Visa-card application concerns a banking card.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 1,
+          "category": "Money & Banking",
+          "description": "Bank accounts and access; credit/debit cards, bills, payments, transfers, interest, rewards, credit scores, transaction histories, problems and fees, budgeting, financial values including stocks and property, currency exchange, and insurance policies.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Checking completion of a Visa-card application concerns a banking card.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": 1,
+          "category": "Money & Banking",
+          "description": "Bank accounts, credit cards, bills, payments, transfers, interest, rewards, credit scores, and transaction problems. Also includes budgeting, financial values, currency exchange, and insurance policies.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "The user asks about the status of a banking-card application.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "unsupported",
+          "evidence": "Credit-card matters are expressly included, giving the request a direct supplied subject.",
+          "severity": "major"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "A card application is a banking matter; an immigration visa would have a different subject."
+        },
+        {
+          "design": "Original",
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "The phrase visa card identifies a card application rather than an unspecified application."
+        }
+      ]
+    },
+    {
+      "case_id": "894287e92331e1f3b15859f8",
+      "text": null,
+      "image": {
+        "src": "/goofing/ld-clustering/auto-research/894287e92331e1f3b15859f8.jpg",
+        "width": 1024,
+        "height": 768,
+        "alt": "A person kneels beside sand sculptures of human figures while a crowd watches.",
+        "title": "Sculpting curves",
+        "author": "Logan Ingalls",
+        "author_url": "https://www.flickr.com/people/plutor/",
+        "source_url": "https://www.flickr.com/photos/plutor/808667267",
+        "license_name": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Exact source JPEG bytes; no resizing, cropping, reencoding or upscaling.",
+        "sha256": "7f4542042a48bbfaa106e02d0b2618bb884faf86b0f1e560a6347f50e2131a50"
+      },
+      "summary": "One of three changed Sol photo assignments: a sand sculptor moves from shared People to Sol Other. The reviewer prefers Decisions’ People choice, while allowing an artwork-centered Other reading as plausible.",
+      "themes": [
+        "reasonable_alternative",
+        "different_granularity"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 4,
+          "category": "People and activities",
+          "description": "People individually or in groups, at rest or engaged in activities such as work, music, or sports, including portraits and close views of human body parts.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A person is visibly shaping a large sand sculpture while a crowd watches.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "The large sand artwork is centrally framed, and the catalog lacks an explicit category for sculptural artworks.",
+          "severity": "minor"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 4,
+          "category": "People and activities",
+          "description": "People shown individually or in groups, including portraits and people working, performing music, or participating in sports. Includes close views of human body parts.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A person is visibly shaping a large sand sculpture while a crowd watches.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 4,
+          "category": "People and activities",
+          "description": "People shown individually or in groups, including portraits and people working, performing music, or participating in sports. Includes close views of human body parts.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A person is visibly shaping a large sand sculpture while a crowd watches.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Scenes of people making artwork can fit activities even when the artwork occupies more of the frame."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Scenes of people making artwork can fit activities even when the artwork occupies more of the frame."
+        }
+      ]
+    },
+    {
+      "case_id": "863049ddeee9448500b3efad",
+      "text": null,
+      "image": {
+        "src": "/goofing/ld-clustering/auto-research/863049ddeee9448500b3efad.jpg",
+        "width": 1024,
+        "height": 576,
+        "alt": "An industrial compressor, motor, tank and piping stand against an interior brick wall.",
+        "title": "DSC00242",
+        "author": "Art Comments",
+        "author_url": "https://www.flickr.com/people/artcomments/",
+        "source_url": "https://www.flickr.com/photos/artcomments/5844487297",
+        "license_name": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Exact source JPEG bytes; no resizing, cropping, reencoding or upscaling.",
+        "sha256": "118202b0f1e02e0c1add862e6a57a857d6b4c5cdb9bbe9d00b6729e0e285cbea"
+      },
+      "summary": "Another changed Sol assignment: industrial equipment moves from shared Other to Sol Electronics. The reviewer prefers Decisions’ Other because the guide specifies household or desktop devices, while considering Sol plausible. On the preselected repeat, Sol returns to Other.",
+      "themes": [
+        "reasonable_alternative",
+        "overlapping_or_incomplete_descriptions",
+        "missing_category"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A compressor, tank, and industrial piping dominate the frame; industrial machinery has no explicit category.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 6,
+          "category": "Electronics and appliances",
+          "description": "Electronic equipment and powered household or desktop devices, including communication equipment, media players, radios, stereo systems, electric fans, and heating appliances, whether portable or installed.",
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "The apparatus has a visible motor and control equipment, but its industrial use extends beyond the stated household or desktop devices.",
+          "severity": "minor"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A compressor, tank, and industrial piping dominate the frame; industrial machinery has no explicit category.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A compressor, tank, and industrial piping dominate the frame; industrial machinery has no explicit category.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Powered industrial machinery is not automatically a household or desktop appliance; the catalog should specify whether industrial equipment is included."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Powered industrial machinery is not automatically a household or desktop appliance; the catalog should specify whether industrial equipment is included."
+        }
+      ]
+    },
+    {
+      "case_id": "ed9c3cf3a00b3ea253f45553",
+      "text": null,
+      "image": {
+        "src": "/goofing/ld-clustering/auto-research/ed9c3cf3a00b3ea253f45553.jpg",
+        "width": 1024,
+        "height": 670,
+        "alt": "Detached engines and mechanical assemblies fill a wheeled trailer, with cars and trucks behind it.",
+        "title": "Pull-A-Part NE Georgia Swap Meet - V8 Engine on Trailer",
+        "author": "Greg  Olotka",
+        "author_url": "https://www.flickr.com/people/pull-a-part/",
+        "source_url": "https://www.flickr.com/photos/pull-a-part/8129347756",
+        "license_name": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Exact source JPEG bytes; no resizing, cropping, reencoding or upscaling.",
+        "sha256": "89a97dfa54c49ee5baf660257fa6f375ecd6fa5e89067cd0d779667c49116b35"
+      },
+      "summary": "The remaining changed Sol assignment: engines on a trailer move from shared Vehicles to Sol Other. Both readings were judged plausible because detached mechanical parts dominate a vehicle setting. Decisions’ prediction stays Vehicles.",
+      "themes": [
+        "reasonable_alternative",
+        "overlapping_or_incomplete_descriptions"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "Detached engines and transmissions are the prominent cargo, and detached mechanical parts are not explicitly included in the catalog.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": 3,
+          "category": "Vehicles",
+          "description": "Vehicles, including cars, vans, racing cars, military vehicles, aircraft, and boats, with views centered on their exteriors, onboard cabins and interiors, or controls.",
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "The engines are displayed on a wheeled trailer amid numerous cars and trucks, making the vehicle category defensible.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 3,
+          "category": "Vehicles",
+          "description": "Vehicles such as cars, vans, racing cars, military vehicles, aircraft, and boats. Includes views focused on vehicle interiors or controls.",
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "A wheeled trailer loaded with vehicle engines fills the foreground, though the detached parts are more prominent than any complete car.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 3,
+          "category": "Vehicles",
+          "description": "Vehicles such as cars, vans, racing cars, military vehicles, aircraft, and boats. Includes views focused on vehicle interiors or controls.",
+          "refused": false,
+          "fit": "plausible",
+          "evidence": "A wheeled trailer loaded with vehicle engines fills the foreground, though the detached parts are more prominent than any complete car.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A view centered on detached vehicle engines sits between complete vehicles and uncategorized mechanical parts, even when a trailer is visible."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A view centered on detached vehicle engines sits between complete vehicles and uncategorized mechanical parts, even when a trailer is visible."
+        }
+      ]
+    },
+    {
+      "case_id": "18f32f8d30b4e950bf58ca5c",
+      "text": null,
+      "image": {
+        "src": "/goofing/ld-clustering/auto-research/18f32f8d30b4e950bf58ca5c.jpg",
+        "width": 1024,
+        "height": 683,
+        "alt": "A wide view of a curved assembly chamber filled with seated people, desks and galleries.",
+        "title": "Sesión de investidura",
+        "author": "Cristina Cifuentes",
+        "author_url": "https://www.flickr.com/people/cristinacifuentes/",
+        "source_url": "https://www.flickr.com/photos/cristinacifuentes/18497948244",
+        "license_name": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Exact source JPEG bytes; no resizing, cropping, reencoding or upscaling.",
+        "sha256": "e16efe222d58062cbaed5bac0a3b09aaa7fca6542397b088439b39b1efd5880c"
+      },
+      "summary": "This occupied assembly hall supports both People and Buildings under both guides. The reviewer supports both focal interpretations. A disagreement can reflect competing subjects within one photograph.",
+      "themes": [
+        "reasonable_alternative",
+        "overlapping_or_incomplete_descriptions"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 4,
+          "category": "People and activities",
+          "description": "People individually or in groups, at rest or engaged in activities such as work, music, or sports, including portraits and close views of human body parts.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Many people are seated at desks in an organized assembly, with a speaker near the center.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 7,
+          "category": "Buildings and structures",
+          "description": "Buildings, architectural interiors, monuments, settlements, fences, utility structures, and other built structures, including scenes centered on the structure or overall constructed environment.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "The wide view prominently presents the hall interior, curved seating layout, galleries, and architectural walls.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Decisions",
+          "cluster_id": 4,
+          "category": "People and activities",
+          "description": "People shown individually or in groups, including portraits and people working, performing music, or participating in sports. Includes close views of human body parts.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "Many people are seated at desks in an organized assembly, with a speaker near the center.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Sol",
+          "cluster_id": 7,
+          "category": "Buildings and structures",
+          "description": "Buildings, architectural interiors, monuments, settlements, and other built structures. Includes fences, utility structures, and scenes centered on constructed environments.",
+          "refused": false,
+          "fit": "supported",
+          "evidence": "The wide view prominently presents the hall interior, curved seating layout, galleries, and architectural walls.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A wide view of an occupied assembly hall can emphasize either the gathering or the architectural interior."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A wide view of an occupied assembly hall can emphasize either the gathering or the architectural interior."
+        }
+      ]
+    },
+    {
+      "case_id": "ae8b3db823634d061d478c99",
+      "text": null,
+      "image": {
+        "src": "/goofing/ld-clustering/auto-research/ae8b3db823634d061d478c99.jpg",
+        "width": 1024,
+        "height": 768,
+        "alt": "A large bare volcanic mountain rises above green vegetation under a pale sky.",
+        "title": "Izalco Volcano",
+        "author": "David Stanley",
+        "author_url": "https://www.flickr.com/people/davidstanleytravel/",
+        "source_url": "https://www.flickr.com/photos/davidstanleytravel/7185454624/",
+        "license_name": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Exact source JPEG bytes; no resizing, cropping, reencoding or upscaling.",
+        "sha256": "7ac0b69045b7681c70e3cd9a0ec672dbd0c9c9c48167368634ee437b9659f359"
+      },
+      "summary": "A shared Other check: both classifiers reject this volcanic landscape under both guides, and all four judgments are supported. A missing landscape category makes rejection reasonable; shared rejection still does not establish broad semantic accuracy.",
+      "themes": [
+        "missing_category"
+      ],
+      "assignments": [
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A large bare volcanic mountain is the main subject, and the catalog has no geological landscape category.",
+          "severity": "none"
+        },
+        {
+          "design": "Challenger",
+          "pair_id": 1,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A large bare volcanic mountain is the main subject, and the catalog has no geological landscape category.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "A",
+          "backend": "Sol",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A large bare volcanic mountain is the main subject, and the catalog has no geological landscape category.",
+          "severity": "none"
+        },
+        {
+          "design": "Original",
+          "pair_id": 2,
+          "anonymous_label": "B",
+          "backend": "Decisions",
+          "cluster_id": null,
+          "category": "Other",
+          "description": null,
+          "refused": false,
+          "fit": "supported",
+          "evidence": "A large bare volcanic mountain is the main subject, and the catalog has no geological landscape category.",
+          "severity": "none"
+        }
+      ],
+      "pair_reviews": [
+        {
+          "design": "Challenger",
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Vegetation framing a geological landscape does not necessarily make plants the principal subject."
+        },
+        {
+          "design": "Original",
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Vegetation framing a geological landscape does not necessarily make plants the principal subject."
+        }
+      ]
+    }
+  ],
+  "review_accounting": {
+    "text": {
+      "expected_count": 46,
+      "accepted_count": 46,
+      "failed_count": 0,
+      "not_attempted_count": 0
+    },
+    "images": {
+      "expected_count": 15,
+      "accepted_count": 15,
+      "failed_count": 0,
+      "not_attempted_count": 0
+    }
+  },
+  "reviewer_metadata": {
+    "text": {
+      "kind": "coding-harness",
+      "model": "unknown (not exposed by harness)",
+      "compute_accounting": "outside experiment API ledger"
+    },
+    "images": {
+      "kind": "coding-harness",
+      "model": "unknown (not exposed by harness)",
+      "compute_accounting": "outside experiment API ledger"
+    }
+  }
+}

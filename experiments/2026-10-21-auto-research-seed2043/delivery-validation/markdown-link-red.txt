@@ -1,0 +1,44 @@
+.....E..........
+======================================================================
+ERROR: test_confirmation_links_anchored_markdown_findings_without_parsing_as_json (test_export_auto_research.ExportTests.test_confirmation_links_anchored_markdown_findings_without_parsing_as_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/disks/data/ld-clustering-auto-research/tests/test_export_auto_research.py", line 561, in test_confirmation_links_anchored_markdown_findings_without_parsing_as_json
+    publication = fixture.export()
+                  ^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/tests/test_export_auto_research.py", line 540, in export
+    return exporter.export_publication(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 806, in export_publication
+    ).build(review_publication)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 754, in build
+    rows.extend(
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 755, in <genexpr>
+    self.natural_round(kind) for kind in ("compact", "boundary", "confirmation")
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 723, in natural_round
+    evidence=self.evidence(comparisons, extra),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 497, in evidence
+    links.append(self.link(name, Path(name).stem.replace("-", " ")))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 344, in link
+    self.read(name)
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 197, in read
+    return json.loads(path.read_bytes())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+----------------------------------------------------------------------
+Ran 16 tests in 13.548s
+
+FAILED (errors=1)

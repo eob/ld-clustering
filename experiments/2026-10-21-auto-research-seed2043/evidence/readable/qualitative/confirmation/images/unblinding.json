@@ -1,0 +1,6 @@
+{
+  "unblinded_at_utc": "2026-10-21T05:05:14.362482+00:00",
+  "review_seal_sha256": "7ec9284dd0c72aae96a6f7d6b89c1349b28e432e01131117cc8ae4ea6da857fc",
+  "key_sha256": "154b132a9620e122112d3f7403d87e9ee6bb074f27fb0cddcc279b82f88d69c6",
+  "note": "First root key parsing follows the accepted blinded judgment seal; no feedback or replacement review."
+}

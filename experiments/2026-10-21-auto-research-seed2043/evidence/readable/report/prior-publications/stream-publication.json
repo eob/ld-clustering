@@ -1,0 +1,2189 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "source": {
+    "repository": "https://github.com/eob/ld-clustering",
+    "commit": "f630cded18a3375b73284ab752fa2568a8e2e731",
+    "runtime_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+    "executable_sha256": "d16f7d289af670f7539f28ccec6474602e3735f54cfbafb24fff884cb627e603",
+    "run_path": "experiments/2026-10-20-guided-agreement-seed1042/streaming-evidence",
+    "manifest_sha256": "75d694a497fdf0dfab14159b8f978606ce89eeb17efb646802fe2106fc79d9f4",
+    "protocol_sha256": "65edc12008dd26404a52406a31f1c135e628642e4e8ac69e213882f8d60c0070",
+    "audit_sha256": "a939309be01b79663ca6a517c021aaee459b1aa6a2365cfdcdcfb5a9886417fd",
+    "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4"
+  },
+  "launched_at": "2026-10-21T00:45:43.255755+00:00",
+  "finished_at": "2026-10-21T06:49:17.893485+00:00",
+  "accounting": {
+    "known_cost_usd": "16.4293528",
+    "total_cost_usd": "16.4293528",
+    "cost_complete": true
+  },
+  "modalities": [
+    {
+      "modality": "text",
+      "n": 1000,
+      "original": {
+        "complete": true,
+        "comparison": {
+          "agreement": {
+            "n": 1000,
+            "adjusted_rand_index": 0.5380962576698524,
+            "pairwise_precision": 0.8111993946273175,
+            "pairwise_recall": 0.45376347337072365,
+            "pairwise_f1": 0.5819817549030063
+          },
+          "shared_other_sensitivity": {
+            "n": 1000,
+            "adjusted_rand_index": 0.41104691943503985,
+            "pairwise_precision": 0.454609500805153,
+            "pairwise_recall": 0.546158031557947,
+            "pairwise_f1": 0.4961964133688518
+          },
+          "assigned_other": {
+            "both_named": 707,
+            "baseline_named_ld_other": 287,
+            "baseline_other_ld_named": 1,
+            "both_other": 5
+          }
+        },
+        "llm": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 1000,
+          "expected_count": 1000,
+          "coverage": 0.994,
+          "known_cost_usd": "2.296944",
+          "total_cost_usd": "2.296944",
+          "cost_complete": true,
+          "wall_seconds": 4794.182,
+          "timing_complete": true,
+          "calls": 1606,
+          "error_calls": 0,
+          "retry_attempts": 0,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 300,
+            "id_moves": 104,
+            "unchanged": 196,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 1,
+              "name": "Travel and destinations",
+              "description": "Travel planning and destination information, including travel alerts, flight searches, geographic locations, and local time zones."
+            },
+            {
+              "id": 2,
+              "name": "Automotive care and valuation",
+              "description": "Vehicle maintenance, repair, and valuation, including service appointments, oil changes and oil selection, check-engine issues, jump-start instructions, and used-car or Blue Book values."
+            },
+            {
+              "id": 3,
+              "name": "Banking and personal finance",
+              "description": "Banking and personal money matters, including currency exchange, credit scores, retirement account rollovers, and bank account settings."
+            },
+            {
+              "id": 4,
+              "name": "Shopping and orders",
+              "description": "Retail purchases and order management, including placing online orders and resolving unrecognized items on shopping bills."
+            },
+            {
+              "id": 5,
+              "name": "Assistant interaction and controls",
+              "description": "Interactions with the assistant, including conversational acknowledgments, repetition, speaking speed, capabilities, identity, remembered personal information, and device connections."
+            },
+            {
+              "id": 6,
+              "name": "Workplace and employment",
+              "description": "Employment-related information and benefits, including available paid time off and leave balances."
+            },
+            {
+              "id": 8,
+              "name": "Scheduling and task management",
+              "description": "Personal scheduling and task organization, including setting alarms, managing calendar events and appointments, booking meetings or meeting rooms, and updating to-do lists."
+            },
+            {
+              "id": 9,
+              "name": "Education and general knowledge",
+              "description": "Educational and reference questions, including mathematics and probability, spelling and translation, civics, and factual trivia."
+            },
+            {
+              "id": 10,
+              "name": "Entertainment and recreation",
+              "description": "Music playback, jokes and humor, and casual games or chance activities such as coin flips."
+            },
+            {
+              "id": 11,
+              "name": "Food, cooking, and dining",
+              "description": "Food preparation and dining, including recipes, cooking times, oven temperature settings, ingredient substitutions, food storage and expiration, nutritional information, and restaurant recommendations or wait times."
+            },
+            {
+              "id": 12,
+              "name": "Calls and messaging",
+              "description": "Personal communications, including making phone calls, sending texts or messages, and sharing location with contacts."
+            },
+            {
+              "id": 13,
+              "name": "Weather and forecasts",
+              "description": "Current weather conditions and weather forecasts, including today's weather and upcoming outlooks."
+            },
+            {
+              "id": 14,
+              "name": "Fashion and personal grooming",
+              "description": "Clothing and grooming guidance, including what to wear for occasions, hairstyling tips, and visual previews of different hairstyles."
+            },
+            {
+              "id": 15,
+              "name": "Health and fitness",
+              "description": "Personal health and fitness guidance, including exercise and strength training, first aid and CPR, and responses to accidental ingestion or poisoning."
+            },
+            {
+              "id": 16,
+              "name": "Home maintenance and controls",
+              "description": "Household repairs and home equipment controls, including finding roof repair services, plumbing and hardware guidance, and adjusting thermostats, ceiling fans, and lighting."
+            },
+            {
+              "id": 17,
+              "name": "Technology and device support",
+              "description": "Computing and personal technology assistance, including programming, device setup and troubleshooting, mobile phone plans, locating lost devices, and electronics or robotics projects."
+            }
+          ]
+        },
+        "ld": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 1000,
+          "expected_count": 1000,
+          "coverage": 0.708,
+          "known_cost_usd": "0.7377214",
+          "total_cost_usd": "0.7377214",
+          "cost_complete": true,
+          "wall_seconds": 2230.638,
+          "timing_complete": true,
+          "calls": 9690,
+          "error_calls": 1,
+          "retry_attempts": 1,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 6441,
+            "id_moves": 2002,
+            "unchanged": 4439,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 21,
+              "name": "Travel & Transportation",
+              "description": "Travel planning and transportation, including travel advisories, destination requirements, sightseeing, flight bookings, and route traffic conditions."
+            },
+            {
+              "id": 23,
+              "name": "Personal Finance & Insurance",
+              "description": "Personal financial services and insurance shopping, including credit scores, credit card rewards, credit limits, and selecting insurance coverage."
+            },
+            {
+              "id": 24,
+              "name": "Work & Employee Benefits",
+              "description": "Employment-related benefits and balances, including paid time off, vacation usage, and enrollment in employer health plans."
+            },
+            {
+              "id": 25,
+              "name": "Productivity & Organization",
+              "description": "Managing personal schedules and tasks, including checking meetings, reviewing to-do lists, and setting timers."
+            },
+            {
+              "id": 26,
+              "name": "Food, Groceries & Dining",
+              "description": "Food preparation, grocery decisions, and dining out, including recipes, cooking measurements, grocery price comparisons, restaurant ratings, and reservations."
+            },
+            {
+              "id": 27,
+              "name": "Communication & Language",
+              "description": "Communicating with others and across languages, including placing phone calls and translating everyday expressions."
+            },
+            {
+              "id": 28,
+              "name": "Assistant Interaction & Preferences",
+              "description": "Direct interaction with and customization of the assistant, including preferred names, requests to repeat responses, conversational feedback, questions about its capabilities or who controls it, and changes to its voice or phone connection settings."
+            },
+            {
+              "id": 30,
+              "name": "Vehicle Care & Maintenance",
+              "description": "Vehicle status, components, and upkeep, including checking fuel levels, locating the gas tank, tracking oil changes, and addressing warning lights or repair needs."
+            },
+            {
+              "id": 31,
+              "name": "Weather & Forecasts",
+              "description": "Current weather conditions and forecasts, including requests about the weather now and what conditions to expect."
+            },
+            {
+              "id": 32,
+              "name": "Music & Media",
+              "description": "Finding and playing music or videos, choosing music by mood, identifying songs, and controlling media playback such as skipping tracks."
+            }
+          ]
+        }
+      },
+      "contextual": {
+        "complete": true,
+        "comparison": {
+          "agreement": {
+            "n": 1000,
+            "adjusted_rand_index": 0.6097577180170812,
+            "pairwise_precision": 0.6822673089771089,
+            "pairwise_recall": 0.6315155657537145,
+            "pairwise_f1": 0.6559111614424434
+          },
+          "shared_other_sensitivity": {
+            "n": 1000,
+            "adjusted_rand_index": 0.5910110029026963,
+            "pairwise_precision": 0.6431940259399974,
+            "pairwise_recall": 0.6391537835638731,
+            "pairwise_f1": 0.6411675400362408
+          },
+          "assigned_other": {
+            "both_named": 908,
+            "baseline_named_ld_other": 90,
+            "baseline_other_ld_named": 0,
+            "both_other": 2
+          }
+        },
+        "llm": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 1000,
+          "expected_count": 1000,
+          "coverage": 0.998,
+          "known_cost_usd": "10.6207179",
+          "total_cost_usd": "10.6207179",
+          "cost_complete": true,
+          "wall_seconds": 21814.356,
+          "timing_complete": true,
+          "calls": 8131,
+          "error_calls": 0,
+          "retry_attempts": 0,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 5964,
+            "id_moves": 453,
+            "unchanged": 5511,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 9,
+              "name": "Travel & navigation",
+              "description": "Travel planning, advisories, destination requirements, baggage rules, and transportation reservations such as rental cars. Also includes personal navigation and finding your current geographic location."
+            },
+            {
+              "id": 10,
+              "name": "Personal finance",
+              "description": "Banking and personal financial matters, including exchange rates, credit scores, retirement accounts, and direct deposits."
+            },
+            {
+              "id": 11,
+              "name": "Work & employment",
+              "description": "Workplace administration and employment entitlements, including paid-time-off balances and leave."
+            },
+            {
+              "id": 12,
+              "name": "Devices & connectivity",
+              "description": "Personal device setup and operation, including connecting devices and pairing phones."
+            },
+            {
+              "id": 13,
+              "name": "Assistant interaction",
+              "description": "Direct interaction with the assistant, including questions about its capabilities and conversational acknowledgments or confirmations."
+            },
+            {
+              "id": 14,
+              "name": "Food & cooking",
+              "description": "Recipes and practical guidance for preparing food and meals."
+            },
+            {
+              "id": 15,
+              "name": "Shopping & services",
+              "description": "Purchasing goods, comparing or recommending products, and finding local service providers."
+            },
+            {
+              "id": 16,
+              "name": "Scheduling & reminders",
+              "description": "Managing calendars, appointments, reminders, and their associated lists."
+            },
+            {
+              "id": 17,
+              "name": "Vehicles",
+              "description": "Vehicle operation, condition, fuel levels, and fuel efficiency. Transportation bookings belong to travel rather than vehicle operation."
+            },
+            {
+              "id": 25,
+              "name": "General knowledge & information",
+              "description": "General factual research, language help such as spelling and translation, and educational or how-to guidance outside specialized practical subjects. Includes current-events questions, weather forecasts, and time-zone information."
+            },
+            {
+              "id": 26,
+              "name": "Music & entertainment",
+              "description": "Music identification and playback, entertainment media, jokes, and light recreational activities such as coin flips."
+            },
+            {
+              "id": 27,
+              "name": "Health & wellness",
+              "description": "Health, fitness, and nutrition questions, including exercise guidance, food healthfulness, first aid, and medical safety. Also includes checking personal health-plan enrollment and coverage."
+            },
+            {
+              "id": 28,
+              "name": "Messaging & communication",
+              "description": "Making phone calls and sending or managing messages to other people, including texts and relaying information to named contacts."
+            },
+            {
+              "id": 29,
+              "name": "Digital content & files",
+              "description": "Creating or editing digital content, including images, and organizing personal notes, files, folders, and collections."
+            }
+          ]
+        },
+        "ld": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 1000,
+          "expected_count": 1000,
+          "coverage": 0.908,
+          "known_cost_usd": "0.8146604",
+          "total_cost_usd": "0.8146604",
+          "cost_complete": true,
+          "wall_seconds": 2345.899,
+          "timing_complete": true,
+          "calls": 10876,
+          "error_calls": 1,
+          "retry_attempts": 1,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 8283,
+            "id_moves": 481,
+            "unchanged": 7802,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 1,
+              "name": "Travel and places",
+              "description": "Plan travel and understand destinations, including flights, travel alerts, geographic locations, and time zones."
+            },
+            {
+              "id": 2,
+              "name": "Vehicles and maintenance",
+              "description": "Get vehicle information, including fuel economy, and manage vehicle maintenance, repairs, supplies, and service appointments."
+            },
+            {
+              "id": 3,
+              "name": "Money, banking, and taxes",
+              "description": "Manage personal finances, including taxes, banking, credit, retirement savings, currency conversion, and disputed bills or transactions."
+            },
+            {
+              "id": 4,
+              "name": "Assistant interaction",
+              "description": "Discuss the assistant's capabilities, identity, knowledge of the user, or conversational behavior. Includes repetition requests, feedback, acknowledgments, and social exchanges."
+            },
+            {
+              "id": 5,
+              "name": "Devices and technology",
+              "description": "Connect, configure, and use personal electronic devices and their connectivity features."
+            },
+            {
+              "id": 6,
+              "name": "Shopping and orders",
+              "description": "Purchase retail products and manage shopping orders. Financial billing or transaction disputes are outside this scope."
+            },
+            {
+              "id": 7,
+              "name": "Work and personal organization",
+              "description": "Manage workplace entitlements and personal organization, including paid-leave balances, calendars, to-do lists, reminders, and saved things to remember. Schedule meetings and reserve or check availability of meeting rooms."
+            },
+            {
+              "id": 9,
+              "name": "General knowledge and reference",
+              "description": "Find general factual information and current news, including public affairs, history, science, and culture. Get reference help with spelling, translation, and arithmetic, plus general explanations and how-to guidance; excludes cooking and recipes, song identification, lyrics lookup, and music playback."
+            },
+            {
+              "id": 12,
+              "name": "Home and housing",
+              "description": "Find housing and home repair services, and control household appliances or home settings such as oven and room temperatures."
+            },
+            {
+              "id": 13,
+              "name": "Music",
+              "description": "Identify songs, find song lyrics, and play or control music playback."
+            },
+            {
+              "id": 14,
+              "name": "Fitness and nutrition",
+              "description": "Get exercise, strength-training, and nutrition guidance, including workout intensity and calorie information."
+            },
+            {
+              "id": 15,
+              "name": "Insurance",
+              "description": "Obtain and manage insurance policies, check coverage, and understand insurance benefits, including health plans."
+            },
+            {
+              "id": 16,
+              "name": "Restaurants and dining",
+              "description": "Find and choose restaurants, check seating availability or wait times, and make, confirm, or cancel dining reservations."
+            },
+            {
+              "id": 17,
+              "name": "Calls and messaging",
+              "description": "Make phone calls and send text messages to people or contacts."
+            },
+            {
+              "id": 18,
+              "name": "Cooking and recipes",
+              "description": "Find recipes and get guidance on cooking, meal preparation, and ingredient substitutions. Nutritional analysis and dietary fitness goals remain outside this scope."
+            }
+          ]
+        }
+      },
+      "common_named_subset": {
+        "schema_version": 1,
+        "status": "complete",
+        "scope": "post_hoc_common_named_subset",
+        "modality": "text",
+        "full_n": 1000,
+        "conditional_n": 674,
+        "selected_item_ids": [
+          "82423384138218cfbf3d",
+          "0752cbfc1bc3ecb5a385",
+          "2c55b1fcacdd33da8660",
+          "ee178698f6aec5ff2fd2",
+          "1d0517ce6e37aae33ebb",
+          "625b768719ae0d7ca0a3",
+          "443b3c2b3c7441b3a9cd",
+          "1df1f5da2e5909249838",
+          "9335b5eb0c05ea26eb1d",
+          "a86e29b7a5519ee0d385",
+          "223f90953910d3aac476",
+          "8f23a5162e8d4e5a2bc2",
+          "5cdf49127d5c0650ed7d",
+          "fead96bf881862c6beab",
+          "467609352b98ea2cdaed",
+          "944db2d3e7524da7ddb2",
+          "08ee4879eeca646952b5",
+          "f8317fb28528fc0e6750",
+          "f9e03dd3fef59c524cbb",
+          "44e6fba53455864fc36f",
+          "f7a9dffa5de8c9c23364",
+          "5514740fe9ffa0e13c15",
+          "37f40ff83131d9a22e3d",
+          "dbc427a4ee2ce80254d6",
+          "bd7e53a37b72b07b3d06",
+          "1074047598a90829c98f",
+          "4a6527c79dd924b6f9c6",
+          "344e2ba64e23dfd77986",
+          "90d48e779ff5e93332cb",
+          "a292fee93c9c77a6bcce",
+          "37a63cdfd94ce44dea01",
+          "378e762fd1f218b01fbe",
+          "494ff083b8f08bacd331",
+          "6aee2eeeea510ce2f121",
+          "b9bbc4365b7100fad4cf",
+          "105bb9aaf7f9374f5aac",
+          "78375c1c80dfbb4e18d0",
+          "6578ae2366946a3d7dac",
+          "54de88436c238f96dc37",
+          "6691148249786fe1d366",
+          "b9093c20ec4b35410738",
+          "01091fba0379bf9166b4",
+          "66d801bd198567010103",
+          "df39051d06b673520107",
+          "02a103f8bf4b2dad8c84",
+          "e610f66f773f5f49073b",
+          "852f057c5a98b4e5ec33",
+          "b9b68b9a5a322d9a6102",
+          "a1f6c6bfa8d05902d4b5",
+          "eacb68304fcc43f74efd",
+          "722dbacb636b89ab3e2f",
+          "944abdb23f8f4ea07ec6",
+          "cc0306c91c9c73b45e57",
+          "7643847abe9266778153",
+          "f2e2f45ec606964f9943",
+          "97b9e50aa3342a3815b2",
+          "dd51578624c2f69f506f",
+          "f3925fd50dccae80d9ae",
+          "160b012fd9155b8db89d",
+          "7c28fcdf656f78044efb",
+          "0283300ec54337c6e116",
+          "16cfaa6cdc767b15e330",
+          "a6665d42a0bf683bab13",
+          "4b1099cb2d672fdd05dd",
+          "ef84c61fa83c1882b074",
+          "030e0179725711e2d4e0",
+          "8300a7bb4a795eb26fe0",
+          "16e3e1dbcc142a38d767",
+          "93b602a7360f0b126dde",
+          "7edbd23109c5aac3d999",
+          "5cdfd5f1b6f580582acd",
+          "9d2f6b388ad76466714b",
+          "a88b720ea4fc5ca9f475",
+          "ebf8e30a0188b19606b1",
+          "7a7188d2266831500b7f",
+          "28da1c8eff0f4edb2b21",
+          "8a84813760bdb4b415cc",
+          "25af52087950434f2b2a",
+          "f8237b4fbee5731b9ba7",
+          "8944b6ff2e504a952cb2",
+          "ce5e2dfd74bc30700fbe",
+          "c9f4fcc2da43f96a0957",
+          "bbd9b9483dba2289c5a2",
+          "3f0eca679c378d629b89",
+          "b652daaad85e453a6455",
+          "64f5e6b85d9ea2b20d8c",
+          "798ba2931590aba79ac6",
+          "9d610567295c26e56356",
+          "d9220935d69d7bea4f9b",
+          "d81a0a60bc03267389af",
+          "82044b85ab3043a36600",
+          "cb6c4ec91081475807ab",
+          "667219b49c58ecb6d2db",
+          "3609003ad70501f0af93",
+          "61817aecfec90269fd8a",
+          "6f34552303fe44206ffa",
+          "6dd53046ff901dde620d",
+          "a8e1fdf8701393e6f2e8",
+          "b46a4a8df1547a7b2346",
+          "8a70f9fa8cf8b094b150",
+          "0c4b4ab55dc52263bbd5",
+          "af79818df784225bc8e3",
+          "fcaf244e60075cc33661",
+          "ca2e48b6b3ff1a731506",
+          "1f2fa8b9491d51beb2ce",
+          "5561df2e3baf8aa4259f",
+          "c68ad5e2322d9c99093d",
+          "975197c6e14f34d8852a",
+          "5c18b36246f0933a9b38",
+          "24e8e9bb938c1c47f95a",
+          "2266845ad88891632652",
+          "15caca4864abc28319a8",
+          "f14931769af0f5345363",
+          "10ec18f605efc69b789c",
+          "cff8bf2745e8842947de",
+          "84cd380ef4e5fabd1e1a",
+          "098936814297633c3347",
+          "381734796111f648d082",
+          "d97f1538aae2204c3510",
+          "ab6ef42444dfccc751f6",
+          "d334824a4e5cfcd47edb",
+          "d21bd2e0b7267e300862",
+          "fca058ac83800f61f43d",
+          "87fc91df646db90752b4",
+          "3ed989241af8ab84e904",
+          "ca01db6a31017bfecac5",
+          "937166c7710970c7f47b",
+          "2b1ac0110537277492f4",
+          "94239dee0ee74221ead8",
+          "5252eef6d7866e515c10",
+          "80cee5d2a036bef9916f",
+          "80e8a20c90bb5079ee67",
+          "93349a4c6786ff9dcc35",
+          "2f90bbe7db451d808574",
+          "9f88e45037184d9ba42f",
+          "4029e709e04a614481fd",
+          "d10c74dd4d8bd91fcf26",
+          "ae0a7e1307cb46255626",
+          "3c1bd24694535efb3eeb",
+          "3344f61fafeb8d7c9e17",
+          "74697452f7b4a7eed20f",
+          "9911f4028dd75e15bb9f",
+          "e9dd82b2289c6c992f76",
+          "ba36418d2ed24a73cd64",
+          "73359f6b102727d64265",
+          "33463c778f9a5ad04bbd",
+          "f8b482b9a8d3b4c13ed5",
+          "35dc20d907f766d6a6bd",
+          "107aa5bbf05f503cde74",
+          "d7f47215a9675fc8e3bc",
+          "56f600b705c78b34aec8",
+          "ec4fc3e3b2f432f58180",
+          "46d0f9f8230b747dc9a2",
+          "f0f1667f786543cf3861",
+          "ea22705f65519db62022",
+          "8142f2f7377c61cd38a3",
+          "f717f2f5aa5ae928036e",
+          "dc5c7bc105ad7d4dfb2a",
+          "36cdea28cf8f25418ac9",
+          "b24e001a5186bc146b9b",
+          "570e4526c0e59df8086f",
+          "6653fe8b89ddc358b901",
+          "24418094110957931458",
+          "a74f902a00b50512f7be",
+          "fe599e463205eda9914d",
+          "5058d61c6ad01b36fc49",
+          "c3d3ef67d895c1a65215",
+          "43f1f3c46945487f7491",
+          "3a22cf82196e80f8755a",
+          "7edd89f8c8a90ced5fd3",
+          "5fafa042618a78d8011c",
+          "ecc771f7d6e743979408",
+          "82e3b96fa40809442cf6",
+          "2652f3084119f97f7c05",
+          "06b828bf5c2378eead78",
+          "148f762a03b5304ffdff",
+          "e1846c9b69678130f2f4",
+          "4baa5d2a96652a85f647",
+          "2923103d082a036f1313",
+          "b2c694150f645d9cf247",
+          "735b53f3e94e0f697ecc",
+          "d8a7f0e14e777d80e0e4",
+          "0a1521d5dcec84b46f7c",
+          "e87026ec201a307fc783",
+          "a818e2c4a821a7541a86",
+          "a29a5e70e732b305bdb2",
+          "177326f4e297d7693d2e",
+          "f954449e418c3688e008",
+          "aece207f2958c940dab3",
+          "f5b2fd63b1cff3cb2f75",
+          "2945a13011279cb78507",
+          "0df4b40d47224b146187",
+          "fff3c8b9954d9e256f77",
+          "c5c27836d45191159299",
+          "2bc6654b14abdff7c77f",
+          "c752a73f4a7d136a2759",
+          "9e1e3c97007acfbccf8b",
+          "4bf1c6a95081cfb0e47d",
+          "64b87dab0bbee5ca8441",
+          "6c236f0d510d338bcb37",
+          "c4520563c782c3feff9d",
+          "0c33e28ea044e8c49836",
+          "b94fa614441356e9c726",
+          "79cb4e6dbba11bf089ee",
+          "353cbdfd8636143c9979",
+          "ac345bba9c91fce31519",
+          "7e028337d5a857d19721",
+          "505c447077e80bdcc7a8",
+          "a454bd6b1d8db18c498b",
+          "9563a7162cad19ecdc66",
+          "89876ec32816733bb31d",
+          "b05e87fae62456de2a8d",
+          "069172e9bfc7ad12568e",
+          "01ce2864982fb30f9e57",
+          "ac651d0aef4d7a6fd688",
+          "ad855e5b656cd4c5775c",
+          "069697388b7ba61fffbb",
+          "6b0d1cb390b5c2dfcda6",
+          "d9560cb5f75d316f9779",
+          "1379b97611e57c24d3d8",
+          "7b38a8b788b2742b0777",
+          "a82a8e0e48dc37d73eb7",
+          "81dab50c261d3668b151",
+          "cf495227542c1fb45b21",
+          "02061332a08eb09fdba4",
+          "06eb0e1defd6b39e406c",
+          "ad4642242e35e11759bc",
+          "dd1c722f8ce5d2a475b3",
+          "01e5cb6718836801fdc6",
+          "f581d4e946dde49a9093",
+          "eaac7608243bf24db2cd",
+          "2b9314da0e5ece85c5f9",
+          "d83a61e1fe6e7e45c6d0",
+          "1f1808ec9c8d1e96f4d4",
+          "afb2089588c12cee5fca",
+          "b4217d4f9f6143776f0d",
+          "3b0d934d7f8390ac89ef",
+          "4d5ba4cf1b82f4235f74",
+          "e99c558af35c2bc5fac6",
+          "a5ef076672ca61c87feb",
+          "28b0f595ed8c621c8159",
+          "5753d32af536f0512fef",
+          "97f0b17475507b17f7d2",
+          "ef3d0126f7ad0ec4d8ce",
+          "e39e0573eda6da755ef4",
+          "3a8410e3c748115d9473",
+          "b39e279222f516d501a5",
+          "e3d44b8e096296731831",
+          "1918cb0c0377eb4e751a",
+          "ee5761a0ae0dd437de86",
+          "ad5191d028e948ee701f",
+          "6d2e0d12a927bb136bc8",
+          "e779837f139b9ebb148b",
+          "8e995d69fe055b97bc27",
+          "49946f9160f62ad5eb31",
+          "e6d91a7525b13431e8ac",
+          "0876d1bffb3fe0e84cc0",
+          "9de499502c4f409cefdf",
+          "7bf5bb78480e580f3468",
+          "f5869155386ab86767e5",
+          "20e3c614187cfc7a9353",
+          "4bd40aa432cc5865fc68",
+          "0489db8e133ab3d01114",
+          "9b37d3db14c84530b075",
+          "59cac07d12ab20928a54",
+          "77818f02d40ca11ef8a1",
+          "f81771b58132167b6765",
+          "bf670474e462982b9fb3",
+          "157aec5fb8ed828a3c5a",
+          "360152c9a688c3c52bee",
+          "56dfd87db43d0307a38a",
+          "a6b1a4a095b69748cd4c",
+          "3d517b7aa1534b9f4023",
+          "ad8d41fd5d3298247cda",
+          "0248b02f57423727812b",
+          "3b2c7a0305f23c1b331e",
+          "ae1ee29e4cd002ef1212",
+          "4e0d0ff10b0bea315dfd",
+          "293ff944202ede6616f9",
+          "f83badeaf5a06eb12346",
+          "1bad2c49653e09769c06",
+          "3934c9a3308cd785f3f0",
+          "c784bbe3906c196ef513",
+          "85cd35f8b941b91b6c63",
+          "e69dfc95e77b0ee6d9aa",
+          "9f3b7b3f9c10afaf4782",
+          "cbf0676041f1a2aba220",
+          "23aa721f8c8063a35b5f",
+          "2195d1d0f1a6da13a38c",
+          "4a424763aeb2a66d7174",
+          "bc1f18a9c31ff607e3e9",
+          "ae99c8aa3987e94716a4",
+          "19e28506ab48ccdf1d2e",
+          "7f970f7deeb9f4b3eaa1",
+          "0b2acbb2163d20df5164",
+          "b44abf971534e3872be4",
+          "bca8fe2d4966a8757342",
+          "63293746bb13163d79e8",
+          "0f31eee4d8e21083bd3c",
+          "ddf604f3a94bd74bfffd",
+          "6619625f8ccb57282006",
+          "cf4049b232619b619b48",
+          "730f919dbc9b36dca14a",
+          "f364b0d03e13c498cbf1",
+          "c7fde817af1fe47c4acc",
+          "7409bf789cc00c1d28ed",
+          "1253c7a53fe72df6d6b0",
+          "20da9dce4d07c6b795b7",
+          "3f578ad79e4a2a92c6c0",
+          "d93c438148da59cb89bd",
+          "cdf8629559d3758ac6ce",
+          "ed26446f3993d5be1d2b",
+          "ca8402a88bb6ed53e4f9",
+          "cc6e6feb3ca4d778f92e",
+          "99fd1eba4c4a34e2094f",
+          "9faad9f42668a4ee0054",
+          "8b7aa5a93e14d62c2267",
+          "ca69361a744d3fac764f",
+          "1394d984a7b40c765ed0",
+          "ceadc7886cb2d5e6fb61",
+          "fe2267cab54ca92e6f41",
+          "d6fadf629ac2e2f11748",
+          "f767858551e7a4260be0",
+          "dc0a399f72cb407e7809",
+          "5761ef8f56884d7dcf1e",
+          "b5ae63134be25ad22616",
+          "ee667b50e375a93a0dd6",
+          "84e8172adb534b1031f5",
+          "0fbdfb992572ab431090",
+          "a60297b2a0d97efa1d96",
+          "3d241a12005799b4dc30",
+          "eace3dd977cae055ab47",
+          "8c9645fd4c819d70d28d",
+          "c6573ecfe76fc40b700c",
+          "393a31bd77e2a4bf5e37",
+          "41f1ae107c62f6ec3585",
+          "09b7bf158e6de20f313f",
+          "f5ca4587c438fb671e8d",
+          "f7c7e7c050d03ec9d3a9",
+          "e726cdd99be8c9ece44d",
+          "0705f40619cc84e9e864",
+          "beaa4da2900463c3010e",
+          "3c8e13783301faee3716",
+          "7f386174b011b99429b0",
+          "f1966f2749dc7e8e6d48",
+          "6139c0f53d332478b03c",
+          "69efd9ca373981de99df",
+          "7cdde3975ece67fdd255",
+          "26820870992510107a90",
+          "f2645c3b31e4e749048c",
+          "f7f7fcca1f8af7a2d9ec",
+          "157d2080911722d1d5c4",
+          "49af215bd568d876f605",
+          "a058d64f5a1907449fed",
+          "296815561932dfb13a08",
+          "1948fbec209f4b59fa30",
+          "866c9da97457e4103542",
+          "5942ada1bc2a2be9487b",
+          "90975594719cda13c89b",
+          "18e4053166bbbe76bdf1",
+          "1e03fc7dbdfc1d1615db",
+          "ad32db653af9f3a82242",
+          "f296867501bc02c4ef7e",
+          "579c96b3d62ab73ff324",
+          "9db79fbd6622056321f1",
+          "1d69fd924c4775a38cc3",
+          "9503c16d2277470cb7c7",
+          "c43567aada371b7c26ed",
+          "f215d39ec0f93cf46b9a",
+          "86b9c1ac0ab0ad9db352",
+          "d2ef7c4bf9a22579b1f8",
+          "f1a129c9414133797bdd",
+          "beca8f4c1162e0f59667",
+          "3b54804ffd45ab9e8f50",
+          "a668529565a3eb188e8c",
+          "154749180353e43f4a48",
+          "163624c8c3aeef1a26cb",
+          "c5bb48457027855079b4",
+          "c6e199959430b550fcba",
+          "c8550341ffd6af1af5c8",
+          "ec496af6df261d3bcfbd",
+          "e55eecf6dddb65aba985",
+          "038a95567ef36b4ed540",
+          "e8fb97b46d6528673f22",
+          "d4b2f0a3c74b746518d3",
+          "d54dad45ae3ecd209dc2",
+          "db7b3b5a5651fdef82d0",
+          "f06edc9a81f428274309",
+          "c0465bd4d24b9fba7fb0",
+          "7f67db8e64488f0119b8",
+          "e19185a475fd3803e785",
+          "e142690596a4015f2fda",
+          "ac1e38faf50e73357801",
+          "2a5001b011e43c2e62bf",
+          "b8c488c755185daea1df",
+          "44d8abd00f24f3c5c732",
+          "23f6455243956a25c098",
+          "cd23cd97443ecc2891a5",
+          "b11436af20fb3de40caa",
+          "0580ce3606b0ff6d2f04",
+          "5fc303a41d38777a0668",
+          "cdf6d3da14fece35fbf4",
+          "74ad8f72740304f22864",
+          "761759780dbf8748f611",
+          "e182c6d4b3ad234ff2bd",
+          "4f292f009bd3f9756f45",
+          "ebb4c005d961c85ee59f",
+          "e98d4ffaa9bfc23b1bb7",
+          "f48c28811007cb7c9830",
+          "bb5bc17f401ece642f3c",
+          "eeee90b38838b590d679",
+          "e99f849fcb88fa010649",
+          "f767d69cc79210a7b7b6",
+          "95a5297db32831af6f62",
+          "69941157a912a88b8c9e",
+          "ff819b852157f810323a",
+          "3f5874fb98b635bfc5e0",
+          "850418636413395f286a",
+          "8305d9e35e65efef99b0",
+          "4e389cd84e07064c285c",
+          "483fe91fb6194d111c1b",
+          "ff484f97d2f3d76f17b7",
+          "df1c035193fc6036dd6a",
+          "e833c470657a03a8b926",
+          "a7369010b45fff161cba",
+          "585ee0350e1af61c3f6b",
+          "d8cbace95ebb62a67014",
+          "0fd6e2c96714074b7447",
+          "bd51753d28377e308109",
+          "74c75829a4c93dddb2e7",
+          "570acc426ec3e910c037",
+          "a3161919483a1ce0d833",
+          "f3d700f094f7b6f36953",
+          "1e8d37be368e2229a316",
+          "248915ffff5cb429d640",
+          "a663c3bf995d603f27ea",
+          "84375cbbb08e94407b57",
+          "c095bb86bc22001481ba",
+          "37fb7153fc4240db9322",
+          "8c3766e200048cdd8ed1",
+          "a5e6fd04bd0aecc26163",
+          "add69fd1d1e77bf6c1c5",
+          "cb1101e50bf370ea1cd7",
+          "51b1d1d44517e2df3752",
+          "6270b57b1ca095a01742",
+          "56823e60c14075d452ad",
+          "6630d9fc3a5b1d9ccd08",
+          "4ce4b309a8c3a4999577",
+          "06e5b38fc1503edffe91",
+          "6ee1a8d6b9d4f3540b94",
+          "f023c6be1c2960672471",
+          "74164e77b7d08b0d9e33",
+          "71e20c635a5d6f6ce784",
+          "627af0524ac540c82a3c",
+          "b450f5cbb1f7737ffac3",
+          "deb6e064f13b4747ea9d",
+          "c3f3368566894eede395",
+          "5fea85ec14a1e4a36b71",
+          "5745e00f3169eb7b9e96",
+          "5efc66dc98f88c888603",
+          "1ef615fd790dc6fe1efd",
+          "d320b65b7a7d16c24068",
+          "58d453356f43d6e28410",
+          "f4697e07999cf7b17f95",
+          "5c413fc0f21620e1eb90",
+          "ee50449a31b4947dbd7b",
+          "976cddeec9d74afdda5b",
+          "43b613b9dcfdac218a39",
+          "38be2fd106dfeddb97eb",
+          "0ca22b2299a227c6f780",
+          "ba7d6b8721e373440b9a",
+          "9ccff967c2a9d615425d",
+          "433eb6d8b063a5c49738",
+          "24c8c85ea3c049c3f63c",
+          "e8ba75393629cec0d8b0",
+          "a12084c55f7ec131ac97",
+          "45c634f0f815e8b071c9",
+          "dfca88f51a3da6e0b377",
+          "a11827f06ae56bb458cd",
+          "9c8f943d5fbf5953db9a",
+          "2073525d431b04f94a26",
+          "211d25e01ca0f54c6e05",
+          "d354d1cddfb7b5fc0eba",
+          "3f2f349b4e1a409fdcdd",
+          "afa974316a354f013e43",
+          "1016de6b22dade833ee0",
+          "baead3b70130d260330e",
+          "97797047c7852d8f59a0",
+          "ce75de4321bf24054671",
+          "3fb330ef74c756ca7769",
+          "74443c5cfe2ed2762fee",
+          "d990b95f8eb5a6456ec8",
+          "3811c76b308f0a41aabb",
+          "ea50ab80585c358b4a97",
+          "fb47579a38ccf92bcfa4",
+          "b353ad0e2d648ae8ff6d",
+          "85a31186b6b8454e2bbe",
+          "119e84aa6e8a445122ce",
+          "72badb93afd1df534c2f",
+          "cf11d1157bfde9714fe0",
+          "47a3619b2c5f3cedb340",
+          "86b56790eb5e1c778a76",
+          "32f82bf62a8975298efc",
+          "854d8fd1ee8f11dd7f24",
+          "c5bc7836e215392857e8",
+          "19d3b961e8a3b6d11b5d",
+          "aab4e2112c89a5ed82fa",
+          "40b4282acbb0ee9f7f3b",
+          "66744281e733d8345c93",
+          "507bf2ae54c6fa930d71",
+          "209318e89d9cf190f292",
+          "c814f336ff3bc46fee5c",
+          "67a68f80ae7bc41e4a17",
+          "9020e08cd3f7c8ad93a5",
+          "a7ee0e65d48f4f8dab24",
+          "563583d9c3d0c024e175",
+          "63441876eb2c2ef55dd9",
+          "552975e5eaabcadd63ba",
+          "c02e1946ffd4201fcd21",
+          "532d9044ee94a379b783",
+          "b49792746e23753b981c",
+          "bcc57d7684fca6e1bd87",
+          "ccefc9a986491cac2708",
+          "d6ac9c78d3a5d9969c58",
+          "9fd2e7fd78d42ff84462",
+          "e27284220c79ccadf623",
+          "14071be6d11540c21e33",
+          "ad9355120b5680d64149",
+          "838f0f63efd61afbde5b",
+          "eca307b8c74bc2011ecf",
+          "c7c0c5416931de6373a0",
+          "105b657e4159c64a84bc",
+          "d61018e009533e3b1258",
+          "b01fcfc3a64e8c39d9b0",
+          "c8c19a4f6e32c7b95825",
+          "b713d263007176c7ff11",
+          "01672b7a20fbfe5feaae",
+          "0d4e5f86af3e57119c05",
+          "5d50dd5310689c009c1d",
+          "1c34a2704aad09808c88",
+          "0c4d559cc3ab014f2f54",
+          "072120789c2d024747a8",
+          "84dc0a62e82e2dfd44fd",
+          "a6ce62a3eccea56d69ce",
+          "50aa843f07e415c161d1",
+          "97c8446971fa784bb20c",
+          "3589487d7cd46e095e05",
+          "8b86e13181bae7101fc3",
+          "62ad3e4bfa646753a937",
+          "09ba9d34cba0083f8f21",
+          "a0e424b2e7de3e23cc37",
+          "4982d9a580399b6b3f39",
+          "4d7f8bb768a696c208c4",
+          "9c6798829a3020343e86",
+          "57c9713ed0d3080dfae0",
+          "e266ec967d4544d48195",
+          "048486a10e1b2bc84b4f",
+          "0540ac3b6c5f02f890e8",
+          "7a22efe5e12c2958c423",
+          "3e1681a9de1cce4aa4f1",
+          "d13fe08cf292be0a659f",
+          "1919d23a461441281764",
+          "b94f849a50c83b04e225",
+          "39217f4d2ba0bd733113",
+          "47448674472281a7ca4e",
+          "bfafc97886b920e10c1c",
+          "cf360f18a9e4f8325fdf",
+          "0b444129c7521f8504e0",
+          "025d668c1f7893ff5cbc",
+          "da8f4bef34fabe13292e",
+          "485946c385adcc22ed73",
+          "395701a0343728f152d1",
+          "469ab6f142a2e6bb10c0",
+          "1dc2d9d095c8ee68d27b",
+          "84837a12594c642c0736",
+          "ed6dd4f0629570d96651",
+          "e6046b5b43c2358fb9c0",
+          "9eae027bff5259637eb8",
+          "602881cbf4ebc2f1c2bc",
+          "4b01e00983bc94d49c61",
+          "7a75e33639c7130d2985",
+          "f97f3c99f267a814cfe5",
+          "bac7fd9514b90ca0accd",
+          "5f546b4f5c78dfa1d5f0",
+          "894dd09a1093a7d33a06",
+          "588470b29f5cdb56740d",
+          "3caed802c6102f2a465c",
+          "176d0689c4f9d8242d1f",
+          "b4c3811e1ba972468b95",
+          "0364c0d3b664ab6ac8f3",
+          "0efc8f2d6a95a7f44fb3",
+          "94af98582dd6f88d330c",
+          "7d7b447a643406971745",
+          "6f130200ceee20ee685b",
+          "be1d0564bcd71476c544",
+          "5ea2ec36f6fdb403ae87",
+          "e5cf1c5bd9a004765f04",
+          "eba32c7272d48e016db6",
+          "8f1aff837e9250db7d89",
+          "b3694aa31f06c23120f6",
+          "3fc2145478a117348af3",
+          "9e3091ea1dea37832144",
+          "a6647480a6f3b06d0973",
+          "87658389179be8be46ab",
+          "95c8d87199b7c7683cca",
+          "c556eb569098cf66add5",
+          "fc48282961fcec9f0650",
+          "998b2669ce9bd01aa51e",
+          "b7494e972d65755bc43e",
+          "a4d90a8afa0bb3b57cde",
+          "ade63f95c8045c85aab4",
+          "6979eaa3937148c03549",
+          "b0c935a9743e9cd80fd9",
+          "f025dbc7208bf54c60c3",
+          "1975f6c6795993f16065",
+          "b89b59e522497a693288",
+          "d1d6519d406519788c19",
+          "fd1f39080f630edf43bc",
+          "45ab03a5d7a11693eb69",
+          "d62d3e5cd20829719905",
+          "eec386b2156af942376f",
+          "f806702dade15bf3cc02",
+          "0e25b543ad396e9e9a0e",
+          "8aa09a7c26a2d9b6be32",
+          "779bb86803da6640ed3a",
+          "28352badcf06018715cd",
+          "197d4c9db08b97b5067e",
+          "3dae6751b52a0af9b8c1",
+          "39a2f1dfa5274e179b51",
+          "d4db3a032db2b253990f",
+          "ceb9bbf8c41d063928c9",
+          "d6941ec09b7c6782a00a",
+          "448ffc6b8c17606817ab",
+          "9d5751b87b1cd3ac0af2",
+          "401bee657414ef8c206f",
+          "bcdfdf972366f27bb04d",
+          "9dc828ab20d07454f6e1",
+          "ce84a19f8b9745d32813",
+          "d3dbfd9e9918a9e59d2d",
+          "a9507d839573cb6e57e0",
+          "1a50947957d1002a3d06",
+          "19132026d78424ce6af1",
+          "176e482e7a36ae845d21",
+          "89bcb2e895be11cdc491",
+          "f6b3d2083b056fc64654",
+          "2aadc451623a7deb0714",
+          "bd9ce45bdfecc20f23fe",
+          "c51196da8133eca909c6",
+          "1d21f8c34a0d8fd2ae14",
+          "643c85a8646fda2d6536",
+          "c648ae568402d7a65fd8",
+          "7b2a09888ef900f03aa4",
+          "15411ff8e26a55c43fc3",
+          "d82eed12e1759f3dc17c",
+          "1d1af4ce6f2d43a8050d",
+          "3fdd44e1fab328996fca",
+          "0834e762959d131e5311",
+          "ebe5187d797eb7658eb6",
+          "06740d03347742abe7a5",
+          "c4756a8850d74aafa51b",
+          "2520ca7562cf7537cc03",
+          "bcb2e1c192b3b47a100e",
+          "b9c20c7aeb9e1b9c452a",
+          "fd7a0619a090b921b02f",
+          "c63fa17dd250ec1101f2",
+          "17aa9410d4466a388161",
+          "8c6d94a137c4b22f6f69",
+          "232c73588fe7cf94fb8a",
+          "fc3bd4df505b39673060",
+          "513c4763b8c2520207d0",
+          "0ddffc66a3d5939c7fe9",
+          "3c198d91b53844edeb1e",
+          "e1117020083d2e061c1b",
+          "c1588a697627f738dec5"
+        ],
+        "source_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+        "verifier_sha256": "2c2b18777e1f1b799255d39f69b14838dbfa946f10f17ac36171a1ca0ddbb40d",
+        "partition_by_policy": {
+          "original": {
+            "n": 674,
+            "adjusted_rand_index": 0.7871311141303192,
+            "pairwise_precision": 0.8253869786127851,
+            "pairwise_recall": 0.8129946461824954,
+            "pairwise_f1": 0.8191439460568748
+          },
+          "contextual": {
+            "n": 674,
+            "adjusted_rand_index": 0.721808774427288,
+            "pairwise_precision": 0.7306657801686361,
+            "pairwise_recall": 0.7933648355975585,
+            "pairwise_f1": 0.7607255793464751
+          }
+        },
+        "selection_note": "After observing primary outcomes, retain only items assigned to a named category by BOTH backends in BOTH policies. Use this same conditional subset for each policy. This excludes rejection cases and is not the primary full-cohort result, a semantic-accuracy estimate, or an independently randomized experiment. Full-cohort metrics are first checked against the frozen CLI; subset metrics use independently enumerated pairs."
+      }
+    },
+    {
+      "modality": "images",
+      "n": 100,
+      "original": {
+        "complete": true,
+        "comparison": {
+          "agreement": {
+            "n": 100,
+            "adjusted_rand_index": 0.8186563297576327,
+            "pairwise_precision": 0.9052969502407705,
+            "pairwise_recall": 0.7888111888111888,
+            "pairwise_f1": 0.8430493273542601
+          },
+          "shared_other_sensitivity": {
+            "n": 100,
+            "adjusted_rand_index": 0.8104975964661556,
+            "pairwise_precision": 0.9038461538461539,
+            "pairwise_recall": 0.7779310344827586,
+            "pairwise_f1": 0.8361749444032617
+          },
+          "assigned_other": {
+            "both_named": 94,
+            "baseline_named_ld_other": 1,
+            "baseline_other_ld_named": 4,
+            "both_other": 1
+          }
+        },
+        "llm": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 100,
+          "expected_count": 100,
+          "coverage": 0.95,
+          "known_cost_usd": "0.7149612",
+          "total_cost_usd": "0.7149612",
+          "cost_complete": true,
+          "wall_seconds": 425.087,
+          "timing_complete": true,
+          "calls": 152,
+          "error_calls": 0,
+          "retry_attempts": 0,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 51,
+            "id_moves": 37,
+            "unchanged": 14,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 1,
+              "name": "Animals",
+              "description": "Photographs whose main subject is a nonhuman animal, including pets, wildlife, birds, reptiles, insects, and marine animals."
+            },
+            {
+              "id": 2,
+              "name": "Vehicles",
+              "description": "Photographs centered on vehicles, including passenger cars, pickup trucks, classic cars, and racing cars. Includes occupied vehicles when the vehicle remains the primary subject."
+            },
+            {
+              "id": 3,
+              "name": "People",
+              "description": "Photographs centered on a person or group of people, including portraits, public speakers, people in uniforms or historical costumes, athletes, and dancers."
+            },
+            {
+              "id": 4,
+              "name": "Food",
+              "description": "Photographs whose main subject is food or a prepared dish, including plated meals and cooked ingredients."
+            },
+            {
+              "id": 5,
+              "name": "Natural landscapes",
+              "description": "Photographs centered on natural scenery or geological features, including terrain, water, geysers, and geothermal activity, rather than an individual animal or person."
+            },
+            {
+              "id": 6,
+              "name": "Art and decorative objects",
+              "description": "Photographs centered on artistic or decorative objects, including puppets, sculptures, figurines, and crafted display pieces rather than living people."
+            },
+            {
+              "id": 7,
+              "name": "Electrical and electronic equipment",
+              "description": "Photographs centered on electrical or electronic equipment and components, including cables, wires, and connectors."
+            },
+            {
+              "id": 8,
+              "name": "Plants and flowers",
+              "description": "Photographs centered on plants or their parts, including flowers, foliage, shrubs, and trees, rather than broad natural scenery."
+            },
+            {
+              "id": 9,
+              "name": "Architecture and built environments",
+              "description": "Photographs centered on buildings, architectural structures, interior spaces, construction sites, or fixed public infrastructure, including telephone booths and manhole covers, rather than people, vehicles, or portable objects."
+            },
+            {
+              "id": 10,
+              "name": "Tools and hardware",
+              "description": "Photographs centered on hand tools, workshop implements, ropes, rigging, or functional hardware, including woodworking tools. Excludes electrical and electronic equipment, vehicles, and fixed architectural infrastructure."
+            }
+          ]
+        },
+        "ld": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 100,
+          "expected_count": 100,
+          "coverage": 0.98,
+          "known_cost_usd": "0.1408902",
+          "total_cost_usd": "0.1408902",
+          "cost_complete": true,
+          "wall_seconds": 87.665,
+          "timing_complete": true,
+          "calls": 138,
+          "error_calls": 0,
+          "retry_attempts": 0,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 35,
+            "id_moves": 33,
+            "unchanged": 2,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 1,
+              "name": "Animals",
+              "description": "Photographs whose main subject is a nonhuman animal, including mammals, birds, reptiles, insects and aquatic animals, whether wild or domesticated."
+            },
+            {
+              "id": 2,
+              "name": "Vehicles",
+              "description": "Photographs primarily featuring motor vehicles, including passenger cars, pickup trucks and racing cars. Includes occupied vehicles when the vehicle is the dominant subject."
+            },
+            {
+              "id": 3,
+              "name": "People",
+              "description": "Portraits and scenes centered on people in nonsporting contexts, including public speaking, uniformed personnel and historical reenactments."
+            },
+            {
+              "id": 4,
+              "name": "Sports and Physical Activities",
+              "description": "Photographs primarily showing people participating in sports or physical performance, including skiing, cricket and dance. Excludes images primarily showcasing a vehicle."
+            },
+            {
+              "id": 5,
+              "name": "Food",
+              "description": "Photographs primarily featuring food or prepared dishes, including meals served on plates."
+            },
+            {
+              "id": 6,
+              "name": "Natural Landscapes",
+              "description": "Photographs primarily depicting natural scenery or geological features, including geothermal springs, geysers and surrounding terrain."
+            },
+            {
+              "id": 7,
+              "name": "Art and Crafts",
+              "description": "Photographs primarily featuring crafted artistic objects, including puppets, figurines and decorative sculptures, rather than living people or animals."
+            },
+            {
+              "id": 8,
+              "name": "Electrical and Electronic Components",
+              "description": "Photographs primarily featuring electrical or electronic components and accessories, including cables, wiring and connectors."
+            },
+            {
+              "id": 9,
+              "name": "Plants and Flowers",
+              "description": "Photographs primarily featuring plants or their parts, including flowers, foliage, shrubs and trees, rather than expansive natural scenery."
+            },
+            {
+              "id": 10,
+              "name": "Architecture and Infrastructure",
+              "description": "Photographs primarily featuring buildings, architectural structures, building interiors, construction sites or built infrastructure, including street fixtures such as manhole covers."
+            },
+            {
+              "id": 11,
+              "name": "Clothing and Accessories",
+              "description": "Photographs primarily featuring garments or wearable accessories, including scarves, rather than portraits or scenes centered on people wearing them."
+            }
+          ]
+        }
+      },
+      "contextual": {
+        "complete": true,
+        "comparison": {
+          "agreement": {
+            "n": 100,
+            "adjusted_rand_index": 0.9711442425153153,
+            "pairwise_precision": 0.9571045576407506,
+            "pairwise_recall": 0.9944289693593314,
+            "pairwise_f1": 0.9754098360655737
+          },
+          "shared_other_sensitivity": {
+            "n": 100,
+            "adjusted_rand_index": 0.9673745612565721,
+            "pairwise_precision": 0.9586114819759679,
+            "pairwise_recall": 0.9862637362637363,
+            "pairwise_f1": 0.972241029113067
+          },
+          "assigned_other": {
+            "both_named": 95,
+            "baseline_named_ld_other": 0,
+            "baseline_other_ld_named": 2,
+            "both_other": 3
+          }
+        },
+        "llm": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 100,
+          "expected_count": 100,
+          "coverage": 0.95,
+          "known_cost_usd": "0.8107719",
+          "total_cost_usd": "0.8107719",
+          "cost_complete": true,
+          "wall_seconds": 686.744,
+          "timing_complete": true,
+          "calls": 279,
+          "error_calls": 0,
+          "retry_attempts": 0,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 171,
+            "id_moves": 35,
+            "unchanged": 136,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 1,
+              "name": "Animals",
+              "description": "Nonhuman animals as the main subject, including mammals, birds, reptiles, insects, and aquatic animals, whether wild or domestic."
+            },
+            {
+              "id": 2,
+              "name": "People",
+              "description": "Portraits, groups, and scenes centered on people and their activities, including sports, performance, work, and ceremonial dress."
+            },
+            {
+              "id": 3,
+              "name": "Vehicles",
+              "description": "Transport and racing vehicles, including cars and trucks, when the vehicle itself is the focal subject. Occupants or nearby people may be present."
+            },
+            {
+              "id": 4,
+              "name": "Food",
+              "description": "Recognizable food, prepared dishes, and edible ingredients presented as the main subject."
+            },
+            {
+              "id": 5,
+              "name": "Natural landscapes and features",
+              "description": "Natural scenery and geological or water features, including geothermal springs and geysers, when the natural setting or formation is the focal subject."
+            },
+            {
+              "id": 6,
+              "name": "Art and decorative objects",
+              "description": "Artworks, decorative objects, and crafted figures such as puppets and sculptures, photographed as objects rather than living subjects."
+            },
+            {
+              "id": 7,
+              "name": "Electrical and electronic equipment",
+              "description": "Electrical and electronic equipment, components, and connection accessories, including wires, cables, and connectors, shown as the main subject."
+            },
+            {
+              "id": 8,
+              "name": "Plants",
+              "description": "Plants and their visible parts, including flowers, foliage, and trees, when individual plants or plant details are the main subject."
+            },
+            {
+              "id": 9,
+              "name": "Buildings and infrastructure",
+              "description": "Buildings, architectural structures, and built infrastructure, including construction sites and fixed street fixtures, when the structure or built environment is the main subject."
+            },
+            {
+              "id": 10,
+              "name": "Tools and hardware",
+              "description": "Manual tools, workshop implements, and utilitarian hardware or rigging, including ropes and fastening accessories, shown as the main subject."
+            }
+          ]
+        },
+        "ld": {
+          "complete": true,
+          "exit_code": 0,
+          "persisted_count": 100,
+          "expected_count": 100,
+          "coverage": 0.97,
+          "known_cost_usd": "0.2926858",
+          "total_cost_usd": "0.2926858",
+          "cost_complete": true,
+          "wall_seconds": 175.713,
+          "timing_complete": true,
+          "calls": 348,
+          "error_calls": 0,
+          "retry_attempts": 0,
+          "refusal_attempts": 0,
+          "reassignment": {
+            "evaluations": 242,
+            "id_moves": 40,
+            "unchanged": 202,
+            "origin_unknown": 0
+          },
+          "catalog": [
+            {
+              "id": 1,
+              "name": "Animals",
+              "description": "Non-human animals as the main subject, including pets, wildlife, birds, insects, reptiles, and aquatic animals."
+            },
+            {
+              "id": 2,
+              "name": "People",
+              "description": "People as the main subject, including portraits, groups, public speaking, sports, and performances. Clothing and equipment remain part of this category when the photograph centers on the person or their activity."
+            },
+            {
+              "id": 3,
+              "name": "Vehicles",
+              "description": "Vehicles as the main subject, including cars, trucks, and racing vehicles, whether parked, displayed, or in use. Occupants may be present when the vehicle remains the focal subject."
+            },
+            {
+              "id": 4,
+              "name": "Food",
+              "description": "Edible foods and prepared dishes as the main subject, including plated meals and snacks."
+            },
+            {
+              "id": 5,
+              "name": "Natural Landscapes",
+              "description": "Natural landscapes and geological features as the main subject, including terrain, water features, and geothermal activity."
+            },
+            {
+              "id": 6,
+              "name": "Art and Decorative Objects",
+              "description": "Artworks and crafted display objects as the main subject, including sculptures, figurines, and theatrical puppets. Depicted figures are treated as objects rather than living people or animals."
+            },
+            {
+              "id": 7,
+              "name": "Electrical and Electronic Equipment",
+              "description": "Electrical or electronic devices, components, and accessories as the main subject, including standalone cables and connectors."
+            },
+            {
+              "id": 8,
+              "name": "Plants",
+              "description": "Plants and their parts as the main subject, including flowers, leaves, trees, and other vegetation."
+            },
+            {
+              "id": 9,
+              "name": "Buildings and Built Environments",
+              "description": "Buildings, architectural structures, room interiors, construction sites, and fixed civic infrastructure as the main subject. Includes small street enclosures and infrastructure components such as telephone booths and utility access covers."
+            },
+            {
+              "id": 10,
+              "name": "Tools and Work Equipment",
+              "description": "Hand tools and non-electrical work equipment as the main subject, including woodworking tools and workbench setups, ropes, and rigging. Includes unfinished workpieces presented as part of a workshop setup."
+            }
+          ]
+        }
+      },
+      "common_named_subset": {
+        "schema_version": 1,
+        "status": "complete",
+        "scope": "post_hoc_common_named_subset",
+        "modality": "images",
+        "full_n": 100,
+        "conditional_n": 93,
+        "selected_item_ids": [
+          "18125e2187ee5a58134b",
+          "14147df8e0ba72ed0ae7",
+          "fbdd3bd907c3f7d2d394",
+          "c3bcca87aef20951e53f",
+          "db1539ac6d5c8abf6289",
+          "187910db9411b7d87f20",
+          "7780428f7d0b2db145c0",
+          "4049f79d6d23e77671de",
+          "ee247f78c5114c2e1833",
+          "3e79da939db04d6d677b",
+          "70b3cfde211d5d8e2e91",
+          "8f1a6e574dcf9f59b79d",
+          "f576c9ec2e75682d6973",
+          "7a370cd6b6173882a3b2",
+          "ab59e9b7da640f3fbbb9",
+          "fcbce76d879140e20816",
+          "c37627ba16f0c4275907",
+          "e5cb5c41d273ba8deec8",
+          "b320b4c04ba6d8acaff3",
+          "cf1b1ab6f189ed442423",
+          "62d6210ed86d0a3aa439",
+          "59f61d81548b29a453c9",
+          "ca2c6acd7661606a72dc",
+          "d0208fe7f7e0bed64888",
+          "90efe299476dc2646c90",
+          "6ce391866bfe7f070a40",
+          "58174d0919f335dcbcd3",
+          "874bd33999bb4c87ee92",
+          "3f906e1777dd44b041c5",
+          "817ddcaa255f0953d740",
+          "47a285d87f6f48b7bc94",
+          "30bef968e342e9fd2721",
+          "f3c299f3989647ef4280",
+          "8ed4a91c124b77d6ba2d",
+          "127aa359731969742c20",
+          "b225aaab2771754d71fa",
+          "5dd35c7494881ebf0c17",
+          "a2b014af5277b66a17ee",
+          "49e816a5c54bb0f78bf8",
+          "1751b878c54ef2c68b7a",
+          "8efbb803c5e3c79d3527",
+          "5ec6453705d0a33ce46c",
+          "7b6932f3982ba2fc1a26",
+          "313155d24a4b44fef139",
+          "564b962caf3bf8bc3d23",
+          "4439b2e4deffbca976b9",
+          "8124707eb58c67fa61b5",
+          "2044004a41e68574e6c3",
+          "574951bcce5a82196e00",
+          "ba52b3242bca28a040d3",
+          "407954e9390a82f63d9a",
+          "bd313377c6c23fd04f9a",
+          "6c1c8d616a6767565339",
+          "76977eb7713095cce384",
+          "746aa5da2e37048e323d",
+          "dc209b28a651ee9c7ed5",
+          "e1444b8428f1a4935e80",
+          "625643bbf93c7fa76209",
+          "a0956f5dbff21a541347",
+          "c398ca83a94cb630a144",
+          "f4f1a3355a9f33a75f4f",
+          "dcdba94edf44f2270c9d",
+          "3fa3a05b49e93d5f2d8f",
+          "db2d7cbf69413f8c7e55",
+          "e3fc1cffbac70232401f",
+          "555bcc81eecc635415fd",
+          "e88eda6ea409828a92e7",
+          "be2bab5d49b70b2f7f39",
+          "53352f268cb5c706f3a9",
+          "da38fb28e3bd61e3cb15",
+          "ca45dc0bf3dcfc3dcc21",
+          "a5010c43c9a39bac1be5",
+          "50a0fe93f29efc2ee9bf",
+          "e55bb38f20a5272c3389",
+          "890867bca98bb2944dc3",
+          "9f1fbe4c008a6cbeceab",
+          "3f77c866818a4bd2363a",
+          "b9f1a37647206bc94a42",
+          "91200d18471144913dbc",
+          "730d774aa2d2beb01c34",
+          "bb29c67d8b4cc926faaa",
+          "f4f31146635ffe1486f2",
+          "9f5deae4d0868007b4e0",
+          "60c4469506e87c42bf04",
+          "a046f244997563f9d1e1",
+          "daa705c39a2717df4796",
+          "1a14c003746c73e6edfb",
+          "297bc74e5c2e34b341ad",
+          "acc7693818a394cb2f32",
+          "cda4b9f5e976fbd63377",
+          "4c8487bb4ecc709736e9",
+          "6418fc0ea4be71a2fd9c",
+          "7f1ea11f45752ee5c094"
+        ],
+        "source_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+        "verifier_sha256": "2c2b18777e1f1b799255d39f69b14838dbfa946f10f17ac36171a1ca0ddbb40d",
+        "partition_by_policy": {
+          "original": {
+            "n": 93,
+            "adjusted_rand_index": 0.8299532558737215,
+            "pairwise_precision": 0.9318936877076412,
+            "pairwise_recall": 0.7912552891396333,
+            "pairwise_f1": 0.8558352402745996
+          },
+          "contextual": {
+            "n": 93,
+            "adjusted_rand_index": 0.9775681746414299,
+            "pairwise_precision": 0.9686648501362398,
+            "pairwise_recall": 0.9944055944055944,
+            "pairwise_f1": 0.9813664596273292
+          }
+        },
+        "selection_note": "After observing primary outcomes, retain only items assigned to a named category by BOTH backends in BOTH policies. Use this same conditional subset for each policy. This excludes rejection cases and is not the primary full-cohort result, a semantic-accuracy estimate, or an independently randomized experiment. Full-cohort metrics are first checked against the frozen CLI; subset metrics use independently enumerated pairs."
+      }
+    }
+  ],
+  "photo_review": {
+    "schema_version": 1,
+    "selection_note": "Four cases curated after the sealed blinded review of eleven reserved photographs: a clear original Decisions error, a reasonable granularity difference, a remaining mannequin/category-gap disagreement, and justified shared Other for a cooking appliance. Both the eleven-case review selection and these four illustrations are post hoc qualitative choices, not an accuracy sample. The automated same-family coding-harness review is not human ground truth and its compute is outside the experiment API ledger.",
+    "reviewer": "Codex coding-harness multimodal reviewer (same-family automated review)",
+    "packet_sha256": "f4f4f5bd719a90e9fd8abd89753eba38468bbd5a8f79a280fb1987297aeb6820",
+    "review_sha256": "f701cb646d189b082502dc6eba8ae37ad2b58c716867b2c95ed18e999e296be1",
+    "provenance_sha256": "60f7539692f0a8f2269ea7a12f04385bab213c9beefac100409cebcc9ff3f8a3",
+    "selection_sha256": "867ddb22c70bc1a2c5f8fbd3759704d0c1339f45fc2c67a4d4dae1cbb6970ad4",
+    "unblinding_sha256": "1bd155389129b2d66e83fee511d129ffaba03acd9941e456fe5cab543ab78927",
+    "catalogs": {
+      "images-original-ld": [
+        {
+          "id": 1,
+          "name": "Animals",
+          "description": "Photographs whose main subject is a nonhuman animal, including mammals, birds, reptiles, insects and aquatic animals, whether wild or domesticated."
+        },
+        {
+          "id": 2,
+          "name": "Vehicles",
+          "description": "Photographs primarily featuring motor vehicles, including passenger cars, pickup trucks and racing cars. Includes occupied vehicles when the vehicle is the dominant subject."
+        },
+        {
+          "id": 3,
+          "name": "People",
+          "description": "Portraits and scenes centered on people in nonsporting contexts, including public speaking, uniformed personnel and historical reenactments."
+        },
+        {
+          "id": 4,
+          "name": "Sports and Physical Activities",
+          "description": "Photographs primarily showing people participating in sports or physical performance, including skiing, cricket and dance. Excludes images primarily showcasing a vehicle."
+        },
+        {
+          "id": 5,
+          "name": "Food",
+          "description": "Photographs primarily featuring food or prepared dishes, including meals served on plates."
+        },
+        {
+          "id": 6,
+          "name": "Natural Landscapes",
+          "description": "Photographs primarily depicting natural scenery or geological features, including geothermal springs, geysers and surrounding terrain."
+        },
+        {
+          "id": 7,
+          "name": "Art and Crafts",
+          "description": "Photographs primarily featuring crafted artistic objects, including puppets, figurines and decorative sculptures, rather than living people or animals."
+        },
+        {
+          "id": 8,
+          "name": "Electrical and Electronic Components",
+          "description": "Photographs primarily featuring electrical or electronic components and accessories, including cables, wiring and connectors."
+        },
+        {
+          "id": 9,
+          "name": "Plants and Flowers",
+          "description": "Photographs primarily featuring plants or their parts, including flowers, foliage, shrubs and trees, rather than expansive natural scenery."
+        },
+        {
+          "id": 10,
+          "name": "Architecture and Infrastructure",
+          "description": "Photographs primarily featuring buildings, architectural structures, building interiors, construction sites or built infrastructure, including street fixtures such as manhole covers."
+        },
+        {
+          "id": 11,
+          "name": "Clothing and Accessories",
+          "description": "Photographs primarily featuring garments or wearable accessories, including scarves, rather than portraits or scenes centered on people wearing them."
+        }
+      ],
+      "images-contextual-ld": [
+        {
+          "id": 1,
+          "name": "Animals",
+          "description": "Non-human animals as the main subject, including pets, wildlife, birds, insects, reptiles, and aquatic animals."
+        },
+        {
+          "id": 2,
+          "name": "People",
+          "description": "People as the main subject, including portraits, groups, public speaking, sports, and performances. Clothing and equipment remain part of this category when the photograph centers on the person or their activity."
+        },
+        {
+          "id": 3,
+          "name": "Vehicles",
+          "description": "Vehicles as the main subject, including cars, trucks, and racing vehicles, whether parked, displayed, or in use. Occupants may be present when the vehicle remains the focal subject."
+        },
+        {
+          "id": 4,
+          "name": "Food",
+          "description": "Edible foods and prepared dishes as the main subject, including plated meals and snacks."
+        },
+        {
+          "id": 5,
+          "name": "Natural Landscapes",
+          "description": "Natural landscapes and geological features as the main subject, including terrain, water features, and geothermal activity."
+        },
+        {
+          "id": 6,
+          "name": "Art and Decorative Objects",
+          "description": "Artworks and crafted display objects as the main subject, including sculptures, figurines, and theatrical puppets. Depicted figures are treated as objects rather than living people or animals."
+        },
+        {
+          "id": 7,
+          "name": "Electrical and Electronic Equipment",
+          "description": "Electrical or electronic devices, components, and accessories as the main subject, including standalone cables and connectors."
+        },
+        {
+          "id": 8,
+          "name": "Plants",
+          "description": "Plants and their parts as the main subject, including flowers, leaves, trees, and other vegetation."
+        },
+        {
+          "id": 9,
+          "name": "Buildings and Built Environments",
+          "description": "Buildings, architectural structures, room interiors, construction sites, and fixed civic infrastructure as the main subject. Includes small street enclosures and infrastructure components such as telephone booths and utility access covers."
+        },
+        {
+          "id": 10,
+          "name": "Tools and Work Equipment",
+          "description": "Hand tools and non-electrical work equipment as the main subject, including woodworking tools and workbench setups, ropes, and rigging. Includes unfinished workpieces presented as part of a workshop setup."
+        }
+      ],
+      "images-contextual-llm": [
+        {
+          "id": 1,
+          "name": "Animals",
+          "description": "Nonhuman animals as the main subject, including mammals, birds, reptiles, insects, and aquatic animals, whether wild or domestic."
+        },
+        {
+          "id": 2,
+          "name": "People",
+          "description": "Portraits, groups, and scenes centered on people and their activities, including sports, performance, work, and ceremonial dress."
+        },
+        {
+          "id": 3,
+          "name": "Vehicles",
+          "description": "Transport and racing vehicles, including cars and trucks, when the vehicle itself is the focal subject. Occupants or nearby people may be present."
+        },
+        {
+          "id": 4,
+          "name": "Food",
+          "description": "Recognizable food, prepared dishes, and edible ingredients presented as the main subject."
+        },
+        {
+          "id": 5,
+          "name": "Natural landscapes and features",
+          "description": "Natural scenery and geological or water features, including geothermal springs and geysers, when the natural setting or formation is the focal subject."
+        },
+        {
+          "id": 6,
+          "name": "Art and decorative objects",
+          "description": "Artworks, decorative objects, and crafted figures such as puppets and sculptures, photographed as objects rather than living subjects."
+        },
+        {
+          "id": 7,
+          "name": "Electrical and electronic equipment",
+          "description": "Electrical and electronic equipment, components, and connection accessories, including wires, cables, and connectors, shown as the main subject."
+        },
+        {
+          "id": 8,
+          "name": "Plants",
+          "description": "Plants and their visible parts, including flowers, foliage, and trees, when individual plants or plant details are the main subject."
+        },
+        {
+          "id": 9,
+          "name": "Buildings and infrastructure",
+          "description": "Buildings, architectural structures, and built infrastructure, including construction sites and fixed street fixtures, when the structure or built environment is the main subject."
+        },
+        {
+          "id": 10,
+          "name": "Tools and hardware",
+          "description": "Manual tools, workshop implements, and utilitarian hardware or rigging, including ropes and fastening accessories, shown as the main subject."
+        }
+      ],
+      "images-original-llm": [
+        {
+          "id": 1,
+          "name": "Animals",
+          "description": "Photographs whose main subject is a nonhuman animal, including pets, wildlife, birds, reptiles, insects, and marine animals."
+        },
+        {
+          "id": 2,
+          "name": "Vehicles",
+          "description": "Photographs centered on vehicles, including passenger cars, pickup trucks, classic cars, and racing cars. Includes occupied vehicles when the vehicle remains the primary subject."
+        },
+        {
+          "id": 3,
+          "name": "People",
+          "description": "Photographs centered on a person or group of people, including portraits, public speakers, people in uniforms or historical costumes, athletes, and dancers."
+        },
+        {
+          "id": 4,
+          "name": "Food",
+          "description": "Photographs whose main subject is food or a prepared dish, including plated meals and cooked ingredients."
+        },
+        {
+          "id": 5,
+          "name": "Natural landscapes",
+          "description": "Photographs centered on natural scenery or geological features, including terrain, water, geysers, and geothermal activity, rather than an individual animal or person."
+        },
+        {
+          "id": 6,
+          "name": "Art and decorative objects",
+          "description": "Photographs centered on artistic or decorative objects, including puppets, sculptures, figurines, and crafted display pieces rather than living people."
+        },
+        {
+          "id": 7,
+          "name": "Electrical and electronic equipment",
+          "description": "Photographs centered on electrical or electronic equipment and components, including cables, wires, and connectors."
+        },
+        {
+          "id": 8,
+          "name": "Plants and flowers",
+          "description": "Photographs centered on plants or their parts, including flowers, foliage, shrubs, and trees, rather than broad natural scenery."
+        },
+        {
+          "id": 9,
+          "name": "Architecture and built environments",
+          "description": "Photographs centered on buildings, architectural structures, interior spaces, construction sites, or fixed public infrastructure, including telephone booths and manhole covers, rather than people, vehicles, or portable objects."
+        },
+        {
+          "id": 10,
+          "name": "Tools and hardware",
+          "description": "Photographs centered on hand tools, workshop implements, ropes, rigging, or functional hardware, including woodworking tools. Excludes electrical and electronic equipment, vehicles, and fixed architectural infrastructure."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "case_id": "stream-photo-183364f59793fb3c",
+        "item_id": "a046f244997563f9d1e1",
+        "visible_subject": "A torn aircraft-like passenger-cabin section with exposed seat rows and metal framing, outdoors.",
+        "literal_evidence": [
+          "A curved, ripped outer shell encloses several parallel rows of passenger seats.",
+          "Internal ribs, hanging wiring and broken panels are exposed.",
+          "Trees and pavement surround the wrecked cabin; they are background rather than the focal subject."
+        ],
+        "themes": [
+          "focal subject versus setting",
+          "transport wreckage",
+          "nonexhaustive vehicle examples"
+        ],
+        "uncertainty": [
+          "The exact aircraft type, cause of damage, location and whether this is a staged display cannot be established from the pixels.",
+          "Catalog A uses motor vehicles with road-vehicle examples; including an aircraft under that wording is reasonable but less explicit than catalog C's transport-vehicle wording."
+        ],
+        "image": {
+          "src": "/goofing/ld-clustering/streaming/input-01.jpg",
+          "width": 1024,
+          "height": 768,
+          "alt": "A curved, ripped outer shell encloses several parallel rows of passenger seats.",
+          "title": "Avión destrozado",
+          "author": "Ivan PC",
+          "author_url": "https://www.flickr.com/people/ivi/",
+          "source_url": "https://www.flickr.com/photos/ivi/2780658357",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "changes": "none; exact CVDF mirror JPEG",
+          "sha256": "85b0d3b890e69d325ba122db70180ef507c27ed618ab8133eea29a092f914445"
+        },
+        "assignments": [
+          {
+            "anonymous_id": "A",
+            "arm": "images-original-ld",
+            "cluster_id": 10,
+            "category": "Architecture and Infrastructure",
+            "fit": "unsupported",
+            "reason": "The focal object is damaged transport-cabin wreckage, not a building, room interior or fixed civic structure. Exposed structural framing alone does not make it architecture.",
+            "severity": "major",
+            "nearest_alternative": {
+              "cluster_id": 2,
+              "fit": "plausible",
+              "reason": "Vehicles is the nearest named category: an aircraft is motorized transport, although this catalog only gives road-vehicle examples.",
+              "category": "Vehicles"
+            }
+          },
+          {
+            "anonymous_id": "B",
+            "arm": "images-contextual-ld",
+            "cluster_id": 3,
+            "category": "Vehicles",
+            "fit": "supported",
+            "reason": "The recognizable passenger-cabin wreckage is a vehicle subject; parked/displayed/in-use examples do not require an intact vehicle.",
+            "severity": "none",
+            "nearest_alternative": null
+          },
+          {
+            "anonymous_id": "C",
+            "arm": "images-contextual-llm",
+            "cluster_id": 3,
+            "category": "Vehicles",
+            "fit": "supported",
+            "reason": "The main object is recognizable transport-vehicle wreckage with passenger seating, fitting the explicit transport-vehicle scope.",
+            "severity": "none",
+            "nearest_alternative": null
+          },
+          {
+            "anonymous_id": "D",
+            "arm": "images-original-llm",
+            "cluster_id": 2,
+            "category": "Vehicles",
+            "fit": "supported",
+            "reason": "The vehicle remains the primary subject despite its damaged and stationary condition; road vehicles are examples rather than an exhaustive list.",
+            "severity": "none",
+            "nearest_alternative": null
+          }
+        ]
+      },
+      {
+        "case_id": "stream-photo-e84555ef16912d66",
+        "item_id": "4439b2e4deffbca976b9",
+        "visible_subject": "A masked player crouching behind a red inflatable barrier and aiming a paintball marker, with a striped official in the background.",
+        "literal_evidence": [
+          "The foreground person wears a full protective face mask and holds a marker with a hopper.",
+          "The person crouches beside a large red inflatable obstacle marked with colored paint spots.",
+          "Another masked person wears a vertically striped shirt behind the player."
+        ],
+        "themes": [
+          "activity-specific versus broad people categories",
+          "supported shared subject"
+        ],
+        "uncertainty": [
+          "The exact competition, participants and venue are unknown; the visible equipment strongly supports a paintball-game interpretation."
+        ],
+        "image": {
+          "src": "/goofing/ld-clustering/streaming/input-02.jpg",
+          "width": 977,
+          "height": 1024,
+          "alt": "The foreground person wears a full protective face mask and holds a marker with a hopper.",
+          "title": "Army vs. Air Force Weekend",
+          "author": "West Point - The U.S. Military Academy",
+          "author_url": "https://www.flickr.com/people/west_point/",
+          "source_url": "https://www.flickr.com/photos/west_point/5154875229",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "changes": "none; exact CVDF mirror JPEG",
+          "sha256": "4f0bd4a1a46bc36b044d9c46f6d1b35e79c29511802f900184cd2d0ceda5d522"
+        },
+        "assignments": [
+          {
+            "anonymous_id": "A",
+            "arm": "images-original-ld",
+            "cluster_id": 4,
+            "category": "Sports and Physical Activities",
+            "fit": "supported",
+            "reason": "The image centers on a person actively participating in a physical game, matching Sports and Physical Activities rather than the catalog's nonsporting People category.",
+            "severity": "none",
+            "nearest_alternative": null
+          },
+          {
+            "anonymous_id": "B",
+            "arm": "images-contextual-ld",
+            "cluster_id": 2,
+            "category": "People",
+            "fit": "supported",
+            "reason": "People explicitly includes sports and equipment when the photograph centers on a person or their activity.",
+            "severity": "none",
+            "nearest_alternative": null
+          },
+          {
+            "anonymous_id": "C",
+            "arm": "images-contextual-llm",
+            "cluster_id": 2,
+            "category": "People",
+            "fit": "supported",
+            "reason": "The scene is centered on people and their sporting activity, explicitly within this category.",
+            "severity": "none",
+            "nearest_alternative": null
+          },
+          {
+            "anonymous_id": "D",
+            "arm": "images-original-llm",
+            "cluster_id": 3,
+            "category": "People",
+            "fit": "supported",
+            "reason": "The person and athletic game activity are the focus; the People description explicitly includes athletes.",
+            "severity": "none",
+            "nearest_alternative": null
+          }
+        ]
+      },
+      {
+        "case_id": "stream-photo-4fd66af951af21d2",
+        "item_id": "127aa359731969742c20",
+        "visible_subject": "An apparently nonliving display mannequin wearing a red jacket and trousers over a printed shirt.",
+        "literal_evidence": [
+          "A glossy red jacket, red trousers and a motorcycle-print shirt occupy most of the frame.",
+          "The exposed head/neck surface is featureless and the hands appear rigid and mannequin-like.",
+          "There is no visible human action or social scene; the framing presents an outfit."
+        ],
+        "themes": [
+          "living person versus crafted display figure",
+          "garment presentation",
+          "missing apparel category"
+        ],
+        "uncertainty": [
+          "The upper head is cropped, so a live model cannot be ruled out with absolute certainty, but the visible featureless surface and rigid hands strongly favor a mannequin.",
+          "Treating a garment-display mannequin as an artistic/display object is a defensible coarse substitute in catalogs without an apparel category; it need not mean the outfit itself is an artwork."
+        ],
+        "image": {
+          "src": "/goofing/ld-clustering/streaming/input-03.jpg",
+          "width": 683,
+          "height": 1024,
+          "alt": "A glossy red jacket, red trousers and a motorcycle-print shirt occupy most of the frame.",
+          "title": "London Film Museum",
+          "author": "Eduardo Otubo",
+          "author_url": "https://www.flickr.com/people/otubo/",
+          "source_url": "https://www.flickr.com/photos/otubo/5094926228",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "changes": "none; exact CVDF mirror JPEG",
+          "sha256": "a64733ce398078ee9fb324e22f5130f9b47c5c8aeb52a5b2f55811895bf4343c"
+        },
+        "assignments": [
+          {
+            "anonymous_id": "A",
+            "arm": "images-original-ld",
+            "cluster_id": 3,
+            "category": "People",
+            "fit": "unsupported",
+            "reason": "The visible evidence favors an inanimate mannequin used to showcase garments, rather than a portrait or scene centered on a living person. This catalog has a more direct clothing category.",
+            "severity": "minor",
+            "nearest_alternative": {
+              "cluster_id": 11,
+              "fit": "supported",
+              "reason": "Clothing and Accessories explicitly covers garments shown as the main subject.",
+              "category": "Clothing and Accessories"
+            }
+          },
+          {
+            "anonymous_id": "B",
+            "arm": "images-contextual-ld",
+            "cluster_id": 2,
+            "category": "People",
+            "fit": "unsupported",
+            "reason": "People requires a person or their activity as the subject. An apparently nonliving clothing-display figure is a weaker fit, and clothing alone does not establish a person-centered scene.",
+            "severity": "minor",
+            "nearest_alternative": {
+              "cluster_id": 6,
+              "fit": "plausible",
+              "reason": "Art and Decorative Objects includes crafted display objects and treats depicted figures as objects; Other is also reasonable if a commercial mannequin is outside that scope.",
+              "category": "Art and Decorative Objects"
+            }
+          },
+          {
+            "anonymous_id": "C",
+            "arm": "images-contextual-llm",
+            "cluster_id": 6,
+            "category": "Art and decorative objects",
+            "fit": "plausible",
+            "reason": "A mannequin is a crafted human figure photographed as an object, so the crafted-figure scope provides a reasonable fit despite the main emphasis on clothing.",
+            "severity": "none",
+            "nearest_alternative": null
+          },
+          {
+            "anonymous_id": "D",
+            "arm": "images-original-llm",
+            "cluster_id": 6,
+            "category": "Art and decorative objects",
+            "fit": "plausible",
+            "reason": "The figure appears nonliving and is presented as a display object, which is compatible with the crafted-display scope. The absence of an apparel category makes this an approximate boundary choice.",
+            "severity": "none",
+            "nearest_alternative": null
+          }
+        ]
+      },
+      {
+        "case_id": "stream-photo-27d7632470436dc5",
+        "item_id": "85534b38f39724a599c4",
+        "visible_subject": "A metal cooking range with several circular burners, front control knobs and an open lower oven or cabinet, with cleaning gloves draped over its edge.",
+        "literal_evidence": [
+          "Several ring-shaped burners are mounted on the top of a metal cooking unit.",
+          "A row of knobs runs across its front, and its lower compartment stands open.",
+          "Yellow cleaning gloves and a sponge rest on the top edge; pipes or a hose are visible at the side."
+        ],
+        "themes": [
+          "appliance versus room setting",
+          "missing non-electrical appliance category",
+          "uncertain power source"
+        ],
+        "uncertainty": [
+          "The burner and pipe arrangement suggests a gas cooking appliance, but the image cannot establish whether it also has electrical components or ignition.",
+          "Electrical/electronic categories do not unambiguously cover a nonelectrical gas range. Broad non-electrical work-equipment wording in B is another possible interpretation, while the other hardware categories emphasize manual/workshop implements."
+        ],
+        "image": {
+          "src": "/goofing/ld-clustering/streaming/input-04.jpg",
+          "width": 1024,
+          "height": 768,
+          "alt": "Several ring-shaped burners are mounted on the top of a metal cooking unit.",
+          "title": "My oven",
+          "author": "otama",
+          "author_url": "https://www.flickr.com/people/otama/",
+          "source_url": "https://www.flickr.com/photos/otama/1204119132",
+          "license_name": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/",
+          "changes": "none; exact CVDF mirror JPEG",
+          "sha256": "0a59bfbd7fb95bbbf2d7c0679fd340939cdc3dbc20be3ade8f1262079b8c8930"
+        },
+        "assignments": [
+          {
+            "anonymous_id": "A",
+            "arm": "images-original-ld",
+            "cluster_id": 10,
+            "category": "Architecture and Infrastructure",
+            "fit": "unsupported",
+            "reason": "The appliance dominates the frame; this is not chiefly a room interior, building or fixed public infrastructure. A piece of equipment inside a building does not make the focal subject architectural.",
+            "severity": "major",
+            "nearest_alternative": {
+              "cluster_id": null,
+              "fit": "plausible",
+              "reason": "Other avoids forcing a cooking range into electrical components or architecture when there is no clear general-appliance category.",
+              "category": "Other"
+            }
+          },
+          {
+            "anonymous_id": "B",
+            "arm": "images-contextual-ld",
+            "cluster_id": null,
+            "category": "Other",
+            "fit": "plausible",
+            "reason": "Other is defensible because a gas cooking range is not clearly electrical/electronic and no category explicitly names appliances.",
+            "severity": "none",
+            "nearest_alternative": {
+              "cluster_id": 10,
+              "fit": "plausible",
+              "reason": "Tools and Work Equipment broadly includes non-electrical work equipment, which could cover a commercial cooking range, although the examples emphasize workshop tools.",
+              "category": "Tools and Work Equipment"
+            }
+          },
+          {
+            "anonymous_id": "C",
+            "arm": "images-contextual-llm",
+            "cluster_id": null,
+            "category": "Other",
+            "fit": "plausible",
+            "reason": "Other is a reasonable response to a cooking appliance that is not clearly electrical, manual workshop tooling, food, or the surrounding built environment.",
+            "severity": "none",
+            "nearest_alternative": {
+              "cluster_id": 7,
+              "fit": "plausible",
+              "reason": "Electrical and electronic equipment would be possible if this range has relevant electrical operation, but that is not established by the photograph.",
+              "category": "Electrical and electronic equipment"
+            }
+          },
+          {
+            "anonymous_id": "D",
+            "arm": "images-original-llm",
+            "cluster_id": null,
+            "category": "Other",
+            "fit": "plausible",
+            "reason": "The catalog lacks a general cooking-appliance category, and the object is not clearly electrical. Rejecting this boundary case is more defensible than classifying its background interior.",
+            "severity": "none",
+            "nearest_alternative": {
+              "cluster_id": 7,
+              "fit": "plausible",
+              "reason": "Electrical and electronic equipment is an alternative only if the cooking unit is interpreted as electrical equipment, which is uncertain from the pixels.",
+              "category": "Electrical and electronic equipment"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

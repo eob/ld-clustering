@@ -1,0 +1,131 @@
+{
+  "archive_manifest_sha256": "74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07",
+  "archive_path": "evidence",
+  "cost_or_metrics_recomputed": false,
+  "dataset_files": 397,
+  "dataset_gate_sha256": "d72f1175670539a4ea7585eb9ef5e9722ef6007eb4e1bc0295e2f036bcd75518",
+  "dataset_manifest_sha256": "add80aa99c9b8015ad69ff76d9ba98c01f7ce2724ff32a9c84081e8b08d7c2d1",
+  "experiment": "guidance-auto-research",
+  "final_audit": {
+    "raw_run_path": "validation/final-independent-audit.json",
+    "sha256": "2f720fac520610a592cab7662e5e3526cd749b99e4a3688be72e41fef5f07c1f"
+  },
+  "independent_anchor_verification": true,
+  "limitations": [
+    "Byte and registration/terminal inventory verification is distinct from semantic accuracy.",
+    "The frozen executable is hash-pinned, not included or rebuilt by this archive verifier.",
+    "Review compute is outside the recorded experiment API ledger."
+  ],
+  "matrix": {
+    "groups": 9,
+    "raw_run_path": "report/method-comparison.raw.json",
+    "rows": 18,
+    "sha256": "af973cc6d08b297d72f122c17e2eae26be70d8ac17ac3f215076deabf17d03fc"
+  },
+  "offline_validation": {
+    "python_tests": 211,
+    "receipt_run_path": "readiness/method-matrix-full-python-tests.json",
+    "receipt_sha256": "03de5dfa326b1444496d390f1f25b5d60ddef3bacae8503c1daa5d0fabec2930",
+    "rust_offline_passed": 136,
+    "rust_paid_ignored": 1,
+    "rust_receipt_run_path": "readiness/source-offline-validation.json",
+    "rust_receipt_sha256": "39aed5543615d9227dbf7d0de63d80fc8f2f28c356dc1e794cd6e42b8fce161f"
+  },
+  "payload_parts": {
+    "payloads/inputs.tar.xz.part0000": {
+      "bytes": 93323264,
+      "sha256": "f45ed38976bfbb6dbcfce32e45b4d7e29f9513e0f7a3d1ae4f07f0cd4c0944e7"
+    },
+    "payloads/inputs.tar.xz.part0001": {
+      "bytes": 93323264,
+      "sha256": "e073f65f83c5b8fd0a0ff9117c4ba64aff8e1fc496b510b005a42374a51031cd"
+    },
+    "payloads/inputs.tar.xz.part0002": {
+      "bytes": 44270652,
+      "sha256": "4f7c064212050a31299084eca53494214c1e9f4958298439c8b8bd485e8ac03a"
+    },
+    "payloads/run.tar.xz.part0000": {
+      "bytes": 93323264,
+      "sha256": "168282b34ff1b6f0745365bb9e9f91bd5a4b91fc462b34f6357b4f21a64b8a5e"
+    },
+    "payloads/run.tar.xz.part0001": {
+      "bytes": 93323264,
+      "sha256": "5ab28d6dd208b4a18bb237469c5fccf0f9a70b2fa1fd023e3a05bec7cadc715b"
+    },
+    "payloads/run.tar.xz.part0002": {
+      "bytes": 23279852,
+      "sha256": "fee281d601909e242d3a7dcfed72c3654ae15b9010d04a0882492398e87b10fd"
+    }
+  },
+  "post_archive_delivery_correction": {
+    "actual_strict_export": {
+      "evidence_link_commit": "3c13d42f26283654118604cb408cb18ef235573b",
+      "output_sha256": "0be9a77c5f2a57951b4cf0b8256f2d58a4511314115671fc2c40c1426ed25294",
+      "review_examples": 11,
+      "rounds": 12,
+      "status": "passed"
+    },
+    "archive_or_run_mutations": false,
+    "archived_exporter": {
+      "raw_run_path": "reproduction/export_auto_research.py",
+      "sha256": "40de7da62cfcf06216408815739818da285b6edfb3c6a673d7c692cb34d400e5"
+    },
+    "checked_at_utc": "2026-10-21T12:36:50.110557+00:00",
+    "corrected_repository_exporter": {
+      "path": "scripts/export_auto_research.py",
+      "sha256": "d76ad35889c6b2bb52da639cae302ff3ed716d7f932e8f106a02d4f305537668"
+    },
+    "corrected_tests": {
+      "path": "tests/test_export_auto_research.py",
+      "sha256": "f89a4f401116bd1f066e36690d830483f6e6874ca1cf7a5d5d43f77bb5371af3"
+    },
+    "correction": "Retain anchored raw/readable byte validation, parse JSON evidence as JSON, link Markdown as text, and explicitly route raw-only evidence to archive restoration instructions.",
+    "defects": [
+      "Markdown evidence was incorrectly JSON-decoded.",
+      "Raw-only readiness evidence incorrectly required a readable mirror."
+    ],
+    "final_repository_python_tests": 213,
+    "model_calls": 0,
+    "reproduction": "Use corrected repository scripts/export_auto_research.py from the final delivery source. The archived reproduction copy remains immutable and predates these link corrections. --review-publication is RUN-relative.",
+    "scope": "Publication-link handling only; scientific/archive/RUN bytes unchanged.",
+    "status": "passed",
+    "validation_receipts": {
+      "markdown-link-green.txt": {
+        "path": "delivery-validation/markdown-link-green.txt",
+        "sha256": "e808e66825739cfc47205392e4f07268e5dea79c9403f2dbb78aff2a6466eb6e"
+      },
+      "markdown-link-red.txt": {
+        "path": "delivery-validation/markdown-link-red.txt",
+        "sha256": "b99fea472a53c7c208eee488f8f2c0b8625f16de0c8658641610d8f62fa156af"
+      },
+      "python-212-green.txt": {
+        "path": "delivery-validation/python-212-green.txt",
+        "sha256": "95fdaf47ba13a956c1e89c264700621f52a06e734ea5dc9893803b4ad538855c"
+      },
+      "python-213-green.txt": {
+        "path": "delivery-validation/python-213-green.txt",
+        "sha256": "7f8142c17365be28a4c7ecc1b44caa4133355d4074e7f4b3007c2bf6e5b28d0f"
+      },
+      "raw-only-link-red.txt": {
+        "path": "delivery-validation/raw-only-link-red.txt",
+        "sha256": "e40eddf7cec36a3b8f4271dea6311761afdc25cc0108d9eff7cd9b65553dabf9"
+      }
+    }
+  },
+  "run_files": 1054,
+  "run_writes_after_snapshot": false,
+  "runtime_executable_sha256": "2eed0a941e5f8e292940c0fd2f72d2432409c0456d3acb2a9314bdc2920f9f20",
+  "runtime_source_commit": "a3b38d7f9e535f300ac783b3aa4abeb77b17a54f",
+  "schema_version": 1,
+  "status": "passed",
+  "verification_command": [
+    "python3",
+    "evidence/archive_auto_research.py",
+    "verify",
+    "evidence",
+    "--manifest-sha256",
+    "74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07"
+  ],
+  "verification_exit_code": 0,
+  "verified_at_utc": "2026-10-21T12:28:12.572028+00:00"
+}

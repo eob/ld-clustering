@@ -1,0 +1,695 @@
+{
+  "candidate_sha256": "2d3929d6f3669be0e530adb3c4c05e097cb60033d15a0dfdcda7585693b4c5b1",
+  "catalog_sha256": "3c110a2acc25db3bc51d4b03877450df0fb6609e2e63efd4b5296b35a6332c2b",
+  "classification_stage": "development",
+  "comparison": {
+    "assigned_other": {
+      "both_named": 35,
+      "both_other": 4,
+      "reference_named_candidate_other": 1,
+      "reference_other_candidate_named": 0
+    },
+    "candidate_assigned_count": 35,
+    "candidate_coverage": 0.875,
+    "candidate_refused_points": 0,
+    "categories": [
+      {
+        "candidate_count": 5,
+        "cluster_id": null,
+        "f1": 0.8888888888888888,
+        "false_negative_count": 0,
+        "false_positive_count": 1,
+        "precision": 0.8,
+        "recall": 1.0,
+        "reference_count": 4,
+        "same_count": 4,
+        "true_negative_count": 35
+      },
+      {
+        "candidate_count": 3,
+        "cluster_id": 1,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 3,
+        "same_count": 3,
+        "true_negative_count": 37
+      },
+      {
+        "candidate_count": 5,
+        "cluster_id": 2,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 5,
+        "same_count": 5,
+        "true_negative_count": 35
+      },
+      {
+        "candidate_count": 6,
+        "cluster_id": 3,
+        "f1": 0.9230769230769231,
+        "false_negative_count": 1,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 0.8571428571428571,
+        "reference_count": 7,
+        "same_count": 6,
+        "true_negative_count": 33
+      },
+      {
+        "candidate_count": 7,
+        "cluster_id": 4,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 7,
+        "same_count": 7,
+        "true_negative_count": 33
+      },
+      {
+        "candidate_count": 5,
+        "cluster_id": 5,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 5,
+        "same_count": 5,
+        "true_negative_count": 35
+      },
+      {
+        "candidate_count": 0,
+        "cluster_id": 6,
+        "f1": 0.0,
+        "false_negative_count": 2,
+        "false_positive_count": 0,
+        "precision": null,
+        "recall": 0.0,
+        "reference_count": 2,
+        "same_count": 0,
+        "true_negative_count": 38
+      },
+      {
+        "candidate_count": 8,
+        "cluster_id": 7,
+        "f1": 0.8571428571428571,
+        "false_negative_count": 0,
+        "false_positive_count": 2,
+        "precision": 0.75,
+        "recall": 1.0,
+        "reference_count": 6,
+        "same_count": 6,
+        "true_negative_count": 32
+      },
+      {
+        "candidate_count": 1,
+        "cluster_id": 8,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 1,
+        "same_count": 1,
+        "true_negative_count": 39
+      }
+    ],
+    "conditional_agreement_note": "Jointly named agreement divides matching named IDs only by points named by both arms; null means no jointly named points. This conditional rate excludes rejected points and must be read with coverage and the full named/Other table.",
+    "confusion": [
+      {
+        "candidate_cluster_id": null,
+        "count": 4,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 3,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": 1
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 5,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": 2
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 6,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 1,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": 3
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 7,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": 4
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 5,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": 5
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 1,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 1,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": 6
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 6,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 0,
+        "reference_cluster_id": 7
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 1,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 2,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 3,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 4,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 5,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 6,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 7,
+        "count": 0,
+        "reference_cluster_id": 8
+      },
+      {
+        "candidate_cluster_id": 8,
+        "count": 1,
+        "reference_cluster_id": 8
+      }
+    ],
+    "direct_agreement": 0.925,
+    "direct_agreement_count": 37,
+    "jointly_named_agreement": 0.9428571428571428,
+    "n": 40,
+    "named_id_agreement": 0.825,
+    "named_id_agreement_count": 33,
+    "other_policy": "Direct agreement includes both choosing Other. Named-ID agreement divides matching named IDs by all points. ARI and pairwise scores give each Other point its own singleton label.",
+    "partition": {
+      "adjusted_rand_index": 0.8666050997896465,
+      "n": 40,
+      "pairwise_f1": 0.8809523809523809,
+      "pairwise_precision": 0.8505747126436781,
+      "pairwise_recall": 0.9135802469135802
+    },
+    "reference_assigned_count": 36,
+    "reference_coverage": 0.9,
+    "reference_note": "Per-category confusion, precision and recall are relative to the LLM assignments, not ground truth. Agreement and coverage do not establish semantic correctness.",
+    "reference_refused_points": 0
+  },
+  "design_id": "compact-images-v1",
+  "effective_order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "effective_order_sha256": "b2ddd6543011e658aaebc223b42021e89fa9a18bd1f2207f6cb68e73ca5688b3",
+  "experiment": "guidance-auto-research",
+  "input_sha256": "a5ddf39d3e128816084affa72519e809b2c3ac4fc37319f79deec25f03553cfd",
+  "k": 8,
+  "measurements": {
+    "candidate": {
+      "assignment_refusal_calls": 0,
+      "calls": 40,
+      "cost_complete": true,
+      "cost_history_complete": true,
+      "cost_usd": 0.0048655999999999994,
+      "error_calls": 0,
+      "journal_sha256": "e1f5cd3537b7c3c2e8477d36b27d7984d52944c49bf59307feef3b386100454d",
+      "phase_calls": {
+        "assign": 40
+      },
+      "pricing_date": "2026-10-20",
+      "pricing_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "request_seconds": 8.329,
+      "timing_complete": true,
+      "unknown_pricing_calls": 0,
+      "unknown_usage_calls": 0,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "cost_usd": 0.0048655999999999994,
+        "input_tokens": 48656,
+        "output_tokens": 0
+      },
+      "wall_ms": 8458,
+      "wall_seconds": 8.458
+    },
+    "reference": {
+      "assignment_refusal_calls": 0,
+      "calls": 40,
+      "cost_complete": true,
+      "cost_history_complete": true,
+      "cost_usd": 0.1483075,
+      "error_calls": 0,
+      "journal_sha256": "57fccf5590d7d15d007de1732bc376bbd3ad1fd678843ab48c837e0198fc2d6b",
+      "phase_calls": {
+        "assign": 40
+      },
+      "pricing_date": "2026-10-20",
+      "pricing_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "request_seconds": 97.392,
+      "timing_complete": true,
+      "unknown_pricing_calls": 0,
+      "unknown_usage_calls": 0,
+      "usage": {
+        "cache_write_tokens": 53571,
+        "cached_tokens": 0,
+        "cost_usd": 0.1483075,
+        "input_tokens": 53691,
+        "output_tokens": 1414
+      },
+      "wall_ms": 97547,
+      "wall_seconds": 97.547
+    }
+  },
+  "modality": "images",
+  "ordered_ids": [
+    "69c99c4b47244607a654",
+    "c731182a67542c836482",
+    "54ac9e36dae5850de20c",
+    "613ac1e1719f3fbea19f",
+    "93e97899f4bfc8ccdbab",
+    "43ed81a00586df6919d8",
+    "846a8ce95379201649b7",
+    "793596fc823bf5074933",
+    "861a869f13a1e9da84b2",
+    "42e15e0961ed8a292739",
+    "731258485101de6c8117",
+    "96af33bc300ef485b280",
+    "a494c9592176b9a5b7b9",
+    "b1b403a7ff06a16224c4",
+    "a8c7d15a1bbf5a6401fb",
+    "af87069b49de6542a0c5",
+    "1adb80555327b8f371a8",
+    "b6c2619706b4a7afc4f8",
+    "04dc1cd431b5e6d233bb",
+    "3a97bc38cb9e84094c25",
+    "b84fc3793327ed57292c",
+    "7923691cca0e634f4253",
+    "afd131e9baba4015024b",
+    "8470b834122c43cbcc9f",
+    "2d06993e5e4b364ac8a9",
+    "197ad780cd175f83bf15",
+    "3ec46298fef1e5791f8f",
+    "bd458bda57d58acb462e",
+    "0a6f8df3db7b43b8d9a1",
+    "4a12aa3da3044a0d53a8",
+    "da9d2d459743ed85ea2b",
+    "9c8ea94ae00ff0211330",
+    "65b68fb1529e0ee3ab9e",
+    "19d0f8f394daab4ab936",
+    "796405f07b28b8933ca3",
+    "77bcbc18466ab01f1a4e",
+    "d6cbf14a0605c484a8c4",
+    "60d7517d8a230ba81410",
+    "1e7b4a25f96346ae4282",
+    "429b4fddd54432f66f31"
+  ],
+  "protocol_sha256": "0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65",
+  "reference_sha256": "6b8ae61bd33a960041668437b8991e7e3fef7f3732d61c90e1adaab6d57030c4",
+  "schema_version": 1,
+  "source": {
+    "commit": "a3b38d7f9e535f300ac783b3aa4abeb77b17a54f",
+    "committed_sources_verified": true,
+    "embedded_file_sha256": {
+      "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+      "Cargo.toml": "4d4ea297856bf41d699f76067319551e2170202d10c80199bac59a415e78b439",
+      "examples/auto_research.rs": "5b484ba861b6ffc9880928488027e61892b997e51c595a0255b498384d814106",
+      "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+      "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+      "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+      "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+      "src/auto_research.rs": "7a42f82457c1ec7dcab6e6756a688075fed5f9c422391f23ee797bd59f8258a5",
+      "src/lib.rs": "a2583e0285274c2d17186f63d3380a731b62f3c1db16c71cd9a417a394194ae3",
+      "src/provider.rs": "b423fef2075f66eeccf7f1a3e5e3d86750413f625f14d645b4b5ceb316d8e1fb",
+      "src/types.rs": "202b0875a4f725b4cd1467d5ce448143b1b49befb39d2936cc1399f4075255ae"
+    },
+    "executable_sha256": "2eed0a941e5f8e292940c0fd2f72d2432409c0456d3acb2a9314bdc2920f9f20"
+  },
+  "stage": "comparison",
+  "status": "complete"
+}

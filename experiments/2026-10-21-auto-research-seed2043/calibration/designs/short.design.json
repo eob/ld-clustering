@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "design_id": "calibration-short-v1",
+  "modality": "text",
+  "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request.",
+  "definitions": [
+    {
+      "id": 11,
+      "name": "Banking",
+      "description": "Requests about bank accounts, bank cards, account balances, money transfers, and using or managing banking services."
+    },
+    {
+      "id": 29,
+      "name": "Cooking",
+      "description": "Requests about preparing food, cooking methods, baking, recipe ingredients, and substitutions used while making a dish."
+    },
+    {
+      "id": 43,
+      "name": "Weather",
+      "description": "Requests about atmospheric conditions, temperatures, rain, snow, wind, and weather forecasts for a place or time."
+    },
+    {
+      "id": 71,
+      "name": "Transportation",
+      "description": "Requests about passenger journeys, bus or train routes and schedules, public transportation tickets, and reaching a destination."
+    }
+  ],
+  "provenance": {
+    "origin": "Handwritten synthetic calibration; intended membership is held constant across styles.",
+    "description_style": "short",
+    "evidence_ids": [],
+    "word_count_rule": "Unicode whitespace-separated description tokens; names excluded.",
+    "description_word_counts": {
+      "11": 16,
+      "29": 16,
+      "43": 16,
+      "71": 17
+    },
+    "interpretation": "Style and wording change with length. This is not a pure length ablation."
+  }
+}

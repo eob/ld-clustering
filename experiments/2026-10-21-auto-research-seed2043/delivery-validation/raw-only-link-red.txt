@@ -1,0 +1,40 @@
+E
+======================================================================
+ERROR: test_raw_only_confirmation_receipt_links_archive_instructions_explicitly (test_export_auto_research.ExportTests.test_raw_only_confirmation_receipt_links_archive_instructions_explicitly)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/disks/data/ld-clustering-auto-research/tests/test_export_auto_research.py", line 562, in test_raw_only_confirmation_receipt_links_archive_instructions_explicitly
+    publication = fixture.export()
+                  ^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/tests/test_export_auto_research.py", line 540, in export
+    return exporter.export_publication(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 812, in export_publication
+    ).build(review_publication)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 760, in build
+    rows.extend(
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 761, in <genexpr>
+    self.natural_round(kind) for kind in ("compact", "boundary", "confirmation")
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 729, in natural_round
+    evidence=self.evidence(comparisons, extra),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 503, in evidence
+    links.append(self.link(name, Path(name).stem.replace("-", " ")))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 348, in link
+    self.read(name)
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 200, in read
+    return json.loads(self.checked_path(name, mirror).read_bytes())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 190, in checked_path
+    require(
+  File "/mnt/disks/data/ld-clustering-auto-research/scripts/export_auto_research.py", line 32, in require
+    raise ValueError(message)
+ValueError: byte-identical readable evidence missing: readiness/final-interpretation-independent-check.json
+
+----------------------------------------------------------------------
+Ran 1 test in 0.907s
+
+FAILED (errors=1)

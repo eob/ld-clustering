@@ -1,0 +1,30 @@
+{
+  "rule": "len(description.split()); names excluded",
+  "counts": {
+    "short": {
+      "11": 16,
+      "29": 16,
+      "43": 16,
+      "71": 17
+    },
+    "redundant-positive": {
+      "11": 113,
+      "29": 108,
+      "43": 108,
+      "71": 109
+    },
+    "negative-boundaries": {
+      "11": 115,
+      "29": 112,
+      "43": 112,
+      "71": 115
+    }
+  },
+  "positive_vs_boundary_absolute_word_difference": {
+    "11": 2,
+    "29": 4,
+    "43": 4,
+    "71": 6
+  },
+  "interpretation": "Approximately matched long styles change wording, repetition, negation and cross-references. They do not isolate length alone."
+}

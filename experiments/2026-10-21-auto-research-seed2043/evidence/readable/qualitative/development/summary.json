@@ -1,0 +1,565 @@
+{
+  "schema_version": 1,
+  "modalities": {
+    "text": {
+      "n_selected": 14,
+      "n_accepted": 14,
+      "n_failed": 0,
+      "verdict_counts": {
+        "both_reasonable": 6,
+        "llm": 7,
+        "insufficient_evidence": 1
+      },
+      "fit_counts": {
+        "llm": {
+          "plausible": 3,
+          "supported": 11
+        },
+        "ld": {
+          "plausible": 6,
+          "supported": 4,
+          "unsupported": 4
+        }
+      },
+      "themes": {
+        "reasonable_alternative": 3,
+        "overlapping_or_incomplete_descriptions": 3,
+        "different_granularity": 2,
+        "clear_error": 3,
+        "unjustified_other": 3
+      },
+      "cases": [
+        {
+          "case_id": "3b62e060d7dbad39763e4f5e",
+          "text": "the temperature at ac is what",
+          "stratum": "different_named",
+          "winner": "both_reasonable",
+          "assignments": {
+            "ld": {
+              "cluster_id": 9,
+              "fit": "plausible",
+              "evidence": "The request asks for a temperature, which can be a factual query; the meaning of \"ac\" is unclear.",
+              "severity": "unclear"
+            },
+            "llm": {
+              "cluster_id": 8,
+              "fit": "plausible",
+              "evidence": "If \"ac\" means air conditioning, the temperature concerns an appliance. The abbreviation is not expanded.",
+              "severity": "unclear"
+            }
+          },
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Unexpanded abbreviations can leave temperature queries between general information, local weather, and appliance status."
+        },
+        {
+          "case_id": "f22784bc61a8a26063f17490",
+          "text": "what is up with my account, why is it blocked",
+          "stratum": "sol_named_native_other",
+          "winner": "both_reasonable",
+          "assignments": {
+            "llm": {
+              "cluster_id": 1,
+              "fit": "plausible",
+              "evidence": "A blocked account can concern banking, but the request does not identify the account as financial.",
+              "severity": "unclear"
+            },
+            "ld": {
+              "cluster_id": null,
+              "fit": "plausible",
+              "evidence": "The account type is unspecified, so the text does not establish a supplied subject category.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "reasonable_alternative"
+          ],
+          "boundary_note": "Account-access complaints need context to distinguish financial accounts from other service accounts."
+        },
+        {
+          "case_id": "10ae54e66b35ceae3e352cf5",
+          "text": "how is ford's stock doing",
+          "stratum": "different_named",
+          "winner": "llm",
+          "assignments": {
+            "llm": {
+              "cluster_id": 1,
+              "fit": "supported",
+              "evidence": "Stock performance concerns financial values, which Money & Banking explicitly includes.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": 9,
+              "fit": "plausible",
+              "evidence": "This is a factual question, but its specific subject is financial performance.",
+              "severity": "minor"
+            }
+          },
+          "themes": [
+            "different_granularity"
+          ],
+          "boundary_note": "A factual question about financial values fits the financial subject more specifically than general knowledge."
+        },
+        {
+          "case_id": "ef885f063c0fc4f287a71e8f",
+          "text": "when was my car last in the shop",
+          "stratum": "equal_named",
+          "winner": "both_reasonable",
+          "assignments": {
+            "ld": {
+              "cluster_id": 6,
+              "fit": "supported",
+              "evidence": "Asking when a car was last in the shop concerns vehicle service history.",
+              "severity": "none"
+            },
+            "llm": {
+              "cluster_id": 6,
+              "fit": "supported",
+              "evidence": "Vehicle service history is explicitly included in Cars & Vehicle Care.",
+              "severity": "none"
+            }
+          },
+          "themes": [],
+          "boundary_note": "Questions about past vehicle maintenance belong with vehicle care even when phrased as date retrieval."
+        },
+        {
+          "case_id": "d5f58e28a18235fd2455b449",
+          "text": "ai, refer to me as deb when answering me",
+          "stratum": "sol_named_native_other",
+          "winner": "llm",
+          "assignments": {
+            "ld": {
+              "cluster_id": null,
+              "fit": "unsupported",
+              "evidence": "The request sets how the assistant should address the user, which the catalog explicitly covers.",
+              "severity": "major"
+            },
+            "llm": {
+              "cluster_id": 8,
+              "fit": "supported",
+              "evidence": "The user asks the assistant to use a preferred name when answering.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Preferred forms of address are assistant response preferences."
+        },
+        {
+          "case_id": "71455d8ee9c789ced76a7360",
+          "text": "what were you supposed to remind me of",
+          "stratum": "different_named",
+          "winner": "llm",
+          "assignments": {
+            "ld": {
+              "cluster_id": 8,
+              "fit": "unsupported",
+              "evidence": "Addressing the assistant does not change the subject: the request asks about an existing reminder.",
+              "severity": "minor"
+            },
+            "llm": {
+              "cluster_id": 7,
+              "fit": "supported",
+              "evidence": "The user asks to retrieve a reminder, and reminders are explicitly included here.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "clear_error"
+          ],
+          "boundary_note": "Requests to retrieve reminders belong with reminder management despite conversational wording."
+        },
+        {
+          "case_id": "03d11249e4a52cff48dc8f8a",
+          "text": "help, i've lost my cellphone!",
+          "stratum": "sol_named_native_other",
+          "winner": "llm",
+          "assignments": {
+            "llm": {
+              "cluster_id": 8,
+              "fit": "supported",
+              "evidence": "The request concerns a lost cellphone, and locating devices is explicitly included.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": null,
+              "fit": "unsupported",
+              "evidence": "The catalog supplies a category for locating devices, matching the lost-cellphone request.",
+              "severity": "major"
+            }
+          },
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Help finding a personal device fits device interaction without an explicit locate command."
+        },
+        {
+          "case_id": "64d55565b3ad7428abc8e293",
+          "text": "what company designed this",
+          "stratum": "different_named",
+          "winner": "insufficient_evidence",
+          "assignments": {
+            "ld": {
+              "cluster_id": 9,
+              "fit": "plausible",
+              "evidence": "The request asks for a designer company, which can be a factual identification question. The referent of \"this\" is missing.",
+              "severity": "unclear"
+            },
+            "llm": {
+              "cluster_id": 8,
+              "fit": "plausible",
+              "evidence": "Assistant background fits if \"this\" refers to the assistant, but the text does not establish that referent.",
+              "severity": "unclear"
+            }
+          },
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Unresolved demonstratives can prevent distinguishing assistant provenance from general factual identification."
+        },
+        {
+          "case_id": "1b908457e68c76e9de4490a9",
+          "text": "text katy and tell her i love her",
+          "stratum": "sol_named_native_other",
+          "winner": "llm",
+          "assignments": {
+            "ld": {
+              "cluster_id": null,
+              "fit": "unsupported",
+              "evidence": "Sending a text to a named person fits the supplied communication subject.",
+              "severity": "major"
+            },
+            "llm": {
+              "cluster_id": 7,
+              "fit": "supported",
+              "evidence": "The user requests a direct interpersonal message to Katy.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "unjustified_other"
+          ],
+          "boundary_note": "Direct interpersonal messages fit communication even when the listed examples emphasize phone calls."
+        },
+        {
+          "case_id": "3dbeb4814b34e846190c4528",
+          "text": "will using a discover card in rome cause transaction fees",
+          "stratum": "equal_named",
+          "winner": "both_reasonable",
+          "assignments": {
+            "ld": {
+              "cluster_id": 1,
+              "fit": "supported",
+              "evidence": "The question concerns credit-card transaction fees, explicitly within Money & Banking.",
+              "severity": "none"
+            },
+            "llm": {
+              "cluster_id": 1,
+              "fit": "supported",
+              "evidence": "The subject is a credit-card fee; the overseas location supplies context.",
+              "severity": "none"
+            }
+          },
+          "themes": [],
+          "boundary_note": "A travel location does not displace the financial subject of a card-fee question."
+        },
+        {
+          "case_id": "73d5b9272cbaae48a24425f1",
+          "text": "can you call the help desk line for my credit card company",
+          "stratum": "different_named",
+          "winner": "llm",
+          "assignments": {
+            "llm": {
+              "cluster_id": 7,
+              "fit": "supported",
+              "evidence": "The user asks the assistant to place a phone call, an explicitly included action.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": 1,
+              "fit": "plausible",
+              "evidence": "The recipient is a credit-card company, providing a banking context, but the requested action is a call.",
+              "severity": "minor"
+            }
+          },
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Calling a financial service overlaps communication and banking; an explicit call request favors communication."
+        },
+        {
+          "case_id": "a3735e8b199e4a80987ff07a",
+          "text": "is it possible to reserve a table at white castle",
+          "stratum": "equal_named",
+          "winner": "both_reasonable",
+          "assignments": {
+            "llm": {
+              "cluster_id": 4,
+              "fit": "supported",
+              "evidence": "The request asks about reserving a restaurant table, explicitly covered by Food & Dining.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": 4,
+              "fit": "supported",
+              "evidence": "Restaurant reservation availability falls within Food & Dining.",
+              "severity": "none"
+            }
+          },
+          "themes": [],
+          "boundary_note": "Questions about restaurant reservation availability share the dining subject with making reservations."
+        },
+        {
+          "case_id": "def34aeb80d04b02562ea637",
+          "text": "i need to call my coworker",
+          "stratum": "equal_named",
+          "winner": "both_reasonable",
+          "assignments": {
+            "ld": {
+              "cluster_id": 7,
+              "fit": "supported",
+              "evidence": "The user wants to call another person, and making phone calls is explicitly included.",
+              "severity": "none"
+            },
+            "llm": {
+              "cluster_id": 7,
+              "fit": "supported",
+              "evidence": "Calling a coworker is interpersonal communication.",
+              "severity": "none"
+            }
+          },
+          "themes": [],
+          "boundary_note": "The relationship to the recipient does not change a simple phone-call request into an employee-benefits question."
+        },
+        {
+          "case_id": "eeed9f9774216dd3a390c141",
+          "text": "what stores are in the local mall",
+          "stratum": "different_named",
+          "winner": "llm",
+          "assignments": {
+            "llm": {
+              "cluster_id": 5,
+              "fit": "supported",
+              "evidence": "The request seeks the stores available at a shopping location, fitting the shopping subject.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": 9,
+              "fit": "plausible",
+              "evidence": "The wording is a factual question, but its practical subject is shopping venues.",
+              "severity": "minor"
+            }
+          },
+          "themes": [
+            "different_granularity"
+          ],
+          "boundary_note": "Information about shopping venues fits shopping more specifically than a general factual-question category."
+        }
+      ],
+      "scope": "Blinded stratified development sample selected on compact assignments. Same-family/unknown exact coding-harness model, outside experiment API accounting, not population accuracy or human truth."
+    },
+    "images": {
+      "n_selected": 7,
+      "n_accepted": 7,
+      "n_failed": 0,
+      "verdict_counts": {
+        "both_reasonable": 4,
+        "llm": 3
+      },
+      "fit_counts": {
+        "llm": {
+          "supported": 7
+        },
+        "ld": {
+          "supported": 4,
+          "plausible": 2,
+          "unsupported": 1
+        }
+      },
+      "themes": {
+        "missing_category": 2,
+        "reasonable_alternative": 2,
+        "overlapping_or_incomplete_descriptions": 1,
+        "different_granularity": 1,
+        "clear_error": 1,
+        "unjustified_other": 1
+      },
+      "cases": [
+        {
+          "case_id": "fcd8c37689e8e67135422718",
+          "text": "Photograph.",
+          "stratum": "equal_named",
+          "winner": "both_reasonable",
+          "assignments": {
+            "ld": {
+              "cluster_id": 4,
+              "fit": "supported",
+              "evidence": "A sleeping baby is the main visible subject, directly fitting People and activities.",
+              "severity": "none"
+            },
+            "llm": {
+              "cluster_id": 4,
+              "fit": "supported",
+              "evidence": "A sleeping baby is the main visible subject, directly fitting People and activities.",
+              "severity": "none"
+            }
+          },
+          "themes": [],
+          "boundary_note": "Bedding and toys remain context when a person is the main visible subject."
+        },
+        {
+          "case_id": "1c99b97d0fff839fe476cb2b",
+          "text": "Photograph.",
+          "stratum": "equal_named",
+          "winner": "both_reasonable",
+          "assignments": {
+            "ld": {
+              "cluster_id": 5,
+              "fit": "supported",
+              "evidence": "The photograph is a close view of harvested potatoes, fitting food ingredients.",
+              "severity": "none"
+            },
+            "llm": {
+              "cluster_id": 5,
+              "fit": "supported",
+              "evidence": "The photograph is a close view of harvested potatoes, fitting food ingredients.",
+              "severity": "none"
+            }
+          },
+          "themes": [],
+          "boundary_note": "Harvested produce presented as ingredients fits Food and drink even though it originates from plants."
+        },
+        {
+          "case_id": "538267613ac4bad5babae2b4",
+          "text": "Photograph.",
+          "stratum": "both_other",
+          "winner": "both_reasonable",
+          "assignments": {
+            "llm": {
+              "cluster_id": null,
+              "fit": "supported",
+              "evidence": "The main subject is an electrical receptacle and its cover. The catalog does not expressly include passive electrical supply fittings.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": null,
+              "fit": "supported",
+              "evidence": "The main subject is an electrical receptacle and its cover. The catalog does not expressly include passive electrical supply fittings.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Electrical supply fittings can fall outside a catalog limited to electronic equipment and powered appliances."
+        },
+        {
+          "case_id": "ef48c18f152b1cb9befa4d9e",
+          "text": "Photograph.",
+          "stratum": "different_named",
+          "winner": "llm",
+          "assignments": {
+            "llm": {
+              "cluster_id": 3,
+              "fit": "supported",
+              "evidence": "Rounded, bolted cabin windows and the low paneled ceiling support a boat-interior reading, which Vehicles explicitly includes.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": 7,
+              "fit": "plausible",
+              "evidence": "The photograph centers on a furnished enclosed room with walls, ceiling, tables, and chairs, supporting a broad architectural-interior reading.",
+              "severity": "minor"
+            }
+          },
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Vessel-specific interior fittings can distinguish a vehicle cabin from an architectural room."
+        },
+        {
+          "case_id": "0b61279f4e40f4987992825d",
+          "text": "Photograph.",
+          "stratum": "both_other",
+          "winner": "both_reasonable",
+          "assignments": {
+            "llm": {
+              "cluster_id": null,
+              "fit": "supported",
+              "evidence": "A cabinet displays packaged toy animals and miniature playsets. Toys are absent from the supplied catalog.",
+              "severity": "none"
+            },
+            "ld": {
+              "cluster_id": null,
+              "fit": "supported",
+              "evidence": "A cabinet displays packaged toy animals and miniature playsets. Toys are absent from the supplied catalog.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Toy representations of animals and buildings need not inherit categories for real animals or built environments."
+        },
+        {
+          "case_id": "5a16334b2f6361f65aa4fdf8",
+          "text": "Photograph.",
+          "stratum": "different_named",
+          "winner": "llm",
+          "assignments": {
+            "ld": {
+              "cluster_id": 7,
+              "fit": "plausible",
+              "evidence": "The phones are mounted in public street shelters, making utility structures a plausible reading of the wider installation.",
+              "severity": "minor"
+            },
+            "llm": {
+              "cluster_id": 6,
+              "fit": "supported",
+              "evidence": "Two payphones with handsets, keypads, and displays dominate the image, directly fitting electronic equipment.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "A utility enclosure and the electronic device it houses can support different classifications depending on the main subject."
+        },
+        {
+          "case_id": "5f10a5f1f0ddaedb712956c3",
+          "text": "Photograph.",
+          "stratum": "sol_named_native_other",
+          "winner": "llm",
+          "assignments": {
+            "ld": {
+              "cluster_id": null,
+              "fit": "unsupported",
+              "evidence": "Two tank-style household water heaters dominate the photograph, and the catalog includes household appliances.",
+              "severity": "major"
+            },
+            "llm": {
+              "cluster_id": 6,
+              "fit": "supported",
+              "evidence": "The central subjects are two household water heaters, fitting powered household appliances.",
+              "severity": "none"
+            }
+          },
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Household appliances remain the main subject when shown installed among pipes and building framing."
+        }
+      ],
+      "scope": "Blinded stratified development sample selected on compact assignments. Same-family/unknown exact coding-harness model, outside experiment API accounting, not population accuracy or human truth."
+    }
+  }
+}

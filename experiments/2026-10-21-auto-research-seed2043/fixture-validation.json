@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "verified_offline_fixtures_only",
+  "calibration_items": 20,
+  "per_constructed_class": 4,
+  "calibration_conditions": 24,
+  "calibration_logical_assignments": 480,
+  "classification_conditions": 48,
+  "rewrite_conditions": 4,
+  "within_condition_comparisons": 22,
+  "nominal_logical_classifications": 6570,
+  "baseline_groups": {
+    "text": 10,
+    "images": 8
+  },
+  "baseline_definitions_exact": true,
+  "calibration_key_excluded_from_items": true,
+  "long_style_word_ranges": {
+    "redundant_positive": [
+      108,
+      113
+    ],
+    "negative_boundaries": [
+      112,
+      115
+    ]
+  },
+  "paid_model_calls": 0,
+  "runtime_or_outcome_validation_performed": false,
+  "all_156_result_journal_progress_paths_distinct": true,
+  "four_latin_orders_cover_each_named_position": true,
+  "registered_comparisons_exactly_match_pair_conditions": true,
+  "calibration_normalized_text_disjoint_from_prior_and_fresh_natural_inputs": true,
+  "excluded_normalized_text_count": 4400,
+  "text_exclusion_witnesses": [
+    {
+      "role": "v2_text",
+      "sha256": "934875f651f0ba9365084921f1a0aa440adf8c802e7650d4a7cadf607fb65352"
+    },
+    {
+      "role": "prior_discovery_text",
+      "sha256": "607f2a5729333758a2fa29465fe370b222869aaf764c58d4e4175f4b7ff9f249"
+    },
+    {
+      "role": "prior_heldout_text",
+      "sha256": "94091fda8978e1712e724856b6c35f37e0483b074af2d0209c8adf9745f0326a"
+    },
+    {
+      "role": "prior_streaming_text",
+      "sha256": "efbbb89614828610b73b87f45fceeea52b97a9d300f7b0f65fffaf0ac9a4384d"
+    },
+    {
+      "role": "fresh_development_text",
+      "sha256": "3aa88bd99ce3d53ab887486e3f1cef7010214a9adc4f6c9a133e83591022a661"
+    },
+    {
+      "role": "fresh_confirmation_text",
+      "sha256": "14478e6acf67fd857b1d853bea85f534304c06130c3c255c8d45c62b6702c99d"
+    }
+  ]
+}

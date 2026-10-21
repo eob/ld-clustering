@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "experiment": "guidance-auto-research",
+  "seed": 2043,
+  "strata_definitions": {
+    "different_named": "Both backends assign named categories, with different stable IDs.",
+    "sol_named_native_other": "Sol assigns a named category; native Decisions assigns Other, including accepted refusal.",
+    "sol_other_native_named": "Sol assigns Other, including accepted refusal; native Decisions assigns a named category.",
+    "equal_named": "Both assign the same named stable ID.",
+    "both_other": "Both assign Other, including accepted refusal."
+  },
+  "development": {
+    "basis": "Compact condition development assignments only.",
+    "text": {
+      "different_named": 6,
+      "sol_named_native_other": 4,
+      "sol_other_native_named": 4,
+      "equal_named": 4,
+      "both_other": 2
+    },
+    "images": {
+      "different_named": 4,
+      "sol_named_native_other": 2,
+      "sol_other_native_named": 2,
+      "equal_named": 2,
+      "both_other": 2
+    }
+  },
+  "confirmation": {
+    "basis": "Frozen challenger condition confirmation assignments only; also display corresponding Original assignments with their own catalogs, all anonymized.",
+    "text": {
+      "different_named": 20,
+      "sol_named_native_other": 10,
+      "sol_other_native_named": 10,
+      "equal_named": 5,
+      "both_other": 5
+    },
+    "images": {
+      "different_named": 10,
+      "sol_named_native_other": 5,
+      "sol_other_native_named": 5,
+      "equal_named": 5,
+      "both_other": 5
+    }
+  },
+  "selection": {
+    "rule": "Within each stratum choose the first min(quota,available) IDs in ascending (rank_hex,item_id) order. Never reallocate a short stratum quota.",
+    "rank_bytes": "UTF-8 bytes of auto-research-review-v1\\0 + decimal seed + \\0 + phase + \\0 + modality + \\0 + stratum + \\0 + item_id; \\0 denotes one NUL byte, not two literal characters.",
+    "rank_function": "lowercase SHA-256 hex",
+    "phase_values": [
+      "development",
+      "confirmation"
+    ],
+    "modality_values": [
+      "text",
+      "images"
+    ],
+    "presentation_order": "Rank selected IDs with the same framing, stratum replaced by presentation; ties use item_id.",
+    "blinding": "For each paired comparison use the same rank framing with stratum=blind:<comparison-role>; swap A/B when the first digest byte is at least128. Use distinct roles compact-pair, challenger-pair, original-pair. Preserve separate secret key and seal judgments before unblinding.",
+    "case_id": "First24 hex characters of the same rank framing with stratum=case; this is an opaque display ID."
+  },
+  "packet_contents": [
+    "Opaque case ID",
+    "Input text or exact supplied photograph bytes with neutral text",
+    "Full own catalog definitions for every presented assignment",
+    "Anonymized choices A/B and separate anonymized Original choices at confirmation"
+  ],
+  "excluded_from_reviewer": [
+    "Backend identities",
+    "Upstream CLINC/Open Images labels",
+    "Model probabilities or scores",
+    "Source title/author/filename/credits",
+    "Aggregate outcomes",
+    "Unblinding key"
+  ],
+  "judgments": {
+    "instruction_file": "prompts/blinded-review.md",
+    "fit_values": [
+      "supported",
+      "plausible",
+      "unsupported",
+      "insufficient_evidence"
+    ],
+    "verdict_values": [
+      "prefer_a",
+      "prefer_b",
+      "both_reasonable",
+      "neither_fits",
+      "insufficient_evidence"
+    ],
+    "public_explanation_limit": "At most two short public sentences per assignment; no chain of thought.",
+    "failure_accounting": "Exactly one registered coding-harness pass per selected packet. Keep accepted, failed and not-attempted counts and all raw public judgments. No cleansing rerun or replacement case."
+  },
+  "compute_scope": "Coding-harness review is outside the experiment API call/token-dollar ledger. Record harness/model identity when known and disclose unmetered/unknown compute. It is same-family, fallible qualitative evidence, not independent human truth or population accuracy.",
+  "development_handoff": "Seal selected packet, separate key, all review outcomes and actual instructions before unblinding and the single boundary-generation invocation. Include all accepted notes and failure/missing markers, not a favorable subset.",
+  "confirmation_handoff": "Selection and challenger catalog are frozen before confirmation outcomes. Final qualitative review cannot alter candidate, adoption label or classifications."
+}

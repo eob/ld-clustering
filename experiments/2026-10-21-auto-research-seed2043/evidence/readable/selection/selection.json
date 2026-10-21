@@ -1,0 +1,4066 @@
+{
+  "schema_version": 1,
+  "experiment": "guidance-auto-research",
+  "frozen_at_utc": "2026-10-21T04:06:43.997181+00:00",
+  "audit_sha256": "86c28de46c6e9926ed1c3721097661242399520ff134b46e25118ecda69655c7",
+  "protocol_sha256": "0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65",
+  "dataset_manifest_sha256": "add80aa99c9b8015ad69ff76d9ba98c01f7ce2724ff32a9c84081e8b08d7c2d1",
+  "modalities": {
+    "text": {
+      "status": "NOT_ADOPTED",
+      "adopted": "baseline",
+      "challenger": "boundary",
+      "baseline": {
+        "n": 200,
+        "direct_agreement_count": 172,
+        "direct_agreement": 0.86,
+        "named_id_agreement_count": 169,
+        "named_id_agreement": 0.845,
+        "reference_assigned_count": 197,
+        "candidate_assigned_count": 189,
+        "reference_coverage": 0.985,
+        "candidate_coverage": 0.945,
+        "reference_refused_points": 0,
+        "candidate_refused_points": 0,
+        "assigned_other": {
+          "both_named": 189,
+          "reference_named_candidate_other": 8,
+          "reference_other_candidate_named": 0,
+          "both_other": 3
+        },
+        "jointly_named_agreement": 0.8941798941798942,
+        "categories": [
+          {
+            "cluster_id": null,
+            "reference_count": 3,
+            "candidate_count": 11,
+            "same_count": 3,
+            "false_positive_count": 8,
+            "false_negative_count": 0,
+            "true_negative_count": 189,
+            "precision": 0.2727272727272727,
+            "recall": 1.0,
+            "f1": 0.42857142857142855
+          },
+          {
+            "cluster_id": 1,
+            "reference_count": 40,
+            "candidate_count": 39,
+            "same_count": 36,
+            "false_positive_count": 3,
+            "false_negative_count": 4,
+            "true_negative_count": 157,
+            "precision": 0.9230769230769231,
+            "recall": 0.9,
+            "f1": 0.9113924050632911
+          },
+          {
+            "cluster_id": 2,
+            "reference_count": 10,
+            "candidate_count": 8,
+            "same_count": 8,
+            "false_positive_count": 0,
+            "false_negative_count": 2,
+            "true_negative_count": 190,
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.8888888888888888
+          },
+          {
+            "cluster_id": 3,
+            "reference_count": 26,
+            "candidate_count": 25,
+            "same_count": 24,
+            "false_positive_count": 1,
+            "false_negative_count": 2,
+            "true_negative_count": 173,
+            "precision": 0.96,
+            "recall": 0.9230769230769231,
+            "f1": 0.9411764705882353
+          },
+          {
+            "cluster_id": 4,
+            "reference_count": 18,
+            "candidate_count": 18,
+            "same_count": 18,
+            "false_positive_count": 0,
+            "false_negative_count": 0,
+            "true_negative_count": 182,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "cluster_id": 5,
+            "reference_count": 7,
+            "candidate_count": 4,
+            "same_count": 4,
+            "false_positive_count": 0,
+            "false_negative_count": 3,
+            "true_negative_count": 193,
+            "precision": 1.0,
+            "recall": 0.5714285714285714,
+            "f1": 0.7272727272727273
+          },
+          {
+            "cluster_id": 6,
+            "reference_count": 13,
+            "candidate_count": 13,
+            "same_count": 11,
+            "false_positive_count": 2,
+            "false_negative_count": 2,
+            "true_negative_count": 185,
+            "precision": 0.8461538461538461,
+            "recall": 0.8461538461538461,
+            "f1": 0.8461538461538461
+          },
+          {
+            "cluster_id": 7,
+            "reference_count": 27,
+            "candidate_count": 21,
+            "same_count": 21,
+            "false_positive_count": 0,
+            "false_negative_count": 6,
+            "true_negative_count": 173,
+            "precision": 1.0,
+            "recall": 0.7777777777777778,
+            "f1": 0.875
+          },
+          {
+            "cluster_id": 8,
+            "reference_count": 33,
+            "candidate_count": 26,
+            "same_count": 25,
+            "false_positive_count": 1,
+            "false_negative_count": 8,
+            "true_negative_count": 166,
+            "precision": 0.9615384615384616,
+            "recall": 0.7575757575757576,
+            "f1": 0.847457627118644
+          },
+          {
+            "cluster_id": 9,
+            "reference_count": 17,
+            "candidate_count": 28,
+            "same_count": 17,
+            "false_positive_count": 11,
+            "false_negative_count": 0,
+            "true_negative_count": 172,
+            "precision": 0.6071428571428571,
+            "recall": 1.0,
+            "f1": 0.7555555555555555
+          },
+          {
+            "cluster_id": 10,
+            "reference_count": 6,
+            "candidate_count": 7,
+            "same_count": 5,
+            "false_positive_count": 2,
+            "false_negative_count": 1,
+            "true_negative_count": 192,
+            "precision": 0.7142857142857143,
+            "recall": 0.8333333333333334,
+            "f1": 0.7692307692307693
+          }
+        ],
+        "confusion": [
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": null,
+            "count": 3
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 9,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": null,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 1,
+            "count": 36
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 9,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 1,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 2,
+            "count": 8
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 9,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 3,
+            "count": 24
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 9,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 4,
+            "count": 18
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 9,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 5,
+            "count": 4
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 6,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 9,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 3,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 6,
+            "count": 11
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 8,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 9,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": null,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 1,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 7,
+            "count": 21
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 9,
+            "count": 3
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": null,
+            "count": 4
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 8,
+            "count": 25
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 9,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 10,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 9,
+            "count": 17
+          },
+          {
+            "reference_cluster_id": 9,
+            "candidate_cluster_id": 10,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 9,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": 10,
+            "candidate_cluster_id": 10,
+            "count": 5
+          }
+        ],
+        "partition": {
+          "n": 200,
+          "adjusted_rand_index": 0.7463931623598397,
+          "pairwise_precision": 0.809375,
+          "pairwise_recall": 0.7454769736842105,
+          "pairwise_f1": 0.7761130136986302
+        },
+        "independent_pair_confusion": {
+          "both_same": 1813,
+          "reference_same_only": 619,
+          "candidate_same_only": 427,
+          "both_different": 17041,
+          "all_unordered_pairs": 19900
+        }
+      },
+      "ranking": [
+        {
+          "name": "boundary",
+          "eligible": false,
+          "checks": {
+            "named_improved": false,
+            "direct_retained": false,
+            "reference_coverage_retained": true,
+            "candidate_coverage_retained": true
+          },
+          "metrics": {
+            "n": 200,
+            "direct_agreement_count": 168,
+            "direct_agreement": 0.84,
+            "named_id_agreement_count": 168,
+            "named_id_agreement": 0.84,
+            "reference_assigned_count": 200,
+            "candidate_assigned_count": 191,
+            "reference_coverage": 1.0,
+            "candidate_coverage": 0.955,
+            "reference_refused_points": 0,
+            "candidate_refused_points": 0,
+            "assigned_other": {
+              "both_named": 191,
+              "reference_named_candidate_other": 9,
+              "reference_other_candidate_named": 0,
+              "both_other": 0
+            },
+            "jointly_named_agreement": 0.8795811518324608,
+            "categories": [
+              {
+                "cluster_id": null,
+                "reference_count": 0,
+                "candidate_count": 9,
+                "same_count": 0,
+                "false_positive_count": 9,
+                "false_negative_count": 0,
+                "true_negative_count": 191,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              {
+                "cluster_id": 1,
+                "reference_count": 41,
+                "candidate_count": 39,
+                "same_count": 38,
+                "false_positive_count": 1,
+                "false_negative_count": 3,
+                "true_negative_count": 158,
+                "precision": 0.9743589743589743,
+                "recall": 0.926829268292683,
+                "f1": 0.95
+              },
+              {
+                "cluster_id": 2,
+                "reference_count": 9,
+                "candidate_count": 9,
+                "same_count": 9,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 191,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 3,
+                "reference_count": 25,
+                "candidate_count": 25,
+                "same_count": 24,
+                "false_positive_count": 1,
+                "false_negative_count": 1,
+                "true_negative_count": 174,
+                "precision": 0.96,
+                "recall": 0.96,
+                "f1": 0.96
+              },
+              {
+                "cluster_id": 4,
+                "reference_count": 18,
+                "candidate_count": 18,
+                "same_count": 18,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 182,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 5,
+                "reference_count": 7,
+                "candidate_count": 6,
+                "same_count": 6,
+                "false_positive_count": 0,
+                "false_negative_count": 1,
+                "true_negative_count": 193,
+                "precision": 1.0,
+                "recall": 0.8571428571428571,
+                "f1": 0.9230769230769231
+              },
+              {
+                "cluster_id": 6,
+                "reference_count": 13,
+                "candidate_count": 12,
+                "same_count": 12,
+                "false_positive_count": 0,
+                "false_negative_count": 1,
+                "true_negative_count": 187,
+                "precision": 1.0,
+                "recall": 0.9230769230769231,
+                "f1": 0.96
+              },
+              {
+                "cluster_id": 7,
+                "reference_count": 27,
+                "candidate_count": 14,
+                "same_count": 14,
+                "false_positive_count": 0,
+                "false_negative_count": 13,
+                "true_negative_count": 173,
+                "precision": 1.0,
+                "recall": 0.5185185185185185,
+                "f1": 0.6829268292682927
+              },
+              {
+                "cluster_id": 8,
+                "reference_count": 41,
+                "candidate_count": 37,
+                "same_count": 28,
+                "false_positive_count": 9,
+                "false_negative_count": 13,
+                "true_negative_count": 150,
+                "precision": 0.7567567567567568,
+                "recall": 0.6829268292682927,
+                "f1": 0.717948717948718
+              },
+              {
+                "cluster_id": 9,
+                "reference_count": 17,
+                "candidate_count": 25,
+                "same_count": 17,
+                "false_positive_count": 8,
+                "false_negative_count": 0,
+                "true_negative_count": 175,
+                "precision": 0.68,
+                "recall": 1.0,
+                "f1": 0.8095238095238095
+              },
+              {
+                "cluster_id": 10,
+                "reference_count": 2,
+                "candidate_count": 6,
+                "same_count": 2,
+                "false_positive_count": 4,
+                "false_negative_count": 0,
+                "true_negative_count": 194,
+                "precision": 0.3333333333333333,
+                "recall": 1.0,
+                "f1": 0.5
+              }
+            ],
+            "confusion": [
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": null,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 1,
+                "count": 38
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 9,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 2,
+                "count": 9
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 3,
+                "count": 24
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 9,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 4,
+                "count": 18
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 5,
+                "count": 6
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 9,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 3,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 6,
+                "count": 12
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": null,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 1,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 7,
+                "count": 14
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 8,
+                "count": 9
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 9,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": null,
+                "count": 5
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 8,
+                "count": 28
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 9,
+                "count": 4
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 10,
+                "count": 4
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 9,
+                "count": 17
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 10,
+                "count": 2
+              }
+            ],
+            "partition": {
+              "n": 200,
+              "adjusted_rand_index": 0.7093418490126996,
+              "pairwise_precision": 0.7985732270247587,
+              "pairwise_recall": 0.7006627393225331,
+              "pairwise_f1": 0.7464208668366347
+            },
+            "independent_pair_confusion": {
+              "both_same": 1903,
+              "reference_same_only": 813,
+              "candidate_same_only": 480,
+              "both_different": 16704,
+              "all_unordered_pairs": 19900
+            }
+          }
+        },
+        {
+          "name": "compact",
+          "eligible": false,
+          "checks": {
+            "named_improved": false,
+            "direct_retained": false,
+            "reference_coverage_retained": true,
+            "candidate_coverage_retained": true
+          },
+          "metrics": {
+            "n": 200,
+            "direct_agreement_count": 166,
+            "direct_agreement": 0.83,
+            "named_id_agreement_count": 166,
+            "named_id_agreement": 0.83,
+            "reference_assigned_count": 200,
+            "candidate_assigned_count": 187,
+            "reference_coverage": 1.0,
+            "candidate_coverage": 0.935,
+            "reference_refused_points": 0,
+            "candidate_refused_points": 0,
+            "assigned_other": {
+              "both_named": 187,
+              "reference_named_candidate_other": 13,
+              "reference_other_candidate_named": 0,
+              "both_other": 0
+            },
+            "jointly_named_agreement": 0.8877005347593583,
+            "categories": [
+              {
+                "cluster_id": null,
+                "reference_count": 0,
+                "candidate_count": 13,
+                "same_count": 0,
+                "false_positive_count": 13,
+                "false_negative_count": 0,
+                "true_negative_count": 187,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              {
+                "cluster_id": 1,
+                "reference_count": 41,
+                "candidate_count": 39,
+                "same_count": 37,
+                "false_positive_count": 2,
+                "false_negative_count": 4,
+                "true_negative_count": 157,
+                "precision": 0.9487179487179487,
+                "recall": 0.9024390243902439,
+                "f1": 0.925
+              },
+              {
+                "cluster_id": 2,
+                "reference_count": 9,
+                "candidate_count": 7,
+                "same_count": 7,
+                "false_positive_count": 0,
+                "false_negative_count": 2,
+                "true_negative_count": 191,
+                "precision": 1.0,
+                "recall": 0.7777777777777778,
+                "f1": 0.875
+              },
+              {
+                "cluster_id": 3,
+                "reference_count": 26,
+                "candidate_count": 25,
+                "same_count": 24,
+                "false_positive_count": 1,
+                "false_negative_count": 2,
+                "true_negative_count": 173,
+                "precision": 0.96,
+                "recall": 0.9230769230769231,
+                "f1": 0.9411764705882353
+              },
+              {
+                "cluster_id": 4,
+                "reference_count": 18,
+                "candidate_count": 18,
+                "same_count": 18,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 182,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 5,
+                "reference_count": 7,
+                "candidate_count": 5,
+                "same_count": 5,
+                "false_positive_count": 0,
+                "false_negative_count": 2,
+                "true_negative_count": 193,
+                "precision": 1.0,
+                "recall": 0.7142857142857143,
+                "f1": 0.8333333333333334
+              },
+              {
+                "cluster_id": 6,
+                "reference_count": 12,
+                "candidate_count": 12,
+                "same_count": 12,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 188,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 7,
+                "reference_count": 27,
+                "candidate_count": 18,
+                "same_count": 18,
+                "false_positive_count": 0,
+                "false_negative_count": 9,
+                "true_negative_count": 173,
+                "precision": 1.0,
+                "recall": 0.6666666666666666,
+                "f1": 0.8
+              },
+              {
+                "cluster_id": 8,
+                "reference_count": 40,
+                "candidate_count": 27,
+                "same_count": 25,
+                "false_positive_count": 2,
+                "false_negative_count": 15,
+                "true_negative_count": 158,
+                "precision": 0.9259259259259259,
+                "recall": 0.625,
+                "f1": 0.746268656716418
+              },
+              {
+                "cluster_id": 9,
+                "reference_count": 17,
+                "candidate_count": 28,
+                "same_count": 17,
+                "false_positive_count": 11,
+                "false_negative_count": 0,
+                "true_negative_count": 172,
+                "precision": 0.6071428571428571,
+                "recall": 1.0,
+                "f1": 0.7555555555555555
+              },
+              {
+                "cluster_id": 10,
+                "reference_count": 3,
+                "candidate_count": 8,
+                "same_count": 3,
+                "false_positive_count": 5,
+                "false_negative_count": 0,
+                "true_negative_count": 192,
+                "precision": 0.375,
+                "recall": 1.0,
+                "f1": 0.5454545454545454
+              }
+            ],
+            "confusion": [
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": null,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 1,
+                "count": 37
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 9,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 1,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 2,
+                "count": 7
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 3,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 3,
+                "count": 24
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 9,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 4,
+                "count": 18
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 5,
+                "count": 5
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 9,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 6,
+                "count": 12
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": null,
+                "count": 5
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 1,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 7,
+                "count": 18
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 8,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 9,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": null,
+                "count": 6
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 8,
+                "count": 25
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 9,
+                "count": 4
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 10,
+                "count": 5
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 9,
+                "count": 17
+              },
+              {
+                "reference_cluster_id": 9,
+                "candidate_cluster_id": 10,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 9,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 10,
+                "candidate_cluster_id": 10,
+                "count": 3
+              }
+            ],
+            "partition": {
+              "n": 200,
+              "adjusted_rand_index": 0.7011684156361443,
+              "pairwise_precision": 0.8196274420717855,
+              "pairwise_recall": 0.6703827573392791,
+              "pairwise_f1": 0.7375306623058054
+            },
+            "independent_pair_confusion": {
+              "both_same": 1804,
+              "reference_same_only": 887,
+              "candidate_same_only": 397,
+              "both_different": 16812,
+              "all_unordered_pairs": 19900
+            }
+          }
+        }
+      ],
+      "original_catalog": {
+        "path": "catalogs/baseline-text.json",
+        "sha256": "ef82c91b6ef07d5141e1368811b35d45d7a67b829c11cc75356bd7e1854b4aaa"
+      },
+      "challenger_catalog": {
+        "path": "catalogs/challenger-text.json",
+        "sha256": "f51308f9643d809a0a7dbf7211e5fdfb757914a54473b6fa1a6a99b0c596234e"
+      },
+      "producer_catalog": {
+        "path": "catalogs/boundary-text.json",
+        "sha256": "f51308f9643d809a0a7dbf7211e5fdfb757914a54473b6fa1a6a99b0c596234e"
+      }
+    },
+    "images": {
+      "status": "ADOPTED",
+      "adopted": "boundary",
+      "challenger": "boundary",
+      "baseline": {
+        "n": 40,
+        "direct_agreement_count": 35,
+        "direct_agreement": 0.875,
+        "named_id_agreement_count": 32,
+        "named_id_agreement": 0.8,
+        "reference_assigned_count": 36,
+        "candidate_assigned_count": 35,
+        "reference_coverage": 0.9,
+        "candidate_coverage": 0.875,
+        "reference_refused_points": 0,
+        "candidate_refused_points": 0,
+        "assigned_other": {
+          "both_named": 34,
+          "reference_named_candidate_other": 2,
+          "reference_other_candidate_named": 1,
+          "both_other": 3
+        },
+        "jointly_named_agreement": 0.9411764705882353,
+        "categories": [
+          {
+            "cluster_id": null,
+            "reference_count": 4,
+            "candidate_count": 5,
+            "same_count": 3,
+            "false_positive_count": 2,
+            "false_negative_count": 1,
+            "true_negative_count": 34,
+            "precision": 0.6,
+            "recall": 0.75,
+            "f1": 0.6666666666666666
+          },
+          {
+            "cluster_id": 1,
+            "reference_count": 3,
+            "candidate_count": 3,
+            "same_count": 3,
+            "false_positive_count": 0,
+            "false_negative_count": 0,
+            "true_negative_count": 37,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "cluster_id": 2,
+            "reference_count": 4,
+            "candidate_count": 5,
+            "same_count": 4,
+            "false_positive_count": 1,
+            "false_negative_count": 0,
+            "true_negative_count": 35,
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8888888888888888
+          },
+          {
+            "cluster_id": 3,
+            "reference_count": 7,
+            "candidate_count": 6,
+            "same_count": 6,
+            "false_positive_count": 0,
+            "false_negative_count": 1,
+            "true_negative_count": 33,
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "f1": 0.9230769230769231
+          },
+          {
+            "cluster_id": 4,
+            "reference_count": 7,
+            "candidate_count": 7,
+            "same_count": 7,
+            "false_positive_count": 0,
+            "false_negative_count": 0,
+            "true_negative_count": 33,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "cluster_id": 5,
+            "reference_count": 5,
+            "candidate_count": 5,
+            "same_count": 5,
+            "false_positive_count": 0,
+            "false_negative_count": 0,
+            "true_negative_count": 35,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          {
+            "cluster_id": 6,
+            "reference_count": 3,
+            "candidate_count": 0,
+            "same_count": 0,
+            "false_positive_count": 0,
+            "false_negative_count": 3,
+            "true_negative_count": 37,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          {
+            "cluster_id": 7,
+            "reference_count": 6,
+            "candidate_count": 8,
+            "same_count": 6,
+            "false_positive_count": 2,
+            "false_negative_count": 0,
+            "true_negative_count": 32,
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571
+          },
+          {
+            "cluster_id": 8,
+            "reference_count": 1,
+            "candidate_count": 1,
+            "same_count": 1,
+            "false_positive_count": 0,
+            "false_negative_count": 0,
+            "true_negative_count": 39,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        ],
+        "confusion": [
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": null,
+            "count": 3
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 2,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": null,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 1,
+            "count": 3
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 1,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 2,
+            "count": 4
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 2,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 3,
+            "count": 6
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 7,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": 3,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 4,
+            "count": 7
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 4,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 5,
+            "count": 5
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 5,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": null,
+            "count": 2
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 7,
+            "count": 1
+          },
+          {
+            "reference_cluster_id": 6,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 7,
+            "count": 6
+          },
+          {
+            "reference_cluster_id": 7,
+            "candidate_cluster_id": 8,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": null,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 1,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 2,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 3,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 4,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 5,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 6,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 7,
+            "count": 0
+          },
+          {
+            "reference_cluster_id": 8,
+            "candidate_cluster_id": 8,
+            "count": 1
+          }
+        ],
+        "partition": {
+          "n": 40,
+          "adjusted_rand_index": 0.8247705946394318,
+          "pairwise_precision": 0.8045977011494253,
+          "pairwise_recall": 0.8860759493670886,
+          "pairwise_f1": 0.8433734939759037
+        },
+        "independent_pair_confusion": {
+          "both_same": 70,
+          "reference_same_only": 9,
+          "candidate_same_only": 17,
+          "both_different": 684,
+          "all_unordered_pairs": 780
+        }
+      },
+      "ranking": [
+        {
+          "name": "boundary",
+          "eligible": true,
+          "checks": {
+            "named_improved": true,
+            "direct_retained": true,
+            "reference_coverage_retained": true,
+            "candidate_coverage_retained": true
+          },
+          "metrics": {
+            "n": 40,
+            "direct_agreement_count": 37,
+            "direct_agreement": 0.925,
+            "named_id_agreement_count": 34,
+            "named_id_agreement": 0.85,
+            "reference_assigned_count": 36,
+            "candidate_assigned_count": 36,
+            "reference_coverage": 0.9,
+            "candidate_coverage": 0.9,
+            "reference_refused_points": 0,
+            "candidate_refused_points": 0,
+            "assigned_other": {
+              "both_named": 35,
+              "reference_named_candidate_other": 1,
+              "reference_other_candidate_named": 1,
+              "both_other": 3
+            },
+            "jointly_named_agreement": 0.9714285714285714,
+            "categories": [
+              {
+                "cluster_id": null,
+                "reference_count": 4,
+                "candidate_count": 4,
+                "same_count": 3,
+                "false_positive_count": 1,
+                "false_negative_count": 1,
+                "true_negative_count": 35,
+                "precision": 0.75,
+                "recall": 0.75,
+                "f1": 0.75
+              },
+              {
+                "cluster_id": 1,
+                "reference_count": 3,
+                "candidate_count": 3,
+                "same_count": 3,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 37,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 2,
+                "reference_count": 4,
+                "candidate_count": 5,
+                "same_count": 4,
+                "false_positive_count": 1,
+                "false_negative_count": 0,
+                "true_negative_count": 35,
+                "precision": 0.8,
+                "recall": 1.0,
+                "f1": 0.8888888888888888
+              },
+              {
+                "cluster_id": 3,
+                "reference_count": 7,
+                "candidate_count": 6,
+                "same_count": 6,
+                "false_positive_count": 0,
+                "false_negative_count": 1,
+                "true_negative_count": 33,
+                "precision": 1.0,
+                "recall": 0.8571428571428571,
+                "f1": 0.9230769230769231
+              },
+              {
+                "cluster_id": 4,
+                "reference_count": 7,
+                "candidate_count": 7,
+                "same_count": 7,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 33,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 5,
+                "reference_count": 5,
+                "candidate_count": 5,
+                "same_count": 5,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 35,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 6,
+                "reference_count": 3,
+                "candidate_count": 2,
+                "same_count": 2,
+                "false_positive_count": 0,
+                "false_negative_count": 1,
+                "true_negative_count": 37,
+                "precision": 1.0,
+                "recall": 0.6666666666666666,
+                "f1": 0.8
+              },
+              {
+                "cluster_id": 7,
+                "reference_count": 6,
+                "candidate_count": 7,
+                "same_count": 6,
+                "false_positive_count": 1,
+                "false_negative_count": 0,
+                "true_negative_count": 33,
+                "precision": 0.8571428571428571,
+                "recall": 1.0,
+                "f1": 0.9230769230769231
+              },
+              {
+                "cluster_id": 8,
+                "reference_count": 1,
+                "candidate_count": 1,
+                "same_count": 1,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 39,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            ],
+            "confusion": [
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": null,
+                "count": 3
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 2,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 1,
+                "count": 3
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 2,
+                "count": 4
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 3,
+                "count": 6
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 7,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 4,
+                "count": 7
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 5,
+                "count": 5
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": null,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 6,
+                "count": 2
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 7,
+                "count": 6
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 8,
+                "count": 1
+              }
+            ],
+            "partition": {
+              "n": 40,
+              "adjusted_rand_index": 0.8746450956232924,
+              "pairwise_precision": 0.8765432098765432,
+              "pairwise_recall": 0.8987341772151899,
+              "pairwise_f1": 0.8875
+            },
+            "independent_pair_confusion": {
+              "both_same": 71,
+              "reference_same_only": 8,
+              "candidate_same_only": 10,
+              "both_different": 691,
+              "all_unordered_pairs": 780
+            }
+          }
+        },
+        {
+          "name": "compact",
+          "eligible": true,
+          "checks": {
+            "named_improved": true,
+            "direct_retained": true,
+            "reference_coverage_retained": true,
+            "candidate_coverage_retained": true
+          },
+          "metrics": {
+            "n": 40,
+            "direct_agreement_count": 37,
+            "direct_agreement": 0.925,
+            "named_id_agreement_count": 33,
+            "named_id_agreement": 0.825,
+            "reference_assigned_count": 36,
+            "candidate_assigned_count": 35,
+            "reference_coverage": 0.9,
+            "candidate_coverage": 0.875,
+            "reference_refused_points": 0,
+            "candidate_refused_points": 0,
+            "assigned_other": {
+              "both_named": 35,
+              "reference_named_candidate_other": 1,
+              "reference_other_candidate_named": 0,
+              "both_other": 4
+            },
+            "jointly_named_agreement": 0.9428571428571428,
+            "categories": [
+              {
+                "cluster_id": null,
+                "reference_count": 4,
+                "candidate_count": 5,
+                "same_count": 4,
+                "false_positive_count": 1,
+                "false_negative_count": 0,
+                "true_negative_count": 35,
+                "precision": 0.8,
+                "recall": 1.0,
+                "f1": 0.8888888888888888
+              },
+              {
+                "cluster_id": 1,
+                "reference_count": 3,
+                "candidate_count": 3,
+                "same_count": 3,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 37,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 2,
+                "reference_count": 5,
+                "candidate_count": 5,
+                "same_count": 5,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 35,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 3,
+                "reference_count": 7,
+                "candidate_count": 6,
+                "same_count": 6,
+                "false_positive_count": 0,
+                "false_negative_count": 1,
+                "true_negative_count": 33,
+                "precision": 1.0,
+                "recall": 0.8571428571428571,
+                "f1": 0.9230769230769231
+              },
+              {
+                "cluster_id": 4,
+                "reference_count": 7,
+                "candidate_count": 7,
+                "same_count": 7,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 33,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 5,
+                "reference_count": 5,
+                "candidate_count": 5,
+                "same_count": 5,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 35,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              {
+                "cluster_id": 6,
+                "reference_count": 2,
+                "candidate_count": 0,
+                "same_count": 0,
+                "false_positive_count": 0,
+                "false_negative_count": 2,
+                "true_negative_count": 38,
+                "precision": null,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              {
+                "cluster_id": 7,
+                "reference_count": 6,
+                "candidate_count": 8,
+                "same_count": 6,
+                "false_positive_count": 2,
+                "false_negative_count": 0,
+                "true_negative_count": 32,
+                "precision": 0.75,
+                "recall": 1.0,
+                "f1": 0.8571428571428571
+              },
+              {
+                "cluster_id": 8,
+                "reference_count": 1,
+                "candidate_count": 1,
+                "same_count": 1,
+                "false_positive_count": 0,
+                "false_negative_count": 0,
+                "true_negative_count": 39,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              }
+            ],
+            "confusion": [
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": null,
+                "count": 4
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": null,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 1,
+                "count": 3
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 1,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 2,
+                "count": 5
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 2,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 3,
+                "count": 6
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 7,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 3,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 4,
+                "count": 7
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 4,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 5,
+                "count": 5
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 5,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": null,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 7,
+                "count": 1
+              },
+              {
+                "reference_cluster_id": 6,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 7,
+                "count": 6
+              },
+              {
+                "reference_cluster_id": 7,
+                "candidate_cluster_id": 8,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": null,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 1,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 2,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 3,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 4,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 5,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 6,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 7,
+                "count": 0
+              },
+              {
+                "reference_cluster_id": 8,
+                "candidate_cluster_id": 8,
+                "count": 1
+              }
+            ],
+            "partition": {
+              "n": 40,
+              "adjusted_rand_index": 0.8666050997896465,
+              "pairwise_precision": 0.8505747126436781,
+              "pairwise_recall": 0.9135802469135802,
+              "pairwise_f1": 0.8809523809523809
+            },
+            "independent_pair_confusion": {
+              "both_same": 74,
+              "reference_same_only": 7,
+              "candidate_same_only": 13,
+              "both_different": 686,
+              "all_unordered_pairs": 780
+            }
+          }
+        }
+      ],
+      "original_catalog": {
+        "path": "catalogs/baseline-images.json",
+        "sha256": "7314a799700d0c0dd64fd54169cede8ae80bf16ed1c5f55f85a88b91a2db4c18"
+      },
+      "challenger_catalog": {
+        "path": "catalogs/challenger-images.json",
+        "sha256": "d4fa27cb0fbf507c1efa1d3df18bcc07a18a10c94b190632381c8eb03551c4fe"
+      },
+      "producer_catalog": {
+        "path": "catalogs/boundary-images.json",
+        "sha256": "d4fa27cb0fbf507c1efa1d3df18bcc07a18a10c94b190632381c8eb03551c4fe"
+      }
+    }
+  }
+}

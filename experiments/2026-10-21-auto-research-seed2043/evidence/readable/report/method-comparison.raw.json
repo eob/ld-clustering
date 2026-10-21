@@ -1,0 +1,1154 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-21",
+  "sources": {
+    "producer": {
+      "path": "reproduction/export_method_comparison.py",
+      "sha256": "06c18960ca3754850833ce48e7cd57e020835c9b01ef9fae4099f394a549adf0"
+    },
+    "publication.json": {
+      "path": "report/prior-publications/publication.json",
+      "sha256": "f603b8c8c432eec7e4fd833ac02171c42782aa2c6eac448430ee5d60f384bca8",
+      "source": {
+        "repository": "https://github.com/eob/ld-clustering",
+        "commit": "dc0f7859e49dbf5462bb022d4aef638d32519804",
+        "runtime_commit": "9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c",
+        "executable_sha256": "8a59bbf1e8dbd991960d6bc76046d0e15e245cfc5a50ab724dd201a62e9e9160",
+        "run_path": "experiments/2026-10-20-main-v2-seed42",
+        "manifest_sha256": "95c7c86d5174256e1f1882873534e94f808f7c1b8b2dfce02b0c15919ccbaaff"
+      }
+    },
+    "guided-agreement.json": {
+      "path": "report/prior-publications/guided-agreement.json",
+      "sha256": "265912815f0a11a3661373918ed04952bb6496397123c7c59d4d5ade48a18a98",
+      "source": {
+        "repository": "https://github.com/eob/ld-clustering",
+        "commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+        "runtime_commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+        "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce",
+        "run_path": "experiments/2026-10-20-guided-agreement-seed1042/evidence",
+        "manifest_sha256": "20d8a470bf9cfb63b5406b1b883f1f23199def56e9577928a8cc9dd9b908b1fa",
+        "analysis_sha256": "006202236b702a79dce31dfcb40bf1628d9d5902edcdaeb5d5fc65b10e6f1f7a",
+        "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+        "review_plan_sha256": "e61d2e1055478b90043d20a09319b0294e82bf5213add6f44f130ee896db9bf1"
+      }
+    },
+    "guidance-diagnostics.json": {
+      "path": "report/prior-publications/guidance-diagnostics.json",
+      "sha256": "0646cb7b242b235f943b7b0407de236c00dfc85583ad3a0ac516e3b1c616f1e3"
+    },
+    "stream-publication.json": {
+      "path": "report/prior-publications/stream-publication.json",
+      "sha256": "d994c1d8fb9791de75dc1b8615f8e8134a2fdfc79d306855d5667bf52a596ffc",
+      "source": {
+        "repository": "https://github.com/eob/ld-clustering",
+        "commit": "f630cded18a3375b73284ab752fa2568a8e2e731",
+        "runtime_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+        "executable_sha256": "d16f7d289af670f7539f28ccec6474602e3735f54cfbafb24fff884cb627e603",
+        "run_path": "experiments/2026-10-20-guided-agreement-seed1042/streaming-evidence",
+        "manifest_sha256": "75d694a497fdf0dfab14159b8f978606ce89eeb17efb646802fe2106fc79d9f4",
+        "protocol_sha256": "65edc12008dd26404a52406a31f1c135e628642e4e8ac69e213882f8d60c0070",
+        "audit_sha256": "a939309be01b79663ca6a517c021aaee459b1aa6a2365cfdcdcfb5a9886417fd",
+        "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4"
+      }
+    },
+    "prior-bindings": {
+      "path": "report/prior-publications/input-bindings.json",
+      "sha256": "428a2525da112387a579306bc1258e9eeaf226a1a18032fae2c0123b8012265e"
+    },
+    "auto-final-audit": {
+      "path": "validation/final-independent-audit.json",
+      "sha256": "2f720fac520610a592cab7662e5e3526cd749b99e4a3688be72e41fef5f07c1f"
+    },
+    "auto:preregistration/conditions.json": {
+      "path": "preregistration/conditions.json",
+      "sha256": "a22381595393f3980fbb271b896359508d3dca553be7c1e3b58e017bfe931d22"
+    },
+    "auto:preregistration/protocol.json": {
+      "path": "preregistration/protocol.json",
+      "sha256": "0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65"
+    },
+    "auto:calibration/results/r1-short-o0-llm.json": {
+      "path": "calibration/results/r1-short-o0-llm.json",
+      "sha256": "8bf58e0089fef9c3127bada1a05b1ca7b02e96d110da9d158b31b7e5a2b3d752"
+    },
+    "auto:calibration/results/r1-short-o0-ld.json": {
+      "path": "calibration/results/r1-short-o0-ld.json",
+      "sha256": "85ebda8324cad0bb1b2aaf443d0a87f79b8409cf8cef3cd15c2c44804c23bb6f"
+    },
+    "auto:calibration/results/r1-short-o1-llm.json": {
+      "path": "calibration/results/r1-short-o1-llm.json",
+      "sha256": "ce4c330435982a80b7a3741f0ccbfb12a317b1e8884e62ce207e9e8c371f80eb"
+    },
+    "auto:calibration/results/r1-short-o1-ld.json": {
+      "path": "calibration/results/r1-short-o1-ld.json",
+      "sha256": "7e7dca694738c059618a73206a6aadd080e1eb0778b3e06b82bdd94150db1f04"
+    },
+    "auto:calibration/results/r1-short-o2-llm.json": {
+      "path": "calibration/results/r1-short-o2-llm.json",
+      "sha256": "bdf6e49f753dc2bddddf98d0c18947c393f219c13eca0f6044e34b7192a57741"
+    },
+    "auto:calibration/results/r1-short-o2-ld.json": {
+      "path": "calibration/results/r1-short-o2-ld.json",
+      "sha256": "c9aa885b2828902ef29ff04909c7023591b211b6329b750b76458463adad1620"
+    },
+    "auto:calibration/results/r1-short-o3-llm.json": {
+      "path": "calibration/results/r1-short-o3-llm.json",
+      "sha256": "01957b01c0f2e0082754ffb9ece06a4bc3d38c938b03f4e2fd2959254e7d0ae8"
+    },
+    "auto:calibration/results/r1-short-o3-ld.json": {
+      "path": "calibration/results/r1-short-o3-ld.json",
+      "sha256": "81ad3530a44dadd3aea21420c47f0dc31f0234094910f2f23122be0e8ae41879"
+    },
+    "auto:calibration/results/r1-redundant-positive-o0-llm.json": {
+      "path": "calibration/results/r1-redundant-positive-o0-llm.json",
+      "sha256": "bf9708041495cc8996a3dea5fa511de0b60658ae5db2ffce86759fab713edc3f"
+    },
+    "auto:calibration/results/r1-redundant-positive-o0-ld.json": {
+      "path": "calibration/results/r1-redundant-positive-o0-ld.json",
+      "sha256": "b3590378e5e320f9464ec80f3755e042ab43a71e90bd6f61371d9ad5bd76161b"
+    },
+    "auto:calibration/results/r1-redundant-positive-o1-llm.json": {
+      "path": "calibration/results/r1-redundant-positive-o1-llm.json",
+      "sha256": "afb66cec57fa8ccd85c758226fed7356c9d6f9f7d588ed02630efa63a98c8ed4"
+    },
+    "auto:calibration/results/r1-redundant-positive-o1-ld.json": {
+      "path": "calibration/results/r1-redundant-positive-o1-ld.json",
+      "sha256": "93e6acd6712727542f40a1875874dacf77d93212cf7574171ce2994be537d319"
+    },
+    "auto:calibration/results/r1-redundant-positive-o2-llm.json": {
+      "path": "calibration/results/r1-redundant-positive-o2-llm.json",
+      "sha256": "f134aba1e0c559648ed37cf6c4c1fdcebc427207ad01b481ad583bc960ce8513"
+    },
+    "auto:calibration/results/r1-redundant-positive-o2-ld.json": {
+      "path": "calibration/results/r1-redundant-positive-o2-ld.json",
+      "sha256": "ac9b4126e73a55ee0f52a18b3026507b7f5163147571da3f304887e1f9f91de0"
+    },
+    "auto:calibration/results/r1-redundant-positive-o3-llm.json": {
+      "path": "calibration/results/r1-redundant-positive-o3-llm.json",
+      "sha256": "4c74ea2e3709e31b2388e2dea14a19302c938b42bb86a4ad0d5b23e44d486597"
+    },
+    "auto:calibration/results/r1-redundant-positive-o3-ld.json": {
+      "path": "calibration/results/r1-redundant-positive-o3-ld.json",
+      "sha256": "a7273460e2f2c4c1d2a0f73ccea89ac9bdd18dde54968b80947790fb7057b0d3"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o0-llm.json": {
+      "path": "calibration/results/r1-negative-boundaries-o0-llm.json",
+      "sha256": "44eadd132124c2205dd9d5c6ce1f90ef9f0c5bdf9e5170ec9877aa6cd14b2678"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o0-ld.json": {
+      "path": "calibration/results/r1-negative-boundaries-o0-ld.json",
+      "sha256": "997aa370076229ce5e990464e25b4bccf2984fcf8e023ef17090bd1d55213e32"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o1-llm.json": {
+      "path": "calibration/results/r1-negative-boundaries-o1-llm.json",
+      "sha256": "3eac101027e1b080ed997f6f91da6c93b00432e2f441969e8beb8e85492e2231"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o1-ld.json": {
+      "path": "calibration/results/r1-negative-boundaries-o1-ld.json",
+      "sha256": "38757747d23d20da83e135472f46da97318e2f91094063cf45fdf2335855bdc0"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o2-llm.json": {
+      "path": "calibration/results/r1-negative-boundaries-o2-llm.json",
+      "sha256": "f2cca461ee372abe2e2279088abd6c31f35dbb5baea3c6026ecf2579e38e215c"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o2-ld.json": {
+      "path": "calibration/results/r1-negative-boundaries-o2-ld.json",
+      "sha256": "ed1cc87c5b2eb5efeb26a663e164cbf1cb5e40b9d568d8a15d991ee2969049ee"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o3-llm.json": {
+      "path": "calibration/results/r1-negative-boundaries-o3-llm.json",
+      "sha256": "5d9b2ee73c25fd85c49be9d31aa9950ed0f96423dac0f5ab9382050b7620674a"
+    },
+    "auto:calibration/results/r1-negative-boundaries-o3-ld.json": {
+      "path": "calibration/results/r1-negative-boundaries-o3-ld.json",
+      "sha256": "1f20c917d237fcd41fb35b0724b550cc2afd739f3be4c8c230a859eee82641fa"
+    },
+    "auto:development/r2-text-baseline-llm.json": {
+      "path": "development/r2-text-baseline-llm.json",
+      "sha256": "35de61da8ea325efbc1c2231e55ba6b2f2218db75513c2f271985e8e0df7806a"
+    },
+    "auto:development/r2-text-baseline-ld.json": {
+      "path": "development/r2-text-baseline-ld.json",
+      "sha256": "3814941e4f23993d77a088180e22de8b571ff049d18dbcd935d20b14214c97e9"
+    },
+    "auto:development/r2-images-baseline-llm.json": {
+      "path": "development/r2-images-baseline-llm.json",
+      "sha256": "d0bc66b6d11509192151060c5f02a711d1b4aa9107fb25404b7a20eed14321fb"
+    },
+    "auto:development/r2-images-baseline-ld.json": {
+      "path": "development/r2-images-baseline-ld.json",
+      "sha256": "bcc57c58e0ec7b38122ad57b14cd4331777d79c87b29537d49ad45869f0edc17"
+    },
+    "auto:development/r2-text-compact-llm.json": {
+      "path": "development/r2-text-compact-llm.json",
+      "sha256": "6059a44cb70e3ad7be82c34335eae400aa690cca176559740388299e71f52118"
+    },
+    "auto:development/r2-text-compact-ld.json": {
+      "path": "development/r2-text-compact-ld.json",
+      "sha256": "26d206df200964e88a3152585a1406d3731562fef3a58ba95c54e8d3794f0b55"
+    },
+    "auto:development/r2-images-compact-llm.json": {
+      "path": "development/r2-images-compact-llm.json",
+      "sha256": "6b8ae61bd33a960041668437b8991e7e3fef7f3732d61c90e1adaab6d57030c4"
+    },
+    "auto:development/r2-images-compact-ld.json": {
+      "path": "development/r2-images-compact-ld.json",
+      "sha256": "2d3929d6f3669be0e530adb3c4c05e097cb60033d15a0dfdcda7585693b4c5b1"
+    },
+    "auto:development/r3-text-boundary-llm.json": {
+      "path": "development/r3-text-boundary-llm.json",
+      "sha256": "be8a5057d2d0fbca573f42eeeec3b4b31dde8134e0e8c7066ab6e402431df55b"
+    },
+    "auto:development/r3-text-boundary-ld.json": {
+      "path": "development/r3-text-boundary-ld.json",
+      "sha256": "6c368846503cc048abdf94fea43b3b6dc4676d9b19c3da3527a3b19cb85169b1"
+    },
+    "auto:development/r3-images-boundary-llm.json": {
+      "path": "development/r3-images-boundary-llm.json",
+      "sha256": "08d8d12aab69b7c6c36e1b9fec606ffa61ff98a27265ee336ee8f480917dcfb7"
+    },
+    "auto:development/r3-images-boundary-ld.json": {
+      "path": "development/r3-images-boundary-ld.json",
+      "sha256": "6e96f8fbd5a9180b30a8ad5e08ec53766a94ec0a8b30db9352a89d473caa3252"
+    },
+    "auto:confirmation/confirmation-text-baseline-llm.json": {
+      "path": "confirmation/confirmation-text-baseline-llm.json",
+      "sha256": "0ea1a4178aac41c1a1568fbca7044dedd70852fecbb3750ee3abf1b40f32d14c"
+    },
+    "auto:confirmation/confirmation-text-baseline-ld.json": {
+      "path": "confirmation/confirmation-text-baseline-ld.json",
+      "sha256": "860991df14afca46afdac4ce051c7133e2e7421386ffc4e20522b9938bf2f84a"
+    },
+    "auto:confirmation/confirmation-images-baseline-llm.json": {
+      "path": "confirmation/confirmation-images-baseline-llm.json",
+      "sha256": "ab567dbca71ee789e618a5b1da36697a4da209349778b83fc2f3033be1ef01ec"
+    },
+    "auto:confirmation/confirmation-images-baseline-ld.json": {
+      "path": "confirmation/confirmation-images-baseline-ld.json",
+      "sha256": "105339315178385f19556f581b3d5cb1f053a1a34aad9f64e764e620e75958e4"
+    },
+    "auto:confirmation/confirmation-text-challenger-llm.json": {
+      "path": "confirmation/confirmation-text-challenger-llm.json",
+      "sha256": "bc0cfdf06b120ca63ae450d4c602f524a355a54c117a187f62fb58f407d12732"
+    },
+    "auto:confirmation/confirmation-text-challenger-ld.json": {
+      "path": "confirmation/confirmation-text-challenger-ld.json",
+      "sha256": "876d33407fc2dd88bf2881c195382e7f8815c54fa48f936b1d19a0c2255c0adf"
+    },
+    "auto:confirmation/confirmation-images-challenger-llm.json": {
+      "path": "confirmation/confirmation-images-challenger-llm.json",
+      "sha256": "90cf719ddce494bd39551c907e305bfb9ebd202be9fd43d899f55db811d9d1af"
+    },
+    "auto:confirmation/confirmation-images-challenger-ld.json": {
+      "path": "confirmation/confirmation-images-challenger-ld.json",
+      "sha256": "eaebb9802b6e7c9001c7c197c92d8c0a0cc8458ee8f95b06a4786d1b30f062e9"
+    }
+  },
+  "groups": [
+    {
+      "id": "superseded",
+      "title": "Superseded initial implementation",
+      "context": "Historical v1 execution; no final comparable measurements are imported.",
+      "rows": [
+        {
+          "id": "initial-v1",
+          "label": "Initial v1 (superseded)",
+          "note": "Unavailable values are retained as missing, not zero.",
+          "text": null,
+          "images": null
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable source evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/dc0f7859e49dbf5462bb022d4aef638d32519804/experiments/2026-10-20-main-v2-seed42"
+        }
+      ]
+    },
+    {
+      "id": "v2-streams",
+      "title": "Corrected v2 streams",
+      "context": "Historical streaming: 1,000 CLINC requests and 100 Fashion-MNIST 28\u00d728 images. Costs/times include catalog management and reassignment. Independent catalog IDs have no direct agreement score.",
+      "rows": [
+        {
+          "id": "v2",
+          "label": "Corrected v2",
+          "text": {
+            "n": 1000,
+            "unique_n": 1000,
+            "repetitions": 1,
+            "agreement": null,
+            "ari": 0.6829583195242417,
+            "sol": {
+              "known_cost_usd": "3.7861671999999884",
+              "total_cost_usd": "3.7861671999999884",
+              "cost_complete": true,
+              "wall_seconds": 7065.888,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.97
+            },
+            "ld": {
+              "known_cost_usd": "0.5510946999999918",
+              "total_cost_usd": null,
+              "cost_complete": false,
+              "wall_seconds": 1328.795,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.836
+            }
+          },
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": null,
+            "ari": 0.32878213232195536,
+            "sol": {
+              "known_cost_usd": "0.28518499999999997",
+              "total_cost_usd": "0.28518499999999997",
+              "cost_complete": true,
+              "wall_seconds": 669.49,
+              "timing_scope": "clustering_loop",
+              "coverage": 1.0
+            },
+            "ld": {
+              "known_cost_usd": "0.09394110000000001",
+              "total_cost_usd": "0.09394110000000001",
+              "cost_complete": true,
+              "wall_seconds": 277.269,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.6599999999999999
+            }
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable source evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/dc0f7859e49dbf5462bb022d4aef638d32519804/experiments/2026-10-20-main-v2-seed42"
+        }
+      ]
+    },
+    {
+      "id": "fashion-fixed",
+      "title": "Reused Fashion-MNIST diagnostic",
+      "context": "Post hoc reuse of the same 100 clothing images with one frozen catalog; classification-only work. This is not fresh confirmation.",
+      "rows": [
+        {
+          "id": "fashion-fixed",
+          "label": "Frozen catalog",
+          "text": null,
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.47,
+            "ari": 0.38551774858160315,
+            "sol": {
+              "known_cost_usd": "0.20906999999999998",
+              "total_cost_usd": "0.20906999999999998",
+              "cost_complete": true,
+              "wall_seconds": 491.777,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.98
+            },
+            "ld": {
+              "known_cost_usd": "0.005493599999999999",
+              "total_cost_usd": "0.005493599999999999",
+              "cost_complete": true,
+              "wall_seconds": 18.703,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.67
+            }
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable source evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/dc0f7859e49dbf5462bb022d4aef638d32519804/experiments/2026-10-20-frozen-images-v2-seed42"
+        }
+      ]
+    },
+    {
+      "id": "initial-control",
+      "title": "Initial shared-catalog control",
+      "context": "Fresh seed1042 evaluation: 1,000 requests and 100 natural photos, separate from discovery. Classification-only costs/times; shared catalog generation, reviews and repeats are separate in the research log. An incomplete photo review does not make these complete classification arms incomplete.",
+      "rows": [
+        {
+          "id": "control-original",
+          "label": "Original short guide",
+          "text": {
+            "n": 1000,
+            "unique_n": 1000,
+            "repetitions": 1,
+            "agreement": 0.82,
+            "ari": 0.7178398281754178,
+            "sol": {
+              "known_cost_usd": "1.5271800000000013",
+              "total_cost_usd": "1.5271800000000013",
+              "cost_complete": true,
+              "wall_seconds": 2516.744,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.977
+            },
+            "ld": {
+              "known_cost_usd": "0.05977180000000009",
+              "total_cost_usd": "0.05977180000000009",
+              "cost_complete": true,
+              "wall_seconds": 192.291,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.935
+            }
+          },
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.96,
+            "ari": 0.9530939392717699,
+            "sol": {
+              "known_cost_usd": "0.36555850000000006",
+              "total_cost_usd": "0.36555850000000006",
+              "cost_complete": true,
+              "wall_seconds": 235.342,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.95
+            },
+            "ld": {
+              "known_cost_usd": "0.012134799999999987",
+              "total_cost_usd": "0.012134799999999987",
+              "cost_complete": true,
+              "wall_seconds": 23.939,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.92
+            }
+          }
+        },
+        {
+          "id": "control-guided",
+          "label": "Joint rich guide",
+          "text": {
+            "n": 1000,
+            "unique_n": 1000,
+            "repetitions": 1,
+            "agreement": 0.522,
+            "ari": 0.6332953057857035,
+            "sol": {
+              "known_cost_usd": "0.8332561000000008",
+              "total_cost_usd": "0.8332561000000008",
+              "cost_complete": true,
+              "wall_seconds": 2518.621,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.974
+            },
+            "ld": {
+              "known_cost_usd": "0.18836269999999955",
+              "total_cost_usd": "0.18836269999999955",
+              "cost_complete": true,
+              "wall_seconds": 197.152,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.906
+            }
+          },
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.81,
+            "ari": 0.7352341668152446,
+            "sol": {
+              "known_cost_usd": "0.28059239999999996",
+              "total_cost_usd": "0.28059239999999996",
+              "cost_complete": true,
+              "wall_seconds": 297.835,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.94
+            },
+            "ld": {
+              "known_cost_usd": "0.023514800000000016",
+              "total_cost_usd": "0.023514800000000016",
+              "cost_complete": true,
+              "wall_seconds": 23.184,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.9
+            }
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable source evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/f78dcf91409e9b088e78f5995e2a488a0ad63bc8/experiments/2026-10-20-guided-agreement-seed1042/evidence"
+        }
+      ]
+    },
+    {
+      "id": "order-diagnostics",
+      "title": "Reused order/page diagnostics",
+      "context": "Post hoc seed1042 subsets: 100 requests and 25 photos. These are not fresh data. Subset cost/time is missing when no separate loop was measured; full-cohort work is never borrowed.",
+      "rows": [
+        {
+          "id": "diagnostic-primary",
+          "label": "Rich K8: reused primary subset",
+          "note": "Subset values are sliced from the primary cohort; no separate cost/time was measured.",
+          "text": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.49,
+            "ari": 0.5711764363617556,
+            "sol": {
+              "known_cost_usd": null,
+              "total_cost_usd": null,
+              "cost_complete": false,
+              "wall_seconds": null,
+              "timing_scope": "unavailable",
+              "coverage": 0.98
+            },
+            "ld": {
+              "known_cost_usd": null,
+              "total_cost_usd": null,
+              "cost_complete": false,
+              "wall_seconds": null,
+              "timing_scope": "unavailable",
+              "coverage": 0.9
+            }
+          },
+          "images": {
+            "n": 25,
+            "unique_n": 25,
+            "repetitions": 1,
+            "agreement": 0.84,
+            "ari": 0.7701983551040155,
+            "sol": {
+              "known_cost_usd": null,
+              "total_cost_usd": null,
+              "cost_complete": false,
+              "wall_seconds": null,
+              "timing_scope": "unavailable",
+              "coverage": 1.0
+            },
+            "ld": {
+              "known_cost_usd": null,
+              "total_cost_usd": null,
+              "cost_complete": false,
+              "wall_seconds": null,
+              "timing_scope": "unavailable",
+              "coverage": 0.92
+            }
+          }
+        },
+        {
+          "id": "diagnostic-reverse",
+          "label": "Rich K8: reversed order",
+          "note": "Order and page membership change together; one recorded refusal is retained.",
+          "text": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.61,
+            "ari": 0.4679220022025956,
+            "sol": {
+              "known_cost_usd": "0.11839790000000003",
+              "total_cost_usd": "0.11839790000000003",
+              "cost_complete": true,
+              "wall_seconds": 293.812,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.95
+            },
+            "ld": {
+              "known_cost_usd": "0.0188387",
+              "total_cost_usd": "0.0188387",
+              "cost_complete": true,
+              "wall_seconds": 17.732,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.84
+            }
+          },
+          "images": {
+            "n": 25,
+            "unique_n": 25,
+            "repetitions": 1,
+            "agreement": 0.88,
+            "ari": 0.8375812093953023,
+            "sol": {
+              "known_cost_usd": "0.0717674",
+              "total_cost_usd": "0.0717674",
+              "cost_complete": true,
+              "wall_seconds": 66.384,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 1.0
+            },
+            "ld": {
+              "known_cost_usd": "0.005876100000000001",
+              "total_cost_usd": "0.005876100000000001",
+              "cost_complete": true,
+              "wall_seconds": 5.365,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.96
+            }
+          }
+        },
+        {
+          "id": "diagnostic-large-page",
+          "label": "Rich K16",
+          "note": "K16 photos have the same request content as K8: an extra repeat, not a page intervention.",
+          "text": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.34,
+            "ari": 0.7254780268116672,
+            "sol": {
+              "known_cost_usd": "0.07326070000000001",
+              "total_cost_usd": "0.07326070000000001",
+              "cost_complete": true,
+              "wall_seconds": 222.367,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.97
+            },
+            "ld": {
+              "known_cost_usd": "0.021016699999999996",
+              "total_cost_usd": "0.021016699999999996",
+              "cost_complete": true,
+              "wall_seconds": 14.648,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.97
+            }
+          },
+          "images": {
+            "n": 25,
+            "unique_n": 25,
+            "repetitions": 1,
+            "agreement": 0.88,
+            "ari": 0.8155435317265125,
+            "sol": {
+              "known_cost_usd": "0.014032599999999998",
+              "total_cost_usd": "0.014032599999999998",
+              "cost_complete": true,
+              "wall_seconds": 64.288,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 1.0
+            },
+            "ld": {
+              "known_cost_usd": "0.005876100000000001",
+              "total_cost_usd": "0.005876100000000001",
+              "cost_complete": true,
+              "wall_seconds": 6.514,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.92
+            }
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable source evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/f78dcf91409e9b088e78f5995e2a488a0ad63bc8/experiments/2026-10-20-guided-agreement-seed1042/evidence"
+        }
+      ]
+    },
+    {
+      "id": "reserved-streams",
+      "title": "Reserved evolving streams",
+      "context": "Separate seed1042 reserved cohort: 1,000 requests and 100 natural photos. Full streaming costs/times include manager calls and global reevaluation. Independent catalogs; the contextual intervention bundles guidance, prior findings and reconsideration.",
+      "rows": [
+        {
+          "id": "reserved-original",
+          "label": "Original manager",
+          "text": {
+            "n": 1000,
+            "unique_n": 1000,
+            "repetitions": 1,
+            "agreement": null,
+            "ari": 0.5380962576698524,
+            "sol": {
+              "known_cost_usd": "2.296944",
+              "total_cost_usd": "2.296944",
+              "cost_complete": true,
+              "wall_seconds": 4794.182,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.994
+            },
+            "ld": {
+              "known_cost_usd": "0.7377214",
+              "total_cost_usd": "0.7377214",
+              "cost_complete": true,
+              "wall_seconds": 2230.638,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.708
+            }
+          },
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": null,
+            "ari": 0.8186563297576327,
+            "sol": {
+              "known_cost_usd": "0.7149612",
+              "total_cost_usd": "0.7149612",
+              "cost_complete": true,
+              "wall_seconds": 425.087,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.95
+            },
+            "ld": {
+              "known_cost_usd": "0.1408902",
+              "total_cost_usd": "0.1408902",
+              "cost_complete": true,
+              "wall_seconds": 87.665,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.98
+            }
+          }
+        },
+        {
+          "id": "reserved-contextual",
+          "label": "Contextual manager",
+          "text": {
+            "n": 1000,
+            "unique_n": 1000,
+            "repetitions": 1,
+            "agreement": null,
+            "ari": 0.6097577180170812,
+            "sol": {
+              "known_cost_usd": "10.6207179",
+              "total_cost_usd": "10.6207179",
+              "cost_complete": true,
+              "wall_seconds": 21814.356,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.998
+            },
+            "ld": {
+              "known_cost_usd": "0.8146604",
+              "total_cost_usd": "0.8146604",
+              "cost_complete": true,
+              "wall_seconds": 2345.899,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.908
+            }
+          },
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": null,
+            "ari": 0.9711442425153153,
+            "sol": {
+              "known_cost_usd": "0.8107719",
+              "total_cost_usd": "0.8107719",
+              "cost_complete": true,
+              "wall_seconds": 686.744,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.95
+            },
+            "ld": {
+              "known_cost_usd": "0.2926858",
+              "total_cost_usd": "0.2926858",
+              "cost_complete": true,
+              "wall_seconds": 175.713,
+              "timing_scope": "clustering_loop",
+              "coverage": 0.97
+            }
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable source evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/f630cded18a3375b73284ab752fa2568a8e2e731/experiments/2026-10-20-guided-agreement-seed1042/streaming-evidence"
+        }
+      ]
+    },
+    {
+      "id": "calibration",
+      "title": "Constructed calibration",
+      "context": "Seed2043 calibration: 20 constructed text cases, four cyclic orders, four named categories plus Other. Agreement is between classifiers, not constructed-key accuracy or natural-data accuracy. Costs exclude later generation and review.",
+      "rows": [
+        {
+          "id": "calibration-short",
+          "label": "Short",
+          "note": "Same 20 constructed cases repeated in 4 orders: 80 dependent comparisons; ARI is not pooled across orders. Time is the sum of 4 loop times for each backend, not elapsed study time.",
+          "text": {
+            "n": 80,
+            "unique_n": 20,
+            "repetitions": 4,
+            "agreement": 1.0,
+            "ari": null,
+            "sol": {
+              "known_cost_usd": "0.05829",
+              "total_cost_usd": "0.05829",
+              "cost_complete": true,
+              "wall_seconds": 125.173,
+              "timing_scope": "sum_of_4_order_loops",
+              "coverage": 0.8
+            },
+            "ld": {
+              "known_cost_usd": "0.00252",
+              "total_cost_usd": "0.00252",
+              "cost_complete": true,
+              "wall_seconds": 9.694,
+              "timing_scope": "sum_of_4_order_loops",
+              "coverage": 0.8
+            }
+          },
+          "images": null
+        },
+        {
+          "id": "calibration-redundant-positive",
+          "label": "Redundant positive",
+          "note": "Same 20 constructed cases repeated in 4 orders: 80 dependent comparisons; ARI is not pooled across orders. Time is the sum of 4 loop times for each backend, not elapsed study time.",
+          "text": {
+            "n": 80,
+            "unique_n": 20,
+            "repetitions": 4,
+            "agreement": 1.0,
+            "ari": null,
+            "sol": {
+              "known_cost_usd": "0.12717",
+              "total_cost_usd": "0.12717",
+              "cost_complete": true,
+              "wall_seconds": 125.008,
+              "timing_scope": "sum_of_4_order_loops",
+              "coverage": 0.8
+            },
+            "ld": {
+              "known_cost_usd": "0.005984",
+              "total_cost_usd": "0.005984",
+              "cost_complete": true,
+              "wall_seconds": 8.727,
+              "timing_scope": "sum_of_4_order_loops",
+              "coverage": 0.8
+            }
+          },
+          "images": null
+        },
+        {
+          "id": "calibration-negative-boundaries",
+          "label": "Negative boundaries",
+          "note": "Same 20 constructed cases repeated in 4 orders: 80 dependent comparisons; ARI is not pooled across orders. Time is the sum of 4 loop times for each backend, not elapsed study time.",
+          "text": {
+            "n": 80,
+            "unique_n": 20,
+            "repetitions": 4,
+            "agreement": 1.0,
+            "ari": null,
+            "sol": {
+              "known_cost_usd": "0.13360",
+              "total_cost_usd": "0.13360",
+              "cost_complete": true,
+              "wall_seconds": 123.766,
+              "timing_scope": "sum_of_4_order_loops",
+              "coverage": 0.8
+            },
+            "ld": {
+              "known_cost_usd": "0.006256",
+              "total_cost_usd": "0.006256",
+              "cost_complete": true,
+              "wall_seconds": 10.038,
+              "timing_scope": "sum_of_4_order_loops",
+              "coverage": 0.8
+            }
+          },
+          "images": null
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable study evidence",
+          "url": "https://github.com/eob/ld-clustering/blob/a3b38d7f9e535f300ac783b3aa4abeb77b17a54f/experiments/2026-10-21-auto-research-seed2043/protocol.json"
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "title": "Adaptive development",
+      "context": "Seed2043: 200 fresh requests and 40 natural photos, reused for the compact and boundary revisions. Stable IDs/order/K8. Classification-only costs/times; shared catalog generation and qualitative review remain separate in the log.",
+      "rows": [
+        {
+          "id": "development-baseline",
+          "label": "Original",
+          "note": "Reused adaptive development data; not fresh confirmation.",
+          "text": {
+            "n": 200,
+            "unique_n": 200,
+            "repetitions": 1,
+            "agreement": 0.86,
+            "ari": 0.7463931623598397,
+            "sol": {
+              "known_cost_usd": "0.298074",
+              "total_cost_usd": "0.298074",
+              "cost_complete": true,
+              "wall_seconds": 473.906,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.985
+            },
+            "ld": {
+              "known_cost_usd": "0.0118074",
+              "total_cost_usd": "0.0118074",
+              "cost_complete": true,
+              "wall_seconds": 31.46,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.945
+            }
+          },
+          "images": {
+            "n": 40,
+            "unique_n": 40,
+            "repetitions": 1,
+            "agreement": 0.875,
+            "ari": 0.8247705946394318,
+            "sol": {
+              "known_cost_usd": "0.1465475",
+              "total_cost_usd": "0.1465475",
+              "cost_complete": true,
+              "wall_seconds": 78.345,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.9
+            },
+            "ld": {
+              "known_cost_usd": "0.0048536",
+              "total_cost_usd": "0.0048536",
+              "cost_complete": true,
+              "wall_seconds": 8.887,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.875
+            }
+          }
+        },
+        {
+          "id": "development-compact",
+          "label": "Compact",
+          "note": "Reused adaptive development data; not fresh confirmation.",
+          "text": {
+            "n": 200,
+            "unique_n": 200,
+            "repetitions": 1,
+            "agreement": 0.83,
+            "ari": 0.7011684156361443,
+            "sol": {
+              "known_cost_usd": "0.300544",
+              "total_cost_usd": "0.300544",
+              "cost_complete": true,
+              "wall_seconds": 448.346,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 1.0
+            },
+            "ld": {
+              "known_cost_usd": "0.0121933",
+              "total_cost_usd": "0.0121933",
+              "cost_complete": true,
+              "wall_seconds": 31.815,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.935
+            }
+          },
+          "images": {
+            "n": 40,
+            "unique_n": 40,
+            "repetitions": 1,
+            "agreement": 0.925,
+            "ari": 0.8666050997896465,
+            "sol": {
+              "known_cost_usd": "0.1483075",
+              "total_cost_usd": "0.1483075",
+              "cost_complete": true,
+              "wall_seconds": 97.547,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.9
+            },
+            "ld": {
+              "known_cost_usd": "0.0048656",
+              "total_cost_usd": "0.0048656",
+              "cost_complete": true,
+              "wall_seconds": 8.458,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.875
+            }
+          }
+        },
+        {
+          "id": "development-boundary",
+          "label": "Boundary",
+          "note": "Reused adaptive development data; not fresh confirmation.",
+          "text": {
+            "n": 200,
+            "unique_n": 200,
+            "repetitions": 1,
+            "agreement": 0.84,
+            "ari": 0.7093418490126996,
+            "sol": {
+              "known_cost_usd": "0.316842",
+              "total_cost_usd": "0.316842",
+              "cost_complete": true,
+              "wall_seconds": 497.127,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 1.0
+            },
+            "ld": {
+              "known_cost_usd": "0.0127694",
+              "total_cost_usd": "0.0127694",
+              "cost_complete": true,
+              "wall_seconds": 30.335,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.955
+            }
+          },
+          "images": {
+            "n": 40,
+            "unique_n": 40,
+            "repetitions": 1,
+            "agreement": 0.925,
+            "ari": 0.8746450956232924,
+            "sol": {
+              "known_cost_usd": "0.1496175",
+              "total_cost_usd": "0.1496175",
+              "cost_complete": true,
+              "wall_seconds": 110.634,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.9
+            },
+            "ld": {
+              "known_cost_usd": "0.0049856",
+              "total_cost_usd": "0.0049856",
+              "cost_complete": true,
+              "wall_seconds": 8.823,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.9
+            }
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable study evidence",
+          "url": "https://github.com/eob/ld-clustering/blob/a3b38d7f9e535f300ac783b3aa4abeb77b17a54f/experiments/2026-10-21-auto-research-seed2043/protocol.json"
+        }
+      ]
+    },
+    {
+      "id": "confirmation",
+      "title": "Fresh confirmation",
+      "context": "Seed2043: 1,000 requests and 100 natural photos, disjoint from development and all earlier study inputs. Once-only frozen comparison; classification-only costs/times exclude generation, reviews and preselected repeats.",
+      "rows": [
+        {
+          "id": "confirmation-baseline",
+          "label": "Original",
+          "note": "Separate fresh confirmation cohort; not a rerun of development.",
+          "text": {
+            "n": 1000,
+            "unique_n": 1000,
+            "repetitions": 1,
+            "agreement": 0.824,
+            "ari": 0.7069558857554977,
+            "sol": {
+              "known_cost_usd": "1.53898",
+              "total_cost_usd": "1.53898",
+              "cost_complete": true,
+              "wall_seconds": 2775.82,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.97
+            },
+            "ld": {
+              "known_cost_usd": "0.0602042",
+              "total_cost_usd": "0.0602042",
+              "cost_complete": true,
+              "wall_seconds": 163.995,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.94
+            }
+          },
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.98,
+            "ari": 0.963674657019047,
+            "sol": {
+              "known_cost_usd": "0.364901",
+              "total_cost_usd": "0.364901",
+              "cost_complete": true,
+              "wall_seconds": 224.438,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.89
+            },
+            "ld": {
+              "known_cost_usd": "0.0120108",
+              "total_cost_usd": "0.0120108",
+              "cost_complete": true,
+              "wall_seconds": 21.97,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.88
+            }
+          }
+        },
+        {
+          "id": "confirmation-challenger",
+          "label": "Frozen Boundary challenger",
+          "note": "The challenger was frozen before confirmation; development selection and confirmation results remain separate in the research log.",
+          "text": {
+            "n": 1000,
+            "unique_n": 1000,
+            "repetitions": 1,
+            "agreement": 0.808,
+            "ari": 0.6882433749022208,
+            "sol": {
+              "known_cost_usd": "1.658736",
+              "total_cost_usd": "1.658736",
+              "cost_complete": true,
+              "wall_seconds": 2788.451,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.982
+            },
+            "ld": {
+              "known_cost_usd": "0.0656577",
+              "total_cost_usd": "0.0656577",
+              "cost_complete": true,
+              "wall_seconds": 161.931,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.925
+            }
+          },
+          "images": {
+            "n": 100,
+            "unique_n": 100,
+            "repetitions": 1,
+            "agreement": 0.95,
+            "ari": 0.9341342547978262,
+            "sol": {
+              "known_cost_usd": "0.3762445",
+              "total_cost_usd": "0.3762445",
+              "cost_complete": true,
+              "wall_seconds": 227.389,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.88
+            },
+            "ld": {
+              "known_cost_usd": "0.0123408",
+              "total_cost_usd": "0.0123408",
+              "cost_complete": true,
+              "wall_seconds": 22.243,
+              "timing_scope": "assignment_only_loop",
+              "coverage": 0.88
+            }
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Immutable study evidence",
+          "url": "https://github.com/eob/ld-clustering/blob/a3b38d7f9e535f300ac783b3aa4abeb77b17a54f/experiments/2026-10-21-auto-research-seed2043/protocol.json"
+        }
+      ]
+    }
+  ],
+  "scope_notes": [
+    "Agreement is direct category-ID agreement including Other, not semantic accuracy. It is unavailable for independently learned catalogs. ARI is unitless partition agreement, not percent accuracy.",
+    "Each cost/time cell reports Sol and Decisions separately. Streams include manager and reassignment work; fixed-catalog rows measure classification only. Shared generation, reviews and repeats are accounted separately in the research log.",
+    "Concurrent worker loop times are not summed into a study elapsed time. Calibration explicitly sums four order-loop times per backend; no other time aggregation is implied.",
+    "Different groups use different datasets, catalog structures and stages. Reused, adaptive and constructed subsets are labeled; they are not interchangeable head-to-head accuracy estimates.",
+    "Missing values remain unavailable. An incomplete cost reports its known subtotal with no fabricated complete total. Frozen-price token estimates are not invoices; cache and concurrent-load differences limit cost/time comparisons."
+  ]
+}

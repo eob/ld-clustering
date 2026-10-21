@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "phase": "confirmation",
+  "modality": "images",
+  "registered_at_utc": "2026-10-21T05:01:26.495677+00:00",
+  "packet_sha256": "9b8cc7ebd83df3ec9ef933c60b9dbe1ef473e7c02aa2a480d8613dbbc103b430",
+  "instructions_sha256": "69255090fd663dbb85d3583725138e07c1159a6d96272b070231542313ea9ce5",
+  "expected_cases": 15,
+  "reviewer_compute": "coding harness outside experiment API ledger; model identity not exposed",
+  "catalog_sha256": "d4fa27cb0fbf507c1efa1d3df18bcc07a18a10c94b190632381c8eb03551c4fe",
+  "frozen_prompt_sha256": "177ca493708ceb2ca585eaf3c83bf383b1abf68a1dc8d43aabda8d5a3554cfce",
+  "protocol_sha256": "0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65",
+  "creation_guard": "No judgments, seal, unblinding, instructions or registration existed at preparation."
+}

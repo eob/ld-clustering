@@ -123,6 +123,41 @@ judgments, one incomplete response and 42 unattempted cases. The other three
 review arms completed 100 judgments each. Automated reviews include reference
 errors and reasonable alternatives as well as clear Decisions errors.
 
+## Bounded guidance follow-up
+
+The [three-round follow-up](experiments/2026-10-21-auto-research-seed2043/)
+tests counterbalanced synthetic choices, compact membership guides and one
+boundary refinement before a frozen fresh confirmation. Discovery, development
+and confirmation stay separate; category structure, IDs, order and K8 paging
+remain fixed. [Full findings](experiments/2026-10-21-auto-research-seed2043/RESULTS.md)
+retain development gains and regressions, selection, repeats and blinded cases.
+
+Fresh direct agreement did not improve: Original→Boundary was 82.4%→80.8% for
+1,000 text requests and 98%→95% for 100 natural photographs. Decisions photo
+predictions are unchanged; three moved Sol answers explain that photo drop.
+Neither agreement nor automated review establishes human semantic accuracy.
+The complete follow-up API ledger is $6.5893167, excluding coding and qualitative
+review compute. No confirmation-driven revision or favorable rerun is included.
+
+The separate `auto_research` example and Python verification/publication tools
+preserve exact protocol, input, source, executable and attempt identities.
+Start reproduction from the externally anchored evidence archive and its
+recorded offline tools. The illustrated report preserves every method in a
+leading comparison table and a chronological Auto research log; comparisons
+retain their dataset, cohort, cost/time scope and missing measurements.
+The [archive verification receipt](experiments/2026-10-21-auto-research-seed2043/EVIDENCE-VERIFICATION.json)
+pins manifest `74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07`.
+Its separate offline verification covers 397 selected dataset files and 1,054
+raw run files. The archived validation checkpoint passed 211 Python tests and 136 offline Rust
+tests, with one explicitly paid Rust test ignored.
+For final report export, use the corrected repository
+`scripts/export_auto_research.py` from this delivery, as identified in the
+verification receipt. The immutable archived reproduction copy predates two
+publication-link corrections: Markdown is linked as text, and raw-only evidence
+links to archive restoration instructions. Scientific records and the archive
+hash are unchanged. The corrected delivery passes 213 Python tests and makes no
+model call.
+
 ## Contextual streaming manager
 
 `run` defaults to `--manager-policy original`, including for legacy databases.

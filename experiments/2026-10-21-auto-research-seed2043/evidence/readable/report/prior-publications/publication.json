@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "published_at": "2026-10-20T06:38:13Z",
+  "source": {
+    "repository": "https://github.com/eob/ld-clustering",
+    "commit": "dc0f7859e49dbf5462bb022d4aef638d32519804",
+    "runtime_commit": "9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c",
+    "executable_sha256": "8a59bbf1e8dbd991960d6bc76046d0e15e245cfc5a50ab724dd201a62e9e9160",
+    "run_path": "experiments/2026-10-20-main-v2-seed42",
+    "manifest_sha256": "95c7c86d5174256e1f1882873534e94f808f7c1b8b2dfce02b0c15919ccbaaff"
+  },
+  "models": {
+    "manager": "gpt-6.1-sol",
+    "reasoning": "high",
+    "decision": "gpt-6-luna"
+  },
+  "protocol": {
+    "candidate_limit": 8,
+    "max_clusters": 16,
+    "novelty_trigger": 8
+  },
+  "experiments": [
+    {
+      "id": "text",
+      "name": "Text",
+      "count": 1000,
+      "dataset": {
+        "name": "CLINC150 / broad domains",
+        "url": "https://github.com/clinc/oos-eval/tree/828f8093932c8fe6ca7936c3d2e52903b1c523de",
+        "license": "CC BY 3.0",
+        "description": "900 original test examples: 90 from each of 10 broad domains, plus 100 original out-of-scope examples. The task is broad subject grouping, not 150-way intent recovery."
+      },
+      "bootstrap_size": 24,
+      "maintenance_interval": 100,
+      "status": "complete",
+      "baseline": {
+        "cost_complete": true,
+        "timing_complete": true,
+        "timing_scope": "uninterrupted_loop",
+        "sample_count": 1000,
+        "wall_seconds": 7065.888,
+        "cost_usd": 3.7861671999999884,
+        "calls": 2893,
+        "error_calls": 0,
+        "unknown_usage_calls": 0,
+        "assignment_calls": 2872,
+        "assignment_refusal_calls": 0,
+        "maintenance_calls": 21,
+        "input_tokens": 1241920,
+        "output_tokens": 128927,
+        "cluster_count": 16,
+        "coverage": 0.97
+      },
+      "ld": {
+        "cost_complete": false,
+        "timing_complete": true,
+        "timing_scope": "uninterrupted_loop",
+        "sample_count": 1000,
+        "wall_seconds": 1328.795,
+        "cost_usd": 0.5510946999999918,
+        "calls": 6274,
+        "error_calls": 2,
+        "unknown_usage_calls": 2,
+        "assignment_calls": 6238,
+        "assignment_refusal_calls": 0,
+        "maintenance_calls": 36,
+        "input_tokens": 2770197,
+        "output_tokens": 15294,
+        "cluster_count": 15,
+        "coverage": 0.836
+      },
+      "agreement": {
+        "adjusted_rand_index": 0.6829583195242417,
+        "pairwise_precision": 0.7815807340548744,
+        "pairwise_recall": 0.6628842408332628,
+        "pairwise_f1": 0.7173556445478955,
+        "shared_other_ari": 0.609829100465617
+      }
+    },
+    {
+      "id": "images",
+      "name": "Images",
+      "count": 100,
+      "dataset": {
+        "name": "Fashion-MNIST",
+        "url": "https://github.com/zalandoresearch/fashion-mnist/tree/b2617bb6d3ffa2e429640350f613e3291e10b141",
+        "license": "MIT",
+        "description": "100 original 28\u00d728 grayscale clothing images, 10 per class. PNGs preserve the original pixels; neutral filenames conceal labels. This is a small clothing-image task, not a general photograph benchmark."
+      },
+      "bootstrap_size": 20,
+      "maintenance_interval": 25,
+      "status": "complete",
+      "baseline": {
+        "cost_complete": true,
+        "timing_complete": true,
+        "timing_scope": "uninterrupted_loop",
+        "sample_count": 100,
+        "wall_seconds": 669.49,
+        "cost_usd": 0.28518499999999997,
+        "calls": 139,
+        "error_calls": 0,
+        "unknown_usage_calls": 0,
+        "assignment_calls": 134,
+        "assignment_refusal_calls": 0,
+        "maintenance_calls": 5,
+        "input_tokens": 53884,
+        "output_tokens": 17503,
+        "cluster_count": 13,
+        "coverage": 1.0
+      },
+      "ld": {
+        "cost_complete": true,
+        "timing_complete": true,
+        "timing_scope": "uninterrupted_loop",
+        "sample_count": 100,
+        "wall_seconds": 277.269,
+        "cost_usd": 0.09394110000000001,
+        "calls": 352,
+        "error_calls": 0,
+        "unknown_usage_calls": 0,
+        "assignment_calls": 346,
+        "assignment_refusal_calls": 0,
+        "maintenance_calls": 6,
+        "input_tokens": 138710,
+        "output_tokens": 6234,
+        "cluster_count": 11,
+        "coverage": 0.6599999999999999
+      },
+      "agreement": {
+        "adjusted_rand_index": 0.32878213232195536,
+        "pairwise_precision": 0.3748148148148148,
+        "pairwise_recall": 0.45585585585585586,
+        "pairwise_f1": 0.4113821138211382,
+        "shared_other_ari": 0.2277897214782431
+      }
+    }
+  ],
+  "frozen_catalog_control": {
+    "status": "complete",
+    "count": 100,
+    "catalog_cluster_count": 11,
+    "catalog_sha256": "7f0950b69ea360d694fd6d5dc58b30d74e89d69fbc172ad88757499161d16942",
+    "run_path": "experiments/2026-10-20-frozen-images-v2-seed42",
+    "baseline": {
+      "cost_complete": true,
+      "timing_complete": true,
+      "timing_scope": "uninterrupted_loop",
+      "sample_count": 100,
+      "wall_seconds": 491.777,
+      "cost_usd": 0.20906999999999998,
+      "calls": 114,
+      "error_calls": 0,
+      "unknown_usage_calls": 0,
+      "assignment_calls": 114,
+      "assignment_refusal_calls": 0,
+      "maintenance_calls": 0,
+      "input_tokens": 44960,
+      "output_tokens": 11915,
+      "cluster_count": 11,
+      "coverage": 0.98
+    },
+    "ld": {
+      "cost_complete": true,
+      "timing_complete": true,
+      "timing_scope": "uninterrupted_loop",
+      "sample_count": 100,
+      "wall_seconds": 18.703,
+      "cost_usd": 0.005493599999999999,
+      "calls": 137,
+      "error_calls": 0,
+      "unknown_usage_calls": 0,
+      "assignment_calls": 137,
+      "assignment_refusal_calls": 0,
+      "maintenance_calls": 0,
+      "input_tokens": 54936,
+      "output_tokens": 0,
+      "cluster_count": 11,
+      "coverage": 0.67
+    },
+    "agreement": {
+      "adjusted_rand_index": 0.38551774858160315,
+      "pairwise_precision": 0.5266272189349113,
+      "pairwise_recall": 0.4033232628398791,
+      "pairwise_f1": 0.4568006843455945,
+      "shared_other_ari": 0.26376678056334063,
+      "direct_assignment_agreement": 0.47
+    }
+  }
+}
