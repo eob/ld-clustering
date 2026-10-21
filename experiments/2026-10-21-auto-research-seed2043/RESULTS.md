@@ -140,8 +140,8 @@ The archive manifest SHA-256 is
 [EVIDENCE-VERIFICATION.json](EVIDENCE-VERIFICATION.json) records a separate
 verification against that literal external anchor: 397 selected dataset files
 and 1,054 raw run files, including the final nine-group/18-row method matrix.
-All 211 repository Python tests and 136 offline Rust tests passed; one explicitly
-paid Rust test was ignored. The original preregistration README and fixture
+The archived checkpoint records 211 repository Python tests and 136 offline
+Rust tests passed; one explicitly paid Rust test was ignored. The original preregistration README and fixture
 checksums remain unchanged.
 
 From this experiment directory, verify without model calls:
@@ -149,3 +149,28 @@ From this experiment directory, verify without model calls:
 ```sh
 python3 evidence/archive_auto_research.py verify evidence --manifest-sha256 74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07
 ```
+
+## Delivery helper correction
+
+Actual report export exposed a publication-helper defect after the snapshot:
+the exporter tried to parse a Markdown evidence link as JSON and required a
+readable mirror for a receipt intentionally stored only in the raw payload.
+The corrected repository `scripts/export_auto_research.py` validates the same
+anchored raw and readable bytes, parses JSON files while linking Markdown as
+text, and routes raw-only evidence links to archive restoration instructions.
+Use that corrected repository helper from the final delivery source, identified
+by SHA-256 in `EVIDENCE-VERIFICATION.json`, for publication. The archived
+`RUN/reproduction/export_auto_research.py` remains unchanged and should not be
+used for the final report export. This correction changes no input, assignment,
+review judgment, metric, accounting or selection decision, and makes no API call.
+Both defects have failing focused witnesses; all 213 final repository Python
+tests pass, separately from the archived 211-test checkpoint.
+
+From the source checkout, supply restored absolute RUN/archive paths to the
+corrected helper. The published archive commit is
+`3c13d42f26283654118604cb408cb18ef235573b`; it can serve as the exporter’s
+`--repository-commit` evidence-link argument. That argument identifies archived
+evidence, while the corrected helper itself comes from the final delivery source.
+`--review-publication` is RUN-relative (for example
+`report/review-publication-v2.json`); the other file arguments may use restored
+absolute paths.

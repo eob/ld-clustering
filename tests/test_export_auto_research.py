@@ -552,6 +552,43 @@ class Fixture:
 
 
 class ExportTests(unittest.TestCase):
+    def test_raw_only_confirmation_receipt_links_archive_instructions_explicitly(self):
+        with tempfile.TemporaryDirectory() as temp:
+            fixture = Fixture(Path(temp))
+            name = "readiness/final-interpretation-independent-check.json"
+            write(fixture.run / name, dict(status="Synthetic check only"))
+            fixture.refresh()
+            self.assertFalse((fixture.out / "readable" / name).exists())
+            publication = fixture.export()
+            links = publication["rounds"][-1]["evidence"]
+            self.assertIn(
+                dict(
+                    label="final interpretation independent check (raw payload; archive instructions)",
+                    url=exporter.REPOSITORY + "/blob/" + "b" * 40
+                    + "/" + exporter.PUBLIC_ARCHIVE + "/README.md",
+                ),
+                links,
+            )
+            self.assertFalse(any("/readable/" + name in row["url"] for row in links))
+
+    def test_confirmation_links_anchored_markdown_findings_without_parsing_as_json(self):
+        with tempfile.TemporaryDirectory() as temp:
+            fixture = Fixture(Path(temp))
+            findings = fixture.run / "report/study-findings.md"
+            findings.write_text("# Synthetic findings\n\nRetain the negative result.\n")
+            fixture.refresh()
+            publication = fixture.export()
+            confirmation = publication["rounds"][-1]
+            self.assertIn(
+                dict(
+                    label="study findings",
+                    url=exporter.REPOSITORY + "/blob/" + "b" * 40
+                    + "/" + exporter.PUBLIC_ARCHIVE
+                    + "/readable/report/study-findings.md",
+                ),
+                confirmation["evidence"],
+            )
+
     def test_history_and_all_new_designs_are_preserved_with_distinct_metric_denominators(
         self,
     ):

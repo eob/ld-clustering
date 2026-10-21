@@ -118,8 +118,9 @@ replacement judgment, or favorable rerun was performed.
 
 The leading method-comparison matrix is complete: nine explicitly scoped groups
 and 18 method rows, with per-backend audited classification costs and measured
-loop times. Combined offline validation passed 211 Python tests; the frozen
-runtime passed 136 Rust tests with one paid test ignored. The evidence archive
+loop times. The archived checkpoint passed 211 Python tests; the corrected
+publication delivery passes 213. The frozen runtime passed 136 Rust tests with
+one paid test ignored. The evidence archive
 passed separate externally anchored verification. Source PR review is separate
 from final report import and browser/publication validation in eob/kaya-web
 PR #2226. This worktree was created from
@@ -405,3 +406,21 @@ command, runtime/data/audit/matrix pins and validation receipts. Preregistered
 fixture bytes and their original checksums remain unchanged; final findings
 are documented in `RESULTS.md` and the repository README. Review and website
 publication remain distinct from successful source archive verification.
+
+### Publication helper correction after snapshot
+
+Actual strict report export exposed two delivery-only link defects: `link()`
+tried to JSON-decode Markdown study findings, then required a readable mirror
+for a receipt intentionally stored only in the raw payload. Focused regressions
+using complete synthetic archives reproduced both failures. The corrected
+repository exporter keeps the same anchored raw/readable byte checks, parses
+only JSON evidence as JSON, and labels raw-only links with archive instructions.
+The frozen archive and RUN reproduction helper are unchanged. Final reproduction must use repository
+`scripts/export_auto_research.py` from the corrected delivery source; the
+external verification receipt identifies its hash separately from the archived
+211-test checkpoint. The corrected delivery passes all 213 repository Python
+tests and actual strict export of all 12 chronological rounds plus 11 gallery
+examples. Both Red witnesses and Green logs are retained outside the snapshot
+in `delivery-validation/`; `EVIDENCE-VERIFICATION.json` binds their hashes and
+the corrected source helper separately from the archived helper. No model call
+or scientific result changes.

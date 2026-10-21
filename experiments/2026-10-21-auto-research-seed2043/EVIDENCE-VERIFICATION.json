@@ -57,6 +57,61 @@
       "sha256": "fee281d601909e242d3a7dcfed72c3654ae15b9010d04a0882492398e87b10fd"
     }
   },
+  "post_archive_delivery_correction": {
+    "actual_strict_export": {
+      "evidence_link_commit": "3c13d42f26283654118604cb408cb18ef235573b",
+      "output_sha256": "0be9a77c5f2a57951b4cf0b8256f2d58a4511314115671fc2c40c1426ed25294",
+      "review_examples": 11,
+      "rounds": 12,
+      "status": "passed"
+    },
+    "archive_or_run_mutations": false,
+    "archived_exporter": {
+      "raw_run_path": "reproduction/export_auto_research.py",
+      "sha256": "40de7da62cfcf06216408815739818da285b6edfb3c6a673d7c692cb34d400e5"
+    },
+    "checked_at_utc": "2026-10-21T12:36:50.110557+00:00",
+    "corrected_repository_exporter": {
+      "path": "scripts/export_auto_research.py",
+      "sha256": "d76ad35889c6b2bb52da639cae302ff3ed716d7f932e8f106a02d4f305537668"
+    },
+    "corrected_tests": {
+      "path": "tests/test_export_auto_research.py",
+      "sha256": "f89a4f401116bd1f066e36690d830483f6e6874ca1cf7a5d5d43f77bb5371af3"
+    },
+    "correction": "Retain anchored raw/readable byte validation, parse JSON evidence as JSON, link Markdown as text, and explicitly route raw-only evidence to archive restoration instructions.",
+    "defects": [
+      "Markdown evidence was incorrectly JSON-decoded.",
+      "Raw-only readiness evidence incorrectly required a readable mirror."
+    ],
+    "final_repository_python_tests": 213,
+    "model_calls": 0,
+    "reproduction": "Use corrected repository scripts/export_auto_research.py from the final delivery source. The archived reproduction copy remains immutable and predates these link corrections. --review-publication is RUN-relative.",
+    "scope": "Publication-link handling only; scientific/archive/RUN bytes unchanged.",
+    "status": "passed",
+    "validation_receipts": {
+      "markdown-link-green.txt": {
+        "path": "delivery-validation/markdown-link-green.txt",
+        "sha256": "e808e66825739cfc47205392e4f07268e5dea79c9403f2dbb78aff2a6466eb6e"
+      },
+      "markdown-link-red.txt": {
+        "path": "delivery-validation/markdown-link-red.txt",
+        "sha256": "b99fea472a53c7c208eee488f8f2c0b8625f16de0c8658641610d8f62fa156af"
+      },
+      "python-212-green.txt": {
+        "path": "delivery-validation/python-212-green.txt",
+        "sha256": "95fdaf47ba13a956c1e89c264700621f52a06e734ea5dc9893803b4ad538855c"
+      },
+      "python-213-green.txt": {
+        "path": "delivery-validation/python-213-green.txt",
+        "sha256": "7f8142c17365be28a4c7ecc1b44caa4133355d4074e7f4b3007c2bf6e5b28d0f"
+      },
+      "raw-only-link-red.txt": {
+        "path": "delivery-validation/raw-only-link-red.txt",
+        "sha256": "e40eddf7cec36a3b8f4271dea6311761afdc25cc0108d9eff7cd9b65553dabf9"
+      }
+    }
+  },
   "run_files": 1054,
   "run_writes_after_snapshot": false,
   "runtime_executable_sha256": "2eed0a941e5f8e292940c0fd2f72d2432409c0456d3acb2a9314bdc2920f9f20",

@@ -148,8 +148,15 @@ retain their dataset, cohort, cost/time scope and missing measurements.
 The [archive verification receipt](experiments/2026-10-21-auto-research-seed2043/EVIDENCE-VERIFICATION.json)
 pins manifest `74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07`.
 Its separate offline verification covers 397 selected dataset files and 1,054
-raw run files. Final validation passed 211 Python tests and 136 offline Rust
+raw run files. The archived validation checkpoint passed 211 Python tests and 136 offline Rust
 tests, with one explicitly paid Rust test ignored.
+For final report export, use the corrected repository
+`scripts/export_auto_research.py` from this delivery, as identified in the
+verification receipt. The immutable archived reproduction copy predates two
+publication-link corrections: Markdown is linked as text, and raw-only evidence
+links to archive restoration instructions. Scientific records and the archive
+hash are unchanged. The corrected delivery passes 213 Python tests and makes no
+model call.
 
 ## Contextual streaming manager
 

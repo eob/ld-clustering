@@ -181,7 +181,7 @@ class Publication:
         )
         return path
 
-    def read(self, name, mirror=True):
+    def checked_path(self, name, mirror=True):
         path = self.raw(name)
         if mirror:
             readable = "readable/" + name
@@ -194,7 +194,10 @@ class Publication:
                 and entry["sha256"] == self.index[name]["sha256"],
                 "byte-identical readable evidence missing: " + name,
             )
-        return json.loads(path.read_bytes())
+        return path
+
+    def read(self, name, mirror=True):
+        return json.loads(self.checked_path(name, mirror).read_bytes())
 
     def dependency(self, digest):
         matches = [
@@ -341,7 +344,16 @@ class Publication:
                     self.raw(pin["path"])
 
     def link(self, name, label):
-        self.read(name)
+        self.raw(name)
+        if not archive.readable(name, self.index[name]["bytes"]):
+            return dict(
+                label=label + " (raw payload; archive instructions)",
+                url=self.url + "/README.md",
+            )
+        if name.endswith(".json"):
+            self.read(name)
+        else:
+            self.checked_path(name)
         return dict(label=label, url=self.url + "/readable/" + name)
 
     def common_links(self):
