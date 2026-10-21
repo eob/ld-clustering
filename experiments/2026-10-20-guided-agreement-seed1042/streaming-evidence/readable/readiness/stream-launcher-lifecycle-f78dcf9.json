@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "api_calls": 0,
+  "started_at": "2026-10-21T00:44:34.664264+00:00",
+  "source_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+  "fixture_root": "/tmp/ld-stream-launcher-lifecycle-cmpi75m6",
+  "launcher_sha256": "81e6898b1231d02e86715ec01237b8ff7c5c9e350554a6466e12d643fe8d10f8",
+  "fixture_sha256": "620bee395f1cc59301af9393cd2bbc73d2a7a2e51b57619e31cd68c8348f29a9",
+  "fake_executable_sha256": "b0a5e3cf30ef09bae37ba9b579c3d0632cca8fca1e503b01506cf6c8df8f6c02",
+  "protocol_sha256": "65edc12008dd26404a52406a31f1c135e628642e4e8ac69e213882f8d60c0070",
+  "preflight_sha256": "ecbb7447d9222f953d8605419093c24d57fd956af71724cb5d9fb1d0a5ea99ec",
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "tests": [
+    {
+      "name": "graceful_SIGTERM_and_duplicate_refusal",
+      "status": "passed",
+      "worker_count": 8,
+      "descendant_count": 8,
+      "supervisor_returncode": 1,
+      "workers_reaped_descendants": 8,
+      "all_process_identities_gone": true,
+      "supervisor_identity": {
+        "pid": 3685234,
+        "start_ticks": "371422068",
+        "state": "R"
+      },
+      "processes": [
+        {
+          "pid": 3685245,
+          "ppid": 3685234,
+          "pgid": 3685245,
+          "sid": 3685245,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "images-original-llm",
+          "phase": "ready",
+          "child_pid": 3685254
+        },
+        {
+          "pid": 3685253,
+          "ppid": 3685244,
+          "pgid": 3685244,
+          "sid": 3685244,
+          "start_ticks": "371422081",
+          "role": "leaf",
+          "arm": "text-contextual-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685252,
+          "ppid": 3685243,
+          "pgid": 3685243,
+          "sid": 3685243,
+          "start_ticks": "371422081",
+          "role": "leaf",
+          "arm": "text-contextual-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685247,
+          "ppid": 3685234,
+          "pgid": 3685247,
+          "sid": 3685247,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "images-contextual-llm",
+          "phase": "ready",
+          "child_pid": 3685256
+        },
+        {
+          "pid": 3685250,
+          "ppid": 3685241,
+          "pgid": 3685241,
+          "sid": 3685241,
+          "start_ticks": "371422081",
+          "role": "leaf",
+          "arm": "text-original-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685248,
+          "ppid": 3685234,
+          "pgid": 3685248,
+          "sid": 3685248,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "images-contextual-ld",
+          "phase": "ready",
+          "child_pid": 3685257
+        },
+        {
+          "pid": 3685255,
+          "ppid": 3685246,
+          "pgid": 3685246,
+          "sid": 3685246,
+          "start_ticks": "371422082",
+          "role": "leaf",
+          "arm": "images-original-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685241,
+          "ppid": 3685234,
+          "pgid": 3685241,
+          "sid": 3685241,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "text-original-llm",
+          "phase": "ready",
+          "child_pid": 3685250
+        },
+        {
+          "pid": 3685244,
+          "ppid": 3685234,
+          "pgid": 3685244,
+          "sid": 3685244,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "text-contextual-ld",
+          "phase": "ready",
+          "child_pid": 3685253
+        },
+        {
+          "pid": 3685254,
+          "ppid": 3685245,
+          "pgid": 3685245,
+          "sid": 3685245,
+          "start_ticks": "371422082",
+          "role": "leaf",
+          "arm": "images-original-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685257,
+          "ppid": 3685248,
+          "pgid": 3685248,
+          "sid": 3685248,
+          "start_ticks": "371422082",
+          "role": "leaf",
+          "arm": "images-contextual-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685251,
+          "ppid": 3685242,
+          "pgid": 3685242,
+          "sid": 3685242,
+          "start_ticks": "371422081",
+          "role": "leaf",
+          "arm": "text-original-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685246,
+          "ppid": 3685234,
+          "pgid": 3685246,
+          "sid": 3685246,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "images-original-ld",
+          "phase": "ready",
+          "child_pid": 3685255
+        },
+        {
+          "pid": 3685243,
+          "ppid": 3685234,
+          "pgid": 3685243,
+          "sid": 3685243,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "text-contextual-llm",
+          "phase": "ready",
+          "child_pid": 3685252
+        },
+        {
+          "pid": 3685256,
+          "ppid": 3685247,
+          "pgid": 3685247,
+          "sid": 3685247,
+          "start_ticks": "371422082",
+          "role": "leaf",
+          "arm": "images-contextual-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685242,
+          "ppid": 3685234,
+          "pgid": 3685242,
+          "sid": 3685242,
+          "start_ticks": "371422079",
+          "role": "worker",
+          "arm": "text-original-ld",
+          "phase": "ready",
+          "child_pid": 3685251
+        }
+      ]
+    },
+    {
+      "name": "supervisor_SIGKILL_systemd_control_group",
+      "status": "passed",
+      "worker_count": 8,
+      "separate_session_descendant_count": 8,
+      "all_process_identities_gone": true,
+      "unit": "ld-stream-lifecycle-b33b9e52cbf44659855a8b451481607f",
+      "unit_before": {
+        "collected_or_not_found": false,
+        "properties": {
+          "MainPID": "3685282",
+          "Result": "success",
+          "ExecMainCode": "0",
+          "ExecMainStatus": "0",
+          "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/ld-stream-lifecycle-b33b9e52cbf44659855a8b451481607f.service",
+          "KillMode": "control-group",
+          "LoadState": "loaded",
+          "ActiveState": "active",
+          "SubState": "running"
+        }
+      },
+      "unit_terminal": {
+        "collected_or_not_found": true,
+        "terminal_result": "unknown",
+        "returncode": 0,
+        "properties": {
+          "MainPID": "0",
+          "Result": "success",
+          "ExecMainCode": "0",
+          "ExecMainStatus": "0",
+          "ControlGroup": "",
+          "KillMode": "control-group",
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "SubState": "dead"
+        }
+      },
+      "supervisor_identity": {
+        "pid": 3685282,
+        "start_ticks": "371422108",
+        "state": "S"
+      },
+      "processes": [
+        {
+          "pid": 3685299,
+          "ppid": 3685291,
+          "pgid": 3685299,
+          "sid": 3685299,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "text-contextual-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685289,
+          "ppid": 3685282,
+          "pgid": 3685289,
+          "sid": 3685289,
+          "start_ticks": "371422122",
+          "role": "worker",
+          "arm": "text-original-ld",
+          "phase": "ready",
+          "child_pid": 3685297
+        },
+        {
+          "pid": 3685290,
+          "ppid": 3685282,
+          "pgid": 3685290,
+          "sid": 3685290,
+          "start_ticks": "371422122",
+          "role": "worker",
+          "arm": "text-contextual-llm",
+          "phase": "ready",
+          "child_pid": 3685298
+        },
+        {
+          "pid": 3685296,
+          "ppid": 3685288,
+          "pgid": 3685296,
+          "sid": 3685296,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "text-original-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685302,
+          "ppid": 3685294,
+          "pgid": 3685302,
+          "sid": 3685302,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "images-contextual-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685288,
+          "ppid": 3685282,
+          "pgid": 3685288,
+          "sid": 3685288,
+          "start_ticks": "371422122",
+          "role": "worker",
+          "arm": "text-original-llm",
+          "phase": "ready",
+          "child_pid": 3685296
+        },
+        {
+          "pid": 3685300,
+          "ppid": 3685292,
+          "pgid": 3685300,
+          "sid": 3685300,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "images-original-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685298,
+          "ppid": 3685290,
+          "pgid": 3685298,
+          "sid": 3685298,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "text-contextual-llm",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685294,
+          "ppid": 3685282,
+          "pgid": 3685294,
+          "sid": 3685294,
+          "start_ticks": "371422123",
+          "role": "worker",
+          "arm": "images-contextual-llm",
+          "phase": "ready",
+          "child_pid": 3685302
+        },
+        {
+          "pid": 3685292,
+          "ppid": 3685282,
+          "pgid": 3685292,
+          "sid": 3685292,
+          "start_ticks": "371422123",
+          "role": "worker",
+          "arm": "images-original-llm",
+          "phase": "ready",
+          "child_pid": 3685300
+        },
+        {
+          "pid": 3685301,
+          "ppid": 3685293,
+          "pgid": 3685301,
+          "sid": 3685301,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "images-original-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685303,
+          "ppid": 3685295,
+          "pgid": 3685303,
+          "sid": 3685303,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "images-contextual-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685295,
+          "ppid": 3685282,
+          "pgid": 3685295,
+          "sid": 3685295,
+          "start_ticks": "371422123",
+          "role": "worker",
+          "arm": "images-contextual-ld",
+          "phase": "ready",
+          "child_pid": 3685303
+        },
+        {
+          "pid": 3685297,
+          "ppid": 3685289,
+          "pgid": 3685297,
+          "sid": 3685297,
+          "start_ticks": "371422125",
+          "role": "leaf",
+          "arm": "text-original-ld",
+          "phase": "ready"
+        },
+        {
+          "pid": 3685293,
+          "ppid": 3685282,
+          "pgid": 3685293,
+          "sid": 3685293,
+          "start_ticks": "371422123",
+          "role": "worker",
+          "arm": "images-original-ld",
+          "phase": "ready",
+          "child_pid": 3685301
+        },
+        {
+          "pid": 3685291,
+          "ppid": 3685282,
+          "pgid": 3685291,
+          "sid": 3685291,
+          "start_ticks": "371422122",
+          "role": "worker",
+          "arm": "text-contextual-ld",
+          "phase": "ready",
+          "child_pid": 3685299
+        }
+      ],
+      "incomplete_supervisor_marker_preserved": true
+    }
+  ],
+  "scope": "Real launcher, fake Python workers, literal dummy key; all worker writes confined to /tmp. No model executable is dispatched.",
+  "cleanup_all_fixture_processes_gone": true,
+  "finished_at": "2026-10-21T00:44:35.355878+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "scope": "Exact offline source copies; no executable or credentials. Runtime source is separately pinned at f78dcf91409e9b088e78f5995e2a488a0ad63bc8.",
+  "files": {
+    "analyze_common_named-initial.py": "9597293908ccafeb4c441cea0f50cb8ce300cf9c24d3520f02f095abed2c740f",
+    "analyze_common_named.py": "c7933f11de6c2ab375c33483338e36618021e14e47a98b7c28c8a9a3f6c7c066",
+    "archive_guided_agreement.py": "3191a56db820bdf878a8fab4bac1c03bc939c1d3898bbc520f48f10782fc2cea",
+    "export_guided_agreement.py": "f040f9fc2d40eecdb7f8d3c80df9869ffb8196be37e330ebab7a26c58b1f81dc",
+    "export_guided_streaming.py": "cacbf9fa491226726d92049990e80f48f645361013b9319cca71ee98b4cfb4a1",
+    "verify_guided_agreement.py": "395bce5d00b157155966a63835b879274233d05bb7940bac72fe0f7908691137",
+    "verify_guided_streaming.py": "2c2b18777e1f1b799255d39f69b14838dbfa946f10f17ac36171a1ca0ddbb40d"
+  }
+}

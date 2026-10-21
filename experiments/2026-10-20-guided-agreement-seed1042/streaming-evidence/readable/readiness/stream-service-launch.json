@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "unit": "ld-guidance-streaming-1042.service",
+  "argv": [
+    "systemd-run",
+    "--user",
+    "--unit=ld-guidance-streaming-1042",
+    "--service-type=exec",
+    "--property=RuntimeMaxSec=infinity",
+    "--property=TimeoutStopSec=30s",
+    "--property=KillMode=control-group",
+    "--property=RemainAfterExit=yes",
+    "--property=WorkingDirectory=/mnt/disks/data/ld-clustering-guided-agreement",
+    "--setenv=OPENAI_API_KEY",
+    "--setenv=PYTHONDONTWRITEBYTECODE=1",
+    "bash",
+    "/mnt/disks/data/ld-clustering-guided-agreement/scripts/guided-streaming.sh",
+    "run",
+    "--data",
+    "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance",
+    "--run-root",
+    "/mnt/disks/data/ld-clustering-guided-agreement/runs/guided-agreement-seed1042",
+    "--binary",
+    "/mnt/disks/data/ld-clustering-guided-agreement/target/frozen-guided-agreement/ld-clustering-streaming",
+    "--protocol",
+    "/mnt/disks/data/ld-clustering-guided-agreement/experiments/2026-10-20-guided-agreement-seed1042/streaming-protocol.json",
+    "--preflight",
+    "/mnt/disks/data/ld-clustering-guided-agreement/runs/guided-agreement-seed1042/validation/stream-request-preflight.json"
+  ],
+  "key_values_recorded": false
+}

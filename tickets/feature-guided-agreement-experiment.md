@@ -88,51 +88,69 @@ The semantic quality of both methods is distinct from reproducing Sol.
 
 ## Current state
 
-Source branch starts from main `1fd37ebb28e956a380ba8587815d4aa738719510`.
-The controlled harness, dataset preparation, metrics and blinded review tooling
-are implemented. Preregistration and all offline gates completed before paid
-calls began on 2026-10-20 at 22:49:43 UTC. Final full gates pass
-88 offline tests (one paid test ignored), formatting and all-target Clippy with
-warnings denied. Dataset manifest is
-`c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4`;
-independent Python/Pillow verification passes all partition/order/payload/image
-hashes, 2,460 distinct new non-repeat IDs, 260 unique supplied JPEGs and exact
-100/25 repeat-subset evidence. Relocated inputs produce identical fingerprints
-and the identical 28,731,011-byte discovery request below the 32 MiB local cap.
-The registered protocol and review plan live in
-`experiments/2026-10-20-guided-agreement-seed1042/`. Source commit, release
-executable and all stage launch receipts were pinned before the first call:
-source `9f80d8400ac23c70c9e5dd2e23c953cdee362410`, classifier binary
-`9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce`, analyzer
-`9c886c11b2341c93bf7b3a8333b57ae05ec65d82a5da87a27863ad968138e719` and protocol
-`894b0e577a0f6e778f09855ba676f614620b4992b3f013e8ee61477452181fbd`.
+The controlled experiment is complete and independently verified with an
+incomplete original-photo review. Original→guided direct agreement is
+820→522 / 1,000 text items and 96→81 / 100 photographs. Matching named IDs
+also fall, while joint-Other counts stay 11 and 5. One generated rewrite
+changes content and length together; semantic correctness is separate from
+reproduction of Sol. The automated reviews expose clear Decisions errors,
+reference errors and reasonable alternatives. Full findings and reproduction
+pins are in the experiment README and immutable archived evidence.
 
-The catalog stage completed four successful calls by 22:52:13 UTC, with 10 text
-categories and 8 image categories. Each guided rewrite preserves original IDs,
-names, order and count. All eight held-out dry runs passed before launching the
-primary stage at 22:53:49 UTC under `ld-guidance-controlled-1042.service`.
-Runtime sources/executables and catalogs remain frozen through the controlled
-stages. Primary artifacts live under `runs/guided-agreement-seed1042/controlled/`.
-All eight primary arms completed at 23:35:48 UTC with 5,240 recorded attempts,
-zero errors, zero assignment refusals and no missing usage reported. The repeat
-stage started at 23:35:49 UTC and all four repeat arms completed: text consistency
-is 97/100 original and 99/100 guided; images 23/25 and 24/25. These are small
-repeat subsets, not semantic accuracy or an agreement ceiling. All controlled paid stages terminated by 2026-10-21 at 00:07:08 UTC. Three
-review arms completed 100 judgments each; the original-photo review remains
-terminal/incomplete (57 accepted, one failed, 42 unattempted). All eight planned
-order/page diagnostic arms completed. Independent evidence verification and the
-reserved-stream implementation remain pending.
+All controlled paid stages terminated by 2026-10-21 00:07:08 UTC. The frozen
+runtime is `9f80d8400ac23c70c9e5dd2e23c953cdee362410`; the separately corrected
+offline analyzer is `616b5d0d707b926db15e73cc43128fac09904e3c`. Independent
+verification reconstructs 6,439 observed attempts and $7.7162398 known cost.
+The failed original-photo review remains 57 accepted / 1 failed / 42 unattempted,
+with incomplete accounting flags preserved. Control archive manifest is
+`20d8a470bf9cfb63b5406b1b883f1f23199def56e9577928a8cc9dd9b908b1fa`.
 
-Protocol choices frozen before outcomes: dataset seed 1042; review seed 2042.
-All 100 held-out images are reviewed for each description condition. For each
-text condition, review quotas are 30 different-named disagreements, 30 Sol-named /
-LD-Other, 10 Sol-Other / LD-named, 20 equal-named agreements and 10 both-Other.
-Select all available cases in an undersized stratum; do not reallocate spare
-quota. Report sampled denominators. Backend identities, condition names and
-aggregate results are hidden from the reviewer; candidate A/B order is shuffled
-and preserved separately for later unblinding. Automated reviewer judgments are
-not human ground truth. The anchored-original-reference paired comparison is a
-preplanned secondary diagnostic; the primary uses matched descriptions.
+The adaptive eight-arm reserved-stream follow-up launched at
+**2026-10-21 00:45:43 UTC** under `ld-guidance-streaming-1042.service` after
+interpreting the control. All eight fresh databases began with the registered
+24-item bootstrap. Each modality uses the same reserved order and schedule
+across Original/Contextual × Sol/Decisions. Contextual combines compact catalog
+guidance, frozen prior findings and global reconsideration; the catalogs evolve
+independently, so partition agreement and coverage are primary. **All eight arms
+are terminal with exit zero, complete 1,000-text or 100-photo inputs, and no
+pending reassignment work.** Independent full-stream verification passes with
+audit SHA-256
+`a939309be01b79663ca6a517c021aaee459b1aa6a2365cfdcdcfb5a9886417fd`.
+
+Full text ARI improves 0.538096→0.609758 and pair F1 0.581982→0.655911;
+Decisions coverage rises 70.8%→90.8% and Sol coverage 99.4%→99.8%. The same
+674 items named by all four text arms give the opposite post hoc grouping
+diagnostic: ARI 0.787131→0.721809 and F1 0.819144→0.760726. This is a
+coverage/grouping tradeoff, not a clean semantic-accuracy improvement. Full
+photo ARI improves 0.818656→0.971144 and pair F1 0.843049→0.975410;
+Sol coverage stays 95%, Decisions coverage is 98%→97%, and the common-named
+93-photo diagnostic also improves. Conditional subsets never replace the full
+primary cohorts. The combined intervention and independently evolving catalogs
+prevent attribution to description quality alone.
+
+The streaming API ledger is complete at $16.4293528 across 31,220 recorded
+attempts, including two errors and two retries, with no refusals or unknown
+usage/pricing. Contextual Sol text accounts for $10.6207179, 8,131 calls and
+5,964 reevaluations versus Original Sol text $2.296944, 1,606 calls and 300
+reevaluations. Coding-harness review compute is outside the ledger; queue
+evaluations and ID moves do not establish semantic corrections.
+
+Streaming runtime is frozen at `f78dcf91409e9b088e78f5995e2a488a0ad63bc8`,
+release binary SHA-256
+`d16f7d289af670f7539f28ccec6474602e3735f54cfbafb24fff884cb627e603`.
+The release inspector exactly reproduces the registered request preflight.
+Recorded final local gates passed 115 offline Rust tests (one paid ignored),
+93 Python helper tests, rustfmt and Clippy. Both graceful SIGTERM and violent
+supervisor SIGKILL lifecycle checks cleaned up all eight workers and their
+eight descendants with zero API calls. Real report data and licensed photo
+examples are exported and being integrated. Separate streaming archive
+finalization, report validation and publication remain; the immutable control
+archive and its incomplete original-photo review are unchanged. Completed
+streaming findings are recorded in
+`experiments/2026-10-20-guided-agreement-seed1042/STREAMING-RESULTS.md`.
+
+Source base is main `1fd37ebb28e956a380ba8587815d4aa738719510`. The source and
+report draft PRs retain the active work until all requested evidence is ready.
 
 ## Decisions and durable findings
 
@@ -160,7 +178,7 @@ preplanned secondary diagnostic; the primary uses matched descriptions.
   intervention. The preplanned reverse-order comparison still changes choice
   order within the page. No categories were added to manufacture pagination.
 
-### Reserved-stream design review (not implemented yet)
+### Reserved-stream design
 
 Keep Original behavior and legacy saved configurations compatible. Bind a
 separate manager-policy/context descriptor, and compare matching descriptors.
@@ -173,7 +191,7 @@ the stream-input directory with absolute command paths, preserving existing
 CWD-relative image semantics. Freeze the precise contextual prompt and evidence
 only after the controlled comparison and review are understood.
 
-### Completed primary arms (other stages pending)
+### Completed primary arms
 
 The 100 held-out image pairs are complete. Short descriptions produce 96/100
 matching IDs (91 matching named IDs); the jointly rewritten guides produce
@@ -382,14 +400,14 @@ binding, drain ordering, exact contexts, result counters and launcher option
 handling. Main/results peer review also found and fixed a strict-reader gap where
 a contradictory known-origin event could hide a move as unknown.
 
-Full integration gates pass 117 offline Rust tests (one paid ignored), 58 Python
+Full integration gates pass 115 offline Rust tests (one paid ignored), 58 Python
 helper tests, formatting, Clippy and diff checks. Pure maximum-request preflight
 passes both modalities with zero calls: the image contextual bound is 31,309,089
 bytes below the 33,554,432-byte cap, including 40 largest selected photos and 16
 maximum-byte definitions. Its input fingerprints match the independent reserved
 data check. Protocol and per-modality control-context files are written before
 new paid calls. Launcher review, fresh-binary/source freeze and lifecycle checks
-remain before launch; no reserved-stream model calls have started.
+were subsequently completed before the reserved launch recorded above.
 
 The final pre-freeze wording explicitly preserves conversational feedback as a
 valid practical subject. Its focused regression and causal reversion pass;
@@ -399,3 +417,67 @@ registered streaming protocol is `65edc12008dd26404a52406a31f1c135e628642e4e8ac6
 Original planning and assignment request pins remain unchanged. Independent
 launcher, process-ownership and scientific preflight reviews found no remaining
 blocker; zero-API lifecycle validation precedes the reserved launch.
+
+### Completed reserved-stream audit and interpretation
+
+The independent checker passes 20 synthetic tests, with raw request/context/
+image/page/current-catalog/response/final-state binding, independent pair
+enumeration and Decimal all-attempt accounting. Final helper SHA-256 is
+`2c2b18777e1f1b799255d39f69b14838dbfa946f10f17ac36171a1ca0ddbb40d`.
+It explicitly handles empty-catalog reevaluations with no provider request.
+The completed all-eight-arm audit is verified: all persisted input counts are
+complete and all queues drained. A separate read-only check independently
+enumerated unordered pairs from the terminal SQLite assignments, reproducing
+all four full comparisons and both common-named diagnostics. It also verified
+the exact common item IDs and the Decimal sum of all eight API arm costs.
+
+| Cohort | Full Original / contextual ARI | Full Original / contextual pair F1 | Common-named diagnostic n | Conditional Original / contextual ARI | Conditional Original / contextual pair F1 |
+| --- | --- | --- | --- | --- | --- |
+| Text | 0.538096 / 0.609758 | 0.581982 / 0.655911 | 674 of 1,000 | 0.787131 / 0.721809 | 0.819144 / 0.760726 |
+| Natural photographs | 0.818656 / 0.971144 | 0.843049 / 0.975410 | 93 of 100 | 0.829953 / 0.977568 | 0.855835 / 0.981366 |
+
+Full assigned/Other text counts change from 707 both named / 287 Sol-only named /
+one Decisions-only named / five both Other to 908 / 90 / zero / two. Photos
+change from 94 / one / four / one to 95 / zero / two / three. Neither a shared
+rejection count nor a conditional subset alone explains the complete result.
+The text coverage improvement coexists with weaker grouping agreement among
+the items all methods already named. This is one stream order and a combined
+manager intervention, not semantic ground truth or a component ablation.
+
+The post hoc common-named diagnostics retain the same items for both policies,
+selected only after observing final outcomes. They exclude rejection cases and
+are neither primary results nor independent confirmations. Exact code, selected
+IDs and the frozen metric-helper hash are retained under streaming/reproduction
+and streaming/posthoc. Full-cohort metrics are checked against the frozen CLI
+first; the immutable control evidence remains separate.
+
+A separate blinded coding-harness review inspects eleven reserved photos and
+44 anonymous assignments, including disagreements, shared rejection and four
+seed-selected jointly named agreements. Qualitative judgments are sealed before
+unblinding, exclude source metadata and are not human truth or accuracy rates.
+Examples distinguish a vehicle-wreckage error, a reasonable Sports/People
+granularity difference, a persistent mannequin boundary and defensible shared
+Other for a cooking-appliance catalog gap. Four illustrative cases are curated
+for the report; coding-harness review compute is outside the API ledger.
+
+A bounded historical text episode is independently captured: at 53 received
+items the contextual Sol manager retires all eight categories, queuing 53.
+Those commit zero-request Other reevaluations (45 previously named, eight
+previously Other) because there are no candidate pages. Eight subsequent inputs
+trigger novelty management at 61 and ten categories are created, queuing all61.
+The active-category cap16 did not require retirement. The raw plans provide no
+public rationale, so no intent or semantic-merit claim is inferred. Episode
+JSON/Markdown retain event IDs, selected row/call hashes and runtime pins.
+
+The final all-target Rust receipt sums to 115 offline passes (94 library, seven
+CLI, three analyzer and 11 frozen-catalog example tests), plus one ignored paid
+test and zero doctests. Earlier prose counted 117; this corrects the count
+without changing runtime or experiment evidence. All 93 Python tests now pass,
+including 20 independent stream-verifier and 15 stream-publication tests.
+
+Streaming archive creation and separate anchored verification now pass for407
+input/run files. Manifest SHA-256:
+`75d694a497fdf0dfab14159b8f978606ce89eeb17efb646802fe2106fc79d9f4`.
+The external receipt is `streaming-archive-verification.json` beside the archive.
+The14MB independent audit is retained exactly inside the raw run payload;
+smaller comparisons and conditional diagnostics have readable mirrors.

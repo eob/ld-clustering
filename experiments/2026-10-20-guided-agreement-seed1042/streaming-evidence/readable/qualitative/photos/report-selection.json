@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "review_sha256": "f701cb646d189b082502dc6eba8ae37ad2b58c716867b2c95ed18e999e296be1",
+  "asset_url_prefix": "/goofing/ld-clustering/streaming",
+  "selection_note": "Four cases curated after the sealed blinded review of eleven reserved photographs: a clear original Decisions error, a reasonable granularity difference, a remaining mannequin/category-gap disagreement, and justified shared Other for a cooking appliance. Both the eleven-case review selection and these four illustrations are post hoc qualitative choices, not an accuracy sample. The automated same-family coding-harness review is not human ground truth and its compute is outside the experiment API ledger.",
+  "cases": [
+    {
+      "item_id": "a046f244997563f9d1e1",
+      "alt_evidence_index": 0
+    },
+    {
+      "item_id": "4439b2e4deffbca976b9",
+      "alt_evidence_index": 0
+    },
+    {
+      "item_id": "127aa359731969742c20",
+      "alt_evidence_index": 0
+    },
+    {
+      "item_id": "85534b38f39724a599c4",
+      "alt_evidence_index": 0
+    }
+  ]
+}

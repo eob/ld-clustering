@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "scope": "Offline loader correction only: compile exact source bytes without reading or writing bytecode caches. Original metric code preserved; regenerated photo result is byte-identical. Paid runtime, requests and assignments unchanged.",
+  "initial_script_sha256": "9597293908ccafeb4c441cea0f50cb8ce300cf9c24d3520f02f095abed2c740f",
+  "cachefree_script_sha256": "c7933f11de6c2ab375c33483338e36618021e14e47a98b7c28c8a9a3f6c7c066",
+  "unchanged_photo_result_sha256": "39f1e1bbb27da03f3b41bb395bdee9b23f9122d265be63319e620f3a1dc949db"
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "catalog_identity": {
+    "A": "images-original-ld",
+    "B": "images-contextual-ld",
+    "C": "images-contextual-llm",
+    "D": "images-original-llm"
+  },
+  "selection": {
+    "a046f244997563f9d1e1": {
+      "selection": "largest_partition_mismatch_degree",
+      "policy": "original",
+      "degree": 24,
+      "one_per_local_assignment_cell": true
+    },
+    "127aa359731969742c20": {
+      "selection": "largest_partition_mismatch_degree",
+      "policy": "original",
+      "degree": 19,
+      "one_per_local_assignment_cell": true
+    },
+    "bb29c67d8b4cc926faaa": {
+      "selection": "largest_partition_mismatch_degree",
+      "policy": "original",
+      "degree": 15,
+      "one_per_local_assignment_cell": true
+    },
+    "4439b2e4deffbca976b9": {
+      "selection": "largest_partition_mismatch_degree",
+      "policy": "original",
+      "degree": 14,
+      "one_per_local_assignment_cell": true
+    },
+    "4d03e2f0db6c4896ca4f": {
+      "selection": "largest_partition_mismatch_degree",
+      "policy": "contextual",
+      "degree": 5,
+      "one_per_local_assignment_cell": true
+    },
+    "47a285d87f6f48b7bc94": {
+      "selection": "largest_partition_mismatch_degree",
+      "policy": "contextual",
+      "degree": 3,
+      "one_per_local_assignment_cell": true
+    },
+    "85534b38f39724a599c4": {
+      "selection": "both_other",
+      "policy": "contextual"
+    },
+    "14147df8e0ba72ed0ae7": {
+      "selection": "deterministic_joint_named_zero_partition_mismatch",
+      "selection_seed": 3042
+    },
+    "90efe299476dc2646c90": {
+      "selection": "deterministic_joint_named_zero_partition_mismatch",
+      "selection_seed": 3042
+    },
+    "625643bbf93c7fa76209": {
+      "selection": "deterministic_joint_named_zero_partition_mismatch",
+      "selection_seed": 3042
+    },
+    "ba52b3242bca28a040d3": {
+      "selection": "deterministic_joint_named_zero_partition_mismatch",
+      "selection_seed": 3042
+    }
+  },
+  "note": "Selection depends on observed outcomes, is qualitative only and not an accuracy estimate. Degrees count symmetric differences in named co-membership neighborhoods; Other is singleton. Input IDs are the independent reserved photo partition."
+}

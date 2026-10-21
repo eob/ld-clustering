@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "scope": "Post hoc qualitative sample from terminal reserved photo arms. Catalog identities, classifier identities, policy names, aggregate outcomes and source photo metadata withheld. Not a random accuracy sample or human ground truth. Coding-harness reviewer compute is outside the recorded experiment API ledger.",
+  "instructions": "Inspect each exact supplied JPEG. Evaluate each anonymous assignment against its OWN full catalog; IDs from different catalogs cannot be compared. Identify visible focal subject, membership fit (supported/plausible/unsupported/unclear), evidence, severity and themes; consider reasonable alternatives, missing categories, unjustified Other and shared mistakes. Do not infer identity from opaque filename or look up source metadata. Do not assume any candidate is correct. Write judgments without requesting unblinding.",
+  "catalogs": {
+    "A": [
+      {
+        "id": 1,
+        "name": "Animals",
+        "description": "Photographs whose main subject is a nonhuman animal, including mammals, birds, reptiles, insects and aquatic animals, whether wild or domesticated."
+      },
+      {
+        "id": 2,
+        "name": "Vehicles",
+        "description": "Photographs primarily featuring motor vehicles, including passenger cars, pickup trucks and racing cars. Includes occupied vehicles when the vehicle is the dominant subject."
+      },
+      {
+        "id": 3,
+        "name": "People",
+        "description": "Portraits and scenes centered on people in nonsporting contexts, including public speaking, uniformed personnel and historical reenactments."
+      },
+      {
+        "id": 4,
+        "name": "Sports and Physical Activities",
+        "description": "Photographs primarily showing people participating in sports or physical performance, including skiing, cricket and dance. Excludes images primarily showcasing a vehicle."
+      },
+      {
+        "id": 5,
+        "name": "Food",
+        "description": "Photographs primarily featuring food or prepared dishes, including meals served on plates."
+      },
+      {
+        "id": 6,
+        "name": "Natural Landscapes",
+        "description": "Photographs primarily depicting natural scenery or geological features, including geothermal springs, geysers and surrounding terrain."
+      },
+      {
+        "id": 7,
+        "name": "Art and Crafts",
+        "description": "Photographs primarily featuring crafted artistic objects, including puppets, figurines and decorative sculptures, rather than living people or animals."
+      },
+      {
+        "id": 8,
+        "name": "Electrical and Electronic Components",
+        "description": "Photographs primarily featuring electrical or electronic components and accessories, including cables, wiring and connectors."
+      },
+      {
+        "id": 9,
+        "name": "Plants and Flowers",
+        "description": "Photographs primarily featuring plants or their parts, including flowers, foliage, shrubs and trees, rather than expansive natural scenery."
+      },
+      {
+        "id": 10,
+        "name": "Architecture and Infrastructure",
+        "description": "Photographs primarily featuring buildings, architectural structures, building interiors, construction sites or built infrastructure, including street fixtures such as manhole covers."
+      },
+      {
+        "id": 11,
+        "name": "Clothing and Accessories",
+        "description": "Photographs primarily featuring garments or wearable accessories, including scarves, rather than portraits or scenes centered on people wearing them."
+      }
+    ],
+    "B": [
+      {
+        "id": 1,
+        "name": "Animals",
+        "description": "Non-human animals as the main subject, including pets, wildlife, birds, insects, reptiles, and aquatic animals."
+      },
+      {
+        "id": 2,
+        "name": "People",
+        "description": "People as the main subject, including portraits, groups, public speaking, sports, and performances. Clothing and equipment remain part of this category when the photograph centers on the person or their activity."
+      },
+      {
+        "id": 3,
+        "name": "Vehicles",
+        "description": "Vehicles as the main subject, including cars, trucks, and racing vehicles, whether parked, displayed, or in use. Occupants may be present when the vehicle remains the focal subject."
+      },
+      {
+        "id": 4,
+        "name": "Food",
+        "description": "Edible foods and prepared dishes as the main subject, including plated meals and snacks."
+      },
+      {
+        "id": 5,
+        "name": "Natural Landscapes",
+        "description": "Natural landscapes and geological features as the main subject, including terrain, water features, and geothermal activity."
+      },
+      {
+        "id": 6,
+        "name": "Art and Decorative Objects",
+        "description": "Artworks and crafted display objects as the main subject, including sculptures, figurines, and theatrical puppets. Depicted figures are treated as objects rather than living people or animals."
+      },
+      {
+        "id": 7,
+        "name": "Electrical and Electronic Equipment",
+        "description": "Electrical or electronic devices, components, and accessories as the main subject, including standalone cables and connectors."
+      },
+      {
+        "id": 8,
+        "name": "Plants",
+        "description": "Plants and their parts as the main subject, including flowers, leaves, trees, and other vegetation."
+      },
+      {
+        "id": 9,
+        "name": "Buildings and Built Environments",
+        "description": "Buildings, architectural structures, room interiors, construction sites, and fixed civic infrastructure as the main subject. Includes small street enclosures and infrastructure components such as telephone booths and utility access covers."
+      },
+      {
+        "id": 10,
+        "name": "Tools and Work Equipment",
+        "description": "Hand tools and non-electrical work equipment as the main subject, including woodworking tools and workbench setups, ropes, and rigging. Includes unfinished workpieces presented as part of a workshop setup."
+      }
+    ],
+    "C": [
+      {
+        "id": 1,
+        "name": "Animals",
+        "description": "Nonhuman animals as the main subject, including mammals, birds, reptiles, insects, and aquatic animals, whether wild or domestic."
+      },
+      {
+        "id": 2,
+        "name": "People",
+        "description": "Portraits, groups, and scenes centered on people and their activities, including sports, performance, work, and ceremonial dress."
+      },
+      {
+        "id": 3,
+        "name": "Vehicles",
+        "description": "Transport and racing vehicles, including cars and trucks, when the vehicle itself is the focal subject. Occupants or nearby people may be present."
+      },
+      {
+        "id": 4,
+        "name": "Food",
+        "description": "Recognizable food, prepared dishes, and edible ingredients presented as the main subject."
+      },
+      {
+        "id": 5,
+        "name": "Natural landscapes and features",
+        "description": "Natural scenery and geological or water features, including geothermal springs and geysers, when the natural setting or formation is the focal subject."
+      },
+      {
+        "id": 6,
+        "name": "Art and decorative objects",
+        "description": "Artworks, decorative objects, and crafted figures such as puppets and sculptures, photographed as objects rather than living subjects."
+      },
+      {
+        "id": 7,
+        "name": "Electrical and electronic equipment",
+        "description": "Electrical and electronic equipment, components, and connection accessories, including wires, cables, and connectors, shown as the main subject."
+      },
+      {
+        "id": 8,
+        "name": "Plants",
+        "description": "Plants and their visible parts, including flowers, foliage, and trees, when individual plants or plant details are the main subject."
+      },
+      {
+        "id": 9,
+        "name": "Buildings and infrastructure",
+        "description": "Buildings, architectural structures, and built infrastructure, including construction sites and fixed street fixtures, when the structure or built environment is the main subject."
+      },
+      {
+        "id": 10,
+        "name": "Tools and hardware",
+        "description": "Manual tools, workshop implements, and utilitarian hardware or rigging, including ropes and fastening accessories, shown as the main subject."
+      }
+    ],
+    "D": [
+      {
+        "id": 1,
+        "name": "Animals",
+        "description": "Photographs whose main subject is a nonhuman animal, including pets, wildlife, birds, reptiles, insects, and marine animals."
+      },
+      {
+        "id": 2,
+        "name": "Vehicles",
+        "description": "Photographs centered on vehicles, including passenger cars, pickup trucks, classic cars, and racing cars. Includes occupied vehicles when the vehicle remains the primary subject."
+      },
+      {
+        "id": 3,
+        "name": "People",
+        "description": "Photographs centered on a person or group of people, including portraits, public speakers, people in uniforms or historical costumes, athletes, and dancers."
+      },
+      {
+        "id": 4,
+        "name": "Food",
+        "description": "Photographs whose main subject is food or a prepared dish, including plated meals and cooked ingredients."
+      },
+      {
+        "id": 5,
+        "name": "Natural landscapes",
+        "description": "Photographs centered on natural scenery or geological features, including terrain, water, geysers, and geothermal activity, rather than an individual animal or person."
+      },
+      {
+        "id": 6,
+        "name": "Art and decorative objects",
+        "description": "Photographs centered on artistic or decorative objects, including puppets, sculptures, figurines, and crafted display pieces rather than living people."
+      },
+      {
+        "id": 7,
+        "name": "Electrical and electronic equipment",
+        "description": "Photographs centered on electrical or electronic equipment and components, including cables, wires, and connectors."
+      },
+      {
+        "id": 8,
+        "name": "Plants and flowers",
+        "description": "Photographs centered on plants or their parts, including flowers, foliage, shrubs, and trees, rather than broad natural scenery."
+      },
+      {
+        "id": 9,
+        "name": "Architecture and built environments",
+        "description": "Photographs centered on buildings, architectural structures, interior spaces, construction sites, or fixed public infrastructure, including telephone booths and manhole covers, rather than people, vehicles, or portable objects."
+      },
+      {
+        "id": 10,
+        "name": "Tools and hardware",
+        "description": "Photographs centered on hand tools, workshop implements, ropes, rigging, or functional hardware, including woodworking tools. Excludes electrical and electronic equipment, vehicles, and fixed architectural infrastructure."
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "stream-photo-183364f59793fb3c",
+      "item_id": "a046f244997563f9d1e1",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/a046f244997563f9d1e1.jpg",
+      "image_sha256": "85b0d3b890e69d325ba122db70180ef507c27ed618ab8133eea29a092f914445",
+      "assignments": {
+        "A": 10,
+        "B": 3,
+        "C": 3,
+        "D": 2
+      }
+    },
+    {
+      "case_id": "stream-photo-4fd66af951af21d2",
+      "item_id": "127aa359731969742c20",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/127aa359731969742c20.jpg",
+      "image_sha256": "a64733ce398078ee9fb324e22f5130f9b47c5c8aeb52a5b2f55811895bf4343c",
+      "assignments": {
+        "A": 3,
+        "B": 2,
+        "C": 6,
+        "D": 6
+      }
+    },
+    {
+      "case_id": "stream-photo-2bef21bc353c99a3",
+      "item_id": "bb29c67d8b4cc926faaa",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/bb29c67d8b4cc926faaa.jpg",
+      "image_sha256": "8d226d4580a6915f52daf90ba3c5521d9234c8c9a0d0cd31566e07b2d7077d82",
+      "assignments": {
+        "A": 10,
+        "B": 6,
+        "C": 6,
+        "D": 6
+      }
+    },
+    {
+      "case_id": "stream-photo-e84555ef16912d66",
+      "item_id": "4439b2e4deffbca976b9",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/4439b2e4deffbca976b9.jpg",
+      "image_sha256": "4f0bd4a1a46bc36b044d9c46f6d1b35e79c29511802f900184cd2d0ceda5d522",
+      "assignments": {
+        "A": 4,
+        "B": 2,
+        "C": 2,
+        "D": 3
+      }
+    },
+    {
+      "case_id": "stream-photo-90134ed7fca1318a",
+      "item_id": "4d03e2f0db6c4896ca4f",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/4d03e2f0db6c4896ca4f.jpg",
+      "image_sha256": "8dcf35648a0037c4d258c88f981a1fc284d377ed335b6b2dcb4847b65fab089a",
+      "assignments": {
+        "A": null,
+        "B": 6,
+        "C": null,
+        "D": null
+      }
+    },
+    {
+      "case_id": "stream-photo-640f7f98efe5103f",
+      "item_id": "47a285d87f6f48b7bc94",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/47a285d87f6f48b7bc94.jpg",
+      "image_sha256": "91d644a869cfda226ab585902dcc43d04af2e98701cb812f6908f9912c664813",
+      "assignments": {
+        "A": 7,
+        "B": 6,
+        "C": 6,
+        "D": 6
+      }
+    },
+    {
+      "case_id": "stream-photo-27d7632470436dc5",
+      "item_id": "85534b38f39724a599c4",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/85534b38f39724a599c4.jpg",
+      "image_sha256": "0a59bfbd7fb95bbbf2d7c0679fd340939cdc3dbc20be3ade8f1262079b8c8930",
+      "assignments": {
+        "A": 10,
+        "B": null,
+        "C": null,
+        "D": null
+      }
+    },
+    {
+      "case_id": "stream-photo-3b8b2852ebf7f7bf",
+      "item_id": "14147df8e0ba72ed0ae7",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/14147df8e0ba72ed0ae7.jpg",
+      "image_sha256": "6911b518b07d30113e684eb113c178e0028cce1e4165cbc8466d4a175b185887",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      }
+    },
+    {
+      "case_id": "stream-photo-fe5e7984f157a6e6",
+      "item_id": "90efe299476dc2646c90",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/90efe299476dc2646c90.jpg",
+      "image_sha256": "e8803d1c0119e83a5081b7fa600ee405ff600a3820bf7ff2eebcd25fa616a77e",
+      "assignments": {
+        "A": 9,
+        "B": 8,
+        "C": 8,
+        "D": 8
+      }
+    },
+    {
+      "case_id": "stream-photo-3a97b0e3ab72087d",
+      "item_id": "625643bbf93c7fa76209",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/625643bbf93c7fa76209.jpg",
+      "image_sha256": "4ce8add7df2d3f2970f082b8a72f2c3b067baae88dbee688c512f663174cf96b",
+      "assignments": {
+        "A": 9,
+        "B": 8,
+        "C": 8,
+        "D": 8
+      }
+    },
+    {
+      "case_id": "stream-photo-9d31c865d34b919b",
+      "item_id": "ba52b3242bca28a040d3",
+      "image_path": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/ba52b3242bca28a040d3.jpg",
+      "image_sha256": "362193d0d4137200f0871b6955e17612fb6021734c4ef476e0ecec1332b75e47",
+      "assignments": {
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      }
+    }
+  ]
+}
