@@ -1,10 +1,10 @@
 # Measure whether contextual category guidance improves LLM–Decisions agreement
 
-**Status:** In Review
+**Status:** Closed
 **Type:** Investigation
 **Filed:** 2026-10-20
 **Branch:** feat-guided-agreement-experiment
-**Pull request:** https://github.com/eob/ld-clustering/pull/3 (draft; experiment in progress)
+**Pull request:** https://github.com/eob/ld-clustering/pull/3
 
 ## Goal / failure mode
 
@@ -481,3 +481,53 @@ input/run files. Manifest SHA-256:
 The external receipt is `streaming-archive-verification.json` beside the archive.
 The14MB independent audit is retained exactly inside the raw run payload;
 smaller comparisons and conditional diagnostics have readable mirrors.
+
+## Merge Summary
+
+- Merge date (UTC): 2026-10-21T12:04:30Z
+- Pull request: https://github.com/eob/ld-clustering/pull/3
+- Merge commit: [`48d62670de7b5201e2e7b5464e9c5505c2ebe7eb`](https://github.com/eob/ld-clustering/commit/48d62670de7b5201e2e7b5464e9c5505c2ebe7eb)
+
+### Final PR title (verbatim)
+
+feat(experiment): verify catalog guidance and contextual streams
+
+### Final PR description (verbatim)
+
+## Summary
+
+Measure category guidance under a shared frozen catalog and a separate evolving manager. Rich guides reduced fixed-catalog direct agreement (text 82.0% → 52.2%, photos 96% → 81%). The contextual streaming manager improved full-cohort ARI (text .538096 → .609758, photos .818656 → .971144), with a coverage/grouping tradeoff and substantial reconsideration work.
+
+## Why
+
+The historical study mixed independent catalog evolution with low-resolution clothing images. Discovery-only shared catalogs, fresh held-out requests and larger natural photographs isolate the description intervention before testing a broader manager change on disjoint streams.
+
+## What changed
+
+- Add Rust discovery, joint catalog revision, fixed-ID assignment, repeats, blinded automated review and order/page diagnostics. Preserve category IDs, order, input partitions, raw attempts, model/source/binary pins and individual image licensing.
+- Archive the completed control without replacing its failed original-photo review: 57 accepted, one failed, 42 unattempted. Direct and named agreement both regress; shared Other stays 11 text/five photos.
+- Add a context-bound manager with full-catalog membership guides and transactional reconsideration after actual catalog changes. Original planning/assignment request bodies remain unchanged; reassignment origins and work counters remain auditable.
+- Complete and independently replay all eight reserved streams (1,000 requests/100 photos per arm), all four full comparisons and separately labeled common-named diagnostics. Text native coverage rises 70.8% → 90.8%; on the same 674 named items, ARI regresses .787131 → .721809. Photo gains persist on the common 93 subset.
+- Preserve eleven blinded photo cases, four curated examples and a concrete zero-call retirement episode. Package exact raw records, SQLite state, selected inputs and reproduction tools in separately anchored control/stream archives.
+
+## Validation
+
+- 115 offline Rust tests pass; one explicitly paid test ignored. rustfmt and all-target Clippy with warnings denied pass. All 93 Python helper tests pass, including 20 stream-verifier and 15 stream-exporter tests.
+- Independent control replay: 6,439 attempts; known subtotal $7.7162398 with historical failed-review completeness flags retained. Control archive 521 files, manifest SHA-256 20d8a470bf9cfb63b5406b1b883f1f23199def56e9577928a8cc9dd9b908b1fa.
+- Independent streaming replay: 8/8 complete/drained arms, 31,220 calls, two errors/two retries, no refusals or unknown usage/pricing; complete API cost $16.4293528. Audit SHA-256 a939309be01b79663ca6a517c021aaee459b1aa6a2365cfdcdcfb5a9886417fd.
+- Separate anchored stream archive verification passes 407 decompressed files against manifest SHA-256 75d694a497fdf0dfab14159b8f978606ce89eeb17efb646802fe2106fc79d9f4. The 14 MB audit remains exact in the raw tar; smaller scientific files have readable mirrors.
+- Zero-API request preflight and launcher lifecycle fixtures cover exact constructors, graceful termination and violent supervisor death. Independent SQLite pair enumeration reproduces all full/common metrics and selected 674/93 IDs.
+
+## Ticket
+
+[feature-guided-agreement-experiment](https://github.com/eob/ld-clustering/blob/feat-guided-agreement-experiment/tickets/feature-guided-agreement-experiment.md). Illustrated publication follows in [eob/kaya-web PR #2226](https://github.com/eob/kaya-web/pull/2226).
+
+## Risks / follow-ups
+
+Agreement is not semantic accuracy. Rich wording and length change together; order/page diagnostics reuse subsets and do not establish a provider mechanism. The streaming intervention combines guidance, prior evidence and global reconsideration; independent catalogs prohibit direct-ID comparison. Text's full gain accompanies coverage expansion but worse common-subset grouping. Contextual Sol text uses 8,131 calls/5,964 reevaluations/$10.6207179 versus Original 1,606/300/$2.296944. Timing scopes overlap and must not be summed. Coding-harness review is fallible and outside the API ledger. The verifier does not recreate historical manager sampling/trigger cadence/queue membership or prove rebuild-byte identity. Keep migrated queues away from older binaries.
+
+### Agent Metadata
+
+- Harness: Codex
+- Machine: shared Linux workspace
+- Ticket: feature-guided-agreement-experiment

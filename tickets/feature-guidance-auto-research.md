@@ -1,6 +1,6 @@
 # Improve shared-catalog agreement through bounded adaptive experiments
 
-**Status:** In Review
+**Status:** Closed
 **Type:** Investigation
 **Filed:** 2026-10-21
 **Branch:** feat-guidance-auto-research
@@ -424,3 +424,56 @@ examples. Both Red witnesses and Green logs are retained outside the snapshot
 in `delivery-validation/`; `EVIDENCE-VERIFICATION.json` binds their hashes and
 the corrected source helper separately from the archived helper. No model call
 or scientific result changes.
+
+## Merge Summary
+
+- Merge date (UTC): 2026-10-21T12:38:18Z
+- Pull request: https://github.com/eob/ld-clustering/pull/4
+- Merge commit: [`6ea9fe37431c3a1a1a07fd77bd7e0c548868f056`](https://github.com/eob/ld-clustering/commit/6ea9fe37431c3a1a1a07fd77bd7e0c548868f056)
+
+### Final PR title (verbatim)
+
+feat(experiment): preserve negative guidance trials and comparable metrics
+
+### Final PR description (verbatim)
+
+## Summary
+
+Complete three bounded guidance designs and one untouched confirmation, preserving every result in an auditable research log. The frozen Boundary challenger did not improve fresh direct agreement: text 82.4% → 80.8% on 1,000 requests and photographs 98% → 95% on 100 items.
+
+## Why
+
+The earlier rich-description control regressed. Concise membership rules and targeted boundaries need explicit development selection, fresh confirmation and rejection accounting before an apparent development gain can support a new default.
+
+## What changed
+
+- Add a separate frozen Rust runner, deterministic fresh text/natural-photo preparation, fixed protocols, and append-only dispatch/terminal registrations. Complete all 52 invocations and 22 comparisons without confirmation-driven retuning.
+- Preserve development selection: text NOT_ADOPTED; photographs ADOPTED before the unfavorable confirmation. Direct and named agreement both decline. Decisions labels are identical across all 100 confirmation photos; three changed Sol labels explain the photo agreement loss.
+- Independently replay requests, returned values, own catalogs, assignments, coverage, confusion and Decimal accounting. Seal and unblind all 46 text and 15 photo review cases, retaining one flagged transposed-rationale note without repair or replacement. Preserve an 11-case illustrated gallery with exact licensed JPEGs.
+- Add strict offline archive, review and publication tools. The separate anchored archive binds 397 selected dataset files and 1,054 raw run files; runtime source remains a3b38d7 and is distinct from the evidence commit.
+- Correct two publication-link defects found by actual export after the snapshot: Markdown links retain byte checks without JSON parsing, and intentionally raw-only receipts link explicitly to archive restoration instructions. Preserve the immutable archived helper; final reproduction uses the corrected repository exporter.
+- Export a leading method matrix with nine scoped groups and 18 rows from pinned prior publications and audited fresh arms. Per-backend cost/time, missing measurements, independent-catalog ARI, adaptive reuse and fresh confirmation remain explicit; generation, review and repeats stay in the chronological log.
+- Document final findings, rejection/reference movement, preselected repeats and a labeled post hoc concentration of remaining text disagreements. Incorporate the merged preceding streaming study through main while preserving the recorded runtime ancestry.
+
+## Validation
+
+- All 213 final repository Python tests pass, including the two new full-archive link regressions and 14 matrix exporter tests. The immutable archive retains its earlier 211-test checkpoint; the separate review-reproduction receipt records seven helper tests. Both link-failure Red witnesses and Green logs are retained outside RUN in delivery-validation/.
+- Actual strict report export succeeds for all 12 chronological rounds and 11 gallery cases with the corrected helper. EVIDENCE-VERIFICATION.json binds its source hash separately from the unchanged archived reproduction copy.
+- 136 offline Rust tests pass; one explicitly paid test is ignored. rustfmt and all-target Clippy with warnings denied pass. Documentation-only final edits pass the full diff whitespace check.
+- Final independent audit: 7,608 recorded attempts; zero API errors, retries, refusals or unknown usage; complete experiment API cost $6.5893167. Coding and coding-harness qualitative review compute are outside this ledger.
+- Sol repeat label consistency: text Original 96/100, challenger 98/100; photos 25/25 and 24/25. These are preselected subsets, not semantic accuracy measurements.
+- Archive creation and separate literal-anchor verification pass: manifest SHA256 `74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07`. Every payload part stays below 90 MiB. `EVIDENCE-VERIFICATION.json` records runtime/data/audit/matrix pins and validation receipts; RUN is unchanged after the snapshot.
+
+## Ticket
+
+[feature-guidance-auto-research](https://github.com/eob/ld-clustering/blob/feat-guidance-auto-research/tickets/feature-guidance-auto-research.md). Findings: [RESULTS.md](https://github.com/eob/ld-clustering/blob/feat-guidance-auto-research/experiments/2026-10-21-auto-research-seed2043/RESULTS.md). The preceding [PR #3](https://github.com/eob/ld-clustering/pull/3) is merged. Website import and final browser/preflight/publication are tracked separately in [eob/kaya-web PR #2226](https://github.com/eob/kaya-web/pull/2226).
+
+## Risks / follow-ups
+
+Agreement is not semantic accuracy. Wording and length change together. The synthetic probe differs in catalog size and ID encoding from natural tasks and establishes no provider mechanism. Qualitative reviewers have unknown exact model identity and possible shared-family bias; challenger-stratified cases do not estimate population accuracy. The frozen executable is hash-pinned rather than rebuilt by the archive verifier. Cost scopes and concurrent loop times differ across historical groups. No confirmation-driven redesign or favorable rerun is part of this study.
+
+### Agent Metadata
+
+- Harness: Codex
+- Machine: shared Linux workspace
+- Ticket: feature-guidance-auto-research
