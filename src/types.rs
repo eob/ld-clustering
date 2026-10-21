@@ -1,7 +1,76 @@
-use anyhow::Result;
+use anyhow::{Result, ensure};
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
+
+pub const MAX_MANAGER_CONTEXT_BYTES: usize = 32 * 1024;
+pub const CONTEXTUAL_MANAGER_REVISION: &str = "contextual-v1";
+
+#[derive(Clone, Copy, Debug, Default, Serialize, Deserialize, clap::ValueEnum, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum ManagerPolicy {
+    #[default]
+    Original,
+    Contextual,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct ManagerDescriptor {
+    pub policy: ManagerPolicy,
+    pub context_sha256: Option<String>,
+    pub prompt_revision: String,
+}
+
+impl Default for ManagerDescriptor {
+    fn default() -> Self {
+        Self {
+            policy: ManagerPolicy::Original,
+            context_sha256: None,
+            prompt_revision: "original-v1".into(),
+        }
+    }
+}
+
+impl ManagerDescriptor {
+    pub fn from_context(context: &str) -> Result<Self> {
+        use sha2::{Digest, Sha256};
+        ensure!(
+            !context.trim().is_empty() && context.len() <= MAX_MANAGER_CONTEXT_BYTES,
+            "manager context must contain 1 to {MAX_MANAGER_CONTEXT_BYTES} UTF-8 bytes"
+        );
+        Ok(Self {
+            policy: ManagerPolicy::Contextual,
+            context_sha256: Some(format!("{:x}", Sha256::digest(context.as_bytes()))),
+            prompt_revision: CONTEXTUAL_MANAGER_REVISION.into(),
+        })
+    }
+
+    pub fn validate(&self) -> Result<()> {
+        match self.policy {
+            ManagerPolicy::Original => ensure!(
+                self.context_sha256.is_none() && self.prompt_revision == "original-v1",
+                "original manager identity must use its original prompt without context"
+            ),
+            ManagerPolicy::Contextual => {
+                ensure!(
+                    self.prompt_revision == CONTEXTUAL_MANAGER_REVISION,
+                    "unsupported contextual manager prompt revision"
+                );
+                ensure!(
+                    self.context_sha256.as_ref().is_some_and(|hash| {
+                        hash.len() == 64
+                            && hash
+                                .bytes()
+                                .all(|byte| byte.is_ascii_digit() || (b'a'..=b'f').contains(&byte))
+                    }),
+                    "contextual manager identity requires a lowercase SHA-256"
+                );
+            }
+        }
+        Ok(())
+    }
+}
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Item {
@@ -111,4 +180,54 @@ pub trait Model: Send + Sync {
         examples: &[Example],
         max_clusters: usize,
     ) -> Result<ModelReply<Plan>>;
+}
+
+#[cfg(test)]
+mod manager_tests {
+    use super::*;
+    use sha2::{Digest, Sha256};
+
+    #[test]
+    fn context_identity_pins_raw_bytes_and_validates_policy_revision() -> Result<()> {
+        ManagerDescriptor::default().validate()?;
+        let plain = ManagerDescriptor::from_context("observed boundary evidence")?;
+        assert_eq!(plain.policy, ManagerPolicy::Contextual);
+        assert_eq!(plain.prompt_revision, CONTEXTUAL_MANAGER_REVISION);
+        assert_eq!(
+            plain.context_sha256,
+            Some(format!(
+                "{:x}",
+                Sha256::digest(b"observed boundary evidence")
+            ))
+        );
+        assert_ne!(
+            plain,
+            ManagerDescriptor::from_context("observed boundary evidence\n")?
+        );
+        assert!(ManagerDescriptor::from_context("  \n").is_err());
+        assert!(
+            ManagerDescriptor::from_context(&"x".repeat(MAX_MANAGER_CONTEXT_BYTES + 1)).is_err()
+        );
+        for invalid in [
+            ManagerDescriptor {
+                prompt_revision: "future-revision".into(),
+                ..plain.clone()
+            },
+            ManagerDescriptor {
+                context_sha256: None,
+                ..plain.clone()
+            },
+            ManagerDescriptor {
+                context_sha256: Some("A".repeat(64)),
+                ..plain.clone()
+            },
+            ManagerDescriptor {
+                policy: ManagerPolicy::Original,
+                ..plain
+            },
+        ] {
+            assert!(invalid.validate().is_err());
+        }
+        Ok(())
+    }
 }

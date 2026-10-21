@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "review_plan": "preregistration/review-plan.json",
+  "cohorts": [
+    {
+      "modality": "text",
+      "items": "../../data/guidance/heldout/text.jsonl",
+      "repeat_input": "../../data/guidance/repeat/text.jsonl",
+      "original": {
+        "catalog": "catalog/text-original.json",
+        "baseline": "controlled/text-original-llm.json",
+        "candidate": "controlled/text-original-ld.json",
+        "baseline_repeat": "repeat/text-original-llm.json",
+        "candidate_repeat": null,
+        "review_bundle": "review/text-original.bundle.json",
+        "review_output": "review/text-original.json"
+      },
+      "guided": {
+        "catalog": "catalog/text-guided.json",
+        "baseline": "controlled/text-guided-llm.json",
+        "candidate": "controlled/text-guided-ld.json",
+        "baseline_repeat": "repeat/text-guided-llm.json",
+        "candidate_repeat": null,
+        "review_bundle": "review/text-guided.bundle.json",
+        "review_output": "review/text-guided.json"
+      }
+    },
+    {
+      "modality": "images",
+      "items": "../../data/guidance/heldout/images.jsonl",
+      "repeat_input": "../../data/guidance/repeat/images.jsonl",
+      "original": {
+        "catalog": "catalog/images-original.json",
+        "baseline": "controlled/images-original-llm.json",
+        "candidate": "controlled/images-original-ld.json",
+        "baseline_repeat": "repeat/images-original-llm.json",
+        "candidate_repeat": null,
+        "review_bundle": "review/images-original.bundle.json",
+        "review_output": "review/images-original.json"
+      },
+      "guided": {
+        "catalog": "catalog/images-guided.json",
+        "baseline": "controlled/images-guided-llm.json",
+        "candidate": "controlled/images-guided-ld.json",
+        "baseline_repeat": "repeat/images-guided-llm.json",
+        "candidate_repeat": null,
+        "review_bundle": "review/images-guided.bundle.json",
+        "review_output": "review/images-guided.json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,846 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "metadata": {
+    "assignment_model": "gpt-6-luna",
+    "catalog": [
+      {
+        "description": "Requests about bank accounts, credit or debit cards, bills, payments, transfers, interest, rewards, credit scores, currency exchange, budgeting, financial values, and insurance policies. Include account access or holds, checkbooks, card applications, delivery, expiry, damage, limits, balances, declined payments, fees, fraud, transaction history, and reward redemption. Financial values include asset valuations and currency or cryptocurrency prices. Classify by the financial operation even when a restaurant, retailer, vehicle, or foreign destination is mentioned. Use Work & Employee Benefits for paychecks, direct deposit, annual earnings, tax forms, and employment-linked benefits; otherwise, ordinary payment and account questions remain here. Use Shopping & Consumer Services for retail prices, orders, and fulfillment rather than payment-account records. Use Cars & Vehicle Care for vehicle selection or maintenance, but keep insurance-policy administration here unless explicitly employment-linked. Currency exchange and personal financial calculations belong here; abstract arithmetic belongs in Knowledge & Learning.",
+        "id": 1,
+        "name": "Money & Banking"
+      },
+      {
+        "description": "Requests about paychecks, pay dates, direct-deposit setup or changes, annual earnings, tax forms and obtaining them, employee benefits, and vacation or other time-off entitlements, usage, balances, requests, approvals, or status. Recognize earnings and leave from ordinary contextual wording; an employer need not be named. Use Money & Banking for ordinary account transactions, bills, or incoming payments not identified as pay, and for insurance policies not tied to employment. Employment-linked insurance benefits belong here. Use Personal Organization & Communication for editing a calendar entry, even when the entry concerns work; use this category for the underlying leave request or entitlement. Use Travel & Navigation for vacation transportation, lodging, destinations, and bookings rather than time-off approval or availability. Tax-form assistance belongs here, while general explanations of tax law belong in Knowledge & Learning.",
+        "id": 2,
+        "name": "Work & Employee Benefits"
+      },
+      {
+        "description": "Requests about planning or undertaking travel: destinations, sightseeing, hotels, rental cars, flights, rides, itineraries, booking changes, and travel requirements or warnings. Include airline baggage rules, flight location or status, travel visas, destination-related vaccinations, and travel compatibility needs such as plug converters. Also include navigation, maps, current location or location sharing, traffic, and local weather, whether or not a trip is mentioned. Rental vehicles belong here; choosing, maintaining, or repairing a personal vehicle belongs in Cars & Vehicle Care. Restaurant selection and dining reservations belong in Food & Dining, while arranging a meeting room belongs in Personal Organization & Communication. Card problems, foreign transaction fees, currency exchange, and trip budgets belong in Money & Banking. Translations and standalone factual or time-zone questions belong in Knowledge & Learning. A reservation request must identify or reasonably imply travel rather than dining; an unidentified reservation with no resolving context is Other.",
+        "id": 3,
+        "name": "Travel & Navigation"
+      },
+      {
+        "description": "Requests about choosing or using restaurants, including recommendations, reviews, dining reservations, confirmations, cancellations, and wait times. Also include meal suggestions, recipes, preparation and cooking instructions, cooking times, ingredient substitutions, calories, and nutrition facts. Food-related advice remains here even when phrased as a factual or instructional question. Use Shopping & Consumer Services for grocery purchases, shopping-list changes, and ordering packaged food or drinks rather than cooking or dining advice. Use Money & Banking for meal budgets, spending, bills, or payment-card problems. Use Assistant & Device Interaction for directly setting an oven or other appliance, rather than asking how to cook food. Use Travel & Navigation for travel bookings and sightseeing rather than restaurant bookings. If a reservation's type cannot be determined from the request or available context, use Other instead of assuming dining.",
+        "id": 4,
+        "name": "Food & Dining"
+      },
+      {
+        "description": "Requests to select, compare, price, buy, reorder, or obtain ordinary consumer products or everyday consumer services, including dry cleaning and personal-care or cosmetic product recommendations. Include creating or editing shopping lists, ordering their contents, and retail-order or fulfillment questions. Food and drink purchases belong here when the task is buying or list management, not restaurant dining, cooking, or nutrition. This is the remaining general shopping category: use Cars & Vehicle Care for personal-vehicle selection and care services; Travel & Navigation for transportation, lodging, and rental-car bookings; Food & Dining for restaurant services; and Money & Banking for financial products, insurance, budgets, payments, transaction records, or asset valuations. Shopping lists belong here rather than Personal Organization & Communication. General factual questions about products belong in Knowledge & Learning when they do not seek selection, purchasing, pricing, or consumer-service assistance. Requests to buy something remain here even when phrased as a question about whether the assistant can do so.",
+        "id": 5,
+        "name": "Shopping & Consumer Services"
+      },
+      {
+        "description": "Requests about selecting, evaluating, maintaining, repairing, servicing, or caring for a personal vehicle. Include vehicle safety ratings, service history and appointments, warning lights, oil-change timing or instructions, tires and pressure, fuel choice, mileage or fuel economy, jump-starting, and car washing. This subject takes precedence over Shopping & Consumer Services for buying a personal vehicle or arranging vehicle-care services, and over Knowledge & Learning for practical vehicle-use or maintenance explanations. Use Travel & Navigation for rental cars, rides, routes, traffic, and trip transportation. Use Money & Banking for insurance policies, financing-account matters, payments, and budgets rather than vehicle condition or suitability. Use Personal Organization & Communication for a request solely to create a reminder or calendar entry about servicing; requests to diagnose, arrange, or determine needed service remain here.",
+        "id": 6,
+        "name": "Cars & Vehicle Care"
+      },
+      {
+        "description": "Requests to create, inspect, change, or remove calendar events, meetings, reminders, general to-do items, alarms, or timers. Include making phone calls and arranging meeting spaces. Use this category for the organizational or communication action even when its content concerns work or another subject. Shopping-list management belongs in Shopping & Consumer Services, not general to-do management. Vacation entitlement and leave-request status belong in Work & Employee Benefits, while simply editing a work calendar entry belongs here. Travel and dining bookings belong in Travel & Navigation and Food & Dining respectively; meeting-room arrangements remain here. Use Assistant & Device Interaction for connecting or locating a phone or changing assistant behavior, but use this category for calls, alarms, and timers even when performed through a device. Questions about whether a particular reminder or scheduling action can be done retain this practical subject.",
+        "id": 7,
+        "name": "Personal Organization & Communication"
+      },
+      {
+        "description": "Conversation directed at the assistant itself: its identity, origin, creator, control, abilities, feelings, background, personality, or personal attributes. Include greetings, thanks, conversational corrections or feedback, and requests to repeat, stop speaking, change language, voice, speaking speed, whisper mode, response behavior, or how the assistant and user are addressed. Also include connecting, syncing, disconnecting, locating, resetting, checking, or controlling devices and appliances, such as finding a phone or adjusting an oven or air conditioner. Questions about the assistant's language abilities belong here; requests to translate content belong in Knowledge & Learning. Use Personal Organization & Communication for calls, calendars, reminders, alarms, and timers, and Entertainment & Creative Activities for music playback or games, even when devices perform them. General assistant-capability discussion belongs here, but a domain-specific practical request stays with its subject despite wording such as 'can you.' Distinguish locating a device here from locating the user or sharing their geographic position in Travel & Navigation.",
+        "id": 8,
+        "name": "Assistant & Device Interaction"
+      },
+      {
+        "description": "General factual, explanatory, definitional, mathematical, translation, or educational requests, including science, history, law, word meanings, unit conversions, standalone date or time facts, homework help, and finding instruction or tutoring. This is the remaining knowledge category, not a fallback for every question: when the requested information directly concerns a subject explicitly covered elsewhere, select that category. Thus food preparation and nutrition belong in Food & Dining, practical vehicle care in Cars & Vehicle Care, financial values and currency exchange in Money & Banking, and local weather or navigation in Travel & Navigation. General product facts belong here unless the request is about shopping or selection. Use Entertainment & Creative Activities for jokes, requested fun facts, games, creative production, sports results, and film or media discussion; neutral factual or educational inquiry remains here. Use Assistant & Device Interaction for questions about the assistant itself. Use Other when no supplied subject fits or when the essential subject cannot be established; do not treat a vague action as a knowledge request.",
+        "id": 9,
+        "name": "Knowledge & Learning"
+      },
+      {
+        "description": "Requests for entertainment, play, or creative expression: music playback and song identification, jokes and humorous material, requested fun facts, games and game moves, dice rolls, coin flips, and generating artwork or other creative content. Also include sports results and discussion, interpretation, or criticism of films and other media. A topic such as politics or science does not move a joke or explicitly requested fun fact to Knowledge & Learning. Conversely, ordinary factual explanations, historical or scientific questions, educational instruction, and legal questions about activities such as gambling belong in Knowledge & Learning rather than here solely because their topic can be entertaining. Use Assistant & Device Interaction for the assistant's supposed hobbies, feelings, or personal tastes, and for device connections or voice settings; requested music, games, and entertainment remain here even when delivered through a device.",
+        "id": 10,
+        "name": "Entertainment & Creative Activities"
+      }
+    ],
+    "catalog_sha256": "bcdefe74187e15d7df0be7678a492fecb3b18e21ce8f7850514cccf8eda39dad",
+    "condition": "guided",
+    "diagnostic": true,
+    "effective_catalog_sha256": "753627389b5f26dc98030e383cc1f6dda1b2c81171015e0eb72275e271cb9dcc",
+    "effective_order": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ],
+    "effective_order_sha256": "6e9e9c7554edd913a3592f5d91dc6671da013119a38dedd8be295990089a2b32",
+    "expected_count": 100,
+    "experiment": "guided-agreement",
+    "input_jsonl_sha256": "cf96390132c21da7f128c17eb72edf2e7ebd6ab1adf83253007929c587bb6c7a",
+    "input_sha256": "044b9f7261b2071aeaa5d5ab8d7e3734672e035d120facddb84d3d1c4b93f580",
+    "k": 8,
+    "management_calls": 0,
+    "maximum_request_bytes": 9614,
+    "modality": "text",
+    "mode": "ld",
+    "ordered_ids": [
+      "196dbabe38ac8b74b4ca",
+      "c6c8bb40efa2f8025127",
+      "08e06268b067dfc880a0",
+      "0f0b887f345bbe35193a",
+      "f9e710eec23e55f94e44",
+      "99cba9fe7740c9827e18",
+      "de58a1796e4e1625e42d",
+      "ade7303d76da83507f64",
+      "53889ec611c5b4f5702d",
+      "a23b8f209263d24b2f4f",
+      "7c95d6b95762a40ab55d",
+      "f0ccd41fe426efa12d7d",
+      "49d73dd79ad6a30f97f0",
+      "b43a659575eef35e859e",
+      "519ca2835918d8abc2df",
+      "7bf5c8a8b1ca41e1dac1",
+      "07a075d31f7bdabfc4f9",
+      "b023a8297eb620b4ea73",
+      "f748ff594876785206ae",
+      "0ee59accd2df85549677",
+      "1d4f21e1f20de9f85a59",
+      "b6543e5397c1900bbc9b",
+      "5940344597174d799402",
+      "f3fcd53911eb630e2a18",
+      "815452639252e1f4c486",
+      "ca7123b59f0d376bd651",
+      "89fa6ab16b9d37b5d794",
+      "a5793c67f2b7f3467d5a",
+      "fc067da46c8df87a0b74",
+      "648d8dab09da8b1526d1",
+      "4fbcf55e1e0393995e3a",
+      "4a4a7560517ce85b607e",
+      "2a9ebcabcba5c03a6289",
+      "19d5641ad9571cbc3264",
+      "1694cae83283fe8322ed",
+      "9a6087ad2c9bf5ac9aa7",
+      "3aef07d33932f423fb55",
+      "82a9141626f0cf280798",
+      "8d17e0acd499b5cfe348",
+      "785053b6c1b07cce11a9",
+      "b8acd8b889860256d78a",
+      "afe4dd4899283b91a757",
+      "81c699c293a1affa181f",
+      "aef2659fa5333dcae130",
+      "36908bbb1c200a1944b1",
+      "88dc4bf33e253d7c2c24",
+      "8d05f5471715c69e11ef",
+      "3cf4309fd2601dc12675",
+      "9847437722b644ee2a93",
+      "8d01ab8311144ce6f70c",
+      "09a607252c4a2e0bdc53",
+      "2210847765e5680feb75",
+      "3b9c45da5870cb772a47",
+      "ea0fad1efe7b01417a11",
+      "08f43a6d49d5883f5e46",
+      "53c579521e02108abb76",
+      "53be67916e8e496cf9e9",
+      "de29144fc3ff0b0c9e5e",
+      "f92590bdd897962a9c9f",
+      "79004cba06e1fa4cab5b",
+      "247095cc75e2d37d6359",
+      "486be83b1233518c57fb",
+      "471e8ba1707cad0cd5fa",
+      "5ae40459110cd24304e5",
+      "62780b2489ee27165cc4",
+      "92a4baaa2bc881220300",
+      "39999b6e5a7d491b49f9",
+      "700759aae75754622861",
+      "30ffb4f6e8f8f05f09fa",
+      "09ec9a8b08375ae3d307",
+      "cced27b3e0b6c2b5f2e9",
+      "47516fd7d6bbfb237d05",
+      "0b665a1d0e90815e20c8",
+      "8c3c374916c248e9ee83",
+      "a14aa6bc0cf3574cc1a7",
+      "85110df16faff48fb4d6",
+      "fb8a00f29b074ba989d8",
+      "0d1bc6095a585aad7a50",
+      "4c5bf9d63187f4735cce",
+      "0cd2ed8682a372918c35",
+      "f0208e710a8ab3dd23e0",
+      "fa94434d15dda4008e07",
+      "d6a2145bd2eef33eb055",
+      "81e6d4bb4bb761b78563",
+      "408c6040e28cff0d7a81",
+      "33b339b546f46ba417e5",
+      "ccb5a394e20f6c246001",
+      "3d7adac12c4b6c11891e",
+      "97239a2ecfedd9c70732",
+      "8c8f361204addf09ca4e",
+      "69aa9e5a78d5ffc8096c",
+      "31c1691a5a47675ed983",
+      "b1319c4387b90800ce2b",
+      "fc12239ffdd633a97a94",
+      "7c56da7795743793392c",
+      "866d18456a9a2739f7ff",
+      "11ca647ac66b797f137d",
+      "09d8e04889b24d1da8fe",
+      "ee269a827b68e279e44c",
+      "3c0f224df6bf479fec58"
+    ],
+    "reference_sha256": "1abb161de59d44165b2bf36fc53fb5b03e73f5527a7f9a4eabce99cb47a6da08",
+    "repeat_index": 2,
+    "reverse_catalog_order": true,
+    "run_id": "1cf462138d9a5044f139435bb7db0cb0",
+    "sol_reasoning_effort": "high",
+    "source": {
+      "commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+      "embedded_file_sha256": {
+        "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+        "Cargo.toml": "1e3bb39b4ff2fca4f38e8923f1b254d0d50c5d1b4855c4983b30f2b429086715",
+        "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+        "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+        "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+        "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+        "src/lib.rs": "2dfcb22af11e31103c8032b77ab9064ec8e71ab110212d2a2fc1c83b41829d47",
+        "src/provider.rs": "9269e50c25edaa2c73eb8199c3c942d54f7f1bd16ecc011a554f515166cb83f9",
+        "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+      },
+      "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce"
+    },
+    "stage": "diagnostic",
+    "started_at_unix_ms": 1792540933638,
+    "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request."
+  },
+  "processed_count": 100,
+  "expected_count": 100,
+  "assignments": [
+    {
+      "id": "196dbabe38ac8b74b4ca",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "c6c8bb40efa2f8025127",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "08e06268b067dfc880a0",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "0f0b887f345bbe35193a",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "f9e710eec23e55f94e44",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "99cba9fe7740c9827e18",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "de58a1796e4e1625e42d",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "ade7303d76da83507f64",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "53889ec611c5b4f5702d",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "a23b8f209263d24b2f4f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "7c95d6b95762a40ab55d",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "f0ccd41fe426efa12d7d",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "49d73dd79ad6a30f97f0",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "b43a659575eef35e859e",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "519ca2835918d8abc2df",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "7bf5c8a8b1ca41e1dac1",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "07a075d31f7bdabfc4f9",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "b023a8297eb620b4ea73",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "f748ff594876785206ae",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "0ee59accd2df85549677",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "1d4f21e1f20de9f85a59",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "b6543e5397c1900bbc9b",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "5940344597174d799402",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "f3fcd53911eb630e2a18",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "815452639252e1f4c486",
+      "cluster_id": null,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "ca7123b59f0d376bd651",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "89fa6ab16b9d37b5d794",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "a5793c67f2b7f3467d5a",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "fc067da46c8df87a0b74",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "648d8dab09da8b1526d1",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "4fbcf55e1e0393995e3a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "4a4a7560517ce85b607e",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "2a9ebcabcba5c03a6289",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "19d5641ad9571cbc3264",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "1694cae83283fe8322ed",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "9a6087ad2c9bf5ac9aa7",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "3aef07d33932f423fb55",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "82a9141626f0cf280798",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "8d17e0acd499b5cfe348",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "785053b6c1b07cce11a9",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b8acd8b889860256d78a",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "afe4dd4899283b91a757",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "81c699c293a1affa181f",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "aef2659fa5333dcae130",
+      "cluster_id": null,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "36908bbb1c200a1944b1",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "88dc4bf33e253d7c2c24",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "8d05f5471715c69e11ef",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "3cf4309fd2601dc12675",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "9847437722b644ee2a93",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "8d01ab8311144ce6f70c",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "09a607252c4a2e0bdc53",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "2210847765e5680feb75",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "3b9c45da5870cb772a47",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "ea0fad1efe7b01417a11",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "08f43a6d49d5883f5e46",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "53c579521e02108abb76",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "53be67916e8e496cf9e9",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "de29144fc3ff0b0c9e5e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "f92590bdd897962a9c9f",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "79004cba06e1fa4cab5b",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "247095cc75e2d37d6359",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "486be83b1233518c57fb",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "471e8ba1707cad0cd5fa",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "5ae40459110cd24304e5",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "62780b2489ee27165cc4",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "92a4baaa2bc881220300",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "39999b6e5a7d491b49f9",
+      "cluster_id": null,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "700759aae75754622861",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "30ffb4f6e8f8f05f09fa",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "09ec9a8b08375ae3d307",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "cced27b3e0b6c2b5f2e9",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "47516fd7d6bbfb237d05",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "0b665a1d0e90815e20c8",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "8c3c374916c248e9ee83",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "a14aa6bc0cf3574cc1a7",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "85110df16faff48fb4d6",
+      "cluster_id": null,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "fb8a00f29b074ba989d8",
+      "cluster_id": null,
+      "refused": true,
+      "label": "oos"
+    },
+    {
+      "id": "0d1bc6095a585aad7a50",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "4c5bf9d63187f4735cce",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "0cd2ed8682a372918c35",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "f0208e710a8ab3dd23e0",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "fa94434d15dda4008e07",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "d6a2145bd2eef33eb055",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "81e6d4bb4bb761b78563",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "408c6040e28cff0d7a81",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "33b339b546f46ba417e5",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ccb5a394e20f6c246001",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "3d7adac12c4b6c11891e",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "97239a2ecfedd9c70732",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "8c8f361204addf09ca4e",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "69aa9e5a78d5ffc8096c",
+      "cluster_id": null,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "31c1691a5a47675ed983",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "b1319c4387b90800ce2b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "fc12239ffdd633a97a94",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "7c56da7795743793392c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "866d18456a9a2739f7ff",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "11ca647ac66b797f137d",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "09d8e04889b24d1da8fe",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "ee269a827b68e279e44c",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "3c0f224df6bf479fec58",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "utility"
+    }
+  ],
+  "measurement": {
+    "assignment_refusal_calls": 1,
+    "calls": 131,
+    "cost_complete": true,
+    "cost_history_complete": true,
+    "cost_usd": 0.0188387,
+    "error_calls": 0,
+    "journal_sha256": "625b6009ffdc3732f1620b448d6c3829bea2d518679a09e491dacab831309355",
+    "phase_calls": {
+      "assign": 131
+    },
+    "pricing_date": "2026-10-20",
+    "pricing_sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "https://developers.openai.com/api/docs/guides/decisions"
+    ],
+    "request_seconds": 17.573,
+    "timing_complete": true,
+    "unknown_pricing_calls": 0,
+    "unknown_usage_calls": 0,
+    "usage": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "cost_usd": 0.0188387,
+      "input_tokens": 188387,
+      "output_tokens": 0
+    },
+    "wall_ms": 17732,
+    "wall_seconds": 17.732
+  },
+  "error": null,
+  "progress_sha256": "5866ae144ecf62e1092a1f014a9e4dfe98a2098780faaddefda06ef164aacbcb"
+}

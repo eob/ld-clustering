@@ -5,10 +5,10 @@ use ld_clustering::{
     engine::{Clusterer, Config},
     provider::OpenAi,
     store::Store,
-    types::Item,
+    types::{Item, MAX_MANAGER_CONTEXT_BYTES, ManagerDescriptor, ManagerPolicy},
 };
 use sha2::{Digest, Sha256};
-use std::io::Write;
+use std::io::{Read, Write};
 use std::path::Path;
 use std::path::PathBuf;
 
@@ -40,6 +40,11 @@ enum Command {
         mode: String,
         #[arg(long)]
         task: String,
+        #[arg(long, value_enum, default_value = "original")]
+        manager_policy: ManagerPolicy,
+        /// Frozen UTF-8 manager guidance; its raw bytes, not its path, identify the run.
+        #[arg(long)]
+        manager_context: Option<PathBuf>,
         #[arg(long, default_value_t = 8)]
         k: usize,
         #[arg(long, default_value_t = 16)]
@@ -69,6 +74,58 @@ enum Command {
         #[arg(long)]
         output: PathBuf,
     },
+}
+
+fn manager_options(
+    policy: ManagerPolicy,
+    path: Option<&Path>,
+) -> Result<(ManagerDescriptor, Option<String>)> {
+    match policy {
+        ManagerPolicy::Original => {
+            ensure!(
+                path.is_none(),
+                "original manager does not accept --manager-context"
+            );
+            let descriptor = ManagerDescriptor::default();
+            descriptor.validate()?;
+            Ok((descriptor, None))
+        }
+        ManagerPolicy::Contextual => {
+            let path = path.context("contextual manager requires --manager-context")?;
+            let mut bytes = Vec::new();
+            std::fs::File::open(path)
+                .with_context(|| format!("read manager context {}", path.display()))?
+                .take((MAX_MANAGER_CONTEXT_BYTES + 1) as u64)
+                .read_to_end(&mut bytes)?;
+            ensure!(
+                bytes.len() <= MAX_MANAGER_CONTEXT_BYTES,
+                "manager context exceeds {MAX_MANAGER_CONTEXT_BYTES} bytes"
+            );
+            let context = String::from_utf8(bytes).context("manager context must be UTF-8")?;
+            let descriptor = ManagerDescriptor::from_context(&context)?;
+            descriptor.validate()?;
+            Ok((descriptor, Some(context)))
+        }
+    }
+}
+
+fn bind_run_identity(
+    store: &mut Store,
+    manager: &ManagerDescriptor,
+    backend: &str,
+    input_sha256: &str,
+) -> Result<()> {
+    manager.validate()?;
+    // Contextual adoption must see the untouched experiment history.
+    store.bind_manager(manager)?;
+    for (key, value) in [("backend", backend), ("input_sha256", input_sha256)] {
+        ensure!(
+            store.get_meta(key)?.is_none_or(|old| old == value),
+            "{key} differs from saved run"
+        );
+        store.set_meta(key, value)?;
+    }
+    Ok(())
 }
 
 fn input_fingerprint(bytes: &[u8], items: &[Item]) -> Result<String> {
@@ -180,6 +237,8 @@ async fn main() -> Result<()> {
             log,
             mode,
             task,
+            manager_policy,
+            manager_context,
             k,
             max_clusters,
             bootstrap,
@@ -187,6 +246,7 @@ async fn main() -> Result<()> {
             maintenance_interval,
             limit,
         } => {
+            let (manager, context) = manager_options(manager_policy, manager_context.as_deref())?;
             let bytes =
                 std::fs::read(&input).with_context(|| format!("read {}", input.display()))?;
             let mut items = String::from_utf8(bytes.clone())?
@@ -213,7 +273,8 @@ async fn main() -> Result<()> {
             if let Some(parent) = database.parent().filter(|p| !p.as_os_str().is_empty()) {
                 std::fs::create_dir_all(parent)?;
             }
-            let store = Store::open(&database, &serde_json::to_value(&config)?)?;
+            let mut store = Store::open(&database, &serde_json::to_value(&config)?)?;
+            bind_run_identity(&mut store, &manager, &mode, &digest)?;
             if store.get_meta("started_at_unix_ms")?.is_none() {
                 store.set_meta(
                     "started_at_unix_ms",
@@ -223,17 +284,8 @@ async fn main() -> Result<()> {
                         .to_string(),
                 )?;
             }
-            for (key, value) in [
-                ("backend", mode.as_str()),
-                ("input_sha256", digest.as_str()),
-            ] {
-                if store.get_meta(key)?.is_some_and(|old| old != value) {
-                    bail!("{key} differs from saved run");
-                }
-                store.set_meta(key, value)?;
-            }
             let log = bind_request_journal(&store, &log)?;
-            let model = OpenAi::new(&mode, &log)?;
+            let model = OpenAi::new(&mode, &log)?.with_manager(manager, context)?;
             let mut clusterer = Clusterer {
                 store,
                 model,
@@ -271,6 +323,133 @@ async fn main() -> Result<()> {
 mod tests {
     use super::*;
     use serde_json::json;
+
+    fn run_args() -> Vec<String> {
+        [
+            "ld-clustering",
+            "run",
+            "--input",
+            "input.jsonl",
+            "--database",
+            "state.sqlite",
+            "--log",
+            "requests.jsonl",
+            "--mode",
+            "ld",
+            "--task",
+            "Classify subjects",
+        ]
+        .into_iter()
+        .map(str::to_owned)
+        .collect()
+    }
+
+    #[test]
+    fn manager_cli_parses_contextual_and_rejects_unknown_policy() {
+        match Cli::try_parse_from(run_args()).unwrap().command {
+            Command::Run {
+                manager_policy,
+                manager_context,
+                ..
+            } => {
+                assert_eq!(manager_policy, ManagerPolicy::Original);
+                assert!(manager_context.is_none());
+            }
+            _ => panic!("expected run command"),
+        }
+        let mut args = run_args();
+        args.extend([
+            "--manager-policy".into(),
+            "contextual".into(),
+            "--manager-context".into(),
+            "context.txt".into(),
+        ]);
+        assert!(
+            Cli::try_parse_from(&args).is_ok(),
+            "manager CLI flags were rejected"
+        );
+        let value = args.iter().position(|arg| arg == "contextual").unwrap();
+        args[value] = "unknown".into();
+        assert!(Cli::try_parse_from(args).is_err());
+    }
+
+    #[test]
+    fn manager_options_pin_raw_context_not_its_location_and_validate_combinations() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let first = dir.path().join("first.txt");
+        let relocated = dir.path().join("relocated.txt");
+        std::fs::write(&first, "Boundaries from discovery.\n")?;
+        std::fs::write(&relocated, "Boundaries from discovery.\n")?;
+        let (plain, none) = manager_options(ManagerPolicy::Original, None)?;
+        assert_eq!(plain, ManagerDescriptor::default());
+        assert!(none.is_none());
+        assert!(manager_options(ManagerPolicy::Original, Some(&first)).is_err());
+        assert!(manager_options(ManagerPolicy::Contextual, None).is_err());
+        let (identity, context) = manager_options(ManagerPolicy::Contextual, Some(&first))?;
+        let (moved, _) = manager_options(ManagerPolicy::Contextual, Some(&relocated))?;
+        assert_eq!(identity, moved);
+        assert_eq!(context.as_deref(), Some("Boundaries from discovery.\n"));
+        assert_eq!(
+            identity,
+            ManagerDescriptor::from_context(context.as_deref().unwrap())?
+        );
+        std::fs::write(&relocated, "Boundaries from discovery.")?;
+        assert_ne!(
+            identity,
+            manager_options(ManagerPolicy::Contextual, Some(&relocated))?.0
+        );
+        std::fs::write(&relocated, vec![b'x'; MAX_MANAGER_CONTEXT_BYTES])?;
+        assert!(manager_options(ManagerPolicy::Contextual, Some(&relocated)).is_ok());
+        for bytes in [
+            vec![],
+            b" \n".to_vec(),
+            vec![0xff],
+            vec![b'x'; MAX_MANAGER_CONTEXT_BYTES + 1],
+        ] {
+            std::fs::write(&relocated, bytes)?;
+            assert!(manager_options(ManagerPolicy::Contextual, Some(&relocated)).is_err());
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn manager_resume_mismatch_precedes_journal_and_session_events() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let mut store = Store::open(&dir.path().join("run.sqlite"), &json!({}))?;
+        let manager = ManagerDescriptor::from_context("Fixed discovery context")?;
+        bind_run_identity(&mut store, &manager, "ld", "input")?;
+        bind_run_identity(&mut store, &manager, "ld", "input")?;
+        for different in [
+            ManagerDescriptor::default(),
+            ManagerDescriptor::from_context("Different context")?,
+            ManagerDescriptor {
+                prompt_revision: "contextual-future".into(),
+                ..manager.clone()
+            },
+        ] {
+            assert!(bind_run_identity(&mut store, &different, "ld", "input").is_err());
+        }
+        assert_eq!(store.manager_descriptor()?, manager);
+        assert!(store.get_meta("journal_run_id")?.is_none());
+        let events: usize =
+            store
+                .connection
+                .query_row("SELECT COUNT(*) FROM events", [], |row| row.get(0))?;
+        assert_eq!(events, 0);
+        assert!(!dir.path().join("requests.jsonl").exists());
+        Ok(())
+    }
+
+    #[test]
+    fn manager_original_can_resume_legacy_history_without_descriptor() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let mut store = Store::open(&dir.path().join("legacy.sqlite"), &json!({}))?;
+        store.record_event("maintenance", &json!({"operations":[]}))?;
+        assert!(store.get_meta("manager_descriptor")?.is_none());
+        bind_run_identity(&mut store, &ManagerDescriptor::default(), "ld", "input")?;
+        assert_eq!(store.manager_descriptor()?, ManagerDescriptor::default());
+        Ok(())
+    }
 
     fn item(image: Option<String>) -> Item {
         Item {

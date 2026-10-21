@@ -1,0 +1,1192 @@
+{
+  "review_type": "supplemental post hoc blinded qualitative text review",
+  "sources_read": [
+    "README.txt",
+    "catalogs.json",
+    "cases.json"
+  ],
+  "case_count": 50,
+  "blinding": "Choices retained only as anonymous A and B. No identity, audit key, experiment result, source repository, external service, or other reviewer material inspected.",
+  "scope": "Selected cases only; no unweighted population accuracy claim. This does not replace the separate preregistered paid review.",
+  "fit_definitions": {
+    "supported": "A defensible fit to the literal text and matching catalog without adding essential unstated context; need not be uniquely best.",
+    "unsupported": "No sufficient textual subject cue, a contradictory catalog boundary, or an unjustified Other despite a recognizable supplied subject.",
+    "unclear": "Plausible but not established because wording, essential context, or catalog boundaries are unresolved."
+  },
+  "preference_definitions": {
+    "A": "A is better supported than B; this need not establish a uniquely correct category.",
+    "B": "B is better supported than A; this need not establish a uniquely correct category.",
+    "both": "Both are defensible; this can include identical choices or unresolved catalog overlap.",
+    "neither": "Neither anonymous choice is defensible, with a different category established.",
+    "unclear": "The text or catalog does not permit a reliable preference."
+  },
+  "best_category_fields": "best_category_id uses the category IDs within catalog_id. Null with best_category_status Other is a defensible rejection; null with unresolved is a withheld unique best label, not an assertion that no catalog category could fit.",
+  "severity_definitions": {
+    "none": "No classification problem established for the choices under review.",
+    "minor": "A close boundary, reasonable competing reading, or incompletely specified description; no strong error claim.",
+    "major": "At least one clearly unsupported broad routing or rejection; does not measure downstream harm.",
+    "unclear": "The available text does not support a reliable severity judgment."
+  },
+  "equal_choice_review": "All 12 equal-choice cases were checked against the actual utterance and matching catalog, including the four equal Other cases. No clear shared mistake was established; specialist-provider, personal-advice, and acknowledgment coverage remain boundary questions.",
+  "selection_warning": "The case selection is post hoc and enriched for disagreements and selected agreements. Counts below describe this review set only and cannot estimate either anonymous system's population accuracy.",
+  "descriptive_counts_only": {
+    "preferences": {
+      "unclear": 3,
+      "A": 15,
+      "both": 15,
+      "B": 17
+    },
+    "severity": {
+      "unclear": 3,
+      "major": 17,
+      "none": 12,
+      "minor": 18
+    },
+    "equal_choice_cases": 12
+  },
+  "reviews": [
+    {
+      "case_id": "case-bf96dc94c113367a99bdf3de",
+      "catalog_id": 1,
+      "choice_a": 2,
+      "choice_b": null,
+      "literal_cues": [
+        "data and price",
+        "state taxes"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "unclear",
+      "preference": "unclear",
+      "best_category_id": null,
+      "best_category_status": "unresolved",
+      "severity": "unclear",
+      "confidence": "low",
+      "themes": [
+        "ambiguous utterance",
+        "overlapping/incomplete descriptions",
+        "unsupported implicit context"
+      ],
+      "rationale": "The tax subject is visible, but the requested operation is garbled. Amounts could implicate 1, tax forms 2, or an explanation 9. No form, employment connection, or specific payment operation is stated. A cannot be confirmed by assuming tax forms, and B cannot be called an error merely from this text.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-33dfd9a0a12080da27bddba4",
+      "catalog_id": 1,
+      "choice_a": 9,
+      "choice_b": 4,
+      "literal_cues": [
+        "review ned's",
+        "good"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "unclear",
+      "preference": "unclear",
+      "best_category_id": null,
+      "best_category_status": "unresolved",
+      "severity": "unclear",
+      "confidence": "low",
+      "themes": [
+        "ambiguous utterance",
+        "unsupported implicit context"
+      ],
+      "rationale": "This appears to seek an evaluation or reviews of an entity, but the entity type is absent. B requires assuming a restaurant; A requires treating the malformed evaluation request as general information. The wording does not resolve the subject.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-11e694c105636b8cbc9fcdf1",
+      "catalog_id": 1,
+      "choice_a": 9,
+      "choice_b": null,
+      "literal_cues": [
+        "point of life"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error",
+        "unjustified Other"
+      ],
+      "rationale": "A request to explain a philosophical question fits the general explanatory scope of 9. The question need not have an objectively settled answer to have a recognizable subject.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-34edd830c670a7b84bfc9a21",
+      "catalog_id": 1,
+      "choice_a": 7,
+      "choice_b": 7,
+      "literal_cues": [
+        "call my doctor"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 7,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "clear practical action",
+        "equal-choice checked"
+      ],
+      "rationale": "The explicit requested action is a phone call, which 7 names. The recipient being a doctor does not turn the action into a request for medical advice.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-e197f56eba74367139bd701c",
+      "catalog_id": 1,
+      "choice_a": 7,
+      "choice_b": 9,
+      "literal_cues": [
+        "what stuff",
+        "trying to remember"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": 7,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "ordinary implicit intent",
+        "granularity"
+      ],
+      "rationale": "The personal retrieval phrasing naturally asks about reminders or things to remember, fitting 7 better than general factual learning. It lacks an explicit reminder-list noun, so the interpretation is less secure than an explicit list request, but it does not require inventing an unrelated subject.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-5ad35df9f403f2f8b69c0d98",
+      "catalog_id": 1,
+      "choice_a": null,
+      "choice_b": 4,
+      "literal_cues": [
+        "cancel my reservation"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "unsupported implicit context",
+        "ambiguous utterance",
+        "reasonable Other"
+      ],
+      "rationale": "Cancellation is clear but the reservation type is not. Both 3 and 4 cover reservations of different kinds. Nothing supplies dining rather than lodging, travel, or another booking; B assumes the essential subject.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-7166c0bdb84b3cc88f0b04ab",
+      "catalog_id": 1,
+      "choice_a": 4,
+      "choice_b": 4,
+      "literal_cues": [
+        "cook the cookie dough",
+        "how long"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 4,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "clear subject",
+        "equal-choice checked"
+      ],
+      "rationale": "Cooking duration for a named food is explicitly within 4, even though it is phrased as a factual question.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-59b848901ae4bb638bf5e70f",
+      "catalog_id": 1,
+      "choice_a": null,
+      "choice_b": 9,
+      "literal_cues": [
+        "more information",
+        "getting a job at the post office"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "missing category",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "This seeks information about obtaining a job, rather than pay, leave, or an employee benefit. The broad informational and educational scope of 9 is a defensible fit. Other is understandable because job search is not expressly listed; the catalog boundary is incomplete, so this is not a strong clear-error case.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-b4ac01dd3c82336209ea0220",
+      "catalog_id": 1,
+      "choice_a": 9,
+      "choice_b": 8,
+      "literal_cues": [
+        "set 4",
+        "volume"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 8,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error",
+        "clear practical action"
+      ],
+      "rationale": "This is an imperative to adjust device output, expressly within 8. The numeral does not make it a mathematical or factual request.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-46a4441b69d0c13e33280727",
+      "catalog_id": 1,
+      "choice_a": null,
+      "choice_b": 5,
+      "literal_cues": [
+        "where my package is currently"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 5,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "ordinary implicit intent",
+        "overlapping/incomplete descriptions",
+        "unjustified Other"
+      ],
+      "rationale": "Package tracking naturally fits consumer purchase or delivery service assistance in 5. Catalog 1 does not explicitly name fulfillment, and the package could have another origin, so B is preferred without treating A as an unambiguous error.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-e4048197d70d01eb33ba327a",
+      "catalog_id": 1,
+      "choice_a": 6,
+      "choice_b": 7,
+      "literal_cues": [
+        "create a reminder",
+        "change my oil"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 7,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "high",
+      "themes": [
+        "granularity",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "The explicit action is creating a reminder, covered by 7, while its content is vehicle care, covered by 6. B better captures the requested operation; catalog 1 supplies no explicit precedence rule, making A a plausible content-based alternative.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-f9849b0599e4d9f51c695dd0",
+      "catalog_id": 1,
+      "choice_a": 10,
+      "choice_b": 8,
+      "literal_cues": [
+        "play the next track"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unclear",
+      "preference": "A",
+      "best_category_id": 10,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "high",
+      "themes": [
+        "granularity",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "The requested content is music playback, making 10 the closer subject. Device control in 8 overlaps at the execution level, and catalog 1 does not explicitly resolve that boundary.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-1e28ef39be52bfd515cad58b",
+      "catalog_id": 1,
+      "choice_a": 3,
+      "choice_b": 3,
+      "literal_cues": [
+        "weather in seattle"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 3,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "clear subject",
+        "equal-choice checked"
+      ],
+      "rationale": "Local weather is expressly included in 3; no separate travel scenario is needed.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-c6dd7da3deeed827cf9f56a8",
+      "catalog_id": 1,
+      "choice_a": 5,
+      "choice_b": 6,
+      "literal_cues": [
+        "purchase list"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": 5,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error"
+      ],
+      "rationale": "A purchase list is a shopping list, expressly covered by 5. There is no vehicle cue supporting 6.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-d2adf6eb8053b203c07be12c",
+      "catalog_id": 1,
+      "choice_a": 1,
+      "choice_b": 1,
+      "literal_cues": [
+        "my card damaged",
+        "numbers are now obscured"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 1,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "medium",
+      "themes": [
+        "ordinary implicit intent",
+        "equal-choice checked"
+      ],
+      "rationale": "Reporting damage to a numbered personal card naturally fits card administration in 1. This is a usable ordinary cue; classification need not reject every card request lacking the word bank.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-a145371f5454b5a54f893cdd",
+      "catalog_id": 1,
+      "choice_a": 5,
+      "choice_b": 9,
+      "literal_cues": [
+        "denim go with anything"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": null,
+      "best_category_status": "unresolved",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "reasonable alternative",
+        "missing category",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "Clothing compatibility can be product-selection advice under 5 or a general style question under 9. No purchase is requested, and there is no explicit styling category or boundary rule. Both readings are defensible; neither is established as a clear error.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-62bbda4ee2bc4064657c12ca",
+      "catalog_id": 1,
+      "choice_a": null,
+      "choice_b": null,
+      "literal_cues": [
+        "i am not able to say"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "ambiguous utterance",
+        "reasonable Other",
+        "equal-choice checked"
+      ],
+      "rationale": "The statement supplies no identifiable practical subject or substantive request. It would require invented context to route it to a particular supplied subject.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-89b80541b2db9ef8569e3d12",
+      "catalog_id": 1,
+      "choice_a": 9,
+      "choice_b": 3,
+      "literal_cues": [
+        "what time is it right now at home"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unclear",
+      "preference": "A",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "high",
+      "themes": [
+        "reasonable alternative",
+        "unsupported implicit context"
+      ],
+      "rationale": "This asks for a time fact, fitting general factual questions in 9. Home supplies a reference location but does not establish navigation or travel. Catalog 1 lacks an explicit time-zone boundary, so a location-based reading is possible but weaker.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-5317d7d25cb07fcddc4d0826",
+      "catalog_id": 1,
+      "choice_a": null,
+      "choice_b": null,
+      "literal_cues": [
+        "that's right"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "none",
+      "confidence": "medium",
+      "themes": [
+        "overlapping/incomplete descriptions",
+        "reasonable Other",
+        "equal-choice checked"
+      ],
+      "rationale": "This is a bare acknowledgment. Catalog 1 describes 8 through particular assistant topics and behavior changes, without expressly including general acknowledgments. Other is defensible under this catalog; the broader conversational wording in the other catalog must not be imported here.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-5d1bf2df3f204fef501a774e",
+      "catalog_id": 1,
+      "choice_a": 9,
+      "choice_b": null,
+      "literal_cues": [
+        "list of divorce attorneys",
+        "new york area"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "missing category",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "This asks to locate a professional legal service, not to explain law. Catalog 1 has no explicit provider-search category; 5 could be stretched from everyday consumer services and 9 from law. Other is a defensible closer reading of the listed criteria, with an incomplete boundary rather than a clear model error.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-d21cee2cd71ee6351b2a7c08",
+      "catalog_id": 2,
+      "choice_a": 1,
+      "choice_b": 9,
+      "literal_cues": [
+        "get venture capital",
+        "my app"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unclear",
+      "preference": "A",
+      "best_category_id": 1,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "The practical subject is raising money for an app, making the broad financial subject 1 a defensible closer fit. Venture funding is not expressly enumerated, so interpreting the how-to question as general learning in 9 is also plausible; no particular bank-account operation should be invented.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-05c60fcab9c33105bad615a0",
+      "catalog_id": 2,
+      "choice_a": 2,
+      "choice_b": 1,
+      "literal_cues": [
+        "direct deposit",
+        "tax refund"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 1,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error",
+        "unsupported implicit context"
+      ],
+      "rationale": "The incoming payment is explicitly a tax refund, not pay. Catalog 2 directs incoming payments not identified as pay to 1. The words direct deposit alone do not establish employment or turn a refund into an employee benefit.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-e8065c0c8bfb1ebb68a477ba",
+      "catalog_id": 2,
+      "choice_a": 9,
+      "choice_b": 9,
+      "literal_cues": [
+        "meaning of the word girn"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "clear subject",
+        "equal-choice checked"
+      ],
+      "rationale": "A word-definition request is explicitly within 9, independently of whether the word is familiar.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-b2edb8c3a9644ac09713ba28",
+      "catalog_id": 2,
+      "choice_a": 8,
+      "choice_b": null,
+      "literal_cues": [
+        "this process needs to stop"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "ambiguous utterance",
+        "unsupported implicit context",
+        "reasonable Other"
+      ],
+      "rationale": "The process is unidentified. It could be assistant speech, device activity, or something outside the catalog. A needs an unstated assistant or device referent; the explicit vague-action rule supports Other. The possibility of a conversational command makes A understandable, not proven.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-a1897404136a85af418267c3",
+      "catalog_id": 2,
+      "choice_a": 1,
+      "choice_b": 9,
+      "literal_cues": [
+        "millimeters",
+        "21 centimeters"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error"
+      ],
+      "rationale": "The named units make this a length conversion. There is no financial operation or currency cue supporting 1.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-0d56c2a1cde763b4acbc5af7",
+      "catalog_id": 2,
+      "choice_a": 8,
+      "choice_b": null,
+      "literal_cues": [
+        "lost my phone"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": 8,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error",
+        "unjustified Other",
+        "ordinary implicit intent"
+      ],
+      "rationale": "A lost-phone report naturally requests help locating the device, which 8 explicitly covers. The subject is established even though no imperative such as find is present.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-50c251691da0d3d03de9d3a9",
+      "catalog_id": 2,
+      "choice_a": 2,
+      "choice_b": null,
+      "literal_cues": [
+        "our next day off"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": 2,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "medium",
+      "themes": [
+        "clear classification error",
+        "unjustified Other",
+        "ordinary implicit intent"
+      ],
+      "rationale": "A next-day-off inquiry supplies ordinary time-off wording. Catalog 2 expressly permits recognizing leave without a named employer. No travel booking or general factual topic needs to be invented.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-089731faf12c2ea59a4cd068",
+      "catalog_id": 2,
+      "choice_a": 8,
+      "choice_b": null,
+      "literal_cues": [
+        "i want to hear my name"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": 8,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "unjustified Other",
+        "ordinary implicit intent"
+      ],
+      "rationale": "The natural reading is asking the assistant to say the user's name, within response behavior and how the user is addressed in 8. A named song or unrelated context is not present. The exact action is implicit but the conversational subject is sufficiently clear.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-7592c6e58bea6f0e1b71f672",
+      "catalog_id": 2,
+      "choice_a": 10,
+      "choice_b": 10,
+      "literal_cues": [
+        "flip a coin",
+        "choose heads"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 10,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "clear subject",
+        "equal-choice checked"
+      ],
+      "rationale": "Coin flipping is expressly covered by 10.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-349d5c8b952e60c0a2dcf7ac",
+      "catalog_id": 2,
+      "choice_a": 9,
+      "choice_b": 9,
+      "literal_cues": [
+        "how many moons",
+        "mars"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "clear subject",
+        "equal-choice checked"
+      ],
+      "rationale": "This is an ordinary astronomical fact question. It does not request a fun fact or entertainment treatment.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-5f9fbca5ff2b5251b752a5fe",
+      "catalog_id": 2,
+      "choice_a": 7,
+      "choice_b": null,
+      "literal_cues": [
+        "read me the last text message i received"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unclear",
+      "preference": "A",
+      "best_category_id": 7,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "overlapping/incomplete descriptions",
+        "unjustified Other"
+      ],
+      "rationale": "Reading a received message is a communication action, so the broad subject of 7 is the closest fit. Text-message retrieval is not explicitly enumerated among its examples; this makes Other understandable and exposes a description gap rather than a decisive clear error.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-757ecf8667c6e35ee074c89d",
+      "catalog_id": 2,
+      "choice_a": 2,
+      "choice_b": 2,
+      "literal_cues": [
+        "take pto",
+        "end of the month to the 5th"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": 2,
+      "best_category_status": "category",
+      "severity": "none",
+      "confidence": "high",
+      "themes": [
+        "clear subject",
+        "equal-choice checked"
+      ],
+      "rationale": "PTO and a requested leave interval explicitly establish 2; this is not a trip-planning request.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-cfb2c81107b5642563582140",
+      "catalog_id": 2,
+      "choice_a": 3,
+      "choice_b": 2,
+      "literal_cues": [
+        "balance on my vacation days"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 2,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error"
+      ],
+      "rationale": "A balance of vacation days is a leave entitlement, expressly assigned to 2. The vacation word does not establish travel arrangements.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-dcc203c3e47b505326af0777",
+      "catalog_id": 2,
+      "choice_a": 8,
+      "choice_b": null,
+      "literal_cues": [
+        "that's incorrect"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": 8,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error",
+        "unjustified Other"
+      ],
+      "rationale": "Catalog 2 explicitly includes conversational corrections or feedback in 8. This correction is sufficient without knowing the factual content of the preceding exchange.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-212938da5be9164a62a6d244",
+      "catalog_id": 2,
+      "choice_a": null,
+      "choice_b": 8,
+      "literal_cues": [
+        "no that isn't right"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 8,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error",
+        "unjustified Other"
+      ],
+      "rationale": "This is recognizable conversational correction or feedback, expressly included in 8. The prior proposition need not be reconstructed.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-53be1f21c47ff3061a0b59ac",
+      "catalog_id": 2,
+      "choice_a": 9,
+      "choice_b": null,
+      "literal_cues": [
+        "what should i do",
+        "cockroach in my house"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unclear",
+      "preference": "A",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "missing category",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "This asks for informational household advice, fitting the broad explanatory or educational scope of 9. It does not ask to buy pest-control products or hire a service. A missing household-advice category makes Other plausible, but does not negate the general informational fit.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-dd07f7f6f37d87ce3a1f6210",
+      "catalog_id": 2,
+      "choice_a": 8,
+      "choice_b": 7,
+      "literal_cues": [
+        "hold a conference room",
+        "friday at 11 am"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 7,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error"
+      ],
+      "rationale": "Arranging a meeting space is explicitly assigned to 7. Assistant execution does not make the subject assistant identity or device interaction.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-d13844d240e873909f45a168",
+      "catalog_id": 2,
+      "choice_a": 8,
+      "choice_b": null,
+      "literal_cues": [
+        "i'm not totally sure"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "ambiguous utterance",
+        "reasonable alternative",
+        "unsupported implicit context"
+      ],
+      "rationale": "This states uncertainty without an object or request. It could be conversational feedback under 8, but it need not concern the assistant or its response. Other is safer under the essential-subject rule; A remains a reasonable conversational reading rather than a clear error.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-618da285dadd0aeb120e6fff",
+      "catalog_id": 2,
+      "choice_a": 10,
+      "choice_b": 9,
+      "literal_cues": [
+        "create a pamphlet",
+        "albert einsteins childhood"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": null,
+      "best_category_status": "unresolved",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "granularity",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "Creating a pamphlet supports the creative-production scope of 10; factual childhood history supports educational content in 9. The text does not specify creative treatment versus factual exposition, and the catalog does not clearly rank the format over its informational purpose. Neither choice is a clear error.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-4b7ff558a523c3e88e5e6c5d",
+      "catalog_id": 2,
+      "choice_a": 3,
+      "choice_b": 9,
+      "literal_cues": [
+        "temperature at ac"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "unsupported",
+      "preference": "unclear",
+      "best_category_id": null,
+      "best_category_status": "unresolved",
+      "severity": "unclear",
+      "confidence": "low",
+      "themes": [
+        "ambiguous utterance",
+        "unsupported implicit context"
+      ],
+      "rationale": "The abbreviation ac is unresolved. It could denote a place for weather (3) or an air conditioner setting (8), among other readings. The text does not establish a general explanatory temperature question for 9. A is more plausible than B on one reading, but a unique subject cannot be defended without expanding the abbreviation.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-4eab4b8e3a25e1c2ba6364b2",
+      "catalog_id": 2,
+      "choice_a": null,
+      "choice_b": null,
+      "literal_cues": [
+        "find a couple's therapist",
+        "me and my wife"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "none",
+      "confidence": "medium",
+      "themes": [
+        "missing category",
+        "overlapping/incomplete descriptions",
+        "equal-choice checked"
+      ],
+      "rationale": "This is healthcare-provider discovery, not general instruction or an explanation about relationships. No healthcare or specialist-provider category is expressly supplied. The everyday consumer-services wording of 5 could be broadened to cover it, but that extension is not compelled; both Other choices are defensible, not a proven shared error.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-22a998889d39a58a7719758b",
+      "catalog_id": 2,
+      "choice_a": 4,
+      "choice_b": 3,
+      "literal_cues": [
+        "take long to get to",
+        "yankee stadium in the bronx"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 3,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error"
+      ],
+      "rationale": "The requested information concerns travel time to a named destination, expressly within navigation in 3. There is no food or dining request.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-f4ad9cc31a74422a112ff053",
+      "catalog_id": 2,
+      "choice_a": null,
+      "choice_b": 9,
+      "literal_cues": [
+        "home remedy",
+        "rash"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "missing category",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "This requests informational health advice, fitting the general explanatory or educational scope of 9. It is not provider discovery, product purchasing, or an assistant-device action. Health is not explicitly listed, so Other is an understandable narrower reading of the catalog.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-642902a4df47827de8c05c88",
+      "catalog_id": 2,
+      "choice_a": null,
+      "choice_b": null,
+      "literal_cues": [
+        "am i too old",
+        "sugar babyo"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "none",
+      "confidence": "medium",
+      "themes": [
+        "missing category",
+        "ambiguous utterance",
+        "equal-choice checked"
+      ],
+      "rationale": "This appears to seek personal suitability or relationship advice. There is no relationship-advice category and no supplied age or criterion that would establish a general factual or legal question. The text does not justify inventing a financial transaction, an age, or a safety scenario. Both Other choices are defensible.",
+      "equal_choice_check": "reviewed independently; no clear shared error established"
+    },
+    {
+      "case_id": "case-b5de2faf9fd97ffca8c667eb",
+      "catalog_id": 2,
+      "choice_a": 1,
+      "choice_b": 4,
+      "literal_cues": [
+        "my visa has been damaged"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": null,
+      "best_category_status": "unresolved",
+      "severity": "major",
+      "confidence": "medium",
+      "themes": [
+        "clear classification error",
+        "ambiguous utterance",
+        "unsupported implicit context"
+      ],
+      "rationale": "A damaged Visa payment card would fit 1; a damaged travel visa would fit 3. The wording does not disambiguate those meanings, so A is only a relative preference and no unique best category is established. B has no food or dining support on either ordinary reading.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-41bf3d409fe7346bbe1273e4",
+      "catalog_id": 2,
+      "choice_a": 10,
+      "choice_b": 9,
+      "literal_cues": [
+        "who played ronald weasly"
+      ],
+      "a_fit": "supported",
+      "b_fit": "supported",
+      "preference": "both",
+      "best_category_id": null,
+      "best_category_status": "unresolved",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "This is a neutral casting fact about a fictional character, supporting 9, while 10 also includes film or media discussion. The boundary between neutral media facts and media discussion is not resolved explicitly. Both choices are defensible without assuming an entertainment or educational motive.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-41c0b008a38a16c09b10663d",
+      "catalog_id": 2,
+      "choice_a": null,
+      "choice_b": 9,
+      "literal_cues": [
+        "who set up the numbers",
+        "for it"
+      ],
+      "a_fit": "supported",
+      "b_fit": "unsupported",
+      "preference": "A",
+      "best_category_id": null,
+      "best_category_status": "Other",
+      "severity": "major",
+      "confidence": "high",
+      "themes": [
+        "clear classification error",
+        "ambiguous utterance",
+        "reasonable Other"
+      ],
+      "rationale": "The referent of it and the kind of numbers are missing, so the essential subject cannot be established. Catalog 2 explicitly directs that situation to Other. A who-question surface alone does not justify the general-knowledge category.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-f2e1d126be7eea51eca28fe0",
+      "catalog_id": 2,
+      "choice_a": 6,
+      "choice_b": 5,
+      "literal_cues": [
+        "my order",
+        "doing right now"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 5,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "medium",
+      "themes": [
+        "clear classification error",
+        "ordinary implicit intent"
+      ],
+      "rationale": "A current order-status inquiry naturally fits the explicit retail-order and fulfillment scope of 5. The item is unspecified, but there is no vehicle-selection or vehicle-care cue supporting 6; ordinary order wording is sufficient for the broad consumer subject.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-a3de2021386123cfa3bf75ae",
+      "catalog_id": 2,
+      "choice_a": 9,
+      "choice_b": 2,
+      "literal_cues": [
+        "how long until",
+        "next day off"
+      ],
+      "a_fit": "unsupported",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 2,
+      "best_category_status": "category",
+      "severity": "major",
+      "confidence": "medium",
+      "themes": [
+        "clear classification error",
+        "ordinary implicit intent"
+      ],
+      "rationale": "The time-off wording supplies the practical subject, and catalog 2 says a named employer is unnecessary. Treating its how-long form as a standalone factual question in 9 overlooks the explicit leave subject.",
+      "equal_choice_check": "not an equal-choice case"
+    },
+    {
+      "case_id": "case-5c599ad769ff2356531383df",
+      "catalog_id": 2,
+      "choice_a": null,
+      "choice_b": 9,
+      "literal_cues": [
+        "more information",
+        "getting a job at the post office"
+      ],
+      "a_fit": "unclear",
+      "b_fit": "supported",
+      "preference": "B",
+      "best_category_id": 9,
+      "best_category_status": "category",
+      "severity": "minor",
+      "confidence": "medium",
+      "themes": [
+        "missing category",
+        "reasonable alternative",
+        "overlapping/incomplete descriptions"
+      ],
+      "rationale": "This is a procedural information request about obtaining a job, not an employment benefit or paycheck. The general informational or educational scope of 9 is a defensible fit. Job-search assistance is not explicitly named, so Other remains understandable; this is a weak boundary case rather than a strong clear-error case.",
+      "equal_choice_check": "not an equal-choice case"
+    }
+  ]
+}

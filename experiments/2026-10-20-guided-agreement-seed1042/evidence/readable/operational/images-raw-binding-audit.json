@@ -1,0 +1,931 @@
+{
+  "scope": "Post hoc raw-response and image-byte binding audit for completed primary image arms; not a semantic accuracy judgment.",
+  "cases": [
+    {
+      "condition": "original",
+      "id": "48599a29fabce63c6bc1",
+      "image_sha256": "42dbf12a8f9774480a78c2be51afef11cc2e9811aea4b01a190e25f9af4fe216",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "4",
+            "confidence": 1.0,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.0,
+                "value": "1"
+              },
+              {
+                "probability": 0.0,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 1.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.0,
+                "value": "5"
+              },
+              {
+                "probability": 0.0,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 0.0,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1399,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1399
+        }
+      }
+    },
+    {
+      "condition": "original",
+      "id": "266197d08c96d6dba809",
+      "image_sha256": "c9676f23e816328d5e4011788119994af2178f7ce8b23b18f5d04f52d2f369e0",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "4",
+            "confidence": 1.0,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.0,
+                "value": "1"
+              },
+              {
+                "probability": 0.0,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 1.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.0,
+                "value": "5"
+              },
+              {
+                "probability": 0.0,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 0.0,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1175,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1175
+        }
+      }
+    },
+    {
+      "condition": "original",
+      "id": "183698f3a9d4a5674b94",
+      "image_sha256": "d1460ca4cbd7b08923e488572760986f948ad4cfc067cc06d623a735b6bc2d28",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.92,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.0,
+                "value": "1"
+              },
+              {
+                "probability": 0.0,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.0,
+                "value": "5"
+              },
+              {
+                "probability": 0.05,
+                "value": "6"
+              },
+              {
+                "probability": 0.02,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 0.93,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1175,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1175
+        }
+      }
+    },
+    {
+      "condition": "original",
+      "id": "f6f4b1fe5eb44841a5cc",
+      "image_sha256": "880870909ea86268422b6f4e9167da539f0cb80ab3a2bc5251407e56ef2737d1",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 1.0,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.0,
+                "value": "1"
+              },
+              {
+                "probability": 0.0,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.0,
+                "value": "5"
+              },
+              {
+                "probability": 0.0,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 1.0,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1239,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1239
+        }
+      }
+    },
+    {
+      "condition": "original",
+      "id": "23c5d6e0ab0e2e9eaed5",
+      "image_sha256": "8928f63fcec03015211d351c32c337be567bbb28a945ab5a81f8f16f1bdf8038",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.94,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.01,
+                "value": "1"
+              },
+              {
+                "probability": 0.01,
+                "value": "2"
+              },
+              {
+                "probability": 0.01,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.02,
+                "value": "5"
+              },
+              {
+                "probability": 0.0,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 0.95,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1239,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1239
+        }
+      }
+    },
+    {
+      "condition": "original",
+      "id": "56219271dcfa0b16ca57",
+      "image_sha256": "e07e183b6e3d558570bc484021a50189b8d7af851d1f432d338c599477216775",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "7",
+            "confidence": 0.34,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.0,
+                "value": "1"
+              },
+              {
+                "probability": 0.0,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.0,
+                "value": "5"
+              },
+              {
+                "probability": 0.39,
+                "value": "6"
+              },
+              {
+                "probability": 0.41,
+                "value": "7"
+              },
+              {
+                "probability": 0.01,
+                "value": "8"
+              },
+              {
+                "probability": 0.19,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1239,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1239
+        }
+      }
+    },
+    {
+      "condition": "guided",
+      "id": "48599a29fabce63c6bc1",
+      "image_sha256": "42dbf12a8f9774480a78c2be51afef11cc2e9811aea4b01a190e25f9af4fe216",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "5",
+            "confidence": 0.63,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.0,
+                "value": "1"
+              },
+              {
+                "probability": 0.01,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 0.32,
+                "value": "4"
+              },
+              {
+                "probability": 0.67,
+                "value": "5"
+              },
+              {
+                "probability": 0.0,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 0.0,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 2537,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2537
+        }
+      }
+    },
+    {
+      "condition": "guided",
+      "id": "266197d08c96d6dba809",
+      "image_sha256": "c9676f23e816328d5e4011788119994af2178f7ce8b23b18f5d04f52d2f369e0",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "5",
+            "confidence": 0.53,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.01,
+                "value": "1"
+              },
+              {
+                "probability": 0.02,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 0.37,
+                "value": "4"
+              },
+              {
+                "probability": 0.58,
+                "value": "5"
+              },
+              {
+                "probability": 0.01,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 0.01,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 2313,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2313
+        }
+      }
+    },
+    {
+      "condition": "guided",
+      "id": "183698f3a9d4a5674b94",
+      "image_sha256": "d1460ca4cbd7b08923e488572760986f948ad4cfc067cc06d623a735b6bc2d28",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.85,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.02,
+                "value": "1"
+              },
+              {
+                "probability": 0.01,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.01,
+                "value": "5"
+              },
+              {
+                "probability": 0.02,
+                "value": "6"
+              },
+              {
+                "probability": 0.06,
+                "value": "7"
+              },
+              {
+                "probability": 0.01,
+                "value": "8"
+              },
+              {
+                "probability": 0.87,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 2313,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2313
+        }
+      }
+    },
+    {
+      "condition": "guided",
+      "id": "f6f4b1fe5eb44841a5cc",
+      "image_sha256": "880870909ea86268422b6f4e9167da539f0cb80ab3a2bc5251407e56ef2737d1",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.94,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.01,
+                "value": "1"
+              },
+              {
+                "probability": 0.02,
+                "value": "2"
+              },
+              {
+                "probability": 0.01,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.0,
+                "value": "5"
+              },
+              {
+                "probability": 0.0,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.01,
+                "value": "8"
+              },
+              {
+                "probability": 0.95,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 2377,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2377
+        }
+      }
+    },
+    {
+      "condition": "guided",
+      "id": "23c5d6e0ab0e2e9eaed5",
+      "image_sha256": "8928f63fcec03015211d351c32c337be567bbb28a945ab5a81f8f16f1bdf8038",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.69,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.05,
+                "value": "1"
+              },
+              {
+                "probability": 0.13,
+                "value": "2"
+              },
+              {
+                "probability": 0.01,
+                "value": "3"
+              },
+              {
+                "probability": 0.01,
+                "value": "4"
+              },
+              {
+                "probability": 0.03,
+                "value": "5"
+              },
+              {
+                "probability": 0.03,
+                "value": "6"
+              },
+              {
+                "probability": 0.01,
+                "value": "7"
+              },
+              {
+                "probability": 0.01,
+                "value": "8"
+              },
+              {
+                "probability": 0.72,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 2377,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2377
+        }
+      }
+    },
+    {
+      "condition": "guided",
+      "id": "56219271dcfa0b16ca57",
+      "image_sha256": "e07e183b6e3d558570bc484021a50189b8d7af851d1f432d338c599477216775",
+      "choice_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "other"
+      ],
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.38,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.01,
+                "value": "1"
+              },
+              {
+                "probability": 0.0,
+                "value": "2"
+              },
+              {
+                "probability": 0.0,
+                "value": "3"
+              },
+              {
+                "probability": 0.01,
+                "value": "4"
+              },
+              {
+                "probability": 0.01,
+                "value": "5"
+              },
+              {
+                "probability": 0.02,
+                "value": "6"
+              },
+              {
+                "probability": 0.44,
+                "value": "7"
+              },
+              {
+                "probability": 0.06,
+                "value": "8"
+              },
+              {
+                "probability": 0.45,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 2377,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2377
+        }
+      }
+    }
+  ],
+  "original_all_100_payloads_equal_supplied_jpeg": true,
+  "guided_all_100_payloads_equal_supplied_jpeg": true
+}

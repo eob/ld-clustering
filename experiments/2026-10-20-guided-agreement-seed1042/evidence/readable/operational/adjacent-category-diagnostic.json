@@ -1,0 +1,78 @@
+{
+  "scope": "Post hoc catalog-adjacency description, not a causal order test. Among different named IDs only, count Decisions selecting the next catalog entry after the Sol reference. Other and same-ID cases are excluded.",
+  "primary_comparison_sha256": "dabe80ccc8f0d8c82d0f5ae52d5a75c6299d8a39af55874faeca7fee332cd593",
+  "results": [
+    {
+      "modality": "text",
+      "condition": "original",
+      "different_named_count": 114,
+      "next_catalog_entry_count": 34,
+      "conditional_fraction": 0.2982456140350877,
+      "catalog_order": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "modality": "text",
+      "condition": "guided",
+      "different_named_count": 380,
+      "next_catalog_entry_count": 339,
+      "conditional_fraction": 0.8921052631578947,
+      "catalog_order": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "modality": "images",
+      "condition": "original",
+      "different_named_count": 1,
+      "next_catalog_entry_count": 1,
+      "conditional_fraction": 1.0,
+      "catalog_order": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "modality": "images",
+      "condition": "guided",
+      "different_named_count": 13,
+      "next_catalog_entry_count": 12,
+      "conditional_fraction": 0.9230769230769231,
+      "catalog_order": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ]
+}

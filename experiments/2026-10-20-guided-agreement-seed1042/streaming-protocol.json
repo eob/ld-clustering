@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "registered_at_utc": "2026-10-21T00:30:38.888398+00:00",
+  "scope": "Adaptive reserved-stream follow-up designed after interpreting the controlled results, blinded review and order/page diagnostics. All new stream calls remain unstarted at registration. This is not an independent confirmatory test of description quality alone.",
+  "question": "Does a combined compact contextual catalog manager and global reconsideration policy improve cross-backend partition agreement while preserving useful coverage on separately reserved streams?",
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "data_seed": 1042,
+  "control": {
+    "runtime_source_commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+    "postprocessor_source_commit": "616b5d0d707b926db15e73cc43128fac09904e3c",
+    "archive_path": "experiments/2026-10-20-guided-agreement-seed1042/evidence",
+    "archive_manifest_sha256": "20d8a470bf9cfb63b5406b1b883f1f23199def56e9577928a8cc9dd9b908b1fa",
+    "analysis_sha256": "006202236b702a79dce31dfcb40bf1628d9d5902edcdaeb5d5fc65b10e6f1f7a",
+    "independent_audit_sha256": "cdc396040c19737c6e8029083fec2355c82616ac43c8d1bf08bac8cbdd548fe7",
+    "known_cost_usd": "7.7162398",
+    "cost_complete": false
+  },
+  "classifiers": {
+    "llm": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "service_tier": "default"
+    },
+    "ld": {
+      "model": "gpt-6-luna",
+      "endpoint": "/v1/decisions"
+    }
+  },
+  "manager": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "service_tier": "default",
+    "representatives": "Existing deterministic Store.examples(40), up to two named members per category and history-spread Other; observed assignments are not semantic truth.",
+    "contexts": {
+      "text": {
+        "file": "streaming-context-text.md",
+        "sha256": "cff717fad8b0b5b7d1ee34d8be46e93bd62c94baf8b799faf2452304f7e6141a"
+      },
+      "images": {
+        "file": "streaming-context-images.md",
+        "sha256": "4c6565b1336c9c1baa0b76813f0ef882dd8ab870d31d9caa804c69c6f27dfc74"
+      }
+    }
+  },
+  "policies": {
+    "original": {
+      "descriptor": {
+        "policy": "original",
+        "context_sha256": null,
+        "prompt_revision": "original-v1"
+      },
+      "manager": "Original plan request preserved byte-for-byte; same clean assignment-only objective as contextual arms.",
+      "reconsideration": "Targeted source members and Other for nonempty plans, preserving original behavior."
+    },
+    "contextual": {
+      "prompt_revision": "contextual-v1",
+      "manager": "Concise positive membership guidance, supported implicit context, full-catalog granularity and neighboring-boundary co-revisions, preservation of existing scope; frozen control findings supplied equally to both backends.",
+      "reconsideration": "Every persisted point is queued after an actual ordered IDs/names/descriptions catalog change. Exact no-op and empty plans add no reconsideration."
+    }
+  },
+  "matrix": [
+    {
+      "modality": "text",
+      "policy": "original",
+      "backend": "llm",
+      "count": 1000
+    },
+    {
+      "modality": "text",
+      "policy": "original",
+      "backend": "ld",
+      "count": 1000
+    },
+    {
+      "modality": "text",
+      "policy": "contextual",
+      "backend": "llm",
+      "count": 1000
+    },
+    {
+      "modality": "text",
+      "policy": "contextual",
+      "backend": "ld",
+      "count": 1000
+    },
+    {
+      "modality": "images",
+      "policy": "original",
+      "backend": "llm",
+      "count": 100
+    },
+    {
+      "modality": "images",
+      "policy": "original",
+      "backend": "ld",
+      "count": 100
+    },
+    {
+      "modality": "images",
+      "policy": "contextual",
+      "backend": "llm",
+      "count": 100
+    },
+    {
+      "modality": "images",
+      "policy": "contextual",
+      "backend": "ld",
+      "count": 100
+    }
+  ],
+  "modalities": {
+    "text": {
+      "config": {
+        "bootstrap_size": 24,
+        "k": 8,
+        "maintenance_interval": 100,
+        "max_clusters": 16,
+        "novelty_trigger": 8,
+        "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request."
+      },
+      "input_sha256": "f28ebd149a6da02c77f4855f93532dceb691b06d4b0912c5f570c794a8b94783",
+      "jsonl_sha256": "efbbb89614828610b73b87f45fceeea52b97a9d300f7b0f65fffaf0ac9a4384d",
+      "expected_count": 1000
+    },
+    "images": {
+      "config": {
+        "bootstrap_size": 24,
+        "k": 8,
+        "maintenance_interval": 100,
+        "max_clusters": 16,
+        "novelty_trigger": 8,
+        "task": "Classify the main visible subject of this photograph into the single supplied broad semantic category whose membership criteria fit best. Use Other when no supplied category fits. Classify visible objects or scenes at the catalog's semantic granularity, rather than color, style, or photographic quality."
+      },
+      "input_sha256": "e1d3369d1921ffae29184f7bface06e8722006f16407e6a0d0173d9beffc6858",
+      "jsonl_sha256": "395de440c385a3f7ccc870ef0fb24ec6dd6500e32eb2be46198b07361dd6d254",
+      "expected_count": 100
+    }
+  },
+  "execution": {
+    "concurrency": "Eight independent serial workers may overlap; each worker retains original serial paging and mutation order.",
+    "image_cwd": "Absolute data/guidance/streaming directory, with absolute input/binary/database/journal paths; existing CWD-relative image resolution preserved.",
+    "freshness": "Fresh per-arm database and journal paths; no reuse of control/discovery/heldout items in the reserved stream.",
+    "source_freeze": "Commit this protocol and contexts, complete local gates, build and hash immutable executables; launcher records exact source, executable, dataset, input and context hashes before calls.",
+    "failure_policy": "Preserve failed attempts and terminal partial databases; do not rerun with changed descriptions, manager policy or source to replace a failed arm. Any later explicitly documented identical resume retains every attempt and conservative incomplete timing/cost flags.",
+    "termination": "Process the registered item count and final maintenance opportunity; no arbitrary time or cost stop introduced."
+  },
+  "primary_measurements": [
+    "Cross-backend ARI and pairwise precision/recall/F1 within each policy, with Other points as separate singletons.",
+    "Named coverage for each backend and full assigned/Other 2x2 on all matched items.",
+    "Policy difference in partition agreement; independent catalog evolution is a confound, and raw category IDs do not share semantic meaning."
+  ],
+  "additional_measurements": [
+    "Shared-Other partition sensitivity, clearly secondary.",
+    "Complete calls/retries/refusals/reported usage/known token-priced costs and completeness flags.",
+    "Per-arm active-loop and request time; no summing concurrent wall times into elapsed experiment time.",
+    "Planning and catalog-change events; committed reevaluation counts; known ID moves, unchanged assignments and unknown legacy origins.",
+    "Concrete final catalog/member examples and uncertainty; ID moves after merge/retire are mechanical evidence, not proven semantic corrections."
+  ],
+  "offline_preflight": {
+    "artifact_sha256": "ecbb7447d9222f953d8605419093c24d57fd956af71724cb5d9fb1d0a5ea99ec",
+    "scope": "Bootstrap uses actual first24 inputs and empty catalog. Upper bounds use synthetic16 maximum-byte category definitions and40 largest reserved inputs; none of these requests are dispatched.",
+    "api_calls": 0
+  },
+  "limits": [
+    "Combined prompt/context/global-reconsideration intervention, not a component ablation.",
+    "Designed after control outcomes; reserved examples are disjoint but share source distributions.",
+    "One input order and one run per modality/policy/backend; managers evolve independently.",
+    "Automated semantic review is not human ground truth; source labels are sampling metadata.",
+    "Global reconsideration can increase work substantially; cost and time include that work.",
+    "New queue schema preserves old data via migration but cannot be used with older binaries after migration.",
+    "Existing provider/store definition byte-limit mismatch can terminate a worker after an accepted plan; retain any such failure honestly."
+  ]
+}

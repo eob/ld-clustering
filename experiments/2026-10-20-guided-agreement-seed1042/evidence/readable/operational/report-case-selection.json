@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "published_at": "2026-10-21",
+  "asset_url_prefix": "/goofing/ld-clustering/guidance",
+  "modalities": {
+    "text": {
+      "selection_note": "Eight examples curated after observing outcomes from accepted guided-condition reviews: clear mismatches, unjustified rejection, a reference-model error, neither choice supported, a reasonable alternative, and named/Other agreements. This illustration is not a random sample or an accuracy estimate.",
+      "cases": [
+        {
+          "condition": "guided",
+          "case_id": "case-cfb2c81107b5642563582140"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-dcc203c3e47b505326af0777"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-531a36d4d0caa92c216501d7"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-5077cbad25f317da1d9c59f2"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-41bf3d409fe7346bbe1273e4"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-e8065c0c8bfb1ebb68a477ba"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-455a9a9425a3d5e7d869d3d6"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-b5de2faf9fd97ffca8c667eb"
+        }
+      ]
+    },
+    "images": {
+      "selection_note": "Eight examples curated after observing outcomes from accepted guided-condition reviews: a clear subject error, excessive rejection, reasonable reference alternatives, overlapping categories, missing coverage, a named agreement and an ambiguous shared rejection. This illustration is not an accuracy estimate. Photo titles are attribution metadata and were not model evidence.",
+      "cases": [
+        {
+          "condition": "guided",
+          "case_id": "case-8e5b51a48866b08ae3815579"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-6812a6d75a6c13ea306bf95d"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-488d4e57b6c7d99392dca576"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-26ded46b01140b49e4716fe1"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-b6e10eb1529e0cead4ab5b1a"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-c1aa32a5e8982f53c7d1c568"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-fb648312f0313d96ef82059e"
+        },
+        {
+          "condition": "guided",
+          "case_id": "case-e5efe67ab279bb9dd15152fc"
+        }
+      ]
+    }
+  }
+}

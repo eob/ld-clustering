@@ -347,3 +347,55 @@ both apply entry points, a genuine empty-history check for contextual adoption,
 real pending origins before reassignment events, and a documented no-downgrade
 boundary for migrated queues. Keep Original requests and Config/Model APIs
 compatible; record the actual stream source and binary separately from 9f80.
+
+### Verified control evidence and reserved-stream implementation
+
+Independent verification passes with status `verified_with_incomplete_review`:
+6,439 observed attempts across 28 roles, all exact request/page/image bindings,
+metrics, sampling and Decimal charges. Audit SHA-256 is
+`cdc396040c19737c6e8029083fec2355c82616ac43c8d1bf08bac8cbdd548fe7`; analysis
+SHA-256 is `006202236b702a79dce31dfcb40bf1628d9d5902edcdaeb5d5fc65b10e6f1f7a`.
+Known subtotal is $7.7162398; total remains unavailable under the preserved
+failed-review cost-history flag. All observed usage/pricing is known. There is
+one review error, zero retries, and one native refusal in the reversed-text
+diagnostic (none in primary).
+
+A checker defect initially confused the formatted review-plan file hash with
+its typed compact hash. Strict tests now validate both distinct domains and
+exact object equality; the raw evidence and protocol were untouched. Corrected
+verifier/exporter tests retain deliberate corruption negatives for each domain.
+
+The terminal control snapshot is archived separately before the reserved phase,
+so later source/stream work cannot change it. Its manifest SHA-256 is
+`20d8a470bf9cfb63b5406b1b883f1f23199def56e9577928a8cc9dd9b908b1fa`;
+externally anchored verification passes all 521 files. It contains frozen selected
+inputs, raw calls, failed/accepted reviews, analysis, audit and exact corrected
+offline helper copies. Runtime binaries and later stream receipts are excluded.
+The later stream will have its own evidence snapshot and runtime/source pins.
+
+The reserved implementation now includes descriptor/context binding, compact
+provider guidance, transactional global reconsideration and durable old origins,
+matching-descriptor comparison and all-item assigned/Other counts. Original
+planning and assignment request builders retain their exact original bodies.
+Focused causal reversions cover global queueing, old origins, empty-history
+binding, drain ordering, exact contexts, result counters and launcher option
+handling. Main/results peer review also found and fixed a strict-reader gap where
+a contradictory known-origin event could hide a move as unknown.
+
+Full integration gates pass 117 offline Rust tests (one paid ignored), 58 Python
+helper tests, formatting, Clippy and diff checks. Pure maximum-request preflight
+passes both modalities with zero calls: the image contextual bound is 31,309,089
+bytes below the 33,554,432-byte cap, including 40 largest selected photos and 16
+maximum-byte definitions. Its input fingerprints match the independent reserved
+data check. Protocol and per-modality control-context files are written before
+new paid calls. Launcher review, fresh-binary/source freeze and lifecycle checks
+remain before launch; no reserved-stream model calls have started.
+
+The final pre-freeze wording explicitly preserves conversational feedback as a
+valid practical subject. Its focused regression and causal reversion pass;
+21 provider tests pass (one paid ignored). Regenerated pure preflight is byte
+repeatable, SHA-256 `ecbb7447d9222f953d8605419093c24d57fd956af71724cb5d9fb1d0a5ea99ec`;
+registered streaming protocol is `65edc12008dd26404a52406a31f1c135e628642e4e8ac69e213882f8d60c0070`.
+Original planning and assignment request pins remain unchanged. Independent
+launcher, process-ownership and scientific preflight reviews found no remaining
+blocker; zero-API lifecycle validation precedes the reserved launch.

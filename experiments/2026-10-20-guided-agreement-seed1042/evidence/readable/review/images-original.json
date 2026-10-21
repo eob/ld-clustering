@@ -1,0 +1,2327 @@
+{
+  "aggregate": {
+    "cohort_id": "images-original",
+    "interpretation": "Automated reviewer judgments are evidence about the selected cases, not human truth or an unweighted estimate of population correctness. Report actual eligible/selected/reviewed counts by stratum.",
+    "plan_sha256": "5d1aa5e17d20991c477822c5c353a222b8d63e01b54dd995d00bb8abfa87391e",
+    "strata": {
+      "both_other": {
+        "accepted_count": 2,
+        "attempted_count": 2,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 0,
+        "not_attempted_count": 3,
+        "reference_preferred_count": 0,
+        "reviewer_candidate_unsupported_count": 0,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 5,
+        "severities": {
+          "none": 2
+        },
+        "themes": {
+          "catalog_gap": 2
+        },
+        "verdicts": {
+          "both_reasonable": 2
+        }
+      },
+      "different_named": {
+        "accepted_count": 1,
+        "attempted_count": 1,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "reference_preferred_count": 1,
+        "reviewer_candidate_unsupported_count": 1,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 1,
+        "severities": {
+          "major": 1
+        },
+        "themes": {
+          "wrong_named_category": 1
+        },
+        "verdicts": {
+          "a_better": 1
+        }
+      },
+      "equal_named": {
+        "accepted_count": 52,
+        "attempted_count": 53,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 1,
+        "not_attempted_count": 38,
+        "reference_preferred_count": 0,
+        "reviewer_candidate_unsupported_count": 0,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 91,
+        "severities": {
+          "none": 52
+        },
+        "themes": {
+          "ambiguous_item": 1,
+          "insufficient_image_evidence": 1,
+          "other": 6,
+          "overlapping_descriptions": 11,
+          "reasonable_alternative": 35
+        },
+        "verdicts": {
+          "both_reasonable": 52
+        }
+      },
+      "reference_named_candidate_other": {
+        "accepted_count": 2,
+        "attempted_count": 2,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 0,
+        "not_attempted_count": 1,
+        "reference_preferred_count": 2,
+        "reviewer_candidate_unsupported_count": 2,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 3,
+        "severities": {
+          "major": 2
+        },
+        "themes": {
+          "excessive_other": 2
+        },
+        "verdicts": {
+          "b_better": 2
+        }
+      },
+      "reference_other_candidate_named": {
+        "accepted_count": 0,
+        "attempted_count": 0,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "reference_preferred_count": 0,
+        "reviewer_candidate_unsupported_count": 0,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 0,
+        "severities": {},
+        "themes": {},
+        "verdicts": {}
+      }
+    },
+    "totals": {
+      "accepted_count": 57,
+      "attempted_count": 58,
+      "both_unsupported_count": 0,
+      "candidate_preferred_count": 0,
+      "failed_count": 1,
+      "not_attempted_count": 42,
+      "reference_preferred_count": 3,
+      "reviewer_candidate_unsupported_count": 3,
+      "reviewer_reference_unsupported_count": 0,
+      "selected_count": 100,
+      "severities": {
+        "major": 3,
+        "none": 54
+      },
+      "themes": {
+        "ambiguous_item": 1,
+        "catalog_gap": 2,
+        "excessive_other": 2,
+        "insufficient_image_evidence": 1,
+        "other": 6,
+        "overlapping_descriptions": 11,
+        "reasonable_alternative": 35,
+        "wrong_named_category": 1
+      },
+      "verdicts": {
+        "a_better": 1,
+        "b_better": 2,
+        "both_reasonable": 54
+      }
+    }
+  },
+  "error": "blinded_review attempt 1; recorded in request log: response did not complete: \"incomplete\"",
+  "measurement": {
+    "assignment_refusal_calls": 0,
+    "calls": 58,
+    "cost_complete": false,
+    "cost_history_complete": false,
+    "cost_usd": 0.4766555000000001,
+    "error_calls": 1,
+    "journal_sha256": "4f0bf17b65a46d9dff7ac3f374fca53a46daade577d18e9034074d73adb3f064",
+    "phase_calls": {
+      "blinded_review": 58
+    },
+    "pricing_date": "2026-10-20",
+    "pricing_sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "https://developers.openai.com/api/docs/guides/decisions"
+    ],
+    "request_seconds": 514.991,
+    "timing_complete": false,
+    "unknown_pricing_calls": 0,
+    "unknown_usage_calls": 0,
+    "usage": {
+      "cache_write_tokens": 99547,
+      "cached_tokens": 0,
+      "cost_usd": 0.4766555000000001,
+      "input_tokens": 99721,
+      "output_tokens": 22744
+    },
+    "wall_ms": 515244,
+    "wall_seconds": 515.244
+  },
+  "metadata": {
+    "automated_review": true,
+    "bundle_sha256": "3d2259bff2f186500d98c1935c065e7b6d96aa75cb957fdb7e7835ec1fdd2038",
+    "experiment": "guided-agreement",
+    "maximum_request_bytes": 1388172,
+    "model": "gpt-6.1-sol",
+    "plan_sha256": "5d1aa5e17d20991c477822c5c353a222b8d63e01b54dd995d00bb8abfa87391e",
+    "reasoning_effort": "high",
+    "run_id": "5e3c5953e23e149a4c43227412c1d509",
+    "selected_count": 100,
+    "source": {
+      "commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+      "embedded_file_sha256": {
+        "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+        "Cargo.toml": "1e3bb39b4ff2fca4f38e8923f1b254d0d50c5d1b4855c4983b30f2b429086715",
+        "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+        "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+        "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+        "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+        "src/lib.rs": "2dfcb22af11e31103c8032b77ab9064ec8e71ab110212d2a2fc1c83b41829d47",
+        "src/provider.rs": "9269e50c25edaa2c73eb8199c3c942d54f7f1bd16ecc011a554f515166cb83f9",
+        "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+      },
+      "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce"
+    },
+    "stage": "blinded_review"
+  },
+  "outcomes": [
+    {
+      "case_id": "case-cf3c1454764a4cc807ea3380",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-cf3c1454764a4cc807ea3380",
+        "evidence": [
+          "A bird with a dark crest, blue wings, and a long blue tail is prominently visible perched on a branch.",
+          "Category 1, Animals, explicitly includes birds."
+        ],
+        "explanation": "Both choices assign category 1, Animals, which clearly fits the main visible subject. The surrounding branches and foliage are background rather than the photograph's primary subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-cf3c1454764a4cc807ea3380",
+        "evidence": [
+          "A bird with a dark crest, blue wings, and a long blue tail is prominently visible perched on a branch.",
+          "Category 1, Animals, explicitly includes birds."
+        ],
+        "explanation": "Both choices assign category 1, Animals, which clearly fits the main visible subject. The surrounding branches and foliage are background rather than the photograph's primary subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-902b1fa02216ee68509fc294",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-902b1fa02216ee68509fc294",
+        "evidence": [
+          "A cordless telephone handset with a display, numeric keypad, and antenna is the sharply focused foreground subject.",
+          "An open laptop occupies much of the background.",
+          "Category 6 covers electronic equipment and powered household or desktop devices, fitting both visible objects."
+        ],
+        "explanation": "Both choices select category 6, Electronics and appliances. This directly fits the main subject, a cordless telephone, as well as the laptop behind it.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-902b1fa02216ee68509fc294",
+        "evidence": [
+          "A cordless telephone handset with a display, numeric keypad, and antenna is the sharply focused foreground subject.",
+          "An open laptop occupies much of the background.",
+          "Category 6 covers electronic equipment and powered household or desktop devices, fitting both visible objects."
+        ],
+        "explanation": "Both choices select category 6, Electronics and appliances. This directly fits the main subject, a cordless telephone, as well as the laptop behind it.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-08a96f5bca6f2fe8a95a5c9c",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-08a96f5bca6f2fe8a95a5c9c",
+        "evidence": [
+          "The photograph is dominated by an underwater aquatic mammal, showing its eye, broad muzzle, whiskers, and body.",
+          "Category 1, Animals, includes non-human animals and directly covers the visible subject."
+        ],
+        "explanation": "Both choices select Animals (1), which clearly fits the main subject. The surrounding water does not change the subject classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-08a96f5bca6f2fe8a95a5c9c",
+        "evidence": [
+          "The photograph is dominated by an underwater aquatic mammal, showing its eye, broad muzzle, whiskers, and body.",
+          "Category 1, Animals, includes non-human animals and directly covers the visible subject."
+        ],
+        "explanation": "Both choices select Animals (1), which clearly fits the main subject. The surrounding water does not change the subject classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-1fc10b71ef8b56a623fc43eb",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-1fc10b71ef8b56a623fc43eb",
+        "evidence": [
+          "A whole roasted bird with browned skin dominates the photograph, resting on a rack in a roasting pan.",
+          "Category 5, Food and drink, explicitly includes prepared dishes and food being cooked."
+        ],
+        "explanation": "Both choices select category 5, which directly fits the main subject: poultry prepared as food. The surrounding kitchen equipment is secondary, and the Animals category is not the best fit for this cooked dish.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-1fc10b71ef8b56a623fc43eb",
+        "evidence": [
+          "A whole roasted bird with browned skin dominates the photograph, resting on a rack in a roasting pan.",
+          "Category 5, Food and drink, explicitly includes prepared dishes and food being cooked."
+        ],
+        "explanation": "Both choices select category 5, which directly fits the main subject: poultry prepared as food. The surrounding kitchen equipment is secondary, and the Animals category is not the best fit for this cooked dish.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-289c96c2efea7a04bd2f8069",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-289c96c2efea7a04bd2f8069",
+        "evidence": [
+          "The photograph is a close portrait of one person, with their face and upper torso prominently visible.",
+          "Category 4, People and activities, explicitly includes individuals and portraits.",
+          "The camouflage clothing is being worn; it is not presented as a standalone textile object."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the photograph's main subject. The camouflage face paint and clothing do not change the subject's classification as a person.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-289c96c2efea7a04bd2f8069",
+        "evidence": [
+          "The photograph is a close portrait of one person, with their face and upper torso prominently visible.",
+          "Category 4, People and activities, explicitly includes individuals and portraits.",
+          "The camouflage clothing is being worn; it is not presented as a standalone textile object."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the photograph's main subject. The camouflage face paint and clothing do not change the subject's classification as a person.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-0d787efc512feff1de9643d9",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-0d787efc512feff1de9643d9",
+        "evidence": [
+          "Two large wind turbines dominate the foreground, with electricity pylons and power lines across the background.",
+          "Category 7, Buildings and structures, explicitly includes utility structures and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, which fits the prominent wind turbines and electrical infrastructure. The rainbow is visually striking but does not make the shared classification unreasonable.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-0d787efc512feff1de9643d9",
+        "evidence": [
+          "Two large wind turbines dominate the foreground, with electricity pylons and power lines across the background.",
+          "Category 7, Buildings and structures, explicitly includes utility structures and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, which fits the prominent wind turbines and electrical infrastructure. The rainbow is visually striking but does not make the shared classification unreasonable.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-48a95e6674cf5157ba147879",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-48a95e6674cf5157ba147879",
+        "evidence": [
+          "A seated person dominates the foreground, with their face, upper body, and hand clearly visible.",
+          "Category 4, People and activities, explicitly includes people shown individually and portraits.",
+          "The tables, papers, and surrounding interior are secondary to the person."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the photograph’s main visible subject. Neither the clothing nor the constructed setting is the primary focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-48a95e6674cf5157ba147879",
+        "evidence": [
+          "A seated person dominates the foreground, with their face, upper body, and hand clearly visible.",
+          "Category 4, People and activities, explicitly includes people shown individually and portraits.",
+          "The tables, papers, and surrounding interior are secondary to the person."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the photograph’s main visible subject. Neither the clothing nor the constructed setting is the primary focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-2f1f0321bf38377faff813dc",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2f1f0321bf38377faff813dc",
+        "evidence": [
+          "The prominent foreground subject is a person holding a golf club and preparing to strike a ball.",
+          "Another person stands behind the golfer watching.",
+          "Category 4, People and activities, explicitly includes people participating in sports."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the main subject: people engaged in golf. The grass and trees provide the setting rather than the primary subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2f1f0321bf38377faff813dc",
+        "evidence": [
+          "The prominent foreground subject is a person holding a golf club and preparing to strike a ball.",
+          "Another person stands behind the golfer watching.",
+          "Category 4, People and activities, explicitly includes people participating in sports."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the main subject: people engaged in golf. The grass and trees provide the setting rather than the primary subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-52a104c01e1d893e6bf8cd3c",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-52a104c01e1d893e6bf8cd3c",
+        "evidence": [
+          "The photograph centers on a large architectural interior with sweeping arches, tall windows, and an ornate geometric ceiling.",
+          "Rows of pews and a raised front area establish the interior setting.",
+          "Category 7 explicitly includes architectural interiors and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures, which directly fits the main visible subject. The architecture dominates the photograph; smaller decorative objects do not change its primary classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-52a104c01e1d893e6bf8cd3c",
+        "evidence": [
+          "The photograph centers on a large architectural interior with sweeping arches, tall windows, and an ornate geometric ceiling.",
+          "Rows of pews and a raised front area establish the interior setting.",
+          "Category 7 explicitly includes architectural interiors and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures, which directly fits the main visible subject. The architecture dominates the photograph; smaller decorative objects do not change its primary classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-96f35050189ab11ca335c4cf",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-96f35050189ab11ca335c4cf",
+        "evidence": [
+          "The photograph centers on a bowl containing a prepared dessert with a cake-like portion, white cream or ice cream, and red fruit sauce.",
+          "Category 5, Food and drink, explicitly includes foods and prepared dishes."
+        ],
+        "explanation": "Both choices select category 5, which clearly fits the main visible subject. The bowl, spoon, and tablecloth are incidental to the prominently displayed dessert.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-96f35050189ab11ca335c4cf",
+        "evidence": [
+          "The photograph centers on a bowl containing a prepared dessert with a cake-like portion, white cream or ice cream, and red fruit sauce.",
+          "Category 5, Food and drink, explicitly includes foods and prepared dishes."
+        ],
+        "explanation": "Both choices select category 5, which clearly fits the main visible subject. The bowl, spoon, and tablecloth are incidental to the prominently displayed dessert.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-7d6c0b3b342c933e49f60787",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-7d6c0b3b342c933e49f60787",
+        "evidence": [
+          "Several sheep are prominently visible across the foreground, including two large sheep on the right.",
+          "Category 1, Animals, explicitly includes livestock."
+        ],
+        "explanation": "Both choices select Animals, which clearly fits the sheep as the main visible subjects. The grass, hills, and water provide background scenery rather than a better competing classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-7d6c0b3b342c933e49f60787",
+        "evidence": [
+          "Several sheep are prominently visible across the foreground, including two large sheep on the right.",
+          "Category 1, Animals, explicitly includes livestock."
+        ],
+        "explanation": "Both choices select Animals, which clearly fits the sheep as the main visible subjects. The grass, hills, and water provide background scenery rather than a better competing classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-77e284edc6fe90cf15ce0394",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-77e284edc6fe90cf15ce0394",
+        "evidence": [
+          "The photograph centers on cooked potato wedges and carrot pieces with browned surfaces and visible seasoning.",
+          "Category 5, Food and drink, explicitly includes foods, prepared dishes, ingredients, and food being cooked."
+        ],
+        "explanation": "Both choices assign category 5, which directly fits the roasted vegetables that dominate the photograph. The cooking tray and background are incidental to the prepared food.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-77e284edc6fe90cf15ce0394",
+        "evidence": [
+          "The photograph centers on cooked potato wedges and carrot pieces with browned surfaces and visible seasoning.",
+          "Category 5, Food and drink, explicitly includes foods, prepared dishes, ingredients, and food being cooked."
+        ],
+        "explanation": "Both choices assign category 5, which directly fits the roasted vegetables that dominate the photograph. The cooking tray and background are incidental to the prepared food.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-586a0b2c7a17e92533911b78",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-586a0b2c7a17e92533911b78",
+        "evidence": [
+          "The photograph centers on a utility pole with dense overhead wiring and an attached streetlight.",
+          "Category 7, Buildings and structures, explicitly includes utility structures and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, which directly fits the dominant utility infrastructure. The small birds and partial building at the edges do not change the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-586a0b2c7a17e92533911b78",
+        "evidence": [
+          "The photograph centers on a utility pole with dense overhead wiring and an attached streetlight.",
+          "Category 7, Buildings and structures, explicitly includes utility structures and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, which directly fits the dominant utility infrastructure. The small birds and partial building at the edges do not change the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-c25f93e10347d0b0e6c96e10",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-c25f93e10347d0b0e6c96e10",
+        "evidence": [
+          "Dense green shrubs trimmed into rounded shapes fill most of the photograph.",
+          "Category 2, Plants, explicitly includes foliage and other plants; the visible path and mulch are secondary."
+        ],
+        "explanation": "Both choices select Plants (2), which clearly fits the photograph’s main subject: living shrubs. Their sculpted shapes do not change their semantic category.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-c25f93e10347d0b0e6c96e10",
+        "evidence": [
+          "Dense green shrubs trimmed into rounded shapes fill most of the photograph.",
+          "Category 2, Plants, explicitly includes foliage and other plants; the visible path and mulch are secondary."
+        ],
+        "explanation": "Both choices select Plants (2), which clearly fits the photograph’s main subject: living shrubs. Their sculpted shapes do not change their semantic category.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-fe1b0ea1171c92adcf8d3e8f",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fe1b0ea1171c92adcf8d3e8f",
+        "evidence": [
+          "An antelope is the prominent foreground subject, with its head, ears, neck, and torso clearly visible.",
+          "Category 1, Animals, covers non-human animals.",
+          "The surrounding foliage is background rather than the main subject."
+        ],
+        "explanation": "Both choices select category 1, Animals, which clearly fits the photograph’s main visible subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fe1b0ea1171c92adcf8d3e8f",
+        "evidence": [
+          "An antelope is the prominent foreground subject, with its head, ears, neck, and torso clearly visible.",
+          "Category 1, Animals, covers non-human animals.",
+          "The surrounding foliage is background rather than the main subject."
+        ],
+        "explanation": "Both choices select category 1, Animals, which clearly fits the photograph’s main visible subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-587ccf321177e1562a65f442",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-587ccf321177e1562a65f442",
+        "evidence": [
+          "A person wearing a black hat, red shirt, blue plaid trousers, and yellow shoes is centered prominently in the foreground.",
+          "The person is gesturing on a performance mat; category 4 explicitly includes individuals and people performing activities.",
+          "The trailers, barriers, and trees are background elements rather than the main subject."
+        ],
+        "explanation": "Both choices select category 4, People and activities, which clearly fits the photograph’s main visible subject. Clothing is shown being worn by the person, not presented as a separate object.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-587ccf321177e1562a65f442",
+        "evidence": [
+          "A person wearing a black hat, red shirt, blue plaid trousers, and yellow shoes is centered prominently in the foreground.",
+          "The person is gesturing on a performance mat; category 4 explicitly includes individuals and people performing activities.",
+          "The trailers, barriers, and trees are background elements rather than the main subject."
+        ],
+        "explanation": "Both choices select category 4, People and activities, which clearly fits the photograph’s main visible subject. Clothing is shown being worn by the person, not presented as a separate object.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-694a00d5e1a2179fc005097f",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-694a00d5e1a2179fc005097f",
+        "evidence": [
+          "A seated person is centrally framed, holding a trumpet to his lips with his hands on the instrument.",
+          "Category 4, People and activities, explicitly includes people performing music.",
+          "The foreground saxophones frame the musician rather than displace him as the main subject."
+        ],
+        "explanation": "Both choices assign category 4, which directly fits the main visible subject: a person playing a musical instrument. The surrounding instruments do not make Other necessary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-694a00d5e1a2179fc005097f",
+        "evidence": [
+          "A seated person is centrally framed, holding a trumpet to his lips with his hands on the instrument.",
+          "Category 4, People and activities, explicitly includes people performing music.",
+          "The foreground saxophones frame the musician rather than displace him as the main subject."
+        ],
+        "explanation": "Both choices assign category 4, which directly fits the main visible subject: a person playing a musical instrument. The surrounding instruments do not make Other necessary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-ccf9b529c7e5f5fa1743037a",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-ccf9b529c7e5f5fa1743037a",
+        "evidence": [
+          "A large silver sedan dominates the foreground, with its grille, headlights, wheels, windshield, and passenger cabin clearly visible.",
+          "Category 3, Vehicles, explicitly includes cars."
+        ],
+        "explanation": "Both choices select category 3, Vehicles, which directly fits the photograph’s main subject. The background people, vegetation, and structures are secondary and do not create meaningful ambiguity.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-ccf9b529c7e5f5fa1743037a",
+        "evidence": [
+          "A large silver sedan dominates the foreground, with its grille, headlights, wheels, windshield, and passenger cabin clearly visible.",
+          "Category 3, Vehicles, explicitly includes cars."
+        ],
+        "explanation": "Both choices select category 3, Vehicles, which directly fits the photograph’s main subject. The background people, vegetation, and structures are secondary and do not create meaningful ambiguity.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-4bf081b424bf91a336334d29",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-4bf081b424bf91a336334d29",
+        "evidence": [
+          "A whole pineapple dominates the photograph, with a lemon in the foreground.",
+          "Glass containers hold clear and green liquids alongside the fruit.",
+          "Category 5, Food and drink, includes foods, ingredients, and beverages in containers."
+        ],
+        "explanation": "Both choices select category 5, which fits the fruit-and-liquid still life. The pineapple's leafy crown does not outweigh its presentation as a food ingredient alongside a lemon and liquids.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-4bf081b424bf91a336334d29",
+        "evidence": [
+          "A whole pineapple dominates the photograph, with a lemon in the foreground.",
+          "Glass containers hold clear and green liquids alongside the fruit.",
+          "Category 5, Food and drink, includes foods, ingredients, and beverages in containers."
+        ],
+        "explanation": "Both choices select category 5, which fits the fruit-and-liquid still life. The pineapple's leafy crown does not outweigh its presentation as a food ingredient alongside a lemon and liquids.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-f86a8e683087a1d8353a16ff",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-f86a8e683087a1d8353a16ff",
+        "evidence": [
+          "The photograph centers on a natural cave interior with rock walls, hanging stalactites, and mineral formations.",
+          "Category 7 covers buildings and constructed environments, not naturally formed caves.",
+          "Artificial lighting and a small sign are incidental; neither changes the main subject from natural geology."
+        ],
+        "explanation": "Both choices are Other (null), which is appropriate because the catalog contains no category for caves or geological formations. None of the supplied named categories fits the main visible subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "catalog_gap"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-f86a8e683087a1d8353a16ff",
+        "evidence": [
+          "The photograph centers on a natural cave interior with rock walls, hanging stalactites, and mineral formations.",
+          "Category 7 covers buildings and constructed environments, not naturally formed caves.",
+          "Artificial lighting and a small sign are incidental; neither changes the main subject from natural geology."
+        ],
+        "explanation": "Both choices are Other (null), which is appropriate because the catalog contains no category for caves or geological formations. None of the supplied named categories fits the main visible subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "catalog_gap"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-2117521fd6903a96cd92b7a1",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2117521fd6903a96cd92b7a1",
+        "evidence": [
+          "Numerous birds are visibly perched along overhead wires against a blue sky.",
+          "Category 1, Animals, explicitly includes birds.",
+          "The utility wires provide the setting, while the birds are the main subjects."
+        ],
+        "explanation": "Both choices select Animals (1), which directly fits the visible birds. The wires do not make Buildings and structures a better classification of the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2117521fd6903a96cd92b7a1",
+        "evidence": [
+          "Numerous birds are visibly perched along overhead wires against a blue sky.",
+          "Category 1, Animals, explicitly includes birds.",
+          "The utility wires provide the setting, while the birds are the main subjects."
+        ],
+        "explanation": "Both choices select Animals (1), which directly fits the visible birds. The wires do not make Buildings and structures a better classification of the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-0dfab39bcfa1fcfde0ec2770",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-0dfab39bcfa1fcfde0ec2770",
+        "evidence": [
+          "A cream-and-black passenger car dominates the foreground, with its wheels, doors, windows, and body clearly visible.",
+          "Category 3, Vehicles, explicitly includes cars. The people, trees, and other cars are background elements."
+        ],
+        "explanation": "Both choices select category 3, Vehicles, which clearly fits the photograph's main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-0dfab39bcfa1fcfde0ec2770",
+        "evidence": [
+          "A cream-and-black passenger car dominates the foreground, with its wheels, doors, windows, and body clearly visible.",
+          "Category 3, Vehicles, explicitly includes cars. The people, trees, and other cars are background elements."
+        ],
+        "explanation": "Both choices select category 3, Vehicles, which clearly fits the photograph's main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-109c85de977c56ba3692121b",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-109c85de977c56ba3692121b",
+        "evidence": [
+          "A large, clearly visible canine is the central foreground subject.",
+          "Category 1, Animals, explicitly covers non-human animals.",
+          "Grass and a building appear as background context rather than the main subject."
+        ],
+        "explanation": "Both choices select category 1, Animals, which directly fits the photograph's main subject. There is no meaningful category ambiguity.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-109c85de977c56ba3692121b",
+        "evidence": [
+          "A large, clearly visible canine is the central foreground subject.",
+          "Category 1, Animals, explicitly covers non-human animals.",
+          "Grass and a building appear as background context rather than the main subject."
+        ],
+        "explanation": "Both choices select category 1, Animals, which directly fits the photograph's main subject. There is no meaningful category ambiguity.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-4c0557aabb2c8313c519f769",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-4c0557aabb2c8313c519f769",
+        "evidence": [
+          "The prominent peaches are growing on branches surrounded by abundant leaves.",
+          "Category 2, Plants, explicitly includes trees and foliage, matching the visible fruit-bearing tree."
+        ],
+        "explanation": "Both choices select Plants and are supported. Although the fruit is edible, the photograph shows it attached to a living tree amid foliage, rather than presented as harvested food. Plants is the best fit for this context.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-4c0557aabb2c8313c519f769",
+        "evidence": [
+          "The prominent peaches are growing on branches surrounded by abundant leaves.",
+          "Category 2, Plants, explicitly includes trees and foliage, matching the visible fruit-bearing tree."
+        ],
+        "explanation": "Both choices select Plants and are supported. Although the fruit is edible, the photograph shows it attached to a living tree amid foliage, rather than presented as harvested food. Plants is the best fit for this context.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-cb3b077dd8863bf931fed54a",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-cb3b077dd8863bf931fed54a",
+        "evidence": [
+          "The photograph shows a red berry growing among green, serrated leaves and stems.",
+          "White blossoms and developing fruit are visible on the same plant.",
+          "Category 2 explicitly includes flowers, foliage, and other plants."
+        ],
+        "explanation": "Both choices select Plants (2), which fits this close botanical view of a fruit-bearing plant. Although berries can also be food, the attached fruit, surrounding foliage, and blossoms make Plants the best fit for the visible subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-cb3b077dd8863bf931fed54a",
+        "evidence": [
+          "The photograph shows a red berry growing among green, serrated leaves and stems.",
+          "White blossoms and developing fruit are visible on the same plant.",
+          "Category 2 explicitly includes flowers, foliage, and other plants."
+        ],
+        "explanation": "Both choices select Plants (2), which fits this close botanical view of a fruit-bearing plant. Although berries can also be food, the attached fruit, surrounding foliage, and blossoms make Plants the best fit for the visible subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-b4232b58c8a1762ed176937a",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-b4232b58c8a1762ed176937a",
+        "evidence": [
+          "A white sports car dominates the foreground, with its hood raised and engine bay visible.",
+          "Another car is partially visible on the left.",
+          "Category 3, Vehicles, explicitly includes cars."
+        ],
+        "explanation": "Both choices select Vehicles (3), which clearly fits the photograph’s main subject. The building is background context rather than the focal subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-b4232b58c8a1762ed176937a",
+        "evidence": [
+          "A white sports car dominates the foreground, with its hood raised and engine bay visible.",
+          "Another car is partially visible on the left.",
+          "Category 3, Vehicles, explicitly includes cars."
+        ],
+        "explanation": "Both choices select Vehicles (3), which clearly fits the photograph’s main subject. The building is background context rather than the focal subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-3b7b23f3f5978ae414d010f5",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-3b7b23f3f5978ae414d010f5",
+        "evidence": [
+          "The photograph shows a gaming-room interior containing a roulette table, chairs, windows, curtains, walls, and a fireplace.",
+          "Category 7 explicitly includes architectural interiors and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures. Although the roulette table dominates the foreground, it is shown within a substantial furnished room rather than as an isolated object. The architectural-interior criterion supports both identical choices.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-3b7b23f3f5978ae414d010f5",
+        "evidence": [
+          "The photograph shows a gaming-room interior containing a roulette table, chairs, windows, curtains, walls, and a fireplace.",
+          "Category 7 explicitly includes architectural interiors and scenes centered on constructed environments."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures. Although the roulette table dominates the foreground, it is shown within a substantial furnished room rather than as an isolated object. The architectural-interior criterion supports both identical choices.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-f156fa4a1debc263bb074c81",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-f156fa4a1debc263bb074c81",
+        "evidence": [
+          "The photograph is filled with yellow flowers, green leaves, stems, and buds.",
+          "Category 2, Plants, explicitly includes flowers and foliage."
+        ],
+        "explanation": "Both choices select category 2, Plants, which directly fits the photograph’s main visible subject. No meaningful category ambiguity is apparent.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-f156fa4a1debc263bb074c81",
+        "evidence": [
+          "The photograph is filled with yellow flowers, green leaves, stems, and buds.",
+          "Category 2, Plants, explicitly includes flowers and foliage."
+        ],
+        "explanation": "Both choices select category 2, Plants, which directly fits the photograph’s main visible subject. No meaningful category ambiguity is apparent.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-bdad24e35408ede029986eca",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-bdad24e35408ede029986eca",
+        "evidence": [
+          "The photograph is dominated by sandy ground scattered with rocks and pebbles.",
+          "Several small shells or shell fragments are visible, but they are incidental rather than the main subject.",
+          "The catalog includes shells under Animals (1), but no category covers natural rocky or sandy terrain as the main subject."
+        ],
+        "explanation": "Both choices select Other, which fits the photograph's main subject: a natural surface of sand and stones. The incidental shells do not make Animals the best category for the overall scene.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "catalog_gap"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-bdad24e35408ede029986eca",
+        "evidence": [
+          "The photograph is dominated by sandy ground scattered with rocks and pebbles.",
+          "Several small shells or shell fragments are visible, but they are incidental rather than the main subject.",
+          "The catalog includes shells under Animals (1), but no category covers natural rocky or sandy terrain as the main subject."
+        ],
+        "explanation": "Both choices select Other, which fits the photograph's main subject: a natural surface of sand and stones. The incidental shells do not make Animals the best category for the overall scene.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "catalog_gap"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-2ce80c159130674d7ff6b66c",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2ce80c159130674d7ff6b66c",
+        "evidence": [
+          "A large spotted cat lying on a wooden platform dominates the photograph.",
+          "The partially visible person petting the cat is secondary to the animal.",
+          "Category 1, Animals, explicitly covers non-human animals."
+        ],
+        "explanation": "Both choices assign category 1, Animals, which clearly fits the main visible subject. The person and constructed setting do not displace the cat as the photograph's focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2ce80c159130674d7ff6b66c",
+        "evidence": [
+          "A large spotted cat lying on a wooden platform dominates the photograph.",
+          "The partially visible person petting the cat is secondary to the animal.",
+          "Category 1, Animals, explicitly covers non-human animals."
+        ],
+        "explanation": "Both choices assign category 1, Animals, which clearly fits the main visible subject. The person and constructed setting do not displace the cat as the photograph's focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-e4727229639a94419bc07cd5",
+      "error": null,
+      "judgment": {
+        "a_fit": "unsupported",
+        "b_fit": "supported",
+        "case_id": "case-e4727229639a94419bc07cd5",
+        "evidence": [
+          "A camouflaged snake is visible near the center, with its head resting toward the lower-left of its coiled, mottled body.",
+          "Category 1, Animals, explicitly includes reptiles.",
+          "The surrounding rocks provide camouflage and background; the snake is the identifiable animal subject."
+        ],
+        "explanation": "B correctly assigns Animals to the coiled snake. Although its markings blend closely with the rocks, its head and curved body are discernible, so A's Other assignment is not justified.",
+        "proposed_alternative": null,
+        "severity": "major",
+        "themes": [
+          "excessive_other"
+        ],
+        "verdict": "b_better"
+      },
+      "raw_response": {
+        "a_fit": "unsupported",
+        "b_fit": "supported",
+        "case_id": "case-e4727229639a94419bc07cd5",
+        "evidence": [
+          "A camouflaged snake is visible near the center, with its head resting toward the lower-left of its coiled, mottled body.",
+          "Category 1, Animals, explicitly includes reptiles.",
+          "The surrounding rocks provide camouflage and background; the snake is the identifiable animal subject."
+        ],
+        "explanation": "B correctly assigns Animals to the coiled snake. Although its markings blend closely with the rocks, its head and curved body are discernible, so A's Other assignment is not justified.",
+        "proposed_alternative": null,
+        "severity": "major",
+        "themes": [
+          "excessive_other"
+        ],
+        "verdict": "b_better"
+      }
+    },
+    {
+      "case_id": "case-5c84d3c8a623c65283acb00a",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-5c84d3c8a623c65283acb00a",
+        "evidence": [
+          "The photograph is filled with clusters of pale flowers, green branching stems, and spiny foliage.",
+          "Category 2, Plants, explicitly includes flowers, foliage, and other plants."
+        ],
+        "explanation": "Both choices select category 2, Plants, which directly matches the photograph’s main visible subject. There is no meaningful ambiguity at the catalog’s broad semantic level.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-5c84d3c8a623c65283acb00a",
+        "evidence": [
+          "The photograph is filled with clusters of pale flowers, green branching stems, and spiny foliage.",
+          "Category 2, Plants, explicitly includes flowers, foliage, and other plants."
+        ],
+        "explanation": "Both choices select category 2, Plants, which directly matches the photograph’s main visible subject. There is no meaningful ambiguity at the catalog’s broad semantic level.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-4c0430c1e3797089ab5b9b9e",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "unsupported",
+        "case_id": "case-4c0430c1e3797089ab5b9b9e",
+        "evidence": [
+          "A self-contained hot tub dominates the foreground, with molded seats, a rim-mounted control panel, and visibly bubbling water.",
+          "Category 6 includes powered household devices; the hot tub's controls and circulating jets support this classification.",
+          "Wooden posts and cross-bracing form the background, but the photograph centers on the hot tub rather than the surrounding constructed environment described by category 7."
+        ],
+        "explanation": "A fits best because the main subject is a powered spa appliance. Its wooden exterior does not make it a building or architectural scene. B instead emphasizes the surrounding structure, which is secondary to the prominently framed hot tub.",
+        "proposed_alternative": null,
+        "severity": "major",
+        "themes": [
+          "wrong_named_category"
+        ],
+        "verdict": "a_better"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "unsupported",
+        "case_id": "case-4c0430c1e3797089ab5b9b9e",
+        "evidence": [
+          "A self-contained hot tub dominates the foreground, with molded seats, a rim-mounted control panel, and visibly bubbling water.",
+          "Category 6 includes powered household devices; the hot tub's controls and circulating jets support this classification.",
+          "Wooden posts and cross-bracing form the background, but the photograph centers on the hot tub rather than the surrounding constructed environment described by category 7."
+        ],
+        "explanation": "A fits best because the main subject is a powered spa appliance. Its wooden exterior does not make it a building or architectural scene. B instead emphasizes the surrounding structure, which is secondary to the prominently framed hot tub.",
+        "proposed_alternative": null,
+        "severity": "major",
+        "themes": [
+          "wrong_named_category"
+        ],
+        "verdict": "a_better"
+      }
+    },
+    {
+      "case_id": "case-fabe75a35571503844774a98",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fabe75a35571503844774a98",
+        "evidence": [
+          "The photograph centers on a tray of sliced baked goods with browned tops and a yellow topping or filling.",
+          "Category 5, Food and drink, explicitly includes foods and prepared dishes."
+        ],
+        "explanation": "Both choices assign category 5, which clearly fits the baked food that is the main visible subject. The tray, paper liner, and table are secondary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fabe75a35571503844774a98",
+        "evidence": [
+          "The photograph centers on a tray of sliced baked goods with browned tops and a yellow topping or filling.",
+          "Category 5, Food and drink, explicitly includes foods and prepared dishes."
+        ],
+        "explanation": "Both choices assign category 5, which clearly fits the baked food that is the main visible subject. The tray, paper liner, and table are secondary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-11871e275b204b241a172004",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-11871e275b204b241a172004",
+        "evidence": [
+          "A large sea lion dominates the foreground, with visible whiskers, flippers, and a streamlined body.",
+          "A second sea lion is swimming farther back.",
+          "Category 1, Animals, covers non-human animals, including these marine mammals."
+        ],
+        "explanation": "Both choices select Animals (1), which clearly fits the photograph’s main visible subjects. The pool is background context rather than the primary subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-11871e275b204b241a172004",
+        "evidence": [
+          "A large sea lion dominates the foreground, with visible whiskers, flippers, and a streamlined body.",
+          "A second sea lion is swimming farther back.",
+          "Category 1, Animals, covers non-human animals, including these marine mammals."
+        ],
+        "explanation": "Both choices select Animals (1), which clearly fits the photograph’s main visible subjects. The pool is background context rather than the primary subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-fede795118ca4f9f6dc07e82",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fede795118ca4f9f6dc07e82",
+        "evidence": [
+          "The photograph prominently shows a car with its hood raised and engine compartment exposed.",
+          "Category 3, Vehicles, explicitly includes cars; the vehicle occupies most of the frame."
+        ],
+        "explanation": "Both choices select category 3, Vehicles, which clearly fits the main visible subject. The open hood and exposed engine do not change the subject's classification as a car.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions",
+          "reasonable_alternative",
+          "insufficient_image_evidence"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fede795118ca4f9f6dc07e82",
+        "evidence": [
+          "The photograph prominently shows a car with its hood raised and engine compartment exposed.",
+          "Category 3, Vehicles, explicitly includes cars; the vehicle occupies most of the frame."
+        ],
+        "explanation": "Both choices select category 3, Vehicles, which clearly fits the main visible subject. The open hood and exposed engine do not change the subject's classification as a car.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions",
+          "reasonable_alternative",
+          "insufficient_image_evidence"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-1d91b3a53be3af48cfb4d8e7",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-1d91b3a53be3af48cfb4d8e7",
+        "evidence": [
+          "The main subject is a white electric hot-water pot or dispenser with a lid, handle, and dispensing spout.",
+          "A power cord connects the appliance to a wall outlet.",
+          "Category 6, Electronics and appliances, explicitly includes powered household devices."
+        ],
+        "explanation": "Both choices select category 6, which fits the central household appliance. The surrounding wall and floor are background rather than the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-1d91b3a53be3af48cfb4d8e7",
+        "evidence": [
+          "The main subject is a white electric hot-water pot or dispenser with a lid, handle, and dispensing spout.",
+          "A power cord connects the appliance to a wall outlet.",
+          "Category 6, Electronics and appliances, explicitly includes powered household devices."
+        ],
+        "explanation": "Both choices select category 6, which fits the central household appliance. The surrounding wall and floor are background rather than the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-5f5f15b12f65b9d35c8fdada",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-5f5f15b12f65b9d35c8fdada",
+        "evidence": [
+          "The photograph centers on a plated dish of mushrooms and shrimp in sauce, with a lemon wedge and green garnish.",
+          "Category 5, Food and drink, explicitly includes prepared dishes and ingredients."
+        ],
+        "explanation": "Both choices select category 5, which clearly fits the main visible subject: a prepared meal. The plate and utensils are incidental, and Other is unnecessary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-5f5f15b12f65b9d35c8fdada",
+        "evidence": [
+          "The photograph centers on a plated dish of mushrooms and shrimp in sauce, with a lemon wedge and green garnish.",
+          "Category 5, Food and drink, explicitly includes prepared dishes and ingredients."
+        ],
+        "explanation": "Both choices select category 5, which clearly fits the main visible subject: a prepared meal. The plate and utensils are incidental, and Other is unnecessary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-4b9878b05daa7ce30ea95312",
+      "error": null,
+      "judgment": {
+        "a_fit": "unsupported",
+        "b_fit": "supported",
+        "case_id": "case-4b9878b05daa7ce30ea95312",
+        "evidence": [
+          "The photograph centers on a copper-wire coil connected to colored leads and alligator clips, with small electronic components.",
+          "These components form an electronic circuit setup, fitting category 6's inclusion of electronic equipment.",
+          "The textured fabric is a background surface rather than the main subject."
+        ],
+        "explanation": "Choice B fits the visible electronic assembly. Its exact function is not certain, but identifying a particular device is unnecessary at the catalog's broad semantic granularity. Choice A (Other) is not justified because the supplied Electronics and appliances category covers the main subject.",
+        "proposed_alternative": null,
+        "severity": "major",
+        "themes": [
+          "excessive_other"
+        ],
+        "verdict": "b_better"
+      },
+      "raw_response": {
+        "a_fit": "unsupported",
+        "b_fit": "supported",
+        "case_id": "case-4b9878b05daa7ce30ea95312",
+        "evidence": [
+          "The photograph centers on a copper-wire coil connected to colored leads and alligator clips, with small electronic components.",
+          "These components form an electronic circuit setup, fitting category 6's inclusion of electronic equipment.",
+          "The textured fabric is a background surface rather than the main subject."
+        ],
+        "explanation": "Choice B fits the visible electronic assembly. Its exact function is not certain, but identifying a particular device is unnecessary at the catalog's broad semantic granularity. Choice A (Other) is not justified because the supplied Electronics and appliances category covers the main subject.",
+        "proposed_alternative": null,
+        "severity": "major",
+        "themes": [
+          "excessive_other"
+        ],
+        "verdict": "b_better"
+      }
+    },
+    {
+      "case_id": "case-d75781a9a1193cee0a4e0131",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-d75781a9a1193cee0a4e0131",
+        "evidence": [
+          "A large freestanding enclosure with translucent wall panels, a door, and a roof dominates the foreground.",
+          "Category 7 includes buildings, other built structures, and utility structures.",
+          "The vehicle and person at the right are secondary background subjects."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures, which fits the dominant constructed enclosure. Its exact function is not evident, but that uncertainty does not affect classification at the catalog's broad semantic level.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-d75781a9a1193cee0a4e0131",
+        "evidence": [
+          "A large freestanding enclosure with translucent wall panels, a door, and a roof dominates the foreground.",
+          "Category 7 includes buildings, other built structures, and utility structures.",
+          "The vehicle and person at the right are secondary background subjects."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures, which fits the dominant constructed enclosure. Its exact function is not evident, but that uncertainty does not affect classification at the catalog's broad semantic level.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-c9e10831034aa6fa04ec0cfd",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-c9e10831034aa6fa04ec0cfd",
+        "evidence": [
+          "The photograph is dominated by a large stone building with rows of windows, decorative white trim, and a prominent red-roofed tower.",
+          "Category 7 explicitly includes buildings, architectural features, and scenes centered on constructed environments.",
+          "Trees and street fixtures are secondary to the building."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures, which clearly fits the main visible subject. There is no material ambiguity requiring another category or Other.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-c9e10831034aa6fa04ec0cfd",
+        "evidence": [
+          "The photograph is dominated by a large stone building with rows of windows, decorative white trim, and a prominent red-roofed tower.",
+          "Category 7 explicitly includes buildings, architectural features, and scenes centered on constructed environments.",
+          "Trees and street fixtures are secondary to the building."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures, which clearly fits the main visible subject. There is no material ambiguity requiring another category or Other.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-dc3068aef6f862761b7a7616",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-dc3068aef6f862761b7a7616",
+        "evidence": [
+          "The photograph centers on chocolate-colored baked desserts with thick white cream filling, arranged on a plate.",
+          "Category 5, Food and drink, explicitly includes foods and prepared dishes."
+        ],
+        "explanation": "Both choices select category 5, which directly fits the visible desserts. The food is the main subject; the plate is incidental.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-dc3068aef6f862761b7a7616",
+        "evidence": [
+          "The photograph centers on chocolate-colored baked desserts with thick white cream filling, arranged on a plate.",
+          "Category 5, Food and drink, explicitly includes foods and prepared dishes."
+        ],
+        "explanation": "Both choices select category 5, which directly fits the visible desserts. The food is the main subject; the plate is incidental.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-dabc6c615622fce4482f8d39",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-dabc6c615622fce4482f8d39",
+        "evidence": [
+          "Pink-purple blossoms and branching woody stems dominate the photograph, with green foliage and trees behind them.",
+          "Category 2, Plants, explicitly includes flowers, foliage, trees, and other plants."
+        ],
+        "explanation": "Both choices select Plants, which clearly fits the main visible subject. The small toy near the bottom is incidental to the flowering branches filling most of the image.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-dabc6c615622fce4482f8d39",
+        "evidence": [
+          "Pink-purple blossoms and branching woody stems dominate the photograph, with green foliage and trees behind them.",
+          "Category 2, Plants, explicitly includes flowers, foliage, trees, and other plants."
+        ],
+        "explanation": "Both choices select Plants, which clearly fits the main visible subject. The small toy near the bottom is incidental to the flowering branches filling most of the image.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-ad6a87dd511cac04f5ef912f",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-ad6a87dd511cac04f5ef912f",
+        "evidence": [
+          "The photograph centers on a miniature architectural scene with stone walls, large arched gateways, and a colonnaded building.",
+          "A hillside settlement appears behind the foreground structures.",
+          "Small human and animal figures are present but are subordinate to the architectural setting."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures. Its criteria include buildings, settlements, and scenes centered on constructed environments, which best describe this architectural diorama. The miniature format does not change the scene's dominant semantic subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-ad6a87dd511cac04f5ef912f",
+        "evidence": [
+          "The photograph centers on a miniature architectural scene with stone walls, large arched gateways, and a colonnaded building.",
+          "A hillside settlement appears behind the foreground structures.",
+          "Small human and animal figures are present but are subordinate to the architectural setting."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures. Its criteria include buildings, settlements, and scenes centered on constructed environments, which best describe this architectural diorama. The miniature format does not change the scene's dominant semantic subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-ba7cb2aae0bd0c437526a808",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-ba7cb2aae0bd0c437526a808",
+        "evidence": [
+          "The prominent subject is a helmeted skateboarder performing an airborne trick above a concrete skate bowl.",
+          "Category 4, People and activities, explicitly includes people participating in sports."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the athlete and sporting activity. The concrete bowl provides the setting rather than the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-ba7cb2aae0bd0c437526a808",
+        "evidence": [
+          "The prominent subject is a helmeted skateboarder performing an airborne trick above a concrete skate bowl.",
+          "Category 4, People and activities, explicitly includes people participating in sports."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the athlete and sporting activity. The concrete bowl provides the setting rather than the main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "other"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-7458b9763f1375d0a59aaf67",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-7458b9763f1375d0a59aaf67",
+        "evidence": [
+          "A large flock of sheep fills most of the foreground and extends along the street.",
+          "Category 1, Animals, explicitly includes livestock.",
+          "People and buildings are visible primarily in the background and are secondary to the flock."
+        ],
+        "explanation": "Both choices select Animals (1), which clearly fits the photograph's main subject: a flock of sheep. The background spectators and buildings do not outweigh the animals as the dominant subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-7458b9763f1375d0a59aaf67",
+        "evidence": [
+          "A large flock of sheep fills most of the foreground and extends along the street.",
+          "Category 1, Animals, explicitly includes livestock.",
+          "People and buildings are visible primarily in the background and are secondary to the flock."
+        ],
+        "explanation": "Both choices select Animals (1), which clearly fits the photograph's main subject: a flock of sheep. The background spectators and buildings do not outweigh the animals as the dominant subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-89165acfa9f45c23f2d62eac",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-89165acfa9f45c23f2d62eac",
+        "evidence": [
+          "The photograph centers on an arrangement of green stalks, leaves, and pink spotted flowers in a green vase.",
+          "Category 2, Plants, explicitly includes flowers, foliage, and cut flower arrangements."
+        ],
+        "explanation": "Both choices select Plants (2), which fits the main visible subject. The vase is a supporting container; the floral and foliage arrangement is the focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-89165acfa9f45c23f2d62eac",
+        "evidence": [
+          "The photograph centers on an arrangement of green stalks, leaves, and pink spotted flowers in a green vase.",
+          "Category 2, Plants, explicitly includes flowers, foliage, and cut flower arrangements."
+        ],
+        "explanation": "Both choices select Plants (2), which fits the main visible subject. The vase is a supporting container; the floral and foliage arrangement is the focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-e6f2807bb133f20849287a86",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-e6f2807bb133f20849287a86",
+        "evidence": [
+          "The photograph centers on a plated meal with a thick piece of cooked meat, vegetables, and a creamy herb sauce.",
+          "Category 5, Food and drink, explicitly includes foods, prepared dishes, and ingredients."
+        ],
+        "explanation": "Both choices assign category 5, which directly fits the main visible subject: a prepared meal. No meaningful category ambiguity is evident.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-e6f2807bb133f20849287a86",
+        "evidence": [
+          "The photograph centers on a plated meal with a thick piece of cooked meat, vegetables, and a creamy herb sauce.",
+          "Category 5, Food and drink, explicitly includes foods, prepared dishes, and ingredients."
+        ],
+        "explanation": "Both choices assign category 5, which directly fits the main visible subject: a prepared meal. No meaningful category ambiguity is evident.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-bf79a3ae83edfd98013f7b69",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-bf79a3ae83edfd98013f7b69",
+        "evidence": [
+          "Two sea turtles with visible shells, heads, and flippers are the prominent subjects on the beach.",
+          "Category 1, Animals, explicitly includes non-human animals such as reptiles."
+        ],
+        "explanation": "Both choices assign Animals (1), which clearly fits the sea turtles. The sand, rocks, and surf provide background context rather than a competing main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-bf79a3ae83edfd98013f7b69",
+        "evidence": [
+          "Two sea turtles with visible shells, heads, and flippers are the prominent subjects on the beach.",
+          "Category 1, Animals, explicitly includes non-human animals such as reptiles."
+        ],
+        "explanation": "Both choices assign Animals (1), which clearly fits the sea turtles. The sand, rocks, and surf provide background context rather than a competing main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-7a913409cdec390c8c7e55e3",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-7a913409cdec390c8c7e55e3",
+        "evidence": [
+          "A shirtless man occupies most of the foreground, with his face and torso prominently visible.",
+          "Other people appear behind him; the vehicles and clothing are secondary elements.",
+          "Category 4, People and activities, explicitly includes people shown individually or in groups."
+        ],
+        "explanation": "Both choices select category 4, which clearly fits the photograph’s main human subject. The background vehicles do not outweigh the prominently framed person, and Other is unnecessary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-7a913409cdec390c8c7e55e3",
+        "evidence": [
+          "A shirtless man occupies most of the foreground, with his face and torso prominently visible.",
+          "Other people appear behind him; the vehicles and clothing are secondary elements.",
+          "Category 4, People and activities, explicitly includes people shown individually or in groups."
+        ],
+        "explanation": "Both choices select category 4, which clearly fits the photograph’s main human subject. The background vehicles do not outweigh the prominently framed person, and Other is unnecessary.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-e038b0e118617491443b3661",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-e038b0e118617491443b3661",
+        "evidence": [
+          "A red racing car marked with the number 526 dominates the photograph.",
+          "Its wheels, enclosed cockpit, and vehicle body are clearly visible.",
+          "Category 3, Vehicles, explicitly includes cars and racing cars."
+        ],
+        "explanation": "Both choices select category 3, which directly matches the main visible subject. The driver and background barriers are secondary to the prominently framed racing car.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-e038b0e118617491443b3661",
+        "evidence": [
+          "A red racing car marked with the number 526 dominates the photograph.",
+          "Its wheels, enclosed cockpit, and vehicle body are clearly visible.",
+          "Category 3, Vehicles, explicitly includes cars and racing cars."
+        ],
+        "explanation": "Both choices select category 3, which directly matches the main visible subject. The driver and background barriers are secondary to the prominently framed racing car.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-fd17b0582e1a8129eaa01fca",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fd17b0582e1a8129eaa01fca",
+        "evidence": [
+          "The photograph is dominated by chopped carrots, with pieces of onion and celery in a container.",
+          "Category 5, Food and drink, explicitly includes foods and ingredients."
+        ],
+        "explanation": "Both choices select category 5, which directly fits the chopped vegetables shown as food ingredients. Although vegetables originate from plants, their visible preparation as ingredients makes Food and drink the best-fitting category.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-fd17b0582e1a8129eaa01fca",
+        "evidence": [
+          "The photograph is dominated by chopped carrots, with pieces of onion and celery in a container.",
+          "Category 5, Food and drink, explicitly includes foods and ingredients."
+        ],
+        "explanation": "Both choices select category 5, which directly fits the chopped vegetables shown as food ingredients. Although vegetables originate from plants, their visible preparation as ingredients makes Food and drink the best-fitting category.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-18cb0edf72b6c2cbe5553752",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-18cb0edf72b6c2cbe5553752",
+        "evidence": [
+          "A large aircraft wing dominates the photograph, with clouds and sky below and behind it.",
+          "Category 3, Vehicles, explicitly includes aircraft."
+        ],
+        "explanation": "Both choices select category 3. The main visible subject is part of an aircraft, so Vehicles is a direct fit. The background clouds do not change the subject classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-18cb0edf72b6c2cbe5553752",
+        "evidence": [
+          "A large aircraft wing dominates the photograph, with clouds and sky below and behind it.",
+          "Category 3, Vehicles, explicitly includes aircraft."
+        ],
+        "explanation": "Both choices select category 3. The main visible subject is part of an aircraft, so Vehicles is a direct fit. The background clouds do not change the subject classification.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-bd7d2e5e02918d6ea71a0e5f",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-bd7d2e5e02918d6ea71a0e5f",
+        "evidence": [
+          "The photograph shows a courtyard-like architectural setting with walls, upper windows, and multiple illuminated arched openings.",
+          "Columns, railings, and seating contribute to the constructed environment.",
+          "Trees, palms, and dense foliage occupy much of the foreground, creating some ambiguity about the primary subject."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures. This is a reasonable scene-level classification because the catalog includes architectural interiors and scenes centered on constructed environments. Plants are also visually prominent, but they do not make the architectural classification a clear mismatch.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "ambiguous_item"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-bd7d2e5e02918d6ea71a0e5f",
+        "evidence": [
+          "The photograph shows a courtyard-like architectural setting with walls, upper windows, and multiple illuminated arched openings.",
+          "Columns, railings, and seating contribute to the constructed environment.",
+          "Trees, palms, and dense foliage occupy much of the foreground, creating some ambiguity about the primary subject."
+        ],
+        "explanation": "Both choices select category 7, Buildings and structures. This is a reasonable scene-level classification because the catalog includes architectural interiors and scenes centered on constructed environments. Plants are also visually prominent, but they do not make the architectural classification a clear mismatch.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "ambiguous_item"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-cdf1e4957bf9a0844d3520f4",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-cdf1e4957bf9a0844d3520f4",
+        "evidence": [
+          "The prominent central subject is a person playing bagpipes.",
+          "Category 4, People and activities, explicitly includes people performing music.",
+          "The trees and grass form the background; the clothing is worn rather than presented as standalone textile objects."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the main visible subject and musical activity. There is no meaningful ambiguity requiring Other.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-cdf1e4957bf9a0844d3520f4",
+        "evidence": [
+          "The prominent central subject is a person playing bagpipes.",
+          "Category 4, People and activities, explicitly includes people performing music.",
+          "The trees and grass form the background; the clothing is worn rather than presented as standalone textile objects."
+        ],
+        "explanation": "Both choices select category 4, which directly fits the main visible subject and musical activity. There is no meaningful ambiguity requiring Other.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "overlapping_descriptions"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-6b513d810509546978af614c",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-6b513d810509546978af614c",
+        "evidence": [
+          "A dark sports car with visible wheels, rear lights, exhaust outlets, and a large rear spoiler dominates the foreground.",
+          "Category 3, Vehicles, explicitly includes cars and racing cars."
+        ],
+        "explanation": "Both choices select Vehicles (3), which clearly fits the main visible subject. The racetrack, buildings, and vegetation are background elements rather than the focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-6b513d810509546978af614c",
+        "evidence": [
+          "A dark sports car with visible wheels, rear lights, exhaust outlets, and a large rear spoiler dominates the foreground.",
+          "Category 3, Vehicles, explicitly includes cars and racing cars."
+        ],
+        "explanation": "Both choices select Vehicles (3), which clearly fits the main visible subject. The racetrack, buildings, and vegetation are background elements rather than the focus.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-2e516a450fb725ef4f028856",
+      "error": null,
+      "judgment": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2e516a450fb725ef4f028856",
+        "evidence": [
+          "A dark, capped wine bottle with a printed label occupies the center of the photograph.",
+          "Two stemmed wine glasses flank the bottle inside a decorative wire gift carrier.",
+          "Category 5, Food and drink, explicitly includes beverages in containers."
+        ],
+        "explanation": "Both choices select category 5. The central wine bottle and accompanying glasses form a beverage gift arrangement, so Food and drink is a supported classification. The wire carrier is packaging rather than a better-fitting main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      },
+      "raw_response": {
+        "a_fit": "supported",
+        "b_fit": "supported",
+        "case_id": "case-2e516a450fb725ef4f028856",
+        "evidence": [
+          "A dark, capped wine bottle with a printed label occupies the center of the photograph.",
+          "Two stemmed wine glasses flank the bottle inside a decorative wire gift carrier.",
+          "Category 5, Food and drink, explicitly includes beverages in containers."
+        ],
+        "explanation": "Both choices select category 5. The central wine bottle and accompanying glasses form a beverage gift arrangement, so Food and drink is a supported classification. The wire carrier is packaging rather than a better-fitting main subject.",
+        "proposed_alternative": null,
+        "severity": "none",
+        "themes": [
+          "reasonable_alternative"
+        ],
+        "verdict": "both_reasonable"
+      }
+    },
+    {
+      "case_id": "case-80d9926ca59e58bb96d59bc2",
+      "error": "blinded_review attempt 1; recorded in request log: response did not complete: \"incomplete\"",
+      "judgment": null,
+      "raw_response": null
+    }
+  ],
+  "progress_sha256": "7c53f0c539a78f8c33dde62c836c137ec0d2198d8f7e2c87590e1203788206e0",
+  "status": "failed"
+}

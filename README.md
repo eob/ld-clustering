@@ -107,6 +107,66 @@ read it alongside matching named IDs divided by all items, coverage and the full
 assigned/Other cross-tab. Conditional agreement and automated reviewer judgments
 are diagnostics, not semantic ground truth.
 
+The completed controlled comparison reduced direct agreement from **82.0% to
+52.2%** on 1,000 fresh text requests, and **96% to 81%** on 100 natural photographs.
+Matching named IDs fell 809→511 and 91→76 respectively. Shared-Other counts stayed
+11 and 5, so increased shared rejection does not explain the decline. Description
+length and wording changed together; this is one generated rewrite, not a
+length-matched ablation. The new photographs are also a different dataset and
+taxonomy from Fashion-MNIST, not a resolution-only experiment.
+
+[Results, limitations and reproduction pins](experiments/2026-10-20-guided-agreement-seed1042/README.md)
+link to the immutable control archive. Independent verification covers 6,439
+recorded attempts. The known API subtotal is $7.7162398; complete cost accounting
+remains false because the original-photo review stopped after 57 accepted
+judgments, one incomplete response and 42 unattempted cases. The other three
+review arms completed 100 judgments each. Automated reviews include reference
+errors and reasonable alternatives as well as clear Decisions errors.
+
+## Contextual streaming manager
+
+`run` defaults to `--manager-policy original`, including for legacy databases.
+The optional contextual policy accepts a bounded UTF-8 evidence document:
+
+```sh
+target/release/ld-clustering run \
+  --input examples.jsonl --database fresh-contextual.sqlite --log fresh-contextual.jsonl \
+  --mode ld --task 'Group requests by their broad practical subject' \
+  --manager-policy contextual --manager-context observed-findings.md
+```
+
+The contextual manager writes concise membership guides in the context of the
+complete current catalog, preserves established scope and revises neighboring
+boundaries together. After an actual catalog change, it reconsiders every
+persisted point, including earlier named assignments. Exact no-op plans add no
+reconsideration work. Assignment prompts and first-match paging are shared with
+the Original policy. This combines guidance, prior evidence and a different
+reconsideration rule; it is not a component ablation.
+
+The database binds the policy, prompt revision and raw context-byte SHA-256.
+Resuming with a different identity fails before calls. Context paths can change
+when relocating evidence; their bytes define identity. Comparison requires
+matching manager descriptors as well as inputs and configuration. Catalog IDs
+remain local to each evolving run, so cross-backend partition scores use ARI and
+pair metrics rather than direct ID equality.
+
+Reassignment events retain original and interim IDs and distinguish actual ID
+moves, unchanged evaluations and unknown legacy origins. A mechanical ID move
+after a merge or retirement does not prove a semantic correction. Opening an old
+database migrates its pending queue; do not use an older binary on that migrated
+database afterward.
+
+The [reserved-stream protocol](experiments/2026-10-20-guided-agreement-seed1042/streaming-protocol.json)
+fixes eight fresh streams, identical tasks and schedules, disjoint reserved data,
+and one frozen context per modality shared by both contextual backends. The pure
+`inspect_guided_streaming` example checks actual bootstrap requests and maximum
+request-size fixtures without an API key. `scripts/guided-streaming.sh plan
+--help` describes the offline eight-command plan; its `run` mode makes paid calls
+and requires fresh output paths, committed runtime sources and preserved binary
+pins. Run it under a supervisor with whole-control-group termination, as in the
+recorded experiment. Large photographs retain the existing input-directory CWD
+semantics, recorded explicitly in every command plan.
+
 ## Algorithm
 
 1. Store the received prefix in Other until the bootstrap size is reached.
@@ -123,8 +183,9 @@ are diagnostics, not semantic ground truth.
    trigger management. Give it at most 40 representative examples, with up to
    two from each cluster and extra examples from Other.
 5. Apply a valid plan in one SQLite transaction, enforcing the active-cluster
-   cap. Queue points in changed clusters and Other for reassignment through the
-   arm's assignment backend. Unaffected cluster assignments remain intact.
+   cap. Original queues affected source members and Other for nonempty plans.
+   Contextual queues all points after an actual catalog change. Reassignment
+   uses the arm's assignment backend and completes before new input.
 6. Give the final stream a maintenance opportunity, then drain its queue before
    marking the run complete.
 

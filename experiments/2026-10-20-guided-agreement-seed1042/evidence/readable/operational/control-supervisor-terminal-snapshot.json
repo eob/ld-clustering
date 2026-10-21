@@ -1,0 +1,72 @@
+{
+  "ld-guidance-catalog-1042.service": {
+    "MainPID": "0",
+    "Result": "success",
+    "ExecMainStartTimestamp": "Tue 2026-10-20 22:49:43 UTC",
+    "ExecMainExitTimestamp": "Tue 2026-10-20 22:52:13 UTC",
+    "ExecMainStatus": "0",
+    "Id": "ld-guidance-catalog-1042.service",
+    "ActiveState": "active",
+    "SubState": "exited"
+  },
+  "ld-guidance-controlled-1042.service": {
+    "MainPID": "0",
+    "Result": "success",
+    "ExecMainStartTimestamp": "Tue 2026-10-20 22:53:49 UTC",
+    "ExecMainExitTimestamp": "Tue 2026-10-20 23:35:48 UTC",
+    "ExecMainStatus": "0",
+    "Id": "ld-guidance-controlled-1042.service",
+    "ActiveState": "active",
+    "SubState": "exited"
+  },
+  "ld-guidance-repeat-1042.service": {
+    "MainPID": "0",
+    "Result": "success",
+    "ExecMainStartTimestamp": "Tue 2026-10-20 23:35:49 UTC",
+    "ExecMainExitTimestamp": "Tue 2026-10-20 23:40:09 UTC",
+    "ExecMainStatus": "0",
+    "Id": "ld-guidance-repeat-1042.service",
+    "ActiveState": "active",
+    "SubState": "exited"
+  },
+  "ld-guidance-review-1042.service": {
+    "MainPID": "0",
+    "Result": "exit-code",
+    "ExecMainStartTimestamp": "Tue 2026-10-20 23:40:14 UTC",
+    "ExecMainExitTimestamp": "Wed 2026-10-21 00:02:08 UTC",
+    "ExecMainStatus": "1",
+    "Id": "ld-guidance-review-1042.service",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "ld-guidance-diagnostics-1042.service": {
+    "MainPID": "0",
+    "Result": "success",
+    "ExecMainStartTimestamp": "Wed 2026-10-21 00:02:13 UTC",
+    "ExecMainExitTimestamp": "Wed 2026-10-21 00:07:07 UTC",
+    "ExecMainStatus": "0",
+    "Id": "ld-guidance-diagnostics-1042.service",
+    "ActiveState": "active",
+    "SubState": "exited"
+  },
+  "ld-guidance-continuation-v2-1042.service": {
+    "MainPID": "0",
+    "Result": "exit-code",
+    "ExecMainStartTimestamp": "Tue 2026-10-20 23:09:21 UTC",
+    "ExecMainExitTimestamp": "Wed 2026-10-21 00:02:11 UTC",
+    "ExecMainStatus": "1",
+    "Id": "ld-guidance-continuation-v2-1042.service",
+    "ActiveState": "failed",
+    "SubState": "failed"
+  },
+  "ld-guidance-finish-control-1042.service": {
+    "MainPID": "0",
+    "Result": "success",
+    "ExecMainStartTimestamp": "Tue 2026-10-20 23:58:48 UTC",
+    "ExecMainExitTimestamp": "Wed 2026-10-21 00:07:08 UTC",
+    "ExecMainStatus": "0",
+    "Id": "ld-guidance-finish-control-1042.service",
+    "ActiveState": "active",
+    "SubState": "exited"
+  }
+}

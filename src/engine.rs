@@ -35,6 +35,10 @@ pub struct Clusterer<M> {
 
 impl<M: Model> Clusterer<M> {
     pub async fn assign(&mut self, item: &Item, phase: &str) -> Result<Option<i64>> {
+        self.store.manager_descriptor()?;
+        if phase != "reassign" && !self.store.pending()?.is_empty() {
+            bail!("pending reassignment must be drained before assigning new input");
+        }
         let clusters = self.store.clusters()?;
         for page in clusters.chunks(self.config.k) {
             let mut reply = self.model.assign(&self.config.task, item, page).await?;
@@ -69,6 +73,8 @@ impl<M: Model> Clusterer<M> {
     }
 
     pub async fn maintain(&mut self) -> Result<()> {
+        let policy = self.store.manager_descriptor()?.policy;
+        self.drain_reassignment().await?;
         let clusters = self.store.clusters()?;
         let examples = self.store.examples(40)?;
         let reply = self
@@ -81,7 +87,8 @@ impl<M: Model> Clusterer<M> {
             )
             .await?;
         self.store.record_call(&reply.call)?;
-        self.store.apply(&reply.value, self.config.max_clusters)?;
+        self.store
+            .apply_with_policy(&reply.value, self.config.max_clusters, policy)?;
         self.drain_reassignment().await
     }
 
@@ -115,6 +122,7 @@ impl<M: Model> Clusterer<M> {
 
     pub async fn run(&mut self, items: &[Item]) -> Result<()> {
         self.config.validate()?;
+        self.store.manager_descriptor()?;
         let mut ids = std::collections::HashSet::new();
         for item in items {
             if !ids.insert(&item.id) {
@@ -443,6 +451,251 @@ mod tests {
         assert_eq!(finish["session"], 3);
         assert_eq!(finish["success"], false);
         assert_eq!(c.store.count()?, 3);
+        Ok(())
+    }
+
+    struct TraceModel {
+        trace: Mutex<Vec<String>>,
+        create_competitor: bool,
+    }
+    #[async_trait]
+    impl Model for TraceModel {
+        async fn assign(
+            &self,
+            _task: &str,
+            item: &Item,
+            clusters: &[Cluster],
+        ) -> Result<ModelReply<Assignment>> {
+            self.trace
+                .lock()
+                .unwrap()
+                .push(format!("assign:{}", item.id));
+            Ok(reply(
+                clusters
+                    .last()
+                    .map(|c| Assignment::Cluster(c.id))
+                    .unwrap_or(Assignment::Other),
+            ))
+        }
+        async fn plan(
+            &self,
+            _task: &str,
+            _clusters: &[Cluster],
+            _examples: &[Example],
+            _max: usize,
+        ) -> Result<ModelReply<Plan>> {
+            self.trace.lock().unwrap().push("plan".into());
+            Ok(reply(Plan {
+                operations: if self.create_competitor {
+                    vec![Operation::Create {
+                        name: "competitor".into(),
+                        description: "competitor".into(),
+                    }]
+                } else {
+                    vec![]
+                },
+            }))
+        }
+    }
+    fn traced(store: Store, create_competitor: bool) -> Clusterer<TraceModel> {
+        Clusterer {
+            store,
+            model: TraceModel {
+                trace: Mutex::new(vec![]),
+                create_competitor,
+            },
+            config: Config {
+                task: "group".into(),
+                k: 8,
+                max_clusters: 5,
+                bootstrap_size: 24,
+                novelty_trigger: 8,
+                maintenance_interval: 100,
+            },
+        }
+    }
+    fn category(name: &str) -> Operation {
+        Operation::Create {
+            name: name.into(),
+            description: name.into(),
+        }
+    }
+
+    #[tokio::test]
+    async fn direct_maintain_drains_pending_before_planning() -> Result<()> {
+        let mut store = Store::open(Path::new(":memory:"), &serde_json::json!({}))?;
+        store.insert(&item("old"), None)?;
+        store.apply(
+            &Plan {
+                operations: vec![category("A")],
+            },
+            5,
+        )?;
+        let mut c = traced(store, false);
+        c.maintain().await?;
+        assert_eq!(
+            *c.model.trace.lock().unwrap(),
+            vec!["assign:old", "plan"],
+            "maintenance must not plan from pending interim assignments"
+        );
+        assert!(c.store.pending()?.is_empty());
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn maintain_uses_bound_contextual_policy_to_revisit_untouched_named_member() -> Result<()>
+    {
+        let mut store = Store::open(Path::new(":memory:"), &serde_json::json!({}))?;
+        store.bind_manager(&ManagerDescriptor::from_context("fixture")?)?;
+        store.apply_with_policy(
+            &Plan {
+                operations: vec![category("A")],
+            },
+            5,
+            ManagerPolicy::Contextual,
+        )?;
+        store.insert(&item("old"), Some(1))?;
+        let mut c = traced(store, true);
+        c.maintain().await?;
+        assert_eq!(*c.model.trace.lock().unwrap(), vec!["plan", "assign:old"]);
+        assert_eq!(c.store.assignments()?[0].1, Some(2));
+        assert!(c.store.pending()?.is_empty());
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn failed_reassign_commit_preserves_successful_call_and_reopens_before_new_input()
+    -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let path = dir.path().join("resume.sqlite");
+        {
+            let mut store = Store::open(&path, &serde_json::json!({}))?;
+            store.bind_manager(&ManagerDescriptor::default())?;
+            store.insert(&item("old"), None)?;
+            store.apply(
+                &Plan {
+                    operations: vec![category("A")],
+                },
+                5,
+            )?;
+            store.connection.execute_batch("CREATE TRIGGER fail_reassign BEFORE INSERT ON events WHEN NEW.kind='reassign' BEGIN SELECT RAISE(ABORT,'interrupted reassignment commit'); END;")?;
+            let mut c = traced(store, false);
+            assert!(c.drain_reassignment().await.is_err());
+            assert_eq!(c.store.assignments()?[0].1, None);
+            assert_eq!(c.store.pending()?.len(), 1);
+            let calls: usize =
+                c.store
+                    .connection
+                    .query_row("SELECT COUNT(*) FROM calls", [], |r| r.get(0))?;
+            let evaluations: usize = c.store.connection.query_row(
+                "SELECT COUNT(*) FROM events WHERE kind='reassign'",
+                [],
+                |r| r.get(0),
+            )?;
+            assert_eq!(calls, 1);
+            assert_eq!(evaluations, 0);
+        }
+        let store = Store::open(&path, &serde_json::json!({}))?;
+        let origin:(Option<i64>,bool)=store.connection.query_row("SELECT previous_cluster_id,previous_assignment_known FROM reassignment WHERE point_id='old'",[],|r|Ok((r.get(0)?,r.get(1)?)))?;
+        assert_eq!(origin, (None, true));
+        store
+            .connection
+            .execute_batch("DROP TRIGGER fail_reassign")?;
+        let mut c = traced(store, false);
+        c.run(&[item("old"), item("new")]).await?;
+        assert_eq!(
+            *c.model.trace.lock().unwrap(),
+            vec!["assign:old", "assign:new", "plan"]
+        );
+        assert!(c.store.pending()?.is_empty());
+        assert_eq!(
+            c.store
+                .assignments()?
+                .into_iter()
+                .map(|(_, target)| target)
+                .collect::<Vec<_>>(),
+            vec![Some(1), Some(1)]
+        );
+        let calls: Vec<String> = c
+            .store
+            .connection
+            .prepare("SELECT payload FROM calls ORDER BY id")?
+            .query_map([], |r| r.get(0))?
+            .collect::<rusqlite::Result<_>>()?;
+        assert_eq!(
+            calls
+                .iter()
+                .map(|s| serde_json::from_str::<serde_json::Value>(s).unwrap())
+                .filter(|v| v["phase"] == "reassign")
+                .count(),
+            2,
+            "the successful but uncommitted attempt and its retry both remain charged evidence"
+        );
+        let evaluations: Vec<String> = c
+            .store
+            .connection
+            .prepare("SELECT payload FROM events WHERE kind='reassign' ORDER BY id")?
+            .query_map([], |r| r.get(0))?
+            .collect::<rusqlite::Result<_>>()?;
+        assert_eq!(evaluations.len(), 1);
+        let event: serde_json::Value = serde_json::from_str(&evaluations[0])?;
+        assert_eq!(event["previous_assignment_known"], true);
+        assert!(event["previous_cluster_id"].is_null());
+        assert!(event["interim_cluster_id"].is_null());
+        assert_eq!(event["changed"], true);
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn direct_new_assignment_requires_pending_work_to_be_drained_before_calls() -> Result<()>
+    {
+        let mut store = Store::open(Path::new(":memory:"), &serde_json::json!({}))?;
+        store.insert(&item("old"), None)?;
+        store.apply(
+            &Plan {
+                operations: vec![category("A")],
+            },
+            5,
+        )?;
+        let mut c = traced(store, false);
+        assert!(
+            c.assign(&item("new"), "assign").await.is_err(),
+            "direct new input must refuse while old reconsideration is pending"
+        );
+        assert!(c.model.trace.lock().unwrap().is_empty());
+        assert_eq!(c.store.pending()?.len(), 1);
+        c.drain_reassignment().await?;
+        assert_eq!(c.assign(&item("new"), "assign").await?, Some(1));
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn invalid_persisted_manager_identity_refuses_all_model_entry_points_before_calls()
+    -> Result<()> {
+        let store = Store::open(Path::new(":memory:"), &serde_json::json!({}))?;
+        let invalid = ManagerDescriptor {
+            prompt_revision: "unrecognized".into(),
+            ..ManagerDescriptor::default()
+        };
+        store.connection.execute(
+            "INSERT INTO meta(key,value) VALUES('manager_descriptor',?)",
+            [serde_json::to_string(&invalid)?],
+        )?;
+        let mut c = traced(store, false);
+        assert!(c.assign(&item("new"), "assign").await.is_err());
+        assert!(c.maintain().await.is_err());
+        assert!(c.run(&[item("new")]).await.is_err());
+        assert!(c.model.trace.lock().unwrap().is_empty());
+        let calls: usize = c
+            .store
+            .connection
+            .query_row("SELECT COUNT(*) FROM calls", [], |r| r.get(0))?;
+        let events: usize =
+            c.store
+                .connection
+                .query_row("SELECT COUNT(*) FROM events", [], |r| r.get(0))?;
+        assert_eq!(calls, 0);
+        assert_eq!(events, 0);
         Ok(())
     }
 }

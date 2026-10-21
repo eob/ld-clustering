@@ -1,0 +1,7146 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "metadata": {
+    "assignment_model": "gpt-6-luna",
+    "catalog": [
+      {
+        "description": "Requests about bank accounts, credit or debit cards, bills, payments, transfers, interest, rewards, credit scores, currency exchange, budgeting, financial values, and insurance policies. Include account access or holds, checkbooks, card applications, delivery, expiry, damage, limits, balances, declined payments, fees, fraud, transaction history, and reward redemption. Financial values include asset valuations and currency or cryptocurrency prices. Classify by the financial operation even when a restaurant, retailer, vehicle, or foreign destination is mentioned. Use Work & Employee Benefits for paychecks, direct deposit, annual earnings, tax forms, and employment-linked benefits; otherwise, ordinary payment and account questions remain here. Use Shopping & Consumer Services for retail prices, orders, and fulfillment rather than payment-account records. Use Cars & Vehicle Care for vehicle selection or maintenance, but keep insurance-policy administration here unless explicitly employment-linked. Currency exchange and personal financial calculations belong here; abstract arithmetic belongs in Knowledge & Learning.",
+        "id": 1,
+        "name": "Money & Banking"
+      },
+      {
+        "description": "Requests about paychecks, pay dates, direct-deposit setup or changes, annual earnings, tax forms and obtaining them, employee benefits, and vacation or other time-off entitlements, usage, balances, requests, approvals, or status. Recognize earnings and leave from ordinary contextual wording; an employer need not be named. Use Money & Banking for ordinary account transactions, bills, or incoming payments not identified as pay, and for insurance policies not tied to employment. Employment-linked insurance benefits belong here. Use Personal Organization & Communication for editing a calendar entry, even when the entry concerns work; use this category for the underlying leave request or entitlement. Use Travel & Navigation for vacation transportation, lodging, destinations, and bookings rather than time-off approval or availability. Tax-form assistance belongs here, while general explanations of tax law belong in Knowledge & Learning.",
+        "id": 2,
+        "name": "Work & Employee Benefits"
+      },
+      {
+        "description": "Requests about planning or undertaking travel: destinations, sightseeing, hotels, rental cars, flights, rides, itineraries, booking changes, and travel requirements or warnings. Include airline baggage rules, flight location or status, travel visas, destination-related vaccinations, and travel compatibility needs such as plug converters. Also include navigation, maps, current location or location sharing, traffic, and local weather, whether or not a trip is mentioned. Rental vehicles belong here; choosing, maintaining, or repairing a personal vehicle belongs in Cars & Vehicle Care. Restaurant selection and dining reservations belong in Food & Dining, while arranging a meeting room belongs in Personal Organization & Communication. Card problems, foreign transaction fees, currency exchange, and trip budgets belong in Money & Banking. Translations and standalone factual or time-zone questions belong in Knowledge & Learning. A reservation request must identify or reasonably imply travel rather than dining; an unidentified reservation with no resolving context is Other.",
+        "id": 3,
+        "name": "Travel & Navigation"
+      },
+      {
+        "description": "Requests about choosing or using restaurants, including recommendations, reviews, dining reservations, confirmations, cancellations, and wait times. Also include meal suggestions, recipes, preparation and cooking instructions, cooking times, ingredient substitutions, calories, and nutrition facts. Food-related advice remains here even when phrased as a factual or instructional question. Use Shopping & Consumer Services for grocery purchases, shopping-list changes, and ordering packaged food or drinks rather than cooking or dining advice. Use Money & Banking for meal budgets, spending, bills, or payment-card problems. Use Assistant & Device Interaction for directly setting an oven or other appliance, rather than asking how to cook food. Use Travel & Navigation for travel bookings and sightseeing rather than restaurant bookings. If a reservation's type cannot be determined from the request or available context, use Other instead of assuming dining.",
+        "id": 4,
+        "name": "Food & Dining"
+      },
+      {
+        "description": "Requests to select, compare, price, buy, reorder, or obtain ordinary consumer products or everyday consumer services, including dry cleaning and personal-care or cosmetic product recommendations. Include creating or editing shopping lists, ordering their contents, and retail-order or fulfillment questions. Food and drink purchases belong here when the task is buying or list management, not restaurant dining, cooking, or nutrition. This is the remaining general shopping category: use Cars & Vehicle Care for personal-vehicle selection and care services; Travel & Navigation for transportation, lodging, and rental-car bookings; Food & Dining for restaurant services; and Money & Banking for financial products, insurance, budgets, payments, transaction records, or asset valuations. Shopping lists belong here rather than Personal Organization & Communication. General factual questions about products belong in Knowledge & Learning when they do not seek selection, purchasing, pricing, or consumer-service assistance. Requests to buy something remain here even when phrased as a question about whether the assistant can do so.",
+        "id": 5,
+        "name": "Shopping & Consumer Services"
+      },
+      {
+        "description": "Requests about selecting, evaluating, maintaining, repairing, servicing, or caring for a personal vehicle. Include vehicle safety ratings, service history and appointments, warning lights, oil-change timing or instructions, tires and pressure, fuel choice, mileage or fuel economy, jump-starting, and car washing. This subject takes precedence over Shopping & Consumer Services for buying a personal vehicle or arranging vehicle-care services, and over Knowledge & Learning for practical vehicle-use or maintenance explanations. Use Travel & Navigation for rental cars, rides, routes, traffic, and trip transportation. Use Money & Banking for insurance policies, financing-account matters, payments, and budgets rather than vehicle condition or suitability. Use Personal Organization & Communication for a request solely to create a reminder or calendar entry about servicing; requests to diagnose, arrange, or determine needed service remain here.",
+        "id": 6,
+        "name": "Cars & Vehicle Care"
+      },
+      {
+        "description": "Requests to create, inspect, change, or remove calendar events, meetings, reminders, general to-do items, alarms, or timers. Include making phone calls and arranging meeting spaces. Use this category for the organizational or communication action even when its content concerns work or another subject. Shopping-list management belongs in Shopping & Consumer Services, not general to-do management. Vacation entitlement and leave-request status belong in Work & Employee Benefits, while simply editing a work calendar entry belongs here. Travel and dining bookings belong in Travel & Navigation and Food & Dining respectively; meeting-room arrangements remain here. Use Assistant & Device Interaction for connecting or locating a phone or changing assistant behavior, but use this category for calls, alarms, and timers even when performed through a device. Questions about whether a particular reminder or scheduling action can be done retain this practical subject.",
+        "id": 7,
+        "name": "Personal Organization & Communication"
+      },
+      {
+        "description": "Conversation directed at the assistant itself: its identity, origin, creator, control, abilities, feelings, background, personality, or personal attributes. Include greetings, thanks, conversational corrections or feedback, and requests to repeat, stop speaking, change language, voice, speaking speed, whisper mode, response behavior, or how the assistant and user are addressed. Also include connecting, syncing, disconnecting, locating, resetting, checking, or controlling devices and appliances, such as finding a phone or adjusting an oven or air conditioner. Questions about the assistant's language abilities belong here; requests to translate content belong in Knowledge & Learning. Use Personal Organization & Communication for calls, calendars, reminders, alarms, and timers, and Entertainment & Creative Activities for music playback or games, even when devices perform them. General assistant-capability discussion belongs here, but a domain-specific practical request stays with its subject despite wording such as 'can you.' Distinguish locating a device here from locating the user or sharing their geographic position in Travel & Navigation.",
+        "id": 8,
+        "name": "Assistant & Device Interaction"
+      },
+      {
+        "description": "General factual, explanatory, definitional, mathematical, translation, or educational requests, including science, history, law, word meanings, unit conversions, standalone date or time facts, homework help, and finding instruction or tutoring. This is the remaining knowledge category, not a fallback for every question: when the requested information directly concerns a subject explicitly covered elsewhere, select that category. Thus food preparation and nutrition belong in Food & Dining, practical vehicle care in Cars & Vehicle Care, financial values and currency exchange in Money & Banking, and local weather or navigation in Travel & Navigation. General product facts belong here unless the request is about shopping or selection. Use Entertainment & Creative Activities for jokes, requested fun facts, games, creative production, sports results, and film or media discussion; neutral factual or educational inquiry remains here. Use Assistant & Device Interaction for questions about the assistant itself. Use Other when no supplied subject fits or when the essential subject cannot be established; do not treat a vague action as a knowledge request.",
+        "id": 9,
+        "name": "Knowledge & Learning"
+      },
+      {
+        "description": "Requests for entertainment, play, or creative expression: music playback and song identification, jokes and humorous material, requested fun facts, games and game moves, dice rolls, coin flips, and generating artwork or other creative content. Also include sports results and discussion, interpretation, or criticism of films and other media. A topic such as politics or science does not move a joke or explicitly requested fun fact to Knowledge & Learning. Conversely, ordinary factual explanations, historical or scientific questions, educational instruction, and legal questions about activities such as gambling belong in Knowledge & Learning rather than here solely because their topic can be entertaining. Use Assistant & Device Interaction for the assistant's supposed hobbies, feelings, or personal tastes, and for device connections or voice settings; requested music, games, and entertainment remain here even when delivered through a device.",
+        "id": 10,
+        "name": "Entertainment & Creative Activities"
+      }
+    ],
+    "catalog_sha256": "bcdefe74187e15d7df0be7678a492fecb3b18e21ce8f7850514cccf8eda39dad",
+    "condition": "guided",
+    "diagnostic": false,
+    "effective_catalog_sha256": "41d441a61afd995b51de104ed78901059caa8e312f7197838b33afe6e1048c1e",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "effective_order_sha256": "ef58d7c6937c627ace93d94e1045c06ff884c23bbb9f4aa5c1bb276842be4629",
+    "expected_count": 1000,
+    "experiment": "guided-agreement",
+    "input_jsonl_sha256": "94091fda8978e1712e724856b6c35f37e0483b074af2d0209c8adf9745f0326a",
+    "input_sha256": "8ae78934d7ad5e2f4c7720b6a64bd875610f5bbfc4c59023b95b6526bdfced12",
+    "k": 8,
+    "management_calls": 0,
+    "maximum_request_bytes": 9605,
+    "modality": "text",
+    "mode": "ld",
+    "ordered_ids": [
+      "7f3065fb25979e924f0f",
+      "718523f64aa9bbaf3bdb",
+      "9598737a56a3b06e4b16",
+      "a962695cd9253694b1c5",
+      "196dbabe38ac8b74b4ca",
+      "d5b25855cca8068a5a7c",
+      "14f66dbb0d5a90adb620",
+      "409d14b75b0da45c313e",
+      "227a9ad2709b8be70033",
+      "4a91c41a10a6cfc8837f",
+      "d882de6cc48388fefda4",
+      "a696a15e629cd4966a0d",
+      "b1716dd45c1e0ee3c312",
+      "9090de522860c157175e",
+      "c6c8bb40efa2f8025127",
+      "492669211609dfc39619",
+      "653c18a978f1c39a8043",
+      "a732c27e9b7792217feb",
+      "50cad082cdf90c39c0bc",
+      "8b50ea183e8a718cc462",
+      "aba3fda85282e9f97ee1",
+      "628ce3dbb5922a550c24",
+      "84c013a7a7119e19b3be",
+      "1e1f9316a4a0aca80c6a",
+      "142400af294b9565cb54",
+      "77576524c69ebd1a1a5e",
+      "08e06268b067dfc880a0",
+      "b942b7e4f8cbc0d2e869",
+      "88b7d39f8caaea9ce650",
+      "b9d826c9ee1cbdfc31b8",
+      "eb450305388203747dad",
+      "da80eb9ecb149c6f01f2",
+      "23e2f81d10d877d45225",
+      "c9906674ef04c4207266",
+      "c4636bc8fddbcb609fc2",
+      "ff2e731eaea98351f8c8",
+      "b1e16764eece397462c2",
+      "9e690b6372a24c929e4b",
+      "e063f7f4da3f76dcbae4",
+      "057a81db11307e9d5a06",
+      "7fdeec1a274c84c6daa1",
+      "0f0b887f345bbe35193a",
+      "e5295251243cf7f4dc76",
+      "09e234a316e814e7446f",
+      "efdd07b8a330914c0328",
+      "d9f95d53b88fab6a5d1b",
+      "c0b3a60bed93f4feea5b",
+      "68851db7f33386260ca3",
+      "0da3f45c2eba09ad70c3",
+      "fc7c3bd633f5dfe1b68b",
+      "7dd424a7d5d0f073c8fd",
+      "f9e710eec23e55f94e44",
+      "ed7a074101691eed1fd4",
+      "29643d2ac45f4ff34954",
+      "abb01b52f5e26d153f0c",
+      "e965bdf25a44af555f4e",
+      "ea3552e19138cebbc7e2",
+      "55a12e248bc5b3e47a02",
+      "0793aef144d74e8b5b0d",
+      "64a9e6e91663065688b9",
+      "01ec06b396e21e7194f4",
+      "8e0629b21d571867e720",
+      "5cc4569e5eb7c22f1261",
+      "99cba9fe7740c9827e18",
+      "d7bbffd0abc4359cd033",
+      "5ff0cede4d0a479ee7c4",
+      "9ae08b257cd340a84e28",
+      "1887432b103fe623a590",
+      "c6506c36a186027aa944",
+      "daff62a0a703b1c6bc0f",
+      "3a9a43dcbd44d7dc1937",
+      "d93f1a764f0bf7ea882e",
+      "c5a4d22c783b62eabf9b",
+      "de58a1796e4e1625e42d",
+      "3d49c4e904d58e166fe9",
+      "dfe5e8e746bc6769e792",
+      "1963e7efa89f9cff36be",
+      "ade7303d76da83507f64",
+      "d2d8511dd862c64c9755",
+      "a57c6f1b9eaf9b7dae8a",
+      "794a05e5ed7600e334f3",
+      "b11f52c377354446e997",
+      "638656d906bc17b7bfc2",
+      "666222c739df9f3cf5a9",
+      "070278bdb4f3513dc25d",
+      "b29814aa43a4cac033d9",
+      "7bc6a84976b3008daeb5",
+      "33922f9bf4ae59bb9ea2",
+      "487362a39870fbde0587",
+      "07f90558b7e075d6770f",
+      "936feb2771ce7a3eca32",
+      "5a809df7339b57c561a0",
+      "124d4fd3e05e1eaf7826",
+      "e0e53372c8b092517ac4",
+      "dbe2188e9a2a65dafb9d",
+      "70ca9d3d7776c91d8126",
+      "8dd84eb10b4365d31b06",
+      "81aa407c1b45acca5f50",
+      "64cc0e28d432e0a78560",
+      "32fc1ef668b178a6b852",
+      "3c6cdb9df811c0278d00",
+      "52779c07cab48074202b",
+      "c6f74352a91c7c6e2db5",
+      "0542837447fd97f3eca6",
+      "515b81e87a96142b8d74",
+      "fb2658abf2e092d009f0",
+      "16b45f19b92a7d1cc10f",
+      "cbf46475c1e6e96a03c9",
+      "9ca113dd11fcc0749707",
+      "07e5415038a040f19f41",
+      "af719e1bebb70481e1d5",
+      "53889ec611c5b4f5702d",
+      "6276501c21c2b3215c8e",
+      "c48fea2a3397c1f050b9",
+      "3388d0a9a1dddd92d627",
+      "624dbc53be8556c83ed8",
+      "2b8c46cfb213132adc5f",
+      "156b334168a22e6a63d4",
+      "b30381095e5a7d61c71f",
+      "a23b8f209263d24b2f4f",
+      "9742c697d0b50345e05a",
+      "5485612b5563937636f2",
+      "037ffc13808ba8dfac5b",
+      "7c95d6b95762a40ab55d",
+      "f0ccd41fe426efa12d7d",
+      "00a688bd4d0f090878a3",
+      "ea185b538c89aa97467b",
+      "cacd6681b3b264be7a0a",
+      "49d73dd79ad6a30f97f0",
+      "e9968624e555f6c7efca",
+      "e79e2a73a940abb7c6d1",
+      "6729dcc09aad96f8de8d",
+      "b05e0247c40f14b0a39a",
+      "9269d4c69c60177498d9",
+      "b5d1555cc1fd3b7c0948",
+      "7f106409358ad56aee60",
+      "682b1549080a34d21b76",
+      "3bad9e4fa627404afa9c",
+      "fed8d1afd574e738bfbd",
+      "b43a659575eef35e859e",
+      "e45ed55d4f7bfd383b3c",
+      "519ca2835918d8abc2df",
+      "85473dd13cfac8b094c4",
+      "7bf5c8a8b1ca41e1dac1",
+      "70b1b3c9dd7dd1425afb",
+      "ec3a73122fdde5a58967",
+      "1a1ccf073052d444c94e",
+      "62c2e26508a14cdae52b",
+      "da94bca85c226853cb3b",
+      "511e8f5fe04c9f9373b6",
+      "492f7a812429aa5dafae",
+      "98e345181d3611158560",
+      "dc5a7988836d64f50692",
+      "ff2fe1985e74595215e4",
+      "29d933abb6580e605dca",
+      "6ab0286863c2f1fc977f",
+      "d0de07e046102bc43417",
+      "e9d7d95835f56ac22950",
+      "e461cf63243b17367676",
+      "d1a2d508d52e78df2954",
+      "3fde17a2c6066fe59180",
+      "737118320d735c3d22d1",
+      "1266ac670266ea3fec96",
+      "aef8c974d86beeab56ee",
+      "07a075d31f7bdabfc4f9",
+      "6b219a664c32af2c212c",
+      "71b0d2dad09e5f322692",
+      "b023a8297eb620b4ea73",
+      "e68e4af9645660ad4dd8",
+      "ea44b4713833b83bafa8",
+      "8d20576a60f188105706",
+      "74995deadc3775b06543",
+      "bad119ac37717e4c8e6f",
+      "67a79b98e24c43bc9d8e",
+      "f748ff594876785206ae",
+      "7ec0fba7d66164d7b680",
+      "ff342eda4adf92a97411",
+      "74340d2f7601772a33d2",
+      "46459e23b17d82c06179",
+      "0ee59accd2df85549677",
+      "b79771f24da76a741b23",
+      "09752f5462fdeabc9c91",
+      "565b2ec97c922905f6df",
+      "a9ae20a4cc19f51f1ae3",
+      "18829647c3b50cec231e",
+      "e62b1f6ce9142cc8d321",
+      "d86c354a7e7fda00ff68",
+      "4c9391a6ecff3b86d1d7",
+      "a46c7de10c9e251fb8b5",
+      "3805758c7c5f412ec7e0",
+      "1d4f21e1f20de9f85a59",
+      "eac70285eaa3d4825a6e",
+      "b6543e5397c1900bbc9b",
+      "9ad8773a33c74f308338",
+      "cc073ccec17675c8c02e",
+      "fe7031f844010662fcab",
+      "58e84bbb7f5e2712f160",
+      "b0729b6a407b52545174",
+      "22c43f6aaf1aa59fdca7",
+      "0924dd6cbf6df1a18d28",
+      "c8938a05a9316fb46b2a",
+      "0a14436e46af16389459",
+      "f839ced94d3f1308e23e",
+      "6c79f8fadb27720d28a1",
+      "5198f8ff57dfa5297b93",
+      "9435ed6c608b787aee0d",
+      "cb646f74e444cafa0b6e",
+      "450fbc16c149b3b402e4",
+      "5940344597174d799402",
+      "e8d6a7919120f0c3af54",
+      "f3fcd53911eb630e2a18",
+      "8a4255dfe3a954dbb334",
+      "815452639252e1f4c486",
+      "c8190224b30b12e378c5",
+      "63dd3be430c2d014c9a7",
+      "fec339d3e36ca1db2e04",
+      "3ad23e15eca5f482dd8d",
+      "fe61db0ffbb15943c240",
+      "ca7123b59f0d376bd651",
+      "78399c8a3dd42a055870",
+      "284db60b9b30c18eea9f",
+      "3c787e56dc015771f8e0",
+      "a5b93b006b2ac787c5b1",
+      "2f05e7c5d79de800820f",
+      "ac029a662b6d893b6f1f",
+      "89fa6ab16b9d37b5d794",
+      "a5793c67f2b7f3467d5a",
+      "9e5f64ea24b9c19f105c",
+      "9a8be700d53315b5044a",
+      "7448e31066b9d9ec60f5",
+      "bb14e695163e80f75c39",
+      "fc067da46c8df87a0b74",
+      "648d8dab09da8b1526d1",
+      "587911d17c376e2af94d",
+      "c56d87252c46d4be650b",
+      "b33791caf7bdeb93d7aa",
+      "7dc5a4b350fed950717f",
+      "bbc1f79eccdb583d35d2",
+      "8f8fff6906641eeb4afc",
+      "6619a40e5740b84d0b0b",
+      "ff2806fe7bba3b979f1f",
+      "004dcf116c87c624a991",
+      "f7a1ebc905caa685cb1e",
+      "72a1492b060b75a669b4",
+      "ba916cc4dffae5e8dd90",
+      "8ad49b2c6752362f2b54",
+      "4fbcf55e1e0393995e3a",
+      "2e7b7b30aa0a41f46d81",
+      "7da42794066cf2bedb24",
+      "23c52c45e69d833f3dab",
+      "731dbf756d1ff797f0e3",
+      "ee8407554d46eb67a118",
+      "c13a039cc2ae7f7010a9",
+      "f1175c30828cf5549e28",
+      "410ea4e869c578022b0d",
+      "c78a300c8ae278f6ccfb",
+      "0aa1a189f61a85d0ef73",
+      "441c643d81322515e41f",
+      "5988573a976f2e59399e",
+      "23f834607fba47109274",
+      "07f15a1de33614ed54ed",
+      "0d7a5f5d99f987b1caa4",
+      "7eb6669bcf2ada15ffb0",
+      "c27d85c197a4393d135e",
+      "36de2a0e2acfaf9186cd",
+      "7ea1108f4af26aa6858d",
+      "1dc4e581f5b3b03c4abb",
+      "d4350dac75f7dbe49a6d",
+      "40678de74dcf3cf809d0",
+      "cce3bb4da5f155c5003c",
+      "929471525c10dcec1508",
+      "9c0f7fe74e24947ccae4",
+      "70924e6373d4f44766fe",
+      "c512791975a8a4c90c39",
+      "4d56c478eace0539ee6f",
+      "aef902c695b7ffda7504",
+      "4a4a7560517ce85b607e",
+      "986059e6952251724fa6",
+      "89e9b93cc9ab2bfce4bc",
+      "c330cdd0fd057b3d864c",
+      "1cdc10ec429ebee94335",
+      "8c857e544e177c86d2de",
+      "d766e945ed867312aed5",
+      "ca61c2116c88c2f2811b",
+      "2a9ebcabcba5c03a6289",
+      "19d5641ad9571cbc3264",
+      "b58c1567799f1cee8087",
+      "b7850ba6e64f88627c8c",
+      "89ddf4b402c754f4d084",
+      "1694cae83283fe8322ed",
+      "9a6087ad2c9bf5ac9aa7",
+      "17ed7177ecb9fdb49302",
+      "3aef07d33932f423fb55",
+      "2ada56bb450c07c91de2",
+      "a47d001d9b0c5c712035",
+      "ba16f453520787557588",
+      "9ea95f2e1ddd61235bf9",
+      "fb5390a380ffa6d2a1e8",
+      "d2431a7869ad8f416b37",
+      "220e237171a8d10a3ff0",
+      "ef23197a8283c36899be",
+      "35967c62a302bedba756",
+      "424d9454a677ab138ac7",
+      "34639b448456deb1bcaf",
+      "fe03736765c300821546",
+      "9383e6a40186093f6b0b",
+      "d623a2abef7f928c06c4",
+      "82a9141626f0cf280798",
+      "ba5b11a9bc12c70cd518",
+      "dfcebefa59a2c572f514",
+      "c1534c775191aaaf2db7",
+      "a4127908f8929a88f753",
+      "d4036af390fee8fe8f4f",
+      "8d17e0acd499b5cfe348",
+      "2f602ee9d8570b845c67",
+      "71b178db19a223e85e25",
+      "046e86f9320ea6fc15e5",
+      "d9edd5f0a534d93e4bdc",
+      "77c0850810c8c22643c3",
+      "d0eb3b7bd04893a19a2e",
+      "f1fdcf92d68440cd49ed",
+      "0ccaf6797d220c1af3f0",
+      "0599933ed29ffe0c2660",
+      "785053b6c1b07cce11a9",
+      "a032a873009472fea809",
+      "83cbcd4caa985adaa229",
+      "b9979d4ccde2f94d5db9",
+      "7c21c087f559a530cfaf",
+      "d0c9f35a0dd096483762",
+      "53b9c18b77c00c974106",
+      "61fa13d2fdc3781d4e88",
+      "a2707a6813130030fcd0",
+      "3e58eab125d0d3b85ec1",
+      "f3da293c79b147295d6b",
+      "090b943b69318e6756c6",
+      "e4c0e0dc02977e7ffe31",
+      "5065e7acc4ca592155f3",
+      "9cd809d0509559933e76",
+      "a97d76dccba0840d3d98",
+      "bbfe29b9135729299b58",
+      "e4372f37ed43e666dd09",
+      "0003ea12759060d71d6c",
+      "6e5ef59bd8b3e58174f8",
+      "96dd442be59dca774f83",
+      "00dd99dee3a50c95eeb3",
+      "e109a9de1fc2d3a8b62c",
+      "c20738b28fa3d5bc3003",
+      "d46075888126099f6c17",
+      "8af9a0072d8f2c8d4271",
+      "aa4e848a33ff66dab843",
+      "f93c4b474929331ceace",
+      "b8acd8b889860256d78a",
+      "7ec06fdcab4e9408a990",
+      "d17c8820b084bb5768a6",
+      "3695ab78751d8f358995",
+      "d5983e0cd9c53274291a",
+      "fbd7d589333e25562a7e",
+      "e6bc7b72886f821aeef3",
+      "e500fbc146ac3b9b27d9",
+      "32b50d3a0a78e71e6d09",
+      "e4a9c1fa06b627a70708",
+      "a75c83efc7019befd535",
+      "240f12e06f251bbf91af",
+      "1e3984405c0e93426259",
+      "8c30f2f8cf7344bed39c",
+      "1ba333bb5b1a6d7124b7",
+      "1f62f8ecf943c1f5abc5",
+      "62275fe2a4a3dc805224",
+      "70661666d1b7516fb6fd",
+      "714cf4e19cfda18092ec",
+      "d653a731d0298a7cb9dc",
+      "2eae2e940ade87acccdc",
+      "b52a076e625c171cd904",
+      "4868356328f5bda07c02",
+      "66f813d83294d18629f3",
+      "9cd6b6baaab9548c5f35",
+      "34cbd05140b5658a3a6e",
+      "58063299070745b4741a",
+      "42c686b65fba90aa5eb3",
+      "afe4dd4899283b91a757",
+      "81c699c293a1affa181f",
+      "aef2659fa5333dcae130",
+      "f23c38c1fc460309ac97",
+      "e3cecb354ae503dfcb31",
+      "49bc04419b35f02b4785",
+      "d5d665dbe43b94330b0e",
+      "d069ffdc0bdbbfca191b",
+      "03c7a9a56d78b09e5146",
+      "080477a4068624751776",
+      "3d025438908aa5187278",
+      "a386a4f77fb087de8f3e",
+      "a034bef49f84548755da",
+      "3a37b79d689f533117c6",
+      "8d84e371a14166c3901a",
+      "d80869b2b4b4f4199f86",
+      "69cf7a43deca9ca34616",
+      "8673fa5ef9062de2f8e4",
+      "ed5e8cf5605f651c7550",
+      "4df328a74898248d0218",
+      "c99fbf1b5e5fdbaa163a",
+      "2eecabe854dca53a0c8d",
+      "b911a059c784200b10ab",
+      "bbfa9ff5b3aacfb05b63",
+      "b1feb2cab5051e81f9aa",
+      "dd2d9b2d72c346ecc2b2",
+      "9e7f94dd8a46773fe03b",
+      "a9d262167f619b6e3b4d",
+      "eb8fcc134da9cfe588ff",
+      "99464439a161abe87e43",
+      "60293d5caa0fc92dfa62",
+      "efb773783ba9b5ca393d",
+      "40814461be9c678cf43c",
+      "80f4e9a230c594df0440",
+      "36908bbb1c200a1944b1",
+      "a7926aa6abb938fb2ed1",
+      "f3d4a7d464fd110f19cc",
+      "772b3aa2098b698dd1e4",
+      "a15f3a61a34e80cf924b",
+      "cc4af13ed0605b0bb033",
+      "d55c06ea0dfc51828eda",
+      "2d742f6894c3bd1a9040",
+      "b0d0ceb45917a3a6d9b8",
+      "7b6d5e39fb8c8216bf66",
+      "83151a9bf324d37bbf05",
+      "721c6231b7169f7d686d",
+      "93cf1139e502f741722f",
+      "84ac8fed8f4f54a7f0a2",
+      "bde9d68ceb5fac83fa29",
+      "3f378c6bb998ba1ce89f",
+      "bb02cde73ae42ac050c5",
+      "cdfb87518340c72ccfbc",
+      "cfb5cf95521de1f8fceb",
+      "1c97f72d86862d2cc4d5",
+      "ee879e93e22b6523953b",
+      "6aa30efc7b5b1f760de8",
+      "49f266e82d63968cf1bc",
+      "84050e6dc15ffca79d3a",
+      "728535561684e42514ec",
+      "d45e3b43842f9fb21ec3",
+      "ed23dde2db3308a0572e",
+      "7de9123d03f4aa258e9a",
+      "8a4ac1edcedf5705bcfa",
+      "c7b78e2083a5da167dd3",
+      "638870dba4945147fe07",
+      "911ca22dd1e9e3ac6de2",
+      "d93b94fd9d7ad7ac0ead",
+      "88dc4bf33e253d7c2c24",
+      "352a887a18dfdd5250f5",
+      "c010f25f902a970ab958",
+      "a6a33ae63b6ac609b292",
+      "8503e751be51e65080c2",
+      "c74a675ddd1cfd2f607a",
+      "bc126ebbd723154d46bf",
+      "57dc670555f8ab218516",
+      "afa6a74563013ccb3c64",
+      "32b02c86d3b95808fdd2",
+      "0ed99646ea36132c052a",
+      "8c9af1d3168aff0fbe04",
+      "8d05f5471715c69e11ef",
+      "e7ab72f9cd3f7147b0d3",
+      "76976040819504a8f580",
+      "0f21121c5073d06206f2",
+      "66eea766357395bbe57c",
+      "3cf4309fd2601dc12675",
+      "68519bf3456dda986bc5",
+      "a60ce6a0e4549bbed2b3",
+      "cba67dedc74c47d88463",
+      "dd027dd87b731dd6241c",
+      "d01e5d7f545235ea6e8c",
+      "feb3a216f6b6b84dac67",
+      "54b3659330ad7db7a5fd",
+      "96f29eae34ad41b01063",
+      "0eacbbee553d3c82d54a",
+      "49e6bca5d6f13a392ef9",
+      "fb50c590ebaedc08ab82",
+      "47f8cad732e9c4e15688",
+      "9847437722b644ee2a93",
+      "8d01ab8311144ce6f70c",
+      "c48f5ce73c127011931f",
+      "9ebe734524e955ebbb83",
+      "ec19cdb450f795ff7cc8",
+      "7e31b502ce273d2d6f85",
+      "efade7761f5af59d9694",
+      "4ca5397775bddbdb2cf7",
+      "ecbdf40b316b11963c24",
+      "5ad194bcabd9d21a61c4",
+      "2eded8144ef30e7a4b28",
+      "3358f4ae95c1353924f2",
+      "09a607252c4a2e0bdc53",
+      "25cc34c113b21c44bdfe",
+      "bd8eb15dc7fc123ca417",
+      "6b2acdbc5440161e5704",
+      "e8741c5e627ab13c00a2",
+      "677b29395f84fa09a489",
+      "f657a763839ba7a86ebd",
+      "a53c1d7a57d856fc738f",
+      "b6454f484a745d8f93bd",
+      "e5c5c440135044136b2c",
+      "6dd389882bf2228846fd",
+      "68c8396c5309b0ddc894",
+      "3877865cb98d8b37840b",
+      "beaf9cb6d15bf25470a7",
+      "5c31133e829d6c1f8af3",
+      "03410e291c65a385f6fe",
+      "9ca31a94eaadcfdd8099",
+      "bea952af32a0b52b94f5",
+      "2210847765e5680feb75",
+      "c8a6eb8b18cbc04f17e5",
+      "4588172bbcfdb7f6491e",
+      "af3ad08e0bd70dcfe2b4",
+      "33669efc5aace68bfe4a",
+      "65b14775380f60bcec5d",
+      "9ad3d0db64d9569509b2",
+      "df96927b70103df093ce",
+      "84b8a11accd7b81a8ddd",
+      "2a3ecaffd0b12bfe12a9",
+      "5131be851f13fa10cb72",
+      "1b6fbf02477d904c2983",
+      "3b9c45da5870cb772a47",
+      "bbe56acb12dffe5a41e3",
+      "3d1064bf6813f09c5cb1",
+      "ea0fad1efe7b01417a11",
+      "9c3807a3b424dd764fbb",
+      "9b63ce1dd2de433acc8e",
+      "5f356ccb53bbba15a707",
+      "bdc443a781efc6fce6da",
+      "f7a969e56d0362daef36",
+      "8bde3e8a7259e75ee14d",
+      "845db296ec9e1f807f21",
+      "4681f12393bc9e7c8fd0",
+      "abd56ac504b7ef289126",
+      "08f43a6d49d5883f5e46",
+      "53c579521e02108abb76",
+      "53be67916e8e496cf9e9",
+      "78516a696c07d29d1b10",
+      "c7273e7edb74dd6740b1",
+      "1fc3f7b2fa666298117e",
+      "539ce253e21229703801",
+      "ef5e79e073fefe7e6fa6",
+      "92ab8826fe116b454bf2",
+      "0be75ba4f48a080bff48",
+      "322731ed527683a190d4",
+      "384eedb9cba6a9a1815a",
+      "ad5cd908bd94fc04b456",
+      "ffa56a54f50386f70e82",
+      "3838fe3e1f28eb81dec9",
+      "77d4509dd6906a73548d",
+      "051572d21be5126a35d7",
+      "f2af327dd5bf65f984fc",
+      "a18d718663aff81b0ecf",
+      "a4ff6f92590998ea7665",
+      "9cc9f965f9ae951fe0d7",
+      "8e18cfdfe07dd7309b2b",
+      "5ea7f0345106d9e621ab",
+      "5919d7ac6b6fb52dce31",
+      "3318d1a74edb1d9114f3",
+      "de29144fc3ff0b0c9e5e",
+      "69ca476955d76033c4dd",
+      "f92590bdd897962a9c9f",
+      "781c997ad36bca0e6c79",
+      "e3f40f6dcbc829dafb07",
+      "1f43c313ca1518769707",
+      "9e41e90596c1e3fa61dc",
+      "37033283265bea458a61",
+      "bb5ae357b42db6bf2fd7",
+      "2a9a6e8e2937d05850ab",
+      "bae31b3dc8d824b0ab89",
+      "3c813ca7d02fc0b6383f",
+      "2d0dd17e773cddeb7672",
+      "c5681bae3bf08d392f0c",
+      "9b211a6f96b3db18eef6",
+      "f6291ec9dc88d5fae7d1",
+      "55aab7efccd321347b29",
+      "b67a80622d13421397d5",
+      "eadd6847e6fc6320624b",
+      "79004cba06e1fa4cab5b",
+      "9b5cc17e99c271f05bed",
+      "c72834f24ea06683057a",
+      "1a39f0b189321a827596",
+      "1156f967c680703c5244",
+      "5a3fc99467b95e4029e5",
+      "1957a4e0d1722e720bba",
+      "23df164270c022b535fc",
+      "ed97b2ec86bb4c4db866",
+      "0b8225b96b81b0802690",
+      "187aed59c1f53a0eb000",
+      "35c8ec271da923350c8d",
+      "eba6a3d80367832a82f9",
+      "dead68c63a36eda2338d",
+      "06c84161eb7beaf17a98",
+      "00d0383db1e372df85dd",
+      "c08f9e0c4c75ebf52dfd",
+      "1196480deacd654373ee",
+      "111faa1c1033c89e9f88",
+      "6a25bb3da82d015d3ef5",
+      "6c418cada89dd81f1a93",
+      "dd0463d44a9753353f54",
+      "bf6fc69f29164d6be1a2",
+      "e7b3aa64f12fcabfcc31",
+      "c9c0e0a3a5aaaac5d80c",
+      "3e944b877541918e3f48",
+      "728a75bde8d5ecacb5ef",
+      "9523613eaf22c3cf243e",
+      "254add7eafea1307e0fa",
+      "7e4bf5f52b98daf9d835",
+      "247095cc75e2d37d6359",
+      "4113e4d456aa4c3860c2",
+      "78e1fb64e28204d2afd2",
+      "5dafb4ca537067b5e94a",
+      "4b922cfd5485010827b7",
+      "c60c7b084b81d9fe1fbb",
+      "60ca3ff6871e9313830b",
+      "928a7b8ac97c65bfb4ac",
+      "501b759f1e26aaa51d24",
+      "0896eef04a61ec440a54",
+      "486be83b1233518c57fb",
+      "ddb1fd36569433b8ecf4",
+      "243fbdb221f422bc238f",
+      "368d6c5ac4b6593ae54e",
+      "1f16910873cf7be9fa87",
+      "d2d6d324f15882d9d214",
+      "df0ed746642b7d8fe259",
+      "df73aac0157d697eb312",
+      "eb50c22de51d80110a9c",
+      "a478af190adb9536c543",
+      "9cfe8bc6e85fd245c4e8",
+      "a9db2956ef98d5943f0e",
+      "3291b2373fdfb711fb05",
+      "7f73aadfac1b5e920264",
+      "5aa2605d76d51779a5ef",
+      "ca72ba032624d54f042f",
+      "c0aef0805ecd976bf752",
+      "f22d3cda84022735aea9",
+      "471e8ba1707cad0cd5fa",
+      "97d68db4aec5516de2c9",
+      "2bed983ac7f043b7664e",
+      "5ae40459110cd24304e5",
+      "c984d9c4e789dc34b62f",
+      "eb8aacbfe06eb12a38d2",
+      "49e1666d96ba3554539c",
+      "62780b2489ee27165cc4",
+      "70ebc6a0aebb89e63e80",
+      "032adb99828760fd8387",
+      "577f96e44adbc9c5f23c",
+      "13e28967c15e73db3622",
+      "f75f5381073d9fa25d0e",
+      "b693c14cd431bc5ce651",
+      "ee36d65f84fc66540fa2",
+      "4053be608b4d26dbf69a",
+      "46cb46565e50c66007ac",
+      "7ef3746f1410d068febf",
+      "375836bf477cc815c26e",
+      "92a4baaa2bc881220300",
+      "c9f4ae7272ce225feffe",
+      "a74212f0913779c17cde",
+      "a735896d087996c1beed",
+      "2045d1926217a487c908",
+      "3de2d3e466878ab86e6d",
+      "9b50eeb04069f8f07103",
+      "415820d4164a5e65e80f",
+      "39999b6e5a7d491b49f9",
+      "fa55f2be297ca23e84fc",
+      "fedc363e6706856bdd20",
+      "8eedf2034b7a7edf9780",
+      "4ec453d215f8c90e5d79",
+      "3137544bc7d2a5b040c5",
+      "700759aae75754622861",
+      "30ffb4f6e8f8f05f09fa",
+      "09ec9a8b08375ae3d307",
+      "51299edfb45360ab7b61",
+      "cced27b3e0b6c2b5f2e9",
+      "8336f6679b3d69205de8",
+      "a123e8241c06e915ff55",
+      "a61bc782f6aa81239390",
+      "47516fd7d6bbfb237d05",
+      "ec495022176bd5136e73",
+      "92620f92b6ff0117f33a",
+      "77d4372e75bd8df27e86",
+      "ececbafeecb9b05b5bf1",
+      "61a34a3e9b2877f5c2e2",
+      "7e2ff5e19de882de9b11",
+      "82e923f29a13dabad317",
+      "aff967763bd66ade02d6",
+      "2d0998fa30347108a193",
+      "128a82a3fc0fe7c47c1b",
+      "88dead621baba2ac2ff7",
+      "0b665a1d0e90815e20c8",
+      "a2b381e37a7560a3940d",
+      "8c3c374916c248e9ee83",
+      "5746e2d7f261051c7bde",
+      "cdd482b5eeae59111ea9",
+      "ac35f652a5028e56c4da",
+      "225cc90cce1e3937359c",
+      "ef117ec22e3e786fe64b",
+      "013695d0fcf4334be2d0",
+      "ad45190becaeeb09bd61",
+      "231592740b6b07e1e995",
+      "a14aa6bc0cf3574cc1a7",
+      "621c4d43b7c0ad2a7a83",
+      "9a4d1aa66e0ecc5cf3ca",
+      "a86d57bf9b4b79f38cc7",
+      "85110df16faff48fb4d6",
+      "bfcf3886a6261319e177",
+      "792a8983dde38ecb8b49",
+      "385a8fede5bc1b3cb5eb",
+      "44424b7ba15aa5efbced",
+      "2b481a85395e844b5c3e",
+      "19ff7e71a9cce3e1fc2d",
+      "bf3c2ef2a6b7fcdf13d4",
+      "b6856f325492225b66dc",
+      "e65f248a490e54087ff0",
+      "e38ec158629641406db4",
+      "abffa5960a737181a0e9",
+      "220967b62385d66db996",
+      "578157ca7a8569f0149c",
+      "1fd5100103887525e6c9",
+      "fb8a00f29b074ba989d8",
+      "60ef1b1a9a4920d18ece",
+      "95db011ad07466153f92",
+      "dfd59f3ec00ca8a41ac6",
+      "634a9f21c4dc5b294913",
+      "02232fcf33fc763589be",
+      "607ca805de5e4babd787",
+      "cfb68e29bbe956166cbf",
+      "ca79c0e871f549bda5fd",
+      "808d8099c575826ef60e",
+      "c5525393f8e29bbe8725",
+      "64a26d996fccb77e1b03",
+      "56a8131320c3d54a263c",
+      "c1b94963deb57d6b165c",
+      "0015117819160b5cc05c",
+      "0d1bc6095a585aad7a50",
+      "4c5bf9d63187f4735cce",
+      "33229c3cc4da425d55e7",
+      "96fe7307d18f7f09e5cf",
+      "3df3daed952c7388c5dc",
+      "30614bde10cdf3235f3b",
+      "803986eff3d5a9de691c",
+      "64bc73ba42b3d967d578",
+      "7382ef10270970b9d656",
+      "967bdede0b467420122a",
+      "a444b72529e03e06b01a",
+      "0cd2ed8682a372918c35",
+      "f0208e710a8ab3dd23e0",
+      "fa94434d15dda4008e07",
+      "10c73d08bf250b389363",
+      "6ceb32bec0d533e766a6",
+      "9c1aade554db3beaf4e6",
+      "981134e1a0a9f67ed419",
+      "af63bcecc58b1137b660",
+      "868e421644fad51d4f77",
+      "29ca734d00cac4ce09d7",
+      "0126aa082cead089d0b9",
+      "687674c791c5b47e3a4c",
+      "118dc3c8e412b516416e",
+      "c67199160e73b4fdc8d4",
+      "f9f32adfc22c6e75111d",
+      "763bc6aea456bd533af3",
+      "fc87d195a7ee71d5dcaf",
+      "51b58455219ec6d55500",
+      "5e89c79533ad506431d5",
+      "60e53416913ace51df77",
+      "f0461abcd445c9d0ae09",
+      "914cde8f7d67ac4e0d0d",
+      "b8eea732ecac856fb2f2",
+      "49a51a3cd95534347923",
+      "401dd67fbc714d9f23e6",
+      "c2bfc8a097f3277088c8",
+      "49a8697c120d0ebdcf7d",
+      "62133749f4b48e982a1e",
+      "8b5ada7d59d2d430ad00",
+      "fdd8b036d2d0d23f02cc",
+      "c19d60a77a2ceec26d82",
+      "9f47ca660e78a3cb1a1e",
+      "d7769a5b7d258d2ec84c",
+      "f444a585aafae402ce4a",
+      "03a5030ee758e2f86dbb",
+      "6f69b6e5439d17928699",
+      "dfcf94b5a70b8487e78f",
+      "d6a2145bd2eef33eb055",
+      "a13bfb179294cc091459",
+      "8890678bdd1358122e50",
+      "e47e8fa8e3f3d7f24a3c",
+      "d1a2e22c1861e4e1fb02",
+      "3cb48713afbf8f0cc0b3",
+      "544a060edd04d0f9e2e8",
+      "5b32e4fcafe704b6429e",
+      "d70573bbfb2d639765e9",
+      "dad2a4b5b90ff3e5e421",
+      "7861b07f02313b6662a7",
+      "347e2976116a3a6e55ed",
+      "9b6697638610cb20a170",
+      "4a0fa749e26bdb55eaff",
+      "cb2e33df76ff11b5d80f",
+      "07e40b4ed6477710eb35",
+      "665722acaf3d365c47b0",
+      "b5ac3b6f5ec8bb0b81ab",
+      "5fdf9ccea9d15de016cd",
+      "202d3a6af1446e299a0a",
+      "c3e5e3f23184001e911a",
+      "760281fe25046e7f3511",
+      "5b50ed3113541009fb20",
+      "f64f9246011b7b3caebb",
+      "365c3bb8fc5dc920aca7",
+      "eb2bdf6037694503464a",
+      "ded12e81f89d803e983a",
+      "b79010f08d2f991f41c3",
+      "81e6d4bb4bb761b78563",
+      "506bce93a5585167b4c5",
+      "a581af902eefb7ef7ddb",
+      "408c6040e28cff0d7a81",
+      "b57ead792805b0d8d274",
+      "423225b393876fd30518",
+      "f17d6f07f756ebc9cc0a",
+      "6a6ab43921113d7aa090",
+      "33b339b546f46ba417e5",
+      "80b4ab1fa3078a39bdd7",
+      "5495af40c697d888b7c4",
+      "38552bcb98cd4c019e19",
+      "37fd16401a5de8535ec4",
+      "db831730f7d2dc736a8c",
+      "19e29365faa19f35f0d0",
+      "84ea694ce5cf63508a61",
+      "5128a5ec644105b0a13e",
+      "7a15a857b848bf2c6763",
+      "551666e04c80da289b65",
+      "ccb5a394e20f6c246001",
+      "edc8f45bf6f3b17133d9",
+      "92e3be1746c7875b6ab1",
+      "e9e75edc084e14468a5b",
+      "87c15a2e6bd2fb236b08",
+      "c481913572a6246f092a",
+      "e97c5ce4d59c031feea6",
+      "2e9caf67c7731e9dd486",
+      "3cd9e8559c1bcf8662c7",
+      "87bbd843c72374877066",
+      "1de5d0d5bfd03b4494bf",
+      "947df886a110f04d106a",
+      "67ad06d9646b74184754",
+      "355a5b4406725fa2361b",
+      "9abc3f7df92edb7480cc",
+      "3d7adac12c4b6c11891e",
+      "32cacd93f42bc91e3666",
+      "d601305e8e75c36c801c",
+      "5fbceee51298a8a0ab0a",
+      "b181fc3685f43b4583c1",
+      "7122933799300d24db43",
+      "453f269dba07220b8da5",
+      "33e018fcd888bce77013",
+      "000f794352b4576b21af",
+      "5ab36ffd76340ab3c380",
+      "97239a2ecfedd9c70732",
+      "148caac95f5fac015c95",
+      "933800c9c0c12e254b99",
+      "e03505fe45e1ca1dc4f4",
+      "1024155f4d3e728180f1",
+      "9920913b79d6df9abb56",
+      "6d9d1f37edea56392bc2",
+      "8c8f361204addf09ca4e",
+      "9dbc677401b58b143620",
+      "b73e97d3b7eac230c6c4",
+      "989f645c783ae1cd17e1",
+      "26fb7301e1fd51195cfa",
+      "c84f8484330ffb0bd294",
+      "2231846b1de671da91e1",
+      "339d9aa5b8b26f40fc78",
+      "459a10315d95c00ee6d9",
+      "8200581ee979127ceae7",
+      "f3d105f5e25ebbe63f70",
+      "69aa9e5a78d5ffc8096c",
+      "e6058cfe5c3cb27dc703",
+      "3b7508dde622fb8510df",
+      "115def16c9781d5234fa",
+      "6c07ebdd5dc635fd9436",
+      "04884eb001ed1b6a65ad",
+      "6b470c5ba893dccaa811",
+      "4202955f095d4cb060df",
+      "d10fd83ad76795a05678",
+      "807be4e025b5b49b0df7",
+      "85acf0e0f5757e9954ea",
+      "9994f28dc6edb8322657",
+      "43aece86e7caab000618",
+      "48695f43e89704ad6df1",
+      "6003333c02d222893c83",
+      "93b0dcac810ff014c8c2",
+      "bbc086c854adbd69493b",
+      "112430fb74d39c91ebc5",
+      "f29f7cc34595f39cd490",
+      "7194cadcb6acdc14a9bf",
+      "a911826c731463651e3e",
+      "7ddf074f90fa9207c230",
+      "c0099e8e50a820cc4802",
+      "31c1691a5a47675ed983",
+      "15694594c682c37ee579",
+      "b1319c4387b90800ce2b",
+      "01f4e410029f158bda7a",
+      "f8527903fe1da69daca7",
+      "3e32fbe753cbef965746",
+      "1faf6b04c287ba333b8b",
+      "516f6f595ed2041cdc09",
+      "cde925f4dc77862eb0a6",
+      "3b38b5c361c39325cc7c",
+      "14546398ad27634bca22",
+      "60ddf66a8ebf69dcb6ba",
+      "fac8d28550287b91dabf",
+      "48cbc3ac13ad6cfb70df",
+      "846c831252f80d1dbffc",
+      "7d25217b5d62607fcb23",
+      "a8d44915becb5360e121",
+      "fc12239ffdd633a97a94",
+      "d7bd36c7caccc0e7cebe",
+      "c45bb9692485c60ad6f0",
+      "1ce86c5adfbf2dd69926",
+      "51e16a17fb8ad9722cb9",
+      "c6ac25db09a269a59405",
+      "3bb6d9e7e29d07909a51",
+      "83b1f24d8d6d22ded8eb",
+      "7a2704e4c6bf943a3dc7",
+      "f8b504ab18a6355e5ae9",
+      "7c56da7795743793392c",
+      "0234a47f7c77aeb42298",
+      "3385572299c261a13f93",
+      "080ca28d8377ee0ea9d7",
+      "23cc1de3fc174d684e6b",
+      "fdbe4109540ea84e47f7",
+      "9dc43de3335b6e6bb8fc",
+      "97ad4078c28bc1266888",
+      "7425076e82e1d33ff498",
+      "3e53fa6d3aeb669dd383",
+      "98fdaf2df6273824401f",
+      "6a57664883feca596f15",
+      "b7715a782823631835ed",
+      "94ed71a58f17ca0c6dd0",
+      "0c32c4d34152605446c8",
+      "4945df6b9f121daa1469",
+      "a238de89c7a8acf65723",
+      "eb61a542d97d6c7f4274",
+      "9ab7566b7c59347cbf3e",
+      "866d18456a9a2739f7ff",
+      "a1c5db696d11fdbcb1db",
+      "297977456ad534ca4324",
+      "ca9da98d040c7b9ff1cc",
+      "b1df390f2ed7dd77ab80",
+      "c682aa3c067795d110d8",
+      "0461adae1082e9bb2b8a",
+      "11ca647ac66b797f137d",
+      "09d8e04889b24d1da8fe",
+      "ee269a827b68e279e44c",
+      "4aa24dd8de5db1434297",
+      "ed4d95848e9d91b2bf2a",
+      "62cd4372042dd193045f",
+      "7b90cecb45b04f8851f7",
+      "889891f885c50380ee23",
+      "ff16fe768d3adca92562",
+      "d69e8ab1fdc2fb7cb814",
+      "cdc9f872661aa513fb8f",
+      "153ed7ce0f12f4e0ff56",
+      "45f234a273a30c685d4b",
+      "bf398c6f930745a919e1",
+      "93de3eb96bd4165bf8cf",
+      "2390a32e278ef3083946",
+      "8e8e8e44576ffa86a0d0",
+      "7a22f0f1ad00af48999e",
+      "3c1e76da5ec4c7d531c1",
+      "0f2478f84cd9a5fe6784",
+      "cfe7b68bf7e8425f607a",
+      "5c4c136f06d75c30bd9e",
+      "ebcd874cae5f4d010161",
+      "c12f84cd211b013460a9",
+      "405c91c9493773c83e0a",
+      "2c2aa3c2a1bf2355a790",
+      "09405551ee7d8b57eafa",
+      "cdbd72162d36a8928a3a",
+      "e0a2cf1a9e794ff3e43b",
+      "0348c954d7a2126c26c4",
+      "ccbd836ebfdf6009132f",
+      "7971d60a45393937ee2c",
+      "3c0f224df6bf479fec58",
+      "0254f899a2d42c273212",
+      "ad062b4de17ff087408f",
+      "73524a6d7b1eb0d57900",
+      "099e640cc37364f168ac",
+      "a23ec517dc90063f70ab",
+      "cc169157922cc2223c44",
+      "92f86a1c611ef6692cb2",
+      "17abebfed937837e09b4",
+      "03f34e831b184b551ee4",
+      "d5169bd867e63a8e0fbd",
+      "287ea76a6c12f82f9942",
+      "1e55e7d770124d55d956",
+      "c1cda9a848f3b3033ab6",
+      "702b7f873b49acfa748c",
+      "edadca12083c0b4ad0f1",
+      "13733c7bf54505ff493e",
+      "4992935eb06951ca391b",
+      "d3357519e63ffb9f76ef",
+      "e9b992ccef5c659f04fc",
+      "692b425f2fa1ea19b9ca",
+      "346bec2a4ab94c1e2ccd",
+      "b9a749975685647291b6"
+    ],
+    "reference_sha256": null,
+    "repeat_index": null,
+    "reverse_catalog_order": false,
+    "run_id": "8398ce2bbf10b078b79e81435a7beb07",
+    "sol_reasoning_effort": "high",
+    "source": {
+      "commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+      "embedded_file_sha256": {
+        "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+        "Cargo.toml": "1e3bb39b4ff2fca4f38e8923f1b254d0d50c5d1b4855c4983b30f2b429086715",
+        "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+        "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+        "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+        "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+        "src/lib.rs": "2dfcb22af11e31103c8032b77ab9064ec8e71ab110212d2a2fc1c83b41829d47",
+        "src/provider.rs": "9269e50c25edaa2c73eb8199c3c942d54f7f1bd16ecc011a554f515166cb83f9",
+        "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+      },
+      "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce"
+    },
+    "stage": "classify",
+    "started_at_unix_ms": 1792536829523,
+    "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request."
+  },
+  "processed_count": 1000,
+  "expected_count": 1000,
+  "assignments": [
+    {
+      "id": "7f3065fb25979e924f0f",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "718523f64aa9bbaf3bdb",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "9598737a56a3b06e4b16",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "a962695cd9253694b1c5",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "196dbabe38ac8b74b4ca",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "d5b25855cca8068a5a7c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "14f66dbb0d5a90adb620",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "409d14b75b0da45c313e",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "227a9ad2709b8be70033",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "4a91c41a10a6cfc8837f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "d882de6cc48388fefda4",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "a696a15e629cd4966a0d",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "b1716dd45c1e0ee3c312",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "9090de522860c157175e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "c6c8bb40efa2f8025127",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "492669211609dfc39619",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "653c18a978f1c39a8043",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a732c27e9b7792217feb",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "50cad082cdf90c39c0bc",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "8b50ea183e8a718cc462",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "aba3fda85282e9f97ee1",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "628ce3dbb5922a550c24",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "84c013a7a7119e19b3be",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "1e1f9316a4a0aca80c6a",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "142400af294b9565cb54",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "77576524c69ebd1a1a5e",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "08e06268b067dfc880a0",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "b942b7e4f8cbc0d2e869",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "88b7d39f8caaea9ce650",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "b9d826c9ee1cbdfc31b8",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "eb450305388203747dad",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "da80eb9ecb149c6f01f2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "23e2f81d10d877d45225",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "c9906674ef04c4207266",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "c4636bc8fddbcb609fc2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "ff2e731eaea98351f8c8",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "b1e16764eece397462c2",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "9e690b6372a24c929e4b",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "e063f7f4da3f76dcbae4",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "057a81db11307e9d5a06",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "7fdeec1a274c84c6daa1",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "0f0b887f345bbe35193a",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "e5295251243cf7f4dc76",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "09e234a316e814e7446f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "efdd07b8a330914c0328",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "d9f95d53b88fab6a5d1b",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "c0b3a60bed93f4feea5b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "68851db7f33386260ca3",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "0da3f45c2eba09ad70c3",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "fc7c3bd633f5dfe1b68b",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "7dd424a7d5d0f073c8fd",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "f9e710eec23e55f94e44",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "ed7a074101691eed1fd4",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "29643d2ac45f4ff34954",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "abb01b52f5e26d153f0c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "e965bdf25a44af555f4e",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ea3552e19138cebbc7e2",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "55a12e248bc5b3e47a02",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "0793aef144d74e8b5b0d",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "64a9e6e91663065688b9",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "01ec06b396e21e7194f4",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "8e0629b21d571867e720",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "5cc4569e5eb7c22f1261",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "99cba9fe7740c9827e18",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "d7bbffd0abc4359cd033",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "5ff0cede4d0a479ee7c4",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "9ae08b257cd340a84e28",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1887432b103fe623a590",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "c6506c36a186027aa944",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "daff62a0a703b1c6bc0f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "3a9a43dcbd44d7dc1937",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "d93f1a764f0bf7ea882e",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "c5a4d22c783b62eabf9b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "de58a1796e4e1625e42d",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "3d49c4e904d58e166fe9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "dfe5e8e746bc6769e792",
+      "cluster_id": null,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "1963e7efa89f9cff36be",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ade7303d76da83507f64",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "d2d8511dd862c64c9755",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "a57c6f1b9eaf9b7dae8a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "794a05e5ed7600e334f3",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b11f52c377354446e997",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "638656d906bc17b7bfc2",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "666222c739df9f3cf5a9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "070278bdb4f3513dc25d",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "b29814aa43a4cac033d9",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "7bc6a84976b3008daeb5",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "33922f9bf4ae59bb9ea2",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "487362a39870fbde0587",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "07f90558b7e075d6770f",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "936feb2771ce7a3eca32",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "5a809df7339b57c561a0",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "124d4fd3e05e1eaf7826",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "e0e53372c8b092517ac4",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "dbe2188e9a2a65dafb9d",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "70ca9d3d7776c91d8126",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "8dd84eb10b4365d31b06",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "81aa407c1b45acca5f50",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "64cc0e28d432e0a78560",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "32fc1ef668b178a6b852",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "3c6cdb9df811c0278d00",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "52779c07cab48074202b",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "c6f74352a91c7c6e2db5",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "0542837447fd97f3eca6",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "515b81e87a96142b8d74",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "fb2658abf2e092d009f0",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "16b45f19b92a7d1cc10f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "cbf46475c1e6e96a03c9",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "9ca113dd11fcc0749707",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "07e5415038a040f19f41",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "af719e1bebb70481e1d5",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "53889ec611c5b4f5702d",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "6276501c21c2b3215c8e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "c48fea2a3397c1f050b9",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "3388d0a9a1dddd92d627",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "624dbc53be8556c83ed8",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "2b8c46cfb213132adc5f",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "156b334168a22e6a63d4",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "b30381095e5a7d61c71f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "a23b8f209263d24b2f4f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "9742c697d0b50345e05a",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "5485612b5563937636f2",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "037ffc13808ba8dfac5b",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "7c95d6b95762a40ab55d",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "f0ccd41fe426efa12d7d",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "00a688bd4d0f090878a3",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "ea185b538c89aa97467b",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "cacd6681b3b264be7a0a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "49d73dd79ad6a30f97f0",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "e9968624e555f6c7efca",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "e79e2a73a940abb7c6d1",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "6729dcc09aad96f8de8d",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "b05e0247c40f14b0a39a",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "9269d4c69c60177498d9",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "b5d1555cc1fd3b7c0948",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7f106409358ad56aee60",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "682b1549080a34d21b76",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "3bad9e4fa627404afa9c",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "fed8d1afd574e738bfbd",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "b43a659575eef35e859e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "e45ed55d4f7bfd383b3c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "519ca2835918d8abc2df",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "85473dd13cfac8b094c4",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "7bf5c8a8b1ca41e1dac1",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "70b1b3c9dd7dd1425afb",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "ec3a73122fdde5a58967",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1a1ccf073052d444c94e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "62c2e26508a14cdae52b",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "da94bca85c226853cb3b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "511e8f5fe04c9f9373b6",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "492f7a812429aa5dafae",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "98e345181d3611158560",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "dc5a7988836d64f50692",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "ff2fe1985e74595215e4",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "29d933abb6580e605dca",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "6ab0286863c2f1fc977f",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "d0de07e046102bc43417",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "e9d7d95835f56ac22950",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "e461cf63243b17367676",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "d1a2d508d52e78df2954",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "3fde17a2c6066fe59180",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "737118320d735c3d22d1",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1266ac670266ea3fec96",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "aef8c974d86beeab56ee",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "07a075d31f7bdabfc4f9",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "6b219a664c32af2c212c",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "71b0d2dad09e5f322692",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "b023a8297eb620b4ea73",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "e68e4af9645660ad4dd8",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "ea44b4713833b83bafa8",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "8d20576a60f188105706",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "74995deadc3775b06543",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "bad119ac37717e4c8e6f",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "67a79b98e24c43bc9d8e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "f748ff594876785206ae",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "7ec0fba7d66164d7b680",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "ff342eda4adf92a97411",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "74340d2f7601772a33d2",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "46459e23b17d82c06179",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "0ee59accd2df85549677",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b79771f24da76a741b23",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "09752f5462fdeabc9c91",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "565b2ec97c922905f6df",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "a9ae20a4cc19f51f1ae3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "18829647c3b50cec231e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "e62b1f6ce9142cc8d321",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "d86c354a7e7fda00ff68",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "4c9391a6ecff3b86d1d7",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "a46c7de10c9e251fb8b5",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "3805758c7c5f412ec7e0",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "1d4f21e1f20de9f85a59",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "eac70285eaa3d4825a6e",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "b6543e5397c1900bbc9b",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "9ad8773a33c74f308338",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "cc073ccec17675c8c02e",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "fe7031f844010662fcab",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "58e84bbb7f5e2712f160",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "b0729b6a407b52545174",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "22c43f6aaf1aa59fdca7",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "0924dd6cbf6df1a18d28",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "c8938a05a9316fb46b2a",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "0a14436e46af16389459",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "f839ced94d3f1308e23e",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "6c79f8fadb27720d28a1",
+      "cluster_id": null,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "5198f8ff57dfa5297b93",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "9435ed6c608b787aee0d",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "cb646f74e444cafa0b6e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "450fbc16c149b3b402e4",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "5940344597174d799402",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "e8d6a7919120f0c3af54",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "f3fcd53911eb630e2a18",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "8a4255dfe3a954dbb334",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "815452639252e1f4c486",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "c8190224b30b12e378c5",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "63dd3be430c2d014c9a7",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "fec339d3e36ca1db2e04",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "3ad23e15eca5f482dd8d",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "fe61db0ffbb15943c240",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "ca7123b59f0d376bd651",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "78399c8a3dd42a055870",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "284db60b9b30c18eea9f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "3c787e56dc015771f8e0",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a5b93b006b2ac787c5b1",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "2f05e7c5d79de800820f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ac029a662b6d893b6f1f",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "89fa6ab16b9d37b5d794",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "a5793c67f2b7f3467d5a",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "9e5f64ea24b9c19f105c",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "9a8be700d53315b5044a",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7448e31066b9d9ec60f5",
+      "cluster_id": null,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "bb14e695163e80f75c39",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "fc067da46c8df87a0b74",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "648d8dab09da8b1526d1",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "587911d17c376e2af94d",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "c56d87252c46d4be650b",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b33791caf7bdeb93d7aa",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "7dc5a4b350fed950717f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "bbc1f79eccdb583d35d2",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "8f8fff6906641eeb4afc",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "6619a40e5740b84d0b0b",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "ff2806fe7bba3b979f1f",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "004dcf116c87c624a991",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "f7a1ebc905caa685cb1e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "72a1492b060b75a669b4",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ba916cc4dffae5e8dd90",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "8ad49b2c6752362f2b54",
+      "cluster_id": null,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "4fbcf55e1e0393995e3a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "2e7b7b30aa0a41f46d81",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7da42794066cf2bedb24",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "23c52c45e69d833f3dab",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "731dbf756d1ff797f0e3",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "ee8407554d46eb67a118",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "c13a039cc2ae7f7010a9",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "f1175c30828cf5549e28",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "410ea4e869c578022b0d",
+      "cluster_id": null,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "c78a300c8ae278f6ccfb",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "0aa1a189f61a85d0ef73",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "441c643d81322515e41f",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "5988573a976f2e59399e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "23f834607fba47109274",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "07f15a1de33614ed54ed",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "0d7a5f5d99f987b1caa4",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "7eb6669bcf2ada15ffb0",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "c27d85c197a4393d135e",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "36de2a0e2acfaf9186cd",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "7ea1108f4af26aa6858d",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "1dc4e581f5b3b03c4abb",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "d4350dac75f7dbe49a6d",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "40678de74dcf3cf809d0",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "cce3bb4da5f155c5003c",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "929471525c10dcec1508",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "9c0f7fe74e24947ccae4",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "70924e6373d4f44766fe",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "c512791975a8a4c90c39",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "4d56c478eace0539ee6f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "aef902c695b7ffda7504",
+      "cluster_id": null,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "4a4a7560517ce85b607e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "986059e6952251724fa6",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "89e9b93cc9ab2bfce4bc",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "c330cdd0fd057b3d864c",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1cdc10ec429ebee94335",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "8c857e544e177c86d2de",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "d766e945ed867312aed5",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "ca61c2116c88c2f2811b",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "2a9ebcabcba5c03a6289",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "19d5641ad9571cbc3264",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "b58c1567799f1cee8087",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "b7850ba6e64f88627c8c",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "89ddf4b402c754f4d084",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "1694cae83283fe8322ed",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "9a6087ad2c9bf5ac9aa7",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "17ed7177ecb9fdb49302",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "3aef07d33932f423fb55",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "2ada56bb450c07c91de2",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "a47d001d9b0c5c712035",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "ba16f453520787557588",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "9ea95f2e1ddd61235bf9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "fb5390a380ffa6d2a1e8",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "d2431a7869ad8f416b37",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "220e237171a8d10a3ff0",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "ef23197a8283c36899be",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "35967c62a302bedba756",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "424d9454a677ab138ac7",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "34639b448456deb1bcaf",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "fe03736765c300821546",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "9383e6a40186093f6b0b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "d623a2abef7f928c06c4",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "82a9141626f0cf280798",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "ba5b11a9bc12c70cd518",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "dfcebefa59a2c572f514",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "c1534c775191aaaf2db7",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "a4127908f8929a88f753",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "d4036af390fee8fe8f4f",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "8d17e0acd499b5cfe348",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "2f602ee9d8570b845c67",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "71b178db19a223e85e25",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "046e86f9320ea6fc15e5",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "d9edd5f0a534d93e4bdc",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "77c0850810c8c22643c3",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "d0eb3b7bd04893a19a2e",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "f1fdcf92d68440cd49ed",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "0ccaf6797d220c1af3f0",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "0599933ed29ffe0c2660",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "785053b6c1b07cce11a9",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "a032a873009472fea809",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "83cbcd4caa985adaa229",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "b9979d4ccde2f94d5db9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "7c21c087f559a530cfaf",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "d0c9f35a0dd096483762",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "53b9c18b77c00c974106",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "61fa13d2fdc3781d4e88",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "a2707a6813130030fcd0",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "3e58eab125d0d3b85ec1",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "f3da293c79b147295d6b",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "090b943b69318e6756c6",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "e4c0e0dc02977e7ffe31",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "5065e7acc4ca592155f3",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "9cd809d0509559933e76",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a97d76dccba0840d3d98",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "bbfe29b9135729299b58",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "e4372f37ed43e666dd09",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "0003ea12759060d71d6c",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "6e5ef59bd8b3e58174f8",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "96dd442be59dca774f83",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "00dd99dee3a50c95eeb3",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "e109a9de1fc2d3a8b62c",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "c20738b28fa3d5bc3003",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "d46075888126099f6c17",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "8af9a0072d8f2c8d4271",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "aa4e848a33ff66dab843",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "f93c4b474929331ceace",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b8acd8b889860256d78a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "7ec06fdcab4e9408a990",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "d17c8820b084bb5768a6",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "3695ab78751d8f358995",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "d5983e0cd9c53274291a",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "fbd7d589333e25562a7e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "e6bc7b72886f821aeef3",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "e500fbc146ac3b9b27d9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "32b50d3a0a78e71e6d09",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "e4a9c1fa06b627a70708",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "a75c83efc7019befd535",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "240f12e06f251bbf91af",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "1e3984405c0e93426259",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "8c30f2f8cf7344bed39c",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "1ba333bb5b1a6d7124b7",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "1f62f8ecf943c1f5abc5",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "62275fe2a4a3dc805224",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "70661666d1b7516fb6fd",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "714cf4e19cfda18092ec",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "d653a731d0298a7cb9dc",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "2eae2e940ade87acccdc",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "b52a076e625c171cd904",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "4868356328f5bda07c02",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "66f813d83294d18629f3",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "9cd6b6baaab9548c5f35",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "34cbd05140b5658a3a6e",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "58063299070745b4741a",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "42c686b65fba90aa5eb3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "afe4dd4899283b91a757",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "81c699c293a1affa181f",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "aef2659fa5333dcae130",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "f23c38c1fc460309ac97",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "e3cecb354ae503dfcb31",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "49bc04419b35f02b4785",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "d5d665dbe43b94330b0e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "d069ffdc0bdbbfca191b",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "03c7a9a56d78b09e5146",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "080477a4068624751776",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "3d025438908aa5187278",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "a386a4f77fb087de8f3e",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "a034bef49f84548755da",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "3a37b79d689f533117c6",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "8d84e371a14166c3901a",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "d80869b2b4b4f4199f86",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "69cf7a43deca9ca34616",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "8673fa5ef9062de2f8e4",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "ed5e8cf5605f651c7550",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "4df328a74898248d0218",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "c99fbf1b5e5fdbaa163a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "2eecabe854dca53a0c8d",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b911a059c784200b10ab",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "bbfa9ff5b3aacfb05b63",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "b1feb2cab5051e81f9aa",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "dd2d9b2d72c346ecc2b2",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "9e7f94dd8a46773fe03b",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "a9d262167f619b6e3b4d",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "eb8fcc134da9cfe588ff",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "99464439a161abe87e43",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "60293d5caa0fc92dfa62",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "efb773783ba9b5ca393d",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "40814461be9c678cf43c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "80f4e9a230c594df0440",
+      "cluster_id": null,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "36908bbb1c200a1944b1",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "a7926aa6abb938fb2ed1",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "f3d4a7d464fd110f19cc",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "772b3aa2098b698dd1e4",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "a15f3a61a34e80cf924b",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "cc4af13ed0605b0bb033",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "d55c06ea0dfc51828eda",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "2d742f6894c3bd1a9040",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "b0d0ceb45917a3a6d9b8",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "7b6d5e39fb8c8216bf66",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "83151a9bf324d37bbf05",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "721c6231b7169f7d686d",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "93cf1139e502f741722f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "84ac8fed8f4f54a7f0a2",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "bde9d68ceb5fac83fa29",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "3f378c6bb998ba1ce89f",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "bb02cde73ae42ac050c5",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "cdfb87518340c72ccfbc",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "cfb5cf95521de1f8fceb",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1c97f72d86862d2cc4d5",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "ee879e93e22b6523953b",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "6aa30efc7b5b1f760de8",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "49f266e82d63968cf1bc",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "84050e6dc15ffca79d3a",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "728535561684e42514ec",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "d45e3b43842f9fb21ec3",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "ed23dde2db3308a0572e",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7de9123d03f4aa258e9a",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "8a4ac1edcedf5705bcfa",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "c7b78e2083a5da167dd3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "638870dba4945147fe07",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "911ca22dd1e9e3ac6de2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "d93b94fd9d7ad7ac0ead",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "88dc4bf33e253d7c2c24",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "352a887a18dfdd5250f5",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "c010f25f902a970ab958",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "a6a33ae63b6ac609b292",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "8503e751be51e65080c2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "c74a675ddd1cfd2f607a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "bc126ebbd723154d46bf",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "57dc670555f8ab218516",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "afa6a74563013ccb3c64",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "32b02c86d3b95808fdd2",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "0ed99646ea36132c052a",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "8c9af1d3168aff0fbe04",
+      "cluster_id": null,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "8d05f5471715c69e11ef",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "e7ab72f9cd3f7147b0d3",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "76976040819504a8f580",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "0f21121c5073d06206f2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "66eea766357395bbe57c",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "3cf4309fd2601dc12675",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "68519bf3456dda986bc5",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a60ce6a0e4549bbed2b3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "cba67dedc74c47d88463",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "dd027dd87b731dd6241c",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "d01e5d7f545235ea6e8c",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "feb3a216f6b6b84dac67",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "54b3659330ad7db7a5fd",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "96f29eae34ad41b01063",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "0eacbbee553d3c82d54a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "49e6bca5d6f13a392ef9",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "fb50c590ebaedc08ab82",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "47f8cad732e9c4e15688",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "9847437722b644ee2a93",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "8d01ab8311144ce6f70c",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "c48f5ce73c127011931f",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "9ebe734524e955ebbb83",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ec19cdb450f795ff7cc8",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "7e31b502ce273d2d6f85",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "efade7761f5af59d9694",
+      "cluster_id": null,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "4ca5397775bddbdb2cf7",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "ecbdf40b316b11963c24",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "5ad194bcabd9d21a61c4",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "2eded8144ef30e7a4b28",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "3358f4ae95c1353924f2",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "09a607252c4a2e0bdc53",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "25cc34c113b21c44bdfe",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "bd8eb15dc7fc123ca417",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "6b2acdbc5440161e5704",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "e8741c5e627ab13c00a2",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "677b29395f84fa09a489",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "f657a763839ba7a86ebd",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "a53c1d7a57d856fc738f",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "b6454f484a745d8f93bd",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "e5c5c440135044136b2c",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "6dd389882bf2228846fd",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "68c8396c5309b0ddc894",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "3877865cb98d8b37840b",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "beaf9cb6d15bf25470a7",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "5c31133e829d6c1f8af3",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "03410e291c65a385f6fe",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "9ca31a94eaadcfdd8099",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "bea952af32a0b52b94f5",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "2210847765e5680feb75",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "c8a6eb8b18cbc04f17e5",
+      "cluster_id": null,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "4588172bbcfdb7f6491e",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "af3ad08e0bd70dcfe2b4",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "33669efc5aace68bfe4a",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "65b14775380f60bcec5d",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "9ad3d0db64d9569509b2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "df96927b70103df093ce",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "84b8a11accd7b81a8ddd",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "2a3ecaffd0b12bfe12a9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "5131be851f13fa10cb72",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1b6fbf02477d904c2983",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "3b9c45da5870cb772a47",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "bbe56acb12dffe5a41e3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "3d1064bf6813f09c5cb1",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "ea0fad1efe7b01417a11",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "9c3807a3b424dd764fbb",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "9b63ce1dd2de433acc8e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "5f356ccb53bbba15a707",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "bdc443a781efc6fce6da",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "f7a969e56d0362daef36",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "8bde3e8a7259e75ee14d",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "845db296ec9e1f807f21",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "4681f12393bc9e7c8fd0",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "abd56ac504b7ef289126",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "08f43a6d49d5883f5e46",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "53c579521e02108abb76",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "53be67916e8e496cf9e9",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "78516a696c07d29d1b10",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "c7273e7edb74dd6740b1",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "1fc3f7b2fa666298117e",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "539ce253e21229703801",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "ef5e79e073fefe7e6fa6",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "92ab8826fe116b454bf2",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "0be75ba4f48a080bff48",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "322731ed527683a190d4",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "384eedb9cba6a9a1815a",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "ad5cd908bd94fc04b456",
+      "cluster_id": null,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "ffa56a54f50386f70e82",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "3838fe3e1f28eb81dec9",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "77d4509dd6906a73548d",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "051572d21be5126a35d7",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "f2af327dd5bf65f984fc",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "a18d718663aff81b0ecf",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a4ff6f92590998ea7665",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "9cc9f965f9ae951fe0d7",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "8e18cfdfe07dd7309b2b",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "5ea7f0345106d9e621ab",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "5919d7ac6b6fb52dce31",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "3318d1a74edb1d9114f3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "de29144fc3ff0b0c9e5e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "69ca476955d76033c4dd",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "f92590bdd897962a9c9f",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "781c997ad36bca0e6c79",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "e3f40f6dcbc829dafb07",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "1f43c313ca1518769707",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "9e41e90596c1e3fa61dc",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "37033283265bea458a61",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "bb5ae357b42db6bf2fd7",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "2a9a6e8e2937d05850ab",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "bae31b3dc8d824b0ab89",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "3c813ca7d02fc0b6383f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "2d0dd17e773cddeb7672",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "c5681bae3bf08d392f0c",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "9b211a6f96b3db18eef6",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "f6291ec9dc88d5fae7d1",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "55aab7efccd321347b29",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b67a80622d13421397d5",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "eadd6847e6fc6320624b",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "79004cba06e1fa4cab5b",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "9b5cc17e99c271f05bed",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "c72834f24ea06683057a",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "1a39f0b189321a827596",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "1156f967c680703c5244",
+      "cluster_id": null,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "5a3fc99467b95e4029e5",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "1957a4e0d1722e720bba",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "23df164270c022b535fc",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "ed97b2ec86bb4c4db866",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "0b8225b96b81b0802690",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "187aed59c1f53a0eb000",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "35c8ec271da923350c8d",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "eba6a3d80367832a82f9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "dead68c63a36eda2338d",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "06c84161eb7beaf17a98",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "00d0383db1e372df85dd",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "c08f9e0c4c75ebf52dfd",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "1196480deacd654373ee",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "111faa1c1033c89e9f88",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "6a25bb3da82d015d3ef5",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "6c418cada89dd81f1a93",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "dd0463d44a9753353f54",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "bf6fc69f29164d6be1a2",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "e7b3aa64f12fcabfcc31",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "c9c0e0a3a5aaaac5d80c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "3e944b877541918e3f48",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "728a75bde8d5ecacb5ef",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "9523613eaf22c3cf243e",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "254add7eafea1307e0fa",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "7e4bf5f52b98daf9d835",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "247095cc75e2d37d6359",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "4113e4d456aa4c3860c2",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "78e1fb64e28204d2afd2",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "5dafb4ca537067b5e94a",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "4b922cfd5485010827b7",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "c60c7b084b81d9fe1fbb",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "60ca3ff6871e9313830b",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "928a7b8ac97c65bfb4ac",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "501b759f1e26aaa51d24",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "0896eef04a61ec440a54",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "486be83b1233518c57fb",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "ddb1fd36569433b8ecf4",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "243fbdb221f422bc238f",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "368d6c5ac4b6593ae54e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "1f16910873cf7be9fa87",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "d2d6d324f15882d9d214",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "df0ed746642b7d8fe259",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "df73aac0157d697eb312",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "eb50c22de51d80110a9c",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a478af190adb9536c543",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "9cfe8bc6e85fd245c4e8",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "a9db2956ef98d5943f0e",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "3291b2373fdfb711fb05",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "7f73aadfac1b5e920264",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "5aa2605d76d51779a5ef",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ca72ba032624d54f042f",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "c0aef0805ecd976bf752",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "f22d3cda84022735aea9",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "471e8ba1707cad0cd5fa",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "97d68db4aec5516de2c9",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "2bed983ac7f043b7664e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "5ae40459110cd24304e5",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "c984d9c4e789dc34b62f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "eb8aacbfe06eb12a38d2",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "49e1666d96ba3554539c",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "62780b2489ee27165cc4",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "70ebc6a0aebb89e63e80",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "032adb99828760fd8387",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "577f96e44adbc9c5f23c",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "13e28967c15e73db3622",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "f75f5381073d9fa25d0e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "b693c14cd431bc5ce651",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "ee36d65f84fc66540fa2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "4053be608b4d26dbf69a",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "46cb46565e50c66007ac",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "7ef3746f1410d068febf",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "375836bf477cc815c26e",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "92a4baaa2bc881220300",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "c9f4ae7272ce225feffe",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "a74212f0913779c17cde",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "a735896d087996c1beed",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "2045d1926217a487c908",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "3de2d3e466878ab86e6d",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "9b50eeb04069f8f07103",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "415820d4164a5e65e80f",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "39999b6e5a7d491b49f9",
+      "cluster_id": null,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "fa55f2be297ca23e84fc",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "fedc363e6706856bdd20",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "8eedf2034b7a7edf9780",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "4ec453d215f8c90e5d79",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "3137544bc7d2a5b040c5",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "700759aae75754622861",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "30ffb4f6e8f8f05f09fa",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "09ec9a8b08375ae3d307",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "51299edfb45360ab7b61",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "cced27b3e0b6c2b5f2e9",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "8336f6679b3d69205de8",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "a123e8241c06e915ff55",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "a61bc782f6aa81239390",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "47516fd7d6bbfb237d05",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "ec495022176bd5136e73",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "92620f92b6ff0117f33a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "77d4372e75bd8df27e86",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "ececbafeecb9b05b5bf1",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "61a34a3e9b2877f5c2e2",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7e2ff5e19de882de9b11",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "82e923f29a13dabad317",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "aff967763bd66ade02d6",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "2d0998fa30347108a193",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "128a82a3fc0fe7c47c1b",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "88dead621baba2ac2ff7",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "0b665a1d0e90815e20c8",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "a2b381e37a7560a3940d",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "8c3c374916c248e9ee83",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "5746e2d7f261051c7bde",
+      "cluster_id": null,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "cdd482b5eeae59111ea9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ac35f652a5028e56c4da",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "225cc90cce1e3937359c",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "ef117ec22e3e786fe64b",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "013695d0fcf4334be2d0",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "ad45190becaeeb09bd61",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "231592740b6b07e1e995",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a14aa6bc0cf3574cc1a7",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "621c4d43b7c0ad2a7a83",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "9a4d1aa66e0ecc5cf3ca",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "a86d57bf9b4b79f38cc7",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "85110df16faff48fb4d6",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "bfcf3886a6261319e177",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "792a8983dde38ecb8b49",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "385a8fede5bc1b3cb5eb",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "44424b7ba15aa5efbced",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "2b481a85395e844b5c3e",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "19ff7e71a9cce3e1fc2d",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "bf3c2ef2a6b7fcdf13d4",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "b6856f325492225b66dc",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "e65f248a490e54087ff0",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "e38ec158629641406db4",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "abffa5960a737181a0e9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "220967b62385d66db996",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "578157ca7a8569f0149c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1fd5100103887525e6c9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "fb8a00f29b074ba989d8",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "60ef1b1a9a4920d18ece",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "95db011ad07466153f92",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "dfd59f3ec00ca8a41ac6",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "634a9f21c4dc5b294913",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "02232fcf33fc763589be",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "607ca805de5e4babd787",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "cfb68e29bbe956166cbf",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "ca79c0e871f549bda5fd",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "808d8099c575826ef60e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "c5525393f8e29bbe8725",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "64a26d996fccb77e1b03",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "56a8131320c3d54a263c",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "c1b94963deb57d6b165c",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "0015117819160b5cc05c",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "0d1bc6095a585aad7a50",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "4c5bf9d63187f4735cce",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "33229c3cc4da425d55e7",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "96fe7307d18f7f09e5cf",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "3df3daed952c7388c5dc",
+      "cluster_id": null,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "30614bde10cdf3235f3b",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "803986eff3d5a9de691c",
+      "cluster_id": null,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "64bc73ba42b3d967d578",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "7382ef10270970b9d656",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "967bdede0b467420122a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "a444b72529e03e06b01a",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "0cd2ed8682a372918c35",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "f0208e710a8ab3dd23e0",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "fa94434d15dda4008e07",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "10c73d08bf250b389363",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "6ceb32bec0d533e766a6",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "9c1aade554db3beaf4e6",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "981134e1a0a9f67ed419",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "af63bcecc58b1137b660",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "868e421644fad51d4f77",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "29ca734d00cac4ce09d7",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "0126aa082cead089d0b9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "687674c791c5b47e3a4c",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "118dc3c8e412b516416e",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "c67199160e73b4fdc8d4",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "f9f32adfc22c6e75111d",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "763bc6aea456bd533af3",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "fc87d195a7ee71d5dcaf",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "51b58455219ec6d55500",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "5e89c79533ad506431d5",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "60e53416913ace51df77",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "f0461abcd445c9d0ae09",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "914cde8f7d67ac4e0d0d",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "b8eea732ecac856fb2f2",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "49a51a3cd95534347923",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "401dd67fbc714d9f23e6",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "c2bfc8a097f3277088c8",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "49a8697c120d0ebdcf7d",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "62133749f4b48e982a1e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "8b5ada7d59d2d430ad00",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "fdd8b036d2d0d23f02cc",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "c19d60a77a2ceec26d82",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "9f47ca660e78a3cb1a1e",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "d7769a5b7d258d2ec84c",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "f444a585aafae402ce4a",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "03a5030ee758e2f86dbb",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "6f69b6e5439d17928699",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "dfcf94b5a70b8487e78f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "d6a2145bd2eef33eb055",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "a13bfb179294cc091459",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "8890678bdd1358122e50",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "e47e8fa8e3f3d7f24a3c",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "d1a2e22c1861e4e1fb02",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "3cb48713afbf8f0cc0b3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "544a060edd04d0f9e2e8",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "5b32e4fcafe704b6429e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "d70573bbfb2d639765e9",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "dad2a4b5b90ff3e5e421",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "7861b07f02313b6662a7",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "347e2976116a3a6e55ed",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "9b6697638610cb20a170",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "4a0fa749e26bdb55eaff",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "cb2e33df76ff11b5d80f",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "07e40b4ed6477710eb35",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "665722acaf3d365c47b0",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "b5ac3b6f5ec8bb0b81ab",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "5fdf9ccea9d15de016cd",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "202d3a6af1446e299a0a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "c3e5e3f23184001e911a",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "760281fe25046e7f3511",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "5b50ed3113541009fb20",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "f64f9246011b7b3caebb",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "365c3bb8fc5dc920aca7",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "eb2bdf6037694503464a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "ded12e81f89d803e983a",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "b79010f08d2f991f41c3",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "81e6d4bb4bb761b78563",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "506bce93a5585167b4c5",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "a581af902eefb7ef7ddb",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "408c6040e28cff0d7a81",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b57ead792805b0d8d274",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "423225b393876fd30518",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "f17d6f07f756ebc9cc0a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "6a6ab43921113d7aa090",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "33b339b546f46ba417e5",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "80b4ab1fa3078a39bdd7",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "5495af40c697d888b7c4",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "38552bcb98cd4c019e19",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "37fd16401a5de8535ec4",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "db831730f7d2dc736a8c",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "19e29365faa19f35f0d0",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "84ea694ce5cf63508a61",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "5128a5ec644105b0a13e",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7a15a857b848bf2c6763",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "551666e04c80da289b65",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "ccb5a394e20f6c246001",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "edc8f45bf6f3b17133d9",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "92e3be1746c7875b6ab1",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "e9e75edc084e14468a5b",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "87c15a2e6bd2fb236b08",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "c481913572a6246f092a",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "e97c5ce4d59c031feea6",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "2e9caf67c7731e9dd486",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "3cd9e8559c1bcf8662c7",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "87bbd843c72374877066",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "1de5d0d5bfd03b4494bf",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "947df886a110f04d106a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "67ad06d9646b74184754",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "355a5b4406725fa2361b",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "9abc3f7df92edb7480cc",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "3d7adac12c4b6c11891e",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "32cacd93f42bc91e3666",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "d601305e8e75c36c801c",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "5fbceee51298a8a0ab0a",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "b181fc3685f43b4583c1",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "7122933799300d24db43",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "453f269dba07220b8da5",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "33e018fcd888bce77013",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "000f794352b4576b21af",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "5ab36ffd76340ab3c380",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "97239a2ecfedd9c70732",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "148caac95f5fac015c95",
+      "cluster_id": null,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "933800c9c0c12e254b99",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "e03505fe45e1ca1dc4f4",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "1024155f4d3e728180f1",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "9920913b79d6df9abb56",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "6d9d1f37edea56392bc2",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "8c8f361204addf09ca4e",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "9dbc677401b58b143620",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "b73e97d3b7eac230c6c4",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "989f645c783ae1cd17e1",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "26fb7301e1fd51195cfa",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "c84f8484330ffb0bd294",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "2231846b1de671da91e1",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "339d9aa5b8b26f40fc78",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "459a10315d95c00ee6d9",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "8200581ee979127ceae7",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "f3d105f5e25ebbe63f70",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "69aa9e5a78d5ffc8096c",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "e6058cfe5c3cb27dc703",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "3b7508dde622fb8510df",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "115def16c9781d5234fa",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "6c07ebdd5dc635fd9436",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "04884eb001ed1b6a65ad",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "6b470c5ba893dccaa811",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "4202955f095d4cb060df",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "d10fd83ad76795a05678",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "807be4e025b5b49b0df7",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "85acf0e0f5757e9954ea",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "9994f28dc6edb8322657",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "43aece86e7caab000618",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "48695f43e89704ad6df1",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "6003333c02d222893c83",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "93b0dcac810ff014c8c2",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "bbc086c854adbd69493b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "112430fb74d39c91ebc5",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "f29f7cc34595f39cd490",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "7194cadcb6acdc14a9bf",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "a911826c731463651e3e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "7ddf074f90fa9207c230",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "c0099e8e50a820cc4802",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "31c1691a5a47675ed983",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "15694594c682c37ee579",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "b1319c4387b90800ce2b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "01f4e410029f158bda7a",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "f8527903fe1da69daca7",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "3e32fbe753cbef965746",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "1faf6b04c287ba333b8b",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "516f6f595ed2041cdc09",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "cde925f4dc77862eb0a6",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "3b38b5c361c39325cc7c",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "14546398ad27634bca22",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "60ddf66a8ebf69dcb6ba",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "fac8d28550287b91dabf",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "48cbc3ac13ad6cfb70df",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "846c831252f80d1dbffc",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "7d25217b5d62607fcb23",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "a8d44915becb5360e121",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "fc12239ffdd633a97a94",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "d7bd36c7caccc0e7cebe",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "c45bb9692485c60ad6f0",
+      "cluster_id": null,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "1ce86c5adfbf2dd69926",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "51e16a17fb8ad9722cb9",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "c6ac25db09a269a59405",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "3bb6d9e7e29d07909a51",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "83b1f24d8d6d22ded8eb",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "7a2704e4c6bf943a3dc7",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "f8b504ab18a6355e5ae9",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "7c56da7795743793392c",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "0234a47f7c77aeb42298",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "3385572299c261a13f93",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "080ca28d8377ee0ea9d7",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "23cc1de3fc174d684e6b",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "fdbe4109540ea84e47f7",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "9dc43de3335b6e6bb8fc",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "97ad4078c28bc1266888",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "7425076e82e1d33ff498",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "3e53fa6d3aeb669dd383",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "98fdaf2df6273824401f",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "6a57664883feca596f15",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "b7715a782823631835ed",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "94ed71a58f17ca0c6dd0",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "0c32c4d34152605446c8",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "4945df6b9f121daa1469",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a238de89c7a8acf65723",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "eb61a542d97d6c7f4274",
+      "cluster_id": null,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "9ab7566b7c59347cbf3e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "866d18456a9a2739f7ff",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "a1c5db696d11fdbcb1db",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "297977456ad534ca4324",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "ca9da98d040c7b9ff1cc",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "b1df390f2ed7dd77ab80",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "c682aa3c067795d110d8",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "0461adae1082e9bb2b8a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "11ca647ac66b797f137d",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "09d8e04889b24d1da8fe",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "ee269a827b68e279e44c",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "4aa24dd8de5db1434297",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "ed4d95848e9d91b2bf2a",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "62cd4372042dd193045f",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7b90cecb45b04f8851f7",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "889891f885c50380ee23",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "ff16fe768d3adca92562",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "d69e8ab1fdc2fb7cb814",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "cdc9f872661aa513fb8f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "153ed7ce0f12f4e0ff56",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "45f234a273a30c685d4b",
+      "cluster_id": null,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "bf398c6f930745a919e1",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "93de3eb96bd4165bf8cf",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "2390a32e278ef3083946",
+      "cluster_id": 6,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "8e8e8e44576ffa86a0d0",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "7a22f0f1ad00af48999e",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "3c1e76da5ec4c7d531c1",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "0f2478f84cd9a5fe6784",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "cfe7b68bf7e8425f607a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "5c4c136f06d75c30bd9e",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "ebcd874cae5f4d010161",
+      "cluster_id": null,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "c12f84cd211b013460a9",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "405c91c9493773c83e0a",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "2c2aa3c2a1bf2355a790",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "09405551ee7d8b57eafa",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "cdbd72162d36a8928a3a",
+      "cluster_id": 10,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "e0a2cf1a9e794ff3e43b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "0348c954d7a2126c26c4",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "travel"
+    },
+    {
+      "id": "ccbd836ebfdf6009132f",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "7971d60a45393937ee2c",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "3c0f224df6bf479fec58",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "0254f899a2d42c273212",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "ad062b4de17ff087408f",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "73524a6d7b1eb0d57900",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "099e640cc37364f168ac",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "a23ec517dc90063f70ab",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "cc169157922cc2223c44",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "home"
+    },
+    {
+      "id": "92f86a1c611ef6692cb2",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "17abebfed937837e09b4",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "oos"
+    },
+    {
+      "id": "03f34e831b184b551ee4",
+      "cluster_id": 4,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "d5169bd867e63a8e0fbd",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "287ea76a6c12f82f9942",
+      "cluster_id": 3,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "1e55e7d770124d55d956",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "c1cda9a848f3b3033ab6",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "702b7f873b49acfa748c",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    },
+    {
+      "id": "edadca12083c0b4ad0f1",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "banking"
+    },
+    {
+      "id": "13733c7bf54505ff493e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": "kitchen_and_dining"
+    },
+    {
+      "id": "4992935eb06951ca391b",
+      "cluster_id": 1,
+      "refused": false,
+      "label": "credit_cards"
+    },
+    {
+      "id": "d3357519e63ffb9f76ef",
+      "cluster_id": 8,
+      "refused": false,
+      "label": "meta"
+    },
+    {
+      "id": "e9b992ccef5c659f04fc",
+      "cluster_id": 9,
+      "refused": false,
+      "label": "small_talk"
+    },
+    {
+      "id": "692b425f2fa1ea19b9ca",
+      "cluster_id": null,
+      "refused": false,
+      "label": "utility"
+    },
+    {
+      "id": "346bec2a4ab94c1e2ccd",
+      "cluster_id": 7,
+      "refused": false,
+      "label": "auto_and_commute"
+    },
+    {
+      "id": "b9a749975685647291b6",
+      "cluster_id": 2,
+      "refused": false,
+      "label": "work"
+    }
+  ],
+  "measurement": {
+    "assignment_refusal_calls": 0,
+    "calls": 1283,
+    "cost_complete": true,
+    "cost_history_complete": true,
+    "cost_usd": 0.18836269999999955,
+    "error_calls": 0,
+    "journal_sha256": "08deb5aef254f164e4ba35eda4f6f0cb932f679ab36d7e1a59dd665a52be6859",
+    "phase_calls": {
+      "assign": 1283
+    },
+    "pricing_date": "2026-10-20",
+    "pricing_sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "https://developers.openai.com/api/docs/guides/decisions"
+    ],
+    "request_seconds": 195.639,
+    "timing_complete": true,
+    "unknown_pricing_calls": 0,
+    "unknown_usage_calls": 0,
+    "usage": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "cost_usd": 0.18836269999999955,
+      "input_tokens": 1883627,
+      "output_tokens": 0
+    },
+    "wall_ms": 197152,
+    "wall_seconds": 197.152
+  },
+  "error": null,
+  "progress_sha256": "3a8af7a2745b4e0b347138781e3f4d984370083694cb8da33fd07b7c3611795f"
+}

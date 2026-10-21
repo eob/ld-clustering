@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "partitions": {
+    "discovery": {
+      "text": {
+        "count": 200,
+        "jsonl_sha256": "607f2a5729333758a2fa29465fe370b222869aaf764c58d4e4175f4b7ff9f249"
+      },
+      "images": {
+        "count": 60,
+        "jsonl_sha256": "f803fb2951ae64d4fd336e2d5d2aa6154472bd6fd8a4ac63b018e890dcf96f75"
+      }
+    },
+    "heldout": {
+      "text": {
+        "count": 1000,
+        "jsonl_sha256": "94091fda8978e1712e724856b6c35f37e0483b074af2d0209c8adf9745f0326a"
+      },
+      "images": {
+        "count": 100,
+        "jsonl_sha256": "147c2fb1381e2534e56a7aaabd4d8967f78fd803ef7b9f6d52e5b2af30dfcc9f"
+      }
+    },
+    "streaming": {
+      "text": {
+        "count": 1000,
+        "jsonl_sha256": "efbbb89614828610b73b87f45fceeea52b97a9d300f7b0f65fffaf0ac9a4384d"
+      },
+      "images": {
+        "count": 100,
+        "jsonl_sha256": "395de440c385a3f7ccc870ef0fb24ec6dd6500e32eb2be46198b07361dd6d254"
+      }
+    },
+    "repeat": {
+      "text": {
+        "count": 100,
+        "jsonl_sha256": "cf96390132c21da7f128c17eb72edf2e7ebd6ab1adf83253007929c587bb6c7a"
+      },
+      "images": {
+        "count": 25,
+        "jsonl_sha256": "7ab56786c3663fd60a1e7cc4290b8002e77d52041228b5bcd2e648a74d2a188f"
+      }
+    }
+  },
+  "distinct_new_nonrepeat_ids": 2460,
+  "distinct_supplied_image_sha256": 260,
+  "checks": [
+    "normalized text disjoint from v2 and other partitions",
+    "all ordered IDs/payload hashes",
+    "per-domain and OOS quotas",
+    "JPEG bytes/dimensions/RGB/provenance",
+    "native dimensions at least source dimensions",
+    "CC BY 2.0 and dated metadata evidence",
+    "repeat exact payloads and original order",
+    "all explicitly archived paths exist"
+  ],
+  "method": "Independent Python/Pillow verification of Rust-generated dataset; no model calls."
+}

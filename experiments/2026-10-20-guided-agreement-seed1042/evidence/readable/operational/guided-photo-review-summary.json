@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "scope": "Completed guided-photo blinded review only; original-photo review incomplete; text review still running. Automated same-family judgments, not human truth.",
+  "artifact_path": "review/images-guided.json",
+  "aggregate": {
+    "cohort_id": "images-guided",
+    "interpretation": "Automated reviewer judgments are evidence about the selected cases, not human truth or an unweighted estimate of population correctness. Report actual eligible/selected/reviewed counts by stratum.",
+    "plan_sha256": "5d1aa5e17d20991c477822c5c353a222b8d63e01b54dd995d00bb8abfa87391e",
+    "strata": {
+      "both_other": {
+        "accepted_count": 5,
+        "attempted_count": 5,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "reference_preferred_count": 0,
+        "reviewer_candidate_unsupported_count": 0,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 5,
+        "severities": {
+          "none": 4,
+          "unclear": 1
+        },
+        "themes": {
+          "ambiguous_item": 1,
+          "catalog_gap": 4
+        },
+        "verdicts": {
+          "both_reasonable": 4,
+          "unclear": 1
+        }
+      },
+      "different_named": {
+        "accepted_count": 13,
+        "attempted_count": 13,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 1,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "reference_preferred_count": 11,
+        "reviewer_candidate_unsupported_count": 11,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 13,
+        "severities": {
+          "major": 11,
+          "minor": 1,
+          "none": 1
+        },
+        "themes": {
+          "ambiguous_item": 1,
+          "overlapping_descriptions": 1,
+          "reasonable_alternative": 2,
+          "wrong_named_category": 11
+        },
+        "verdicts": {
+          "a_better": 7,
+          "b_better": 5,
+          "both_reasonable": 1
+        }
+      },
+      "equal_named": {
+        "accepted_count": 76,
+        "attempted_count": 76,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "reference_preferred_count": 0,
+        "reviewer_candidate_unsupported_count": 0,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 76,
+        "severities": {
+          "none": 76
+        },
+        "themes": {
+          "ambiguous_item": 1,
+          "other": 5,
+          "overlapping_descriptions": 6,
+          "reasonable_alternative": 64
+        },
+        "verdicts": {
+          "both_reasonable": 76
+        }
+      },
+      "reference_named_candidate_other": {
+        "accepted_count": 5,
+        "attempted_count": 5,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 1,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "reference_preferred_count": 4,
+        "reviewer_candidate_unsupported_count": 4,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 5,
+        "severities": {
+          "major": 4,
+          "minor": 1
+        },
+        "themes": {
+          "ambiguous_item": 1,
+          "excessive_other": 4,
+          "insufficient_image_evidence": 1
+        },
+        "verdicts": {
+          "a_better": 2,
+          "b_better": 3
+        }
+      },
+      "reference_other_candidate_named": {
+        "accepted_count": 1,
+        "attempted_count": 1,
+        "both_unsupported_count": 0,
+        "candidate_preferred_count": 0,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "reference_preferred_count": 1,
+        "reviewer_candidate_unsupported_count": 1,
+        "reviewer_reference_unsupported_count": 0,
+        "selected_count": 1,
+        "severities": {
+          "major": 1
+        },
+        "themes": {
+          "catalog_gap": 1,
+          "wrong_named_category": 1
+        },
+        "verdicts": {
+          "a_better": 1
+        }
+      }
+    },
+    "totals": {
+      "accepted_count": 100,
+      "attempted_count": 100,
+      "both_unsupported_count": 0,
+      "candidate_preferred_count": 2,
+      "failed_count": 0,
+      "not_attempted_count": 0,
+      "reference_preferred_count": 16,
+      "reviewer_candidate_unsupported_count": 16,
+      "reviewer_reference_unsupported_count": 0,
+      "selected_count": 100,
+      "severities": {
+        "major": 16,
+        "minor": 2,
+        "none": 81,
+        "unclear": 1
+      },
+      "themes": {
+        "ambiguous_item": 4,
+        "catalog_gap": 5,
+        "excessive_other": 4,
+        "insufficient_image_evidence": 1,
+        "other": 5,
+        "overlapping_descriptions": 7,
+        "reasonable_alternative": 66,
+        "wrong_named_category": 12
+      },
+      "verdicts": {
+        "a_better": 10,
+        "b_better": 8,
+        "both_reasonable": 81,
+        "unclear": 1
+      }
+    }
+  }
+}

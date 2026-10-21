@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "scope": "Frozen terminal CONTROL-only snapshot; reserved-stream implementation/receipts/results excluded and will have a separate archive.",
+  "original_run_root": "/mnt/disks/data/ld-clustering-guided-agreement/runs/guided-agreement-seed1042",
+  "snapshot_root": "/mnt/disks/data/ld-clustering-guided-agreement/target/control-evidence-snapshot-1042",
+  "exclusions": [
+    "bin/ (hash-pinned executable copies)",
+    "streaming/",
+    "validation/stream-*",
+    "__pycache__/"
+  ],
+  "copied_files": 247,
+  "copied_bytes": 400065888,
+  "inventory_sha256": "66f2514427de7c2179597809b2cd0d3aaa5719e73fbea26ed8c40589d1502103",
+  "independent_audit_sha256": "cdc396040c19737c6e8029083fec2355c82616ac43c8d1bf08bac8cbdd548fe7"
+}

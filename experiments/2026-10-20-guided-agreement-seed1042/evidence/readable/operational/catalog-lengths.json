@@ -1,0 +1,253 @@
+{
+  "scope": "Descriptive catalog length, not a length-matched ablation. Word counts use whitespace splitting.",
+  "catalogs": {
+    "text-original": {
+      "catalog_sha256": "9f16d3f32cc4fda24652b98e4499ac61817c310533e35261dd5e5ce88d508cba",
+      "category_count": 10,
+      "description_words": 215,
+      "description_utf8_bytes": 1698,
+      "categories": [
+        {
+          "id": 1,
+          "name": "Money & Banking",
+          "description_words": 24,
+          "description_utf8_bytes": 202
+        },
+        {
+          "id": 2,
+          "name": "Work & Employee Benefits",
+          "description_words": 16,
+          "description_utf8_bytes": 121
+        },
+        {
+          "id": 3,
+          "name": "Travel & Navigation",
+          "description_words": 22,
+          "description_utf8_bytes": 167
+        },
+        {
+          "id": 4,
+          "name": "Food & Dining",
+          "description_words": 17,
+          "description_utf8_bytes": 159
+        },
+        {
+          "id": 5,
+          "name": "Shopping & Consumer Services",
+          "description_words": 18,
+          "description_utf8_bytes": 154
+        },
+        {
+          "id": 6,
+          "name": "Cars & Vehicle Care",
+          "description_words": 22,
+          "description_utf8_bytes": 162
+        },
+        {
+          "id": 7,
+          "name": "Personal Organization & Communication",
+          "description_words": 18,
+          "description_utf8_bytes": 136
+        },
+        {
+          "id": 8,
+          "name": "Assistant & Device Interaction",
+          "description_words": 31,
+          "description_utf8_bytes": 237
+        },
+        {
+          "id": 9,
+          "name": "Knowledge & Learning",
+          "description_words": 21,
+          "description_utf8_bytes": 189
+        },
+        {
+          "id": 10,
+          "name": "Entertainment & Creative Activities",
+          "description_words": 26,
+          "description_utf8_bytes": 171
+        }
+      ]
+    },
+    "text-guided": {
+      "catalog_sha256": "bcdefe74187e15d7df0be7678a492fecb3b18e21ce8f7850514cccf8eda39dad",
+      "category_count": 10,
+      "description_words": 1435,
+      "description_utf8_bytes": 10429,
+      "categories": [
+        {
+          "id": 1,
+          "name": "Money & Banking",
+          "description_words": 143,
+          "description_utf8_bytes": 1128
+        },
+        {
+          "id": 2,
+          "name": "Work & Employee Benefits",
+          "description_words": 131,
+          "description_utf8_bytes": 944
+        },
+        {
+          "id": 3,
+          "name": "Travel & Navigation",
+          "description_words": 147,
+          "description_utf8_bytes": 1081
+        },
+        {
+          "id": 4,
+          "name": "Food & Dining",
+          "description_words": 132,
+          "description_utf8_bytes": 960
+        },
+        {
+          "id": 5,
+          "name": "Shopping & Consumer Services",
+          "description_words": 157,
+          "description_utf8_bytes": 1131
+        },
+        {
+          "id": 6,
+          "name": "Cars & Vehicle Care",
+          "description_words": 128,
+          "description_utf8_bytes": 948
+        },
+        {
+          "id": 7,
+          "name": "Personal Organization & Communication",
+          "description_words": 139,
+          "description_utf8_bytes": 967
+        },
+        {
+          "id": 8,
+          "name": "Assistant & Device Interaction",
+          "description_words": 155,
+          "description_utf8_bytes": 1157
+        },
+        {
+          "id": 9,
+          "name": "Knowledge & Learning",
+          "description_words": 167,
+          "description_utf8_bytes": 1161
+        },
+        {
+          "id": 10,
+          "name": "Entertainment & Creative Activities",
+          "description_words": 136,
+          "description_utf8_bytes": 952
+        }
+      ]
+    },
+    "images-original": {
+      "catalog_sha256": "7152868f072adccefd30ee6764d277c2eaf19d135efd1cf9615d4298d8086202",
+      "category_count": 8,
+      "description_words": 142,
+      "description_utf8_bytes": 1060,
+      "categories": [
+        {
+          "id": 1,
+          "name": "Animals",
+          "description_words": 19,
+          "description_utf8_bytes": 142
+        },
+        {
+          "id": 2,
+          "name": "Plants",
+          "description_words": 15,
+          "description_utf8_bytes": 110
+        },
+        {
+          "id": 3,
+          "name": "Vehicles",
+          "description_words": 20,
+          "description_utf8_bytes": 138
+        },
+        {
+          "id": 4,
+          "name": "People and activities",
+          "description_words": 24,
+          "description_utf8_bytes": 167
+        },
+        {
+          "id": 5,
+          "name": "Food and drink",
+          "description_words": 14,
+          "description_utf8_bytes": 105
+        },
+        {
+          "id": 6,
+          "name": "Electronics and appliances",
+          "description_words": 17,
+          "description_utf8_bytes": 130
+        },
+        {
+          "id": 7,
+          "name": "Buildings and structures",
+          "description_words": 19,
+          "description_utf8_bytes": 173
+        },
+        {
+          "id": 8,
+          "name": "Clothing and textiles",
+          "description_words": 14,
+          "description_utf8_bytes": 95
+        }
+      ]
+    },
+    "images-guided": {
+      "catalog_sha256": "ecf07921191960e0d246dcedbddfe274d0d63a262c59164f3bd7a966741a2503",
+      "category_count": 8,
+      "description_words": 1094,
+      "description_utf8_bytes": 7652,
+      "categories": [
+        {
+          "id": 1,
+          "name": "Animals",
+          "description_words": 132,
+          "description_utf8_bytes": 923
+        },
+        {
+          "id": 2,
+          "name": "Plants",
+          "description_words": 130,
+          "description_utf8_bytes": 884
+        },
+        {
+          "id": 3,
+          "name": "Vehicles",
+          "description_words": 133,
+          "description_utf8_bytes": 921
+        },
+        {
+          "id": 4,
+          "name": "People and activities",
+          "description_words": 134,
+          "description_utf8_bytes": 935
+        },
+        {
+          "id": 5,
+          "name": "Food and drink",
+          "description_words": 140,
+          "description_utf8_bytes": 1008
+        },
+        {
+          "id": 6,
+          "name": "Electronics and appliances",
+          "description_words": 143,
+          "description_utf8_bytes": 1020
+        },
+        {
+          "id": 7,
+          "name": "Buildings and structures",
+          "description_words": 140,
+          "description_utf8_bytes": 986
+        },
+        {
+          "id": 8,
+          "name": "Clothing and textiles",
+          "description_words": 142,
+          "description_utf8_bytes": 975
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "Corrected offline helpers used for successful control audit/export; prior helper versions retained separately. No paid-runtime changes.",
+  "files": {
+    "scripts/archive_guided_agreement.py": "3191a56db820bdf878a8fab4bac1c03bc939c1d3898bbc520f48f10782fc2cea",
+    "scripts/verify_guided_agreement.py": "395bce5d00b157155966a63835b879274233d05bb7940bac72fe0f7908691137",
+    "scripts/export_guided_agreement.py": "f040f9fc2d40eecdb7f8d3c80df9869ffb8196be37e330ebab7a26c58b1f81dc",
+    "scripts/export_guided_diagnostics.py": "0254d8a06d1b928d2a20a31622bf68342a5d043a325e6d2e36d725bd5fc98762",
+    "tests/test_archive_guided_agreement.py": "3837aaa0db862a533871cd68254888197b16769850ad779c1bc2fc1b077a756d",
+    "tests/test_verify_guided_agreement.py": "1c014c925c599405547670003093b25fb8d08b75e577cde085a28b954a1238a3",
+    "tests/test_export_guided_agreement.py": "4d4e79f3e186df0f656fc30ff8f7f86d63d47a6204a2a8242e8f70aff5b142f8",
+    "tests/test_export_guided_diagnostics.py": "e12ada0bc97dcc0e2bf93d8367b6840e8d7172017c7303ca278eb1d12c0f57f5"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "native_dimensions_caveat": "Publisher-reported originals; independently downloaded original-byte SHA is nullable and availability is counted separately.",
+  "partitions": {
+    "discovery": {
+      "count": 60,
+      "supplied_long_edge_min": 1024,
+      "supplied_long_edge_max": 1024,
+      "native_long_edge_min": 1024,
+      "native_long_edge_max": 6000,
+      "original_bytes_sha_known": 13,
+      "transformed_source_count": 0
+    },
+    "heldout": {
+      "count": 100,
+      "supplied_long_edge_min": 978,
+      "supplied_long_edge_max": 1024,
+      "native_long_edge_min": 1024,
+      "native_long_edge_max": 6016,
+      "original_bytes_sha_known": 21,
+      "transformed_source_count": 1
+    },
+    "streaming": {
+      "count": 100,
+      "supplied_long_edge_min": 1024,
+      "supplied_long_edge_max": 1024,
+      "native_long_edge_min": 1024,
+      "native_long_edge_max": 5473,
+      "original_bytes_sha_known": 25,
+      "transformed_source_count": 0
+    }
+  }
+}

@@ -1,9 +1,9 @@
 use crate::{
     metrics,
-    types::{CallRecord, Item},
+    types::{CallRecord, Item, ManagerDescriptor},
 };
 use anyhow::{Context, Result, ensure};
-use rusqlite::{Connection, OpenFlags};
+use rusqlite::{Connection, OpenFlags, OptionalExtension};
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 use std::collections::HashMap;
@@ -12,6 +12,7 @@ use std::path::Path;
 struct Run {
     measurement: Value,
     config: Value,
+    manager_descriptor: ManagerDescriptor,
     input_sha256: String,
     assignments: Vec<(Item, Option<i64>)>,
 }
@@ -75,8 +76,83 @@ pub fn verify_request_journal(db: &Connection, path: &Path) -> Result<()> {
     Ok(())
 }
 
+fn read_manager_descriptor(db: &Connection) -> Result<ManagerDescriptor> {
+    let saved: Option<String> = db
+        .query_row(
+            "SELECT value FROM meta WHERE key='manager_descriptor'",
+            [],
+            |row| row.get(0),
+        )
+        .optional()?;
+    let descriptor: ManagerDescriptor = saved
+        .map(|text| serde_json::from_str(&text))
+        .transpose()
+        .context("invalid saved manager descriptor")?
+        .unwrap_or_default();
+    descriptor
+        .validate()
+        .context("invalid saved manager descriptor")?;
+    Ok(descriptor)
+}
+
+#[derive(Default)]
+struct ReassignmentSummary {
+    evaluations: usize,
+    id_moves: usize,
+    unchanged: usize,
+    origin_unknown: usize,
+}
+
+fn reassignment_summary(db: &Connection) -> Result<ReassignmentSummary> {
+    let mut summary = ReassignmentSummary::default();
+    let mut statement =
+        db.prepare("SELECT payload FROM events WHERE kind='reassign' ORDER BY id")?;
+    for payload in statement.query_map([], |row| row.get::<_, String>(0))? {
+        let event: Value = serde_json::from_str(&payload?)?;
+        summary.evaluations += 1;
+        match event.get("changed") {
+            None | Some(Value::Null) => {
+                ensure!(
+                    event
+                        .get("previous_assignment_known")
+                        .is_none_or(|known| known.as_bool() == Some(false))
+                        && event.get("previous_cluster_id").is_none_or(Value::is_null),
+                    "unknown reassignment marker contradicts its captured origin"
+                );
+                summary.origin_unknown += 1;
+            }
+            Some(Value::Bool(changed)) => {
+                ensure!(
+                    event["previous_assignment_known"] == true,
+                    "reassignment changed flag lacks known origin"
+                );
+                let cluster = |key: &str| -> Result<Option<i64>> {
+                    match event.get(key) {
+                        Some(Value::Null) => Ok(None),
+                        Some(value) if value.is_i64() => Ok(value.as_i64()),
+                        _ => anyhow::bail!("reassignment lacks valid {key}"),
+                    }
+                };
+                ensure!(
+                    *changed == (cluster("previous_cluster_id")? != cluster("cluster_id")?),
+                    "reassignment changed flag differs from its captured origin and target"
+                );
+                if *changed {
+                    summary.id_moves += 1;
+                } else {
+                    summary.unchanged += 1;
+                }
+            }
+            _ => anyhow::bail!("reassignment changed flag must be boolean or null"),
+        }
+    }
+    Ok(summary)
+}
+
 fn read_run(database: &Path, log: &Path, expected: usize, backend: &str) -> Result<Run> {
     let db = Connection::open_with_flags(database, OpenFlags::SQLITE_OPEN_READ_ONLY)?;
+    let manager_descriptor = read_manager_descriptor(&db)?;
+    let reassignment = reassignment_summary(&db)?;
     let meta = |key: &str| -> Result<String> {
         Ok(db.query_row("SELECT value FROM meta WHERE key=?", [key], |r| r.get(0))?)
     };
@@ -289,8 +365,44 @@ fn read_run(database: &Path, log: &Path, expected: usize, backend: &str) -> Resu
     // A terminal error can lose a charged attempt before its journal row.
     cost_complete &= timing_complete && !meta("cost_history_complete").is_ok_and(|s| s == "false");
     Ok(Run {
-        measurement: json!({"sample_count":expected,"wall_seconds":wall_seconds,"timing_complete":timing_complete,"cost_usd":cost_usd,"cost_complete":cost_complete,"calls":calls,"committed_success_calls":committed_success_calls,"uncommitted_success_calls":uncommitted_success_calls,"assignment_calls":assignment_calls,"assignment_refusal_calls":assignment_refusal_calls,"run_sessions":run_sessions,"timing_scope":if cumulative {"cumulative_active_loops"}else{"uninterrupted_loop"},"maintenance_calls":maintenance_calls,"input_tokens":input_tokens,"output_tokens":output_tokens,"cached_tokens":cached_tokens,"cache_write_tokens":cache_write_tokens,"request_seconds":request_ms as f64/1000.,"error_calls":errors,"unknown_usage_calls":unknown_usage_calls,"cluster_count":clusters,"other_count":other,"coverage":1.-other as f64/expected as f64,"assignment_model":if backend == "ld" {"gpt-6-luna"}else{"gpt-6.1-sol"},"planner_model":"gpt-6.1-sol","sol_reasoning_effort":"high","pricing_date":"2026-10-20","journal_run_id":run_id,"journal_sha256":format!("{:x}",Sha256::digest(journal.as_bytes()))}),
+        measurement: json!({
+            "sample_count":expected,
+            "reassignment_evaluations":reassignment.evaluations,
+            "reassignment_id_moves":reassignment.id_moves,
+            "reassignment_unchanged":reassignment.unchanged,
+            "reassignment_origin_unknown":reassignment.origin_unknown,
+            "reassignment_note":"Committed reevaluations can include mechanical ID moves after merge/retire; moves are not evidence of semantic corrections.",
+            "wall_seconds":wall_seconds,
+            "timing_complete":timing_complete,
+            "cost_usd":cost_usd,
+            "cost_complete":cost_complete,
+            "calls":calls,
+            "committed_success_calls":committed_success_calls,
+            "uncommitted_success_calls":uncommitted_success_calls,
+            "assignment_calls":assignment_calls,
+            "assignment_refusal_calls":assignment_refusal_calls,
+            "run_sessions":run_sessions,
+            "timing_scope":if cumulative {"cumulative_active_loops"}else{"uninterrupted_loop"},
+            "maintenance_calls":maintenance_calls,
+            "input_tokens":input_tokens,
+            "output_tokens":output_tokens,
+            "cached_tokens":cached_tokens,
+            "cache_write_tokens":cache_write_tokens,
+            "request_seconds":request_ms as f64/1000.,
+            "error_calls":errors,
+            "unknown_usage_calls":unknown_usage_calls,
+            "cluster_count":clusters,
+            "other_count":other,
+            "coverage":1.-other as f64/expected as f64,
+            "assignment_model":if backend == "ld" {"gpt-6-luna"}else{"gpt-6.1-sol"},
+            "planner_model":"gpt-6.1-sol",
+            "sol_reasoning_effort":"high",
+            "pricing_date":"2026-10-20",
+            "journal_run_id":run_id,
+            "journal_sha256":format!("{:x}",Sha256::digest(journal.as_bytes()))
+        }),
         config: serde_json::from_str(&meta("config")?)?,
+        manager_descriptor,
         input_sha256: meta("input_sha256")?,
         assignments,
     })
@@ -308,6 +420,10 @@ pub fn compare_runs(
     let ld = read_run(ld, ld_log, expected, "ld")?;
     ensure!(baseline.config == ld.config, "run configurations differ");
     ensure!(
+        baseline.manager_descriptor == ld.manager_descriptor,
+        "run manager descriptors differ"
+    );
+    ensure!(
         baseline.input_sha256 == ld.input_sha256,
         "run input hashes differ"
     );
@@ -319,6 +435,17 @@ pub fn compare_runs(
             .all(|((a, _), (b, _))| a == b),
         "run item identities/order differ"
     );
+    let (mut both_named, mut baseline_named_ld_other, mut baseline_other_ld_named, mut both_other) =
+        (0_usize, 0_usize, 0_usize, 0_usize);
+    for ((_, left), (_, right)) in baseline.assignments.iter().zip(&ld.assignments) {
+        match (left.is_some(), right.is_some()) {
+            (true, true) => both_named += 1,
+            (true, false) => baseline_named_ld_other += 1,
+            (false, true) => baseline_other_ld_named += 1,
+            (false, false) => both_other += 1,
+        }
+    }
+    let assigned_other = json!({"both_named":both_named,"baseline_named_ld_other":baseline_named_ld_other,"baseline_other_ld_named":baseline_other_ld_named,"both_other":both_other});
     let labels = |run: &Run, singleton_other: bool| -> Vec<String> {
         run.assignments
             .iter()
@@ -334,9 +461,19 @@ pub fn compare_runs(
     let agreement = metrics::compare(&reference, &candidate)?;
     let shared_other = metrics::compare(&labels(&baseline, false), &labels(&ld, false))?;
     let ground_truth=baseline.assignments.iter().map(|(p,_)|p.label.clone()).collect::<Option<Vec<_>>>().map(|truth|->Result<Value>{Ok(json!({"baseline":metrics::compare(&truth,&reference)?,"ld":metrics::compare(&truth,&candidate)?}))}).transpose()?;
-    Ok(
-        json!({"status":"complete","expected_count":expected,"config":baseline.config,"input_sha256":baseline.input_sha256,"baseline":baseline.measurement,"ld":ld.measurement,"agreement":agreement,"shared_other_sensitivity":shared_other,"dataset_label_agreement":ground_truth}),
-    )
+    Ok(json!({
+        "status":"complete",
+        "expected_count":expected,
+        "config":baseline.config,
+        "manager_descriptor":baseline.manager_descriptor,
+        "input_sha256":baseline.input_sha256,
+        "baseline":baseline.measurement,
+        "ld":ld.measurement,
+        "agreement":agreement,
+        "assigned_other":assigned_other,
+        "shared_other_sensitivity":shared_other,
+        "dataset_label_agreement":ground_truth
+    }))
 }
 
 #[cfg(test)]
@@ -344,6 +481,175 @@ mod tests {
     use super::*;
     use crate::types::Usage;
     use rusqlite::params;
+
+    fn paired_fixture(
+        dir: &Path,
+    ) -> Result<(
+        std::path::PathBuf,
+        std::path::PathBuf,
+        std::path::PathBuf,
+        std::path::PathBuf,
+    )> {
+        let baseline = dir.join("llm.sqlite");
+        let candidate = dir.join("ld.sqlite");
+        let left = dir.join("llm.jsonl");
+        let right = dir.join("ld.jsonl");
+        fixture(&baseline, "llm", &call())?;
+        fixture(&candidate, "ld", &call())?;
+        write_log(&left, "llm", &[success(&call())])?;
+        write_log(&right, "ld", &[success(&call())])?;
+        Ok((baseline, left, candidate, right))
+    }
+
+    fn set_manager(path: &Path, value: Value) -> Result<()> {
+        Connection::open(path)?.execute("INSERT INTO meta(key,value) VALUES('manager_descriptor',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",[value.to_string()])?;
+        Ok(())
+    }
+
+    #[test]
+    fn manager_comparison_legacy_original_matches_explicit_default() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let (left, left_log, right, right_log) = paired_fixture(dir.path())?;
+        set_manager(&right, serde_json::to_value(ManagerDescriptor::default())?)?;
+        let result = compare_runs(&left, &left_log, &right, &right_log, 2)?;
+        assert_eq!(
+            result["manager_descriptor"],
+            serde_json::to_value(ManagerDescriptor::default())?
+        );
+        let contextual = ManagerDescriptor::from_context("Same bounded discovery context")?;
+        set_manager(&left, serde_json::to_value(&contextual)?)?;
+        set_manager(&right, serde_json::to_value(&contextual)?)?;
+        let result = compare_runs(&left, &left_log, &right, &right_log, 2)?;
+        assert_eq!(
+            result["manager_descriptor"],
+            serde_json::to_value(contextual)?
+        );
+        assert_eq!(result["config"], json!({}));
+        Ok(())
+    }
+
+    #[test]
+    fn manager_comparison_rejects_policy_context_revision_and_malformed_descriptors() -> Result<()>
+    {
+        for mutation in ["policy", "context", "revision", "malformed"] {
+            let dir = tempfile::tempdir()?;
+            let (left, left_log, right, right_log) = paired_fixture(dir.path())?;
+            let manager = ManagerDescriptor::from_context("Fixed context")?;
+            if mutation != "policy" {
+                set_manager(&left, serde_json::to_value(&manager)?)?;
+            }
+            let value = match mutation {
+                "context" => {
+                    serde_json::to_value(ManagerDescriptor::from_context("Other context")?)?
+                }
+                "revision" => {
+                    json!({"policy":"contextual","context_sha256":manager.context_sha256,"prompt_revision":"future"})
+                }
+                "malformed" => {
+                    json!({"policy":"contextual","context_sha256":"bad","prompt_revision":"contextual-v1"})
+                }
+                _ => serde_json::to_value(&manager)?,
+            };
+            set_manager(&right, value)?;
+            assert!(
+                compare_runs(&left, &left_log, &right, &right_log, 2).is_err(),
+                "accepted {mutation} manager mismatch"
+            );
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn compare_reports_all_assigned_other_cells_without_raw_cluster_id_agreement() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let (left, left_log, right, right_log) = paired_fixture(dir.path())?;
+        for path in [&left, &right] {
+            let db = Connection::open(path)?;
+            db.execute("UPDATE meta SET value='4' WHERE key='completed_count'", [])?;
+            for ordinal in 2..4 {
+                let id = ordinal.to_string();
+                db.execute(
+                    "INSERT INTO points VALUES(?,?,?)",
+                    params![id, ordinal, json!({"id":id,"text":"example"}).to_string()],
+                )?;
+                db.execute("INSERT INTO assignments VALUES(?,NULL)", [id])?;
+            }
+        }
+        Connection::open(&right)?.execute(
+            "UPDATE assignments SET cluster_id=NULL WHERE point_id='1'",
+            [],
+        )?;
+        Connection::open(&right)?
+            .execute("UPDATE assignments SET cluster_id=1 WHERE point_id='2'", [])?;
+        let result = compare_runs(&left, &left_log, &right, &right_log, 4)?;
+        assert_eq!(
+            result["assigned_other"],
+            json!({"both_named":1,"baseline_named_ld_other":1,"baseline_other_ld_named":1,"both_other":1})
+        );
+        assert_eq!(result["agreement"]["n"], 4);
+        assert!(result.get("direct_agreement").is_none());
+        Ok(())
+    }
+
+    #[test]
+    fn reassignment_unknown_marker_cannot_hide_a_known_origin() -> Result<()> {
+        let dir = tempfile::tempdir()?;
+        let database = dir.path().join("run.sqlite");
+        let log = dir.path().join("requests.jsonl");
+        fixture(&database, "llm", &call())?;
+        write_log(&log, "llm", &[success(&call())])?;
+        let db = Connection::open(&database)?;
+        for event in [
+            json!({"point_id":"0","cluster_id":2,"previous_assignment_known":true,"previous_cluster_id":1,"changed":null}),
+            json!({"point_id":"0","cluster_id":2,"previous_assignment_known":true,"previous_cluster_id":1}),
+            json!({"point_id":"0","cluster_id":2,"previous_assignment_known":false,"previous_cluster_id":1,"changed":null}),
+        ] {
+            db.execute("DELETE FROM events WHERE kind='reassign'", [])?;
+            db.execute(
+                "INSERT INTO events(kind,payload) VALUES('reassign',?)",
+                [event.to_string()],
+            )?;
+            assert!(
+                read_run(&database, &log, 2, "llm").is_err(),
+                "contradictory origin was classified unknown: {event}"
+            );
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn reassignments_distinguish_reevaluation_id_moves_unchanged_and_unknown_legacy() -> Result<()>
+    {
+        let dir = tempfile::tempdir()?;
+        let database = dir.path().join("run.sqlite");
+        let log = dir.path().join("requests.jsonl");
+        fixture(&database, "llm", &call())?;
+        write_log(&log, "llm", &[success(&call())])?;
+        let db = Connection::open(&database)?;
+        for payload in [
+            json!({"point_id":"0","cluster_id":1}),
+            json!({"point_id":"0","cluster_id":1,"previous_assignment_known":false,"previous_cluster_id":null,"changed":null}),
+            json!({"point_id":"0","cluster_id":1,"previous_assignment_known":true,"previous_cluster_id":2,"changed":true}),
+            json!({"point_id":"0","cluster_id":1,"previous_assignment_known":true,"previous_cluster_id":1,"changed":false}),
+            json!({"point_id":"0","cluster_id":null,"previous_assignment_known":true,"previous_cluster_id":null,"changed":false}),
+        ] {
+            db.execute(
+                "INSERT INTO events(kind,payload) VALUES('reassign',?)",
+                [payload.to_string()],
+            )?;
+        }
+        let run = read_run(&database, &log, 2, "llm")?;
+        assert_eq!(run.measurement["reassignment_evaluations"], 5);
+        assert_eq!(run.measurement["reassignment_id_moves"], 1);
+        assert_eq!(run.measurement["reassignment_unchanged"], 2);
+        assert_eq!(run.measurement["reassignment_origin_unknown"], 2);
+        db.execute("INSERT INTO events(kind,payload) VALUES('reassign',?)",[json!({"point_id":"0","cluster_id":1,"previous_assignment_known":true,"previous_cluster_id":1,"changed":true}).to_string()])?;
+        assert!(
+            read_run(&database, &log, 2, "llm").is_err(),
+            "forged changed flag was accepted"
+        );
+        Ok(())
+    }
 
     fn call() -> CallRecord {
         CallRecord {
