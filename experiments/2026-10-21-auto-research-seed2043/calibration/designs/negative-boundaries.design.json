@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "design_id": "calibration-negative-boundaries-v1",
+  "modality": "text",
+  "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request.",
+  "definitions": [
+    {
+      "id": 11,
+      "name": "Banking",
+      "description": "Requests about bank accounts, bank cards, balances, and banking transactions belong here. Include checking and savings accounts, deposits, withdrawals, money transfers, debit card PINs, declined bank cards, and routine access to banking services. Judge the requested banking action or information rather than incidental wording. Exclude Cooking when the request is actually about preparing food, even if a purchase is mentioned. Exclude Weather when the requested information concerns atmospheric conditions. Exclude Transportation when the person asks about passenger routes, departure times, or journey tickets rather than the bank payment itself. A ticket payment problem belongs here only when the bank account, card, or transaction is the explicit subject. Other remains available for requests outside these categories."
+    },
+    {
+      "id": 29,
+      "name": "Cooking",
+      "description": "Requests about preparing food, cooking methods, recipes, ingredients, and baking belong here. Include preparation steps, cooking durations, roasting, boiling, and substitutions used to make a dish. Judge the culinary purpose rather than incidental words about time, money, or location. Exclude Banking when the request concerns a bank account, bank card, balance, or transfer rather than food preparation. Exclude Weather when it asks about atmospheric temperature, rain, snow, or wind rather than kitchen heat. Exclude Transportation when it asks about passenger routes, schedules, or tickets rather than making a meal. Oven temperature and cooking time stay here because their purpose is preparing food. Other remains available for unrelated requests outside all four categories."
+    },
+    {
+      "id": 43,
+      "name": "Weather",
+      "description": "Requests about outdoor atmospheric conditions and weather forecasts belong here. Include air temperature, rain, snow, wind, and expected conditions for a location or time. Judge the atmospheric information being requested rather than a place name or incidental travel context. Exclude Banking when the subject is an account, card, balance, or banking transaction. Exclude Cooking when the temperature or duration concerns preparing food rather than the outdoor atmosphere. Exclude Transportation when the person asks about a passenger route, schedule, departure, or ticket rather than weather along that journey. A forecast for an airport still belongs here when weather is the explicit question. Other remains available for unrelated facts and requests outside these categories."
+    },
+    {
+      "id": 71,
+      "name": "Transportation",
+      "description": "Requests about passenger transportation, routes, schedules, departures, and journey tickets belong here. Include taking a bus, train, or subway and finding a service that reaches a destination. Judge the requested journey information rather than incidental references to time, cost, or a location. Exclude Banking when the actual issue is a bank account, card, balance, or transaction rather than using a transportation service. Exclude Cooking when the request concerns food preparation or recipe instructions. Exclude Weather when the requested answer concerns atmospheric conditions or a forecast rather than a route or departure. Asking which bus reaches an airport stays here even if the trip happens tomorrow. Other remains available for unrelated requests outside all four categories."
+    }
+  ],
+  "provenance": {
+    "origin": "Handwritten synthetic calibration; intended membership is held constant across styles.",
+    "description_style": "negative-boundaries",
+    "evidence_ids": [],
+    "word_count_rule": "Unicode whitespace-separated description tokens; names excluded.",
+    "description_word_counts": {
+      "11": 115,
+      "29": 112,
+      "43": 112,
+      "71": 115
+    },
+    "interpretation": "Style and wording change with length. This is not a pure length ablation."
+  }
+}

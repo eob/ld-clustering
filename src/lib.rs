@@ -2,6 +2,7 @@ pub mod agreement;
 pub mod agreement_data;
 pub mod agreement_metrics;
 pub mod agreement_review;
+pub mod auto_research;
 pub mod datasets;
 pub mod engine;
 pub mod metrics;

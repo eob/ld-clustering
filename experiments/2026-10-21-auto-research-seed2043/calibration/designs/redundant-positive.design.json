@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "design_id": "calibration-redundant-positive-v1",
+  "modality": "text",
+  "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request.",
+  "definitions": [
+    {
+      "id": 11,
+      "name": "Banking",
+      "description": "Requests about banking services, bank accounts, bank cards, and the movement or availability of money held by a bank. Include checking and savings accounts, their balances, deposits, withdrawals, transfers between accounts, and routine account management. Questions about a debit card, its PIN, a declined bank card, or access to an account belong here. A request can ask how a banking feature works or ask for information about the person's own banking activity. The central subject is the account, card, transaction, or banking service itself. Membership follows this practical banking purpose even when a particular bank is unnamed. Include ordinary paraphrases of these banking needs and direct questions about using the relevant financial account."
+    },
+    {
+      "id": 29,
+      "name": "Cooking",
+      "description": "Requests about preparing food and following or adapting a recipe. Include cooking, baking, roasting, boiling, ingredients, quantities used in a dish, and substitutions made while preparing a meal. Questions about cooking times, preparation steps, heat, or techniques belong here when the purpose is to make food. A person may name a dish, a single ingredient, or a method and still be asking for culinary help. The central subject is the practical process of making something to eat. Membership does not require the exact words recipe or cooking. Include ordinary paraphrases about food preparation, ingredient choices, and steps that help a cook produce the intended dish in a kitchen."
+    },
+    {
+      "id": 43,
+      "name": "Weather",
+      "description": "Requests about weather and atmospheric conditions for a place or time. Include temperature outdoors, rain, snow, wind, and forecasts describing expected conditions. Questions about today's weather, conditions tomorrow, or a forecast for a named location belong here. A request can concern a specific atmospheric measurement or a broader summary of what the weather will be like. The central subject is the outdoor atmosphere rather than an unrelated fact about the location. Membership does not require the exact word weather when the request clearly asks about precipitation, air temperature, wind, or another atmospheric condition. Include ordinary paraphrases about current conditions and predicted changes in the local weather over time."
+    },
+    {
+      "id": 71,
+      "name": "Transportation",
+      "description": "Requests about traveling as a passenger and using transportation services to reach a destination. Include buses, trains, subway journeys, routes, departure times, schedules, tickets, and connections between stops or stations. Questions about when a service leaves, which route reaches a place, or how to obtain a journey ticket belong here. A person may identify a route number, a station, an airport, or a destination while asking for help with the trip. The central subject is the passenger journey or the service that carries the traveler. Membership does not require a particular operator or city. Include ordinary paraphrases about planning and taking these journeys and using the relevant transportation service."
+    }
+  ],
+  "provenance": {
+    "origin": "Handwritten synthetic calibration; intended membership is held constant across styles.",
+    "description_style": "redundant-positive",
+    "evidence_ids": [],
+    "word_count_rule": "Unicode whitespace-separated description tokens; names excluded.",
+    "description_word_counts": {
+      "11": 113,
+      "29": 108,
+      "43": 108,
+      "71": 109
+    },
+    "interpretation": "Style and wording change with length. This is not a pure length ablation."
+  }
+}

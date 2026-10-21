@@ -1,10 +1,10 @@
 # Improve shared-catalog agreement through bounded adaptive experiments
 
-**Status:** In Progress
+**Status:** In Review
 **Type:** Investigation
 **Filed:** 2026-10-21
 **Branch:** feat-guidance-auto-research
-**Pull request:** not opened
+**Pull request:** https://github.com/eob/ld-clustering/pull/4 (draft; experiments in progress)
 
 ## Goal / failure mode
 
@@ -105,8 +105,8 @@ are sampling noise, reference instability or increased rejection.
 
 ## Current state
 
-Accepted by the user on 2026-10-21. Protocol/data feasibility and minimal Rust
-runner design are in progress; no follow-up paid calls have started. This clean
+Accepted by the user on 2026-10-21. The separate Rust runner and frozen protocol
+are prepared; no follow-up paid calls have started. This clean
 worktree was created from origin/main and fast-forwarded to the accepted f78dcf9
 dependency. The earlier experiment's worktree remains frozen. Its PR #3 must
 land before this dependent PR is finalized against refreshed main.
@@ -124,3 +124,48 @@ land before this dependent PR is finalized against refreshed main.
   and https://developers.openai.com/api/docs/guides/decisions .
 - Website planning continues in
   `eob/kaya-web:tickets/open/feature-ld-guided-agreement-report.md` and PR #2226.
+
+### Fresh text selection witness
+
+The focused preparation test first fails with
+`Error: fresh auto research partition selection is not implemented`. The
+implemented deterministic selector then passes, preserving domain quotas and
+excluding prior normalized content and duplicates across both fresh partitions.
+The actual selected text manifest SHA-256 is
+`2712312223ad68fa98dd01add1343c784e3ca71348aab69b44ab1535d76c2e9f`:
+200 development and 1,000 untouched confirmation items from the same pinned
+test/oos_test sources, plus a preselected 100-item confirmation repeat.
+No classifier outcomes have been requested for these partitions.
+
+### Frozen follow-up design and dataset
+
+Protocol `0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65`
+binds all 52 allowed invocations: 24 synthetic calibration arms, four one-shot
+joint rewrites, 12 development arms, eight fresh confirmation arms, and four
+reference repeats. Description structure remains fixed. Compact and boundary
+candidates must improve named matches over all items, retain direct matches,
+and lose no more than two percentage points of either method's coverage before
+adoption. Candidate choice freezes before one confirmation comparison; retain
+negative candidates and all costs. Conditions SHA-256 is
+`a22381595393f3980fbb271b896359508d3dca553be7c1e3b58e017bfe931d22`.
+
+Dataset manifest `add80aa99c9b8015ad69ff76d9ba98c01f7ce2724ff32a9c84081e8b08d7c2d1`
+contains 200 development / 1,000 confirmation texts and 40 / 100 photographs,
+with preselected 100-text / 25-photo confirmation repeats. All 140 new supplied
+JPEGs preserve source bytes and aspect ratio; native long edges are at least
+1,024 pixels. Original-byte verification is available for 99, unavailable for
+41; publisher dimension/license evidence is retained for all. The dataset
+independent gate passed with receipt SHA-256
+`d72f1175670539a4ea7585eb9ef5e9722ef6007eb4e1bc0295e2f036bcd75518`.
+
+Before freeze, peer review caught two provenance gaps: omission of the complete
+500-candidate acquisition ledger and comparing RGB hashes from different JPEG
+decoders. The archive now includes the complete ledger and correct curation
+helper. Prior photo bytes are redecoded using the same Rust image decoder as
+new photos; Pillow hashes retain their separate decoder identity. Four focused
+preparation tests pass, including old manifests without precomputed pixel hashes.
+
+Zero-API inspection of 2,739 earlier primary native responses found every
+returned value in its recorded probability argmax set, exact option-value order,
+and no invalid or duplicate IDs. Fifteen were tied. This excludes that observed
+local mapping failure; it does not establish an API mechanism or semantic truth.
