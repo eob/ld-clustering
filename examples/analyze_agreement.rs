@@ -572,7 +572,7 @@ fn verify_bundle(saved: &ReviewBundle, rebuilt: &ReviewBundle) -> Result<()> {
                 && old.candidate_cluster_id == new.candidate_cluster_id
                 && old.a_is_reference == new.a_is_reference
                 && old.inclusion_probability_within_cell == new.inclusion_probability_within_cell,
-            "frozen review identity/selection key differs"
+            "frozen review identity/selection key differs: saved {old:?}; rebuilt {new:?}"
         );
     }
     // Image locations may change when an archive is relocated; evidence bytes stay pinned above.
@@ -637,6 +637,32 @@ mod tests {
         assert_eq!(fs::read(&output)?, before);
         let (saved, _): (ReviewSamplingPlan, _) = read(&output)?;
         assert_eq!(saved, predeclared_plan());
+        Ok(())
+    }
+
+    #[test]
+    fn persisted_sampling_probabilities_roundtrip_exactly() -> Result<()> {
+        for (selected, eligible) in [
+            (2, 11),
+            (7, 31),
+            (10, 11),
+            (1, 11),
+            (1, 89),
+            (1, 13),
+            (2, 42),
+            (2, 82),
+            (2, 127),
+            (2, 183),
+        ] {
+            let expected = selected as f64 / eligible as f64;
+            let bytes = serde_json::to_vec(&expected)?;
+            let restored: f64 = serde_json::from_slice(&bytes)?;
+            assert_eq!(
+                restored.to_bits(),
+                expected.to_bits(),
+                "persisted sampling probability {selected}/{eligible} changed during JSON decoding"
+            );
+        }
         Ok(())
     }
 }
