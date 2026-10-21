@@ -681,6 +681,16 @@ class Publication:
             for s in specs
             if s["kind"] == "rewrite" or s["phase"] == "repeats"
         ]
+        if kind == "confirmation":
+            extra.extend(
+                [
+                    "report/study-findings.md",
+                    "analysis/confirmation-diagnostics.json",
+                    "analysis/text-paging-posthoc.json",
+                    "qualitative/confirmation/summary.json",
+                    "readiness/final-interpretation-independent-check.json",
+                ]
+            )
         return dict(
             id=f"auto-{number}-{kind}",
             title=title,

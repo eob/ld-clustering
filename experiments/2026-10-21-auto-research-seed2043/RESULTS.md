@@ -1,8 +1,9 @@
 # Compact category guidance: development gains did not confirm
 
 The bounded follow-up completed all 52 registered invocations and 22 comparisons.
-Neither revised catalog improved agreement on fresh confirmation. Original
-descriptions remain the stronger measured confirmation baseline in this study.
+The frozen Boundary challenger did not improve agreement in either modality
+on fresh confirmation. Original descriptions remain the stronger measured
+confirmation baseline in this study.
 Agreement with Sol is distinct from semantic accuracy.
 
 The frozen runtime was `a3b38d7f9e535f300ac783b3aa4abeb77b17a54f`, executable
@@ -88,6 +89,25 @@ legitimate shared Other where the catalog lacks a landscape category.
 One sealed text case (“should i run every day”) appears to transpose its two
 rationales. Its original bytes and counts are preserved and flagged; it is
 excluded from the curated gallery, with no replacement review.
+
+## Post hoc concentration and page boundaries
+
+Text disagreements increased from 176 to 192, but unmatched Decisions choices
+of Knowledge & Learning fell from 89 to 62. Under Boundary, the largest cells
+were Sol Assistant versus Decisions Other (45) and Sol Personal Organization
+versus Decisions Assistant (32): 77/192 disagreements, or 40.1%. All 32 latter
+cases stop on the same first page. An exact example is “read my list of
+reminders,” with Sol choosing category 7 and Decisions category 8.
+
+All Decisions Knowledge choices follow first-page Other, as the algorithm
+requires; this prerequisite is not independent evidence of a pagination defect.
+For Boundary, 53/141 such choices occur where Sol accepted a first-page named
+category. Category semantics, position and page context are confounded. The
+source-bound `analysis/text-paging-posthoc.json` preserves full per-category
+counts, largest confusion cells, page cross-tabs and hash-selected examples.
+This analysis was designed after confirmation. The reminder example has no new
+blinded semantic judgment, and these counts neither identify the correct model
+nor establish a causal paging effect.
 
 ## Accounting and reproduction
 

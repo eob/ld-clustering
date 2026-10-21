@@ -356,3 +356,16 @@ helper tests. Receipts are `readiness/source-offline-validation.json` and
 frozen throughout paid classification. Raw API replay verifies accounting and
 assignment binding, not human accuracy or a provider/pagination mechanism.
 Evidence archival and the final report/publication checks remain delivery work.
+
+### Post hoc residual text concentration
+
+Source-bound page replay finds total text disagreements176→192 while unmatched
+Decisions Knowledge choices fall89→62. Boundary Assistant→Other45 and Personal
+Organization→Assistant32 account for77/192 differences; all32 latter cases stop
+on page1, including the exact held-out reminder-list example. These were
+post hoc, hash-selected illustrations without a new semantic review. Late
+Knowledge choices require page1Other by construction, so the association cannot
+establish a paging defect or identify the correct model. Full per-category,
+confusion and page cross-tabs are in `analysis/text-paging-posthoc.json`, with
+reproduction/source-guard receipt `readiness/text-paging-posthoc-check.json`.
+No new paid calls, selection or tuning followed this analysis.
