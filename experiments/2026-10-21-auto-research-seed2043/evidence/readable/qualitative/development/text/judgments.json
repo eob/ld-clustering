@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "phase": "development",
+  "modality": "text",
+  "packet_sha256": "aa4e4c5b0b863bc2e4dc4723f97a13eb095d0eb450eb4abb1b4a06e1d9092c03",
+  "reviewer": {
+    "kind": "coding-harness",
+    "model": "unknown (not exposed by harness)",
+    "compute_accounting": "outside experiment API ledger"
+  },
+  "judgments": [
+    {
+      "case_id": "3b62e060d7dbad39763e4f5e",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The request asks for a temperature, which can be a factual query; the meaning of \"ac\" is unclear.",
+              "severity": "unclear"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "If \"ac\" means air conditioning, the temperature concerns an appliance. The abbreviation is not expanded.",
+              "severity": "unclear"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Unexpanded abbreviations can leave temperature queries between general information, local weather, and appliance status."
+        }
+      ]
+    },
+    {
+      "case_id": "f22784bc61a8a26063f17490",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "A blocked account can concern banking, but the request does not identify the account as financial.",
+              "severity": "unclear"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The account type is unspecified, so the text does not establish a supplied subject category.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative"
+          ],
+          "boundary_note": "Account-access complaints need context to distinguish financial accounts from other service accounts."
+        }
+      ]
+    },
+    {
+      "case_id": "10ae54e66b35ceae3e352cf5",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Stock performance concerns financial values, which Money & Banking explicitly includes.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "This is a factual question, but its specific subject is financial performance.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "different_granularity"
+          ],
+          "boundary_note": "A factual question about financial values fits the financial subject more specifically than general knowledge."
+        }
+      ]
+    },
+    {
+      "case_id": "ef885f063c0fc4f287a71e8f",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Asking when a car was last in the shop concerns vehicle service history.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Vehicle service history is explicitly included in Cars & Vehicle Care.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Questions about past vehicle maintenance belong with vehicle care even when phrased as date retrieval."
+        }
+      ]
+    },
+    {
+      "case_id": "d5f58e28a18235fd2455b449",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "The request sets how the assistant should address the user, which the catalog explicitly covers.",
+              "severity": "major"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user asks the assistant to use a preferred name when answering.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Preferred forms of address are assistant response preferences."
+        }
+      ]
+    },
+    {
+      "case_id": "71455d8ee9c789ced76a7360",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "Addressing the assistant does not change the subject: the request asks about an existing reminder.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user asks to retrieve a reminder, and reminders are explicitly included here.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error"
+          ],
+          "boundary_note": "Requests to retrieve reminders belong with reminder management despite conversational wording."
+        }
+      ]
+    },
+    {
+      "case_id": "03d11249e4a52cff48dc8f8a",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request concerns a lost cellphone, and locating devices is explicitly included.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "The catalog supplies a category for locating devices, matching the lost-cellphone request.",
+              "severity": "major"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Help finding a personal device fits device interaction without an explicit locate command."
+        }
+      ]
+    },
+    {
+      "case_id": "64d55565b3ad7428abc8e293",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The request asks for a designer company, which can be a factual identification question. The referent of \"this\" is missing.",
+              "severity": "unclear"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Assistant background fits if \"this\" refers to the assistant, but the text does not establish that referent.",
+              "severity": "unclear"
+            }
+          },
+          "verdict": "insufficient_evidence",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Unresolved demonstratives can prevent distinguishing assistant provenance from general factual identification."
+        }
+      ]
+    },
+    {
+      "case_id": "1b908457e68c76e9de4490a9",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "Sending a text to a named person fits the supplied communication subject.",
+              "severity": "major"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user requests a direct interpersonal message to Katy.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "unjustified_other"
+          ],
+          "boundary_note": "Direct interpersonal messages fit communication even when the listed examples emphasize phone calls."
+        }
+      ]
+    },
+    {
+      "case_id": "3dbeb4814b34e846190c4528",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The question concerns credit-card transaction fees, explicitly within Money & Banking.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The subject is a credit-card fee; the overseas location supplies context.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "A travel location does not displace the financial subject of a card-fee question."
+        }
+      ]
+    },
+    {
+      "case_id": "73d5b9272cbaae48a24425f1",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user asks the assistant to place a phone call, an explicitly included action.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The recipient is a credit-card company, providing a banking context, but the requested action is a call.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Calling a financial service overlaps communication and banking; an explicit call request favors communication."
+        }
+      ]
+    },
+    {
+      "case_id": "a3735e8b199e4a80987ff07a",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request asks about reserving a restaurant table, explicitly covered by Food & Dining.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Restaurant reservation availability falls within Food & Dining.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Questions about restaurant reservation availability share the dining subject with making reservations."
+        }
+      ]
+    },
+    {
+      "case_id": "def34aeb80d04b02562ea637",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user wants to call another person, and making phone calls is explicitly included.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Calling a coworker is interpersonal communication.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "The relationship to the recipient does not change a simple phone-call request into an employee-benefits question."
+        }
+      ]
+    },
+    {
+      "case_id": "eeed9f9774216dd3a390c141",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request seeks the stores available at a shopping location, fitting the shopping subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The wording is a factual question, but its practical subject is shopping venues.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "different_granularity"
+          ],
+          "boundary_note": "Information about shopping venues fits shopping more specifically than a general factual-question category."
+        }
+      ]
+    }
+  ],
+  "failed": []
+}

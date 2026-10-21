@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "phase": "confirmation",
+  "modality": "text",
+  "sealed_at_utc": "2026-10-21T05:06:42.931023+00:00",
+  "packet_sha256": "4753ff186edb170af22402ca134fea6c4c0ace92eb6ec1cab34c570429ba4b55",
+  "judgments_sha256": "7a22200e90358f2eafd5512bbb46920d30b2da577b712d1b165a1add27427805",
+  "reviewer_instructions_sha256": "6cf216d8cef2f7d3aae3cf5e90d5a849fc41291c0f889ed93b8281e30ff071f5",
+  "reviewer_registration_sha256": "aa10190aaa6a11b7cd43743be1c49524292f871bf896bfbcb5b0512ef8bd0b55",
+  "expected_count": 46,
+  "accepted_count": 46,
+  "failed_count": 0,
+  "not_attempted_count": 0,
+  "not_attempted_case_ids": [],
+  "blinding": "This helper opened only packet, judgments, registered instructions and registration; no key was read. Seal precedes a separate root unblinding step. Coding-harness review is fallible and outside experiment API cost ledger."
+}

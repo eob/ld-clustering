@@ -127,10 +127,25 @@ identity/source/content checks. Original bytes were verified for 99; the other
 41 retain documented native dimensions and licenses without claiming retrieved
 original-byte verification.
 
-Start with the externally anchored archive manifest and
-`evidence/readable/reproduction/README.md`. The independent final audit is
+Start with the externally anchored archive manifest and `evidence/README.md`.
+After restoring the run payload, consult `reproduction/README.md`. The independent final audit is
 SHA-256 `2f720fac520610a592cab7662e5e3526cd749b99e4a3688be72e41fef5f07c1f`;
 repeat diagnostics are
 `1a5de02b75499b25959df7b7f5c874fe8827dc6b5b321f362088f126a9eabbf7`.
 The illustrated report and permanent research log are at
 <https://edwardbenson.com/goofing/ld-clustering>.
+
+The archive manifest SHA-256 is
+`74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07`.
+[EVIDENCE-VERIFICATION.json](EVIDENCE-VERIFICATION.json) records a separate
+verification against that literal external anchor: 397 selected dataset files
+and 1,054 raw run files, including the final nine-group/18-row method matrix.
+All 211 repository Python tests and 136 offline Rust tests passed; one explicitly
+paid Rust test was ignored. The original preregistration README and fixture
+checksums remain unchanged.
+
+From this experiment directory, verify without model calls:
+
+```sh
+python3 evidence/archive_auto_research.py verify evidence --manifest-sha256 74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07
+```

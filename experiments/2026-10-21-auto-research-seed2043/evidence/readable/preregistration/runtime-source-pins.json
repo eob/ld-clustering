@@ -1,0 +1,18 @@
+{
+  "commit": "a3b38d7f9e535f300ac783b3aa4abeb77b17a54f",
+  "committed_sources_verified": true,
+  "embedded_file_sha256": {
+    "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+    "Cargo.toml": "4d4ea297856bf41d699f76067319551e2170202d10c80199bac59a415e78b439",
+    "examples/auto_research.rs": "5b484ba861b6ffc9880928488027e61892b997e51c595a0255b498384d814106",
+    "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+    "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+    "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+    "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+    "src/auto_research.rs": "7a42f82457c1ec7dcab6e6756a688075fed5f9c422391f23ee797bd59f8258a5",
+    "src/lib.rs": "a2583e0285274c2d17186f63d3380a731b62f3c1db16c71cd9a417a394194ae3",
+    "src/provider.rs": "b423fef2075f66eeccf7f1a3e5e3d86750413f625f14d645b4b5ceb316d8e1fb",
+    "src/types.rs": "202b0875a4f725b4cd1467d5ce448143b1b49befb39d2936cc1399f4075255ae"
+  },
+  "executable_sha256": "2eed0a941e5f8e292940c0fd2f72d2432409c0456d3acb2a9314bdc2920f9f20"
+}

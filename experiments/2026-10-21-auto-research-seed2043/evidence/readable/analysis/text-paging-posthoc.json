@@ -1,0 +1,1573 @@
+{
+  "schema_version": 1,
+  "experiment": "guidance-auto-research",
+  "stage": "posthoc_text_paging",
+  "created_at_utc": "2026-10-21T05:29:47.574525+00:00",
+  "final_audit_sha256": "2f720fac520610a592cab7662e5e3526cd749b99e4a3688be72e41fef5f07c1f",
+  "script_sha256": "1808a33b332af41f4dcee1f99bc8c0a1bf0e993cf6b066f1b91a6cd4e457a97a",
+  "sources": {
+    "preregistration/protocol.json": "0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65",
+    "preregistration/conditions.json": "a22381595393f3980fbb271b896359508d3dca553be7c1e3b58e017bfe931d22",
+    "orders/text-canonical.json": "8f1f71b76c981d3e041bebb23a4e97e2f7b04450217977ceaba8a9378e832229",
+    "inputs/confirmation/text.jsonl": "14478e6acf67fd857b1d853bea85f534304c06130c3c255c8d45c62b6702c99d",
+    "confirmation/confirmation-text-baseline-llm.json": "0ea1a4178aac41c1a1568fbca7044dedd70852fecbb3750ee3abf1b40f32d14c",
+    "confirmation/confirmation-text-baseline-llm.progress.jsonl": "4784eb20c0e837d8429083fb2335abca8169d52072e4ba6e13e70fa6aa53f87f",
+    "confirmation/confirmation-text-baseline-ld.json": "860991df14afca46afdac4ce051c7133e2e7421386ffc4e20522b9938bf2f84a",
+    "confirmation/confirmation-text-baseline-ld.progress.jsonl": "e3985425144fdd1f79dab1d920edff707b104ea0d3b6cb232f11cbc6f149aa43",
+    "confirmation/confirmation-text-challenger-llm.json": "bc0cfdf06b120ca63ae450d4c602f524a355a54c117a187f62fb58f407d12732",
+    "confirmation/confirmation-text-challenger-llm.progress.jsonl": "e5de9585aa8e3968cbaf594fcff77cb71d5ff574f755ec17d02f66d04af74473",
+    "confirmation/confirmation-text-challenger-ld.json": "876d33407fc2dd88bf2881c195382e7f8815c54fa48f936b1d19a0c2255c0adf",
+    "confirmation/confirmation-text-challenger-ld.progress.jsonl": "abf3807536b61f7c4870f4e076aa7517f9867b638eb03fa8b77e56d086abb6de"
+  },
+  "conditions": {
+    "baseline": {
+      "n": 1000,
+      "direct_agreement_count": 824,
+      "named_agreement_count": 809,
+      "disagreement_count": 176,
+      "catalog": [
+        {
+          "description": "Bank accounts, credit cards, bills, payments, transfers, interest, rewards, credit scores, and transaction problems. Also includes budgeting, financial values, currency exchange, and insurance policies.",
+          "id": 1,
+          "name": "Money & Banking"
+        },
+        {
+          "description": "Paychecks, direct deposit, annual earnings, tax forms, employee benefits, and vacation or time-off balances and requests.",
+          "id": 2,
+          "name": "Work & Employee Benefits"
+        },
+        {
+          "description": "Trip planning, hotels, rental cars, flights, rides, sightseeing, and travel requirements or warnings. Also includes maps, current location, traffic, and local weather.",
+          "id": 3,
+          "name": "Travel & Navigation"
+        },
+        {
+          "description": "Restaurant recommendations, reviews, reservations, and wait times, along with recipes, cooking instructions, ingredient substitutions, calories, and nutrition.",
+          "id": 4,
+          "name": "Food & Dining"
+        },
+        {
+          "description": "Product selection, prices, purchases, shopping lists, and everyday consumer services such as dry cleaning. Includes personal-care product recommendations.",
+          "id": 5,
+          "name": "Shopping & Consumer Services"
+        },
+        {
+          "description": "Choosing, maintaining, repairing, and caring for a personal vehicle. Includes safety ratings, service history, oil changes, tires, fuel, mileage, and car washing.",
+          "id": 6,
+          "name": "Cars & Vehicle Care"
+        },
+        {
+          "description": "Managing calendars, meetings, reminders, to-do lists, alarms, and timers. Also includes making phone calls and arranging meeting spaces.",
+          "id": 7,
+          "name": "Personal Organization & Communication"
+        },
+        {
+          "description": "Conversation with the assistant about its identity, abilities, feelings, or background, and changes to its name, language, voice, or response behavior. Also includes connecting, locating, resetting, and controlling devices or appliances.",
+          "id": 8,
+          "name": "Assistant & Device Interaction"
+        },
+        {
+          "description": "General factual questions, explanations, definitions, mathematics, unit conversions, translations, and educational help. Includes science, history, law, and finding instruction or tutoring.",
+          "id": 9,
+          "name": "Knowledge & Learning"
+        },
+        {
+          "description": "Music and song identification, jokes, fun facts, games, dice rolls, coin flips, and creative requests. Also includes sports results and discussion of films or other media.",
+          "id": 10,
+          "name": "Entertainment & Creative Activities"
+        }
+      ],
+      "per_category": [
+        {
+          "category_id": null,
+          "category": "Other",
+          "sol_total": 30,
+          "decisions_total": 60,
+          "matching_count": 15,
+          "sol_different_id_count": 15,
+          "decisions_different_id_count": 45
+        },
+        {
+          "category_id": 1,
+          "category": "Money & Banking",
+          "sol_total": 211,
+          "decisions_total": 197,
+          "matching_count": 194,
+          "sol_different_id_count": 17,
+          "decisions_different_id_count": 3
+        },
+        {
+          "category_id": 2,
+          "category": "Work & Employee Benefits",
+          "sol_total": 58,
+          "decisions_total": 50,
+          "matching_count": 50,
+          "sol_different_id_count": 8,
+          "decisions_different_id_count": 0
+        },
+        {
+          "category_id": 3,
+          "category": "Travel & Navigation",
+          "sol_total": 115,
+          "decisions_total": 109,
+          "matching_count": 102,
+          "sol_different_id_count": 13,
+          "decisions_different_id_count": 7
+        },
+        {
+          "category_id": 4,
+          "category": "Food & Dining",
+          "sol_total": 93,
+          "decisions_total": 87,
+          "matching_count": 86,
+          "sol_different_id_count": 7,
+          "decisions_different_id_count": 1
+        },
+        {
+          "category_id": 5,
+          "category": "Shopping & Consumer Services",
+          "sol_total": 43,
+          "decisions_total": 21,
+          "matching_count": 21,
+          "sol_different_id_count": 22,
+          "decisions_different_id_count": 0
+        },
+        {
+          "category_id": 6,
+          "category": "Cars & Vehicle Care",
+          "sol_total": 66,
+          "decisions_total": 72,
+          "matching_count": 61,
+          "sol_different_id_count": 5,
+          "decisions_different_id_count": 11
+        },
+        {
+          "category_id": 7,
+          "category": "Personal Organization & Communication",
+          "sol_total": 97,
+          "decisions_total": 72,
+          "matching_count": 70,
+          "sol_different_id_count": 27,
+          "decisions_different_id_count": 2
+        },
+        {
+          "category_id": 8,
+          "category": "Assistant & Device Interaction",
+          "sol_total": 174,
+          "decisions_total": 121,
+          "matching_count": 116,
+          "sol_different_id_count": 58,
+          "decisions_different_id_count": 5
+        },
+        {
+          "category_id": 9,
+          "category": "Knowledge & Learning",
+          "sol_total": 76,
+          "decisions_total": 164,
+          "matching_count": 75,
+          "sol_different_id_count": 1,
+          "decisions_different_id_count": 89
+        },
+        {
+          "category_id": 10,
+          "category": "Entertainment & Creative Activities",
+          "sol_total": 37,
+          "decisions_total": 47,
+          "matching_count": 34,
+          "sol_different_id_count": 3,
+          "decisions_different_id_count": 13
+        }
+      ],
+      "top_confusion_cells": [
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "decisions_id": null,
+          "decisions_category": "Other",
+          "count": 24,
+          "fraction_of_all_disagreements": 0.13636363636363635,
+          "examples": [
+            {
+              "item_id": "bbb8e57342edf8c30248",
+              "text": "watch the stories on instagram",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "326e4d9cd6f8e8d9e857",
+              "text": "i apprecaite the help from you",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "c246ec0e636abeb507c6",
+              "text": "hola!",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 20,
+          "fraction_of_all_disagreements": 0.11363636363636363,
+          "examples": [
+            {
+              "item_id": "5720647981d90b0950bb",
+              "text": "yes, ai, that is correct",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "976bc792e929bfbce385",
+              "text": "what'd you say",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "ca94767cffb2907d2044",
+              "text": "thanks for all your help",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 7,
+          "sol_category": "Personal Organization & Communication",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 15,
+          "fraction_of_all_disagreements": 0.08522727272727272,
+          "examples": [
+            {
+              "item_id": "a33a02731bfdd878e9a1",
+              "text": "please tell me what today is",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "03e534670d5734783829",
+              "text": "i need to know tomorrow's date",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "0b7ea5d3cba8f851ffdb",
+              "text": "what's the name of the day today",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": null,
+          "sol_category": "Other",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 14,
+          "fraction_of_all_disagreements": 0.07954545454545454,
+          "examples": [
+            {
+              "item_id": "bd582bb4e229b75f8b22",
+              "text": "yes, that's right",
+              "sol_page_choices": [
+                null,
+                null
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "d894c3c61c9fee553f83",
+              "text": "can you give me some stress management tips",
+              "sol_page_choices": [
+                null,
+                null
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "80dea6da9912dedba84e",
+              "text": "should i run every day",
+              "sol_page_choices": [
+                null,
+                null
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 3,
+          "sol_category": "Travel & Navigation",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 13,
+          "fraction_of_all_disagreements": 0.07386363636363637,
+          "examples": [
+            {
+              "item_id": "3e9e1d1db0943a87ca88",
+              "text": "is electricity the same in france",
+              "sol_page_choices": [
+                3
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "fa73841e292d693a4b4d",
+              "text": "what is the timezone for houston",
+              "sol_page_choices": [
+                3
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "26b486d867fb5e5f154c",
+              "text": "what are some things i can do on the way to work",
+              "sol_page_choices": [
+                3
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "decisions_id": 10,
+          "decisions_category": "Entertainment & Creative Activities",
+          "count": 13,
+          "fraction_of_all_disagreements": 0.07386363636363637,
+          "examples": [
+            {
+              "item_id": "e056ad41ffeaf82900c9",
+              "text": "play the next one",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                10
+              ]
+            },
+            {
+              "item_id": "285695b16bb097908d13",
+              "text": "can you go to the next song",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                10
+              ]
+            },
+            {
+              "item_id": "06279270bb611d2feab0",
+              "text": "next song",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 5,
+          "sol_category": "Shopping & Consumer Services",
+          "decisions_id": 6,
+          "decisions_category": "Cars & Vehicle Care",
+          "count": 11,
+          "fraction_of_all_disagreements": 0.0625,
+          "examples": [
+            {
+              "item_id": "07b2e8c8e1282179fdd8",
+              "text": "did carrots get on my shopping list",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                6
+              ]
+            },
+            {
+              "item_id": "5c1aa1dc1faecb6bd696",
+              "text": "order my whole shopping list",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                6
+              ]
+            },
+            {
+              "item_id": "ed7f5688036921e1cab1",
+              "text": "are there any sales on groceries today",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 1,
+          "sol_category": "Money & Banking",
+          "decisions_id": null,
+          "decisions_category": "Other",
+          "count": 8,
+          "fraction_of_all_disagreements": 0.045454545454545456,
+          "examples": [
+            {
+              "item_id": "5b0304262e921439ca9b",
+              "text": "i think this transaction is bogus",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "96e9539484fae0f8deec",
+              "text": "start a portfolio on venture capital funding for me to look over",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "202396a7e0e6902e1192",
+              "text": "can you sell stocks for me",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 1,
+          "sol_category": "Money & Banking",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 7,
+          "fraction_of_all_disagreements": 0.03977272727272727,
+          "examples": [
+            {
+              "item_id": "b11e5370e362db664efc",
+              "text": "what taxes do i owe",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "ca6e2a0c755b6942096f",
+              "text": "what specific health plan do i have",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "1c140309df5c76d0405c",
+              "text": "tell me the full name of my health plan",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 2,
+          "sol_category": "Work & Employee Benefits",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 6,
+          "fraction_of_all_disagreements": 0.03409090909090909,
+          "examples": [
+            {
+              "item_id": "3cb3922eb89e2e7e44c1",
+              "text": "what sort of health benefits do i have",
+              "sol_page_choices": [
+                2
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "f5dcac42e3f9cd0de428",
+              "text": "i got to know how long until the next day off",
+              "sol_page_choices": [
+                2
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "4a2004cc027fe9a23980",
+              "text": "tell me how much my state taxes amount to",
+              "sol_page_choices": [
+                2
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 4,
+          "sol_category": "Food & Dining",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 6,
+          "fraction_of_all_disagreements": 0.03409090909090909,
+          "examples": [
+            {
+              "item_id": "c318cdca04ad4848a656",
+              "text": "are cool people at the bar at 9:00 pm",
+              "sol_page_choices": [
+                4
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "99e088b22be9898e5630",
+              "text": "what is the expiration date for honey",
+              "sol_page_choices": [
+                4
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "d6c1495f058b95b824f5",
+              "text": "i want to learn something about apples",
+              "sol_page_choices": [
+                4
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 5,
+          "sol_category": "Shopping & Consumer Services",
+          "decisions_id": null,
+          "decisions_category": "Other",
+          "count": 6,
+          "fraction_of_all_disagreements": 0.03409090909090909,
+          "examples": [
+            {
+              "item_id": "f94926ed3e8ca3a03f6b",
+              "text": "track my order",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "ad61b0ed6da7f872c5fd",
+              "text": "can you help with delivery tracking",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "975123cc0bf192bed258",
+              "text": "i need to find a new babysitter",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "paging": {
+        "Sol": {
+          "n": 1000,
+          "first_page_named_count": 857,
+          "first_page_other_count": 143,
+          "second_page_count": 143,
+          "second_page_final": {
+            "knowledge": 76,
+            "entertainment": 37,
+            "Other": 30
+          },
+          "knowledge_after_first_page_other_count": 76,
+          "knowledge_denominator": 76
+        },
+        "Decisions": {
+          "n": 1000,
+          "first_page_named_count": 729,
+          "first_page_other_count": 271,
+          "second_page_count": 271,
+          "second_page_final": {
+            "knowledge": 164,
+            "entertainment": 47,
+            "Other": 60
+          },
+          "knowledge_after_first_page_other_count": 164,
+          "knowledge_denominator": 164
+        }
+      },
+      "first_page_cross_tab": {
+        "both_named": 727,
+        "sol_named_decisions_other": 130,
+        "sol_other_decisions_named": 2,
+        "both_other": 141
+      },
+      "decisions_knowledge_cross_sol": [
+        {
+          "sol_id": null,
+          "sol_category": "Other",
+          "count": 14
+        },
+        {
+          "sol_id": 1,
+          "sol_category": "Money & Banking",
+          "count": 7
+        },
+        {
+          "sol_id": 2,
+          "sol_category": "Work & Employee Benefits",
+          "count": 6
+        },
+        {
+          "sol_id": 3,
+          "sol_category": "Travel & Navigation",
+          "count": 13
+        },
+        {
+          "sol_id": 4,
+          "sol_category": "Food & Dining",
+          "count": 6
+        },
+        {
+          "sol_id": 5,
+          "sol_category": "Shopping & Consumer Services",
+          "count": 3
+        },
+        {
+          "sol_id": 6,
+          "sol_category": "Cars & Vehicle Care",
+          "count": 3
+        },
+        {
+          "sol_id": 7,
+          "sol_category": "Personal Organization & Communication",
+          "count": 15
+        },
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "count": 20
+        },
+        {
+          "sol_id": 9,
+          "sol_category": "Knowledge & Learning",
+          "count": 75
+        },
+        {
+          "sol_id": 10,
+          "sol_category": "Entertainment & Creative Activities",
+          "count": 2
+        }
+      ],
+      "decisions_knowledge_with_sol_first_page_named_count": 73,
+      "decisions_knowledge_denominator": 164,
+      "decisions_final_late_named_unmatched_count": 102,
+      "decisions_final_late_named_unmatched_fraction_of_disagreements": 0.5795454545454546
+    },
+    "challenger": {
+      "n": 1000,
+      "direct_agreement_count": 808,
+      "named_agreement_count": 796,
+      "disagreement_count": 192,
+      "catalog": [
+        {
+          "description": "Bank accounts and access; credit/debit cards, bills, payments, transfers, interest, rewards, credit scores, transaction histories, problems and fees, budgeting, financial values including stocks and property, currency exchange, and insurance policies.",
+          "id": 1,
+          "name": "Money & Banking"
+        },
+        {
+          "description": "Employee paychecks, payment timing, payroll direct deposit, annual earnings, tax forms, employee benefits, and vacation or time-off balances, usage, requests, and request status.",
+          "id": 2,
+          "name": "Work & Employee Benefits"
+        },
+        {
+          "description": "Travel planning and booking management; hotels, rental cars, flights and flight status, rides, sightseeing, travel requirements and warnings, maps, navigation, current location and location sharing, traffic, and local weather.",
+          "id": 3,
+          "name": "Travel & Navigation"
+        },
+        {
+          "description": "Restaurant recommendations, reviews, reservation availability and management, and wait times; recipes, meal suggestions, cooking instructions, ingredient substitutions, calories, and nutrition.",
+          "id": 4,
+          "name": "Food & Dining"
+        },
+        {
+          "description": "Shopping venues and stores, product selection, recommendations, prices, purchases, shopping-list management, and everyday consumer services such as dry cleaning and personal-care product recommendations.",
+          "id": 5,
+          "name": "Shopping & Consumer Services"
+        },
+        {
+          "description": "Personal vehicle selection, maintenance, repairs, and care, including safety ratings, service history and dates, maintenance schedules, oil changes, tires, fuel, mileage, and car washing.",
+          "id": 6,
+          "name": "Cars & Vehicle Care"
+        },
+        {
+          "description": "Managing and retrieving calendars, meetings, reminders, to-do lists, alarms, and timers; arranging meeting spaces; making phone calls and sending messages for personal or business communication.",
+          "id": 7,
+          "name": "Personal Organization & Communication"
+        },
+        {
+          "description": "Assistant identity, abilities, feelings, background, and social conversation; changing names, forms of address, language, voice, or response behavior; connecting, disconnecting, locating, resetting, and controlling devices or appliances, and checking their status.",
+          "id": 8,
+          "name": "Assistant & Device Interaction"
+        },
+        {
+          "description": "General factual questions and identification, explanations, definitions, mathematics, unit conversions, translations, and educational help, including science, history, law, homework assistance, and finding instruction or tutoring.",
+          "id": 9,
+          "name": "Knowledge & Learning"
+        },
+        {
+          "description": "Music, including playback and song identification; jokes, fun facts, games, dice rolls, coin flips, creative requests and activities, sports results, and discussion of films or other media.",
+          "id": 10,
+          "name": "Entertainment & Creative Activities"
+        }
+      ],
+      "per_category": [
+        {
+          "category_id": null,
+          "category": "Other",
+          "sol_total": 18,
+          "decisions_total": 75,
+          "matching_count": 12,
+          "sol_different_id_count": 6,
+          "decisions_different_id_count": 63
+        },
+        {
+          "category_id": 1,
+          "category": "Money & Banking",
+          "sol_total": 220,
+          "decisions_total": 201,
+          "matching_count": 201,
+          "sol_different_id_count": 19,
+          "decisions_different_id_count": 0
+        },
+        {
+          "category_id": 2,
+          "category": "Work & Employee Benefits",
+          "sol_total": 50,
+          "decisions_total": 53,
+          "matching_count": 47,
+          "sol_different_id_count": 3,
+          "decisions_different_id_count": 6
+        },
+        {
+          "category_id": 3,
+          "category": "Travel & Navigation",
+          "sol_total": 111,
+          "decisions_total": 107,
+          "matching_count": 101,
+          "sol_different_id_count": 10,
+          "decisions_different_id_count": 6
+        },
+        {
+          "category_id": 4,
+          "category": "Food & Dining",
+          "sol_total": 93,
+          "decisions_total": 88,
+          "matching_count": 86,
+          "sol_different_id_count": 7,
+          "decisions_different_id_count": 2
+        },
+        {
+          "category_id": 5,
+          "category": "Shopping & Consumer Services",
+          "sol_total": 43,
+          "decisions_total": 34,
+          "matching_count": 34,
+          "sol_different_id_count": 9,
+          "decisions_different_id_count": 0
+        },
+        {
+          "category_id": 6,
+          "category": "Cars & Vehicle Care",
+          "sol_total": 66,
+          "decisions_total": 62,
+          "matching_count": 61,
+          "sol_different_id_count": 5,
+          "decisions_different_id_count": 1
+        },
+        {
+          "category_id": 7,
+          "category": "Personal Organization & Communication",
+          "sol_total": 91,
+          "decisions_total": 46,
+          "matching_count": 46,
+          "sol_different_id_count": 45,
+          "decisions_different_id_count": 0
+        },
+        {
+          "category_id": 8,
+          "category": "Assistant & Device Interaction",
+          "sol_total": 192,
+          "decisions_total": 147,
+          "matching_count": 113,
+          "sol_different_id_count": 79,
+          "decisions_different_id_count": 34
+        },
+        {
+          "category_id": 9,
+          "category": "Knowledge & Learning",
+          "sol_total": 83,
+          "decisions_total": 141,
+          "matching_count": 79,
+          "sol_different_id_count": 4,
+          "decisions_different_id_count": 62
+        },
+        {
+          "category_id": 10,
+          "category": "Entertainment & Creative Activities",
+          "sol_total": 33,
+          "decisions_total": 46,
+          "matching_count": 28,
+          "sol_different_id_count": 5,
+          "decisions_different_id_count": 18
+        }
+      ],
+      "top_confusion_cells": [
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "decisions_id": null,
+          "decisions_category": "Other",
+          "count": 45,
+          "fraction_of_all_disagreements": 0.234375,
+          "examples": [
+            {
+              "item_id": "e40058eb54711c2c8eff",
+              "text": "enjoy your day, goodbye",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "14ead6ef04b2a22bf96d",
+              "text": "it could go either way",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "31ee98aa90b602b3c5f1",
+              "text": "repeat that",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 7,
+          "sol_category": "Personal Organization & Communication",
+          "decisions_id": 8,
+          "decisions_category": "Assistant & Device Interaction",
+          "count": 32,
+          "fraction_of_all_disagreements": 0.16666666666666666,
+          "examples": [
+            {
+              "item_id": "12843bbfd971e23b7f8f",
+              "text": "please put lawn mowing on my list of to dos",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                8
+              ]
+            },
+            {
+              "item_id": "e0debc5751c9529524cb",
+              "text": "read my list of reminders",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                8
+              ]
+            },
+            {
+              "item_id": "99268df18faddbc64d59",
+              "text": "i need a reminder to give the dog his medicine at ten tonight",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "decisions_id": 10,
+          "decisions_category": "Entertainment & Creative Activities",
+          "count": 17,
+          "fraction_of_all_disagreements": 0.08854166666666667,
+          "examples": [
+            {
+              "item_id": "36141b7e0fab4e5c4497",
+              "text": "skip ahead one song",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                10
+              ]
+            },
+            {
+              "item_id": "3187202d477619b62ac3",
+              "text": "play the song called i want it that way",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                10
+              ]
+            },
+            {
+              "item_id": "06279270bb611d2feab0",
+              "text": "next song",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 17,
+          "fraction_of_all_disagreements": 0.08854166666666667,
+          "examples": [
+            {
+              "item_id": "23f579cec8dd9c74667a",
+              "text": "i would like to know how long a charge is suppose to last on my phone",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "751b7f7ef8d284197af4",
+              "text": "what knowledge do you have on certain subjects",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "48c2fe6f8ddb69da0be5",
+              "text": "would you say it again please",
+              "sol_page_choices": [
+                8
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 3,
+          "sol_category": "Travel & Navigation",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 9,
+          "fraction_of_all_disagreements": 0.046875,
+          "examples": [
+            {
+              "item_id": "3e9e1d1db0943a87ca88",
+              "text": "is electricity the same in france",
+              "sol_page_choices": [
+                3
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "895c97c8b3e09949cfe0",
+              "text": "what timezone do they use in arizona",
+              "sol_page_choices": [
+                3
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "a596e6f74815168bd13e",
+              "text": "what are the required shots in mozambique",
+              "sol_page_choices": [
+                3
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 7,
+          "sol_category": "Personal Organization & Communication",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 9,
+          "fraction_of_all_disagreements": 0.046875,
+          "examples": [
+            {
+              "item_id": "7eccfec66aa8bae2bc23",
+              "text": "tell me today's date",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "9994c8d7f835880cf6b5",
+              "text": "what day are we in",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "a33a02731bfdd878e9a1",
+              "text": "please tell me what today is",
+              "sol_page_choices": [
+                7
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 1,
+          "sol_category": "Money & Banking",
+          "decisions_id": 2,
+          "decisions_category": "Work & Employee Benefits",
+          "count": 6,
+          "fraction_of_all_disagreements": 0.03125,
+          "examples": [
+            {
+              "item_id": "08c340ec402d17522f30",
+              "text": "i heard i can transfer my 401k, but don't know how, do you",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                2
+              ]
+            },
+            {
+              "item_id": "e91968b85e922c4aea09",
+              "text": "what are the steps to rollover my 401k",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                2
+              ]
+            },
+            {
+              "item_id": "cef5f032f307288684f6",
+              "text": "i'm out of my checks i need some new ones",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 1,
+          "sol_category": "Money & Banking",
+          "decisions_id": null,
+          "decisions_category": "Other",
+          "count": 6,
+          "fraction_of_all_disagreements": 0.03125,
+          "examples": [
+            {
+              "item_id": "b6809d8109f68e9bda07",
+              "text": "please allow my account to freeze",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "891e4922a27f535a0615",
+              "text": "i want to know what health plan i'm currently on",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "b75c3ab37c11aab532d3",
+              "text": "i need to know when my water bill is due",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 4,
+          "sol_category": "Food & Dining",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 6,
+          "fraction_of_all_disagreements": 0.03125,
+          "examples": [
+            {
+              "item_id": "d91500f9b215bc9767f1",
+              "text": "when is the egg expired",
+              "sol_page_choices": [
+                4
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "388a2842eb1edc07ebd3",
+              "text": "how many teaspoons will make one tablespoon",
+              "sol_page_choices": [
+                4
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "cb59f2022adda166c2b1",
+              "text": "how many flavors of mnm's are there",
+              "sol_page_choices": [
+                4
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": null,
+          "sol_category": "Other",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 6,
+          "fraction_of_all_disagreements": 0.03125,
+          "examples": [
+            {
+              "item_id": "80dea6da9912dedba84e",
+              "text": "should i run every day",
+              "sol_page_choices": [
+                null,
+                null
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "d894c3c61c9fee553f83",
+              "text": "can you give me some stress management tips",
+              "sol_page_choices": [
+                null,
+                null
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "4026a0a68bdfb52cb944",
+              "text": "either one might be",
+              "sol_page_choices": [
+                null,
+                null
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 1,
+          "sol_category": "Money & Banking",
+          "decisions_id": 9,
+          "decisions_category": "Knowledge & Learning",
+          "count": 5,
+          "fraction_of_all_disagreements": 0.026041666666666668,
+          "examples": [
+            {
+              "item_id": "b11e5370e362db664efc",
+              "text": "what taxes do i owe",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "4a2004cc027fe9a23980",
+              "text": "tell me how much my state taxes amount to",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            },
+            {
+              "item_id": "1c140309df5c76d0405c",
+              "text": "tell me the full name of my health plan",
+              "sol_page_choices": [
+                1
+              ],
+              "decisions_page_choices": [
+                null,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "sol_id": 5,
+          "sol_category": "Shopping & Consumer Services",
+          "decisions_id": null,
+          "decisions_category": "Other",
+          "count": 4,
+          "fraction_of_all_disagreements": 0.020833333333333332,
+          "examples": [
+            {
+              "item_id": "80eb4b0cf9e46e9aeccf",
+              "text": "report outage to my electric provider",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "ad61b0ed6da7f872c5fd",
+              "text": "can you help with delivery tracking",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            },
+            {
+              "item_id": "80733a1bf2049089f97b",
+              "text": "does dhl deliver to my address",
+              "sol_page_choices": [
+                5
+              ],
+              "decisions_page_choices": [
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      ],
+      "paging": {
+        "Sol": {
+          "n": 1000,
+          "first_page_named_count": 866,
+          "first_page_other_count": 134,
+          "second_page_count": 134,
+          "second_page_final": {
+            "knowledge": 83,
+            "entertainment": 33,
+            "Other": 18
+          },
+          "knowledge_after_first_page_other_count": 83,
+          "knowledge_denominator": 83
+        },
+        "Decisions": {
+          "n": 1000,
+          "first_page_named_count": 738,
+          "first_page_other_count": 262,
+          "second_page_count": 262,
+          "second_page_final": {
+            "knowledge": 141,
+            "entertainment": 46,
+            "Other": 75
+          },
+          "knowledge_after_first_page_other_count": 141,
+          "knowledge_denominator": 141
+        }
+      },
+      "first_page_cross_tab": {
+        "both_named": 733,
+        "sol_named_decisions_other": 133,
+        "sol_other_decisions_named": 5,
+        "both_other": 129
+      },
+      "decisions_knowledge_cross_sol": [
+        {
+          "sol_id": null,
+          "sol_category": "Other",
+          "count": 6
+        },
+        {
+          "sol_id": 1,
+          "sol_category": "Money & Banking",
+          "count": 5
+        },
+        {
+          "sol_id": 2,
+          "sol_category": "Work & Employee Benefits",
+          "count": 3
+        },
+        {
+          "sol_id": 3,
+          "sol_category": "Travel & Navigation",
+          "count": 9
+        },
+        {
+          "sol_id": 4,
+          "sol_category": "Food & Dining",
+          "count": 6
+        },
+        {
+          "sol_id": 5,
+          "sol_category": "Shopping & Consumer Services",
+          "count": 2
+        },
+        {
+          "sol_id": 6,
+          "sol_category": "Cars & Vehicle Care",
+          "count": 2
+        },
+        {
+          "sol_id": 7,
+          "sol_category": "Personal Organization & Communication",
+          "count": 9
+        },
+        {
+          "sol_id": 8,
+          "sol_category": "Assistant & Device Interaction",
+          "count": 17
+        },
+        {
+          "sol_id": 9,
+          "sol_category": "Knowledge & Learning",
+          "count": 79
+        },
+        {
+          "sol_id": 10,
+          "sol_category": "Entertainment & Creative Activities",
+          "count": 3
+        }
+      ],
+      "decisions_knowledge_with_sol_first_page_named_count": 53,
+      "decisions_knowledge_denominator": 141,
+      "decisions_final_late_named_unmatched_count": 80,
+      "decisions_final_late_named_unmatched_fraction_of_disagreements": 0.4166666666666667
+    }
+  },
+  "limits": [
+    "Post hoc descriptive analysis of the same1000 confirmation requests per design; no new experiment, selection, tuning or semantic truth labels.",
+    "Sol and Decisions have equal status in confusion counts. Unmatched means different stable IDs, not proven classification error.",
+    "Reaching page2 requires page1 Other by the registered first-match algorithm. The100% association for late choices is an algorithmic prerequisite, not independent evidence that pagination causes mistakes.",
+    "Page2 contains Knowledge & Learning and Entertainment; their broad semantic scope, position and page context are confounded. No natural-data randomized page/order ablation was performed in this study.",
+    "Conditional page/subcategory counts use their stated subset denominators, not the full-cohort primary agreement denominator.",
+    "Illustrative texts are selected after outcomes by a fixed hash rule within the largest confusion cells; they have not received a new semantic review and do not establish population accuracy."
+  ]
+}

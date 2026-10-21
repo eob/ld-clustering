@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "round": 3,
+  "modalities": {
+    "text": {
+      "baseline": {
+        "catalog_sha256": "ef82c91b6ef07d5141e1368811b35d45d7a67b829c11cc75356bd7e1854b4aaa",
+        "total_description_words": 215,
+        "target_per_description": 35,
+        "categories": [
+          {
+            "id": 1,
+            "name": "Money & Banking",
+            "words": 24,
+            "over_target": false
+          },
+          {
+            "id": 2,
+            "name": "Work & Employee Benefits",
+            "words": 16,
+            "over_target": false
+          },
+          {
+            "id": 3,
+            "name": "Travel & Navigation",
+            "words": 22,
+            "over_target": false
+          },
+          {
+            "id": 4,
+            "name": "Food & Dining",
+            "words": 17,
+            "over_target": false
+          },
+          {
+            "id": 5,
+            "name": "Shopping & Consumer Services",
+            "words": 18,
+            "over_target": false
+          },
+          {
+            "id": 6,
+            "name": "Cars & Vehicle Care",
+            "words": 22,
+            "over_target": false
+          },
+          {
+            "id": 7,
+            "name": "Personal Organization & Communication",
+            "words": 18,
+            "over_target": false
+          },
+          {
+            "id": 8,
+            "name": "Assistant & Device Interaction",
+            "words": 31,
+            "over_target": false
+          },
+          {
+            "id": 9,
+            "name": "Knowledge & Learning",
+            "words": 21,
+            "over_target": false
+          },
+          {
+            "id": 10,
+            "name": "Entertainment & Creative Activities",
+            "words": 26,
+            "over_target": false
+          }
+        ]
+      },
+      "compact": {
+        "catalog_sha256": "1e7591b8cc8941a27d024bb5b9a8846f7a4c192f5ac83e3f969d37bf8778ef93",
+        "total_description_words": 221,
+        "target_per_description": 35,
+        "categories": [
+          {
+            "id": 1,
+            "name": "Money & Banking",
+            "words": 25,
+            "over_target": false
+          },
+          {
+            "id": 2,
+            "name": "Work & Employee Benefits",
+            "words": 22,
+            "over_target": false
+          },
+          {
+            "id": 3,
+            "name": "Travel & Navigation",
+            "words": 25,
+            "over_target": false
+          },
+          {
+            "id": 4,
+            "name": "Food & Dining",
+            "words": 17,
+            "over_target": false
+          },
+          {
+            "id": 5,
+            "name": "Shopping & Consumer Services",
+            "words": 20,
+            "over_target": false
+          },
+          {
+            "id": 6,
+            "name": "Cars & Vehicle Care",
+            "words": 21,
+            "over_target": false
+          },
+          {
+            "id": 7,
+            "name": "Personal Organization & Communication",
+            "words": 16,
+            "over_target": false
+          },
+          {
+            "id": 8,
+            "name": "Assistant & Device Interaction",
+            "words": 27,
+            "over_target": false
+          },
+          {
+            "id": 9,
+            "name": "Knowledge & Learning",
+            "words": 23,
+            "over_target": false
+          },
+          {
+            "id": 10,
+            "name": "Entertainment & Creative Activities",
+            "words": 25,
+            "over_target": false
+          }
+        ]
+      },
+      "boundary": {
+        "catalog_sha256": "f51308f9643d809a0a7dbf7211e5fdfb757914a54473b6fa1a6a99b0c596234e",
+        "total_description_words": 257,
+        "target_per_description": 35,
+        "categories": [
+          {
+            "id": 1,
+            "name": "Money & Banking",
+            "words": 30,
+            "over_target": false
+          },
+          {
+            "id": 2,
+            "name": "Work & Employee Benefits",
+            "words": 23,
+            "over_target": false
+          },
+          {
+            "id": 3,
+            "name": "Travel & Navigation",
+            "words": 29,
+            "over_target": false
+          },
+          {
+            "id": 4,
+            "name": "Food & Dining",
+            "words": 20,
+            "over_target": false
+          },
+          {
+            "id": 5,
+            "name": "Shopping & Consumer Services",
+            "words": 23,
+            "over_target": false
+          },
+          {
+            "id": 6,
+            "name": "Cars & Vehicle Care",
+            "words": 24,
+            "over_target": false
+          },
+          {
+            "id": 7,
+            "name": "Personal Organization & Communication",
+            "words": 25,
+            "over_target": false
+          },
+          {
+            "id": 8,
+            "name": "Assistant & Device Interaction",
+            "words": 31,
+            "over_target": false
+          },
+          {
+            "id": 9,
+            "name": "Knowledge & Learning",
+            "words": 25,
+            "over_target": false
+          },
+          {
+            "id": 10,
+            "name": "Entertainment & Creative Activities",
+            "words": 27,
+            "over_target": false
+          }
+        ]
+      }
+    },
+    "images": {
+      "baseline": {
+        "catalog_sha256": "7314a799700d0c0dd64fd54169cede8ae80bf16ed1c5f55f85a88b91a2db4c18",
+        "total_description_words": 142,
+        "target_per_description": 28,
+        "categories": [
+          {
+            "id": 1,
+            "name": "Animals",
+            "words": 19,
+            "over_target": false
+          },
+          {
+            "id": 2,
+            "name": "Plants",
+            "words": 15,
+            "over_target": false
+          },
+          {
+            "id": 3,
+            "name": "Vehicles",
+            "words": 20,
+            "over_target": false
+          },
+          {
+            "id": 4,
+            "name": "People and activities",
+            "words": 24,
+            "over_target": false
+          },
+          {
+            "id": 5,
+            "name": "Food and drink",
+            "words": 14,
+            "over_target": false
+          },
+          {
+            "id": 6,
+            "name": "Electronics and appliances",
+            "words": 17,
+            "over_target": false
+          },
+          {
+            "id": 7,
+            "name": "Buildings and structures",
+            "words": 19,
+            "over_target": false
+          },
+          {
+            "id": 8,
+            "name": "Clothing and textiles",
+            "words": 14,
+            "over_target": false
+          }
+        ]
+      },
+      "compact": {
+        "catalog_sha256": "3c110a2acc25db3bc51d4b03877450df0fb6609e2e63efd4b5296b35a6332c2b",
+        "total_description_words": 140,
+        "target_per_description": 28,
+        "categories": [
+          {
+            "id": 1,
+            "name": "Animals",
+            "words": 18,
+            "over_target": false
+          },
+          {
+            "id": 2,
+            "name": "Plants",
+            "words": 15,
+            "over_target": false
+          },
+          {
+            "id": 3,
+            "name": "Vehicles",
+            "words": 20,
+            "over_target": false
+          },
+          {
+            "id": 4,
+            "name": "People and activities",
+            "words": 23,
+            "over_target": false
+          },
+          {
+            "id": 5,
+            "name": "Food and drink",
+            "words": 15,
+            "over_target": false
+          },
+          {
+            "id": 6,
+            "name": "Electronics and appliances",
+            "words": 17,
+            "over_target": false
+          },
+          {
+            "id": 7,
+            "name": "Buildings and structures",
+            "words": 18,
+            "over_target": false
+          },
+          {
+            "id": 8,
+            "name": "Clothing and textiles",
+            "words": 14,
+            "over_target": false
+          }
+        ]
+      },
+      "boundary": {
+        "catalog_sha256": "d4fa27cb0fbf507c1efa1d3df18bcc07a18a10c94b190632381c8eb03551c4fe",
+        "total_description_words": 165,
+        "target_per_description": 28,
+        "categories": [
+          {
+            "id": 1,
+            "name": "Animals",
+            "words": 19,
+            "over_target": false
+          },
+          {
+            "id": 2,
+            "name": "Plants",
+            "words": 13,
+            "over_target": false
+          },
+          {
+            "id": 3,
+            "name": "Vehicles",
+            "words": 23,
+            "over_target": false
+          },
+          {
+            "id": 4,
+            "name": "People and activities",
+            "words": 26,
+            "over_target": false
+          },
+          {
+            "id": 5,
+            "name": "Food and drink",
+            "words": 19,
+            "over_target": false
+          },
+          {
+            "id": 6,
+            "name": "Electronics and appliances",
+            "words": 25,
+            "over_target": false
+          },
+          {
+            "id": 7,
+            "name": "Buildings and structures",
+            "words": 22,
+            "over_target": false
+          },
+          {
+            "id": 8,
+            "name": "Clothing and textiles",
+            "words": 18,
+            "over_target": false
+          }
+        ]
+      }
+    }
+  },
+  "note": "Targets are recorded, not a regeneration gate; category structure is fixed, semantic preservation remains a fallible design instruction."
+}

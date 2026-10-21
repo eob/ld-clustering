@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-21",
+  "objective": "Improve agreement between LLM and Decisions assignments while retaining useful coverage, and preserve the evidence from every design.",
+  "summary": "The three bounded follow-up rounds ended with a negative fresh confirmation: text direct agreement 82.4% \u2192 80.8% (1,000 requests), photographs 98% \u2192 95% (100 photos), Original \u2192 frozen Boundary challenger. Matching named IDs over all items also fell: text 80.9% \u2192 79.6% and photos 87% \u2192 85%.\n\nDecisions made identical predictions across both photo guides; the three photo losses came from changed Sol answers. Preselected Sol repeat consistency was 96/100 \u2192 98/100 for text and 25/25 \u2192 24/25 for photos; these subset counts measure repeatability, not semantic accuracy. The development image gain did not reproduce, and the original guides remain the stronger measured confirmation baseline in this study. Complete follow-up experiment API cost was $6.5893167; coding and automated qualitative review compute lie outside that ledger. The log retains every design, development choice and regression below.\n\nSeparate evolving-manager full-cohort results improved; their coverage, conditional grouping and maintenance-cost tradeoffs appear in the streaming entry and full results.",
+  "history_inputs": {
+    "publication.json": "f603b8c8c432eec7e4fd833ac02171c42782aa2c6eac448430ee5d60f384bca8",
+    "guided-agreement.json": "265912815f0a11a3661373918ed04952bb6496397123c7c59d4d5ade48a18a98",
+    "guidance-diagnostics.json": "0646cb7b242b235f943b7b0407de236c00dfc85583ad3a0ac516e3b1c616f1e3",
+    "stream-publication.json": "d994c1d8fb9791de75dc1b8615f8e8134a2fdfc79d306855d5667bf52a596ffc"
+  },
+  "confirmation_summary_inputs": {
+    "validation/final-independent-audit.json": "2f720fac520610a592cab7662e5e3526cd749b99e4a3688be72e41fef5f07c1f",
+    "analysis/confirmation-diagnostics.json": "1a5de02b75499b25959df7b7f5c874fe8827dc6b5b321f362088f126a9eabbf7"
+  },
+  "rounds": [
+    {
+      "id": "initial-stream",
+      "title": "Initial streaming implementation",
+      "phase": "historical",
+      "status": "superseded",
+      "design": "Early live streaming run before the corrected v2 freeze.",
+      "hypothesis": "Learn whether an LLM-managed catalog can be paired with Decisions assignments.",
+      "dataset": "Earlier runs/main-seed42; not the later held-out photograph cohorts.",
+      "conditions": [
+        "Superseded by the separately frozen v2 experiment."
+      ],
+      "timestamps": null,
+      "measurements": null,
+      "accounting": null,
+      "decision": "Retain the design history; use the verified v2 archive for final earlier-streaming measurements.",
+      "next_question": "What changes when the corrected streaming system is frozen?",
+      "limits": [
+        "No final score is imported for this superseded run."
+      ],
+      "evidence": [
+        {
+          "label": "Frozen source and evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/dc0f7859e49dbf5462bb022d4aef638d32519804/experiments/2026-10-20-main-v2-seed42"
+        }
+      ]
+    },
+    {
+      "id": "v2-stream",
+      "title": "Corrected v2 streaming baseline",
+      "phase": "historical",
+      "status": "complete",
+      "design": "Each classifier maintains its own evolving catalog.",
+      "hypothesis": "Compare the complete LLM and LLM-plus-Decisions systems.",
+      "dataset": "1,000 CLINC requests and 100 Fashion-MNIST images at 28 \u00d7 28 grayscale pixels.",
+      "conditions": [
+        "Same input order and clustering configuration; independent learned catalogs.",
+        "ARI compares grouping and is not percent accuracy."
+      ],
+      "timestamps": null,
+      "measurements": [
+        {
+          "cohort": "Text / independently evolving catalogs",
+          "n": 1000,
+          "metric": "adjusted_rand_index",
+          "conditions": [
+            {
+              "name": "v2",
+              "value": 0.6829583195242417,
+              "llm_coverage": 0.97,
+              "ld_coverage": 0.836,
+              "both_other": null
+            }
+          ]
+        },
+        {
+          "cohort": "Images / independently evolving catalogs",
+          "n": 100,
+          "metric": "adjusted_rand_index",
+          "conditions": [
+            {
+              "name": "v2",
+              "value": 0.32878213232195536,
+              "llm_coverage": 1.0,
+              "ld_coverage": 0.6599999999999999,
+              "both_other": null
+            }
+          ]
+        }
+      ],
+      "accounting": null,
+      "decision": "Keep as the historical streaming benchmark, distinct from later shared-catalog direct agreement.",
+      "next_question": "How much disagreement remains when both methods receive one frozen catalog?",
+      "limits": [
+        "The text native cost ledger contains two calls with unknown usage.",
+        "Fashion-MNIST is a clothing task, not a natural-photograph benchmark."
+      ],
+      "evidence": [
+        {
+          "label": "Frozen source and evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/dc0f7859e49dbf5462bb022d4aef638d32519804/experiments/2026-10-20-main-v2-seed42"
+        }
+      ],
+      "detail_anchor": "#results"
+    },
+    {
+      "id": "fashion-fixed",
+      "title": "Frozen Fashion-MNIST catalog diagnostic",
+      "phase": "historical",
+      "status": "complete",
+      "design": "Reuse one LLM catalog to isolate assignment with both backends.",
+      "hypothesis": "Catalog evolution may account for some streaming differences.",
+      "dataset": "The same 100 Fashion-MNIST items reused from streaming.",
+      "conditions": [
+        "11 fixed categories; same category IDs.",
+        "Post hoc reused inputs, not a fresh held-out evaluation."
+      ],
+      "timestamps": null,
+      "measurements": [
+        {
+          "cohort": "Reused clothing images / shared catalog",
+          "n": 100,
+          "metric": "direct_id_agreement",
+          "conditions": [
+            {
+              "name": "Fixed catalog",
+              "value": 0.47,
+              "llm_coverage": 0.98,
+              "ld_coverage": 0.67,
+              "both_other": 1
+            }
+          ]
+        }
+      ],
+      "accounting": null,
+      "decision": "Assignment disagreement remains substantial even with a fixed catalog.",
+      "next_question": "Does better membership guidance help on fresh text and larger natural images?",
+      "limits": [
+        "Agreement does not establish human-validated accuracy."
+      ],
+      "evidence": [
+        {
+          "label": "Frozen source and evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/dc0f7859e49dbf5462bb022d4aef638d32519804/experiments/2026-10-20-main-v2-seed42"
+        }
+      ],
+      "detail_anchor": "#fixed-catalog-results"
+    },
+    {
+      "id": "rich-guidance",
+      "title": "Joint rich membership guidance",
+      "phase": "controlled",
+      "status": "complete",
+      "design": "Discover a shared catalog, freeze category IDs/order/structure, and jointly rewrite descriptions with recognition cues and boundaries.",
+      "hypothesis": "Catalog context and membership guidance should improve agreement.",
+      "dataset": "200 text requests and 60 photographs for discovery; a separate held-out cohort of 1,000 text requests and 100 natural photographs (seed 1042).",
+      "conditions": [
+        "Identical examples/catalog within both backends and each description condition.",
+        "Fixed K8 first-match paging with Other last.",
+        "Preselected Sol repeats and blinded automated semantic review."
+      ],
+      "timestamps": null,
+      "measurements": [
+        {
+          "cohort": "text / fresh fixed-catalog held-out",
+          "n": 1000,
+          "metric": "direct_id_agreement",
+          "conditions": [
+            {
+              "name": "Original short",
+              "value": 0.82,
+              "llm_coverage": 0.977,
+              "ld_coverage": 0.935,
+              "both_other": 11
+            },
+            {
+              "name": "Joint rich guidance",
+              "value": 0.522,
+              "llm_coverage": 0.974,
+              "ld_coverage": 0.906,
+              "both_other": 11
+            }
+          ]
+        },
+        {
+          "cohort": "text / fresh fixed-catalog held-out",
+          "n": 1000,
+          "metric": "named_id_agreement",
+          "conditions": [
+            {
+              "name": "Original short",
+              "value": 0.809,
+              "llm_coverage": 0.977,
+              "ld_coverage": 0.935,
+              "both_other": 11
+            },
+            {
+              "name": "Joint rich guidance",
+              "value": 0.511,
+              "llm_coverage": 0.974,
+              "ld_coverage": 0.906,
+              "both_other": 11
+            }
+          ]
+        },
+        {
+          "cohort": "images / fresh fixed-catalog held-out",
+          "n": 100,
+          "metric": "direct_id_agreement",
+          "conditions": [
+            {
+              "name": "Original short",
+              "value": 0.96,
+              "llm_coverage": 0.95,
+              "ld_coverage": 0.92,
+              "both_other": 5
+            },
+            {
+              "name": "Joint rich guidance",
+              "value": 0.81,
+              "llm_coverage": 0.94,
+              "ld_coverage": 0.9,
+              "both_other": 5
+            }
+          ]
+        },
+        {
+          "cohort": "images / fresh fixed-catalog held-out",
+          "n": 100,
+          "metric": "named_id_agreement",
+          "conditions": [
+            {
+              "name": "Original short",
+              "value": 0.91,
+              "llm_coverage": 0.95,
+              "ld_coverage": 0.92,
+              "both_other": 5
+            },
+            {
+              "name": "Joint rich guidance",
+              "value": 0.76,
+              "llm_coverage": 0.94,
+              "ld_coverage": 0.9,
+              "both_other": 5
+            }
+          ]
+        }
+      ],
+      "accounting": {
+        "known_cost_usd": "7.3871736",
+        "total_cost_usd": null,
+        "cost_complete": false
+      },
+      "decision": "Do not adopt the rich rewrite: direct and named agreement both regress in both modalities.",
+      "next_question": "Are wording, competitor repetition, choice position or paging associated with the regression?",
+      "limits": [
+        "Agreement differs from semantic accuracy; same-family review is fallible.",
+        "One original-photo review failed; no hidden replacement.",
+        "Cost subtotal includes catalog, primary, repeats and review; order diagnostics are recorded separately."
+      ],
+      "evidence": [
+        {
+          "label": "Frozen source and evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/f78dcf91409e9b088e78f5995e2a488a0ad63bc8/experiments/2026-10-20-guided-agreement-seed1042/evidence"
+        }
+      ],
+      "detail_anchor": "#guided-agreement"
+    },
+    {
+      "id": "order-page-diagnostic",
+      "title": "Category order and page-size diagnostics",
+      "phase": "controlled",
+      "status": "complete",
+      "design": "Reverse the guided category order and separately increase K on a preselected evaluation subset.",
+      "hypothesis": "Residual disagreement may depend on option order or page composition.",
+      "dataset": "A reused subset of 100 text requests and 25 photographs from the preceding control.",
+      "conditions": [
+        "Post hoc diagnostic, not a new confirmation sample.",
+        "Reverse text changes order and page membership together.",
+        "K16 photographs have identical request bodies to K8: extra repeats, not a pagination intervention."
+      ],
+      "timestamps": null,
+      "measurements": [
+        {
+          "cohort": "text / preselected reused diagnostic subset",
+          "n": 100,
+          "metric": "direct_id_agreement",
+          "conditions": [
+            {
+              "name": "Primary order K8",
+              "value": 0.49,
+              "llm_coverage": 0.98,
+              "ld_coverage": 0.9,
+              "both_other": 2
+            },
+            {
+              "name": "Reversed order K8",
+              "value": 0.61,
+              "llm_coverage": 0.95,
+              "ld_coverage": 0.84,
+              "both_other": 3
+            },
+            {
+              "name": "K16 / one text page",
+              "value": 0.34,
+              "llm_coverage": 0.97,
+              "ld_coverage": 0.97,
+              "both_other": 1
+            }
+          ]
+        },
+        {
+          "cohort": "images / preselected reused diagnostic subset",
+          "n": 25,
+          "metric": "direct_id_agreement",
+          "conditions": [
+            {
+              "name": "Primary order K8",
+              "value": 0.84,
+              "llm_coverage": 1.0,
+              "ld_coverage": 0.92,
+              "both_other": 0
+            },
+            {
+              "name": "Reversed order K8",
+              "value": 0.88,
+              "llm_coverage": 1.0,
+              "ld_coverage": 0.96,
+              "both_other": 0
+            },
+            {
+              "name": "K16 / identical photo request repeat",
+              "value": 0.88,
+              "llm_coverage": 1.0,
+              "ld_coverage": 0.92,
+              "both_other": 0
+            }
+          ]
+        }
+      ],
+      "accounting": {
+        "known_cost_usd": "0.3290662",
+        "total_cost_usd": "0.3290662",
+        "cost_complete": true
+      },
+      "decision": "The association warrants a small counterbalanced calibration; it does not justify relabeling returned IDs.",
+      "next_question": "Does the association persist on unambiguous constructed cases with every category rotated through every position?",
+      "limits": [
+        "Agreement does not establish human-validated accuracy."
+      ],
+      "evidence": [
+        {
+          "label": "Frozen source and evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/f78dcf91409e9b088e78f5995e2a488a0ad63bc8/experiments/2026-10-20-guided-agreement-seed1042/evidence"
+        }
+      ],
+      "detail_anchor": "#guidance-diagnostics"
+    },
+    {
+      "id": "contextual-stream",
+      "title": "Contextual manager in the full stream",
+      "phase": "adaptive_development",
+      "status": "complete",
+      "design": "Give the streaming manager the whole catalog, representative members, boundaries and scope-preserving revision instructions.",
+      "hypothesis": "Joint context and maintenance should reduce evolving-catalog mismatch.",
+      "dataset": "A separate reserved cohort of 1,000 text requests and 100 natural photographs (seed 1042).",
+      "conditions": [
+        "Independent evolving catalogs; report ARI/pairwise metrics rather than direct IDs.",
+        "Keep the earlier control and its held-out data unchanged.",
+        "The separate evolving-manager experiment improved full-cohort ARI: text 0.538 \u2192 0.610, photos 0.819 \u2192 0.971. Text Decisions coverage rose 70.8% \u2192 90.8%, but the post hoc same 674-item common-named text subset regressed in ARI (0.787 \u2192 0.722). Interpret this coverage/grouping tradeoff alongside increased maintenance and costs; independent evolving catalogs make direct ID percentages inapplicable."
+      ],
+      "timestamps": null,
+      "measurements": [
+        {
+          "cohort": "text / independently evolving reserved streams",
+          "n": 1000,
+          "metric": "adjusted_rand_index",
+          "conditions": [
+            {
+              "name": "Original",
+              "value": 0.5380962576698524,
+              "llm_coverage": 0.994,
+              "ld_coverage": 0.708,
+              "both_other": 5
+            },
+            {
+              "name": "Contextual",
+              "value": 0.6097577180170812,
+              "llm_coverage": 0.998,
+              "ld_coverage": 0.908,
+              "both_other": 2
+            }
+          ]
+        },
+        {
+          "cohort": "text / independently evolving reserved streams",
+          "n": 1000,
+          "metric": "pairwise_f1",
+          "conditions": [
+            {
+              "name": "Original",
+              "value": 0.5819817549030063,
+              "llm_coverage": 0.994,
+              "ld_coverage": 0.708,
+              "both_other": 5
+            },
+            {
+              "name": "Contextual",
+              "value": 0.6559111614424434,
+              "llm_coverage": 0.998,
+              "ld_coverage": 0.908,
+              "both_other": 2
+            }
+          ]
+        },
+        {
+          "cohort": "images / independently evolving reserved streams",
+          "n": 100,
+          "metric": "adjusted_rand_index",
+          "conditions": [
+            {
+              "name": "Original",
+              "value": 0.8186563297576327,
+              "llm_coverage": 0.95,
+              "ld_coverage": 0.98,
+              "both_other": 1
+            },
+            {
+              "name": "Contextual",
+              "value": 0.9711442425153153,
+              "llm_coverage": 0.95,
+              "ld_coverage": 0.97,
+              "both_other": 3
+            }
+          ]
+        },
+        {
+          "cohort": "images / independently evolving reserved streams",
+          "n": 100,
+          "metric": "pairwise_f1",
+          "conditions": [
+            {
+              "name": "Original",
+              "value": 0.8430493273542601,
+              "llm_coverage": 0.95,
+              "ld_coverage": 0.98,
+              "both_other": 1
+            },
+            {
+              "name": "Contextual",
+              "value": 0.9754098360655737,
+              "llm_coverage": 0.95,
+              "ld_coverage": 0.97,
+              "both_other": 3
+            }
+          ]
+        }
+      ],
+      "accounting": {
+        "known_cost_usd": "16.4293528",
+        "total_cost_usd": "16.4293528",
+        "cost_complete": true
+      },
+      "decision": "Interpret complete partition agreement alongside coverage, common-named subset diagnostics and the retirement/reassignment history in the full result section.",
+      "next_question": "Does any gain persist after checking coverage and shared rejection?",
+      "limits": [
+        "The contextual manager combines instructions, remembered examples and reconsideration; this comparison does not isolate individual components.",
+        "Direct category-ID agreement is inapplicable to independently evolving catalogs. Agreement is not human-validated accuracy.",
+        "Common-named subsets are selected after outcomes and condition on all four arms assigning an item. They do not replace full-cohort primary scores or establish semantic accuracy or causality."
+      ],
+      "evidence": [
+        {
+          "label": "Frozen source and evidence",
+          "url": "https://github.com/eob/ld-clustering/tree/f630cded18a3375b73284ab752fa2568a8e2e731/experiments/2026-10-20-guided-agreement-seed1042/streaming-evidence"
+        }
+      ],
+      "detail_anchor": "#reserved-streams"
+    }
+  ]
+}

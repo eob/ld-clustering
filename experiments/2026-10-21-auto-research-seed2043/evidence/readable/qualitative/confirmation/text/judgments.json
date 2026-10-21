@@ -1,0 +1,2091 @@
+{
+  "schema_version": 1,
+  "phase": "confirmation",
+  "modality": "text",
+  "packet_sha256": "4753ff186edb170af22402ca134fea6c4c0ace92eb6ec1cab34c570429ba4b55",
+  "reviewer": {
+    "kind": "coding-harness",
+    "model": "unknown (not exposed by harness)",
+    "compute_accounting": "outside experiment API ledger"
+  },
+  "judgments": [
+    {
+      "case_id": "606a2565d95bcfb790d6ee1e",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "The question concerns the assistant's own pets, not general facts about animals.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Asking what pets the assistant has concerns its personal background.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error"
+          ],
+          "boundary_note": "Personal questions about the assistant belong to background rather than general animal knowledge."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The question asks about the assistant's personal background through pet ownership.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The question asks about the assistant's personal background through pet ownership.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Personal questions about the assistant differ from general questions about pets."
+        }
+      ]
+    },
+    {
+      "case_id": "486e4cd46bd88d770de28517",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Stress-management advice has no explicit health or wellbeing category in this catalog.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Practical stress-management tips can be understood as educational guidance.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Wellbeing advice lies between broad educational help and a missing dedicated health category."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Stress-management tips can reasonably count as educational help.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "No supplied subject explicitly covers wellbeing or stress-management advice.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Broad educational help may encompass wellbeing advice, but health guidance is not expressly described."
+        }
+      ]
+    },
+    {
+      "case_id": "d53ada8f485bb7bfec1a330b",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Advancing playback can involve device control, although the request concerns playable content.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Playing the next item strongly suggests music or other entertainment playback.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Playback content is more specific than the device control used to play it."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The action can involve controlling a device or app, but no device operation is specified.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Playing the next item is naturally a music or entertainment request.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Music and entertainment content can overlap with the controls used to access it."
+        }
+      ]
+    },
+    {
+      "case_id": "9a8f3e6ef5f3ccab6dc2e4ed",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Locating a misplaced ordinary wallet is not covered by the listed subjects.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Locating a misplaced ordinary wallet is not covered by the listed subjects.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Locating an ordinary possession differs from locating a device or navigating to a place."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request concerns finding a personal possession; no supplied category clearly covers that.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The request concerns finding a personal possession; no supplied category clearly covers that.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "A wallet is not identified as a device, and finding possessions is not explicitly supplied."
+        }
+      ]
+    },
+    {
+      "case_id": "d6a0ab98d2bddbd292604706",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The dead battery could belong to a car or an unspecified device, so the subject is unresolved.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "A dead battery is a common vehicle-maintenance problem, although no vehicle is named.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Battery trouble crosses vehicle care and device troubleshooting when the object is unstated."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The wording is consistent with a car battery needing attention, but does not identify a car.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The missing battery owner leaves uncertainty between vehicle care and device issues.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A battery-related request needs an object to distinguish vehicle care from device support."
+        }
+      ]
+    },
+    {
+      "case_id": "b7362bdf2be5fe7397cd728b",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request asks for a factual current-time value for a named city.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "A city's local time can be useful travel information, but no trip or route is requested.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A place name alone need not turn a factual time lookup into travel planning."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "A request for the current time in Dallas fits general factual questions.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "A request for the current time in Dallas fits general factual questions.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Local-time facts can support travel, although no trip is stated here."
+        }
+      ]
+    },
+    {
+      "case_id": "147b8532f8dd2f6a3646904d",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Tomorrow's date is calendar-related, but the user does not ask to manage a calendar.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user asks for a simple factual date.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Retrieving a date differs from creating or managing calendar entries."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The date has a calendar association, but no calendar-management action is requested.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Knowing tomorrow's date is a general factual inquiry.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "A date fact can be separated from calendar scheduling or management."
+        }
+      ]
+    },
+    {
+      "case_id": "270b5dc5c0357e9464bf4d8f",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The process to stop is unspecified, leaving no definite practical subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Stopping a process can mean controlling an assistant action or device operation.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "An unspecified process could be an assistant operation, software task, or another activity."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Turning off a process is consistent with assistant or device control, though the object is unclear.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The wording supplies no object that establishes which catalog subject applies.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Generic cancellation wording needs context to establish assistant control or another task type."
+        }
+      ]
+    },
+    {
+      "case_id": "d602686282d04e945abc6cb4",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Comparing electricity in France can concern practical requirements for international travel.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The request asks for a factual comparison about electricity in a country.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Electrical standards abroad can be either travel preparation or general technical knowledge."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Electricity compatibility in another country can be part of travel requirements.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The wording is a general factual comparison about electricity in France.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Country-specific electrical information overlaps travel preparation and factual learning."
+        }
+      ]
+    },
+    {
+      "case_id": "f10ef8e27004ca7e7ceba96b",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Comparing the user's service plan with better available plans is consumer-service selection.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The answer requires information, but the specific subject is a consumer-service comparison.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Comparing purchasable service plans is more specific than general knowledge."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Seeking a better plan from a service provider fits consumer-service selection.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Seeking a better plan from a service provider fits consumer-service selection.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Plan selection concerns a consumer service rather than assistant settings."
+        }
+      ]
+    },
+    {
+      "case_id": "716ca7802544fc8a20453b9e",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user explicitly asks for garlic-bread recipes.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user explicitly asks for garlic-bread recipes.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Recipes are expressly included in Food & Dining.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Recipes are expressly included in Food & Dining.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        }
+      ]
+    },
+    {
+      "case_id": "0fdf85072f30489b076f2718",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Sorting a photo library by date is not among the supplied organizational or device operations.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Sorting a photo library by date is not among the supplied organizational or device operations.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Organizing photo files differs from managing calendars or task lists and from controlling devices."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The catalog does not explicitly cover photo-library organization.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The catalog does not explicitly cover photo-library organization.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Media-file organization lies outside the stated calendar, task, and device-control descriptions."
+        }
+      ]
+    },
+    {
+      "case_id": "23371604d0ed6b0d8da6c2a7",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "The catalog explicitly covers questions about the assistant's background.",
+              "severity": "major"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Asking what pets the assistant has is a personal-background question.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Personal background questions about the assistant differ from general pet information."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request concerns the assistant's own personal background.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The request concerns the assistant's own personal background.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "The second-person wording asks about the assistant rather than pet species generally."
+        }
+      ]
+    },
+    {
+      "case_id": "2f058c1d500fbc3ef483b123",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user seeks a shopping venue, which this category explicitly includes.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Finding the nearest location also has a navigation aspect.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Store discovery overlaps shopping venues and geographic navigation."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Finding a store fits the broad shopping subject, though venues are not explicit in this description.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The nearest-location request can reasonably be treated as navigation or a map lookup.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A store-location lookup falls between broad shopping needs and geographic navigation."
+        }
+      ]
+    },
+    {
+      "case_id": "70d63eab5e50901519e50147",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Creating a ten-minute timer is expressly included in personal organization.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "A timer may be controlled through a device, but timers have a specific supplied category.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "A named timer task is more specific than generic assistant or device control."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Managing timers explicitly includes creating a ten-minute timer.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Managing timers explicitly includes creating a ten-minute timer.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        }
+      ]
+    },
+    {
+      "case_id": "d1102c53bb87b6176e61c78e",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Thanks and goodbye are social conversation with the assistant.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "Social conversation is expressly included in Assistant & Device Interaction.",
+              "severity": "major"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Farewells and thanks are social assistant interaction rather than a separate practical task."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Thanks and goodbye fit broad assistant interaction, though this description does not expressly include social conversation.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "A social farewell is not explicitly included among the described subjects.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "This catalog describes assistant conversation chiefly through identity, abilities, feelings, and background."
+        }
+      ]
+    },
+    {
+      "case_id": "087153a8ccba20e912c03809",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Insomnia advice has no explicit health or medical category in the supplied catalog.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Tips for overcoming insomnia can be regarded as educational guidance.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Health advice may be understood broadly as learning, but a dedicated health subject is absent."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The catalog lacks an explicit health or sleep-advice subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The request seeks practical instruction that can fit broad educational help.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Personal health guidance overlaps educational help without being expressly described."
+        }
+      ]
+    },
+    {
+      "case_id": "dc28844ea31e9607d47ed724",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Sharing a joke can be social conversation, but jokes are assigned explicitly to entertainment.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user explicitly requests a humorous joke.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "A specific entertainment request is more precise than its social conversational setting."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Jokes are expressly listed in Entertainment & Creative Activities.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Jokes are expressly listed in Entertainment & Creative Activities.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        }
+      ]
+    },
+    {
+      "case_id": "7e7f501e902d8fd34ff9df28",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Asking the time zone of Texas is a general geographical fact question.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Time-zone information can support travel, but the user states no travel activity.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Geographical facts do not require an implied travel purpose."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "A place's time zone is useful travel information, although time zones are not expressly listed.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "A place's time zone is useful travel information, although time zones are not expressly listed.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A factual time-zone inquiry can overlap travel information without naming a trip."
+        }
+      ]
+    },
+    {
+      "case_id": "07237f8d6e464ba11a431ab2",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The user addresses an assistant, but the substantive operation is calendar management.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Adding an event is explicitly a calendar-management task.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "The task being performed is more specific than the assistant used to perform it."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Adding an event directly fits managing calendars.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Adding an event directly fits managing calendars.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        }
+      ]
+    },
+    {
+      "case_id": "86bbd267dcfa68f644252cf5",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The task being canceled is unspecified, so its subject cannot be established.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Canceling a task could concern a to-do item, although no list or reminder is named.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A task can be a personal to-do entry or an unrelated operation being performed."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Canceling the assistant's current action is a plausible assistant-interaction reading.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The unspecified task might belong to a subject that is not established in the text.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Cancellation of an assistant action differs from deletion of a scheduled or listed task."
+        }
+      ]
+    },
+    {
+      "case_id": "6e83f659e8bb066a8fc4cf55",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user asks which health-insurance plan they hold; insurance policies are expressly included.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "This asks for the user's own policy details rather than general factual education.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "different_granularity"
+          ],
+          "boundary_note": "Personal insurance-policy details differ from general medical knowledge or employer-benefit administration."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "Identifying the user's own insurance plan is not a general educational inquiry.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Health-plan identification concerns an insurance policy, explicitly included here.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error",
+            "different_granularity"
+          ],
+          "boundary_note": "Health insurance can overlap employee benefits, but employment is not stated here."
+        }
+      ]
+    },
+    {
+      "case_id": "6e4bcd020b3c8cc6998b1885",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "The fragment names a facility without requesting fiction, a game, or other entertainment.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The isolated phrase gives no task or context that establishes a supplied subject.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error"
+          ],
+          "boundary_note": "A topic fragment does not distinguish factual inquiry from a creative prompt."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "Nothing in the phrase establishes an entertainment or creative request.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The fragment lacks enough context to assign a definite practical subject.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error"
+          ],
+          "boundary_note": "A named topic alone does not establish whether the intended task is factual or creative."
+        }
+      ]
+    },
+    {
+      "case_id": "908df5ebe9ab02f861f6d40d",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Personal exercise-frequency advice has no explicit fitness or health category.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The exercise question can be treated as a request for educational guidance.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Fitness advice may fit broad learning while lacking a dedicated supplied health subject."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "No supplied category explicitly covers personal exercise recommendations.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Advice about running frequency can fall within broad educational help.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "The boundary is between general instruction and personal fitness guidance."
+        }
+      ]
+    },
+    {
+      "case_id": "d1363d2159addcfe0cc86487",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request concerns a breakfast restaurant's crowding and likely availability or wait.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The request concerns a breakfast restaurant's crowding and likely availability or wait.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Restaurant occupancy relates to dining availability and wait times."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Crowding at a breakfast place concerns restaurant availability and wait times.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Crowding at a breakfast place concerns restaurant availability and wait times.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Restaurant crowding is dining information even without a reservation request."
+        }
+      ]
+    },
+    {
+      "case_id": "77fc1ceb795f4ca391558dd3",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Transferring a 401k concerns moving retirement funds and financial accounts.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "A 401k is an employment-related retirement benefit, and the user asks how to transfer it.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Retirement-plan transfers overlap financial-account operations and employee benefits."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Transferring an employment-related retirement plan fits employee benefits.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Transferring an employment-related retirement plan fits employee benefits.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Retirement-plan administration can also concern transfers of financial assets."
+        }
+      ]
+    },
+    {
+      "case_id": "05d7120c27ffba0bcb03c75f",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "A current time-of-day fact has a supplied home in general factual questions.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user asks for a simple fact about whether noon has passed.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "unjustified_other"
+          ],
+          "boundary_note": "A factual clock inquiry differs from setting an alarm or managing a timer."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Whether it is after noon is a general factual time inquiry.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The question relates to timekeeping, but does not manage a calendar, alarm, or timer.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Time facts are distinct from personal scheduling and timer operations."
+        }
+      ]
+    },
+    {
+      "case_id": "4488fb09084b3a18d68c60dc",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The catalog does not explicitly describe viewing social-media stories or operating their app.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The catalog does not explicitly describe viewing social-media stories or operating their app.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Viewing social-media content sits between media entertainment and app operation, neither expressly described for this action."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Watching stories could involve app control, though the request does not identify a device-control operation.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Viewing social-media stories is not explicitly included among the described operations.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Social-media viewing can be treated as content consumption or app interaction."
+        }
+      ]
+    },
+    {
+      "case_id": "516701f53afb002868a1b631",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The question seeks linguistic or cultural instruction on saying hello in a Scottish manner.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "The user is asking how to say a greeting, not greeting the assistant or changing its behavior.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error"
+          ],
+          "boundary_note": "Learning a greeting in another speech variety differs from directly greeting the assistant."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Asking how to say hello in another speech variety fits language learning.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Asking how to say hello in another speech variety fits language learning.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Instruction about a greeting is different from using a greeting conversationally."
+        }
+      ]
+    },
+    {
+      "case_id": "7d4cad82d8f0a0a206839e8b",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The wording mentions knowledge, but asks about the assistant's scope rather than a subject-matter fact.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Asking what knowledge the assistant has concerns its abilities.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Questions about the assistant's knowledge coverage concern its capabilities."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The question concerns what subjects the assistant is capable of answering about.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The question concerns what subjects the assistant is capable of answering about.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Assistant capability questions differ from actual requests for subject-matter explanations."
+        }
+      ]
+    },
+    {
+      "case_id": "68e636703d26fbafcbd95432",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Counting the user's existing wardrobe requires personal-inventory information, not a supplied subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Counting the user's existing wardrobe requires personal-inventory information, not a supplied subject.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Retrieving a wardrobe inventory differs from shopping for clothing or calculating from supplied quantities."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "The request seeks an unknown personal inventory rather than general facts or arithmetic on given data.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The supplied catalog does not cover retrieving the user's wardrobe inventory.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error",
+            "missing_category"
+          ],
+          "boundary_note": "Personal inventory retrieval differs from general knowledge, shopping, and explicit arithmetic problems."
+        }
+      ]
+    },
+    {
+      "case_id": "c56b307514b3ca9fdf8f675f",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Hola is a direct social greeting to the assistant.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "Social conversation is expressly included in the assistant-interaction category.",
+              "severity": "major"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "A greeting used directly in conversation differs from a request to translate a word."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "A bare greeting is not explicitly covered by this catalog's assistant-conversation description.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "A direct greeting naturally fits broad assistant interaction, although social conversation is not expressly listed.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "The catalog describes conversation about assistant attributes but does not explicitly include general greetings."
+        }
+      ]
+    },
+    {
+      "case_id": "bd0abedbb7c05e8900c49de3",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user asks to purchase the items on a grocery shopping list.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The user asks to purchase the items on a grocery shopping list.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Buying groceries is shopping rather than recipe or nutrition advice."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Purchases and shopping lists explicitly cover buying a grocery list.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Purchases and shopping lists explicitly cover buying a grocery list.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "The purchasing action makes this a shopping request despite the food items."
+        }
+      ]
+    },
+    {
+      "case_id": "7191e29b2e9a103d227c6ccf",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The required gas rating naturally concerns fuel selection for a vehicle.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The request seeks information, but vehicle fuel is a more specific supplied subject.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Vehicle fuel requirements remain vehicle-care questions when phrased as factual inquiries."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Asking which gas rating is required fits choosing appropriate vehicle fuel.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The wording can be read as a factual question, but its fuel subject is more specific.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Fuel-rating advice overlaps general facts but has a direct vehicle-care category."
+        }
+      ]
+    },
+    {
+      "case_id": "241c4dfebee65ab7e9976cab",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user explicitly asks to advance to the next song.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Advancing a song uses playback controls, but music playback is explicitly assigned to entertainment.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "A music playback action is more specific than the device controls that implement it."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request explicitly concerns a song, fitting the music subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Device control could implement the action, but the named subject is music.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Music requests can involve device control while retaining music as their practical subject."
+        }
+      ]
+    },
+    {
+      "case_id": "98aabdcfe71335f6c314eff0",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Asking which pets the assistant owns concerns its background.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "The assistant's background is explicitly included, so Other omits a direct fit.",
+              "severity": "major"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "The user asks about the assistant's own life rather than general pet information."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Pet ownership is a personal-background question directed at the assistant.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Pet ownership is a personal-background question directed at the assistant.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Personal second-person questions differ from general animal facts."
+        }
+      ]
+    },
+    {
+      "case_id": "3ff5fe9f780d851f3d56474d",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "A well-wish and goodbye are social conversation with the assistant.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "Social conversation is expressly covered by Assistant & Device Interaction.",
+              "severity": "major"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Social leave-taking belongs to assistant interaction when social conversation is explicit."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "This is a farewell and well-wish rather than a factual or educational question.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The social farewell fits broad assistant interaction, although general social conversation is not explicit here.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A farewell is adjacent to assistant conversation, whose described scope here focuses on assistant attributes."
+        }
+      ]
+    },
+    {
+      "case_id": "93168f805fa897a0626daaa1",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The catalog has no dedicated exercise or fitness-guidance subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The user seeks practical instruction about exercise, which can fit broad educational help.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Personal training advice overlaps educational instruction without an explicit fitness category."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "No listed subject explicitly covers personal workout recommendations.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The request for exercise guidance can be read as educational help.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Fitness guidance sits between broad learning and a missing dedicated health subject."
+        }
+      ]
+    },
+    {
+      "case_id": "89c3c461bfc7555ed87f7c93",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The fragment supplies no subject or identifiable request, so Other is justified by insufficient context.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "insufficient_evidence",
+              "evidence": "The phrase gives no identifiable factual topic or learning request.",
+              "severity": "unclear"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [],
+          "boundary_note": "A context-dependent fragment cannot establish a practical subject on its own."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The fragment has no identifiable subject or actionable request.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The fragment has no identifiable subject or actionable request.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "An unresolved conversational reference supplies insufficient context for subject assignment."
+        }
+      ]
+    },
+    {
+      "case_id": "7705a7fd6a90c5fe95b0d0dc",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request asks about new music releases by Iron Maiden.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The request asks about new music releases by Iron Maiden.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "New releases by a musical act fit the music and entertainment subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "New releases by a musical act fit the music and entertainment subject.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        }
+      ]
+    },
+    {
+      "case_id": "d09a8824e38732e82631a1a9",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "A 401k rollover is an administrative matter involving an employment retirement benefit.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "A rollover concerns moving retirement funds between financial accounts.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "A retirement-plan rollover overlaps employee-benefit administration and financial-account transfers."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Instructions for rolling over an employment retirement plan fit employee benefits.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Instructions for rolling over an employment retirement plan fit employee benefits.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Retirement benefits can also be treated as financial accounts when funds are transferred."
+        }
+      ]
+    },
+    {
+      "case_id": "6126c9536b33cc73e073bfee",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Checking completion of a Visa-card application concerns a banking card.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Checking completion of a Visa-card application concerns a banking card.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "A card application is a banking matter; an immigration visa would have a different subject."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The user asks about the status of a banking-card application.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "unsupported",
+              "evidence": "Credit-card matters are expressly included, giving the request a direct supplied subject.",
+              "severity": "major"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "The phrase visa card identifies a card application rather than an unspecified application."
+        }
+      ]
+    },
+    {
+      "case_id": "b2ae8500e7462a9d64bb3785",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Updating a social-media status is a form of personal communication, though public posting is not expressly named.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Public social-media posting is not explicitly described among the listed communication operations.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Public status posting overlaps sending personal messages but is a distinct platform operation."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "A status update fits the broad communication subject, though the description names calls and scheduling instead.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "Social-media posting is not expressly included in this catalog's communication description.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "overlapping_or_incomplete_descriptions",
+            "missing_category"
+          ],
+          "boundary_note": "Broad communication can include public posting, while the stated operations do not explicitly cover it."
+        }
+      ]
+    },
+    {
+      "case_id": "93cfaa7dbc25ae256eaa876a",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The request concerns treatment for a rash, and the catalog has no explicit medical-care subject.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The request concerns treatment for a rash, and the catalog has no explicit medical-care subject.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Treating a rash differs from routine personal-care product selection, nutrition, or general factual explanation."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Personal medical-treatment advice has no explicit supplied category.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Personal medical-treatment advice has no explicit supplied category.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "A treatment recommendation differs from ordinary consumer product selection or general educational facts."
+        }
+      ]
+    },
+    {
+      "case_id": "bf30c8f54274ea5c6cc1c6dc",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Checking meeting-room availability directly concerns arranging meeting spaces.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The user addresses an assistant, but the requested operation has a specific meeting-space category.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "Meeting-space logistics are more specific than generic assistant interaction."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The catalog explicitly includes arranging meeting spaces.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The catalog explicitly includes arranging meeting spaces.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": ""
+        }
+      ]
+    },
+    {
+      "case_id": "6685795589951342ac060701",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "Local time can support travel planning, but the user states no travel or navigation activity.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The request asks for a factual current-time value in Las Vegas.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Naming a city does not by itself establish a travel task rather than a factual time lookup."
+        },
+        {
+          "pair_id": 2,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The named city gives a possible travel-information context, but no trip is requested.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The current time in a city is a general factual question.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Local-time facts overlap travel information without requiring an implied journey."
+        }
+      ]
+    }
+  ],
+  "failed": []
+}

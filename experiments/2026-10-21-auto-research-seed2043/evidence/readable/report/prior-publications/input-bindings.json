@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-21T12:12:24.425773+00:00",
+  "scope": "Exact published report DTO bytes copied for portable method-matrix reproduction; prior source/archive commit and manifest pins remain unchanged.",
+  "files": {
+    "publication.json": {
+      "sha256": "f603b8c8c432eec7e4fd833ac02171c42782aa2c6eac448430ee5d60f384bca8",
+      "source": {
+        "repository": "https://github.com/eob/ld-clustering",
+        "commit": "dc0f7859e49dbf5462bb022d4aef638d32519804",
+        "runtime_commit": "9ba8ac4ec759f3b48bdb83fa02a9bd7bba16ea8c",
+        "executable_sha256": "8a59bbf1e8dbd991960d6bc76046d0e15e245cfc5a50ab724dd201a62e9e9160",
+        "run_path": "experiments/2026-10-20-main-v2-seed42",
+        "manifest_sha256": "95c7c86d5174256e1f1882873534e94f808f7c1b8b2dfce02b0c15919ccbaaff"
+      }
+    },
+    "guided-agreement.json": {
+      "sha256": "265912815f0a11a3661373918ed04952bb6496397123c7c59d4d5ade48a18a98",
+      "source": {
+        "repository": "https://github.com/eob/ld-clustering",
+        "commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+        "runtime_commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+        "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce",
+        "run_path": "experiments/2026-10-20-guided-agreement-seed1042/evidence",
+        "manifest_sha256": "20d8a470bf9cfb63b5406b1b883f1f23199def56e9577928a8cc9dd9b908b1fa",
+        "analysis_sha256": "006202236b702a79dce31dfcb40bf1628d9d5902edcdaeb5d5fc65b10e6f1f7a",
+        "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+        "review_plan_sha256": "e61d2e1055478b90043d20a09319b0294e82bf5213add6f44f130ee896db9bf1"
+      }
+    },
+    "guidance-diagnostics.json": {
+      "sha256": "0646cb7b242b235f943b7b0407de236c00dfc85583ad3a0ac516e3b1c616f1e3",
+      "audit_sha256": "cdc396040c19737c6e8029083fec2355c82616ac43c8d1bf08bac8cbdd548fe7"
+    },
+    "stream-publication.json": {
+      "sha256": "d994c1d8fb9791de75dc1b8615f8e8134a2fdfc79d306855d5667bf52a596ffc",
+      "source": {
+        "repository": "https://github.com/eob/ld-clustering",
+        "commit": "f630cded18a3375b73284ab752fa2568a8e2e731",
+        "runtime_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+        "executable_sha256": "d16f7d289af670f7539f28ccec6474602e3735f54cfbafb24fff884cb627e603",
+        "run_path": "experiments/2026-10-20-guided-agreement-seed1042/streaming-evidence",
+        "manifest_sha256": "75d694a497fdf0dfab14159b8f978606ce89eeb17efb646802fe2106fc79d9f4",
+        "protocol_sha256": "65edc12008dd26404a52406a31f1c135e628642e4e8ac69e213882f8d60c0070",
+        "audit_sha256": "a939309be01b79663ca6a517c021aaee459b1aa6a2365cfdcdcfb5a9886417fd",
+        "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4"
+      }
+    }
+  }
+}

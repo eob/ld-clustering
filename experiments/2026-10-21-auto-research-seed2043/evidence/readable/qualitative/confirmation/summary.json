@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "phase": "confirmation",
+  "derived_at_utc": "2026-10-21T05:10:55.578838+00:00",
+  "primary_audit_sha256": "7ce5a066fff7c8406c0e095665efb908d6b3d44942f4d0f1c1715b402914da15",
+  "selection_sha256": "4896a1a591db8f81824925ae961396165b500dc45c802d9a9502945e7a19bacc",
+  "review_basis": "All46 text and15 photo cases were read after sealing and root unblinding. Counts describe selected qualitative cases, not population accuracy. No repeat artifacts were consumed.",
+  "reviewer_caveats": [
+    "Coding-harness reviewers have unknown exact model identity and may share model-family biases. These are fallible qualitative judgments, not independent human truth.",
+    "Review compute lies outside the experiment API ledger.",
+    "Cases were sampled by frozen strata defined by the CHALLENGER assignments. Original judgments concern the same selected cases, so cross-design review counts are asymmetric and cannot be compared as representative accuracy estimates.",
+    "Quotas were not reallocated when a stratum had fewer cases. Multiple paraphrases occur; the review is not a set of independent semantic trials."
+  ],
+  "modalities": {
+    "text": {
+      "case_count": 46,
+      "pair_count": 92,
+      "accounting": {
+        "expected_count": 46,
+        "accepted_count": 46,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "not_attempted_case_ids": []
+      },
+      "reviewer": {
+        "kind": "coding-harness",
+        "model": "unknown (not exposed by harness)",
+        "compute_accounting": "outside experiment API ledger"
+      },
+      "source_files": {
+        "packet.json": {
+          "path": "qualitative/confirmation/text/packet.json",
+          "sha256": "4753ff186edb170af22402ca134fea6c4c0ace92eb6ec1cab34c570429ba4b55"
+        },
+        "key.json": {
+          "path": "qualitative/confirmation/text/key.json",
+          "sha256": "0d95137335c8637bc9eb249b615b763c79707aabba5c5ed017b4374cc6883fa6"
+        },
+        "judgments.json": {
+          "path": "qualitative/confirmation/text/judgments.json",
+          "sha256": "7a22200e90358f2eafd5512bbb46920d30b2da577b712d1b165a1add27427805"
+        },
+        "reviewer-instructions.md": {
+          "path": "qualitative/confirmation/text/reviewer-instructions.md",
+          "sha256": "6cf216d8cef2f7d3aae3cf5e90d5a849fc41291c0f889ed93b8281e30ff071f5"
+        },
+        "review-registration.json": {
+          "path": "qualitative/confirmation/text/review-registration.json",
+          "sha256": "aa10190aaa6a11b7cd43743be1c49524292f871bf896bfbcb5b0512ef8bd0b55"
+        },
+        "review-seal.json": {
+          "path": "qualitative/confirmation/text/review-seal.json",
+          "sha256": "70371e8ff2ec4a09494ccd2f967dfd0988bda794d3741e7df6cd72957c565e8f"
+        },
+        "unblinding.json": {
+          "path": "qualitative/confirmation/text/unblinding.json",
+          "sha256": "7592d022edb317a4c8276194ec29dfb4a7dfc1acd9725aa1cc621c64d46c28e4"
+        }
+      },
+      "selection": {
+        "basis": "challenger within-condition assignments",
+        "strata": {
+          "different_named": {
+            "available": 123,
+            "quota": 20,
+            "selected": 20
+          },
+          "sol_named_native_other": {
+            "available": 63,
+            "quota": 10,
+            "selected": 10
+          },
+          "sol_other_native_named": {
+            "available": 6,
+            "quota": 10,
+            "selected": 6
+          },
+          "equal_named": {
+            "available": 796,
+            "quota": 5,
+            "selected": 5
+          },
+          "both_other": {
+            "available": 12,
+            "quota": 5,
+            "selected": 5
+          }
+        },
+        "selected_case_count": 46,
+        "quota_sum": 50,
+        "unfilled_quota": 4,
+        "interpretation": "Original pair review uses these same challenger-selected cases; do not interpret the difference in review counts as a controlled semantic-accuracy comparison."
+      },
+      "designs": {
+        "Challenger": {
+          "case_count": 46,
+          "fit_counts": {
+            "Decisions": {
+              "supported": 20,
+              "plausible": 18,
+              "unsupported": 7,
+              "insufficient_evidence": 1
+            },
+            "Sol": {
+              "supported": 28,
+              "plausible": 15,
+              "unsupported": 3,
+              "insufficient_evidence": 0
+            }
+          },
+          "severity_counts": {
+            "Decisions": {
+              "none": 29,
+              "minor": 11,
+              "major": 5,
+              "unclear": 1
+            },
+            "Sol": {
+              "none": 38,
+              "minor": 8,
+              "major": 0,
+              "unclear": 0
+            }
+          },
+          "other_fit_counts": {
+            "Sol": {
+              "supported": 5,
+              "plausible": 5,
+              "unsupported": 1,
+              "insufficient_evidence": 0
+            },
+            "Decisions": {
+              "supported": 5,
+              "plausible": 5,
+              "unsupported": 5,
+              "insufficient_evidence": 0
+            }
+          },
+          "named_fit_counts": {
+            "Decisions": {
+              "supported": 15,
+              "plausible": 13,
+              "unsupported": 2,
+              "insufficient_evidence": 1
+            },
+            "Sol": {
+              "supported": 23,
+              "plausible": 10,
+              "unsupported": 2,
+              "insufficient_evidence": 0
+            }
+          },
+          "pair_verdict_counts": {
+            "prefer_Sol": 17,
+            "both_reasonable": 21,
+            "prefer_Decisions": 8
+          },
+          "theme_case_counts": {
+            "clear_error": 9,
+            "overlapping_or_incomplete_descriptions": 16,
+            "missing_category": 9,
+            "reasonable_alternative": 18,
+            "different_granularity": 11,
+            "unjustified_other": 6
+          },
+          "unsupported_case_ids_by_backend": {
+            "Sol": [
+              "6e4bcd020b3c8cc6998b1885",
+              "05d7120c27ffba0bcb03c75f",
+              "516701f53afb002868a1b631"
+            ],
+            "Decisions": [
+              "606a2565d95bcfb790d6ee1e",
+              "23371604d0ed6b0d8da6c2a7",
+              "d1102c53bb87b6176e61c78e",
+              "6e83f659e8bb066a8fc4cf55",
+              "c56b307514b3ca9fdf8f675f",
+              "98aabdcfe71335f6c314eff0",
+              "3ff5fe9f780d851f3d56474d"
+            ]
+          }
+        },
+        "Original": {
+          "case_count": 46,
+          "fit_counts": {
+            "Decisions": {
+              "supported": 27,
+              "plausible": 15,
+              "unsupported": 4,
+              "insufficient_evidence": 0
+            },
+            "Sol": {
+              "supported": 26,
+              "plausible": 19,
+              "unsupported": 1,
+              "insufficient_evidence": 0
+            }
+          },
+          "severity_counts": {
+            "Decisions": {
+              "none": 40,
+              "minor": 5,
+              "major": 1,
+              "unclear": 0
+            },
+            "Sol": {
+              "none": 41,
+              "minor": 5,
+              "major": 0,
+              "unclear": 0
+            }
+          },
+          "other_fit_counts": {
+            "Sol": {
+              "supported": 5,
+              "plausible": 4,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            },
+            "Decisions": {
+              "supported": 5,
+              "plausible": 7,
+              "unsupported": 1,
+              "insufficient_evidence": 0
+            }
+          },
+          "named_fit_counts": {
+            "Decisions": {
+              "supported": 22,
+              "plausible": 8,
+              "unsupported": 3,
+              "insufficient_evidence": 0
+            },
+            "Sol": {
+              "supported": 21,
+              "plausible": 15,
+              "unsupported": 1,
+              "insufficient_evidence": 0
+            }
+          },
+          "pair_verdict_counts": {
+            "both_reasonable": 35,
+            "prefer_Decisions": 5,
+            "prefer_Sol": 6
+          },
+          "theme_case_counts": {
+            "overlapping_or_incomplete_descriptions": 18,
+            "missing_category": 12,
+            "reasonable_alternative": 10,
+            "different_granularity": 6,
+            "clear_error": 5,
+            "unjustified_other": 1
+          },
+          "unsupported_case_ids_by_backend": {
+            "Sol": [
+              "6e4bcd020b3c8cc6998b1885"
+            ],
+            "Decisions": [
+              "6e83f659e8bb066a8fc4cf55",
+              "68e636703d26fbafcbd95432",
+              "3ff5fe9f780d851f3d56474d",
+              "6126c9536b33cc73e073bfee"
+            ]
+          }
+        }
+      },
+      "schema_and_mapping_checks": "Packet/seal/instruction/registration/unblinding hashes and chronology, accepted/failed/missing counts, exact pair schemas/enums, and key-to-primary own-catalog assignments verified.",
+      "automatic_consistency_flags": []
+    },
+    "images": {
+      "case_count": 15,
+      "pair_count": 30,
+      "accounting": {
+        "expected_count": 15,
+        "accepted_count": 15,
+        "failed_count": 0,
+        "not_attempted_count": 0,
+        "not_attempted_case_ids": []
+      },
+      "reviewer": {
+        "kind": "coding-harness",
+        "model": "unknown (not exposed by harness)",
+        "compute_accounting": "outside experiment API ledger"
+      },
+      "source_files": {
+        "packet.json": {
+          "path": "qualitative/confirmation/images/packet.json",
+          "sha256": "9b8cc7ebd83df3ec9ef933c60b9dbe1ef473e7c02aa2a480d8613dbbc103b430"
+        },
+        "key.json": {
+          "path": "qualitative/confirmation/images/key.json",
+          "sha256": "154b132a9620e122112d3f7403d87e9ee6bb074f27fb0cddcc279b82f88d69c6"
+        },
+        "judgments.json": {
+          "path": "qualitative/confirmation/images/judgments.json",
+          "sha256": "9e324a9b946a46434fa9ee0f956541737357539ecd45ee67524fda8ee59a0421"
+        },
+        "reviewer-instructions.md": {
+          "path": "qualitative/confirmation/images/reviewer-instructions.md",
+          "sha256": "69255090fd663dbb85d3583725138e07c1159a6d96272b070231542313ea9ce5"
+        },
+        "review-registration.json": {
+          "path": "qualitative/confirmation/images/review-registration.json",
+          "sha256": "fdfb39c486fb502a6b7490c23441262d650f024d3c85a87690e85da694c73aab"
+        },
+        "review-seal.json": {
+          "path": "qualitative/confirmation/images/review-seal.json",
+          "sha256": "7ec9284dd0c72aae96a6f7d6b89c1349b28e432e01131117cc8ae4ea6da857fc"
+        },
+        "unblinding.json": {
+          "path": "qualitative/confirmation/images/unblinding.json",
+          "sha256": "ef5ad1af8668b35bba11b8cc807253fb4e92a904517e72fe1d52158e064ff017"
+        }
+      },
+      "selection": {
+        "basis": "challenger within-condition assignments",
+        "strata": {
+          "different_named": {
+            "available": 1,
+            "quota": 10,
+            "selected": 1
+          },
+          "sol_named_native_other": {
+            "available": 2,
+            "quota": 5,
+            "selected": 2
+          },
+          "sol_other_native_named": {
+            "available": 2,
+            "quota": 5,
+            "selected": 2
+          },
+          "equal_named": {
+            "available": 85,
+            "quota": 5,
+            "selected": 5
+          },
+          "both_other": {
+            "available": 10,
+            "quota": 5,
+            "selected": 5
+          }
+        },
+        "selected_case_count": 15,
+        "quota_sum": 30,
+        "unfilled_quota": 15,
+        "interpretation": "Original pair review uses these same challenger-selected cases; do not interpret the difference in review counts as a controlled semantic-accuracy comparison."
+      },
+      "designs": {
+        "Challenger": {
+          "case_count": 15,
+          "fit_counts": {
+            "Decisions": {
+              "supported": 12,
+              "plausible": 3,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            },
+            "Sol": {
+              "supported": 10,
+              "plausible": 5,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            }
+          },
+          "severity_counts": {
+            "Decisions": {
+              "none": 15,
+              "minor": 0,
+              "major": 0,
+              "unclear": 0
+            },
+            "Sol": {
+              "none": 13,
+              "minor": 2,
+              "major": 0,
+              "unclear": 0
+            }
+          },
+          "other_fit_counts": {
+            "Decisions": {
+              "supported": 5,
+              "plausible": 2,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            },
+            "Sol": {
+              "supported": 4,
+              "plausible": 3,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            }
+          },
+          "named_fit_counts": {
+            "Sol": {
+              "supported": 6,
+              "plausible": 2,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            },
+            "Decisions": {
+              "supported": 7,
+              "plausible": 1,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            }
+          },
+          "pair_verdict_counts": {
+            "both_reasonable": 13,
+            "prefer_Decisions": 2
+          },
+          "theme_case_counts": {
+            "reasonable_alternative": 5,
+            "different_granularity": 2,
+            "missing_category": 5,
+            "overlapping_or_incomplete_descriptions": 4
+          },
+          "unsupported_case_ids_by_backend": {
+            "Sol": [],
+            "Decisions": []
+          }
+        },
+        "Original": {
+          "case_count": 15,
+          "fit_counts": {
+            "Decisions": {
+              "supported": 12,
+              "plausible": 3,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            },
+            "Sol": {
+              "supported": 12,
+              "plausible": 3,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            }
+          },
+          "severity_counts": {
+            "Decisions": {
+              "none": 15,
+              "minor": 0,
+              "major": 0,
+              "unclear": 0
+            },
+            "Sol": {
+              "none": 15,
+              "minor": 0,
+              "major": 0,
+              "unclear": 0
+            }
+          },
+          "other_fit_counts": {
+            "Decisions": {
+              "supported": 5,
+              "plausible": 2,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            },
+            "Sol": {
+              "supported": 5,
+              "plausible": 1,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            }
+          },
+          "named_fit_counts": {
+            "Sol": {
+              "supported": 7,
+              "plausible": 2,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            },
+            "Decisions": {
+              "supported": 7,
+              "plausible": 1,
+              "unsupported": 0,
+              "insufficient_evidence": 0
+            }
+          },
+          "pair_verdict_counts": {
+            "both_reasonable": 15
+          },
+          "theme_case_counts": {
+            "reasonable_alternative": 2,
+            "different_granularity": 1,
+            "missing_category": 5,
+            "overlapping_or_incomplete_descriptions": 4
+          },
+          "unsupported_case_ids_by_backend": {
+            "Sol": [],
+            "Decisions": []
+          }
+        }
+      },
+      "schema_and_mapping_checks": "Packet/seal/instruction/registration/unblinding hashes and chronology, accepted/failed/missing counts, exact pair schemas/enums, and key-to-primary own-catalog assignments verified.",
+      "automatic_consistency_flags": []
+    }
+  },
+  "inconsistencies": [
+    {
+      "modality": "text",
+      "case_id": "908df5ebe9ab02f861f6d40d",
+      "design": "Challenger",
+      "text": "should i run every day",
+      "issue": "The two assignment evidence sentences appear transposed: Knowledge & Learning is justified by the absence of a health category, while Other is justified as educational guidance. Both fits remain plausible and the verdict remains both_reasonable.",
+      "handling": "Retain original sealed bytes and all counts; flag the evidence attribution and exclude this case from curated illustrations. This does not justify a replacement review."
+    }
+  ],
+  "interpretation": [
+    "Fresh confirmation did not reproduce the photo development gain; text also failed to improve. Selected review counts cannot overturn the full-cohort agreement result.",
+    "In the selected text cases, the challenger reviewer preferred Sol17 times and Decisions8, with21 both reasonable. This does not establish relative population accuracy or justify treating Sol as truth.",
+    "Text judgments include clear unsupported Decisions choices, unsupported Sol/reference choices, plausible Other rejections, and ordinary ambiguity between overlapping subjects.",
+    "Membership scope matters: the challenger explicitly includes social conversation, making its rejected greetings clearer errors under its own guide; the Original guide leaves broader greeting scope less explicit. Do not compare fit labels while ignoring their own catalogs.",
+    "Several discrepancies concern task granularity: playing a song versus generic device control, factual time versus scheduling/travel, and retirement transfers versus employee benefits. These are not uniformly obvious classification errors.",
+    "All60 photo assignment judgments across the two designs were supported or plausible. The15 selected photo cases include all3 changed Sol assignments; Decisions labels are unchanged on all100 primary photos.",
+    "The photo reviewer preferred Decisions for the sand sculptor and industrial compressor, considered the engine-trailer difference reasonable, and did not mark any selected photo choice unsupported.",
+    "Development selection and case-focused rewriting reuse evidence; a development gain can fail on fresh items. These observations do not establish a causal effect of word length, a provider mechanism, or a pagination mechanism."
+  ],
+  "recommended_illustrations": [
+    {
+      "modality": "text",
+      "case_id": "c56b307514b3ca9fdf8f675f",
+      "text": "hola!",
+      "kind": "unjustified_other",
+      "summary": "Clear rejection error under explicit social-conversation scope: the challenger Sol assigns Assistant & Device Interaction to \u201chola!\u201d, while Decisions returns Other. Original scope was less explicit, so its two choices were judged plausible.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "supported",
+          "quote": "Hola is a direct social greeting to the assistant."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "unsupported",
+          "quote": "Social conversation is expressly included in the assistant-interaction category."
+        }
+      ]
+    },
+    {
+      "modality": "text",
+      "case_id": "6e83f659e8bb066a8fc4cf55",
+      "text": "what specific health plan do i have",
+      "kind": "clear_error",
+      "summary": "Both designs show Decisions choosing general knowledge for \u201cwhat specific health plan do i have\u201d; the reviewer supports Sol\u2019s insurance-policy category and marks the Decisions choice unsupported.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "supported",
+          "quote": "The user asks which health-insurance plan they hold; insurance policies are expressly included."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "unsupported",
+          "quote": "This asks for the user's own policy details rather than general factual education."
+        }
+      ]
+    },
+    {
+      "modality": "text",
+      "case_id": "516701f53afb002868a1b631",
+      "text": "how might i say hello if i were scottish",
+      "kind": "reference_error",
+      "summary": "A reference error: \u201chow might i say hello if i were scottish\u201d asks for linguistic instruction. The reviewer supports Decisions Knowledge & Learning and marks challenger Sol\u2019s Assistant choice unsupported; Original both chose Knowledge.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "supported",
+          "quote": "The question seeks linguistic or cultural instruction on saying hello in a Scottish manner."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "unsupported",
+          "quote": "The user is asking how to say a greeting, not greeting the assistant or changing its behavior."
+        }
+      ]
+    },
+    {
+      "modality": "text",
+      "case_id": "d6a0ab98d2bddbd292604706",
+      "text": "what do i do now that my battery is dead",
+      "kind": "plausible_other",
+      "summary": "\u201cwhat do i do now that my battery is dead\u201d leaves the battery\u2019s owner unstated. Sol\u2019s vehicle-care interpretation and Decisions Other were both judged plausible in both catalogs.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "plausible",
+          "quote": "The dead battery could belong to a car or an unspecified device, so the subject is unresolved."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "plausible",
+          "quote": "A dead battery is a common vehicle-maintenance problem, although no vehicle is named."
+        }
+      ]
+    },
+    {
+      "modality": "text",
+      "case_id": "d09a8824e38732e82631a1a9",
+      "text": "what are the steps to rollover my 401k",
+      "kind": "reasonable_granularity",
+      "summary": "\u201cwhat are the steps to rollover my 401k\u201d reasonably fits both financial transfers and employee benefits. The challenger models diverge, with both supported; the Original pair agrees on employee benefits.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "supported",
+          "quote": "A 401k rollover is an administrative matter involving an employment retirement benefit."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "supported",
+          "quote": "A rollover concerns moving retirement funds between financial accounts."
+        }
+      ]
+    },
+    {
+      "modality": "text",
+      "case_id": "bd0abedbb7c05e8900c49de3",
+      "text": "alexa, buy my grocery list",
+      "kind": "shared_named_agreement",
+      "summary": "A shared agreement check: both classifiers in both designs assign \u201calexa, buy my grocery list\u201d to Shopping & Consumer Services, and all four choices were supported. The shopping action determines the subject.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "supported",
+          "quote": "The user asks to purchase the items on a grocery shopping list."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "supported",
+          "quote": "The user asks to purchase the items on a grocery shopping list."
+        }
+      ]
+    },
+    {
+      "modality": "images",
+      "case_id": "894287e92331e1f3b15859f8",
+      "text": null,
+      "kind": "reference_change",
+      "summary": "One of the three changed Sol photo assignments: the sand sculptor scene moved from shared People to Sol Other. The reviewer prefers Decisions People while allowing the artwork-centered Other reading as plausible.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "supported",
+          "quote": "A person is visibly shaping a large sand sculpture while a crowd watches."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "plausible",
+          "quote": "The large sand artwork is centrally framed, and the catalog lacks an explicit category for sculptural artworks."
+        }
+      ]
+    },
+    {
+      "modality": "images",
+      "case_id": "863049ddeee9448500b3efad",
+      "text": null,
+      "kind": "plausible_other",
+      "summary": "Another changed Sol assignment: an industrial compressor moved from shared Other to Sol Electronics. The reviewer prefers Decisions Other because industrial machinery is outside the stated household or desktop scope; Sol remains plausible.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "supported",
+          "quote": "A compressor, tank, and industrial piping dominate the frame; industrial machinery has no explicit category."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "plausible",
+          "quote": "The apparatus has a visible motor and control equipment, but its industrial use extends beyond the stated household or desktop devices."
+        }
+      ]
+    },
+    {
+      "modality": "images",
+      "case_id": "ed9c3cf3a00b3ea253f45553",
+      "text": null,
+      "kind": "reasonable_granularity",
+      "summary": "The remaining changed Sol assignment: detached engines on a trailer moved from shared Vehicles to Sol Other. Both choices are plausible because mechanical parts dominate a vehicle setting.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "plausible",
+          "quote": "Detached engines and transmissions are the prominent cargo, and detached mechanical parts are not explicitly included in the catalog."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "plausible",
+          "quote": "The engines are displayed on a wheeled trailer amid numerous cars and trucks, making the vehicle category defensible."
+        }
+      ]
+    },
+    {
+      "modality": "images",
+      "case_id": "18f32f8d30b4e950bf58ca5c",
+      "text": null,
+      "kind": "reasonable_alternative",
+      "summary": "The occupied assembly hall supports both People and Buildings in both designs. The reviewer supports both focal interpretations, showing that disagreement need not be an obvious error.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "supported",
+          "quote": "Many people are seated at desks in an organized assembly, with a speaker near the center."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "supported",
+          "quote": "The wide view prominently presents the hall interior, curved seating layout, galleries, and architectural walls."
+        }
+      ]
+    },
+    {
+      "modality": "images",
+      "case_id": "ee721e1d0398e116cadc07a5",
+      "text": null,
+      "kind": "shared_other_agreement",
+      "summary": "A shared Other check: a star-filled sky and rocky landscape have no supplied category, and both classifiers in both designs receive supported Other judgments. Agreement can include legitimate catalog gaps.",
+      "sealed_evidence_quotes": [
+        {
+          "design": "Challenger",
+          "backend": "Sol",
+          "fit": "supported",
+          "quote": "A star-filled night sky and rocky landscape dominate the photograph; no supplied category describes that scene."
+        },
+        {
+          "design": "Challenger",
+          "backend": "Decisions",
+          "fit": "supported",
+          "quote": "A star-filled night sky and rocky landscape dominate the photograph; no supplied category describes that scene."
+        }
+      ]
+    }
+  ]
+}

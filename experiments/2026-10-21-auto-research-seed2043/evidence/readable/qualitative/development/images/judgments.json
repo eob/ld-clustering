@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "phase": "development",
+  "modality": "images",
+  "packet_sha256": "ad63d41c839a42a1557f8816816b5e8398f2c49f078db24619e364c458aaabd6",
+  "reviewer": {
+    "kind": "coding-harness",
+    "model": "unknown (not exposed by harness)",
+    "compute_accounting": "outside experiment API ledger"
+  },
+  "judgments": [
+    {
+      "case_id": "fcd8c37689e8e67135422718",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "A sleeping baby is the main visible subject, directly fitting People and activities.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "A sleeping baby is the main visible subject, directly fitting People and activities.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Bedding and toys remain context when a person is the main visible subject."
+        }
+      ]
+    },
+    {
+      "case_id": "1c99b97d0fff839fe476cb2b",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The photograph is a close view of harvested potatoes, fitting food ingredients.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The photograph is a close view of harvested potatoes, fitting food ingredients.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [],
+          "boundary_note": "Harvested produce presented as ingredients fits Food and drink even though it originates from plants."
+        }
+      ]
+    },
+    {
+      "case_id": "538267613ac4bad5babae2b4",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "The main subject is an electrical receptacle and its cover. The catalog does not expressly include passive electrical supply fittings.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The main subject is an electrical receptacle and its cover. The catalog does not expressly include passive electrical supply fittings.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Electrical supply fittings can fall outside a catalog limited to electronic equipment and powered appliances."
+        }
+      ]
+    },
+    {
+      "case_id": "ef48c18f152b1cb9befa4d9e",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "Rounded, bolted cabin windows and the low paneled ceiling support a boat-interior reading, which Vehicles explicitly includes.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "plausible",
+              "evidence": "The photograph centers on a furnished enclosed room with walls, ceiling, tables, and chairs, supporting a broad architectural-interior reading.",
+              "severity": "minor"
+            }
+          },
+          "verdict": "prefer_a",
+          "themes": [
+            "reasonable_alternative",
+            "overlapping_or_incomplete_descriptions"
+          ],
+          "boundary_note": "Vessel-specific interior fittings can distinguish a vehicle cabin from an architectural room."
+        }
+      ]
+    },
+    {
+      "case_id": "0b61279f4e40f4987992825d",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "supported",
+              "evidence": "A cabinet displays packaged toy animals and miniature playsets. Toys are absent from the supplied catalog.",
+              "severity": "none"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "A cabinet displays packaged toy animals and miniature playsets. Toys are absent from the supplied catalog.",
+              "severity": "none"
+            }
+          },
+          "verdict": "both_reasonable",
+          "themes": [
+            "missing_category"
+          ],
+          "boundary_note": "Toy representations of animals and buildings need not inherit categories for real animals or built environments."
+        }
+      ]
+    },
+    {
+      "case_id": "5a16334b2f6361f65aa4fdf8",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "plausible",
+              "evidence": "The phones are mounted in public street shelters, making utility structures a plausible reading of the wider installation.",
+              "severity": "minor"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "Two payphones with handsets, keypads, and displays dominate the image, directly fitting electronic equipment.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "reasonable_alternative",
+            "different_granularity"
+          ],
+          "boundary_note": "A utility enclosure and the electronic device it houses can support different classifications depending on the main subject."
+        }
+      ]
+    },
+    {
+      "case_id": "5f10a5f1f0ddaedb712956c3",
+      "pairs": [
+        {
+          "pair_id": 1,
+          "assignments": {
+            "A": {
+              "fit": "unsupported",
+              "evidence": "Two tank-style household water heaters dominate the photograph, and the catalog includes household appliances.",
+              "severity": "major"
+            },
+            "B": {
+              "fit": "supported",
+              "evidence": "The central subjects are two household water heaters, fitting powered household appliances.",
+              "severity": "none"
+            }
+          },
+          "verdict": "prefer_b",
+          "themes": [
+            "clear_error",
+            "unjustified_other"
+          ],
+          "boundary_note": "Household appliances remain the main subject when shown installed among pipes and building framing."
+        }
+      ]
+    }
+  ],
+  "failed": []
+}

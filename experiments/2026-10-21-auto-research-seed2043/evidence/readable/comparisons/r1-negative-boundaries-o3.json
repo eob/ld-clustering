@@ -1,0 +1,343 @@
+{
+  "candidate_sha256": "1f20c917d237fcd41fb35b0724b550cc2afd739f3be4c8c230a859eee82641fa",
+  "catalog_sha256": "edc4896f4f70fa49e6630837657bc95261c0f89056c849489f479c6ac7da6e03",
+  "classification_stage": "calibration",
+  "comparison": {
+    "assigned_other": {
+      "both_named": 16,
+      "both_other": 4,
+      "reference_named_candidate_other": 0,
+      "reference_other_candidate_named": 0
+    },
+    "candidate_assigned_count": 16,
+    "candidate_coverage": 0.8,
+    "candidate_refused_points": 0,
+    "categories": [
+      {
+        "candidate_count": 4,
+        "cluster_id": null,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 4,
+        "same_count": 4,
+        "true_negative_count": 16
+      },
+      {
+        "candidate_count": 4,
+        "cluster_id": 11,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 4,
+        "same_count": 4,
+        "true_negative_count": 16
+      },
+      {
+        "candidate_count": 4,
+        "cluster_id": 29,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 4,
+        "same_count": 4,
+        "true_negative_count": 16
+      },
+      {
+        "candidate_count": 4,
+        "cluster_id": 43,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 4,
+        "same_count": 4,
+        "true_negative_count": 16
+      },
+      {
+        "candidate_count": 4,
+        "cluster_id": 71,
+        "f1": 1.0,
+        "false_negative_count": 0,
+        "false_positive_count": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "reference_count": 4,
+        "same_count": 4,
+        "true_negative_count": 16
+      }
+    ],
+    "conditional_agreement_note": "Jointly named agreement divides matching named IDs only by points named by both arms; null means no jointly named points. This conditional rate excludes rejected points and must be read with coverage and the full named/Other table.",
+    "confusion": [
+      {
+        "candidate_cluster_id": null,
+        "count": 4,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 11,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 29,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 43,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": 71,
+        "count": 0,
+        "reference_cluster_id": null
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 11
+      },
+      {
+        "candidate_cluster_id": 11,
+        "count": 4,
+        "reference_cluster_id": 11
+      },
+      {
+        "candidate_cluster_id": 29,
+        "count": 0,
+        "reference_cluster_id": 11
+      },
+      {
+        "candidate_cluster_id": 43,
+        "count": 0,
+        "reference_cluster_id": 11
+      },
+      {
+        "candidate_cluster_id": 71,
+        "count": 0,
+        "reference_cluster_id": 11
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 29
+      },
+      {
+        "candidate_cluster_id": 11,
+        "count": 0,
+        "reference_cluster_id": 29
+      },
+      {
+        "candidate_cluster_id": 29,
+        "count": 4,
+        "reference_cluster_id": 29
+      },
+      {
+        "candidate_cluster_id": 43,
+        "count": 0,
+        "reference_cluster_id": 29
+      },
+      {
+        "candidate_cluster_id": 71,
+        "count": 0,
+        "reference_cluster_id": 29
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 43
+      },
+      {
+        "candidate_cluster_id": 11,
+        "count": 0,
+        "reference_cluster_id": 43
+      },
+      {
+        "candidate_cluster_id": 29,
+        "count": 0,
+        "reference_cluster_id": 43
+      },
+      {
+        "candidate_cluster_id": 43,
+        "count": 4,
+        "reference_cluster_id": 43
+      },
+      {
+        "candidate_cluster_id": 71,
+        "count": 0,
+        "reference_cluster_id": 43
+      },
+      {
+        "candidate_cluster_id": null,
+        "count": 0,
+        "reference_cluster_id": 71
+      },
+      {
+        "candidate_cluster_id": 11,
+        "count": 0,
+        "reference_cluster_id": 71
+      },
+      {
+        "candidate_cluster_id": 29,
+        "count": 0,
+        "reference_cluster_id": 71
+      },
+      {
+        "candidate_cluster_id": 43,
+        "count": 0,
+        "reference_cluster_id": 71
+      },
+      {
+        "candidate_cluster_id": 71,
+        "count": 4,
+        "reference_cluster_id": 71
+      }
+    ],
+    "direct_agreement": 1.0,
+    "direct_agreement_count": 20,
+    "jointly_named_agreement": 1.0,
+    "n": 20,
+    "named_id_agreement": 0.8,
+    "named_id_agreement_count": 16,
+    "other_policy": "Direct agreement includes both choosing Other. Named-ID agreement divides matching named IDs by all points. ARI and pairwise scores give each Other point its own singleton label.",
+    "partition": {
+      "adjusted_rand_index": 1.0,
+      "n": 20,
+      "pairwise_f1": 1.0,
+      "pairwise_precision": 1.0,
+      "pairwise_recall": 1.0
+    },
+    "reference_assigned_count": 16,
+    "reference_coverage": 0.8,
+    "reference_note": "Per-category confusion, precision and recall are relative to the LLM assignments, not ground truth. Agreement and coverage do not establish semantic correctness.",
+    "reference_refused_points": 0
+  },
+  "design_id": "calibration-negative-boundaries-v1",
+  "effective_order": [
+    71,
+    11,
+    29,
+    43
+  ],
+  "effective_order_sha256": "726b355e6ff0a4c02595499b020725fff3787ed621d54daa7a4b253dd042b801",
+  "experiment": "guidance-auto-research",
+  "input_sha256": "b75afffb3c7a686617e38753fae24959d4b8e084f652efefe1661099446ea791",
+  "k": 8,
+  "measurements": {
+    "candidate": {
+      "assignment_refusal_calls": 0,
+      "calls": 20,
+      "cost_complete": true,
+      "cost_history_complete": true,
+      "cost_usd": 0.001564,
+      "error_calls": 0,
+      "journal_sha256": "15fdbaa83cc7bac2f48428e1e52248446107e3a7115745080ef991f43e39cc8a",
+      "phase_calls": {
+        "assign": 20
+      },
+      "pricing_date": "2026-10-20",
+      "pricing_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "request_seconds": 2.263,
+      "timing_complete": true,
+      "unknown_pricing_calls": 0,
+      "unknown_usage_calls": 0,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "cost_usd": 0.001564,
+        "input_tokens": 15640,
+        "output_tokens": 0
+      },
+      "wall_ms": 2282,
+      "wall_seconds": 2.282
+    },
+    "reference": {
+      "assignment_refusal_calls": 0,
+      "calls": 20,
+      "cost_complete": true,
+      "cost_history_complete": true,
+      "cost_usd": 0.03363000000000001,
+      "error_calls": 0,
+      "journal_sha256": "47a535d38e2be425272b7a913c34124fb2c653e8447fed86c7c9331dd9153739",
+      "phase_calls": {
+        "assign": 20
+      },
+      "pricing_date": "2026-10-20",
+      "pricing_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "request_seconds": 32.228,
+      "timing_complete": true,
+      "unknown_pricing_calls": 0,
+      "unknown_usage_calls": 0,
+      "usage": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "cost_usd": 0.03363000000000001,
+        "input_tokens": 14940,
+        "output_tokens": 375
+      },
+      "wall_ms": 32260,
+      "wall_seconds": 32.26
+    }
+  },
+  "modality": "text",
+  "ordered_ids": [
+    "dae4f1ee687e6836b83d",
+    "a0a99f15974dc258adbe",
+    "a93538a3a90d343c6575",
+    "3d9831f22149444f7621",
+    "bb3d14852991530513c1",
+    "d0b6ae0e04fe16ab8ff6",
+    "4ccc6453f2b5d610ff73",
+    "c0ae23bf6c0114252c78",
+    "f5ac40d3796a3d41a4f7",
+    "ebca61dda5e8134c1572",
+    "d5aab2e89fac924c8373",
+    "548244abdb5209102784",
+    "1ec29b2ed69d2af1af50",
+    "dd77e3637c477e2606de",
+    "ff808a50259cea15f4d6",
+    "d1f5c8bcc0afa7f02055",
+    "3769b4ffc48473a0391a",
+    "b66ee800f53feaf5d523",
+    "a4de7682b1ef2ce0f34f",
+    "72d7367fc35082b22b0c"
+  ],
+  "protocol_sha256": "0c84dbe330d8dcb433ddd6ceb62dede41fd71ecae328669eddcef99525fc3b65",
+  "reference_sha256": "5d9b2ee73c25fd85c49be9d31aa9950ed0f96423dac0f5ab9382050b7620674a",
+  "schema_version": 1,
+  "source": {
+    "commit": "a3b38d7f9e535f300ac783b3aa4abeb77b17a54f",
+    "committed_sources_verified": true,
+    "embedded_file_sha256": {
+      "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+      "Cargo.toml": "4d4ea297856bf41d699f76067319551e2170202d10c80199bac59a415e78b439",
+      "examples/auto_research.rs": "5b484ba861b6ffc9880928488027e61892b997e51c595a0255b498384d814106",
+      "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+      "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+      "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+      "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+      "src/auto_research.rs": "7a42f82457c1ec7dcab6e6756a688075fed5f9c422391f23ee797bd59f8258a5",
+      "src/lib.rs": "a2583e0285274c2d17186f63d3380a731b62f3c1db16c71cd9a417a394194ae3",
+      "src/provider.rs": "b423fef2075f66eeccf7f1a3e5e3d86750413f625f14d645b4b5ceb316d8e1fb",
+      "src/types.rs": "202b0875a4f725b4cd1467d5ce448143b1b49befb39d2936cc1399f4075255ae"
+    },
+    "executable_sha256": "2eed0a941e5f8e292940c0fd2f72d2432409c0456d3acb2a9314bdc2920f9f20"
+  },
+  "stage": "comparison",
+  "status": "complete"
+}

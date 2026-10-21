@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "experiment": "guidance-auto-research",
+  "study_id": "2026-10-21-auto-research-seed2043",
+  "prepared_at_utc": "2026-10-21T02:59:22.489853+00:00",
+  "registration_state": "Prepared for root review; no follow-up paid calls. Dataset frozen; runtime/launch registrations must be completed before dispatch.",
+  "question": "Can compact self-contained membership and a single bounded boundary refinement improve Sol/native named-ID agreement without a material coverage loss on fresh inputs?",
+  "scope": "Three bounded development rounds and ONE frozen fresh confirmation comparison. Earlier controlled/streaming evidence stays unchanged.",
+  "hypotheses": {
+    "mechanism": "Counterbalanced simple cases reveal whether a stable choice-position association survives unambiguous membership and changing description style.",
+    "compact": "Short practical positive own-membership descriptions reduce interference without changing category scope.",
+    "boundary": "A bounded development review identifies systematic neighboring ambiguities that one concise revision can repair.",
+    "alternatives": [
+      "No gain or regression",
+      "Increased joint rejection",
+      "Reference stochasticity",
+      "Reasonable ambiguity or overlapping scopes",
+      "Position/order or wording associations that do not establish a universal provider mechanism"
+    ]
+  },
+  "data": {
+    "seed": 2043,
+    "manifest_path": "data/auto-research-2043/manifest.json",
+    "dataset_manifest_sha256": "add80aa99c9b8015ad69ff76d9ba98c01f7ce2724ff32a9c84081e8b08d7c2d1",
+    "run_snapshot": "preregistration/dataset-manifest.json",
+    "partitions": {
+      "confirmation": {
+        "images": {
+          "count": 100,
+          "jsonl_sha256": "f0b689fb53b486073bf27dcbd90f1e6bd77a258badc944ba57ad188ee1faf68a",
+          "payload_sha256": "7826cf4a60c771780bbb68bdc9d23051eeb9121e57a72ef84bcfd7a417ba4cb3",
+          "order_sha256": "ad26190cfd320abde22e4bacfa6b4d16709fea3bee6fb136d3a793c70ac8aacf",
+          "ordered_image_content_sha256": "f92731db9c974ac2835b9983da987714d3819a271a2ec395e7c0d6424e2f4004"
+        },
+        "text": {
+          "count": 1000,
+          "jsonl_sha256": "14478e6acf67fd857b1d853bea85f534304c06130c3c255c8d45c62b6702c99d",
+          "payload_sha256": "0f30934d302dcd4b75906d0f9213939b96545ea82a632b20f68e3104f632f413",
+          "order_sha256": "c58e8aab0d01a3c15337ea001c60c4b7c8d3ed2190599813f23a390c2f0ceb50",
+          "ordered_image_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "development": {
+        "images": {
+          "count": 40,
+          "jsonl_sha256": "4aa5b8760ee178b7d1dac671f9a214dbc2a0dfd3894e28db909988ecee3e80e5",
+          "payload_sha256": "c65555d568c6463e4574973f905e4ad3b662143b29ff121c77093d586399d606",
+          "order_sha256": "9c887518c87d56f7958dbb0acdff819387026983ea62321d7f0e2cffb0fe2035",
+          "ordered_image_content_sha256": "ac567e4e4e619e9924f07c59634d7a98f7586268dd5aa9fecba81b4adc741a59"
+        },
+        "text": {
+          "count": 200,
+          "jsonl_sha256": "3aa88bd99ce3d53ab887486e3f1cef7010214a9adc4f6c9a133e83591022a661",
+          "payload_sha256": "a6a91a3845af97f486e6558c74eaa178c1913e4e2479fb12368c7c42353d0e34",
+          "order_sha256": "39907d1b38874355697fc1662453d04bce4aac5bfd8cd538604cda7ceccfb279",
+          "ordered_image_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      },
+      "repeat": {
+        "images": {
+          "count": 25,
+          "jsonl_sha256": "1982872f309b11ec1b8f156fe4a918a8901fd621d07734842339ee75a45b3e65",
+          "payload_sha256": "3c41875975a5882b2b06cc37a8a9bc33dabba68b26143854b95ab1282ac97213",
+          "order_sha256": "05416447c9368b7c69bde07078aaeb6f6846bd98b75b1b090a60e4f673a703b9",
+          "ordered_image_content_sha256": "66b75064d7ce62984ae4edc5fbc1a961bb88d87348e545b8a74e168d491f0e8e"
+        },
+        "text": {
+          "count": 100,
+          "jsonl_sha256": "23dcca6de6882b42b77340df923c4f93659d4390f9182d5f849c9e88f58456cf",
+          "payload_sha256": "5428faca71776145dd66f128247f76f56b5fe940532cf0804dbac9752f6c6d7d",
+          "order_sha256": "cedd280119471edfe7621350c92c2653cdd984518fd91ae33a5e5e033ea1ff39",
+          "ordered_image_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      }
+    },
+    "disjointness": "Development and confirmation exclude all prior v2 and seed1042 normalized text, IDs, image/Flickr IDs, source byte hashes, and decoded pixels using the documented decoder. New partitions are mutually disjoint; repeats are preselected confirmation subsets, not new data.",
+    "text": "Same pinned CLINC test/oos_test only. Development18 per10 domains+20OOS; confirmation90 per10 domains+100OOS. Source labels are sampling/evaluation metadata, never model input or broad-category truth.",
+    "photos": "140 visually accepted natural color JPEGs:40 development,100 confirmation,25 repeat. Exact supplied bytes unchanged, longest edge768..1024; independently supported native longest edge>=1024, original aspect, no upscaling.99 original-byte hashes verified;41 unknown originals remain null. Individual attribution/license/native proof snapshots retained.",
+    "confirmation_access": "Eligibility/licensing curation and hash auditing can access raw files before freeze; generators, reviewers used for refinement, and selection receive no confirmation examples, assignments or outcomes. Confirmation review occurs only after frozen evaluation.",
+    "model_evidence": "Text and exact image bytes only. Exclude Item IDs, labels, local paths, source titles/authors/filenames and provenance from provider bodies."
+  },
+  "models": {
+    "reference": "gpt-6.1-sol",
+    "candidate": "gpt-6-luna",
+    "reference_reasoning_effort": "high",
+    "reference_service_tier": "default",
+    "protocol": "Unchanged provider assignment_request/response mapping. Stable string choice values, Other last. Native probabilities and raw choice values retained; do not repair or relabel returned IDs.",
+    "retry_attempts_max_per_body": 3,
+    "refusal_policy": "Typed accepted assignment refusal maps to Other and stops paging; preserve refusal-call and refused-point counts.",
+    "structured_generation": "One joint Sol-high invocation per modality in rounds2 and3, with only the existing bounded retries; invalid structural replies retain charges and are not hidden."
+  },
+  "round1": {
+    "name": "Synthetic position and description-style calibration",
+    "items": 20,
+    "constructed_classes": {
+      "Banking": 4,
+      "Cooking": 4,
+      "Weather": 4,
+      "Transportation": 4,
+      "Other": 4
+    },
+    "stable_ids": {
+      "Banking": 11,
+      "Cooking": 29,
+      "Weather": 43,
+      "Transportation": 71
+    },
+    "styles": [
+      "short",
+      "redundant-positive",
+      "negative-boundaries"
+    ],
+    "orders": "Four cyclic Latin orders; each named category appears once in every named option position; Other remains last.",
+    "k": 8,
+    "pages": 1,
+    "backends": 2,
+    "condition_count": 24,
+    "logical_assignments": 480,
+    "golden_key": "calibration/golden-key.json; excluded from every model/rewrite input and review packet.",
+    "interpretation": "Synthetic exact-key accuracy and display-position/wire-value diagnostics only. Long styles are100..130words and closely matched, but repetition, negation, cross-references, wording and length differ. NOT a pure length ablation; no general natural-data accuracy or causal API-defect claim.",
+    "retain": [
+      "Per-style actual word counts",
+      "Exact candidate order and string values",
+      "Raw responses/probabilities and page hashes",
+      "Errors by constructed class and display position",
+      "Every failure/refusal/attempt"
+    ]
+  },
+  "round2": {
+    "name": "One compact joint rewrite per modality",
+    "generation_parent": "Exact imported Original full catalog",
+    "generation_evidence": "Old seed1042 discovery ONLY:200 text/60 photographs; original discovery IDs inherited in provenance.",
+    "constraints": [
+      "Exact IDs/names/order/count/task/scope/granularity",
+      "Practical positive own-membership descriptions",
+      "No repeated competitor names or long negative exclusions",
+      "No example-specific exceptions"
+    ],
+    "word_targets": {
+      "text": 35,
+      "images": 28
+    },
+    "word_target_policy": "Practical targets, not a hidden regeneration/selection gate. Record actual whitespace-separated description counts and target violations.",
+    "development_comparison": "Original and compact on the identical fresh200text/40photo development input with both backends, K8, original canonical order. Original ten text groups span two possible pages; eight photo groups fit one page.",
+    "logical_assignments": 960,
+    "generation_invocations": 2
+  },
+  "round3": {
+    "name": "One bounded boundary refinement per modality",
+    "generation_parent": "Full compact catalog",
+    "generation_evidence": "Old discovery plus only preselected compact DEVELOPMENT review cases and sealed coding-harness review notes, with all missing/failure markers. No confirmation data.",
+    "development_review_plan": "review-plan.json; maxima20text/12photos, no short-stratum reallocation.",
+    "freeze_before_generation": [
+      "Full selected case packet and separate blind key",
+      "All raw public judgments and accepted/failed/not-attempted counts",
+      "Exact combined input JSONL/image hashes and inherited evidence IDs",
+      "Actual instructions derived from fixed boundary template",
+      "Exact compact parent hash and per-condition registration"
+    ],
+    "constraints": "Same structure, scope, positive own-membership constraints and35/28word targets as round2. No new taxonomy or per-example exceptions.",
+    "development_evaluation": "Boundary only on the same development cohort; reuse the original and compact comparisons already measured rather than rerunning them.",
+    "logical_assignments": 480,
+    "generation_invocations": 2,
+    "interpretation": "Adaptive reused development evidence; descriptive scores are not fresh confirmation."
+  },
+  "selection": {
+    "per_modality": true,
+    "baseline": "Original imported catalog development Sol/native comparison.",
+    "candidates": [
+      "compact",
+      "boundary"
+    ],
+    "requires_complete": "Both full development arms and their within-condition comparison must be complete and verified; structural generation must be complete. Do not score a live prefix.",
+    "primary_quantity": "Matching NAMED category IDs divided by ALL n points, not by jointly covered points.",
+    "eligibility": [
+      "candidate.named_id_agreement_count > baseline.named_id_agreement_count",
+      "candidate.direct_agreement_count >= baseline.direct_agreement_count",
+      "100 * (baseline.reference_assigned_count - candidate.reference_assigned_count) <= 2 * n",
+      "100 * (baseline.candidate_assigned_count - candidate.candidate_assigned_count) <= 2 * n"
+    ],
+    "coverage_tolerance": "At most2 percentage points loss for EACH backend; integer inequalities avoid rounding. Increased coverage is allowed.",
+    "eligible_ranking": [
+      "Descending named_id_agreement_count",
+      "Descending direct_agreement_count",
+      "Descending min(reference_assigned_count,candidate_assigned_count)",
+      "Compact before boundary on an exact tie"
+    ],
+    "adopted_design": "Highest-ranked eligible challenger; Original if none qualifies. Original also wins any exact tie with its named-match count because eligibility requires strict improvement.",
+    "confirmation_challenger": "Use the adopted eligible challenger. If none is eligible, still freeze the highest-ranked COMPLETE challenger using the same ranking and test it once versus Original, explicitly labeled NOT_ADOPTED. Do not copy Original and call that an intervention.",
+    "missing_comparison": "If baseline is incomplete or neither challenger has a complete valid development pair, record selection_unavailable and stop the corresponding confirmation comparison; never manufacture a score or cleanse failures with a new favorable run.",
+    "freeze_before_confirmation": [
+      "Exact selected challenger and Original raw file SHA",
+      "Complete development comparisons and ranking",
+      "Eligibility/adoption label including NOT_ADOPTED",
+      "Selection JSON and its SHA",
+      "Actual confirmation conditions with exact dataset/catalog/order/source/protocol pins"
+    ],
+    "not_selection_criteria": [
+      "Dollar cost or cache hit rate",
+      "Conditional jointly named agreement alone",
+      "Upstream dataset labels",
+      "Final confirmation assignments or review"
+    ],
+    "development_coverage_loss_max_points": {
+      "text": 4,
+      "images": 0
+    }
+  },
+  "confirmation": {
+    "designs": [
+      "Original",
+      "Frozen selected challenger, including NOT_ADOPTED challenger when required"
+    ],
+    "modalities": {
+      "text": 1000,
+      "images": 100
+    },
+    "backends": [
+      "llm",
+      "ld"
+    ],
+    "arms": 8,
+    "logical_assignments": 4400,
+    "k": 8,
+    "order": "Original canonical IDs, identical across designs/backends; definitions retain the same IDs/names/count.",
+    "stopping": "Run once after selection freeze. Never retune on confirmation, replace unfavorable items, rerun to cleanse a failed/unfavorable result, or choose a different challenger after outcome access.",
+    "reference_repeats": {
+      "text": 100,
+      "images": 25,
+      "designs": [
+        "Original",
+        "Frozen challenger"
+      ],
+      "backend": "llm",
+      "logical_assignments": 250,
+      "preselection": "Dataset manifest fixes repeat IDs/order before outcomes; repeat must match exactly those confirmation payloads and bind its own primary reference artifact SHA before dispatch."
+    },
+    "qualitative_review": "review-plan.json; targets50text/30photos from challenger strata, including corresponding Original assignments assessed against their own catalogs. All anonymized; no quota reallocation. Not population accuracy."
+  },
+  "metrics": {
+    "primary": [
+      "Matching NAMED stable IDs / ALL n",
+      "Direct stable-ID agreement / ALL n, including both Other"
+    ],
+    "coverage": [
+      "Named counts for each backend",
+      "Full2x2 both_named/Sol_named_native_other/Sol_other_native_named/both_other",
+      "Exact shared-Other IDs and refusal counts"
+    ],
+    "partition": "ARI and pairwise precision/recall/F1 with each Other point its own singleton; conditional jointly named statistics remain explicitly conditional.",
+    "paired": "Condition-matched paired named and direct gains/losses plus Sol/native assignment changes. Original-Sol anchoring may be reported only as secondary sensitivity, never substituted for matched-condition results.",
+    "other": [
+      "Per-category confusion relative to Sol, not ground truth",
+      "Reference-repeat self-consistency",
+      "Calibration constructed-key exact accuracy/position tables",
+      "Actual category counts and description word counts"
+    ],
+    "interpretation": "Agreement is not accuracy. Upstream labels are not the generated taxonomy ground truth. Report ambiguity/counterexamples and qualitative-review limitations."
+  },
+  "accounting": {
+    "pricing_file": "pricing.json",
+    "pricing_sha256": "4fba316493c3cd180243ed27198919ad0a4ea847ae0c70dd935bbee2f64a95f5",
+    "basis": "Unchanged recorded2026-10-20 per-token schedule, not invoices or an assertion of future prices. Reprice every raw attempt independently with Decimal.",
+    "sol_per_million_usd": {
+      "ordinary_input": "2",
+      "cached_input": "0.1",
+      "cache_write_input": "2.5",
+      "output_including_reasoning": "10"
+    },
+    "native_per_million_usd": {
+      "all_input": "0.1",
+      "output": "0"
+    },
+    "long_context": {
+      "input_tokens_exclusive_threshold": 272000,
+      "input_multiplier": "2",
+      "output_multiplier": "1.5"
+    },
+    "cache_accounting": "Subtract cached and cache-write tokens from ordinary input; cache-write is a separately priced input component. Native input all at its recorded native rate.",
+    "unknown_policy": "Preserve failed/retried/refused attempts. Missing usage/pricing or unrecorded in-flight completion never becomes zero; show known subtotal with null total/incomplete flags as appropriate.",
+    "timing": "Preserve measured active loop/request seconds, timestamps and stage overlap. Never add overlapping arms as elapsed wall time or infer isolated latency from concurrent runs.",
+    "coding_harness": "Development/final coding-harness review compute is outside this API ledger and explicitly disclosed; record known identity and unknown/metering limits.",
+    "not_selection": "Cost and cache hit rate do not choose the candidate; cache differences confound a simple description-length dollar claim."
+  },
+  "nominal_work": {
+    "classification_conditions": 48,
+    "rewrite_conditions": 4,
+    "logical_classification_assignments": 6570,
+    "calibration": 480,
+    "round2_development": 960,
+    "round3_development": 480,
+    "confirmation": 4400,
+    "sol_repeats": 250,
+    "note": "Logical item classifications, not HTTP requests or charged attempts. Text can page; retries add charged attempts. Coding-harness qualitative review is separately disclosed."
+  },
+  "runtime_registration": {
+    "source_commit": null,
+    "executable_sha256": null,
+    "before_any_dispatch": [
+      "Commit/freeze actual source and executable; source_version verifies old shared files plus new runner/example bytes.",
+      "Copy exact protocol/conditions/dataset/pricing snapshots and all fixed fixtures to RUN.",
+      "Freeze one fresh registration per condition with protocol/condition-spec/source/executable/input/image/catalog/order/instruction/parent SHA pins, exact expected count, relative evidence paths, actual argv and CWD.",
+      "Dry-run the exact fully materialized command; enforce32MiB request cap, zero dispatch, and no existing output/journal/progress.",
+      "No null required pin, duplicate condition dispatch, live output overwrite, altered model/options, or unregistered favorable rerun."
+    ],
+    "adaptive_append_only": [
+      "Round3 selection packet/judgments/actual instruction registration before generation",
+      "Generated compact/boundary raw catalog hashes before their development calls",
+      "Selection/challenger hash and eligibility label before confirmation",
+      "Repeat primary-reference hashes before repeat dispatch"
+    ],
+    "failure_policy": "Leave every failed/partial attempt and status in place. Registered retry bound is provider-internal; any new experiment invocation requires a new openly recorded decision and cannot replace the preregistered result.",
+    "concurrency": {
+      "maximum_sol_workers": 2,
+      "maximum_native_workers": 2,
+      "maximum_total_workers": 4,
+      "note": "The preceding frozen Sol stream may still overlap. Record actual traffic, timestamps and loop times; these are not isolated-performance measurements."
+    }
+  },
+  "publication": {
+    "permanent_auto_research_log": true,
+    "include_every_design": true,
+    "required_fields": [
+      "Question/hypothesis",
+      "Frozen design/parent/protocol/source/data/order pins",
+      "All registered variants and exact counts",
+      "Complete/failed/interrupted/pending state with null unobserved results",
+      "All scores/coverage/Other/word counts/repeats",
+      "Known/unknown costs and compute scope",
+      "Selection rule/result and NOT_ADOPTED labels",
+      "Raw evidence and independent audit/archive links",
+      "Reason the next bounded revision was made, including regressions and negative findings"
+    ],
+    "history": "Append new evidence without changing preceding seed42/1042 cohorts or hiding failed/partial/superseded designs. Do not claim a live result before terminal independent verification."
+  },
+  "stopping_condition": "Stop after three rounds, one frozen confirmation comparison and the preselected repeats/reviews. Additional redesign requires a new recorded research decision. A negative or unavailable result is valid.",
+  "conditions_file": "conditions.json",
+  "conditions_sha256": "a22381595393f3980fbb271b896359508d3dca553be7c1e3b58e017bfe931d22",
+  "review_plan_file": "review-plan.json",
+  "review_plan_sha256": "a8122747c3d4df595d10b6a159018c988b79d13fbbc7bfa23b3409ae1da8540b",
+  "fixed_fixture_sha256": {
+    "baseline-designs/images-original.design.json": "7314a799700d0c0dd64fd54169cede8ae80bf16ed1c5f55f85a88b91a2db4c18",
+    "baseline-designs/import-verification.json": "ca1535006be59baee168f09f9b2049f39319aac699413dd3bcb9acfee0776db3",
+    "baseline-designs/text-original.design.json": "ef82c91b6ef07d5141e1368811b35d45d7a67b829c11cc75356bd7e1854b4aaa",
+    "calibration/description-word-counts.json": "6d5074d16ca446262e153a9aa451e6e599b3120e182dba4c73a3f52af56182f8",
+    "calibration/designs/negative-boundaries.design.json": "edc4896f4f70fa49e6630837657bc95261c0f89056c849489f479c6ac7da6e03",
+    "calibration/designs/redundant-positive.design.json": "896463c8ccf1ccacb379571af29fd2f6042d6988c8a586505c2df1c095d1f8c0",
+    "calibration/designs/short.design.json": "57da038691001ce599fb1cef791e5f2d7aeaaa4e6b9e7a9c8b81ce5ddeccebd7",
+    "calibration/golden-key.json": "ce0a8e70114b25e049458d1e9ab1369485819379bf0755ddcad8a08e9750e7b5",
+    "calibration/items.jsonl": "9f1a33357012c122ddc77f258473b2c2e2d2ed08f74bc6db694c40c16907a12d",
+    "calibration/orders/cyclic-0.json": "cde00d3b2e148b13b6fc42013411feb92e8de7cb824aa23debed6b3b547f6ead",
+    "calibration/orders/cyclic-1.json": "6690086a3947e11dde99cf7c3aafaf4b1bab3ad8b8d52e5cb0ac27ae6dafa6ec",
+    "calibration/orders/cyclic-2.json": "c3cecb9ce72a910a84b15680bf28a31b858a67c21c9730a5510297b9bf80a382",
+    "calibration/orders/cyclic-3.json": "f58d395184acd06000491bfcb0714a2bec4b39fcada073b832084730bd902582",
+    "conditions.json": "a22381595393f3980fbb271b896359508d3dca553be7c1e3b58e017bfe931d22",
+    "orders/images-canonical.json": "43b061425e9c9e34a1082edb08bafa7d06d6611b3cd47b14e808923759f01f33",
+    "orders/text-canonical.json": "8f1f71b76c981d3e041bebb23a4e97e2f7b04450217977ceaba8a9378e832229",
+    "pricing.json": "4fba316493c3cd180243ed27198919ad0a4ea847ae0c70dd935bbee2f64a95f5",
+    "prompts/README.md": "ad59db0541e777719b70e16e6395d2498ffd848f8f818abcbe83e60777010d3d",
+    "prompts/blinded-review.md": "177ca493708ceb2ca585eaf3c83bf383b1abf68a1dc8d43aabda8d5a3554cfce",
+    "prompts/boundary-images-template.md": "0398fdaae64db63e14be3097c87d8a4cfea7385f19f849ef9d55d43e77deaa4a",
+    "prompts/boundary-text-template.md": "1de74577ef2892712c981ca7d83233dea1600631f6db604296dd8e610bf1ea88",
+    "prompts/compact-images.md": "bef4c40a15f212e5bb71d53ffd9e15a66f0e940dcf947fc578982fe2c8509488",
+    "prompts/compact-text.md": "5ee7e2907b0a571a9dd977f7331273db8070d4ca97e7c6cb7de4824ef081b222",
+    "review-plan.json": "a8122747c3d4df595d10b6a159018c988b79d13fbbc7bfa23b3409ae1da8540b"
+  }
+}

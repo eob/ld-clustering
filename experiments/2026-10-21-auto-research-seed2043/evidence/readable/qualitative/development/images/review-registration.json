@@ -1,0 +1,9 @@
+{
+  "phase": "development",
+  "modality": "images",
+  "registered_at_utc": "2026-10-21T03:47:19.943577+00:00",
+  "packet_sha256": "ad63d41c839a42a1557f8816816b5e8398f2c49f078db24619e364c458aaabd6",
+  "instructions_sha256": "d864aee58f47a5f1c36a9509df2fe8bdda6077b33a9118cd8c30b27cf0138ee9",
+  "expected_cases": 7,
+  "reviewer_compute": "coding harness outside experiment API ledger; model identity not exposed"
+}

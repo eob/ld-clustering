@@ -4,7 +4,7 @@
 **Type:** Investigation
 **Filed:** 2026-10-21
 **Branch:** feat-guidance-auto-research
-**Pull request:** https://github.com/eob/ld-clustering/pull/4 (draft; experiments complete, evidence/report delivery in progress)
+**Pull request:** https://github.com/eob/ld-clustering/pull/4
 
 ## Goal / failure mode
 
@@ -24,10 +24,11 @@ IDs; an upstream mechanism has not been established. Reversed text K8 changes
 order and page composition together, so it is not a pure position experiment.
 
 The earlier experiment and its independent audit/archive remain immutable in
-`experiments/2026-10-20-guided-agreement-seed1042/`. Its reserved contextual Sol
-text worker is still running under frozen runtime f78dcf9. The other seven
-arms have succeeded. No ongoing worker, source file, context or executable is
-changed by this follow-up.
+`experiments/2026-10-20-guided-agreement-seed1042/`. At the follow-up's start,
+its reserved contextual Sol text worker was still running under frozen runtime
+f78dcf9, with the other seven arms complete. All eight subsequently finished
+and passed independent verification; PR #3 merged the separate streaming
+evidence. This follow-up changed no active worker, source, context or executable.
 
 ## Context / research brief
 
@@ -115,11 +116,17 @@ gain, and text also failed to improve. Preselected repeats and all 61 selected
 blinded confirmation cases are complete; no confirmation-driven rewrite,
 replacement judgment, or favorable rerun was performed.
 
-Source validation is complete. Separate evidence archival, final report import,
-browser validation and PR delivery remain. This worktree was created from
+The leading method-comparison matrix is complete: nine explicitly scoped groups
+and 18 method rows, with per-backend audited classification costs and measured
+loop times. Combined offline validation passed 211 Python tests; the frozen
+runtime passed 136 Rust tests with one paid test ignored. The evidence archive
+passed separate externally anchored verification. Source PR review is separate
+from final report import and browser/publication validation in eob/kaya-web
+PR #2226. This worktree was created from
 origin/main and fast-forwarded to the accepted f78dcf9 dependency. The earlier
-contextual Sol text stream is still active in its untouched frozen worktree;
-its PR #3 must land before this dependent PR is finalized against refreshed main.
+eight-arm stream completed, independently verified and archived; PR #3 merged
+at `48d62670de7b5201e2e7b5464e9c5505c2ebe7eb`. This feature incorporated that
+main change with a merge into the feature branch, preserving runtime ancestry.
 
 ## Decisions and durable findings
 
@@ -349,13 +356,16 @@ reviews nor the repeats overturn the negative full-cohort confirmation result.
 ### Validation and delivery limits
 
 Offline source checks passed: 136 Rust tests, one explicitly ignored paid test,
-`cargo fmt --check`, and `cargo clippy --all-targets -- -D warnings`. The final
-Python suite passed 162 tests plus seven separate blinded-review reproduction
-helper tests. Receipts are `readiness/source-offline-validation.json` and
-`readiness/final-offline-python-validation.json`; runtime source identity stayed
+`cargo fmt --check`, and `cargo clippy --all-targets -- -D warnings`. The original
+follow-up Python checkpoint passed 162 tests plus seven separate blinded-review
+reproduction helper tests. After incorporating the preceding streaming tools
+and final matrix exporter, the complete repository Python suite passed 211 tests.
+Receipts are `readiness/source-offline-validation.json`,
+`readiness/final-offline-python-validation.json` and
+`readiness/method-matrix-full-python-tests.json`; runtime source identity stayed
 frozen throughout paid classification. Raw API replay verifies accounting and
 assignment binding, not human accuracy or a provider/pagination mechanism.
-Evidence archival and the final report/publication checks remain delivery work.
+The final report/publication checks remain delivery work in the report repository.
 
 ### Post hoc residual text concentration
 
@@ -369,3 +379,29 @@ establish a paging defect or identify the correct model. Full per-category,
 confusion and page cross-tabs are in `analysis/text-paging-posthoc.json`, with
 reproduction/source-guard receipt `readiness/text-paging-posthoc-check.json`.
 No new paid calls, selection or tuning followed this analysis.
+
+### Leading comparison matrix
+
+The report leads with a nine-column grouped matrix: method, then cost, time,
+LLM–Decisions agreement and ARI for text and images. Rows distinguish datasets,
+development/confirmation and post hoc diagnostics. Natural-data agreement is
+not labeled semantic accuracy. Per-backend costs and measured loop times remain
+separate; missing/incomplete measurements remain explicit. Calibration repeats
+retain their dependent denominator and time-sum scope; independent catalogs
+have no direct-ID agreement. Shared generation/review/repeat accounting stays
+in the chronological research log. All values derive from pinned prior
+publication artifacts or independently audited fresh runs, never manual scores.
+
+### Final source evidence archive
+
+`experiments/2026-10-21-auto-research-seed2043/evidence/manifest.json` is anchored
+by SHA-256 `74a0d9fca1fe95f63c7a5e11054aa33fd34871cc82f60afed5ee34aab95ced07`.
+Creation and a separate verification with that literal external anchor passed,
+binding all 397 selected dataset files and 1,054 run files. The exact final
+matrix and all raw attempts, terminal registrations, catalog versions, reviews,
+provenance and reproduction helpers are archived. No RUN bytes changed after
+the snapshot. The external `EVIDENCE-VERIFICATION.json` receipt records the
+command, runtime/data/audit/matrix pins and validation receipts. Preregistered
+fixture bytes and their original checksums remain unchanged; final findings
+are documented in `RESULTS.md` and the repository README. Review and website
+publication remain distinct from successful source archive verification.

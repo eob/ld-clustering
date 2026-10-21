@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "phase": "development",
+  "modality": "images",
+  "sealed_at_utc": "2026-10-21T03:49:56.393038+00:00",
+  "packet_sha256": "ad63d41c839a42a1557f8816816b5e8398f2c49f078db24619e364c458aaabd6",
+  "judgments_sha256": "56536c5f4d28a667bf32d3ab3b721b482cb59ca80a9bca19d5605715d6a31b88",
+  "reviewer_instructions_sha256": "d864aee58f47a5f1c36a9509df2fe8bdda6077b33a9118cd8c30b27cf0138ee9",
+  "expected_count": 7,
+  "accepted_count": 7,
+  "failed_count": 0,
+  "not_attempted_count": 0,
+  "not_attempted_case_ids": [],
+  "blinding": "Judgments sealed before backend-key parsing/unblinding. Coding-harness review is fallible and outside experiment API cost ledger."
+}

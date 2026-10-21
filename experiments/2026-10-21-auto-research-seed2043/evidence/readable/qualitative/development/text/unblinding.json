@@ -1,0 +1,10 @@
+{
+  "unblinded_at_utc": "2026-10-21T03:50:33.717535+00:00",
+  "review_seal_sha256": "0e4f2e5b05617a95675ae762d8f24a3fa51f24c076a414bb7f48b3e5fe707e96",
+  "instruction_freeze_sha256": "fc434f45f2eedc0f76506defef22d76e5523ddc2661134c1ad1a0e9c501dded9",
+  "key_sha256": "b08294b738d4353b7486982b49094daabf88ee9e06ff999f63ddd6520f0de471",
+  "combined_generation_jsonl_sha256": "70e919af490720bc1f55482828b980cdf8936076f33614dc087e6487d1f52a5d",
+  "discovery_count": 200,
+  "selected_development_count": 14,
+  "note": "First backend-key parsing after judgment and actual instruction seals. All selected items retained, no stratum reallocation or favorable subset."
+}
