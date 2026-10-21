@@ -1,0 +1,13 @@
+{
+  "copied_at_utc": "2026-10-20T23:30:12.418336+00:00",
+  "runtime_source_commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+  "note": "Offline helper copies. New verifier/exporter helpers are uncommitted at this copy; measured runtime remains frozen. Final source delivery will commit their exact bytes. Independent audit needs immutable measured runtime Git objects via --source-repo.",
+  "sha256": {
+    "scripts/archive_guided_agreement.py": "3191a56db820bdf878a8fab4bac1c03bc939c1d3898bbc520f48f10782fc2cea",
+    "scripts/verify_guided_agreement.py": "f0f22f6235fb40d443588f0211570d38c32caead779e31bd90ca968dc806fd7e",
+    "scripts/export_guided_agreement.py": "bdc8426271da12393cb5c30ce60a35d3c5b3dda03396703c4c190dde89d8d2e0",
+    "tests/test_archive_guided_agreement.py": "3837aaa0db862a533871cd68254888197b16769850ad779c1bc2fc1b077a756d",
+    "tests/test_verify_guided_agreement.py": "cccd622c77c591acb83abcb4cf890afbabcbfb9b34d999db2953f5f6796dc545",
+    "tests/test_export_guided_agreement.py": "d91522689af7b928e410f1b3c3764d3c5751acad856a355d3a208e6ca3f0598e"
+  }
+}

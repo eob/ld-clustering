@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "metadata": {
+    "assignment_model": "gpt-6-luna",
+    "catalog": [
+      {
+        "description": "Non-human animals, including pets, livestock, wild animals, birds, reptiles, fish, and other animal groups. Includes recognizable animal specimens and remains, such as shells, skulls, and skeletons; a living animal is not required. Select by the main visible subject, using framing, detail, and salient action rather than background area alone. An animal-centered view remains Animals despite surrounding plants, fences, buildings, or textiles. Against People and activities, choose that category when the subject is a human participant or organized human activity involving animals; choose Animals when the animal itself is the subject and people are incidental. Against Food and drink, culinary presentation as meat, an ingredient, or a dish takes precedence over animal origin. Manufactured animal-shaped objects are not animals. Use Other when the subject is outside all categories or cannot be identified sufficiently.",
+        "id": 1,
+        "name": "Animals"
+      },
+      {
+        "description": "Flowers, foliage, trees, and other plants, including whole plants, botanical parts, potted plants, cut flower arrangements, and naturally fallen or decaying tree trunks. Includes vegetation-centered views, not only isolated flowers or living, upright specimens. Containers and indoor settings do not change a botanical subject into Food and drink or Buildings and structures. Against Food and drink, choose Plants for botanical growth or floral display, but Food and drink when plant material is presented as an edible ingredient, dish, or beverage. Against Buildings and structures, naturally fallen wood belongs here, while wood assembled into a fence or other structure belongs there. Against Animals, use Animals when an animal is the focal subject among vegetation. Plant origin alone does not qualify manufactured products such as cigars; use Other unless another category fits.",
+        "id": 2,
+        "name": "Plants"
+      },
+      {
+        "description": "Vehicles for travel or mobile operation, including cars, vans, racing cars, military vehicles, aircraft, and boats. Includes parked, moving, exhibited, and concept/display vehicles, as well as views centered on vehicle interiors or controls. The entire vehicle need not be visible when its interior or control context is clear. Against People and activities, choose Vehicles when the vehicle, cockpit, dashboard, or driving controls are the main subject, even with a visible driver, helmet, or hand; choose People and activities for a person-centered portrait or action view in which the vehicle is supporting context. Vehicle-centered racing views remain Vehicles. Against Electronics and appliances, integrated vehicle controls belong here. Against Buildings and structures or Plants, a focal vehicle takes precedence over its architectural or natural surroundings. Military use alone does not make an object a vehicle.",
+        "id": 3,
+        "name": "Vehicles"
+      },
+      {
+        "description": "People shown individually or in groups, including portraits, gatherings, people working, performing music, and participating in sports. Includes close views of human body parts, even when the rest of the person is outside the frame. Choose this category when the person or human action is the main subject, rather than merely someone present beside another subject. Against Clothing and textiles, a portrait remains here despite prominent clothing; an object-focused garment view belongs there. Against Animals, human participation in an animal-based sporting activity belongs here when the activity is the subject, while animal-centered views belong to Animals. Against Vehicles, a vehicle-focused exterior or control view remains Vehicles. Against Electronics and appliances or Buildings and structures, a focal performer or worker belongs here, but incidental users or occupants do not displace the equipment or constructed setting.",
+        "id": 4,
+        "name": "People and activities"
+      },
+      {
+        "description": "Foods, prepared dishes, ingredients, and beverages, including raw or cooked ingredients, meals being cooked, plated foods, and drinks in containers. Recognizable beverage packaging can establish the drink as the subject without exposed liquid. Against Animals, material presented for culinary preparation or consumption belongs here, whereas animal subjects and non-culinary specimens belong to Animals. Against Plants, edible ingredients and prepared plant-based foods belong here when their culinary role is evident; growing plants and floral arrangements belong to Plants. Against Electronics and appliances, choose Food and drink when the food being cooked is focal, but Electronics and appliances when the powered cooking device itself is focal. A person-centered cooking or eating activity belongs to People and activities. Empty vessels without beverage context and non-food consumables such as cigars do not qualify solely through association with consumption; use Other unless another category fits.",
+        "id": 5,
+        "name": "Food and drink"
+      },
+      {
+        "description": "Electronic equipment and powered household or desktop devices, including media players, radios, stereo systems, and electric fans. Includes recognizable devices whether operating or switched off, and close views of their controls or components when the equipment context is evident. Classify by the device's identity and function, not decorative flower, animal, or textile elements attached to it. Against Vehicles, integrated vehicle interiors and operating controls belong to Vehicles when shown in that context. Against Buildings and structures, choose Electronics and appliances for equipment-focused views, but Buildings and structures for architectural interiors or utility structures as a whole; electrical function alone does not make infrastructure an appliance. Against People and activities, a focal performer or user belongs there, while incidental handling does not displace a device-centered subject. Against Food and drink, select the appliance only when it, rather than its contents, is the main subject.",
+        "id": 6,
+        "name": "Electronics and appliances"
+      },
+      {
+        "description": "Buildings, architectural interiors, monuments, settlements, and other built structures, including fences and utility structures. Covers both individual structures or architectural details and wider scenes centered on constructed environments. This is not a catchall for every manufactured object. Against People and activities, incidental visitors, patrons, or occupants do not displace an architectural or room-centered subject; choose People and activities when a person or their action is focal. Against Electronics and appliances or Clothing and textiles, an interior remains here when its overall spatial setting is the subject, but a focused device or textile object belongs to its respective category. Against Plants, assembled wooden structures belong here, while naturally fallen trunks belong to Plants; vegetation covering a building does not by itself change the category. Against Vehicles, choose Vehicles when a vehicle is the focal object rather than part of the setting.",
+        "id": 7,
+        "name": "Buildings and structures"
+      },
+      {
+        "description": "Garments and textile goods presented as objects, including jackets, rugs, folded woven fabrics, and other clothing or textile articles. Includes object-focused views of garment construction, linings, labels, or fabric details when the article is identifiable. Material origin does not override object identity: a leather jacket is clothing, not Animals. Against People and activities, choose Clothing and textiles when the garment or textile itself is the subject, but People and activities when the subject is a wearer, portrait, body part, or human action; conspicuous clothing alone is not enough. Against Buildings and structures, a textile-focused view belongs here, while a room-centered view with carpeting or other fabrics belongs there. Fabric attached to a device does not displace a device-centered Electronics and appliances subject. Do not include unrelated objects merely because they contain fabric; use Other when no category fits or evidence is insufficient.",
+        "id": 8,
+        "name": "Clothing and textiles"
+      }
+    ],
+    "catalog_sha256": "ecf07921191960e0d246dcedbddfe274d0d63a262c59164f3bd7a966741a2503",
+    "condition": "guided",
+    "diagnostic": true,
+    "effective_catalog_sha256": "c3ebe030c6c1644e0811e54bd4e3221b6392e0764268c5f16a056007a9f723b9",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "effective_order_sha256": "b2ddd6543011e658aaebc223b42021e89fa9a18bd1f2207f6cb68e73ca5688b3",
+    "expected_count": 25,
+    "experiment": "guided-agreement",
+    "input_jsonl_sha256": "7ab56786c3663fd60a1e7cc4290b8002e77d52041228b5bcd2e648a74d2a188f",
+    "input_sha256": "c935cc8948b49ecc26ead1275b3f9833525eea6a02bc8b9429c69abd58f59366",
+    "k": 16,
+    "management_calls": 0,
+    "maximum_request_bytes": 1306600,
+    "modality": "images",
+    "mode": "ld",
+    "ordered_ids": [
+      "48599a29fabce63c6bc1",
+      "be7614b19cf0d59d78e6",
+      "77d0935ddfce72381981",
+      "f963c7764daeb8d7cfa5",
+      "45fbfb0b2f17e4f29c43",
+      "2a8c39c73757582b068e",
+      "23a7471ca0ef47bace1e",
+      "6d4c1b9441009a65fccd",
+      "091aeb45dc0176d878fd",
+      "cee62da63d2ac661dccb",
+      "55ad4a00c668e40ce99f",
+      "bf00a9c0acb7db276d98",
+      "19c83f7d93be3c1c1809",
+      "c4c518017ff699584c29",
+      "92fd1c3e13a215b73bd9",
+      "c4a8e6524a4a6af62800",
+      "d6eb56715e58dc55bc23",
+      "4f63e38a2b7cd2230e67",
+      "9035c91009348a56ef54",
+      "0a457e48dd2ba99bdc3a",
+      "630415e23f58649317bd",
+      "21b82208abbe60877981",
+      "f0bf60d03db9c26c362b",
+      "a0f2cfd32052cb8e1c25",
+      "56219271dcfa0b16ca57"
+    ],
+    "reference_sha256": "7a05630d694b3dc1465407d4fba6a9278a2bfdd82063874b8afd45d116a01ceb",
+    "repeat_index": 2,
+    "reverse_catalog_order": false,
+    "run_id": "f9da2251a553477e46108f01d7e713b3",
+    "sol_reasoning_effort": "high",
+    "source": {
+      "commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+      "embedded_file_sha256": {
+        "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+        "Cargo.toml": "1e3bb39b4ff2fca4f38e8923f1b254d0d50c5d1b4855c4983b30f2b429086715",
+        "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+        "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+        "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+        "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+        "src/lib.rs": "2dfcb22af11e31103c8032b77ab9064ec8e71ab110212d2a2fc1c83b41829d47",
+        "src/provider.rs": "9269e50c25edaa2c73eb8199c3c942d54f7f1bd16ecc011a554f515166cb83f9",
+        "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+      },
+      "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce"
+    },
+    "stage": "diagnostic",
+    "started_at_unix_ms": 1792540933691,
+    "task": "Classify the main visible subject of this photograph into the single supplied broad semantic category whose membership criteria fit best. Use Other when no supplied category fits. Classify visible objects or scenes at the catalog's semantic granularity, rather than color, style, or photographic quality."
+  },
+  "processed_count": 25,
+  "expected_count": 25,
+  "assignments": [
+    {
+      "id": "48599a29fabce63c6bc1",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "be7614b19cf0d59d78e6",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "77d0935ddfce72381981",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f963c7764daeb8d7cfa5",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "45fbfb0b2f17e4f29c43",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "2a8c39c73757582b068e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "23a7471ca0ef47bace1e",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "6d4c1b9441009a65fccd",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "091aeb45dc0176d878fd",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "cee62da63d2ac661dccb",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "55ad4a00c668e40ce99f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "bf00a9c0acb7db276d98",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "19c83f7d93be3c1c1809",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c4c518017ff699584c29",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "92fd1c3e13a215b73bd9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c4a8e6524a4a6af62800",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "d6eb56715e58dc55bc23",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "4f63e38a2b7cd2230e67",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "9035c91009348a56ef54",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "0a457e48dd2ba99bdc3a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "630415e23f58649317bd",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "21b82208abbe60877981",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f0bf60d03db9c26c362b",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "a0f2cfd32052cb8e1c25",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "56219271dcfa0b16ca57",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    }
+  ],
+  "measurement": {
+    "assignment_refusal_calls": 0,
+    "calls": 25,
+    "cost_complete": true,
+    "cost_history_complete": true,
+    "cost_usd": 0.005876100000000001,
+    "error_calls": 0,
+    "journal_sha256": "af22f3048321a1a07275797957047aafc2c8fed2981e194a7c32fa8c0290df8e",
+    "phase_calls": {
+      "assign": 25
+    },
+    "pricing_date": "2026-10-20",
+    "pricing_sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "https://developers.openai.com/api/docs/guides/decisions"
+    ],
+    "request_seconds": 6.444,
+    "timing_complete": true,
+    "unknown_pricing_calls": 0,
+    "unknown_usage_calls": 0,
+    "usage": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "cost_usd": 0.005876100000000001,
+      "input_tokens": 58761,
+      "output_tokens": 0
+    },
+    "wall_ms": 6514,
+    "wall_seconds": 6.514
+  },
+  "error": null,
+  "progress_sha256": "52454f8fb205f077a9ef8676c8b069d7b0c94b96c880f94d025283401b9d2454"
+}

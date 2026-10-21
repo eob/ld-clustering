@@ -1,0 +1,5 @@
+Terminal evidence snapshot; completion is determined by the raw stage artifacts, not this archive label.
+
+Run `python3 archive_guided_agreement.py verify . --manifest-sha256 <published manifest SHA256>` for offline byte/input verification. Concatenate each payload parts array in order and xz-decompress to recover its POSIX tar. Tar headers use zero timestamps; original source mtimes are indexed in manifest.json. Every decompressed file has its original exact bytes and SHA256, including failed or partial calls.
+
+Input payload contains the frozen272 selected files plus only the raw JPEG source for each transformed supplied image. Other downloads, binaries and caches are excluded. Selected photo author/title/CC license, original dimensions and publisher evidence are retained in the dataset attribution JSON. Primary executable is hash-pinned, not archived. Later stages may have distinct source/binary pins. Small raw JSON summaries are also readable byte-identical copies. The archiver does not recompute cost or agreement metrics.

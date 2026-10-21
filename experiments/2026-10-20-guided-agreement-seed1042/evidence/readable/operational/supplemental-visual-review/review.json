@@ -1,0 +1,364 @@
+{
+  "review_type": "supplemental post hoc blinded visual case inspection",
+  "scope": "25 supplied cases; not a population accuracy estimate and separate from the preregistered paid review",
+  "blinding": "Only the supplied README, catalog, cases and referenced JPEGs were read; no candidate-source identities were available or inferred.",
+  "interpretation": {
+    "fit": "supported means defensible under the full catalog; unsupported means visibly inconsistent; unclear means evidence or membership boundary is unresolved.",
+    "preferred": "both permits two defensible candidates; best_catalog_id records a tentative single best choice when possible. null means Other.",
+    "severity": "none: no error found; minor: ambiguous evidence or catalog boundary; moderate: likely missed identifiable subject or unjustified Other; major: clear wrong semantic subject. Severity describes the case concern, not a population metric."
+  },
+  "cases": [
+    {
+      "case_id": "case-39c66d14c1ed6e621ac5c5ae",
+      "visible_evidence": "Two suited men seated at microphones behind a conference desk; faces and upper bodies dominate the composition. A drinking glass is incidental.",
+      "fit_a": "unsupported",
+      "fit_b": "supported",
+      "preferred": "B",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "The main subjects are conference participants. Incidental glassware does not establish a food or drink subject."
+    },
+    {
+      "case_id": "case-2bc063208c970be8905c3699",
+      "visible_evidence": "A shirtless man in jeans and a red cap works a long hand tool against stacked logs; his body and action are prominent.",
+      "fit_a": "unsupported",
+      "fit_b": "supported",
+      "preferred": "B",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "This is a person-centered work activity. Neither the visible wood nor the action has a culinary presentation."
+    },
+    {
+      "case_id": "case-4bfe86df2315a41e065ae7fd",
+      "visible_evidence": "A golfer bends over a club and ball on a putting green while another person watches nearby.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "Human participation in sport is the focal subject. There is no focal food or beverage."
+    },
+    {
+      "case_id": "case-95d7c213a5bc0cca23808d80",
+      "visible_evidence": "Close view of a seated woman resting her chin against her hand at a desk with papers and pens; her face and torso fill most of the frame.",
+      "fit_a": "unsupported",
+      "fit_b": "supported",
+      "preferred": "B",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "The image is a person-centered portrait or candid view, with no food subject."
+    },
+    {
+      "case_id": "case-488d4e57b6c7d99392dca576",
+      "visible_evidence": "A very close crop of many pale translucent, rounded, irregular granules or clustered nodules; there is no identifiable packaging, plate, preparation, or scale cue.",
+      "fit_a": "supported",
+      "fit_b": "unclear",
+      "preferred": "A",
+      "best_catalog_id": null,
+      "confidence": "medium",
+      "severity": "minor",
+      "flags": [
+        "insufficient_detail"
+      ],
+      "rationale": "The material could be food-related, but the photograph alone does not establish an edible ingredient. Other is justified by insufficient identification; this should not be treated as a clear Food error."
+    },
+    {
+      "case_id": "case-c1aa32a5e8982f53c7d1c568",
+      "visible_evidence": "A lit natural cavern with irregular rock walls, stalactites, and mineral formations. A small sign is peripheral.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": null,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error",
+        "granularity"
+      ],
+      "rationale": "Natural geological formations are outside the supplied categories. Artificial lighting and a sign do not make the cavern a built structure."
+    },
+    {
+      "case_id": "case-41608c3987295013fe3fe69d",
+      "visible_evidence": "A dark labeled wine-shaped bottle, with visible Zin lettering, stands in a decorative wire carrier with two stemmed glasses.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 5,
+      "confidence": "high",
+      "severity": "moderate",
+      "flags": [
+        "unjustified_other"
+      ],
+      "rationale": "Recognizable beverage packaging establishes a drink subject even without exposed liquid. The carrier and glasses support the beverage context."
+    },
+    {
+      "case_id": "case-e53a6b704b6a72080024f78f",
+      "visible_evidence": "A man standing on a dock holds a fishing rod; a second man handles a tackle container beside him, with lake and small boat behind.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "The visible subject is people fishing. No catch or culinary presentation is focal, and the boat supplies context."
+    },
+    {
+      "case_id": "case-6812a6d75a6c13ea306bf95d",
+      "visible_evidence": "An exposed wired circuit with a copper-wound coil, small electronic components, colored alligator clips, and an earpiece-like component arranged on fabric.",
+      "fit_a": "unsupported",
+      "fit_b": "supported",
+      "preferred": "B",
+      "best_catalog_id": 6,
+      "confidence": "high",
+      "severity": "moderate",
+      "flags": [
+        "unjustified_other",
+        "granularity"
+      ],
+      "rationale": "The electronic equipment context is evident from the connected components. A finished enclosure or operating state is not required by the catalog."
+    },
+    {
+      "case_id": "case-3cc75523813172e9bce1202b",
+      "visible_evidence": "A white electric hot-water dispenser or kettle-like appliance with lid, handle, spout, and power cord sits on a mat beside an outlet.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 6,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "A specific powered household appliance is the centered object. The surrounding corner of the room is supporting context."
+    },
+    {
+      "case_id": "case-8e5b51a48866b08ae3815579",
+      "visible_evidence": "A seated man blows into a trumpet, framed by other brass or woodwind instruments; his face, hands, and instrument-playing action are prominent.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "This is a focal musical performer, an explicit People and activities member. There is no food subject."
+    },
+    {
+      "case_id": "case-b6e10eb1529e0cead4ab5b1a",
+      "visible_evidence": "A fixed brick-and-mortar cooking installation fills the frame, with circular burner openings, a visible metal burner, hoses, and a gas valve.",
+      "fit_a": "supported",
+      "fit_b": "supported",
+      "preferred": "A",
+      "best_catalog_id": 6,
+      "confidence": "medium",
+      "severity": "minor",
+      "flags": [
+        "category_overlap",
+        "granularity"
+      ],
+      "rationale": "The cooking apparatus is the focal equipment, so Appliances is a reasonable best fit. Its substantial masonry construction also supports Structures; the catalog does not expressly resolve built-in, non-electric stoves. This is a boundary case, not a clear wrong-subject error."
+    },
+    {
+      "case_id": "case-26ded46b01140b49e4716fe1",
+      "visible_evidence": "Trees and large fronds fill a planted courtyard or atrium; behind them are arched openings, walls, windows, chairs, railings, and an incidental person.",
+      "fit_a": "supported",
+      "fit_b": "supported",
+      "preferred": "both",
+      "best_catalog_id": 7,
+      "confidence": "low",
+      "severity": "minor",
+      "flags": [
+        "category_overlap",
+        "granularity"
+      ],
+      "rationale": "Both vegetation and the enclosed architectural setting are salient. I give a slight single-category preference to Buildings and structures because the composition presents an inhabited courtyard interior, but Plants remains defensible as a vegetation-centered reading. Area alone does not resolve the focal subject."
+    },
+    {
+      "case_id": "case-44df73c7ac2521ed7e36d1df",
+      "visible_evidence": "A costumed man in a hat, bright shirt, oversized checked trousers, and yellow shoes gestures on a performance mat, with colorful trailers behind.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "A human performer is centered. The conspicuous costume and background do not displace the person; there is no food subject."
+    },
+    {
+      "case_id": "case-8c16ae3a988aafdf23e6fa71",
+      "visible_evidence": "Close view of a woman holding and playing a violin, with bow, fingers, microphones, and another musician partly behind her.",
+      "fit_a": "unsupported",
+      "fit_b": "supported",
+      "preferred": "B",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "The focal subject is a musician. Neither the instrument nor the embroidered clothing establishes Food and drink."
+    },
+    {
+      "case_id": "case-3c4d033236d63b3d66583420",
+      "visible_evidence": "A freestanding wood-clad hot tub or spa has molded seats, agitated water and jets, and a small integrated control panel; it dominates the frame under a raised wooden structure.",
+      "fit_a": "unsupported",
+      "fit_b": "supported",
+      "preferred": "B",
+      "best_catalog_id": 6,
+      "confidence": "high",
+      "severity": "moderate",
+      "flags": [
+        "unjustified_other"
+      ],
+      "rationale": "The recognizable powered household spa is the focal device. Its size and outdoor setting do not preclude Appliances."
+    },
+    {
+      "case_id": "case-a0cc576dcc48eb40a8ed485d",
+      "visible_evidence": "A mottled gray, squat reptile-like animal with a distinguishable head and body blends into a pile of differently shaped rocks near the center; exact species is not clear.",
+      "fit_a": "unsupported",
+      "fit_b": "supported",
+      "preferred": "B",
+      "best_catalog_id": 1,
+      "confidence": "medium",
+      "severity": "moderate",
+      "flags": [
+        "unjustified_other",
+        "insufficient_detail"
+      ],
+      "rationale": "Camouflage makes the animal easy to miss, but its head and body distinguish it from the rocks. Species-level identification is unnecessary for Animals. Residual uncertainty is about fine identification and camouflage rather than a demand for species detail."
+    },
+    {
+      "case_id": "case-00d104aac7a8976e2bb6f48c",
+      "visible_evidence": "A cordless telephone handset with display, antenna, speaker, and keypad stands sharply focused in front of an open laptop.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 6,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "Both the focused handset and supporting laptop are electronic equipment. No architectural subject is focal."
+    },
+    {
+      "case_id": "case-f0e7e37dfe43dbfc185e7988",
+      "visible_evidence": "A helmeted skateboarder is airborne above a skate bowl, gripping or closely controlling the board with bent legs.",
+      "fit_a": "supported",
+      "fit_b": "unsupported",
+      "preferred": "A",
+      "best_catalog_id": 4,
+      "confidence": "high",
+      "severity": "major",
+      "flags": [
+        "clear_error"
+      ],
+      "rationale": "The human sporting action is the focal subject. There is no visible food or drink subject."
+    },
+    {
+      "case_id": "case-fb648312f0313d96ef82059e",
+      "visible_evidence": "Close view of two large pink flowers, buds, stems, and leaves; small insects, if any, are incidental.",
+      "fit_a": "supported",
+      "fit_b": "supported",
+      "preferred": "both",
+      "best_catalog_id": 2,
+      "confidence": "high",
+      "severity": "none",
+      "flags": [],
+      "rationale": "Both candidates fit the dominant botanical subject. Shared-error check found no contrary focal subject."
+    },
+    {
+      "case_id": "case-1be56cd64e4f1ba1aad0d548",
+      "visible_evidence": "Chocolate-colored baked pastries split and filled with white cream are arranged on a white plate.",
+      "fit_a": "supported",
+      "fit_b": "supported",
+      "preferred": "both",
+      "best_catalog_id": 5,
+      "confidence": "high",
+      "severity": "none",
+      "flags": [],
+      "rationale": "The plated desserts clearly establish Food and drink. Shared-error check found no issue."
+    },
+    {
+      "case_id": "case-b63815f8e9204e4fa24eda3f",
+      "visible_evidence": "A flock of sheep fills the foreground of a town street, with people standing along the far side watching and buildings behind.",
+      "fit_a": "supported",
+      "fit_b": "supported",
+      "preferred": "both",
+      "best_catalog_id": 1,
+      "confidence": "high",
+      "severity": "none",
+      "flags": [
+        "category_overlap"
+      ],
+      "rationale": "The sheep are the detailed foreground subjects. Spectators and the organized setting do not establish a focal human participant or sporting action. Both Animals choices remain supported after checking the human-activity boundary."
+    },
+    {
+      "case_id": "case-7df9b372ddcbc611fac764a7",
+      "visible_evidence": "A plated portion of meat with sauce and several prepared vegetables is centered on a table.",
+      "fit_a": "supported",
+      "fit_b": "supported",
+      "preferred": "both",
+      "best_catalog_id": 5,
+      "confidence": "high",
+      "severity": "none",
+      "flags": [],
+      "rationale": "Culinary presentation takes precedence over animal or plant origin. Both candidates fit; no shared mistake is evident."
+    },
+    {
+      "case_id": "case-e5efe67ab279bb9dd15152fc",
+      "visible_evidence": "An object-focused overhead view of a vented protective helmet, with a central mounting plate and a tethered cylindrical camera-like electronic accessory at its side.",
+      "fit_a": "unclear",
+      "fit_b": "unclear",
+      "preferred": "unclear",
+      "best_catalog_id": 8,
+      "confidence": "low",
+      "severity": "minor",
+      "flags": [
+        "category_overlap",
+        "granularity",
+        "possible_shared_error",
+        "possible_unjustified_other"
+      ],
+      "rationale": "Other is not automatically vindicated by agreement: the main helmet could reasonably fit broad clothing or headwear, while the camera and mount make Electronics another plausible reading. Clothing and textiles is my tentative best fit because the helmet is the main object, but the guide does not explicitly settle hard protective headgear or this accessory-centered presentation. Do not count this as a clear shared error without a catalog ruling."
+    },
+    {
+      "case_id": "case-2abe3d56aff3f4cc6726d7d1",
+      "visible_evidence": "A large painted, angular wooden horse-shaped decorative object stands on a wooden platform beneath trees beside a street; a bus is in the background.",
+      "fit_a": "supported",
+      "fit_b": "supported",
+      "preferred": "both",
+      "best_catalog_id": null,
+      "confidence": "medium",
+      "severity": "none",
+      "flags": [
+        "granularity"
+      ],
+      "rationale": "This is a manufactured animal-shaped object, explicitly excluded from Animals. Trees and bus are background context. There is no clear commemorative monument or architectural function; Structures is not a catchall for manufactured objects. Both Other choices are supported."
+    }
+  ]
+}

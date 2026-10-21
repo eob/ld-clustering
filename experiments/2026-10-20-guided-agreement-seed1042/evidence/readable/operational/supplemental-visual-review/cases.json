@@ -1,0 +1,227 @@
+[
+  {
+    "case_id": "case-39c66d14c1ed6e621ac5c5ae",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/c552fc3ad4cec5427bfe.jpg"
+    },
+    "choice_a": 5,
+    "choice_b": 4
+  },
+  {
+    "case_id": "case-2bc063208c970be8905c3699",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/f326402cb9283fb64737.jpg"
+    },
+    "choice_a": 5,
+    "choice_b": 4
+  },
+  {
+    "case_id": "case-4bfe86df2315a41e065ae7fd",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/f51137a1dc7a467e5096.jpg"
+    },
+    "choice_a": 4,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-95d7c213a5bc0cca23808d80",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/266197d08c96d6dba809.jpg"
+    },
+    "choice_a": 5,
+    "choice_b": 4
+  },
+  {
+    "case_id": "case-488d4e57b6c7d99392dca576",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/23c5d6e0ab0e2e9eaed5.jpg"
+    },
+    "choice_a": null,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-c1aa32a5e8982f53c7d1c568",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/b97fbb66dc86e9d0554f.jpg"
+    },
+    "choice_a": null,
+    "choice_b": 7
+  },
+  {
+    "case_id": "case-41608c3987295013fe3fe69d",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/77d0935ddfce72381981.jpg"
+    },
+    "choice_a": 5,
+    "choice_b": null
+  },
+  {
+    "case_id": "case-e53a6b704b6a72080024f78f",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/c367a108df118821e684.jpg"
+    },
+    "choice_a": 4,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-6812a6d75a6c13ea306bf95d",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/183698f3a9d4a5674b94.jpg"
+    },
+    "choice_a": null,
+    "choice_b": 6
+  },
+  {
+    "case_id": "case-3cc75523813172e9bce1202b",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/3567707881faf96292f7.jpg"
+    },
+    "choice_a": 6,
+    "choice_b": 7
+  },
+  {
+    "case_id": "case-8e5b51a48866b08ae3815579",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/48599a29fabce63c6bc1.jpg"
+    },
+    "choice_a": 4,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-b6e10eb1529e0cead4ab5b1a",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/eed83f897cf2c9eb51fc.jpg"
+    },
+    "choice_a": 6,
+    "choice_b": 7
+  },
+  {
+    "case_id": "case-26ded46b01140b49e4716fe1",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/45fbfb0b2f17e4f29c43.jpg"
+    },
+    "choice_a": 2,
+    "choice_b": 7
+  },
+  {
+    "case_id": "case-44df73c7ac2521ed7e36d1df",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/338a411555493e783604.jpg"
+    },
+    "choice_a": 4,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-8c16ae3a988aafdf23e6fa71",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/64bb00eab8078cb4d3eb.jpg"
+    },
+    "choice_a": 5,
+    "choice_b": 4
+  },
+  {
+    "case_id": "case-3c4d033236d63b3d66583420",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/56219271dcfa0b16ca57.jpg"
+    },
+    "choice_a": null,
+    "choice_b": 6
+  },
+  {
+    "case_id": "case-a0cc576dcc48eb40a8ed485d",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/f6f4b1fe5eb44841a5cc.jpg"
+    },
+    "choice_a": null,
+    "choice_b": 1
+  },
+  {
+    "case_id": "case-00d104aac7a8976e2bb6f48c",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/91b9a1c52777b768827e.jpg"
+    },
+    "choice_a": 6,
+    "choice_b": 7
+  },
+  {
+    "case_id": "case-f0e7e37dfe43dbfc185e7988",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/0cc6767d3332caa8293c.jpg"
+    },
+    "choice_a": 4,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-fb648312f0313d96ef82059e",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/f4bd501f90a6362e4c0f.jpg"
+    },
+    "choice_a": 2,
+    "choice_b": 2
+  },
+  {
+    "case_id": "case-1be56cd64e4f1ba1aad0d548",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/6a4c59c19be40fdc61db.jpg"
+    },
+    "choice_a": 5,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-b63815f8e9204e4fa24eda3f",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/55ad4a00c668e40ce99f.jpg"
+    },
+    "choice_a": 1,
+    "choice_b": 1
+  },
+  {
+    "case_id": "case-7df9b372ddcbc611fac764a7",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/be7614b19cf0d59d78e6.jpg"
+    },
+    "choice_a": 5,
+    "choice_b": 5
+  },
+  {
+    "case_id": "case-e5efe67ab279bb9dd15152fc",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/554cced562c96b9c6518.jpg"
+    },
+    "choice_a": null,
+    "choice_b": null
+  },
+  {
+    "case_id": "case-2abe3d56aff3f4cc6726d7d1",
+    "item": {
+      "text": "Photograph.",
+      "image": "/mnt/disks/data/ld-clustering-guided-agreement/data/guidance/images/3735a4e1dbc96fb2c2f8.jpg"
+    },
+    "choice_a": null,
+    "choice_b": null
+  }
+]

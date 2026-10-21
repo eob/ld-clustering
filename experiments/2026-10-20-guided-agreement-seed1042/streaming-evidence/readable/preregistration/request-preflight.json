@@ -1,0 +1,123 @@
+{
+  "api_calls": 0,
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "modalities": [
+    {
+      "assignment_request_upper_bound": {
+        "ld": {
+          "bytes": 216325,
+          "sha256": "a801b1f4c167edba6e4a06a76bc5614136b5ff2f999a81ea3a2f680bfb5b6653"
+        },
+        "llm": {
+          "bytes": 252577,
+          "sha256": "852e6085cc3dceb0d70dbf697cd7862f2b627bba6c9905131ee7fde82c33b158"
+        }
+      },
+      "config": {
+        "bootstrap_size": 24,
+        "k": 8,
+        "maintenance_interval": 100,
+        "max_clusters": 16,
+        "novelty_trigger": 8,
+        "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request."
+      },
+      "context_sha256": "cff717fad8b0b5b7d1ee34d8be46e93bd62c94baf8b799faf2452304f7e6141a",
+      "count": 1000,
+      "input_sha256": "f28ebd149a6da02c77f4855f93532dceb691b06d4b0912c5f570c794a8b94783",
+      "jsonl_sha256": "efbbb89614828610b73b87f45fceeea52b97a9d300f7b0f65fffaf0ac9a4384d",
+      "modality": "text",
+      "policies": [
+        {
+          "bootstrap_request": {
+            "bytes": 6468,
+            "sha256": "1bae4e6febdfd06c5fdd22714b906af4f562c9af8995dfbcbb2076ad6503e147"
+          },
+          "manager_descriptor": {
+            "context_sha256": null,
+            "policy": "original",
+            "prompt_revision": "original-v1"
+          },
+          "maximum_definition_and_40_largest_evidence_request": {
+            "bytes": 513206,
+            "sha256": "e9b5f088d5e4ce728eda4a33e741eac2c1d8fd583da35b3104c38e6b689c6267"
+          }
+        },
+        {
+          "bootstrap_request": {
+            "bytes": 12116,
+            "sha256": "2fb2629cf1e8752ac35798b3677fd16a1370075d8a3c23de15b558f33513768f"
+          },
+          "manager_descriptor": {
+            "context_sha256": "cff717fad8b0b5b7d1ee34d8be46e93bd62c94baf8b799faf2452304f7e6141a",
+            "policy": "contextual",
+            "prompt_revision": "contextual-v1"
+          },
+          "maximum_definition_and_40_largest_evidence_request": {
+            "bytes": 518854,
+            "sha256": "4fce7a1ecfeed2adeb23981c7152309508b3579f300609bfd47afc76f8b6e88f"
+          }
+        }
+      ]
+    },
+    {
+      "assignment_request_upper_bound": {
+        "ld": {
+          "bytes": 1658593,
+          "sha256": "2ea2bca1b77c1834a1998142014ac27485d93a4f9c0b277f8967363f34802f05"
+        },
+        "llm": {
+          "bytes": 1694845,
+          "sha256": "8109f8efae8d9225514ff13796badda0e683b310fb119a9ae001a35a5f6ca479"
+        }
+      },
+      "config": {
+        "bootstrap_size": 24,
+        "k": 8,
+        "maintenance_interval": 100,
+        "max_clusters": 16,
+        "novelty_trigger": 8,
+        "task": "Classify the main visible subject of this photograph into the single supplied broad semantic category whose membership criteria fit best. Use Other when no supplied category fits. Classify visible objects or scenes at the catalog's semantic granularity, rather than color, style, or photographic quality."
+      },
+      "context_sha256": "4c6565b1336c9c1baa0b76813f0ef882dd8ab870d31d9caa804c69c6f27dfc74",
+      "count": 100,
+      "input_sha256": "e1d3369d1921ffae29184f7bface06e8722006f16407e6a0d0173d9beffc6858",
+      "jsonl_sha256": "395de440c385a3f7ccc870ef0fb24ec6dd6500e32eb2be46198b07361dd6d254",
+      "modality": "images",
+      "policies": [
+        {
+          "bootstrap_request": {
+            "bytes": 9713515,
+            "sha256": "370860da8ce2e459aaae53c0ee12655cd2b773d97b7c881be441035e1e599fe2"
+          },
+          "manager_descriptor": {
+            "context_sha256": null,
+            "policy": "original",
+            "prompt_revision": "original-v1"
+          },
+          "maximum_definition_and_40_largest_evidence_request": {
+            "bytes": 31303515,
+            "sha256": "7ef7068e8b95edfc0ec0d8499b35c59c649aa968d81011beccd6652a19cf78ca"
+          }
+        },
+        {
+          "bootstrap_request": {
+            "bytes": 9719089,
+            "sha256": "9d91dd7b177197078793a412833c4613fae1ef86c390e9fc8687b48be2aea053"
+          },
+          "manager_descriptor": {
+            "context_sha256": "4c6565b1336c9c1baa0b76813f0ef882dd8ab870d31d9caa804c69c6f27dfc74",
+            "policy": "contextual",
+            "prompt_revision": "contextual-v1"
+          },
+          "maximum_definition_and_40_largest_evidence_request": {
+            "bytes": 31309089,
+            "sha256": "f3d4ddf48523e779dcd91b897556ba971034d235f89eeb6a8d93a7c84a320f4a"
+          }
+        }
+      ]
+    }
+  ],
+  "request_scope": "Bootstrap uses actual first24 inputs and empty catalog. Upper bounds use synthetic16 maximum-byte category definitions and40 largest reserved inputs; none of these requests are dispatched.",
+  "schema_version": 1,
+  "status": "offline_preflight_passed"
+}

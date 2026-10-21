@@ -1,0 +1,12 @@
+{
+  "source_commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+  "protocol_sha256": "894b0e577a0f6e778f09855ba676f614620b4992b3f013e8ee61477452181fbd",
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "classification_executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce",
+  "analysis_executable_sha256": "9c886c11b2341c93bf7b3a8333b57ae05ec65d82a5da87a27863ad968138e719",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+  "host": "Linux-6.1.0-52-cloud-amd64-x86_64-with-glibc2.36",
+  "recorded_at_utc": "2026-10-20T22:49:21.628765+00:00",
+  "timed_workers": "One sequential classifier per arm; independent arms overlap. No executable rebuild or runtime-source edits until controlled stages terminate."
+}

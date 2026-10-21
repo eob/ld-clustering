@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "seed": 2042,
+  "text_quotas": {
+    "different_named": 30,
+    "reference_named_candidate_other": 30,
+    "reference_other_candidate_named": 10,
+    "equal_named": 20,
+    "both_other": 10
+  },
+  "images_census": true,
+  "shortfall_policy": "Select all available cases when a stratum is smaller than its quota. Do not reallocate unused quota to another stratum.",
+  "sampling_method": "Text: balance the fixed stratum quota across confusion cells, then select seed-ranked cases within each cell without replacement. Images: review all 100 held-out cases per description condition. Independently seed-rank review order and A/B identity.",
+  "interpretation": "Automated reviewer judgments are evidence about the selected cases, not human truth or an unweighted estimate of population correctness. Report actual eligible/selected/reviewed counts by stratum."
+}

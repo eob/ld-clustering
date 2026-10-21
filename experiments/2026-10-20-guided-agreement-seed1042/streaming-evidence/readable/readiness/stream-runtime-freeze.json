@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+  "binary_sha256": "d16f7d289af670f7539f28ccec6474602e3735f54cfbafb24fff884cb627e603",
+  "inspector_sha256": "65d51124ecca8262a2808386915a6e74af186c568494e8f30c33a5c51468f848",
+  "preflight_sha256": "ecbb7447d9222f953d8605419093c24d57fd956af71724cb5d9fb1d0a5ea99ec",
+  "release_preflight_matches_registered": true,
+  "files": {
+    "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+    "src/agreement_data.rs": "b180a8e25731b0c80b820adac87e1affda3a3ddf77b2e2b8157fb615b4252962",
+    "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+    "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+    "src/datasets.rs": "f025f4e694a0bfe53e249f700758ee6d5b8ebfa3a743f89f8e82857bce0b57cc",
+    "src/engine.rs": "f9b02f4812ddc84260d9b7b55ae6540cabf1b9cb231ce749c637dca0e226df23",
+    "src/lib.rs": "2dfcb22af11e31103c8032b77ab9064ec8e71ab110212d2a2fc1c83b41829d47",
+    "src/main.rs": "6aaeb87fd596e8337076ab99cf84ba5713aa1f803459cbd2a01811a39b1d01e9",
+    "src/metrics.rs": "c13f0e6f12ec5ef6bd3887abae78e067bc410c44841a6787faa43f704c17977f",
+    "src/provider.rs": "b423fef2075f66eeccf7f1a3e5e3d86750413f625f14d645b4b5ceb316d8e1fb",
+    "src/results.rs": "2cffa0d848ef9a11f8676c08098c125282768a5b99f71f1ef1a9b1b2e38dab91",
+    "src/store.rs": "1dac287ece2cddf4f7668fcda15f47d6f0f544364c69c9e3487c283adf72a49b",
+    "src/types.rs": "202b0875a4f725b4cd1467d5ce448143b1b49befb39d2936cc1399f4075255ae",
+    "Cargo.toml": "4d4ea297856bf41d699f76067319551e2170202d10c80199bac59a415e78b439",
+    "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+    "scripts/guided-streaming.sh": "81e6898b1231d02e86715ec01237b8ff7c5c9e350554a6466e12d643fe8d10f8",
+    "examples/inspect_guided_streaming.rs": "0b18517ff4b0ab75a9716b10f7e620aa8a4a5c1ace377f227e4a0ec345344f5c",
+    "experiments/2026-10-20-guided-agreement-seed1042/streaming-protocol.json": "65edc12008dd26404a52406a31f1c135e628642e4e8ac69e213882f8d60c0070",
+    "experiments/2026-10-20-guided-agreement-seed1042/streaming-context-text.md": "cff717fad8b0b5b7d1ee34d8be46e93bd62c94baf8b799faf2452304f7e6141a",
+    "experiments/2026-10-20-guided-agreement-seed1042/streaming-context-images.md": "4c6565b1336c9c1baa0b76813f0ef882dd8ab870d31d9caa804c69c6f27dfc74"
+  }
+}

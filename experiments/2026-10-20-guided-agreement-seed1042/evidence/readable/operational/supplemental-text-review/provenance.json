@@ -1,0 +1,15 @@
+{
+  "scope": "Supplemental post hoc qualitative inspection, separate from preregistered paid Sol reviewer; selected cases are not a population accuracy estimate.",
+  "reviewer": "Delegated Codex agent; inherited model was not independently API-pinned.",
+  "blinding": "Only50 anonymous cases and two opaque full-catalog lookups; no backend identity, audit key, experiment aggregate outcomes or source repo inspection.",
+  "selection": "From registered seed-ranked bundles, first cases within strata: original8 different-named,4 reference-named/candidate-Other,2 reference-Other/candidate-named,4 equal-named,2 both-Other; guided12/8/4/4/2 respectively.",
+  "recorded_at_utc": "2026-10-20T23:43:44.385225+00:00",
+  "files_sha256": {
+    "README.txt": "b1cd3bc95301bb312f44aad7122cb376af6f5b4009cddf4db2007cfdf306047f",
+    "catalogs.json": "be82a953446469e0459337c63d7a58241c4ece4bd7a593655d99d79a0fadc275",
+    "cases.json": "f7094bc052bd5a78d40655a2447d7f4d766d5361405811c0b4d9f50ba90ab6ea",
+    "review.json": "32c2ca508b9015d1e8ef391dfe605a0755dbeee2c1eceb49702295d8328855bf",
+    "findings.md": "f14419a94f7a706c996250731078c66d60ffe217b33ba8ffbc621f37e3501d0d"
+  },
+  "accounting": "No experimental external API calls dispatched. Coding-agent compute is outside the experiment API-cost ledger; no zero-total-cost claim."
+}

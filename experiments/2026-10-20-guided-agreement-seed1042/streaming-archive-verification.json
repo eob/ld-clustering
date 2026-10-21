@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-21T11:58:55.652829+00:00",
+  "status": "verified",
+  "manifest_sha256": "75d694a497fdf0dfab14159b8f978606ce89eeb17efb646802fe2106fc79d9f4",
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "runtime_source_commit": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+  "runtime_binary_sha256": "d16f7d289af670f7539f28ccec6474602e3735f54cfbafb24fff884cb627e603",
+  "decompressed_files": 407,
+  "independent_audit_sha256": "a939309be01b79663ca6a517c021aaee459b1aa6a2365cfdcdcfb5a9886417fd",
+  "verification_basis": "Separate archive_guided_agreement.py verify with literal external manifest pin; no metric/cost recomputation. Independent full replay separately verified all eight terminal arms and four comparisons.",
+  "audit_access": "Exact independent-audit.json is in the raw run payload; its 14MB size exceeds the unchanged readable-copy limit."
+}

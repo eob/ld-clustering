@@ -1,0 +1,170 @@
+[
+  {
+    "modality": "text",
+    "condition": "original",
+    "backend": "llm",
+    "catalog_sha256": "9f16d3f32cc4fda24652b98e4499ac61817c310533e35261dd5e5ce88d508cba",
+    "dry_run": true,
+    "effective_catalog_sha256": "7bdf8bf0beb83806243f0fe247cb355e47841abe00868a2f1012537d07e2e5c7",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "input_sha256": "8ae78934d7ad5e2f4c7720b6a64bd875610f5bbfc4c59023b95b6526bdfced12",
+    "maximum_request_bytes": 3031
+  },
+  {
+    "modality": "text",
+    "condition": "original",
+    "backend": "ld",
+    "catalog_sha256": "9f16d3f32cc4fda24652b98e4499ac61817c310533e35261dd5e5ce88d508cba",
+    "dry_run": true,
+    "effective_catalog_sha256": "7bdf8bf0beb83806243f0fe247cb355e47841abe00868a2f1012537d07e2e5c7",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "input_sha256": "8ae78934d7ad5e2f4c7720b6a64bd875610f5bbfc4c59023b95b6526bdfced12",
+    "maximum_request_bytes": 2627
+  },
+  {
+    "modality": "text",
+    "condition": "guided",
+    "backend": "llm",
+    "catalog_sha256": "bcdefe74187e15d7df0be7678a492fecb3b18e21ce8f7850514cccf8eda39dad",
+    "dry_run": true,
+    "effective_catalog_sha256": "41d441a61afd995b51de104ed78901059caa8e312f7197838b33afe6e1048c1e",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "input_sha256": "8ae78934d7ad5e2f4c7720b6a64bd875610f5bbfc4c59023b95b6526bdfced12",
+    "maximum_request_bytes": 10009
+  },
+  {
+    "modality": "text",
+    "condition": "guided",
+    "backend": "ld",
+    "catalog_sha256": "bcdefe74187e15d7df0be7678a492fecb3b18e21ce8f7850514cccf8eda39dad",
+    "dry_run": true,
+    "effective_catalog_sha256": "41d441a61afd995b51de104ed78901059caa8e312f7197838b33afe6e1048c1e",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "input_sha256": "8ae78934d7ad5e2f4c7720b6a64bd875610f5bbfc4c59023b95b6526bdfced12",
+    "maximum_request_bytes": 9605
+  },
+  {
+    "modality": "images",
+    "condition": "original",
+    "backend": "llm",
+    "catalog_sha256": "7152868f072adccefd30ee6764d277c2eaf19d135efd1cf9615d4298d8086202",
+    "dry_run": true,
+    "effective_catalog_sha256": "ea28b96e08fdb67ee5c877504958d7a126a2437a50cf09c1a33b506d1073c48b",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "input_sha256": "3124215566a4a453a5fd537334c4f49f1a02f722dc468ba2fa41d4c03dd78438",
+    "maximum_request_bytes": 1386228
+  },
+  {
+    "modality": "images",
+    "condition": "original",
+    "backend": "ld",
+    "catalog_sha256": "7152868f072adccefd30ee6764d277c2eaf19d135efd1cf9615d4298d8086202",
+    "dry_run": true,
+    "effective_catalog_sha256": "ea28b96e08fdb67ee5c877504958d7a126a2437a50cf09c1a33b506d1073c48b",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "input_sha256": "3124215566a4a453a5fd537334c4f49f1a02f722dc468ba2fa41d4c03dd78438",
+    "maximum_request_bytes": 1385824
+  },
+  {
+    "modality": "images",
+    "condition": "guided",
+    "backend": "llm",
+    "catalog_sha256": "ecf07921191960e0d246dcedbddfe274d0d63a262c59164f3bd7a966741a2503",
+    "dry_run": true,
+    "effective_catalog_sha256": "c3ebe030c6c1644e0811e54bd4e3221b6392e0764268c5f16a056007a9f723b9",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "input_sha256": "3124215566a4a453a5fd537334c4f49f1a02f722dc468ba2fa41d4c03dd78438",
+    "maximum_request_bytes": 1392820
+  },
+  {
+    "modality": "images",
+    "condition": "guided",
+    "backend": "ld",
+    "catalog_sha256": "ecf07921191960e0d246dcedbddfe274d0d63a262c59164f3bd7a966741a2503",
+    "dry_run": true,
+    "effective_catalog_sha256": "c3ebe030c6c1644e0811e54bd4e3221b6392e0764268c5f16a056007a9f723b9",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "input_sha256": "3124215566a4a453a5fd537334c4f49f1a02f722dc468ba2fa41d4c03dd78438",
+    "maximum_request_bytes": 1392416
+  }
+]

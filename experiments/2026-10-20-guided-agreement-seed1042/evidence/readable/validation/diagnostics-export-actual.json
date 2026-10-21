@@ -1,0 +1,9 @@
+{
+  "recorded_at_utc": "2026-10-21T00:19:24.262591+00:00",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/export_guided_diagnostics.py --run-root runs/guided-agreement-seed1042 --audit runs/guided-agreement-seed1042/independent-audit.json --output runs/guided-agreement-seed1042/operational/diagnostics-publication.json",
+  "exit_code": 0,
+  "exporter_sha256": "0254d8a06d1b928d2a20a31622bf68342a5d043a325e6d2e36d725bd5fc98762",
+  "output_sha256": "0646cb7b242b235f943b7b0407de236c00dfc85583ad3a0ac516e3b1c616f1e3",
+  "audit_sha256": "cdc396040c19737c6e8029083fec2355c82616ac43c8d1bf08bac8cbdd548fe7",
+  "source_prop": "Supplied separately by publication caller; no source prop fabricated in this DTO."
+}

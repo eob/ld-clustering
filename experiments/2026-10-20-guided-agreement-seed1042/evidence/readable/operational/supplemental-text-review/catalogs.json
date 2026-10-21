@@ -1,0 +1,112 @@
+{
+  "1": {
+    "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request.",
+    "catalog": [
+      {
+        "id": 1,
+        "name": "Money & Banking",
+        "description": "Bank accounts, credit cards, bills, payments, transfers, interest, rewards, credit scores, and transaction problems. Also includes budgeting, financial values, currency exchange, and insurance policies."
+      },
+      {
+        "id": 2,
+        "name": "Work & Employee Benefits",
+        "description": "Paychecks, direct deposit, annual earnings, tax forms, employee benefits, and vacation or time-off balances and requests."
+      },
+      {
+        "id": 3,
+        "name": "Travel & Navigation",
+        "description": "Trip planning, hotels, rental cars, flights, rides, sightseeing, and travel requirements or warnings. Also includes maps, current location, traffic, and local weather."
+      },
+      {
+        "id": 4,
+        "name": "Food & Dining",
+        "description": "Restaurant recommendations, reviews, reservations, and wait times, along with recipes, cooking instructions, ingredient substitutions, calories, and nutrition."
+      },
+      {
+        "id": 5,
+        "name": "Shopping & Consumer Services",
+        "description": "Product selection, prices, purchases, shopping lists, and everyday consumer services such as dry cleaning. Includes personal-care product recommendations."
+      },
+      {
+        "id": 6,
+        "name": "Cars & Vehicle Care",
+        "description": "Choosing, maintaining, repairing, and caring for a personal vehicle. Includes safety ratings, service history, oil changes, tires, fuel, mileage, and car washing."
+      },
+      {
+        "id": 7,
+        "name": "Personal Organization & Communication",
+        "description": "Managing calendars, meetings, reminders, to-do lists, alarms, and timers. Also includes making phone calls and arranging meeting spaces."
+      },
+      {
+        "id": 8,
+        "name": "Assistant & Device Interaction",
+        "description": "Conversation with the assistant about its identity, abilities, feelings, or background, and changes to its name, language, voice, or response behavior. Also includes connecting, locating, resetting, and controlling devices or appliances."
+      },
+      {
+        "id": 9,
+        "name": "Knowledge & Learning",
+        "description": "General factual questions, explanations, definitions, mathematics, unit conversions, translations, and educational help. Includes science, history, law, and finding instruction or tutoring."
+      },
+      {
+        "id": 10,
+        "name": "Entertainment & Creative Activities",
+        "description": "Music and song identification, jokes, fun facts, games, dice rolls, coin flips, and creative requests. Also includes sports results and discussion of films or other media."
+      }
+    ]
+  },
+  "2": {
+    "task": "Classify this request into the single supplied broad practical subject whose membership criteria fit best. Use Other when no supplied category fits. Classify the request's subject; do not carry out the request.",
+    "catalog": [
+      {
+        "id": 1,
+        "name": "Money & Banking",
+        "description": "Requests about bank accounts, credit or debit cards, bills, payments, transfers, interest, rewards, credit scores, currency exchange, budgeting, financial values, and insurance policies. Include account access or holds, checkbooks, card applications, delivery, expiry, damage, limits, balances, declined payments, fees, fraud, transaction history, and reward redemption. Financial values include asset valuations and currency or cryptocurrency prices. Classify by the financial operation even when a restaurant, retailer, vehicle, or foreign destination is mentioned. Use Work & Employee Benefits for paychecks, direct deposit, annual earnings, tax forms, and employment-linked benefits; otherwise, ordinary payment and account questions remain here. Use Shopping & Consumer Services for retail prices, orders, and fulfillment rather than payment-account records. Use Cars & Vehicle Care for vehicle selection or maintenance, but keep insurance-policy administration here unless explicitly employment-linked. Currency exchange and personal financial calculations belong here; abstract arithmetic belongs in Knowledge & Learning."
+      },
+      {
+        "id": 2,
+        "name": "Work & Employee Benefits",
+        "description": "Requests about paychecks, pay dates, direct-deposit setup or changes, annual earnings, tax forms and obtaining them, employee benefits, and vacation or other time-off entitlements, usage, balances, requests, approvals, or status. Recognize earnings and leave from ordinary contextual wording; an employer need not be named. Use Money & Banking for ordinary account transactions, bills, or incoming payments not identified as pay, and for insurance policies not tied to employment. Employment-linked insurance benefits belong here. Use Personal Organization & Communication for editing a calendar entry, even when the entry concerns work; use this category for the underlying leave request or entitlement. Use Travel & Navigation for vacation transportation, lodging, destinations, and bookings rather than time-off approval or availability. Tax-form assistance belongs here, while general explanations of tax law belong in Knowledge & Learning."
+      },
+      {
+        "id": 3,
+        "name": "Travel & Navigation",
+        "description": "Requests about planning or undertaking travel: destinations, sightseeing, hotels, rental cars, flights, rides, itineraries, booking changes, and travel requirements or warnings. Include airline baggage rules, flight location or status, travel visas, destination-related vaccinations, and travel compatibility needs such as plug converters. Also include navigation, maps, current location or location sharing, traffic, and local weather, whether or not a trip is mentioned. Rental vehicles belong here; choosing, maintaining, or repairing a personal vehicle belongs in Cars & Vehicle Care. Restaurant selection and dining reservations belong in Food & Dining, while arranging a meeting room belongs in Personal Organization & Communication. Card problems, foreign transaction fees, currency exchange, and trip budgets belong in Money & Banking. Translations and standalone factual or time-zone questions belong in Knowledge & Learning. A reservation request must identify or reasonably imply travel rather than dining; an unidentified reservation with no resolving context is Other."
+      },
+      {
+        "id": 4,
+        "name": "Food & Dining",
+        "description": "Requests about choosing or using restaurants, including recommendations, reviews, dining reservations, confirmations, cancellations, and wait times. Also include meal suggestions, recipes, preparation and cooking instructions, cooking times, ingredient substitutions, calories, and nutrition facts. Food-related advice remains here even when phrased as a factual or instructional question. Use Shopping & Consumer Services for grocery purchases, shopping-list changes, and ordering packaged food or drinks rather than cooking or dining advice. Use Money & Banking for meal budgets, spending, bills, or payment-card problems. Use Assistant & Device Interaction for directly setting an oven or other appliance, rather than asking how to cook food. Use Travel & Navigation for travel bookings and sightseeing rather than restaurant bookings. If a reservation's type cannot be determined from the request or available context, use Other instead of assuming dining."
+      },
+      {
+        "id": 5,
+        "name": "Shopping & Consumer Services",
+        "description": "Requests to select, compare, price, buy, reorder, or obtain ordinary consumer products or everyday consumer services, including dry cleaning and personal-care or cosmetic product recommendations. Include creating or editing shopping lists, ordering their contents, and retail-order or fulfillment questions. Food and drink purchases belong here when the task is buying or list management, not restaurant dining, cooking, or nutrition. This is the remaining general shopping category: use Cars & Vehicle Care for personal-vehicle selection and care services; Travel & Navigation for transportation, lodging, and rental-car bookings; Food & Dining for restaurant services; and Money & Banking for financial products, insurance, budgets, payments, transaction records, or asset valuations. Shopping lists belong here rather than Personal Organization & Communication. General factual questions about products belong in Knowledge & Learning when they do not seek selection, purchasing, pricing, or consumer-service assistance. Requests to buy something remain here even when phrased as a question about whether the assistant can do so."
+      },
+      {
+        "id": 6,
+        "name": "Cars & Vehicle Care",
+        "description": "Requests about selecting, evaluating, maintaining, repairing, servicing, or caring for a personal vehicle. Include vehicle safety ratings, service history and appointments, warning lights, oil-change timing or instructions, tires and pressure, fuel choice, mileage or fuel economy, jump-starting, and car washing. This subject takes precedence over Shopping & Consumer Services for buying a personal vehicle or arranging vehicle-care services, and over Knowledge & Learning for practical vehicle-use or maintenance explanations. Use Travel & Navigation for rental cars, rides, routes, traffic, and trip transportation. Use Money & Banking for insurance policies, financing-account matters, payments, and budgets rather than vehicle condition or suitability. Use Personal Organization & Communication for a request solely to create a reminder or calendar entry about servicing; requests to diagnose, arrange, or determine needed service remain here."
+      },
+      {
+        "id": 7,
+        "name": "Personal Organization & Communication",
+        "description": "Requests to create, inspect, change, or remove calendar events, meetings, reminders, general to-do items, alarms, or timers. Include making phone calls and arranging meeting spaces. Use this category for the organizational or communication action even when its content concerns work or another subject. Shopping-list management belongs in Shopping & Consumer Services, not general to-do management. Vacation entitlement and leave-request status belong in Work & Employee Benefits, while simply editing a work calendar entry belongs here. Travel and dining bookings belong in Travel & Navigation and Food & Dining respectively; meeting-room arrangements remain here. Use Assistant & Device Interaction for connecting or locating a phone or changing assistant behavior, but use this category for calls, alarms, and timers even when performed through a device. Questions about whether a particular reminder or scheduling action can be done retain this practical subject."
+      },
+      {
+        "id": 8,
+        "name": "Assistant & Device Interaction",
+        "description": "Conversation directed at the assistant itself: its identity, origin, creator, control, abilities, feelings, background, personality, or personal attributes. Include greetings, thanks, conversational corrections or feedback, and requests to repeat, stop speaking, change language, voice, speaking speed, whisper mode, response behavior, or how the assistant and user are addressed. Also include connecting, syncing, disconnecting, locating, resetting, checking, or controlling devices and appliances, such as finding a phone or adjusting an oven or air conditioner. Questions about the assistant's language abilities belong here; requests to translate content belong in Knowledge & Learning. Use Personal Organization & Communication for calls, calendars, reminders, alarms, and timers, and Entertainment & Creative Activities for music playback or games, even when devices perform them. General assistant-capability discussion belongs here, but a domain-specific practical request stays with its subject despite wording such as 'can you.' Distinguish locating a device here from locating the user or sharing their geographic position in Travel & Navigation."
+      },
+      {
+        "id": 9,
+        "name": "Knowledge & Learning",
+        "description": "General factual, explanatory, definitional, mathematical, translation, or educational requests, including science, history, law, word meanings, unit conversions, standalone date or time facts, homework help, and finding instruction or tutoring. This is the remaining knowledge category, not a fallback for every question: when the requested information directly concerns a subject explicitly covered elsewhere, select that category. Thus food preparation and nutrition belong in Food & Dining, practical vehicle care in Cars & Vehicle Care, financial values and currency exchange in Money & Banking, and local weather or navigation in Travel & Navigation. General product facts belong here unless the request is about shopping or selection. Use Entertainment & Creative Activities for jokes, requested fun facts, games, creative production, sports results, and film or media discussion; neutral factual or educational inquiry remains here. Use Assistant & Device Interaction for questions about the assistant itself. Use Other when no supplied subject fits or when the essential subject cannot be established; do not treat a vague action as a knowledge request."
+      },
+      {
+        "id": 10,
+        "name": "Entertainment & Creative Activities",
+        "description": "Requests for entertainment, play, or creative expression: music playback and song identification, jokes and humorous material, requested fun facts, games and game moves, dice rolls, coin flips, and generating artwork or other creative content. Also include sports results and discussion, interpretation, or criticism of films and other media. A topic such as politics or science does not move a joke or explicitly requested fun fact to Knowledge & Learning. Conversely, ordinary factual explanations, historical or scientific questions, educational instruction, and legal questions about activities such as gambling belong in Knowledge & Learning rather than here solely because their topic can be entertaining. Use Assistant & Device Interaction for the assistant's supposed hobbies, feelings, or personal tastes, and for device connections or voice settings; requested music, games, and entertainment remain here even when delivered through a device."
+      }
+    ]
+  }
+}

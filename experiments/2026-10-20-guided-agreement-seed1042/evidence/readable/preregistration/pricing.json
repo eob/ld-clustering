@@ -1,0 +1,27 @@
+{
+  "as_of": "2026-10-20",
+  "currency": "USD",
+  "basis": "Token-priced estimates from reported usage, not invoices. Unknown usage/charges remain unknown.",
+  "per_million_tokens": {
+    "gpt-6.1-sol": {
+      "uncached_input": 2.0,
+      "cached_input": 0.1,
+      "cache_write_input": 2.5,
+      "output_including_reasoning": 10.0
+    },
+    "gpt-6-luna_decisions": {
+      "all_input": 0.1,
+      "output": 0.0
+    }
+  },
+  "long_context": {
+    "input_token_threshold_exclusive": 272000,
+    "input_rate_multiplier": 2.0,
+    "output_rate_multiplier": 1.5
+  },
+  "sources": [
+    "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+    "https://developers.openai.com/api/docs/guides/decisions"
+  ],
+  "source_implementation": "src/provider.rs:token_usage"
+}

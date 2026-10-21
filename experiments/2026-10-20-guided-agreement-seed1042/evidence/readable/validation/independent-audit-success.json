@@ -1,0 +1,79 @@
+{
+  "recorded_at_utc": "2026-10-21T00:19:24.256152+00:00",
+  "audit_command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/verify_guided_agreement.py --run-root runs/guided-agreement-seed1042 --data-root data/guidance --analysis runs/guided-agreement-seed1042/analysis.json --output runs/guided-agreement-seed1042/independent-audit.json --source-repo /mnt/disks/data/ld-clustering-guided-agreement",
+  "audit_exit_code": 0,
+  "audit_stdout": "Verified controlled evidence (verified_with_incomplete_review): runs/guided-agreement-seed1042/independent-audit.json",
+  "audit_sha256": "cdc396040c19737c6e8029083fec2355c82616ac43c8d1bf08bac8cbdd548fe7",
+  "analysis_sha256": "006202236b702a79dce31dfcb40bf1628d9d5902edcdaeb5d5fc65b10e6f1f7a",
+  "verifier_sha256": "395bce5d00b157155966a63835b879274233d05bb7940bac72fe0f7908691137",
+  "verifier_tests_sha256": "1c014c925c599405547670003093b25fb8d08b75e577cde085a28b954a1238a3",
+  "paid_runtime_source_reconstruction": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+  "offline_postprocessor_source": "616b5d0d707b926db15e73cc43128fac09904e3c",
+  "offline_postprocessor_binary_pin_record": "f3599d59bca96919bc0dccd4c907b3605fc6169e2d58e3700db2846cf59b49ad  target/frozen-guided-agreement/analyze_agreement-roundtrip",
+  "original_launch_analysis_pin_scope": "Historical preregistration runtime metadata remains unchanged; actual corrected offline analyzer pins are separately preserved in RUN/postprocessing and this receipt.",
+  "roles": 28,
+  "observed_attempts": 6439,
+  "cost_summary": {
+    "total_cost_usd": null,
+    "known_cost_usd": "7.7162398",
+    "cost_complete": false,
+    "stages": [
+      {
+        "stage": "catalog",
+        "calls": 4,
+        "known_cost_usd": "0.3810315",
+        "cost_complete": true,
+        "retry_attempts": 0,
+        "error_calls": 0,
+        "refusal_attempts": 0,
+        "unknown_usage_calls": 0,
+        "unknown_pricing_calls": 0
+      },
+      {
+        "stage": "controlled",
+        "calls": 5240,
+        "known_cost_usd": "3.2903711",
+        "cost_complete": true,
+        "retry_attempts": 0,
+        "error_calls": 0,
+        "refusal_attempts": 0,
+        "unknown_usage_calls": 0,
+        "unknown_pricing_calls": 0
+      },
+      {
+        "stage": "repeat",
+        "calls": 273,
+        "known_cost_usd": "0.3953225",
+        "cost_complete": true,
+        "retry_attempts": 0,
+        "error_calls": 0,
+        "refusal_attempts": 0,
+        "unknown_usage_calls": 0,
+        "unknown_pricing_calls": 0
+      },
+      {
+        "stage": "review",
+        "calls": 358,
+        "known_cost_usd": "3.3204485",
+        "cost_complete": false,
+        "retry_attempts": 0,
+        "error_calls": 1,
+        "refusal_attempts": 0,
+        "unknown_usage_calls": 0,
+        "unknown_pricing_calls": 0
+      },
+      {
+        "stage": "diagnostics",
+        "calls": 564,
+        "known_cost_usd": "0.3290662",
+        "cost_complete": true,
+        "retry_attempts": 0,
+        "error_calls": 0,
+        "refusal_attempts": 1,
+        "unknown_usage_calls": 0,
+        "unknown_pricing_calls": 0
+      }
+    ]
+  },
+  "actual_model_reruns": 0
+}

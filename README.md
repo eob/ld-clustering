@@ -65,6 +65,134 @@ evaluation labels do not enter model prompts. `label` exists solely for
 post-run evaluation. Input IDs must be unique. The runner verifies the saved
 stream prefix, configuration, backend, evidence hash and journal when resuming.
 
+## Controlled category-guidance experiment
+
+The [registered protocol](experiments/2026-10-20-guided-agreement-seed1042/protocol.json)
+isolates description changes with fresh discovery and held-out data. One catalog
+per modality is generated from discovery only, then rewritten jointly while
+preserving IDs, names, order and category count. Both backends receive the same
+condition's catalog and use K=8 first-match paging. Discovery, evaluation and
+reserved streaming inputs are disjoint; repeats intentionally reuse a frozen
+evaluation subset. [Dataset provenance](datasets/README.md) explains the natural
+photographs, native-resolution checks and individual licenses.
+
+Prepare and build before making paid calls:
+
+```sh
+cargo run --locked --example prepare_agreement -- --output data/guidance --previous data/text.jsonl
+cargo test --locked --all-targets
+cargo build --release --locked --example guided_agreement --example analyze_agreement
+```
+
+The previous-input argument must point to all 1,000 original v2 text items; the
+ordinary `prepare --seed 42` command above regenerates them. The curated photo
+cohort is fixed to seed 1042. Use fresh output paths, commit exact runtime source,
+and preserve the executable before running these paid stages:
+
+```sh
+bash scripts/guided-agreement.sh catalog data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh controlled data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh repeat data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh review data/guidance runs/guided-agreement
+bash scripts/guided-agreement.sh diagnostics data/guidance runs/guided-agreement
+```
+
+Set `LD_GUIDANCE_BINARY` to a preserved executable to keep later builds separate
+from measured workers. Each stage refuses existing output files and records
+source, executable and dataset pins. Review preparation is offline; review itself
+makes Sol calls. Primary assignment, catalog generation, rewrite, repeats, blinded
+review and order/page diagnostics retain separate timing and cost scopes. Run
+`target/release/examples/analyze_agreement --help` for offline analysis. Direct agreement includes Other;
+read it alongside matching named IDs divided by all items, coverage and the full
+assigned/Other cross-tab. Conditional agreement and automated reviewer judgments
+are diagnostics, not semantic ground truth.
+
+The completed controlled comparison reduced direct agreement from **82.0% to
+52.2%** on 1,000 fresh text requests, and **96% to 81%** on 100 natural photographs.
+Matching named IDs fell 809→511 and 91→76 respectively. Shared-Other counts stayed
+11 and 5, so increased shared rejection does not explain the decline. Description
+length and wording changed together; this is one generated rewrite, not a
+length-matched ablation. The new photographs are also a different dataset and
+taxonomy from Fashion-MNIST, not a resolution-only experiment.
+
+[Results, limitations and reproduction pins](experiments/2026-10-20-guided-agreement-seed1042/README.md)
+link to the immutable control archive. Independent verification covers 6,439
+recorded attempts. The known API subtotal is $7.7162398; complete cost accounting
+remains false because the original-photo review stopped after 57 accepted
+judgments, one incomplete response and 42 unattempted cases. The other three
+review arms completed 100 judgments each. Automated reviews include reference
+errors and reasonable alternatives as well as clear Decisions errors.
+
+## Contextual streaming manager
+
+`run` defaults to `--manager-policy original`, including for legacy databases.
+The optional contextual policy accepts a bounded UTF-8 evidence document:
+
+```sh
+target/release/ld-clustering run \
+  --input examples.jsonl --database fresh-contextual.sqlite --log fresh-contextual.jsonl \
+  --mode ld --task 'Group requests by their broad practical subject' \
+  --manager-policy contextual --manager-context observed-findings.md
+```
+
+The contextual manager writes concise membership guides in the context of the
+complete current catalog, preserves established scope and revises neighboring
+boundaries together. After an actual catalog change, it reconsiders every
+persisted point, including earlier named assignments. Exact no-op plans add no
+reconsideration work. Assignment prompts and first-match paging are shared with
+the Original policy. This combines guidance, prior evidence and a different
+reconsideration rule; it is not a component ablation.
+
+The database binds the policy, prompt revision and raw context-byte SHA-256.
+Resuming with a different identity fails before calls. Context paths can change
+when relocating evidence; their bytes define identity. Comparison requires
+matching manager descriptors as well as inputs and configuration. Catalog IDs
+remain local to each evolving run, so cross-backend partition scores use ARI and
+pair metrics rather than direct ID equality.
+
+Reassignment events retain original and interim IDs and distinguish actual ID
+moves, unchanged evaluations and unknown legacy origins. A mechanical ID move
+after a merge or retirement does not prove a semantic correction. Opening an old
+database migrates its pending queue; do not use an older binary on that migrated
+database afterward.
+
+The [reserved-stream protocol](experiments/2026-10-20-guided-agreement-seed1042/streaming-protocol.json)
+fixes eight fresh streams, identical tasks and schedules, disjoint reserved data,
+and one frozen context per modality shared by both contextual backends. The pure
+`inspect_guided_streaming` example checks actual bootstrap requests and maximum
+request-size fixtures without an API key. `scripts/guided-streaming.sh plan
+--help` describes the offline eight-command plan; its `run` mode makes paid calls
+and requires fresh output paths, committed runtime sources and preserved binary
+pins. Run it under a supervisor with whole-control-group termination, as in the
+recorded experiment. Large photographs retain the existing input-directory CWD
+semantics, recorded explicitly in every command plan.
+
+All eight reserved streams completed and drained their reassignment queues.
+The independently verified full-cohort results are:
+
+| Reserved cohort | Original / contextual ARI | Original / contextual pair F1 | Sol coverage | Decisions coverage |
+| --- | --- | --- | --- | --- |
+| 1,000 text requests | 0.538096 / 0.609758 | 0.581982 / 0.655911 | 99.4% / 99.8% | 70.8% / 90.8% |
+| 100 natural photographs | 0.818656 / 0.971144 | 0.843049 / 0.975410 | 95% / 95% | 98% / 97% |
+
+The text gain accompanies substantially greater Decisions coverage. A post hoc
+diagnostic restricted to the **same 674 items named by all four text arms**
+instead falls from ARI 0.787131 to 0.721809 and pair F1 0.819144 to 0.760726.
+This conditional subset does not replace the full-cohort result; together they
+show a coverage/grouping tradeoff. Photographs improve on both the full cohort
+and the common-named 93-item subset. These are independent evolving catalogs,
+so the scores measure partition agreement, not shared category IDs or semantic
+accuracy. The combined manager intervention does not isolate description quality.
+
+Contextual Sol text makes 8,131 calls and 5,964 reevaluations, costing $10.6207179,
+versus 1,606 calls, 300 reevaluations and $2.296944 for Original Sol text.
+The complete eight-arm streaming API ledger is $16.4293528; coding-harness
+qualitative review lies outside that ledger. Concurrent loop times are not
+isolated performance measurements. [Completed streaming results and evidence
+pins](experiments/2026-10-20-guided-agreement-seed1042/STREAMING-RESULTS.md)
+retain full versus conditional results, costs and limitations separately from
+the earlier controlled experiment and its incomplete original-photo review.
+
 ## Algorithm
 
 1. Store the received prefix in Other until the bootstrap size is reached.
@@ -81,8 +209,9 @@ stream prefix, configuration, backend, evidence hash and journal when resuming.
    trigger management. Give it at most 40 representative examples, with up to
    two from each cluster and extra examples from Other.
 5. Apply a valid plan in one SQLite transaction, enforcing the active-cluster
-   cap. Queue points in changed clusters and Other for reassignment through the
-   arm's assignment backend. Unaffected cluster assignments remain intact.
+   cap. Original queues affected source members and Other for nonempty plans.
+   Contextual queues all points after an actual catalog change. Reassignment
+   uses the arm's assignment backend and completes before new input.
 6. Give the final stream a maintenance opportunity, then drain its queue before
    marking the run complete.
 

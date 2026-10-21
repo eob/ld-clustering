@@ -1,0 +1,455 @@
+{
+  "scope": "Post hoc raw-value/page-hash binding for5 selected guided text cases from common confusion cells. No mechanism inferred; full cohort audit pending.",
+  "cases": [
+    {
+      "id": "14f66dbb0d5a90adb620",
+      "text": "please send my location to rob and mary",
+      "sol_cluster_id": 3,
+      "ld_cluster_id": 4,
+      "page_index": 0,
+      "candidate_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "request_sha256": "4ff801231095ff66d2db1a8a7c8c7321a7381e5a98f95b7ce790bbab39f1339f",
+      "response_sha256": "5344a55447b1a8b50b437b47c04143f6409d0383ed649abaa3c4e1eb14ec9013",
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "4",
+            "confidence": 0.49,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.01,
+                "value": "1"
+              },
+              {
+                "probability": 0.0,
+                "value": "2"
+              },
+              {
+                "probability": 0.42,
+                "value": "3"
+              },
+              {
+                "probability": 0.55,
+                "value": "4"
+              },
+              {
+                "probability": 0.01,
+                "value": "5"
+              },
+              {
+                "probability": 0.0,
+                "value": "6"
+              },
+              {
+                "probability": 0.0,
+                "value": "7"
+              },
+              {
+                "probability": 0.0,
+                "value": "8"
+              },
+              {
+                "probability": 0.01,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1718,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1718
+        }
+      }
+    },
+    {
+      "id": "9090de522860c157175e",
+      "text": "give me my todo list",
+      "sol_cluster_id": 7,
+      "ld_cluster_id": 8,
+      "page_index": 0,
+      "candidate_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "request_sha256": "25b6361eecf616da57e74f2385204c889b8ffca4ff5a3f82b76305e4db7eb724",
+      "response_sha256": "fe0582cef244124957c43c95f9c2d463f0493893cc978a904f0bdaeff31f5204",
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "8",
+            "confidence": 0.34,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.03,
+                "value": "1"
+              },
+              {
+                "probability": 0.03,
+                "value": "2"
+              },
+              {
+                "probability": 0.01,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.0,
+                "value": "5"
+              },
+              {
+                "probability": 0.01,
+                "value": "6"
+              },
+              {
+                "probability": 0.35,
+                "value": "7"
+              },
+              {
+                "probability": 0.41,
+                "value": "8"
+              },
+              {
+                "probability": 0.16,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1715,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1715
+        }
+      }
+    },
+    {
+      "id": "492669211609dfc39619",
+      "text": "go to whisper mode until my morning alarm goes off",
+      "sol_cluster_id": 8,
+      "ld_cluster_id": null,
+      "page_index": 0,
+      "candidate_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "request_sha256": "09c1cbc4ec422724d9619a7dafebb2b5708ee3c7711210b35580200ee86b9930",
+      "response_sha256": "d18eaa7697e925539a1458a0cc23b5a83063ce1cf8848d4db3c5d5a96d9aa9c6",
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.47,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.02,
+                "value": "1"
+              },
+              {
+                "probability": 0.02,
+                "value": "2"
+              },
+              {
+                "probability": 0.01,
+                "value": "3"
+              },
+              {
+                "probability": 0.01,
+                "value": "4"
+              },
+              {
+                "probability": 0.01,
+                "value": "5"
+              },
+              {
+                "probability": 0.01,
+                "value": "6"
+              },
+              {
+                "probability": 0.07,
+                "value": "7"
+              },
+              {
+                "probability": 0.32,
+                "value": "8"
+              },
+              {
+                "probability": 0.53,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1720,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1720
+        }
+      }
+    },
+    {
+      "id": "492669211609dfc39619",
+      "text": "go to whisper mode until my morning alarm goes off",
+      "sol_cluster_id": 8,
+      "ld_cluster_id": null,
+      "page_index": 1,
+      "candidate_ids": [
+        9,
+        10
+      ],
+      "request_sha256": "2cf23ae184e4f0caa3617a7faf8027f87994e757fb889aa796856093a139e090",
+      "response_sha256": "251d251fccff3ffd5254d3e4294295a8920efad41101c6ba17b7f848c8f29e22",
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "other",
+            "confidence": 0.72,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.09,
+                "value": "9"
+              },
+              {
+                "probability": 0.1,
+                "value": "10"
+              },
+              {
+                "probability": 0.81,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 585,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 585
+        }
+      }
+    },
+    {
+      "id": "a732c27e9b7792217feb",
+      "text": "how full is my gas tank",
+      "sol_cluster_id": 6,
+      "ld_cluster_id": 7,
+      "page_index": 0,
+      "candidate_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "request_sha256": "d0408736dcd83715d3fae12c0f1abb2c4da96f0a1efa6ada106718505f531958",
+      "response_sha256": "cc95c3644ed953f1bcc2aec2475dae82e8a10c959a989a468660490c0cf0d3af",
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "7",
+            "confidence": 0.53,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.02,
+                "value": "1"
+              },
+              {
+                "probability": 0.01,
+                "value": "2"
+              },
+              {
+                "probability": 0.01,
+                "value": "3"
+              },
+              {
+                "probability": 0.0,
+                "value": "4"
+              },
+              {
+                "probability": 0.01,
+                "value": "5"
+              },
+              {
+                "probability": 0.03,
+                "value": "6"
+              },
+              {
+                "probability": 0.58,
+                "value": "7"
+              },
+              {
+                "probability": 0.03,
+                "value": "8"
+              },
+              {
+                "probability": 0.31,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1716,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1716
+        }
+      }
+    },
+    {
+      "id": "aba3fda85282e9f97ee1",
+      "text": "cancel my reservation for dinner tonight",
+      "sol_cluster_id": 4,
+      "ld_cluster_id": 5,
+      "page_index": 0,
+      "candidate_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "request_sha256": "276c1857868a8d37b69198be7a73d4fb6c98236aec18fe26172fc9301b8ac2d6",
+      "response_sha256": "97681d7cdce4602963738816dc796b81454b0eeb34449b38d7766aa1f8eab9b9",
+      "raw_response": {
+        "answers": [
+          {
+            "choice": "5",
+            "confidence": 0.55,
+            "name": "cluster",
+            "probabilities": [
+              {
+                "probability": 0.02,
+                "value": "1"
+              },
+              {
+                "probability": 0.01,
+                "value": "2"
+              },
+              {
+                "probability": 0.01,
+                "value": "3"
+              },
+              {
+                "probability": 0.31,
+                "value": "4"
+              },
+              {
+                "probability": 0.6,
+                "value": "5"
+              },
+              {
+                "probability": 0.01,
+                "value": "6"
+              },
+              {
+                "probability": 0.01,
+                "value": "7"
+              },
+              {
+                "probability": 0.01,
+                "value": "8"
+              },
+              {
+                "probability": 0.02,
+                "value": "other"
+              }
+            ],
+            "type": "choice"
+          }
+        ],
+        "model": "gpt-6-luna",
+        "usage": {
+          "input_tokens": 1716,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 0,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1716
+        }
+      }
+    }
+  ]
+}

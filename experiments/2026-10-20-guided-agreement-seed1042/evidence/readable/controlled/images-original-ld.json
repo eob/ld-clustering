@@ -1,0 +1,834 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "metadata": {
+    "assignment_model": "gpt-6-luna",
+    "catalog": [
+      {
+        "description": "Non-human animals, including pets, livestock, birds, reptiles, and fish. Also includes animal specimens such as shells, skulls, and skeletons.",
+        "id": 1,
+        "name": "Animals"
+      },
+      {
+        "description": "Flowers, foliage, trees, and other plants, including cut flower arrangements and naturally fallen tree trunks.",
+        "id": 2,
+        "name": "Plants"
+      },
+      {
+        "description": "Vehicles such as cars, vans, racing cars, military vehicles, aircraft, and boats. Includes views focused on vehicle interiors or controls.",
+        "id": 3,
+        "name": "Vehicles"
+      },
+      {
+        "description": "People shown individually or in groups, including portraits and people working, performing music, or participating in sports. Includes close views of human body parts.",
+        "id": 4,
+        "name": "People and activities"
+      },
+      {
+        "description": "Foods, prepared dishes, ingredients, and beverages, including food being cooked and drinks in containers.",
+        "id": 5,
+        "name": "Food and drink"
+      },
+      {
+        "description": "Electronic equipment and powered household or desktop devices, including media players, radios, stereo systems, and electric fans.",
+        "id": 6,
+        "name": "Electronics and appliances"
+      },
+      {
+        "description": "Buildings, architectural interiors, monuments, settlements, and other built structures. Includes fences, utility structures, and scenes centered on constructed environments.",
+        "id": 7,
+        "name": "Buildings and structures"
+      },
+      {
+        "description": "Garments and textile goods shown as objects, including jackets, rugs, and folded woven fabrics.",
+        "id": 8,
+        "name": "Clothing and textiles"
+      }
+    ],
+    "catalog_sha256": "7152868f072adccefd30ee6764d277c2eaf19d135efd1cf9615d4298d8086202",
+    "condition": "original",
+    "diagnostic": false,
+    "effective_catalog_sha256": "ea28b96e08fdb67ee5c877504958d7a126a2437a50cf09c1a33b506d1073c48b",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "effective_order_sha256": "b2ddd6543011e658aaebc223b42021e89fa9a18bd1f2207f6cb68e73ca5688b3",
+    "expected_count": 100,
+    "experiment": "guided-agreement",
+    "input_jsonl_sha256": "147c2fb1381e2534e56a7aaabd4d8967f78fd803ef7b9f6d52e5b2af30dfcc9f",
+    "input_sha256": "3124215566a4a453a5fd537334c4f49f1a02f722dc468ba2fa41d4c03dd78438",
+    "k": 8,
+    "management_calls": 0,
+    "maximum_request_bytes": 1385824,
+    "modality": "images",
+    "mode": "ld",
+    "ordered_ids": [
+      "00fb4ad6a62437d2a843",
+      "4fa7d8de7eb37814d9b0",
+      "48599a29fabce63c6bc1",
+      "c3fcaa0bf31066c39559",
+      "807ecfb5e5631f9a3c78",
+      "3a254dd063c958757c3d",
+      "82b05c987971efe65dfd",
+      "8d32574392cbc428999f",
+      "c4cf364d6f19b80fe386",
+      "c2a5cf3400d4e1c9ce2e",
+      "be7614b19cf0d59d78e6",
+      "266197d08c96d6dba809",
+      "77d0935ddfce72381981",
+      "183698f3a9d4a5674b94",
+      "f963c7764daeb8d7cfa5",
+      "d0e1ae1c5de3c3216bde",
+      "45fbfb0b2f17e4f29c43",
+      "ebe89af1a1a021146328",
+      "2a8c39c73757582b068e",
+      "4680330c26ea6ae56dbd",
+      "991c6056e5b7d264fa7a",
+      "747496755ef467875f48",
+      "338a411555493e783604",
+      "7bae39017530e47e5430",
+      "977145fd3bf6af1820bf",
+      "76eb7af69a2ac0c0c28f",
+      "79f9d2df4cae5c25b195",
+      "23a7471ca0ef47bace1e",
+      "91b9a1c52777b768827e",
+      "6d4c1b9441009a65fccd",
+      "091aeb45dc0176d878fd",
+      "cee62da63d2ac661dccb",
+      "f6f4b1fe5eb44841a5cc",
+      "55ad4a00c668e40ce99f",
+      "e0c68545f2af2b669947",
+      "e4e6dcf8ef7c476366a6",
+      "63747e773a3ffa524eb1",
+      "bf00a9c0acb7db276d98",
+      "55a87eca27f9e0816c6e",
+      "19c83f7d93be3c1c1809",
+      "c4c518017ff699584c29",
+      "f326402cb9283fb64737",
+      "96e1943f70c8cbd71c1c",
+      "b97fbb66dc86e9d0554f",
+      "c367a108df118821e684",
+      "a1bb75cad4f5a771b83a",
+      "d6e976b123365b57c7fa",
+      "1cb43d892a0393800081",
+      "92fd1c3e13a215b73bd9",
+      "8a32327b88a7ceb95ded",
+      "f54839c71fa4b941033a",
+      "c4a8e6524a4a6af62800",
+      "64bb00eab8078cb4d3eb",
+      "f51137a1dc7a467e5096",
+      "eed83f897cf2c9eb51fc",
+      "d6eb56715e58dc55bc23",
+      "9962dbcd44d04380ceb3",
+      "225817a8b1cc33e516fd",
+      "3567707881faf96292f7",
+      "994c7350c851e23f055c",
+      "3735a4e1dbc96fb2c2f8",
+      "6a4c59c19be40fdc61db",
+      "6ad159f7ff6f4cc52b4e",
+      "3a543cc5152e2862606a",
+      "c552fc3ad4cec5427bfe",
+      "49b801e5606e54f11b71",
+      "1551a4c4cbaf14b9ac71",
+      "ebbda9d95d895beb55f7",
+      "8fa974da65b8a5f674a3",
+      "8b36d3adb21ffe3c4b80",
+      "90eeaf326b1b515710d9",
+      "4f63e38a2b7cd2230e67",
+      "9035c91009348a56ef54",
+      "0a457e48dd2ba99bdc3a",
+      "119a58104e9d35ae46dd",
+      "087bfdf574037b833eed",
+      "630415e23f58649317bd",
+      "21b82208abbe60877981",
+      "75d998ce64cccce8bbb3",
+      "f0bf60d03db9c26c362b",
+      "4c089abd169ebd0388ba",
+      "554cced562c96b9c6518",
+      "cdb264bb105a3373c7f6",
+      "dabc2b673ef7bd56ce45",
+      "590c54c81632d4a0b012",
+      "5bf3e3ec2042ff390633",
+      "1741247e50ec53116742",
+      "a0f2cfd32052cb8e1c25",
+      "ffaeaa0cb469f818fb7a",
+      "f4bd501f90a6362e4c0f",
+      "0cc6767d3332caa8293c",
+      "9af24fa0043038e5dd7d",
+      "dc9f3bf8f7dd81cb2f31",
+      "f9f58a44afd52567224f",
+      "8ff2126693beb38b5d14",
+      "23c5d6e0ab0e2e9eaed5",
+      "56219271dcfa0b16ca57",
+      "771953d9715a119a68e3",
+      "bc12b3aaa8a91a000bb1",
+      "8a2ba68792b1ed7e1b49"
+    ],
+    "reference_sha256": null,
+    "repeat_index": null,
+    "reverse_catalog_order": false,
+    "run_id": "6f1bb1bf6473105a1ebc22ea77ffea3c",
+    "sol_reasoning_effort": "high",
+    "source": {
+      "commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+      "embedded_file_sha256": {
+        "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+        "Cargo.toml": "1e3bb39b4ff2fca4f38e8923f1b254d0d50c5d1b4855c4983b30f2b429086715",
+        "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+        "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+        "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+        "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+        "src/lib.rs": "2dfcb22af11e31103c8032b77ab9064ec8e71ab110212d2a2fc1c83b41829d47",
+        "src/provider.rs": "9269e50c25edaa2c73eb8199c3c942d54f7f1bd16ecc011a554f515166cb83f9",
+        "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+      },
+      "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce"
+    },
+    "stage": "classify",
+    "started_at_unix_ms": 1792536829608,
+    "task": "Classify the main visible subject of this photograph into the single supplied broad semantic category whose membership criteria fit best. Use Other when no supplied category fits. Classify visible objects or scenes at the catalog's semantic granularity, rather than color, style, or photographic quality."
+  },
+  "processed_count": 100,
+  "expected_count": 100,
+  "assignments": [
+    {
+      "id": "00fb4ad6a62437d2a843",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "4fa7d8de7eb37814d9b0",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "48599a29fabce63c6bc1",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c3fcaa0bf31066c39559",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "807ecfb5e5631f9a3c78",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "3a254dd063c958757c3d",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "82b05c987971efe65dfd",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "8d32574392cbc428999f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c4cf364d6f19b80fe386",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c2a5cf3400d4e1c9ce2e",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "be7614b19cf0d59d78e6",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "266197d08c96d6dba809",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "77d0935ddfce72381981",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "183698f3a9d4a5674b94",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f963c7764daeb8d7cfa5",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "d0e1ae1c5de3c3216bde",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "45fbfb0b2f17e4f29c43",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "ebe89af1a1a021146328",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "2a8c39c73757582b068e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "4680330c26ea6ae56dbd",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "991c6056e5b7d264fa7a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "747496755ef467875f48",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "338a411555493e783604",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "7bae39017530e47e5430",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "977145fd3bf6af1820bf",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "76eb7af69a2ac0c0c28f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "79f9d2df4cae5c25b195",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "23a7471ca0ef47bace1e",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "91b9a1c52777b768827e",
+      "cluster_id": 6,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "6d4c1b9441009a65fccd",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "091aeb45dc0176d878fd",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "cee62da63d2ac661dccb",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f6f4b1fe5eb44841a5cc",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "55ad4a00c668e40ce99f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "e0c68545f2af2b669947",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "e4e6dcf8ef7c476366a6",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "63747e773a3ffa524eb1",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "bf00a9c0acb7db276d98",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "55a87eca27f9e0816c6e",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "19c83f7d93be3c1c1809",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c4c518017ff699584c29",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f326402cb9283fb64737",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "96e1943f70c8cbd71c1c",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "b97fbb66dc86e9d0554f",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c367a108df118821e684",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "a1bb75cad4f5a771b83a",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "d6e976b123365b57c7fa",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "1cb43d892a0393800081",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "92fd1c3e13a215b73bd9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "8a32327b88a7ceb95ded",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f54839c71fa4b941033a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c4a8e6524a4a6af62800",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "64bb00eab8078cb4d3eb",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f51137a1dc7a467e5096",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "eed83f897cf2c9eb51fc",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "d6eb56715e58dc55bc23",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "9962dbcd44d04380ceb3",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "225817a8b1cc33e516fd",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "3567707881faf96292f7",
+      "cluster_id": 6,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "994c7350c851e23f055c",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "3735a4e1dbc96fb2c2f8",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "6a4c59c19be40fdc61db",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "6ad159f7ff6f4cc52b4e",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "3a543cc5152e2862606a",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c552fc3ad4cec5427bfe",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "49b801e5606e54f11b71",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "1551a4c4cbaf14b9ac71",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "ebbda9d95d895beb55f7",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "8fa974da65b8a5f674a3",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "8b36d3adb21ffe3c4b80",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "90eeaf326b1b515710d9",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "4f63e38a2b7cd2230e67",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "9035c91009348a56ef54",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "0a457e48dd2ba99bdc3a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "119a58104e9d35ae46dd",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "087bfdf574037b833eed",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "630415e23f58649317bd",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "21b82208abbe60877981",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "75d998ce64cccce8bbb3",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f0bf60d03db9c26c362b",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "4c089abd169ebd0388ba",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "554cced562c96b9c6518",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "cdb264bb105a3373c7f6",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "dabc2b673ef7bd56ce45",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "590c54c81632d4a0b012",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "5bf3e3ec2042ff390633",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "1741247e50ec53116742",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "a0f2cfd32052cb8e1c25",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "ffaeaa0cb469f818fb7a",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f4bd501f90a6362e4c0f",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "0cc6767d3332caa8293c",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "9af24fa0043038e5dd7d",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "dc9f3bf8f7dd81cb2f31",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f9f58a44afd52567224f",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "8ff2126693beb38b5d14",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "23c5d6e0ab0e2e9eaed5",
+      "cluster_id": null,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "56219271dcfa0b16ca57",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "771953d9715a119a68e3",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "bc12b3aaa8a91a000bb1",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "8a2ba68792b1ed7e1b49",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    }
+  ],
+  "measurement": {
+    "assignment_refusal_calls": 0,
+    "calls": 100,
+    "cost_complete": true,
+    "cost_history_complete": true,
+    "cost_usd": 0.012134799999999987,
+    "error_calls": 0,
+    "journal_sha256": "c1fb2e8f319e3423194ea4fe1b1e546485f678ec15b0bb2db930b3725f328adb",
+    "phase_calls": {
+      "assign": 100
+    },
+    "pricing_date": "2026-10-20",
+    "pricing_sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "https://developers.openai.com/api/docs/guides/decisions"
+    ],
+    "request_seconds": 23.677,
+    "timing_complete": true,
+    "unknown_pricing_calls": 0,
+    "unknown_usage_calls": 0,
+    "usage": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "cost_usd": 0.012134799999999987,
+      "input_tokens": 121348,
+      "output_tokens": 0
+    },
+    "wall_ms": 23939,
+    "wall_seconds": 23.939
+  },
+  "error": null,
+  "progress_sha256": "e3dd8ee70be174d15b39f193521d0ec29d5b83de6430154f1284fce4a775b719"
+}

@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "registered_at_utc": "2026-10-20T22:38:35.373769+00:00",
+  "status_at_registration": "No new paid calls; datasets, sample IDs and review plan selected before outcomes.",
+  "question": "Does jointly clarified membership guidance improve Sol–Decisions fixed-category agreement without obtaining the gain merely through more rejection?",
+  "hypotheses": {
+    "guidance": "Operational membership, supported implicit context and neighboring boundaries increase matching named IDs.",
+    "null_or_rejection": "Agreement is unchanged, decreases, or rises because both methods reject more points.",
+    "residuals": "Reference variability, reasonable interpretations, missing or overlapping categories, and page/order behavior explain some remaining disagreement."
+  },
+  "dataset_manifest_sha256": "c61ce5b4703e98ae79581c73e492aece53196777ac7510f121bbced59ed752f4",
+  "photo_catalog_sha256": "4bd3d31e968dd02a6545237f2fd6d1999751b364a0a17e2619f10938fd6fb47c",
+  "data_seed": 1042,
+  "partitions": {
+    "discovery": {
+      "images": {
+        "count": 60,
+        "order_sha256": "04db3037e0da9d579b43c80f409ad742dee1e6f5eabfbd057c03cec973001221",
+        "payload_sha256": "872b6b0df2f0f3c07dff55d121200e2b5c5df9dcb5d0a5ebe71acc42790864c7",
+        "ordered_image_content_sha256": "6419324822b6de125356606f30cba2fbc8030fc9c3839eade842d9e2838be8b3"
+      },
+      "text": {
+        "count": 200,
+        "order_sha256": "47e9841eed54ff63d3261a6262f8bb2329e6db3a8ad95129d884070da72cfd10",
+        "payload_sha256": "4d558bb86da900566ba5e23efbe4eceae5ae0d002f97c9a4cffb3c1612d48d45",
+        "ordered_image_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "heldout": {
+      "images": {
+        "count": 100,
+        "order_sha256": "5fea0f2adde950964bd9aea0ae4dc1e6889b2c42ed106e2c89057f561eff61b0",
+        "payload_sha256": "2fbf66bc94d736485ca93ac92a355909177626ed4793c2dd7a30863be1c4d6e1",
+        "ordered_image_content_sha256": "04230006a3f2e09b3cec2d69b16895a8117622c58dfa0513e07aaefffc591ed1"
+      },
+      "text": {
+        "count": 1000,
+        "order_sha256": "b739c99e8a1436b71afc25f6c7bcc92a41ad9d15ab56b868b326714197d31ffe",
+        "payload_sha256": "5f7b4cbce8b75cd8f6431fff50e163ae161e337715754da97c818088adc27f5c",
+        "ordered_image_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "repeat": {
+      "images": {
+        "count": 25,
+        "order_sha256": "8978fc7908e51c4ec81fbb94fa29ca4c6454834b5522b8f3e45b04dc148999a7",
+        "payload_sha256": "2f8fc8bed752228b85c22409444b6250ea8504749d225c72c388caa9ef58b5f0",
+        "ordered_image_content_sha256": "a1a8e388dd16f189bce7106f8c630139fe8ec25a25ad2432d2864b67aff85d22"
+      },
+      "text": {
+        "count": 100,
+        "order_sha256": "cc05159eb0bb22c4b932cc1e6e5e728e5131028c51717e28d69f7293df5fcc3e",
+        "payload_sha256": "a15d82bf2c34aa823df5fd1ba8328dc9b6eb8214a7fe0e67d9a5b2f881c05a78",
+        "ordered_image_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "streaming": {
+      "images": {
+        "count": 100,
+        "order_sha256": "acc2e02440d2e2def60bdcf60f2440c73e635b50c54871f20cdcfc967f3f49d8",
+        "payload_sha256": "64f8b2b7293094a054ed0cd20f96447763bd32940d681e9fcb4b0fdafa358cc0",
+        "ordered_image_content_sha256": "2b8fedbed779b6e7427136f9af933fd7abe19aff3678561130b02bd81f906c2b"
+      },
+      "text": {
+        "count": 1000,
+        "order_sha256": "7ac46fdc3c671e4052b8b912ffb462a92322a859eabf0c317ea99af645edc6c7",
+        "payload_sha256": "880d67945c2d7422a98b5119b713ea4235e57381c40a13c682ae36c08c817c42",
+        "ordered_image_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    }
+  },
+  "catalog": {
+    "per_modality": 1,
+    "discovery_only": true,
+    "max_categories": 16,
+    "original": "One short-description catalog generated from the discovery sample only; no predetermined labels.",
+    "guided": "One full-catalog joint rewrite. Exact IDs, labels, order and count preserved; membership cues, supported implicit context, scope preservation and neighboring boundaries added.",
+    "heldout_retuning": false
+  },
+  "classifiers": {
+    "llm": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "service_tier": "default"
+    },
+    "ld": {
+      "model": "gpt-6-luna",
+      "endpoint": "/v1/decisions"
+    },
+    "assignment_role": "Shared assignment-only objective in all conditions; source/evaluation labels and provenance excluded from model evidence.",
+    "k": 8,
+    "other": "Null category; present on every page. Other advances; first named match stops; refusal stops and remains separately counted Other.",
+    "catalog_order": "Generated stable ID order, identical across backends and description conditions.",
+    "concurrency": "One sequential worker per arm; eight independent primary workers may overlap."
+  },
+  "primary_matrix": [
+    {
+      "modality": "text",
+      "condition": "original",
+      "backend": "llm",
+      "count": 1000
+    },
+    {
+      "modality": "text",
+      "condition": "original",
+      "backend": "ld",
+      "count": 1000
+    },
+    {
+      "modality": "text",
+      "condition": "guided",
+      "backend": "llm",
+      "count": 1000
+    },
+    {
+      "modality": "text",
+      "condition": "guided",
+      "backend": "ld",
+      "count": 1000
+    },
+    {
+      "modality": "images",
+      "condition": "original",
+      "backend": "llm",
+      "count": 100
+    },
+    {
+      "modality": "images",
+      "condition": "original",
+      "backend": "ld",
+      "count": 100
+    },
+    {
+      "modality": "images",
+      "condition": "guided",
+      "backend": "llm",
+      "count": 100
+    },
+    {
+      "modality": "images",
+      "condition": "guided",
+      "backend": "ld",
+      "count": 100
+    }
+  ],
+  "primary_metrics": [
+    "Direct category-ID agreement including Other",
+    "Matching named category IDs divided by ALL evaluation items",
+    "Coverage for each classifier and full assigned/Other 2x2",
+    "Confusion matrix and per-category differences relative to Sol, not semantic truth",
+    "ARI and pairwise precision/recall/F1 with singleton Other points",
+    "Paired agreement gains/losses from original to guided"
+  ],
+  "secondary_metrics": [
+    "Jointly assigned conditional agreement, with explicit denominator",
+    "Anchored-original-Sol paired diagnostic, labeled secondary",
+    "LLM repeat consistency on frozen100text/25image subsets per condition",
+    "Request and loop latency, token-priced known costs, retries, refusals and completeness"
+  ],
+  "repeat": {
+    "backend": "llm",
+    "count_per_condition": {
+      "text": 100,
+      "images": 25
+    },
+    "additional_passes": 1,
+    "selection": "Exact preselected manifest subset, original held-out order, same bytes/catalog/K/order."
+  },
+  "review_plan": {
+    "schema_version": 1,
+    "seed": 2042,
+    "text_quotas": {
+      "different_named": 30,
+      "reference_named_candidate_other": 30,
+      "reference_other_candidate_named": 10,
+      "equal_named": 20,
+      "both_other": 10
+    },
+    "images_census": true,
+    "shortfall_policy": "Select all available cases when a stratum is smaller than its quota. Do not reallocate unused quota to another stratum.",
+    "sampling_method": "Text: balance the fixed stratum quota across confusion cells, then select seed-ranked cases within each cell without replacement. Images: review all 100 held-out cases per description condition. Independently seed-rank review order and A/B identity.",
+    "interpretation": "Automated reviewer judgments are evidence about the selected cases, not human truth or an unweighted estimate of population correctness. Report actual eligible/selected/reviewed counts by stratum."
+  },
+  "review_plan_sha256": "e61d2e1055478b90043d20a09319b0294e82bf5213add6f44f130ee896db9bf1",
+  "reviewer": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "blinding": "Only item, full condition catalog, task and anonymous shuffled A/B assignments enter reviewer prompt; no backend/condition name, audit key or aggregate results.",
+    "judgment": "Evidence, severity, themes and acceptable alternative. Either, both or neither assignment can be acceptable; no reference-is-truth premise.",
+    "limits": "Automated same-family reviewer judgments and sampled text strata are not human semantic-accuracy estimates."
+  },
+  "pagination_diagnostics": {
+    "condition": "guided",
+    "items": "Same preselected repeat subset",
+    "backends": [
+      "llm",
+      "ld"
+    ],
+    "policies": [
+      {
+        "k": 8,
+        "reverse_order": true
+      },
+      {
+        "k": 16,
+        "reverse_order": false
+      }
+    ],
+    "scope": "Secondary sensitivity checks, separate from primary fixed-order K8 result."
+  },
+  "accounting": {
+    "journal": "Preserve all observed request/response attempts and reported usage. Journaling follows the HTTP outcome: a kill or disk failure can leave an unrecorded potentially charged in-flight request. Interrupted or failed artifacts remain incomplete, and unreported charge/usage remains unknown.",
+    "retries": "At most three same-body attempts for existing transient transport/server cases. Completed structured semantic rejection stops; no prompt/model retuning.",
+    "failed_runs": "Preserve every recorded paid attempt and terminal partial artifact, including unknown in-flight charge uncertainty. Never call a partial run complete or rerun to cleanse errors.",
+    "cost_scopes": "Discovery, joint rewrite, primary assignment, repeats, review and order diagnostics reported separately.",
+    "latency_scope": "Uninterrupted classifier loop including calls, retry waits and progress persistence; input validation/preparation excluded and catalog stages separate."
+  },
+  "next_phase": "Understand controlled outcomes and blinded review before implementing contextual evolving-manager guidance; evaluate on the separately reserved streaming partition. Matched original/improved policy comparisons must report independent-catalog confounding.",
+  "limits": [
+    "One discovery catalog, one generated rewrite and one data order per modality.",
+    "Guidance changes description content and length together; no length-matched or cue-by-cue ablation.",
+    "LLM agreement differs from semantic quality; source dataset labels are sampling metadata, not truth.",
+    "Original Flickr bytes unavailable for201photos; native dimensions/current licenses come from archived publisher metadata.59original byte hashes verified.",
+    "Exactly one oversized mirrored source was downsampled to1024; original source bytes and source/supplied hashes retained."
+  ]
+}

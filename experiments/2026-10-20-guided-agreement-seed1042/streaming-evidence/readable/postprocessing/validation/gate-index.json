@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-10-21T01:48:23.009801+00:00",
+  "runtime_head": "f78dcf91409e9b088e78f5995e2a488a0ad63bc8",
+  "paid_workers_still_active": true,
+  "python_tests": 93,
+  "rust_offline_tests": 115,
+  "paid_tests_ignored": 1,
+  "cargo_fmt_check": "passed",
+  "cargo_clippy_all_targets_deny_warnings": "passed",
+  "diff_check": "passed",
+  "helper_sources": {
+    "scripts/verify_guided_streaming.py": "2c2b18777e1f1b799255d39f69b14838dbfa946f10f17ac36171a1ca0ddbb40d",
+    "scripts/export_guided_streaming.py": "cacbf9fa491226726d92049990e80f48f645361013b9319cca71ee98b4cfb4a1",
+    "tests/test_verify_guided_streaming.py": "ca4a158e3960138a611c6d22c1e4e3ad00ac674c021d0c7c353da21789a26c44",
+    "tests/test_export_guided_streaming.py": "b541b1df7c3dff0a7a3c9efc375fafefd1efe9a95d72381025d4d5cf1a80aeba"
+  },
+  "receipt_files": {
+    "python.txt": "b9f63af299b2d73a3c464a52458c64828f37b32d641ba0d2a5193ca2cd36806f",
+    "rust.txt": "229cae9af801d125b0c694d0d5799510728001a07e111344233ea2a5fc3896c4",
+    "clippy.txt": "50e74344005050f68ed1b609b91a414eebf61c1085a529f4a9bff5feaae2eeef",
+    "doc.txt": "ae43ea32b46c6efce8455fc7f83e49cc53421a6856b97259a947f720de217710"
+  },
+  "rust_breakdown": {
+    "library": 94,
+    "cli": 7,
+    "analyzer_example": 3,
+    "frozen_catalog_example": 11,
+    "doc": 0
+  },
+  "count_note": "Earlier prose counted 117; verbatim all-target output sums to 115 passed and one ignored paid test. No runtime change."
+}

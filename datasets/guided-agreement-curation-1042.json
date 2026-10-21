@@ -1,0 +1,3076 @@
+{
+  "schema_version": 1,
+  "seed": 1042,
+  "accessed_at": "2026-10-20",
+  "pool_selection": "First500 SHA256-ranked official validation IDs by UTF8 guided-agreement/1042/{ImageID}; no annotation/class filtering",
+  "official_metadata_sha256": "ed93a0e121fe345effdfc7359b848dbc64a1ff6778c8c73563157cb500b33a17",
+  "pool_count": 500,
+  "source_eligible_count": 313,
+  "source_exclusions": [
+    {
+      "rank": 0,
+      "image_id": "7315d2828ee3b420",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 1,
+      "image_id": "0a9bca2a1959fa5c",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 5,
+      "image_id": "3c9c2fa9dcb03246",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 6,
+      "image_id": "ea6cf78e6100e813",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 7,
+      "image_id": "d1f728c5761cc354",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 9,
+      "image_id": "7c6d8408545e531c",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 11,
+      "image_id": "21e4f3968cdb34f5",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 16,
+      "image_id": "213e43c541c825ea",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 21,
+      "image_id": "f05f8d32193187b8",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 22,
+      "image_id": "6835a2ee09bf27db",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 23,
+      "image_id": "33c088fa4e5e0100",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 27,
+      "image_id": "f44e74769e9f16ad",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 34,
+      "image_id": "66d504bc383af486",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 36,
+      "image_id": "91ff71a6ecc37cf8",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 38,
+      "image_id": "2a2ea6d630e34ccf",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 40,
+      "image_id": "126a65a28aa3d6b4",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 42,
+      "image_id": "9f4d38bd7e28a995",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 45,
+      "image_id": "cba7e22bb383083a",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 46,
+      "image_id": "9811150fca35143e",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 51,
+      "image_id": "3306d820ba756ccf",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 52,
+      "image_id": "8323124bc8b1e1e0",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 58,
+      "image_id": "0fd31ac7fcc2f3bb",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 67,
+      "image_id": "c9cdd6d9369b44cf",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 71,
+      "image_id": "be6a86c753495f3a",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 72,
+      "image_id": "b1d69182276a1ec4",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 75,
+      "image_id": "874fdc59c8e1b262",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 76,
+      "image_id": "ea00c52778b38a4d",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 80,
+      "image_id": "d327559173b84956",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 88,
+      "image_id": "316f70c3032cd5ef",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 92,
+      "image_id": "b9a015b7691b67e7",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 93,
+      "image_id": "bd53bb1a78249e40",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 95,
+      "image_id": "054eb114119609f6",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 96,
+      "image_id": "09b96636ea4f4ce9",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 98,
+      "image_id": "75161733278e50d9",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 103,
+      "image_id": "a70a35aa6207f3c5",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 104,
+      "image_id": "ba2fb58b2b8df978",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 106,
+      "image_id": "d6942fe653a1cc15",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 113,
+      "image_id": "30d9d050af89bf63",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 114,
+      "image_id": "4ac24f0f25b7819e",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 116,
+      "image_id": "d3edf62f32c880a6",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 118,
+      "image_id": "1313a4add388424c",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 120,
+      "image_id": "b19b0ed41580dafd",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 121,
+      "image_id": "3b18539b45071335",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 130,
+      "image_id": "aa6964433c4166d0",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 132,
+      "image_id": "a949b48a770bd06c",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 133,
+      "image_id": "1569e98cdcaf0458",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 137,
+      "image_id": "e7ad0266dc06ef4e",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 139,
+      "image_id": "6c3cd6ad51dd1715",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 143,
+      "image_id": "93e9df651b9825a8",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 144,
+      "image_id": "5722314393105513",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 147,
+      "image_id": "92c4f641f103f806",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 150,
+      "image_id": "09c7f89055cf399b",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 151,
+      "image_id": "a87446d1c3316b93",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 152,
+      "image_id": "6751dad4a9feb206",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 158,
+      "image_id": "008216e31b1aecf0",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 160,
+      "image_id": "e6e3f64beba58a44",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 161,
+      "image_id": "47d63673cf5be822",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 163,
+      "image_id": "505f00d8762c07fc",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 164,
+      "image_id": "b2c5567464555220",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 166,
+      "image_id": "89c1d1e6b810f78c",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 167,
+      "image_id": "5b127cea11737082",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 170,
+      "image_id": "50e21950837e5536",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 171,
+      "image_id": "a9019373e9a2a8d4",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 172,
+      "image_id": "dbc69a2bbc84b8ed",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 175,
+      "image_id": "f236d9aa8356dca6",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 179,
+      "image_id": "3630cff3409dc382",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 180,
+      "image_id": "6f714e3d5ffad59d",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 181,
+      "image_id": "45e84c75996a7161",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 184,
+      "image_id": "7751d27d5e2f35ae",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 187,
+      "image_id": "c9ba41dcec9da131",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 189,
+      "image_id": "448ffa8a9ad26774",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 193,
+      "image_id": "73dee0f201062631",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 196,
+      "image_id": "73cc27067424f32b",
+      "status": "excluded_acquisition",
+      "reason": "color_fraction<0.03"
+    },
+    {
+      "rank": 197,
+      "image_id": "ff62454196dc4c77",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 198,
+      "image_id": "04737aad68f78bb7",
+      "status": "excluded_acquisition",
+      "reason": "color_fraction<0.03"
+    },
+    {
+      "rank": 200,
+      "image_id": "00e65d13159b498b",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 203,
+      "image_id": "7bee5757d71ab859",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 206,
+      "image_id": "e0136726eff98ab9",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 207,
+      "image_id": "2979602627e97d74",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 210,
+      "image_id": "4d4d01a5bf945b36",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 211,
+      "image_id": "0b1c6fba69d702bc",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 217,
+      "image_id": "a664dfe699795b93",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 218,
+      "image_id": "2561d02f269d3d7b",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 220,
+      "image_id": "76bfce752ad1977a",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 221,
+      "image_id": "969af219a0438f06",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 222,
+      "image_id": "621eace50f46488a",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 227,
+      "image_id": "c89306f949b45c7a",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 231,
+      "image_id": "5d3cb707487f6eab",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 235,
+      "image_id": "449126545a08f582",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 236,
+      "image_id": "383a6ede8b789abc",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 237,
+      "image_id": "587d76c6e660db24",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 239,
+      "image_id": "7ff05f195437d318",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 243,
+      "image_id": "a2e0a8551ef05d26",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 244,
+      "image_id": "88d87d50dd417334",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 247,
+      "image_id": "2d727b55568926f3",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 248,
+      "image_id": "03b2ca96db6404e4",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 252,
+      "image_id": "ef8446acda8d1775",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 255,
+      "image_id": "460de6f26a1e6f60",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 258,
+      "image_id": "d20f7969048b0ae2",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 259,
+      "image_id": "9ea34554f9d9f8c0",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 260,
+      "image_id": "d18fd55686b085b3",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 264,
+      "image_id": "5ed408d6e896db2d",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 267,
+      "image_id": "4ba2a83f34f071dd",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 269,
+      "image_id": "8f5244eec98887a6",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 273,
+      "image_id": "75d6acb7efa9fa5d",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 275,
+      "image_id": "400d5e40bfaaebe6",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 277,
+      "image_id": "bce750ef5a37a1c2",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 278,
+      "image_id": "8de02162f59e11be",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 282,
+      "image_id": "d685a518ee56f951",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 286,
+      "image_id": "17c3ed7860d160ed",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 293,
+      "image_id": "70b99d1f15693b0e",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 295,
+      "image_id": "6cfa94fb7daa08aa",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 297,
+      "image_id": "9bd3e32a2337f9bc",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 300,
+      "image_id": "41afd75ada0a9549",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 302,
+      "image_id": "1db61cb048d01a39",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 304,
+      "image_id": "1f8168eba86892c1",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 309,
+      "image_id": "45a9d4201b38e7dc",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 316,
+      "image_id": "06145d1b37e96fed",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 317,
+      "image_id": "c77e635ec467b07f",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 318,
+      "image_id": "385c665505276be2",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 319,
+      "image_id": "f4721d94d13eebf7",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 320,
+      "image_id": "7dbc08dc4a649d65",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 324,
+      "image_id": "6ebb5d6952eb10c2",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 325,
+      "image_id": "fc5117c3405012c8",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 327,
+      "image_id": "046073c81f742148",
+      "status": "excluded_acquisition",
+      "reason": "color_fraction<0.03"
+    },
+    {
+      "rank": 328,
+      "image_id": "2e47eb31e9c31207",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 330,
+      "image_id": "b0670fed268da345",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 333,
+      "image_id": "fdb6bb167c6164bc",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 337,
+      "image_id": "2159899cb6f0a93c",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 340,
+      "image_id": "7ba272d1cada1ea6",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 342,
+      "image_id": "b14609eacd75c949",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 346,
+      "image_id": "97a3ed5545a63255",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 353,
+      "image_id": "b8f75a7e8e6def6c",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 356,
+      "image_id": "ba2ce56c4a558b46",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 363,
+      "image_id": "5bc5922c22fdae13",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 366,
+      "image_id": "fe93b3b615780cac",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 368,
+      "image_id": "e0e01aa0a3ca103e",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 370,
+      "image_id": "d960a2defb08da31",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 371,
+      "image_id": "611d2849cb986e03",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 372,
+      "image_id": "b2d42640efddf0d5",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 375,
+      "image_id": "49316659bb54ce01",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 377,
+      "image_id": "ed7f9728d6ee1c41",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 379,
+      "image_id": "b85fcf93198ad80a",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 381,
+      "image_id": "bc75640eb2e39027",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 387,
+      "image_id": "fa05cb4633394151",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 388,
+      "image_id": "38107cee172b7942",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 391,
+      "image_id": "a4a2791074109186",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 398,
+      "image_id": "f57647df8e832e6f",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 399,
+      "image_id": "b36d49859827948b",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 400,
+      "image_id": "1bd077c7955147df",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 401,
+      "image_id": "b9dba91f809cfb59",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 402,
+      "image_id": "180f652927f88c09",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 403,
+      "image_id": "b60f5dde413fb23e",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 404,
+      "image_id": "e7f769bf1330660d",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 406,
+      "image_id": "5a6bf6b89588496a",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 409,
+      "image_id": "1e6104d5518cb3f9",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 412,
+      "image_id": "1cb55327a450c950",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 414,
+      "image_id": "379af54f8557b9ae",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 416,
+      "image_id": "1d1ef6def56f4b91",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 419,
+      "image_id": "4cc8d60e25ef91c9",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 421,
+      "image_id": "1d59f395f88a305a",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 423,
+      "image_id": "f65b0ed69f004107",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 424,
+      "image_id": "5521d835e38d5b6c",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 426,
+      "image_id": "97d0d48e1416c307",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 428,
+      "image_id": "26d3e6efda2035c0",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 439,
+      "image_id": "1e8bb50324ef25a5",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 440,
+      "image_id": "d118d69ac68fd8a6",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 446,
+      "image_id": "d0b3e5d06a57cd34",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 448,
+      "image_id": "6fce9e3e38858d53",
+      "status": "excluded_acquisition",
+      "reason": "currentFlickrlicense notCCBY2"
+    },
+    {
+      "rank": 450,
+      "image_id": "46fb1ff26c75c73c",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 451,
+      "image_id": "6b392cc009c6d4d4",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 458,
+      "image_id": "fc08bbace7af0eb7",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 461,
+      "image_id": "7bca107393268021",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 462,
+      "image_id": "11434b9cd3d769c4",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 466,
+      "image_id": "cfbd0ea8d3acc635",
+      "status": "excluded_acquisition",
+      "reason": "color_fraction<0.03"
+    },
+    {
+      "rank": 467,
+      "image_id": "44e67cbe7f944ddb",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 468,
+      "image_id": "b7356252b59f0200",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 470,
+      "image_id": "96cf8b51e360e98e",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 471,
+      "image_id": "d8923d9db7fd5489",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 482,
+      "image_id": "d0d848c5b20ad32e",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "rank": 487,
+      "image_id": "47d14d071bcb8d11",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 489,
+      "image_id": "a90def9b4dddf21b",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 490,
+      "image_id": "08ec62b63b2f3225",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 493,
+      "image_id": "c1ac7bc9ec634013",
+      "status": "excluded_acquisition",
+      "reason": "mirror notRGB/longedge<512"
+    },
+    {
+      "rank": 494,
+      "image_id": "7ca21ac836ba67c6",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "rank": 496,
+      "image_id": "ab8c8a0d83b8f890",
+      "status": "excluded_acquisition",
+      "reason": "mirrorexceedsnativeOriginal"
+    },
+    {
+      "rank": 497,
+      "image_id": "3a6b54fc13830bee",
+      "status": "excluded_acquisition",
+      "reason": "HTTP Error 404: Not Found"
+    }
+  ],
+  "manual_decisions": [
+    {
+      "candidate_index": 0,
+      "rank": 2,
+      "image_id": "23c2c79a9febbf3e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 1,
+      "rank": 3,
+      "image_id": "88ca1e8fe3473bf7",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 2,
+      "rank": 4,
+      "image_id": "a266598a99898022",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 3,
+      "rank": 8,
+      "image_id": "68afe7d95ea51d50",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 4,
+      "rank": 10,
+      "image_id": "af269d3e0ae9c9ab",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 5,
+      "rank": 12,
+      "image_id": "40133f118ef72e53",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 6,
+      "rank": 13,
+      "image_id": "2e795d1eb06f7887",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 7,
+      "rank": 14,
+      "image_id": "dceac1cafafa959e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 8,
+      "rank": 15,
+      "image_id": "9f99199491ad70f0",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 9,
+      "rank": 17,
+      "image_id": "181c08b70d6f0421",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 10,
+      "rank": 18,
+      "image_id": "63283b1f84fb759e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 11,
+      "rank": 19,
+      "image_id": "fecaef0ae81ca385",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 12,
+      "rank": 20,
+      "image_id": "4bc3c34b7a831cd1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 13,
+      "rank": 24,
+      "image_id": "e681429486a0ff64",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 14,
+      "rank": 25,
+      "image_id": "f891b05056e36515",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 15,
+      "rank": 26,
+      "image_id": "8788284a8b3aa6c1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 16,
+      "rank": 28,
+      "image_id": "be5c4741c6c2bbbf",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 17,
+      "rank": 29,
+      "image_id": "fbde744edf8fe365",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 18,
+      "rank": 30,
+      "image_id": "d9273a64e138212a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 19,
+      "rank": 31,
+      "image_id": "6e32ba63abadfb66",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 20,
+      "rank": 32,
+      "image_id": "a390811c92fd81e3",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 21,
+      "rank": 33,
+      "image_id": "eee3d8fffe8a9cfd",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 22,
+      "rank": 35,
+      "image_id": "b9bf033bd04af32d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 23,
+      "rank": 37,
+      "image_id": "d92c8982f5009fb1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 24,
+      "rank": 39,
+      "image_id": "69c94a7a9ea23d62",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 25,
+      "rank": 41,
+      "image_id": "51201063bfce5175",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 26,
+      "rank": 43,
+      "image_id": "08e91a6c602afa16",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 27,
+      "rank": 44,
+      "image_id": "54a625e8e71852ec",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 28,
+      "rank": 47,
+      "image_id": "9740ee1274117a57",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 29,
+      "rank": 48,
+      "image_id": "2c95e52ef7c7d6fa",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 30,
+      "rank": 49,
+      "image_id": "586eac115f984afa",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 31,
+      "rank": 50,
+      "image_id": "c91cfece9f2db416",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 32,
+      "rank": 53,
+      "image_id": "a35b6e288fc14d86",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 33,
+      "rank": 54,
+      "image_id": "21b246ca3da40334",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 34,
+      "rank": 55,
+      "image_id": "c8c438695df2a807",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 35,
+      "rank": 56,
+      "image_id": "1c388afb231a0a86",
+      "decision": "reject",
+      "reason": "uncertain studio product photo/render"
+    },
+    {
+      "candidate_index": 36,
+      "rank": 57,
+      "image_id": "252b33b31d59345a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 37,
+      "rank": 59,
+      "image_id": "cb3b765548ed5589",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 38,
+      "rank": 60,
+      "image_id": "f6a381b5d53c95da",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 39,
+      "rank": 61,
+      "image_id": "7a899edc12bdf710",
+      "decision": "reject",
+      "reason": "illustration-focused arcade artwork"
+    },
+    {
+      "candidate_index": 40,
+      "rank": 62,
+      "image_id": "ed39ece290eabd5d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 41,
+      "rank": 63,
+      "image_id": "453f95406c26be04",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 42,
+      "rank": 64,
+      "image_id": "18674aea17ba831d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 43,
+      "rank": 65,
+      "image_id": "35d3ac43483501f4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 44,
+      "rank": 66,
+      "image_id": "00a0b916fd5941a3",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 45,
+      "rank": 68,
+      "image_id": "bd9ad1d59378c0db",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 46,
+      "rank": 69,
+      "image_id": "d0267a07a2de3265",
+      "decision": "reject",
+      "reason": "television screen"
+    },
+    {
+      "candidate_index": 47,
+      "rank": 70,
+      "image_id": "63c3d131383b15c7",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 48,
+      "rank": 73,
+      "image_id": "38bda35d7fc8d187",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 49,
+      "rank": 74,
+      "image_id": "4d583919349bdca2",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 50,
+      "rank": 77,
+      "image_id": "4f8cbf50feb07f9c",
+      "decision": "reject",
+      "reason": "digital illustration/avatar"
+    },
+    {
+      "candidate_index": 51,
+      "rank": 78,
+      "image_id": "efb9d34587260fe7",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 52,
+      "rank": 79,
+      "image_id": "8c81a496faac7341",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 53,
+      "rank": 81,
+      "image_id": "ab54b2e75b2a19c0",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 54,
+      "rank": 82,
+      "image_id": "ee7cc126f32a86e0",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 55,
+      "rank": 83,
+      "image_id": "f3d6de07c93666d6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 56,
+      "rank": 84,
+      "image_id": "ebf9f0c42f637dc7",
+      "decision": "reject",
+      "reason": "uncertain photographic composite"
+    },
+    {
+      "candidate_index": 57,
+      "rank": 85,
+      "image_id": "524ec16ddcafb152",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 58,
+      "rank": 86,
+      "image_id": "d5bbb181c24bc534",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 59,
+      "rank": 87,
+      "image_id": "5de462fb191445b6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 60,
+      "rank": 89,
+      "image_id": "ea43d870c6d54213",
+      "decision": "reject",
+      "reason": "flat poster/sign graphic"
+    },
+    {
+      "candidate_index": 61,
+      "rank": 90,
+      "image_id": "db7bef821bbc7b88",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 62,
+      "rank": 91,
+      "image_id": "87bd1cc6b741864b",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 63,
+      "rank": 94,
+      "image_id": "5aced50a2c10b20f",
+      "decision": "reject",
+      "reason": "technical diagram"
+    },
+    {
+      "candidate_index": 64,
+      "rank": 97,
+      "image_id": "d7df6f234f217cb2",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 65,
+      "rank": 99,
+      "image_id": "a5849b0e46c3b78a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 66,
+      "rank": 100,
+      "image_id": "b575b3425b3e427a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 67,
+      "rank": 101,
+      "image_id": "c86feb2143de77e7",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 68,
+      "rank": 102,
+      "image_id": "5eb57b6cfe49bbc5",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 69,
+      "rank": 105,
+      "image_id": "c03c4dcf10be1a7a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 70,
+      "rank": 107,
+      "image_id": "6931643472b97435",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 71,
+      "rank": 108,
+      "image_id": "d5af2a413d17e681",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 72,
+      "rank": 109,
+      "image_id": "c789860e81b0f2f9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 73,
+      "rank": 110,
+      "image_id": "3217310e0a09367f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 74,
+      "rank": 111,
+      "image_id": "4b348ccddb674f22",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 75,
+      "rank": 112,
+      "image_id": "c6a82dc8191455f4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 76,
+      "rank": 115,
+      "image_id": "fcfbd8e754fea64f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 77,
+      "rank": 117,
+      "image_id": "52ad64cb60f0d7d5",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 78,
+      "rank": 119,
+      "image_id": "b1d3e6a1eedb95b5",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 79,
+      "rank": 122,
+      "image_id": "894e4bc127342011",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 80,
+      "rank": 123,
+      "image_id": "9de42afab97413a9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 81,
+      "rank": 124,
+      "image_id": "cd8ef68c160424f1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 82,
+      "rank": 125,
+      "image_id": "819d5f5daff18409",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 83,
+      "rank": 126,
+      "image_id": "1fa8972922aa3134",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 84,
+      "rank": 127,
+      "image_id": "f528bfab06e67f5f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 85,
+      "rank": 128,
+      "image_id": "4ed514a7fcb98bb5",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 86,
+      "rank": 129,
+      "image_id": "0d1a073b2c455b1d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 87,
+      "rank": 131,
+      "image_id": "dd683629211b2d8e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 88,
+      "rank": 134,
+      "image_id": "40a6a19e94fa6b0d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 89,
+      "rank": 135,
+      "image_id": "2e445dbd3720d2e4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 90,
+      "rank": 136,
+      "image_id": "b3ffe018cad30b0f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 91,
+      "rank": 138,
+      "image_id": "17ceb33b3bd29302",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 92,
+      "rank": 140,
+      "image_id": "9557c7eb821d4fac",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 93,
+      "rank": 141,
+      "image_id": "4be0588696d62c3d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 94,
+      "rank": 142,
+      "image_id": "af9ed524ea77cc1e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 95,
+      "rank": 145,
+      "image_id": "e6fc96ce7b4403a1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 96,
+      "rank": 146,
+      "image_id": "988abe381c6daf10",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 97,
+      "rank": 148,
+      "image_id": "17e872e2bbebf47f",
+      "decision": "reject",
+      "reason": "typography-focused sign"
+    },
+    {
+      "candidate_index": 98,
+      "rank": 149,
+      "image_id": "82ab67acc5742bfe",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 99,
+      "rank": 153,
+      "image_id": "8697b7d87fcfd722",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 100,
+      "rank": 154,
+      "image_id": "e49ad1437d6fdfa1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 101,
+      "rank": 155,
+      "image_id": "519e416a87403ee4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 102,
+      "rank": 156,
+      "image_id": "1777256e995e1ec6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 103,
+      "rank": 157,
+      "image_id": "66b61167713c3a91",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 104,
+      "rank": 159,
+      "image_id": "50724c280725dd96",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 105,
+      "rank": 162,
+      "image_id": "2df686d1d1864fb4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 106,
+      "rank": 165,
+      "image_id": "1fdf4c2369f5b60b",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 107,
+      "rank": 168,
+      "image_id": "0ada35baba28134b",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 108,
+      "rank": 169,
+      "image_id": "d06c5cfaddce98b7",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 109,
+      "rank": 173,
+      "image_id": "ed2fcee42f94162d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 110,
+      "rank": 174,
+      "image_id": "63d3ff35e91467bc",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 111,
+      "rank": 176,
+      "image_id": "db5b9c44f7a7c9dc",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 112,
+      "rank": 177,
+      "image_id": "fb7ec599dea70a4a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 113,
+      "rank": 178,
+      "image_id": "e16a051b4d26a4fa",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 114,
+      "rank": 182,
+      "image_id": "7c7d2efc63bb9698",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 115,
+      "rank": 183,
+      "image_id": "a2e19beea151cc26",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 116,
+      "rank": 185,
+      "image_id": "7bf5d17526986912",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 117,
+      "rank": 186,
+      "image_id": "91969378b03aebd2",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 118,
+      "rank": 188,
+      "image_id": "108c06211ad5fe27",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 119,
+      "rank": 190,
+      "image_id": "109260e478aa7bc4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 120,
+      "rank": 191,
+      "image_id": "726c3aec2405daa1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 121,
+      "rank": 192,
+      "image_id": "fb87456bc4ac8d9d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 122,
+      "rank": 194,
+      "image_id": "cdbdcc32d216bf48",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 123,
+      "rank": 195,
+      "image_id": "4dd231f285f15f5c",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 124,
+      "rank": 199,
+      "image_id": "a67d4c477270b0ec",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 125,
+      "rank": 201,
+      "image_id": "a2c00378a4c34811",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 126,
+      "rank": 202,
+      "image_id": "a87e419c3259952d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 127,
+      "rank": 204,
+      "image_id": "3b67f952f62a6389",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 128,
+      "rank": 205,
+      "image_id": "621a86196584a7b2",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 129,
+      "rank": 208,
+      "image_id": "cda8ff3d1c37394d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 130,
+      "rank": 209,
+      "image_id": "0ae6ad98a59914fc",
+      "decision": "reject",
+      "reason": "photographed television screen"
+    },
+    {
+      "candidate_index": 131,
+      "rank": 212,
+      "image_id": "3377c41373176e19",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 132,
+      "rank": 213,
+      "image_id": "f6c1ac59821e1613",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 133,
+      "rank": 214,
+      "image_id": "035747981e8a9643",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 134,
+      "rank": 215,
+      "image_id": "33877ac31b17f815",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 135,
+      "rank": 216,
+      "image_id": "e3d16a283226ef4c",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 136,
+      "rank": 219,
+      "image_id": "cdfa78c7fdf7a316",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 137,
+      "rank": 223,
+      "image_id": "3151bc45702cdb5c",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 138,
+      "rank": 224,
+      "image_id": "6bc56f8366132974",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 139,
+      "rank": 225,
+      "image_id": "af150499cf1c1882",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 140,
+      "rank": 226,
+      "image_id": "4c2fbb5e34e45cb9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 141,
+      "rank": 228,
+      "image_id": "0ad9245badbe2d4e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 142,
+      "rank": 229,
+      "image_id": "dbc35ad0b9e13239",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 143,
+      "rank": 230,
+      "image_id": "e135c581dcb9f259",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 144,
+      "rank": 232,
+      "image_id": "3cf84110ea52ff43",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 145,
+      "rank": 233,
+      "image_id": "414b1432ac74027d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 146,
+      "rank": 234,
+      "image_id": "2bc8d6bf8eb71c21",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 147,
+      "rank": 238,
+      "image_id": "5ff817e7b606a605",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 148,
+      "rank": 240,
+      "image_id": "0344cade36bbd4f4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 149,
+      "rank": 241,
+      "image_id": "48e7cf6d8b01ac9f",
+      "decision": "reject",
+      "reason": "meme/screenshot"
+    },
+    {
+      "candidate_index": 150,
+      "rank": 242,
+      "image_id": "caa59ce4f210e906",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 151,
+      "rank": 245,
+      "image_id": "9238f5062ff1dc8d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 152,
+      "rank": 246,
+      "image_id": "133d34589bcf0dcd",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 153,
+      "rank": 249,
+      "image_id": "26df0c72545ba7f7",
+      "decision": "reject",
+      "reason": "GPS map screen"
+    },
+    {
+      "candidate_index": 154,
+      "rank": 250,
+      "image_id": "dac097118d6cf5c5",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 155,
+      "rank": 251,
+      "image_id": "5b3823ac7b444530",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 156,
+      "rank": 253,
+      "image_id": "02b84822c0456be2",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 157,
+      "rank": 254,
+      "image_id": "c8bebc556a1fecc3",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 158,
+      "rank": 256,
+      "image_id": "dbe8e2cbfcd9c8f3",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 159,
+      "rank": 257,
+      "image_id": "5cff84bc08f4b150",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 160,
+      "rank": 261,
+      "image_id": "30616ec39dd2cade",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 161,
+      "rank": 262,
+      "image_id": "720bb6cc50390263",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 162,
+      "rank": 263,
+      "image_id": "d5c20f2b43c06ff6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 163,
+      "rank": 265,
+      "image_id": "3c7622f7b06395b9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 164,
+      "rank": 266,
+      "image_id": "e9668a8653e70880",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 165,
+      "rank": 268,
+      "image_id": "88e283eb5e918a88",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 166,
+      "rank": 270,
+      "image_id": "2eacd7361d8d0407",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 167,
+      "rank": 271,
+      "image_id": "908022d8f137ec28",
+      "decision": "reject",
+      "reason": "computer-rendered mammoth"
+    },
+    {
+      "candidate_index": 168,
+      "rank": 272,
+      "image_id": "6e8d404727e9d979",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 169,
+      "rank": 274,
+      "image_id": "49e56129045e6d90",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 170,
+      "rank": 276,
+      "image_id": "f485e3afbffc79ed",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 171,
+      "rank": 279,
+      "image_id": "18bc435a8198520e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 172,
+      "rank": 280,
+      "image_id": "eadc34667bc846bc",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 173,
+      "rank": 281,
+      "image_id": "e0d810c2e532c977",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 174,
+      "rank": 283,
+      "image_id": "900f28f25f2196d9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 175,
+      "rank": 284,
+      "image_id": "9cbeb1c9be8ba868",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 176,
+      "rank": 285,
+      "image_id": "2ea1461ef6c48573",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 177,
+      "rank": 287,
+      "image_id": "e2daf7ef50cac4ed",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 178,
+      "rank": 288,
+      "image_id": "fdceefbe7bf5fbb5",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 179,
+      "rank": 289,
+      "image_id": "84c3ad460ced2ad9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 180,
+      "rank": 290,
+      "image_id": "68c6cdee76b5f017",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 181,
+      "rank": 291,
+      "image_id": "9c8075755a3f7d7d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 182,
+      "rank": 292,
+      "image_id": "25e8ffb2fc84264d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 183,
+      "rank": 294,
+      "image_id": "1fedbdd7ba866ba3",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 184,
+      "rank": 296,
+      "image_id": "8112f6bb34cfa2b9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 185,
+      "rank": 298,
+      "image_id": "e17a8c6498a9c3cf",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 186,
+      "rank": 299,
+      "image_id": "e2b1034276016cce",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 187,
+      "rank": 301,
+      "image_id": "43c19287631911c6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 188,
+      "rank": 303,
+      "image_id": "4454d43b9198a2e6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 189,
+      "rank": 305,
+      "image_id": "1ee1dd3f11a24e83",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 190,
+      "rank": 306,
+      "image_id": "a97af4a11bd3a69b",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 191,
+      "rank": 307,
+      "image_id": "84d544d458a1ed78",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 192,
+      "rank": 308,
+      "image_id": "793a8faca844e39c",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 193,
+      "rank": 310,
+      "image_id": "303d5c824614b59d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 194,
+      "rank": 311,
+      "image_id": "8ff06d922c152748",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 195,
+      "rank": 312,
+      "image_id": "40a3f27ba98ea63e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 196,
+      "rank": 313,
+      "image_id": "33e9c797aadc13ea",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 197,
+      "rank": 314,
+      "image_id": "ca074869694d7a7b",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 198,
+      "rank": 315,
+      "image_id": "43ed3ae7ac6b9557",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 199,
+      "rank": 321,
+      "image_id": "51adf386628862d0",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 200,
+      "rank": 322,
+      "image_id": "89457cfb8b201472",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 201,
+      "rank": 323,
+      "image_id": "ab19df51ebf4aed6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 202,
+      "rank": 326,
+      "image_id": "f832c175d0ba3919",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 203,
+      "rank": 329,
+      "image_id": "d1e768bb7d35f85f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 204,
+      "rank": 331,
+      "image_id": "195c38cae4543ea4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 205,
+      "rank": 332,
+      "image_id": "aca6645d590aa23f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 206,
+      "rank": 334,
+      "image_id": "c171944538dd14e3",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 207,
+      "rank": 335,
+      "image_id": "b4a30ffcefece89d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 208,
+      "rank": 336,
+      "image_id": "6d00d8fec91697a8",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 209,
+      "rank": 338,
+      "image_id": "8002fb13e0d2566e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 210,
+      "rank": 339,
+      "image_id": "5cf29a3ca4f13e3d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 211,
+      "rank": 341,
+      "image_id": "e220e4b6cad10f5c",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 212,
+      "rank": 343,
+      "image_id": "c534bf531b31b537",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 213,
+      "rank": 344,
+      "image_id": "02379b4c9a985b98",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 214,
+      "rank": 345,
+      "image_id": "0e554f6eb5379447",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 215,
+      "rank": 347,
+      "image_id": "416b1bda6904310d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 216,
+      "rank": 348,
+      "image_id": "6ef57026b1761382",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 217,
+      "rank": 349,
+      "image_id": "57c6a0485ed097b2",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 218,
+      "rank": 350,
+      "image_id": "4d0180f8f03f1540",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 219,
+      "rank": 351,
+      "image_id": "90d897807f1416d4",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 220,
+      "rank": 352,
+      "image_id": "f00f00b96b48e756",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 221,
+      "rank": 354,
+      "image_id": "6bc17e16228c12fb",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 222,
+      "rank": 355,
+      "image_id": "ca20b4db0c0f57cc",
+      "decision": "reject",
+      "reason": "map/globe dominant"
+    },
+    {
+      "candidate_index": 223,
+      "rank": 357,
+      "image_id": "1945f91b6f5311ed",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 224,
+      "rank": 358,
+      "image_id": "fbf5b3aeb9dbf806",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 225,
+      "rank": 359,
+      "image_id": "4d6b125a11bbb6a9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 226,
+      "rank": 360,
+      "image_id": "c78c7e7adba3a81d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 227,
+      "rank": 361,
+      "image_id": "65cf38d229b71c9a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 228,
+      "rank": 362,
+      "image_id": "9e7a00feb9582e8f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 229,
+      "rank": 364,
+      "image_id": "0df49be355be1f96",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 230,
+      "rank": 365,
+      "image_id": "247d7ac44814e5da",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 231,
+      "rank": 367,
+      "image_id": "1a64ceaa916530f1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 232,
+      "rank": 369,
+      "image_id": "75b5f85e46fcfcb1",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 233,
+      "rank": 373,
+      "image_id": "f380abeff1c2838d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 234,
+      "rank": 374,
+      "image_id": "bc37ccba2857d1e7",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 235,
+      "rank": 376,
+      "image_id": "f2e68b84ae54e863",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 236,
+      "rank": 378,
+      "image_id": "2e4831cdf0b4ce1e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 237,
+      "rank": 380,
+      "image_id": "4d1ae333900180ce",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 238,
+      "rank": 382,
+      "image_id": "02621d3d56c7e96e",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 239,
+      "rank": 383,
+      "image_id": "217a79d30eb9e89a",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 240,
+      "rank": 384,
+      "image_id": "0fcb52bc7317ed58",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 241,
+      "rank": 385,
+      "image_id": "27ba6189609ff436",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 242,
+      "rank": 386,
+      "image_id": "6a9b44aac0032f59",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 243,
+      "rank": 389,
+      "image_id": "a668c83b783da350",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 244,
+      "rank": 390,
+      "image_id": "fc701fc8eba1f845",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 245,
+      "rank": 392,
+      "image_id": "0231f3d9cfa79b30",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 246,
+      "rank": 393,
+      "image_id": "7a87225ae9d63bcd",
+      "decision": "reject",
+      "reason": "projected screen dominant"
+    },
+    {
+      "candidate_index": 247,
+      "rank": 394,
+      "image_id": "6eb70509fcd7d06b",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 248,
+      "rank": 395,
+      "image_id": "695c82eb27cb72f8",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 249,
+      "rank": 396,
+      "image_id": "ac359b78738c1d8f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 250,
+      "rank": 397,
+      "image_id": "dc8f82fe9e4a192f",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 251,
+      "rank": 405,
+      "image_id": "19c027351a250dcd",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 252,
+      "rank": 407,
+      "image_id": "5d9328adc22106a3",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 253,
+      "rank": 408,
+      "image_id": "a557210863cb9d34",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 254,
+      "rank": 410,
+      "image_id": "f699ccae41f02992",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 255,
+      "rank": 411,
+      "image_id": "c16f5b4a23650354",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 256,
+      "rank": 413,
+      "image_id": "9aa054ab1b88dc7d",
+      "decision": "reject",
+      "reason": "video-game screenshot"
+    },
+    {
+      "candidate_index": 257,
+      "rank": 415,
+      "image_id": "942e78ed3727c786",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 258,
+      "rank": 417,
+      "image_id": "654794a14e282912",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 259,
+      "rank": 418,
+      "image_id": "5e6e0fee02c9b9d9",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 260,
+      "rank": 420,
+      "image_id": "3d4789f13f7f6d1c",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 261,
+      "rank": 422,
+      "image_id": "74dffb8c8d631121",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 262,
+      "rank": 425,
+      "image_id": "d36dbd8ffa44a913",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 263,
+      "rank": 427,
+      "image_id": "00a36f96e31731c4",
+      "decision": "reject",
+      "reason": "computer screens dominant"
+    },
+    {
+      "candidate_index": 264,
+      "rank": 429,
+      "image_id": "853c106ddf2b5120",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 265,
+      "rank": 430,
+      "image_id": "2ebe189cf7049839",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 266,
+      "rank": 431,
+      "image_id": "1f06a194de23d992",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 267,
+      "rank": 432,
+      "image_id": "ccda1c38b54c5655",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 268,
+      "rank": 433,
+      "image_id": "f34588f7e4a23353",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 269,
+      "rank": 434,
+      "image_id": "a1d730e06b434176",
+      "decision": "reject",
+      "reason": "diagram/scale dominant"
+    },
+    {
+      "candidate_index": 270,
+      "rank": 435,
+      "image_id": "2a7c45cb2c6ffdca",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 271,
+      "rank": 436,
+      "image_id": "a9cae40d9701ef40",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 272,
+      "rank": 437,
+      "image_id": "d5c49b3b70e3ce87",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 273,
+      "rank": 438,
+      "image_id": "3ef31b4d6573cad6",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 274,
+      "rank": 441,
+      "image_id": "0d27c3260cf5ef8d",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 275,
+      "rank": 442,
+      "image_id": "b35baf6d2ef64713",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    },
+    {
+      "candidate_index": 276,
+      "rank": 443,
+      "image_id": "cdb2b707ef94db2c",
+      "decision": "accept",
+      "reason": "natural color photograph; no dominant screen/map/graphic; no taxonomy quotas"
+    }
+  ],
+  "stopping_rule": "Take first260 source-eligible, visually accepted, decoded-RGB-distinct images in ranked order, before model outcomes. Physical objects/art/toys photographed in the real world may appear; primarily graphic/screens/map sources excluded.",
+  "checks": "Every supplied mirror is RGB JPEG longedge>=512, current Flickr CC-BY2.0 JSON-LD bound to same photoID, original dimensions >=supplied (rotationaware), aspect agrees within1pixel. Source bytes and decoded RGB unique."
+}

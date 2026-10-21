@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "metadata": {
+    "assignment_model": "gpt-6.1-sol",
+    "catalog": [
+      {
+        "description": "Non-human animals, including pets, livestock, birds, reptiles, and fish. Also includes animal specimens such as shells, skulls, and skeletons.",
+        "id": 1,
+        "name": "Animals"
+      },
+      {
+        "description": "Flowers, foliage, trees, and other plants, including cut flower arrangements and naturally fallen tree trunks.",
+        "id": 2,
+        "name": "Plants"
+      },
+      {
+        "description": "Vehicles such as cars, vans, racing cars, military vehicles, aircraft, and boats. Includes views focused on vehicle interiors or controls.",
+        "id": 3,
+        "name": "Vehicles"
+      },
+      {
+        "description": "People shown individually or in groups, including portraits and people working, performing music, or participating in sports. Includes close views of human body parts.",
+        "id": 4,
+        "name": "People and activities"
+      },
+      {
+        "description": "Foods, prepared dishes, ingredients, and beverages, including food being cooked and drinks in containers.",
+        "id": 5,
+        "name": "Food and drink"
+      },
+      {
+        "description": "Electronic equipment and powered household or desktop devices, including media players, radios, stereo systems, and electric fans.",
+        "id": 6,
+        "name": "Electronics and appliances"
+      },
+      {
+        "description": "Buildings, architectural interiors, monuments, settlements, and other built structures. Includes fences, utility structures, and scenes centered on constructed environments.",
+        "id": 7,
+        "name": "Buildings and structures"
+      },
+      {
+        "description": "Garments and textile goods shown as objects, including jackets, rugs, and folded woven fabrics.",
+        "id": 8,
+        "name": "Clothing and textiles"
+      }
+    ],
+    "catalog_sha256": "7152868f072adccefd30ee6764d277c2eaf19d135efd1cf9615d4298d8086202",
+    "condition": "original",
+    "diagnostic": false,
+    "effective_catalog_sha256": "ea28b96e08fdb67ee5c877504958d7a126a2437a50cf09c1a33b506d1073c48b",
+    "effective_order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "effective_order_sha256": "b2ddd6543011e658aaebc223b42021e89fa9a18bd1f2207f6cb68e73ca5688b3",
+    "expected_count": 25,
+    "experiment": "guided-agreement",
+    "input_jsonl_sha256": "7ab56786c3663fd60a1e7cc4290b8002e77d52041228b5bcd2e648a74d2a188f",
+    "input_sha256": "c935cc8948b49ecc26ead1275b3f9833525eea6a02bc8b9429c69abd58f59366",
+    "k": 8,
+    "management_calls": 0,
+    "maximum_request_bytes": 1300412,
+    "modality": "images",
+    "mode": "llm",
+    "ordered_ids": [
+      "48599a29fabce63c6bc1",
+      "be7614b19cf0d59d78e6",
+      "77d0935ddfce72381981",
+      "f963c7764daeb8d7cfa5",
+      "45fbfb0b2f17e4f29c43",
+      "2a8c39c73757582b068e",
+      "23a7471ca0ef47bace1e",
+      "6d4c1b9441009a65fccd",
+      "091aeb45dc0176d878fd",
+      "cee62da63d2ac661dccb",
+      "55ad4a00c668e40ce99f",
+      "bf00a9c0acb7db276d98",
+      "19c83f7d93be3c1c1809",
+      "c4c518017ff699584c29",
+      "92fd1c3e13a215b73bd9",
+      "c4a8e6524a4a6af62800",
+      "d6eb56715e58dc55bc23",
+      "4f63e38a2b7cd2230e67",
+      "9035c91009348a56ef54",
+      "0a457e48dd2ba99bdc3a",
+      "630415e23f58649317bd",
+      "21b82208abbe60877981",
+      "f0bf60d03db9c26c362b",
+      "a0f2cfd32052cb8e1c25",
+      "56219271dcfa0b16ca57"
+    ],
+    "reference_sha256": "6d7b2aa50d432d9e3574de984b3b9a09c17c72df1e2ad1d1eb21f4cad3adb009",
+    "repeat_index": 1,
+    "reverse_catalog_order": false,
+    "run_id": "279337cac226c6a7994343226786f5e1",
+    "sol_reasoning_effort": "high",
+    "source": {
+      "commit": "9f80d8400ac23c70c9e5dd2e23c953cdee362410",
+      "embedded_file_sha256": {
+        "Cargo.lock": "a58ee0154cbaf44c47c193105c3db06e336df64b514055921036f372e219e756",
+        "Cargo.toml": "1e3bb39b4ff2fca4f38e8923f1b254d0d50c5d1b4855c4983b30f2b429086715",
+        "examples/guided_agreement.rs": "f617e58dc54696db2fa59849a2ae12775bc129fed970e7322913f14000ec676b",
+        "src/agreement.rs": "c5bbda57f1f3f001d61081523f29a6ae7ae730e460c0a39a2b2cb38584b81433",
+        "src/agreement_metrics.rs": "e4740d7ad1dae4766011473c1e050321a99d880bbed98da6215d0eba81543ba4",
+        "src/agreement_review.rs": "fa0bcce245373b0d5a2bc4cbb0ff3fdc97bcc8e31c99a2ad4c81d2c2cf5e1a26",
+        "src/lib.rs": "2dfcb22af11e31103c8032b77ab9064ec8e71ab110212d2a2fc1c83b41829d47",
+        "src/provider.rs": "9269e50c25edaa2c73eb8199c3c942d54f7f1bd16ecc011a554f515166cb83f9",
+        "src/types.rs": "2486ed82e584abf9f402ca7e372c67cfe26d3d20944a5c353c801769f08cf0e5"
+      },
+      "executable_sha256": "9130b82079e107c282dea401261d0e993459126b51411fbe4a659226ac240dce"
+    },
+    "stage": "repeat",
+    "started_at_unix_ms": 1792539349451,
+    "task": "Classify the main visible subject of this photograph into the single supplied broad semantic category whose membership criteria fit best. Use Other when no supplied category fits. Classify visible objects or scenes at the catalog's semantic granularity, rather than color, style, or photographic quality."
+  },
+  "processed_count": 25,
+  "expected_count": 25,
+  "assignments": [
+    {
+      "id": "48599a29fabce63c6bc1",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "be7614b19cf0d59d78e6",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "77d0935ddfce72381981",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f963c7764daeb8d7cfa5",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "45fbfb0b2f17e4f29c43",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "2a8c39c73757582b068e",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "23a7471ca0ef47bace1e",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "6d4c1b9441009a65fccd",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "091aeb45dc0176d878fd",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "cee62da63d2ac661dccb",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "55ad4a00c668e40ce99f",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "bf00a9c0acb7db276d98",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "19c83f7d93be3c1c1809",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c4c518017ff699584c29",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "92fd1c3e13a215b73bd9",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "c4a8e6524a4a6af62800",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "d6eb56715e58dc55bc23",
+      "cluster_id": 3,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "4f63e38a2b7cd2230e67",
+      "cluster_id": 4,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "9035c91009348a56ef54",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "0a457e48dd2ba99bdc3a",
+      "cluster_id": 1,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "630415e23f58649317bd",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "21b82208abbe60877981",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "f0bf60d03db9c26c362b",
+      "cluster_id": 5,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "a0f2cfd32052cb8e1c25",
+      "cluster_id": 2,
+      "refused": false,
+      "label": null
+    },
+    {
+      "id": "56219271dcfa0b16ca57",
+      "cluster_id": 7,
+      "refused": false,
+      "label": null
+    }
+  ],
+  "measurement": {
+    "assignment_refusal_calls": 0,
+    "calls": 25,
+    "cost_complete": true,
+    "cost_history_complete": true,
+    "cost_usd": 0.09232999999999998,
+    "error_calls": 0,
+    "journal_sha256": "bc2abe9aa7107ff3b5c781b70f81ec5ced8e4e0af6f21e3fca782ecef5fb7743",
+    "phase_calls": {
+      "assign": 25
+    },
+    "pricing_date": "2026-10-20",
+    "pricing_sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "https://developers.openai.com/api/docs/guides/decisions"
+    ],
+    "request_seconds": 55.536,
+    "timing_complete": true,
+    "unknown_pricing_calls": 0,
+    "unknown_usage_calls": 0,
+    "usage": {
+      "cache_write_tokens": 33376,
+      "cached_tokens": 0,
+      "cost_usd": 0.09232999999999998,
+      "input_tokens": 33451,
+      "output_tokens": 874
+    },
+    "wall_ms": 55624,
+    "wall_seconds": 55.624
+  },
+  "error": null,
+  "progress_sha256": "a940a8e66041cbd565fe06bac0494ca1703ae585161fdc1813be9b3b3b27e60a"
+}

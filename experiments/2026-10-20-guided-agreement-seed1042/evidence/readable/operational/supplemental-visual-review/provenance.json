@@ -1,0 +1,15 @@
+{
+  "scope": "Supplemental post hoc qualitative inspection, separate from the preregistered paid Sol reviewer; not a population accuracy estimate.",
+  "reviewer": "Delegated Codex agent; inherited model was not independently API-pinned.",
+  "blinding": "Agent received only catalog, shuffled anonymous A/B cases and referenced JPEGs, with no cohort audit key or backend identity.",
+  "selection": "All19 guided image disagreements plus first4 equal-named and first2 equal-Other cases in the frozen review order.",
+  "recorded_at_utc": "2026-10-20T23:20:39.108252+00:00",
+  "files_sha256": {
+    "README.txt": "1f47d9004623618ea7282fecf12004d19462b9732788e4d122dfd9d2c9404cd1",
+    "catalog.json": "4b0488a6cfd568aacb90c1660bca687432540fd58ce3efa4d592f4a4a99dcfd2",
+    "cases.json": "0f4916f1082d2a79cff053bfe8339bbb97b60ea5c02b6d21a2994b151b694427",
+    "review.json": "bad7994ab5319c7bfd3f0a6bc90d460a85521904e0e3fc34d28fc1552c022f15",
+    "findings.md": "87db8619ab7c0dfd5673b92235ba53300ad38a038cb337015858528baa521402"
+  },
+  "accounting": "No experimental external API calls dispatched. Coding-agent compute is outside the experiment API-cost ledger; no zero-total-cost claim."
+}

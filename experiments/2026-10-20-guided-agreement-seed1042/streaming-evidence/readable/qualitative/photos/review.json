@@ -1,0 +1,661 @@
+{
+  "schema_version": 1,
+  "scope": "Post hoc qualitative sample from terminal reserved photo arms. Catalog identities, classifier identities, policy names, aggregate outcomes and source photo metadata withheld. Not a random accuracy sample or human ground truth. Coding-harness reviewer compute is outside the recorded experiment API ledger.",
+  "blinded": true,
+  "packet_sha256": "f4f4f5bd719a90e9fd8abd89753eba38468bbd5a8f79a280fb1987297aeb6820",
+  "method": "All 11 exact supplied JPEGs were inspected through view_image at original detail. Each A–D assignment was assessed separately against its own full supplied catalog. No cross-catalog ID equivalence, hidden identity or aggregate score was used.",
+  "fit_definitions": {
+    "supported": "Visible focal subject fits the catalog membership wording.",
+    "plausible": "Reasonable membership or rejection under an ambiguous boundary, missing category or uncertain object function; not a demonstrated error.",
+    "unsupported": "Visible focal subject conflicts with the assigned category; the reason and nearest reasonable alternative are stated.",
+    "unclear": "Insufficient visible evidence for a defensible membership judgment."
+  },
+  "severity_definition": "Severity describes a supported concern about this assignment, not a population error score; plausible boundary choices with no demonstrated error have severity none.",
+  "limits": [
+    "Post hoc qualitative selected sample; no population accuracy estimate.",
+    "Automated Codex same-family review, not independent human truth.",
+    "Object purpose, source metadata and identities were not looked up or inferred from opaque filenames.",
+    "Catalog coverage differs, so an Other response can be defensible even when another catalog offers a fitting name."
+  ],
+  "cases": [
+    {
+      "case_id": "stream-photo-183364f59793fb3c",
+      "item_id": "a046f244997563f9d1e1",
+      "image_sha256": "85b0d3b890e69d325ba122db70180ef507c27ed618ab8133eea29a092f914445",
+      "visible_subject": "A torn aircraft-like passenger-cabin section with exposed seat rows and metal framing, outdoors.",
+      "literal_evidence": [
+        "A curved, ripped outer shell encloses several parallel rows of passenger seats.",
+        "Internal ribs, hanging wiring and broken panels are exposed.",
+        "Trees and pavement surround the wrecked cabin; they are background rather than the focal subject."
+      ],
+      "themes": [
+        "focal subject versus setting",
+        "transport wreckage",
+        "nonexhaustive vehicle examples"
+      ],
+      "uncertainty": [
+        "The exact aircraft type, cause of damage, location and whether this is a staged display cannot be established from the pixels.",
+        "Catalog A uses motor vehicles with road-vehicle examples; including an aircraft under that wording is reasonable but less explicit than catalog C's transport-vehicle wording."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "unsupported",
+          "reason": "The focal object is damaged transport-cabin wreckage, not a building, room interior or fixed civic structure. Exposed structural framing alone does not make it architecture.",
+          "severity": "major",
+          "nearest_alternative": {
+            "cluster_id": 2,
+            "fit": "plausible",
+            "reason": "Vehicles is the nearest named category: an aircraft is motorized transport, although this catalog only gives road-vehicle examples.",
+            "category": "Vehicles"
+          },
+          "assigned_cluster_id": 10,
+          "assigned_category": "Architecture and Infrastructure"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "The recognizable passenger-cabin wreckage is a vehicle subject; parked/displayed/in-use examples do not require an intact vehicle.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 3,
+          "assigned_category": "Vehicles"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The main object is recognizable transport-vehicle wreckage with passenger seating, fitting the explicit transport-vehicle scope.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 3,
+          "assigned_category": "Vehicles"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The vehicle remains the primary subject despite its damaged and stationary condition; road vehicles are examples rather than an exhaustive list.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 2,
+          "assigned_category": "Vehicles"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-4fd66af951af21d2",
+      "item_id": "127aa359731969742c20",
+      "image_sha256": "a64733ce398078ee9fb324e22f5130f9b47c5c8aeb52a5b2f55811895bf4343c",
+      "visible_subject": "An apparently nonliving display mannequin wearing a red jacket and trousers over a printed shirt.",
+      "literal_evidence": [
+        "A glossy red jacket, red trousers and a motorcycle-print shirt occupy most of the frame.",
+        "The exposed head/neck surface is featureless and the hands appear rigid and mannequin-like.",
+        "There is no visible human action or social scene; the framing presents an outfit."
+      ],
+      "themes": [
+        "living person versus crafted display figure",
+        "garment presentation",
+        "missing apparel category"
+      ],
+      "uncertainty": [
+        "The upper head is cropped, so a live model cannot be ruled out with absolute certainty, but the visible featureless surface and rigid hands strongly favor a mannequin.",
+        "Treating a garment-display mannequin as an artistic/display object is a defensible coarse substitute in catalogs without an apparel category; it need not mean the outfit itself is an artwork."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "unsupported",
+          "reason": "The visible evidence favors an inanimate mannequin used to showcase garments, rather than a portrait or scene centered on a living person. This catalog has a more direct clothing category.",
+          "severity": "minor",
+          "nearest_alternative": {
+            "cluster_id": 11,
+            "fit": "supported",
+            "reason": "Clothing and Accessories explicitly covers garments shown as the main subject.",
+            "category": "Clothing and Accessories"
+          },
+          "assigned_cluster_id": 3,
+          "assigned_category": "People"
+        },
+        "B": {
+          "fit": "unsupported",
+          "reason": "People requires a person or their activity as the subject. An apparently nonliving clothing-display figure is a weaker fit, and clothing alone does not establish a person-centered scene.",
+          "severity": "minor",
+          "nearest_alternative": {
+            "cluster_id": 6,
+            "fit": "plausible",
+            "reason": "Art and Decorative Objects includes crafted display objects and treats depicted figures as objects; Other is also reasonable if a commercial mannequin is outside that scope.",
+            "category": "Art and Decorative Objects"
+          },
+          "assigned_cluster_id": 2,
+          "assigned_category": "People"
+        },
+        "C": {
+          "fit": "plausible",
+          "reason": "A mannequin is a crafted human figure photographed as an object, so the crafted-figure scope provides a reasonable fit despite the main emphasis on clothing.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and decorative objects"
+        },
+        "D": {
+          "fit": "plausible",
+          "reason": "The figure appears nonliving and is presented as a display object, which is compatible with the crafted-display scope. The absence of an apparel category makes this an approximate boundary choice.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and decorative objects"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-2bef21bc353c99a3",
+      "item_id": "bb29c67d8b4cc926faaa",
+      "image_sha256": "8d226d4580a6915f52daf90ba3c5521d9234c8c9a0d0cd31566e07b2d7077d82",
+      "visible_subject": "An ornate circular metal relief disk set into surrounding pavement, with a central face and rings of symbols.",
+      "literal_evidence": [
+        "The frame is dominated by a round metal disk with a raised central face and dense concentric decorative motifs.",
+        "A pale circular rim and surrounding paving are visible at its edges.",
+        "No person, animal, vehicle or powered equipment is the focal subject."
+      ],
+      "themes": [
+        "functional infrastructure versus decorative object",
+        "ambiguous object purpose",
+        "reasonable category overlap"
+      ],
+      "uncertainty": [
+        "The image does not establish whether the disk is a working utility cover, an installed decorative plaque or another ornamental surface.",
+        "Close framing emphasizes the relief design, while its apparent placement in pavement also supports an infrastructure reading."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "plausible",
+          "reason": "This catalog explicitly includes manhole covers and street fixtures. The disk appears set into pavement, so infrastructure is reasonable, although a utility function is not visually proven.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": 7,
+            "fit": "supported",
+            "reason": "Art and Crafts also fits the prominently photographed decorative relief object.",
+            "category": "Art and Crafts"
+          },
+          "assigned_cluster_id": 10,
+          "assigned_category": "Architecture and Infrastructure"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "The visible focal subject is an elaborately crafted relief object. Its decorative design supports the artwork/display-object category even if the object also serves an infrastructure function.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and Decorative Objects"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The frame presents the ornamented crafted object and its relief figures, fitting art and decorative objects. Buildings and infrastructure remains a plausible secondary reading if this is a utility cover.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and decorative objects"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The ornate metal relief is a clear crafted/decorative object. The alternative architecture category could also be reasonable if its unconfirmed utility-cover function is prioritized.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and decorative objects"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-e84555ef16912d66",
+      "item_id": "4439b2e4deffbca976b9",
+      "image_sha256": "4f0bd4a1a46bc36b044d9c46f6d1b35e79c29511802f900184cd2d0ceda5d522",
+      "visible_subject": "A masked player crouching behind a red inflatable barrier and aiming a paintball marker, with a striped official in the background.",
+      "literal_evidence": [
+        "The foreground person wears a full protective face mask and holds a marker with a hopper.",
+        "The person crouches beside a large red inflatable obstacle marked with colored paint spots.",
+        "Another masked person wears a vertically striped shirt behind the player."
+      ],
+      "themes": [
+        "activity-specific versus broad people categories",
+        "supported shared subject"
+      ],
+      "uncertainty": [
+        "The exact competition, participants and venue are unknown; the visible equipment strongly supports a paintball-game interpretation."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "supported",
+          "reason": "The image centers on a person actively participating in a physical game, matching Sports and Physical Activities rather than the catalog's nonsporting People category.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 4,
+          "assigned_category": "Sports and Physical Activities"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "People explicitly includes sports and equipment when the photograph centers on a person or their activity.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 2,
+          "assigned_category": "People"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The scene is centered on people and their sporting activity, explicitly within this category.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 2,
+          "assigned_category": "People"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The person and athletic game activity are the focus; the People description explicitly includes athletes.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 3,
+          "assigned_category": "People"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-90134ed7fca1318a",
+      "item_id": "4d03e2f0db6c4896ca4f",
+      "image_sha256": "8dcf35648a0037c4d258c88f981a1fc284d377ed335b6b2dcb4847b65fab089a",
+      "visible_subject": "A wall-mounted numbered dartboard with darts and several keys or key-like metal objects attached to it.",
+      "literal_evidence": [
+        "A circular board is divided into numbered radial scoring wedges with colored rings.",
+        "Several red-finned darts and metal keys or key-like objects project from the board.",
+        "The board occupies nearly the entire frame; no player is visible."
+      ],
+      "themes": [
+        "missing game-equipment category",
+        "functional object versus decorative display",
+        "justifiable Other"
+      ],
+      "uncertainty": [
+        "The unusual arrangement may be a playful decorative/art display, or simply a functional dartboard used to hold objects. Its intended purpose is not established.",
+        "A's sports category is phrased around people participating, while B/C/D lack an explicit sports-equipment category; none straightforwardly guarantees a named fit for an unoccupied dartboard."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "plausible",
+          "reason": "Other is defensible for a game target shown without a participant: the sports category explicitly describes people in sport, and the board is not clearly an artwork.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": 7,
+            "fit": "plausible",
+            "reason": "Art and Crafts is possible if the unusual board-and-key arrangement is treated as a crafted decorative display.",
+            "category": "Art and Crafts"
+          },
+          "assigned_cluster_id": null,
+          "assigned_category": "Other"
+        },
+        "B": {
+          "fit": "plausible",
+          "reason": "The colored target and unusual collection of keys can reasonably be read as a crafted display object. However, a functional dartboard is not automatically an artwork, so this is a boundary judgment.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": null,
+            "fit": "plausible",
+            "reason": "Other remains reasonable because no category clearly names games or non-electrical sporting equipment.",
+            "category": "Other"
+          },
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and Decorative Objects"
+        },
+        "C": {
+          "fit": "plausible",
+          "reason": "No category clearly covers a functional game target without a person. Rejecting it avoids forcing the board into art or workshop hardware.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": 6,
+            "fit": "plausible",
+            "reason": "Art and decorative objects is possible if the image is interpreted as a deliberately decorative arrangement.",
+            "category": "Art and decorative objects"
+          },
+          "assigned_cluster_id": null,
+          "assigned_category": "Other"
+        },
+        "D": {
+          "fit": "plausible",
+          "reason": "Other is reasonable when the primary object is game equipment and neither a person nor an unambiguous decorative artwork is shown.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": 6,
+            "fit": "plausible",
+            "reason": "Art and decorative objects could cover an intentionally crafted display, but that purpose is uncertain.",
+            "category": "Art and decorative objects"
+          },
+          "assigned_cluster_id": null,
+          "assigned_category": "Other"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-640f7f98efe5103f",
+      "item_id": "47a285d87f6f48b7bc94",
+      "image_sha256": "91d644a869cfda226ab585902dcc43d04af2e98701cb812f6908f9912c664813",
+      "visible_subject": "A small gold-colored cross engraved with religious words, resting on pale woven fabric.",
+      "literal_evidence": [
+        "A shaped metallic cross lies diagonally across textured light fabric.",
+        "Engraved lettering is visible along the cross arms and vertical stem.",
+        "The object itself fills the foreground; no living person is shown."
+      ],
+      "themes": [
+        "crafted symbolic object",
+        "supported shared subject"
+      ],
+      "uncertainty": [
+        "The image does not establish whether the cross is jewelry, a handheld devotional item or a standalone ornament; no chain or attachment is clearly visible."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "supported",
+          "reason": "The shaped and engraved cross is a crafted decorative/symbolic object, directly compatible with Art and Crafts.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 7,
+          "assigned_category": "Art and Crafts"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "A deliberately crafted and inscribed cross photographed as an object fits the artwork/decorative-display scope.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and Decorative Objects"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The main subject is a crafted decorative object rather than a living figure, matching this category.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and decorative objects"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The close-up centers on an engraved crafted object, fitting Art and decorative objects.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 6,
+          "assigned_category": "Art and decorative objects"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-27d7632470436dc5",
+      "item_id": "85534b38f39724a599c4",
+      "image_sha256": "0a59bfbd7fb95bbbf2d7c0679fd340939cdc3dbc20be3ade8f1262079b8c8930",
+      "visible_subject": "A metal cooking range with several circular burners, front control knobs and an open lower oven or cabinet, with cleaning gloves draped over its edge.",
+      "literal_evidence": [
+        "Several ring-shaped burners are mounted on the top of a metal cooking unit.",
+        "A row of knobs runs across its front, and its lower compartment stands open.",
+        "Yellow cleaning gloves and a sponge rest on the top edge; pipes or a hose are visible at the side."
+      ],
+      "themes": [
+        "appliance versus room setting",
+        "missing non-electrical appliance category",
+        "uncertain power source"
+      ],
+      "uncertainty": [
+        "The burner and pipe arrangement suggests a gas cooking appliance, but the image cannot establish whether it also has electrical components or ignition.",
+        "Electrical/electronic categories do not unambiguously cover a nonelectrical gas range. Broad non-electrical work-equipment wording in B is another possible interpretation, while the other hardware categories emphasize manual/workshop implements."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "unsupported",
+          "reason": "The appliance dominates the frame; this is not chiefly a room interior, building or fixed public infrastructure. A piece of equipment inside a building does not make the focal subject architectural.",
+          "severity": "major",
+          "nearest_alternative": {
+            "cluster_id": null,
+            "fit": "plausible",
+            "reason": "Other avoids forcing a cooking range into electrical components or architecture when there is no clear general-appliance category.",
+            "category": "Other"
+          },
+          "assigned_cluster_id": 10,
+          "assigned_category": "Architecture and Infrastructure"
+        },
+        "B": {
+          "fit": "plausible",
+          "reason": "Other is defensible because a gas cooking range is not clearly electrical/electronic and no category explicitly names appliances.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": 10,
+            "fit": "plausible",
+            "reason": "Tools and Work Equipment broadly includes non-electrical work equipment, which could cover a commercial cooking range, although the examples emphasize workshop tools.",
+            "category": "Tools and Work Equipment"
+          },
+          "assigned_cluster_id": null,
+          "assigned_category": "Other"
+        },
+        "C": {
+          "fit": "plausible",
+          "reason": "Other is a reasonable response to a cooking appliance that is not clearly electrical, manual workshop tooling, food, or the surrounding built environment.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": 7,
+            "fit": "plausible",
+            "reason": "Electrical and electronic equipment would be possible if this range has relevant electrical operation, but that is not established by the photograph.",
+            "category": "Electrical and electronic equipment"
+          },
+          "assigned_cluster_id": null,
+          "assigned_category": "Other"
+        },
+        "D": {
+          "fit": "plausible",
+          "reason": "The catalog lacks a general cooking-appliance category, and the object is not clearly electrical. Rejecting this boundary case is more defensible than classifying its background interior.",
+          "severity": "none",
+          "nearest_alternative": {
+            "cluster_id": 7,
+            "fit": "plausible",
+            "reason": "Electrical and electronic equipment is an alternative only if the cooking unit is interpreted as electrical equipment, which is uncertain from the pixels.",
+            "category": "Electrical and electronic equipment"
+          },
+          "assigned_cluster_id": null,
+          "assigned_category": "Other"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-3b8b2852ebf7f7bf",
+      "item_id": "14147df8e0ba72ed0ae7",
+      "image_sha256": "6911b518b07d30113e684eb113c178e0028cce1e4165cbc8466d4a175b185887",
+      "visible_subject": "A green long-legged insect clinging to the edge of a light-colored textured surface.",
+      "literal_evidence": [
+        "An elongated green body with several jointed legs is shown in close-up.",
+        "Long antennae project from the insect's head.",
+        "The textured surface and warm blurred background support the insect rather than becoming the main subject."
+      ],
+      "themes": [
+        "supported shared subject"
+      ],
+      "uncertainty": [
+        "The exact species cannot be established confidently and is unnecessary for the broad animal category."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "supported",
+          "reason": "The image clearly centers on a nonhuman insect, explicitly included in this catalog's Animals description.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "The image clearly centers on a nonhuman insect, explicitly included in this catalog's Animals description.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The image clearly centers on a nonhuman insect, explicitly included in this catalog's Animals description.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The image clearly centers on a nonhuman insect, explicitly included in this catalog's Animals description.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-fe5e7984f157a6e6",
+      "item_id": "90efe299476dc2646c90",
+      "image_sha256": "e8803d1c0119e83a5081b7fa600ee405ff600a3820bf7ff2eebcd25fa616a77e",
+      "visible_subject": "Dense clusters of small pink flowers against green foliage and a dark blurred background.",
+      "literal_evidence": [
+        "Many small pink petals form several rounded flower clusters across the foreground.",
+        "Tiny flower centers and green plant parts are visible.",
+        "No person, animal or broad landscape dominates the frame."
+      ],
+      "themes": [
+        "supported shared subject"
+      ],
+      "uncertainty": [
+        "The plant species is not established; the flower/plant subject is clear without species identification."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "supported",
+          "reason": "The main subject is a close view of flowers, explicitly within this catalog's plants/flowers scope.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 9,
+          "assigned_category": "Plants and Flowers"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "The main subject is a close view of flowers, explicitly within this catalog's plants/flowers scope.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 8,
+          "assigned_category": "Plants"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The main subject is a close view of flowers, explicitly within this catalog's plants/flowers scope.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 8,
+          "assigned_category": "Plants"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The main subject is a close view of flowers, explicitly within this catalog's plants/flowers scope.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 8,
+          "assigned_category": "Plants and flowers"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-3a97b0e3ab72087d",
+      "item_id": "625643bbf93c7fa76209",
+      "image_sha256": "4ce8add7df2d3f2970f082b8a72f2c3b067baae88dbee688c512f663174cf96b",
+      "visible_subject": "Two large yellow flowers among green leaves and stems.",
+      "literal_evidence": [
+        "Two open yellow blossoms with visible central stamens occupy much of the frame.",
+        "Green foliage and stems surround the blossoms.",
+        "The framing emphasizes individual flowers rather than expansive scenery."
+      ],
+      "themes": [
+        "supported shared subject"
+      ],
+      "uncertainty": [
+        "The precise species is not necessary to judge the visible plant subject."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "supported",
+          "reason": "The photograph centers on flowers and foliage, a direct fit for this catalog's plant category.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 9,
+          "assigned_category": "Plants and Flowers"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "The photograph centers on flowers and foliage, a direct fit for this catalog's plant category.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 8,
+          "assigned_category": "Plants"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The photograph centers on flowers and foliage, a direct fit for this catalog's plant category.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 8,
+          "assigned_category": "Plants"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The photograph centers on flowers and foliage, a direct fit for this catalog's plant category.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 8,
+          "assigned_category": "Plants and flowers"
+        }
+      }
+    },
+    {
+      "case_id": "stream-photo-9d31c865d34b919b",
+      "item_id": "ba52b3242bca28a040d3",
+      "image_sha256": "362193d0d4137200f0871b6955e17612fb6021734c4ef476e0ecec1332b75e47",
+      "visible_subject": "A dense school of small fish swirling through blue-green water around bright light.",
+      "literal_evidence": [
+        "Numerous separate tapered bodies with visible tails and fins fill the image.",
+        "The fish form curving bands around a bright patch of water.",
+        "Water is the setting; the many fish are the repeated focal subjects."
+      ],
+      "themes": [
+        "supported shared subject",
+        "animals versus watery setting"
+      ],
+      "uncertainty": [
+        "The fish species and whether the water is a natural habitat or an enclosure are not established by the image."
+      ],
+      "assessments": {
+        "A": {
+          "fit": "supported",
+          "reason": "The main subjects are many visible fish, fitting the explicit aquatic/marine/nonhuman-animal scope rather than landscape.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        },
+        "B": {
+          "fit": "supported",
+          "reason": "The main subjects are many visible fish, fitting the explicit aquatic/marine/nonhuman-animal scope rather than landscape.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        },
+        "C": {
+          "fit": "supported",
+          "reason": "The main subjects are many visible fish, fitting the explicit aquatic/marine/nonhuman-animal scope rather than landscape.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        },
+        "D": {
+          "fit": "supported",
+          "reason": "The main subjects are many visible fish, fitting the explicit aquatic/marine/nonhuman-animal scope rather than landscape.",
+          "severity": "none",
+          "nearest_alternative": null,
+          "assigned_cluster_id": 1,
+          "assigned_category": "Animals"
+        }
+      }
+    }
+  ]
+}
