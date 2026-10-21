@@ -121,6 +121,29 @@ def input_pin(root, relative, modality):
     return frozen, rows, images
 
 
+def validate_prior_partition(frozen, rows, expected):
+    def digest(value):
+        encoded = json.dumps(value, ensure_ascii=False, separators=(',', ':')).encode()
+        return hashlib.sha256(encoded).hexdigest()
+    payload = []
+    for row in rows:
+        # Item is a Rust struct: field order is fixed and None options are omitted.
+        item = dict(id=row['id'], text=row['text'])
+        for key in ('image', 'label'):
+            if row.get(key) is not None:
+                item[key] = row[key]
+        payload.append(item)
+    require(len(rows) == expected['count']
+            and frozen['ordered_ids'] == expected['ordered_ids']
+            and digest(frozen['ordered_ids']) == expected['order_sha256']
+            and digest(payload) == expected['payload_sha256']
+            and frozen['images'] == expected['ordered_image_hashes']
+            and digest(frozen['images']) == expected['ordered_image_content_sha256'],
+            'prior partition payload/order/image evidence differs')
+    require(expected.get('jsonl_sha256') in (None, frozen['sha256']),
+            'optional prior raw JSONL pin differs')
+
+
 def design(root, relative):
     value = read(member(root, relative))
     if 'design' in value:
@@ -147,9 +170,8 @@ def validate_boundary_evidence(root, modality, rows, frozen, adaptive, catalog):
     manifest = read(member(root, 'preregistration/dataset-manifest.json'))
     expected = manifest['partitions']['development'][modality]
     previous = read(member(root, 'preregistration/prior-dataset-manifest.json'))
-    require(dev_pin['sha256'] == expected['jsonl_sha256']
-            and old_pin['sha256'] == previous['partitions']['discovery'][modality]['jsonl_sha256'],
-            'development/discovery bytes changed')
+    require(dev_pin['sha256'] == expected['jsonl_sha256'], 'development bytes changed')
+    validate_prior_partition(old_pin, old_rows, previous['partitions']['discovery'][modality])
     for frozen_input, source_manifest in ((old_pin, previous), (dev_pin, manifest)):
         require(all(image['sha256'] == source_manifest['photos'][image['id']]['supplied_sha256']
                     for image in frozen_input['images']), 'frozen generation source photograph changed')
@@ -235,12 +257,14 @@ def prepare(args):
     prior_inputs = []
     for name in PRIOR_NAMES:
         modality = 'images' if name.endswith('-images') else 'text'
+        relative = 'prior-inputs/' + name + '.jsonl'
         if name == 'v2-text':
-            expected = dataset['previous_text_sha256']
+            frozen = pin(root, relative, dataset['previous_text_sha256'])
         else:
             _, split, _ = name.split('-')
-            expected = prior_dataset['partitions'][split][modality]['jsonl_sha256']
-        prior_inputs.append(dict(**pin(root, 'prior-inputs/' + name + '.jsonl', expected),
+            frozen, rows, _ = input_pin(root, relative, modality)
+            validate_prior_partition(frozen, rows, prior_dataset['partitions'][split][modality])
+        prior_inputs.append(dict(path=frozen['path'], sha256=frozen['sha256'],
                                  modality=modality, role=name))
     adaptive = []
     if args.adaptive_registration is not None:

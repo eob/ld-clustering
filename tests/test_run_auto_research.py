@@ -26,6 +26,21 @@ def write(path, value):
     path.write_text(json.dumps(value, indent=2) + '\n')
 
 
+def old_partition(rows, images):
+    payload=[]
+    for row in rows:
+        item=dict(id=row['id'],text=row['text'])
+        for key in ('image','label'):
+            if row.get(key) is not None:item[key]=row[key]
+        payload.append(item)
+    compact=lambda value:json.dumps(value,ensure_ascii=False,separators=(',',':')).encode()
+    digest=lambda value:hashlib.sha256(compact(value)).hexdigest()
+    ids=[row['id'] for row in rows]
+    return dict(count=len(rows),ordered_ids=ids,payload_sha256=digest(payload),
+                order_sha256=digest(ids),ordered_image_hashes=images,
+                ordered_image_content_sha256=digest(images))
+
+
 FAKE = r'''#!/usr/bin/env python3
 import hashlib,json,os,signal,subprocess,sys,time
 from pathlib import Path
@@ -61,7 +76,7 @@ Path(a['--log']).write_text('preserved fake journal\n');Path(a['--output']).with
 
 
 class Fixture:
-    def __init__(self, root, repetitions=1):
+    def __init__(self, root, repetitions=1, legacy=True):
         self.root=root;self.repo=root/'repo';self.run=root/'run';self.fixtures=self.repo/'experiments/study'
         self.repo.mkdir();self.run.mkdir();self.fixtures.mkdir(parents=True)
         (self.repo/'scripts').mkdir();(self.repo/'scripts/run_auto_research.py').write_bytes(SCRIPT.read_bytes())
@@ -90,9 +105,24 @@ class Fixture:
         write(self.fixtures/'protocol.json',protocol)
         for name in ('protocol.json','conditions.json'):
             (self.run/'preregistration'/name).write_bytes((self.fixtures/name).read_bytes())
+        prior['partitions']={split:{} for split in ('discovery','heldout','streaming')}
+        prior['photos']={}
         for name in ['v2-text']+[f'guided-{split}-{m}' for split in ('discovery','heldout','streaming') for m in ('text','images')]:
-            p=self.run/'prior-inputs'/(name+'.jsonl');p.parent.mkdir(exist_ok=True);p.write_text(json.dumps(dict(id=name,text='Prior '+name))+'\n')
-        prior['partitions']={split:{m:dict(jsonl_sha256=sha(self.run/'prior-inputs'/(f'guided-{split}-{m}.jsonl'))) for m in ('text','images')} for split in ('discovery','heldout','streaming')}
+            p=self.run/'prior-inputs'/(name+'.jsonl');p.parent.mkdir(exist_ok=True)
+            row=dict(id=name,text='Prior '+name,label=None)
+            images=[]
+            if name.endswith('-images'):
+                image=self.run/'images'/(name+'.jpg');image.parent.mkdir(exist_ok=True)
+                image.write_bytes(b'\xff\xd8\xff'+name.encode())
+                row['image']='../images/'+name+'.jpg'
+                images=[dict(id=name,sha256=sha(image))]
+                prior['photos'][name]=dict(supplied_sha256=sha(image))
+            p.write_text(json.dumps(row)+'\n')
+            if name!='v2-text':
+                _,split,modality=name.split('-')
+                part=old_partition([row],images)
+                if not legacy:part['jsonl_sha256']=sha(p)
+                prior['partitions'][split][modality]=part
         write(self.run/'preregistration/prior-dataset-manifest.json',prior)
         dataset['prior_dataset_manifest_sha256']=sha(self.run/'preregistration/prior-dataset-manifest.json')
         dataset['previous_text_sha256']=sha(self.run/'prior-inputs/v2-text.jsonl')
@@ -119,6 +149,42 @@ class LauncherTests(unittest.TestCase):
                 self.assertEqual(plan['conditions'][0]['input']['ordered_ids'],['opaque-one'])
                 self.assertEqual(plan['conditions'][0]['kind'],'classify')
                 self.assertEqual(before,{str(p.relative_to(f.run)):p.read_bytes() for p in f.run.rglob('*') if p.is_file()})
+            finally:f.close()
+
+    def test_actual_legacy_manifest_without_raw_jsonl_hash_is_verified(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            f=Fixture(Path(tmp),legacy=True)
+            try:
+                plan=launcher.prepare(f.args)
+                self.assertEqual(len(plan['prior_inputs']),7)
+                for spec in plan['prior_inputs']:
+                    self.assertEqual(spec['sha256'],sha(f.run/spec['path']))
+            finally:f.close()
+
+    def test_legacy_content_and_image_mutations_are_rejected_without_raw_jsonl_pin(self):
+        for name,mutation in [('guided-discovery-text','text'),('guided-heldout-text','label'),('guided-streaming-images','image')]:
+            with self.subTest(mutation=mutation), tempfile.TemporaryDirectory() as tmp:
+                f=Fixture(Path(tmp),legacy=True)
+                try:
+                    if mutation=='image':
+                        (f.run/'images'/(name+'.jpg')).write_bytes(b'changed image bytes')
+                    else:
+                        path=f.run/'prior-inputs'/(name+'.jsonl');row=json.loads(path.read_text())
+                        row[mutation]='Changed under the same point ID';path.write_text(json.dumps(row)+'\n')
+                    with self.assertRaisesRegex(ValueError,'prior partition'):
+                        launcher.prepare(f.args)
+                    self.assertFalse((f.run/'registrations').exists())
+                finally:f.close()
+
+    def test_optional_legacy_raw_pin_is_additional_to_content_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            f=Fixture(Path(tmp),legacy=False)
+            try:
+                launcher.prepare(f.args)
+                path=f.run/'prior-inputs/guided-discovery-text.jsonl'
+                path.write_text(path.read_text()+'\n')
+                with self.assertRaisesRegex(ValueError,'raw JSONL'):
+                    launcher.prepare(f.args)
             finally:f.close()
 
     def test_changed_fixed_bytes_and_existing_arm_are_rejected(self):
@@ -158,7 +224,8 @@ class LauncherTests(unittest.TestCase):
                 old_path=root/'discovery'/(modality+'.jsonl');old_path.parent.mkdir();old_path.write_text(json.dumps(old)+'\n')
                 dev_path=root/'inputs/development'/(modality+'.jsonl');dev_path.parent.mkdir(parents=True);dev_path.write_text(json.dumps(dev)+'\n')
                 write(root/'preregistration/dataset-manifest.json',dict(partitions=dict(development={modality:dict(jsonl_sha256=sha(dev_path))}),photos=photos))
-                write(root/'preregistration/prior-dataset-manifest.json',dict(partitions=dict(discovery={modality:dict(jsonl_sha256=sha(old_path))}),photos=photos))
+                old_images=[dict(id='old',sha256=photos['old']['supplied_sha256'])] if modality=='images' else []
+                write(root/'preregistration/prior-dataset-manifest.json',dict(partitions=dict(discovery={modality:old_partition([old],old_images)}),photos=photos))
                 catalog=dict(definitions=[dict(id=11,name='One',description='Membership')])
                 case=dict(case_id='case',text=dev['text'],pairs=[dict(catalog=catalog['definitions'])])
                 if modality=='images':case.update(image='images/selected.jpg',image_sha256=photos['selected']['supplied_sha256'])
